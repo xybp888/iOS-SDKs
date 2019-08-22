@@ -1,0 +1,27 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 2A16ED9D-9A5B-3BA8-A15A-FBE72DFDD783' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/BulletinBoardPlugins/SMSBBPlugin.bundle/SMSBBPlugin
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _CKChatConversationListSuppressionContext, _SMSBBPluginCategory,
+                          _SMSBBPluginFirstLockPreferencesDomain, _SMSBBPluginLastPostedDateKey, _SMSBBPluginLastPostedRowIDKey,
+                          _SMSBBPluginMigratedRowIDToDateKey, _SMSBBPluginPreferencesDomain, _SMSBBPluginSectionIdentifier,
+                          _kCarrierPreferencesDomain, _kHandleDeclineAndMessageRecordID, _kSMSBBClearFailureBadgeNotification,
+                          _kSMSBBIncomingMessageAlertCountChangedNotification, _kSpringBoardSettingsChangedNotificationName ]
+    objc-classes:       [ _SMSBBPlugin ]
+    objc-ivars:         [ _SMSBBPlugin._audioController, _SMSBBPlugin._bbPluginLock, _SMSBBPlugin._bulletinCache,
+                          _SMSBBPlugin._deferredRemovedRowIDs, _SMSBBPlugin._deferredRowIDs,
+                          _SMSBBPlugin._delayDismissingBulletin, _SMSBBPlugin._iMessageService,
+                          _SMSBBPlugin._lastAlertedMessageDate, _SMSBBPlugin._lastFailedAlertDate, _SMSBBPlugin._mediaObjects,
+                          _SMSBBPlugin._pendingUrgentMessageRowIDs, _SMSBBPlugin._playedMediaObjects,
+                          _SMSBBPlugin._playingAudioMessageGUIDs, _SMSBBPlugin._postBulletinBlockArray,
+                          _SMSBBPlugin._postBulletinThrottleTimer, _SMSBBPlugin._postedFailedSendRowIDs,
+                          _SMSBBPlugin._postedRowIDs, _SMSBBPlugin._queue, _SMSBBPlugin._raiseToListen,
+                          _SMSBBPlugin._suggestionsService, _SMSBBPlugin._wasUnderFirstUnlock ]
+...

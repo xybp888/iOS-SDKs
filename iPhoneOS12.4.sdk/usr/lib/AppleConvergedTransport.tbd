@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
+                   'arm64: FA82716F-D6DF-3AF6-A515-3BA41A3405FC', 'arm64e: B1864D17-1103-33DA-B55E-ED5AC2E52397' ]
+platform:        ios
+install-name:    /usr/lib/AppleConvergedTransport.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ arm64, arm64e ]
+    symbols:         [ __ZN3pci5event8Listener4initEv, __ZN3pci5event8Listener6createEN10applesauce8dispatch2v15blockIFvNS0_4typeEONSt3__112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEEjEEEP11__CFRunLoop, 
+                       __ZN3pci5event8Listener6createEN10applesauce8dispatch2v15blockIFvNS0_4typeEONSt3__112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEEjEEEP16dispatch_queue_s, 
+                       __ZN3pci5event8Listener6notifyE14acipcErrorTypePvS3_, __ZN3pci5event8ListenerC1EN10applesauce8dispatch2v15blockIFvNS0_4typeEONSt3__112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEEjEEEP11__CFRunLoopP16dispatch_queue_s, 
+                       __ZN3pci5event8ListenerC2EN10applesauce8dispatch2v15blockIFvNS0_4typeEONSt3__112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEEjEEEP11__CFRunLoopP16dispatch_queue_s, 
+                       __ZN3pci5event8ListenerD1Ev, __ZN3pci5event8ListenerD2Ev ]
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _AppleConvergedTransportCreate, _AppleConvergedTransportFree, 
+                       _AppleConvergedTransportInitParameters, _AppleConvergedTransportIsValid, 
+                       _AppleConvergedTransportRead, _AppleConvergedTransportReadRegister, 
+                       _AppleConvergedTransportRegisterEventBlock, _AppleConvergedTransportRegisterEventBlockQ, 
+                       _AppleConvergedTransportRegisterTimeSyncEventBlock, _AppleConvergedTransportRegisterTimeSyncEventBlockQ, 
+                       _AppleConvergedTransportSendImage, _AppleConvergedTransportUnregisterEventBlock, 
+                       _AppleConvergedTransportUnregisterTimeSyncEventBlock, _AppleConvergedTransportWrite ]
+...

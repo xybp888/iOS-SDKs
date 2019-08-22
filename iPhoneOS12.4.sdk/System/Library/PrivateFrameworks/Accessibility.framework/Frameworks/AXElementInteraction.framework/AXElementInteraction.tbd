@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: DD1818BF-1217-3B82-B531-A1899ED619A5' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXElementInteraction.framework/AXElementInteraction
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _AXAXElementInteractionVersionNumber, _AXAXElementInteractionVersionString ]
+    objc-classes:       [ _AXElementInteractionManager ]
+    objc-ivars:         [ _AXElementInteractionManager._axEventObserver, _AXElementInteractionManager._client,
+                          _AXElementInteractionManager._delegate, _AXElementInteractionManager._displayCursor,
+                          _AXElementInteractionManager._focusedElement, _AXElementInteractionManager._interactionEnabled ]
+...

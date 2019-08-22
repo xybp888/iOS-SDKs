@@ -1,0 +1,71 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: DC24A28E-C479-38BE-A772-9C3CAAB8B790' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/SiriInstrumentation.framework/SiriInstrumentation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _SIReflectionHydrateProtoFromEventTypeAndData, _SIReflectionInferClassFromEventType,
+                          _SIReflectionInferEventTypeFromClass, _SISchemaAudioFirstBufferRecordedReadFrom,
+                          _SISchemaAudioStopRecordingReadFrom, _SISchemaClientAnyEventReadFrom,
+                          _SISchemaClientEventMetadataReadFrom, _SISchemaClientTransportEventMetadataReadFrom,
+                          _SISchemaClientTurnBasedEventReadFrom, _SISchemaClientTurnContextReadFrom,
+                          _SISchemaConversationTraceReadFrom, _SISchemaDeviceDynamicContextReadFrom,
+                          _SISchemaDeviceFixedContextReadFrom, _SISchemaDictationContextReadFrom, _SISchemaInvocationReadFrom,
+                          _SISchemaLocationReadFrom, _SISchemaPunchOutReadFrom, _SISchemaServerEnvelopeReadFrom,
+                          _SISchemaServerEventMetadataReadFrom, _SISchemaSiriCueReadFrom, _SISchemaSpeechTranscriptionReadFrom,
+                          _SISchemaTextToSpeechBeginReadFrom, _SISchemaTextToSpeechEndReadFrom, _SISchemaTurnInteractionReadFrom,
+                          _SISchemaUIStateTransitionReadFrom, _SISchemaUUFRPresentedReadFrom,
+                          _SISchemaUserSpeechDurationReadFrom, _SISchemaViewContainerReadFrom, _SiriInstrumentationVersionNumber,
+                          _SiriInstrumentationVersionString ]
+    objc-classes:       [ _SIEventWrapper, _SISchemaAudioFirstBufferRecorded, _SISchemaAudioStopRecording,
+                          _SISchemaClientAnyEvent, _SISchemaClientEventMetadata, _SISchemaClientTransportEventMetadata,
+                          _SISchemaClientTurnBasedEvent, _SISchemaClientTurnContext, _SISchemaConversationTrace,
+                          _SISchemaDeviceDynamicContext, _SISchemaDeviceFixedContext, _SISchemaDictationContext,
+                          _SISchemaInvocation, _SISchemaLocation, _SISchemaPunchOut, _SISchemaServerEnvelope,
+                          _SISchemaServerEventMetadata, _SISchemaSiriCue, _SISchemaSpeechTranscription,
+                          _SISchemaTextToSpeechBegin, _SISchemaTextToSpeechEnd, _SISchemaTurnInteraction,
+                          _SISchemaUIStateTransition, _SISchemaUUFRPresented, _SISchemaUserSpeechDuration,
+                          _SISchemaViewContainer ]
+    objc-ivars:         [ _SIEventWrapper._metadata, _SIEventWrapper._wrappedEvent,
+                          _SISchemaAudioFirstBufferRecorded._audioInputRoute, _SISchemaAudioFirstBufferRecorded._has,
+                          _SISchemaAudioStopRecording._endpointType, _SISchemaAudioStopRecording._has,
+                          _SISchemaClientAnyEvent._eventData, _SISchemaClientAnyEvent._eventType, _SISchemaClientAnyEvent._has,
+                          _SISchemaClientEventMetadata._eventGeneratedRelativeToBootTimeTimestampNs,
+                          _SISchemaClientEventMetadata._eventGeneratedTimestampRefId, _SISchemaClientEventMetadata._has,
+                          _SISchemaClientEventMetadata._turnID,
+                          _SISchemaClientTransportEventMetadata._eventTransmittedRelativeToBootTimeTimestampNs,
+                          _SISchemaClientTransportEventMetadata._eventTransmittedTimestampRefId,
+                          _SISchemaClientTransportEventMetadata._has,
+                          _SISchemaClientTransportEventMetadata._serverArrivedTimestampMs, _SISchemaClientTurnBasedEvent._event,
+                          _SISchemaClientTurnBasedEvent._turnContext, _SISchemaClientTurnContext._turnID,
+                          _SISchemaConversationTrace._previousTurnID, _SISchemaDeviceDynamicContext._countryCode,
+                          _SISchemaDeviceDynamicContext._has, _SISchemaDeviceDynamicContext._location,
+                          _SISchemaDeviceDynamicContext._timeIntervalSince1970, _SISchemaDeviceFixedContext._deviceType,
+                          _SISchemaDeviceFixedContext._siriDeviceID, _SISchemaDeviceFixedContext._siriInputLanguage,
+                          _SISchemaDeviceFixedContext._siriVoiceLanguage, _SISchemaDeviceFixedContext._systemBuild,
+                          _SISchemaDeviceFixedContext._systemLocale, _SISchemaDictationContext._keyboardLanguage,
+                          _SISchemaInvocation._has, _SISchemaInvocation._invocationAction, _SISchemaInvocation._invocationSource,
+                          _SISchemaInvocation._viewContainer, _SISchemaLocation._has,
+                          _SISchemaLocation._horizontalAccuracyInMeters, _SISchemaLocation._latitude,
+                          _SISchemaLocation._longitude, _SISchemaPunchOut._appID, _SISchemaPunchOut._urlScheme,
+                          _SISchemaPunchOut._viewContainer, _SISchemaServerEnvelope._connectionType,
+                          _SISchemaServerEnvelope._has, _SISchemaServerEnvelope._podID, _SISchemaServerEnvelope._serverVersion,
+                          _SISchemaServerEventMetadata._has, _SISchemaServerEventMetadata._siriDeviceID,
+                          _SISchemaServerEventMetadata._timestampMs, _SISchemaServerEventMetadata._turnID, _SISchemaSiriCue._has,
+                          _SISchemaSiriCue._siriCueType, _SISchemaSpeechTranscription._aceID, _SISchemaSpeechTranscription._has,
+                          _SISchemaSpeechTranscription._speechTranscriptionType, _SISchemaTextToSpeechBegin._aceID,
+                          _SISchemaTextToSpeechBegin._audioOutputRoute, _SISchemaTextToSpeechBegin._has,
+                          _SISchemaTextToSpeechEnd._aceID, _SISchemaTurnInteraction._interactionId,
+                          _SISchemaUIStateTransition._currentState, _SISchemaUIStateTransition._has,
+                          _SISchemaUIStateTransition._previousState, _SISchemaUIStateTransition._siriPresentationType,
+                          _SISchemaUUFRPresented._errorCode, _SISchemaUUFRPresented._errorDomain, _SISchemaUUFRPresented._has,
+                          _SISchemaUUFRPresented._viewContainer, _SISchemaUserSpeechDuration._durationMs,
+                          _SISchemaUserSpeechDuration._has, _SISchemaViewContainer._dialogIdentifier,
+                          _SISchemaViewContainer._dialogPhase, _SISchemaViewContainer._snippetClass,
+                          _SISchemaViewContainer._viewID ]
+...

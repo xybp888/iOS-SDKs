@@ -1,0 +1,24 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 0B51461B-594C-38E7-B48E-2229F5AECEEE' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/SuggestionsSpotlightMetrics.framework/SuggestionsSpotlightMetrics
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _SuggestionsSpotlightMetricsVersionNumber, _SuggestionsSpotlightMetricsVersionString ]
+    objc-classes:       [ _SGSMFeedbackListener, _SGSMMutableSearchState ]
+    objc-ivars:         [ _SGSMFeedbackListener._eventLastInteractionTime, _SGSMFeedbackListener._previousState,
+                          _SGSMFeedbackListener._searchState, _SGSMFeedbackListener._suggestionsService,
+                          _SGSMMutableSearchState._contactConversionCount, _SGSMMutableSearchState._contactLossCount,
+                          _SGSMMutableSearchState._contactOpportunity, _SGSMMutableSearchState._contactOpportunityCount,
+                          _SGSMMutableSearchState._contactResult, _SGSMMutableSearchState._contactResultCount,
+                          _SGSMMutableSearchState._contactSelected,
+                          _SGSMMutableSearchState._curatedOrPseudoContactOpportunityCount, _SGSMMutableSearchState._justEngaged,
+                          _SGSMMutableSearchState._nonOpportunityCount, _SGSMMutableSearchState._noneSelected,
+                          _SGSMMutableSearchState._otherSelected, _SGSMMutableSearchState._otherSelectedCount,
+                          _SGSMMutableSearchState._resultsSeen ]
+...

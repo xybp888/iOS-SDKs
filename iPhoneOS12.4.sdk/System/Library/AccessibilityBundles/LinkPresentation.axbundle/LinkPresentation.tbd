@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: ADABC14B-9FE0-39AA-BC03-CA7D5DBFAD52' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/AccessibilityBundles/LinkPresentation.axbundle/LinkPresentation
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ __Failover, _accessibilityLocalizedString ]
+    objc-classes:       [ _AXLinkPresentationGlue, _LPLinkViewAccessibility, _LPTextViewAccessibility,
+                          ___LPLinkViewAccessibility_super, ___LPTextViewAccessibility_super ]
+...

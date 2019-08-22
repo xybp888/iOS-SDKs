@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 5682E2D4-BE10-3192-861D-E7EE669803C6' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PreferenceBundles/AccountSettings/LDAPSettings.bundle/LDAPSettings
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:       [ _LDAPSettingsAccountsUIController, _LDAPSettingsPlugin, _LDAPSettingsSearchBaseController ]
+    objc-ivars:         [ _LDAPSettingsAccountsUIController._specifiersToInsert, _LDAPSettingsSearchBaseController._account,
+                          _LDAPSettingsSearchBaseController._accountController,
+                          _LDAPSettingsSearchBaseController._confirmDeleteSettingsSheetOrAlert,
+                          _LDAPSettingsSearchBaseController._searchSettings ]
+...

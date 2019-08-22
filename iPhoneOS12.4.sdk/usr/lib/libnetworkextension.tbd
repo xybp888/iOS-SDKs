@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
+                   'arm64: C588FD85-3B10-3E68-9968-FA24A7496CB3', 'arm64e: F8D72FCD-87C1-35F3-83E1-9314358DEB0C' ]
+platform:        ios
+install-name:    /usr/lib/libnetworkextension.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _ne_filter_connection_queue, _ne_filter_copy_connection, _ne_filter_protocol_identifier, 
+                       _ne_filter_request_connection, _ne_filter_send_message ]
+...

@@ -1,0 +1,18 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 2927156E-A4EF-3018-86BE-3C5D13CC375C' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/Email.framework/Email
+current-version:       3445.104.12
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _EMDirectoryNameMail, _EMVIPsDidChangeNotification, _EMVIPsRemovedKey, _EMVIPsUpdatedKey,
+                          _EmailVersionNumber, _EmailVersionString ]
+    objc-classes:       [ _EMAccountAuthentication, _EMPersistenceLayoutManager, _EMVIP, _EMVIPManager ]
+    objc-ivars:         [ _EMAccountAuthentication._accountFactory, _EMVIP._displayName, _EMVIP._emailAddresses,
+                          _EMVIP._identifier, _EMVIP._name, _EMVIPManager._cachedEmailAddresses, _EMVIPManager._contactStore,
+                          _EMVIPManager._keyValueStore, _EMVIPManager._operationQueue, _EMVIPManager._vipsByIdentifier ]
+...

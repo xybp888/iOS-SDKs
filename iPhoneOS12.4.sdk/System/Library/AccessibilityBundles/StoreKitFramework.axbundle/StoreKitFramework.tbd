@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: E7DB7A5E-8374-3FC6-A1CC-0859CB973278' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/AccessibilityBundles/StoreKitFramework.axbundle/StoreKitFramework
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ __Failover, _accessibilityLocalizedString ]
+    objc-classes:       [ _AXStoreKitGlue, _SKStarRatingControlAccessibility, _SKStoreReviewPresentationWindowAccessibility,
+                          ___SKStarRatingControlAccessibility_super, ___SKStoreReviewPresentationWindowAccessibility_super ]
+...

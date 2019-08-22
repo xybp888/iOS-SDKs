@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 484444B4-2575-342F-8E4E-466652304BAF' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/SignpostMetrics.framework/SignpostMetrics
+current-version:       31.1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _SignpostMetricsVersionNumber, _SignpostMetricsVersionString, __MXSignpostMetricsSnapshot ]
+    objc-classes:       [ _SignpostMetricsSnapshotter ]
+...

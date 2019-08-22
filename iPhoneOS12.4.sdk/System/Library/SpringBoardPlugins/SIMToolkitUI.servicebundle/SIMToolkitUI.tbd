@@ -1,0 +1,31 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 891E6282-BA81-3A3B-9799-95B7BB38A355' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/SpringBoardPlugins/SIMToolkitUI.servicebundle/SIMToolkitUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _SIMAlertType ]
+    objc-classes:       [ _RoundedBorderView, _STKAlert, _STKAlertManager, _STKBaseAlertViewController,
+                          _STKBaseInputAlertViewController, _STKListDisplayAlertViewController, _STKManualKeyboardTextField,
+                          _STKOneShotInputAlertViewController, _STKSentAlertViewController, _STKSetupCallAlertViewController,
+                          _STKStandardInputAlertViewController, _STKTextAlertViewController, _STKYesNoInputAlertViewController,
+                          _UIAlertTableCell ]
+    objc-ivars:         [ _RoundedBorderView._color, _STKAlert._needsResponse, _STKAlert._options, _STKAlert._tone,
+                          _STKAlert._toneAlert, _STKAlert._type, _STKAlertManager._currentAlertViewController,
+                          _STKAlertManager._serverConnection, _STKAlertManager._wantsNextUserEvent,
+                          _STKBaseAlertViewController._alert, _STKBaseAlertViewController._timeoutTimer,
+                          _STKBaseInputAlertViewController._animateKeyboardOnStartAndExit,
+                          _STKBaseInputAlertViewController._button, _STKBaseInputAlertViewController._buttonBorderView,
+                          _STKBaseInputAlertViewController._digitsOnly, _STKBaseInputAlertViewController._inputTextField,
+                          _STKBaseInputAlertViewController._isRotating, _STKBaseInputAlertViewController._maxLength,
+                          _STKBaseInputAlertViewController._minLength, _STKBaseInputAlertViewController._sendingFieldView,
+                          _STKBaseInputAlertViewController._textBorderView, _STKBaseInputAlertViewController._textView,
+                          _STKListDisplayAlertViewController._items, _STKListDisplayAlertViewController._table,
+                          _STKManualKeyboardTextField._animate, _STKTextAlertViewController._textView,
+                          _UIAlertTableCell._checked ]
+...

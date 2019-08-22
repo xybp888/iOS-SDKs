@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 71526087-423C-3633-A499-EF02610FC585' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/SlideshowKit.framework/SlideshowKit
+current-version:       1702.0.120
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    re-exports:         [ /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation,
+                          /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusKit.framework/OpusKit ]
+    symbols:            [ _SlideshowKitUmbrellaString, _SlideshowKitVersionNumber, _SlideshowKitVersionString ]
+    objc-classes:       [ _SlideshowKit ]
+...

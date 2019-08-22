@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 29FF6D1C-3C17-3F8E-B122-A5A80414290E' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/OSASyncProxyClient.framework/OSASyncProxyClient
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _OSASyncProxyClientVersionNumber, _OSASyncProxyClientVersionString ]
+    objc-classes:       [ _OSASyncProxyClient ]
+    objc-ivars:         [ _OSASyncProxyClient._connection, _OSASyncProxyClient._synchRemoteObjectProxy ]
+...

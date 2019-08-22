@@ -1,0 +1,23 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 5EA13BB0-876E-3C42-84CB-BE41E8D325B6' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/Stocks/AppAnalytics.framework/AppAnalytics
+current-version:       1
+compatibility-version: 1
+swift-version:         6
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:  [ NewsArticles, NewsArticlesTests, NewsFeed, NewsFeedTests, Stocks, StocksAnalytics,
+                          StocksAnalyticsTests, StocksCore, StocksCoreTests, StocksTests, StocksToday, StocksUI, StocksUITests,
+                          AppAnalyticsTests ]
+    symbols:            [ _AppAnalyticsVersionNumber, _AppAnalyticsVersionString ]
+    objc-classes:       [ _AAAccessSessionManager, _AAAccessTracker, _AAClient, _AADataEventTraits, _AADelayedToken, _AAEndpoint,
+                          _AAEventData, _AAEventProperty, _AAGroup, _AAJSON, _AALoggingEventProcessor, _AAProcessEvent,
+                          _AAProcessorManager, _AARawDataEvent, _AARawEvent, _AARawEventProperty, _AASession, _AASessionData,
+                          _AASessionManager, _AASessionObserver, _AATimedData, _AATracker, _AAUploadBatchEventConfig,
+                          _AAUploadBatchEventProcessor, __TtC12AppAnalytics13UploadService,
+                          __TtCC12AppAnalytics12MescalSignerP33_50212C62307B91282DB5DA35D73009738Contract ]
+...

@@ -1,0 +1,39 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
+                   'arm64: 1F3F46E9-5FC4-3F87-BD9E-06EA80A859B6', 'arm64e: 630EB98F-B5D4-33E0-952B-5210FCE14AE2' ]
+platform:        ios
+install-name:    /usr/lib/libUSBTransport.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ arm64, arm64e ]
+    symbols:         [ __ZN3usb9transport10fileWriter13configureSizeEj, __ZN3usb9transport10fileWriter5closeEv, 
+                       __ZN3usb9transport10fileWriter5flushEv, __ZN3usb9transport10fileWriter5writeENS0_9logWriter5levelERK8timespecPKc, 
+                       __ZN3usb9transport10fileWriter8snapshotERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
+                       __ZN3usb9transport10fileWriterC1ERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEESA_j, 
+                       __ZN3usb9transport10fileWriterC2ERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEESA_j, 
+                       __ZN3usb9transport10fileWriterD1Ev, __ZN3usb9transport10fileWriterD2Ev, 
+                       __ZN3usb9transport14deviceRecovery10resetErrorEP16dispatch_group_s, 
+                       __ZN3usb9transport14deviceRecovery12addLogWriterERKNSt3__110shared_ptrINS0_9logWriterEEE, 
+                       __ZN3usb9transport14deviceRecovery15removeLogWriterERKNSt3__110shared_ptrINS0_9logWriterEEE, 
+                       __ZN3usb9transport14deviceRecovery4stopEP16dispatch_group_s, 
+                       __ZN3usb9transport14deviceRecovery6createERKNS1_10parametersE, 
+                       __ZN3usb9transport14deviceRecoveryD1Ev, __ZN3usb9transport14deviceRecoveryD2Ev, 
+                       __ZN3usb9transport16debugPrintWriter5writeENS0_9logWriter5levelERK8timespecPKc, 
+                       __ZN3usb9transport6system11logSnapshotEv, __ZN3usb9transport6system12addLogWriterERKNSt3__110shared_ptrINS0_9logWriterEEE, 
+                       __ZN3usb9transport6system15removeLogWriterERKNSt3__110shared_ptrINS0_9logWriterEEE, 
+                       __ZN3usb9transport6system3getEv, __ZN3usb9transport6systemD1Ev, 
+                       __ZN3usb9transport6systemD2Ev, __ZN3usb9transport9interface10setAutoZLPEb, 
+                       __ZN3usb9transport9interface11logSnapshotEv, __ZN3usb9transport9interface14lockConnectionEv, 
+                       __ZN3usb9transport9interface16unlockConnectionEv, __ZN3usb9transport9interface20setDefaultParametersERNS1_10parametersE, 
+                       __ZN3usb9transport9interface4readEPvmjU13block_pointerFvimE, 
+                       __ZN3usb9transport9interface4stopEP16dispatch_group_s, __ZN3usb9transport9interface5writeEPKvmjU13block_pointerFvimE, 
+                       __ZN3usb9transport9interface6createERKNS1_10parametersE, __ZN3usb9transport9interface7getInfoEU13block_pointerFvRKNS1_4infoEE, 
+                       __ZN3usb9transport9interface8readSyncEPvmjRm, __ZN3usb9transport9interface9abortReadEv, 
+                       __ZN3usb9transport9interface9writeSyncEPKvmjRm, __ZN3usb9transport9interfaceD1Ev, 
+                       __ZN3usb9transport9interfaceD2Ev, __ZNK3usb9transport10fileWriter7enabledENS0_9logWriter5levelE, 
+                       __ZNK3usb9transport16debugPrintWriter7enabledENS0_9logWriter5levelE ]
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _TelephonyBasebandUSBTransportCreate, _TelephonyBasebandUSBTransportInitParameters, 
+                       _USBTransportStatusToString, _kUSBTransportConfigNoZLP, _kUSBTransportConfigVendorIdAndProductId ]
+...

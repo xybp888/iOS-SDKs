@@ -1,0 +1,21 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: CB963635-3FE7-31E2-BC34-65628A7C7BE7' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/DataClassMigrators/DAAccountLegacy.migrator/DAAccountLegacy
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _DAIMAPNotesVersion, _SubCalAccountVersion, _kAccountHostKey, _kAccountPortKey, _kAccountSchemeKey,
+                          _kCalDAVAccountConfiguration, _kCalDAVPrincipalConfiguration, _kDAAccountCurrentVersion,
+                          _kDAAccountPersistentUUID, _kDAAccountPersistentUUIDOldKey, _kDAAccountVersionKey,
+                          _kDataclassesToRemoveAtUpgradeTimeKey ]
+    objc-classes:       [ _ASAccount_Legacy, _BookmarkDAVAccount_Legacy, _CardDAVAccount_Legacy, _DAAccountLegacy,
+                          _DAIMAPNotesAccount_Legacy, _DALegacyAccount, _LDAPAccount_Legacy, _MobileCalDAVAccount_Legacy,
+                          _SubCalAccount_Legacy ]
+    objc-ivars:         [ _DAAccountLegacy._numAccountsMigrated, _DAAccountLegacy._numAccountsNeedingMigration,
+                          _DALegacyAccount._properties, _MobileCalDAVAccount_Legacy._originalPrincipalURL ]
+...

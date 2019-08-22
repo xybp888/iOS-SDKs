@@ -1,0 +1,25 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 3B42D3DB-C098-350F-8F2B-4ED3310F2E84' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/WiFiCloudSyncEngine.framework/WiFiCloudSyncEngine
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _WiFiCloudSyncEngineAddNetworkToCloud, _WiFiCloudSyncEngineAddNetworkToKnownNetworksList,
+                          _WiFiCloudSyncEngineCheckKeychainSyncState, _WiFiCloudSyncEngineCreate,
+                          _WiFiCloudSyncEngineGetCompleteKVStore, _WiFiCloudSyncEngineGetLogCallbackFunction,
+                          _WiFiCloudSyncEngineIsNetworkSyncable, _WiFiCloudSyncEngineIsRunning, _WiFiCloudSyncEngineLoggerLog,
+                          _WiFiCloudSyncEngineMergeKnownNetworksToCloud, _WiFiCloudSyncEngineRegisterCallbacks,
+                          _WiFiCloudSyncEngineRemoveNetworkFromCloud, _WiFiCloudSyncEngineRemoveNetworkFromKnownNetworksList,
+                          _WiFiCloudSyncEngineScheduleWithRunLoop, _WiFiCloudSyncEngineStartEngine,
+                          _WiFiCloudSyncEngineStopEngine, _WiFiCloudSyncEngineUnScheduleWithRunLoop,
+                          _kKeychainChangedNotificationName ]
+    objc-classes:       [ _WiFiCloudSyncEngineCore, _WiFiCloudSyncEngineLogger ]
+    objc-ivars:         [ _WiFiCloudSyncEngineCore.callback, _WiFiCloudSyncEngineCore.clientThread,
+                          _WiFiCloudSyncEngineCore.context, _WiFiCloudSyncEngineCore.iCloudSyncingEnabled,
+                          _WiFiCloudSyncEngineCore.keyValueStore ]
+...

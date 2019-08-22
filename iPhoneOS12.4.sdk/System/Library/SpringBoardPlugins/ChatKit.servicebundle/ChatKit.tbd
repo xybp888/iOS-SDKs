@@ -1,0 +1,30 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 14F77DEF-C073-3BF6-B019-7E022797C252' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/SpringBoardPlugins/ChatKit.servicebundle/ChatKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _MessagesBadgeControllerClearFailureBadgeNotification, _SpringBoardPreferencesChangedCallBack,
+                          _kSBPreferenceKeyIgnoreSMSDaemon, _kSBPreferenceKeySMSShowExtraAlerts, _kSBPreferenceKeySMSShowPreview,
+                          _kSBPreferenceKeySMSShowPreviewWithPasscodeEnabled ]
+    objc-classes:       [ _CKAlertItem, _CKCMASBulletinAlertHandler, _CKCarrierReceiveController, _CKCarrierSMSAlertItem,
+                          _CKMessageAlertItem, _CMASBBAlertItem, _MMSDelayedDownloadAlertItem, _MMSInformationMissingAlertItem,
+                          _MessagesBadgeController, _SMSPluginManager ]
+    objc-ivars:         [ _CKAlertItem._alignment, _CKAlertItem._alignmentHasBeenSet, _CKAlertItem._displayingEntireMessage,
+                          _CKAlertItem._shouldHideSMSPreview, _CKCarrierSMSAlertItem._acknowledgeBlock,
+                          _CKCarrierSMSAlertItem._messageBody, _CKCarrierSMSAlertItem._sender, _CKMessageAlertItem._bulletin,
+                          _CKMessageAlertItem._message, _CKMessageAlertItem._playedSound, _CKMessageAlertItem._showingImage,
+                          _CKMessageAlertItem.bannerPresenterDelegate, _CMASBBAlertItem._alreadyPlayedAlertTone,
+                          _CMASBBAlertItem._bulletin, _CMASBBAlertItem._overrideDefaultDisplayOrder,
+                          _MMSDelayedDownloadAlertItem._fromAddress, _MMSDelayedDownloadAlertItem._messageCount,
+                          _MMSInformationMissingAlertItem._alertType, _MessagesBadgeController._disableDBFullDialog,
+                          _MessagesBadgeController._lastMadridFailure, _MessagesBadgeController._madridCount,
+                          _MessagesBadgeController._showingFailure, _SMSPluginManager._displayExtraAlerts,
+                          _SMSPluginManager._displayLayoutMonitor,
+                          _SMSPluginManager._displayLayoutMonitorThread_mobileSMSForeground, _SMSPluginManager._lastBulletin ]
+...

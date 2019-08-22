@@ -1,0 +1,21 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 53CA24DB-E37C-31BF-8BE2-3A5AD05060BD' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/SpringBoardPlugins/StoreServicesPlugin.servicebundle/StoreServicesPlugin
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _SSVSBStoreKitFramework, _SSVSBWeakLinkedClassForString, _SSVSBWeakLinkedSymbolForString ]
+    objc-classes:       [ _SSVSBCFUserNotification, _SSVSBFullScreenAlertViewController, _SSVSBPluginController ]
+    objc-ivars:         [ _SSVSBCFUserNotification._alertView, _SSVSBCFUserNotification._connection,
+                          _SSVSBCFUserNotification._delegate, _SSVSBCFUserNotification._message,
+                          _SSVSBFullScreenAlertViewController._childViewController,
+                          _SSVSBFullScreenAlertViewController._storeServicesPluginDelegate,
+                          _SSVSBPluginController._accountAlertControllers, _SSVSBPluginController._dispatchQueue,
+                          _SSVSBPluginController._listenerConnection, _SSVSBPluginController._notifyToken,
+                          _SSVSBPluginController._requestConnection, _SSVSBPluginController._userNotifications ]
+...

@@ -1,0 +1,18 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 543674CA-3CE3-30A0-B76C-9D04E17B7805', 'armv7s: D02D46CF-84F3-3917-B402-E1E5DECA35A2', 
+                   'arm64: 7A0C0EA4-AB00-39E0-80BA-C23C21C9BD96', 'arm64e: 42A95994-9325-319E-8185-5FD53FBCCA85' ]
+platform:        ios
+install-name:    /usr/lib/libpanel.5.4.dylib
+current-version: 5.4
+compatibility-version: 5.4
+objc-constraint: none
+exports:         
+  - archs:           [ armv7, armv7s ]
+    symbols:         [ ___panel_5_4VersionNumber, ___panel_5_4VersionString ]
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _bottom_panel, _del_panel, _hide_panel, _move_panel, _new_panel, 
+                       _panel_above, _panel_below, _panel_hidden, _panel_userptr, 
+                       _panel_window, _replace_panel, _set_panel_userptr, _show_panel, 
+                       _top_panel, _update_panels ]
+...

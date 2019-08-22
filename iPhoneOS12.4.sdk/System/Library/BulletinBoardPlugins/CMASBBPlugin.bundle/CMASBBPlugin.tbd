@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: B609F989-D1BA-345B-8ED5-8A6640AF6226' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/BulletinBoardPlugins/CMASBBPlugin.bundle/CMASBBPlugin
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _CMASBBPluginSectionIdentifier, _CMASBBPluginUniversalSectionIdentifier ]
+    objc-classes:       [ _CMASBBPlugin ]
+    objc-ivars:         [ _CMASBBPlugin._alerts, _CMASBBPlugin._sectionIdentifier, _CMASBBPlugin._sectionInfo,
+                          _CMASBBPlugin._sectionParameters, _CMASBBPlugin._sortDescriptors ]
+...

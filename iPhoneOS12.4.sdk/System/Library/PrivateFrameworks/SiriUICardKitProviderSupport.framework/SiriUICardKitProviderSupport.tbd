@@ -1,0 +1,22 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 887981E2-24A7-3396-BA2F-E61DF898F28A' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/SiriUICardKitProviderSupport.framework/SiriUICardKitProviderSupport
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _SCKPProviderIdentifier, _SiriUICardKitProviderSupportVersionNumber,
+                          _SiriUICardKitProviderSupportVersionString ]
+    objc-classes:       [ _SCKPCardSectionViewProvider, _SCKPInteractiveCardSectionViewController,
+                          _SCKPMediaControlCardSectionView, _SCKPMediaControlCardSectionViewController, _SCKPProvider ]
+    objc-ivars:         [ _SCKPCardSectionViewProvider._card, _SCKPCardSectionViewProvider._viewConfigurations,
+                          _SCKPMediaControlCardSectionView._contentView,
+                          _SCKPMediaControlCardSectionViewController._assistantSecurityConnection,
+                          _SCKPMediaControlCardSectionViewController._cardSection,
+                          _SCKPMediaControlCardSectionViewController._mediaPlatterViewController,
+                          _SCKPMediaControlCardSectionViewController.cardSectionViewControllingDelegate ]
+...

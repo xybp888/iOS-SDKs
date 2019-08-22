@@ -1,0 +1,58 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 8564F238-13B9-37DB-BEB8-34671AA4A004', 'armv7s: D20B3B6F-02F1-37DA-A96C-B02ECD2AFB0A', 
+                   'arm64: BC7052B0-8413-3953-BFE4-AAD5D37964E4', 'arm64e: DCF51B6B-9BC7-3E1F-82B2-DAEB0CE3A4B3' ]
+platform:        ios
+install-name:    /System/Library/Frameworks/QuickLook.framework/QuickLook
+objc-constraint: none
+exports:         
+  - archs:           [ armv7, armv7s ]
+    symbols:         [ _QLFrameworkBundle, _QLGetDefaultZoomForContentType, _QLGuessEncodingForTextFileAtURL, 
+                       _QLLocalizedErrorString, _QLPreviewCopyEmbeddedPDF, _QLPreviewItemContentTypeIsAudio, 
+                       _QLPreviewSupportsContentType ]
+    objc-classes:    [ QLPreviewCollectionHostContext, QLPreviewCollectionServiceContext, 
+                       QLRemotePreviewHostContext, QLRemotePreviewServiceContext, 
+                       QLServiceViewController ]
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _NSStringFromQLNetworkState, _QLAudioItemViewControllerQuickTimeImageViewAccessibilityIdentifier, 
+                       _QLAudioScrubberViewContainerAccessibilityIdentifier, _QLCGSizeFromQLItemThumbnailSize, 
+                       _QLCustomToolBarAccessibilityIdentifier, _QLCustomToolBarModalAccessibilityIdentifier, 
+                       _QLImageItemViewControllerImageViewAccessibilityIdentifier, 
+                       _QLLivePhotoViewControllerLivePhotoBadgeAccessibilityIdentifier, 
+                       _QLLivePhotoViewControllerLivePhotoViewAccessibilityIdentifier, 
+                       _QLLocalizedDictionaryString, _QLLocalizedString, _QLLocalizedStringFromTable, 
+                       _QLLocalizedStringWithDefaultValue, _QLMarkupImageItemViewControllerMarkupImageViewAccessibilityIdentifier, 
+                       _QLMediaItemViewControllerBarPlayButtonPausedAccessibilityIdentifier, 
+                       _QLMediaItemViewControllerBarPlayButtonPlayingAccessibilityIdentifier, 
+                       _QLMovieScrubberViewContainerAccessibilityIdentifier, _QLNotify, 
+                       _QLNotifySelector, _QLOverlayCustomActionButtonAccessibilityIdentifier, 
+                       _QLOverlayDefaultActionButtonAccessibilityIdentifier, _QLOverlayDoneButtonAccessibilityIdentifier, 
+                       _QLOverlayListButtonAccessibilityIdentifier, _QLOverlayMarkupButtonAccessibilityIdentifier, 
+                       _QLOverlayPlayButtonDefaultAccessibilityIdentifier, _QLPreviewControllerSupportsContentType, 
+                       _QLPreviewGetSupportedMIMETypes, _QLPreviewNeedsHelpUnzippingURL, 
+                       _QLPreviewRequestAppendDataToAttachment, _QLPreviewRequestCreateAttachmentURL, 
+                       _QLPreviewRequestGetDocumentObject, _QLPreviewRequestIsCancelled, 
+                       _QLPreviewRequestSetDataRepresentation, _QLPreviewRequestSetDocumentObject, 
+                       _QLPreviewRequestSetError, _QLPreviewRequestStartDataRepresentation, 
+                       _QLPreviewScheme, _QLRemoteItemViewControllerHostViewAccessibilityIdentifier, 
+                       _QLRunInBackgroundThread, _QLRunInMainThread, _QLRunInMainThreadSync, 
+                       _QLTypeCopyBestMimeTypeForFileNameAndMimeType, _QLTypeCopyBestMimeTypeForURLAndMimeType, 
+                       _QLTypeCopyUTIForURLAndMimeType, _QLWKWebViewControllerWkWebViewAccessibilityIdentifier, 
+                       __QLContentTypeConformsToContentTypeInSet, __QLContentTypeEqualsToContentTypeInSet, 
+                       __QLCopyArchiveExtensionIfIsArchiveFileName, __QLCopyPackageExtensionIfIsArchiveFileName, 
+                       __QLTypeCopyUTIForFileNameAndMimeType, _kQLPreviewContentIDScheme, 
+                       _kQLPreviewOptionPasswordKey, _kQLPreviewPropertyAllowJavascriptKey, 
+                       _kQLPreviewPropertyAttachmentDataKey, _kQLPreviewPropertyAttachmentsKey, 
+                       _kQLPreviewPropertyHeightKey, _kQLPreviewPropertyMIMETypeKey, 
+                       _kQLPreviewPropertyTextEncodingNameKey, _kQLPreviewPropertyWidthKey, 
+                       _kQLTestingNotificationTimestampKey ]
+    objc-classes:    [ QLCustomItemViewController, QLDataFetcher, QLDataItemTransformer, 
+                       QLDismissAction, QLEditedItem, QLFileThumbnailRequest, QLItem, 
+                       QLItemFetcher, QLItemFetcherFactory, QLItemThumbnailGenerationOperation, 
+                       QLItemThumbnailGenerator, QLItemTransformer, QLItemViewController, 
+                       QLNetworkStateObserver, QLNotificationCenter, QLPreviewContext, 
+                       QLPreviewController, QLPreviewConverter, QLThumbnail, QLThumbnailCreationOperation, 
+                       QLThumbnailDescriptor, QLThumbnailProvider, QLThumbnailReply, 
+                       QLToolbarButton, QLToolbarButtonOption, QLURLItemTransformer, 
+                       QLZipFetcher ]
+...

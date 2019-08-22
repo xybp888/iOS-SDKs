@@ -1,0 +1,26 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: A2309384-1130-3389-9272-4E1A6B024AC4' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/News/AppAnalytics.framework/AppAnalytics
+current-version:       1
+compatibility-version: 1
+swift-version:         6
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:  [ NewsServices, NewsServicesInternal, NewsToday, News, NVCDemo, ArticleNotificationExtension,
+                          ArticleNotificationServiceExtension, MarketingNotificationExtension, OpenInNews, Feldspar Tests,
+                          NewsInternalSettings, NewsSettings, NewsUI, newsd, com.apple.news, NewsAnalyticsUpload, NewsUI2,
+                          NewsUI2Tests, NewsFeed, NewsFeedTests, NewsArticles, NewsArticlesTests, NewsFormat, NewsFormatTests,
+                          NewsSubscription, NewsSubscriptionTests, NewsAnalytics, NewsAnalyticsTests, AppAnalyticsTests ]
+    symbols:            [ _AppAnalyticsVersionNumber, _AppAnalyticsVersionString ]
+    objc-classes:       [ _AAAccessSessionManager, _AAAccessTracker, _AAClient, _AADataEventTraits, _AADelayedToken, _AAEndpoint,
+                          _AAEventData, _AAEventProperty, _AAGroup, _AAJSON, _AALoggingEventProcessor, _AAProcessEvent,
+                          _AAProcessorManager, _AARawDataEvent, _AARawEvent, _AARawEventProperty, _AASession, _AASessionData,
+                          _AASessionManager, _AASessionObserver, _AATimedData, _AATracker, _AAUploadBatchEventConfig,
+                          _AAUploadBatchEventProcessor, _AAViewingSession, _AAViewingSessionManager,
+                          __TtC12AppAnalytics13UploadService,
+                          __TtCC12AppAnalytics12MescalSignerP33_50212C62307B91282DB5DA35D73009738Contract ]
+...

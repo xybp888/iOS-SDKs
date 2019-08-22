@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
+                   'arm64: C490EB9A-49BA-3712-8812-92ED0D2F80F3', 'arm64e: BA186F0F-0007-3CA5-9BB1-F1095BA815E4' ]
+platform:        ios
+install-name:    /usr/lib/libPPMDataModel.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _OTABMUResistanceReadFrom, _OTAParam3RCReadFrom, _OTAResistanceDataReadFrom ]
+    objc-classes:    [ OTABMUResistance, OTAParam3RC, OTAResistanceData ]
+    objc-ivars:      [ OTABMUResistance._has, OTABMUResistance._traceResistance25C, 
+                       OTABMUResistance._traceResistanceTemperatureCoeff, OTAParam3RC._agingCoeffForR0TemperatureCoeffs, 
+                       OTAParam3RC._agingCoeffForR0s, OTAParam3RC._agingCoeffForR1TemperatureCoeffs, 
+                       OTAParam3RC._agingCoeffForR1s, OTAParam3RC._agingCoeffForR2TemperatureCoeffs, 
+                       OTAParam3RC._agingCoeffForR2s, OTAParam3RC._baselineR0, OTAParam3RC._baselineR1, 
+                       OTAParam3RC._baselineR2, OTAParam3RC._baselineR3, OTAParam3RC._baselineRdcs, 
+                       OTAParam3RC._bmuResistance, OTAParam3RC._chemID, OTAParam3RC._gridOCVs, 
+                       OTAParam3RC._r0, OTAParam3RC._r1, OTAParam3RC._r2, OTAParam3RC._rCFreq1, 
+                       OTAParam3RC._rCFreq2, OTAParam3RC._rCFreq3, OTAResistanceData._resistance25Cs, 
+                       OTAResistanceData._temperatureCoeffs ]
+...

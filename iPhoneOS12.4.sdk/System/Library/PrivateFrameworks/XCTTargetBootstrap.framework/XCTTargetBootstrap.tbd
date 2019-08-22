@@ -1,0 +1,18 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 980BAEA8-03BF-3FF8-B92D-66CEADCE2CDA' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/XCTTargetBootstrap.framework/XCTTargetBootstrap
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _XCTDispatchAssertQueue, _XCTDispatchAssertQueueNot, _XCTSetSharedDaemonConnectionProvider,
+                          _XCTSharedDaemonConnectionProvider, _XCTTargetBootstrap, _XCTTargetBootstrapVersionNumber,
+                          _XCTTargetBootstrapVersionString, _XCTUnderlyingErrorsKey ]
+    objc-classes:       [ _XCTDaemonConnectionProvider, _XCTTargetSession ]
+    objc-ivars:         [ _XCTTargetSession._clientListener, _XCTTargetSession._connectionHandler,
+                          _XCTTargetSession._daemonConnection, _XCTTargetSession._queue ]
+...

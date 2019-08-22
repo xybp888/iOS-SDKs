@@ -1,0 +1,20 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 28611839-9FA7-3220-BA9B-10AD61ED688F' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PreferenceBundles/AccountSettings/DAVSettings.bundle/DAVSettings
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:       [ _BookmarkDAVSettingsAccountsUIController, _CalDAVSettingsAccountsUIController,
+                          _CalDAVSettingsDataclassConfigurationViewController, _CardDAVSettingsAccountsUIController,
+                          _DAVSettingsAccountsUIController, _DAVSettingsAdvancedController,
+                          _DAVSettingsDataclassConfigurationViewController, _DAVSettingsPlugin ]
+    objc-ivars:         [ _DAVSettingsAccountsUIController._attemptedInitialValidation,
+                          _DAVSettingsAccountsUIController._isReloadingProperties, _DAVSettingsAdvancedController._account,
+                          _DAVSettingsAdvancedController._accountController,
+                          _DAVSettingsAdvancedController._isReloadingProperties, _DAVSettingsAdvancedController._placeHolder ]
+...

@@ -1,0 +1,24 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: 4681A9C1-8316-3DEB-94FD-3B20D1B77340' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/Stocks/Snappy.framework/Snappy
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:  [ NewsArticles, NewsArticlesTests, NewsFeed, NewsFeedTests, Stocks, StocksAnalytics,
+                          StocksAnalyticsTests, StocksCore, StocksCoreTests, StocksTests, StocksToday, StocksUI, StocksUITests,
+                          SnappyTests ]
+    symbols:            [ _SnappyVersionNumber, _SnappyVersionString ]
+    objc-classes:       [ _SNAssembly, _SNTestAssembly, _SNTestChain, _SNTestContext, _SNTestCoordinator, _SNTestFailure,
+                          _SNTestRun, _SNTestRunner, _SNTestStore, _SNTestSuite ]
+    objc-ivars:         [ _SNAssembly._assemblies, _SNTestChain._linkBlocks, _SNTestContext._application,
+                          _SNTestContext._objects, _SNTestCoordinator._application, _SNTestFailure._message,
+                          _SNTestRun._testCase, _SNTestRun._testSuite, _SNTestRunner._application,
+                          _SNTestRunner._testCoordinator, _SNTestRunner._testStore, _SNTestStore._testCases,
+                          _SNTestStore._testSuites, _SNTestSuite._parentTestSuite, _SNTestSuite._subTestSuites,
+                          _SNTestSuite._testCases ]
+...

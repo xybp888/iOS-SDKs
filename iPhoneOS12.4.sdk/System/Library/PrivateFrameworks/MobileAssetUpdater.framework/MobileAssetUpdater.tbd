@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: BE8AF804-9E22-30C6-9F23-D73BA9F223D9' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/MobileAssetUpdater.framework/MobileAssetUpdater
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _kMobileAssetUpdaterErrorDomain ]
+    objc-classes:       [ _MobileAssetUpdater ]
+    objc-ivars:         [ _MobileAssetUpdater._asset, _MobileAssetUpdater._assetDownloaded, _MobileAssetUpdater._assetType,
+                          _MobileAssetUpdater._logger, _MobileAssetUpdater._overrideFile, _MobileAssetUpdater._purgeOverrideFile,
+                          _MobileAssetUpdater._query, _MobileAssetUpdater._requireAssetMetadata ]
+...

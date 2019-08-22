@@ -1,0 +1,35 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+uuids:                 [ 'arm64e: F869D81E-F0DB-38EB-A9D1-B0AEAB0FF34F' ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/BulletinBoardPlugins/MPDataProvider.bundle/MPDataProvider
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _PHDefaultLog, _PHFaceTimeApplicationIsRemoved, _PHFormatDialerLCDViewText,
+                          _PHGetEmergencyDialerPresenceTokenValue, _PHIncrementWifiCallingAlertShowCount, _PHIsInAirplaneMode,
+                          _PHLaunchFieldTestApplicationIfNecessaryForDestinationID, _PHPreferencesGetValue,
+                          _PHPreferencesGetValueInDomain, _PHPreferencesSetValue, _PHPreferencesSetValueInDomain,
+                          _PHSetEmergencyDialerPresenceTokenValue, _PHShouldAttemptCallWithDialRequest,
+                          _PHShouldAttemptFaceTimeCall, _PHShouldAttemptTelephonyCallWithDialTypeAndSenderIdentityUUID,
+                          _PHShouldShowWifiCallingAlert, _PHStringShouldAutoDialGivenLastCharacter,
+                          _PhoneSettingsGetFormattedNumberBySIMCountry, _PhoneSettingsGetFormattedNumberWithSIMCountryCode,
+                          _PhoneSettingsGetMyNumber, __emergencyDialerPresenceToken, _kMPMissedCallsBadgeClearedNotification,
+                          _sMPBBSortMappingNextSortIdentifierKey ]
+    objc-classes:       [ _MPBBDataProvider, _MPBBFaceTimeDataProvider, _MPBBPhoneDataProvider, _MPBBSortMapping ]
+    objc-ivars:         [ _MPBBDataProvider._applicationStateMonitor, _MPBBDataProvider._callProviderManager,
+                          _MPBBDataProvider._contactFormatter, _MPBBDataProvider._contactStore,
+                          _MPBBDataProvider._conversationManager, _MPBBDataProvider._currentlyJoinedConversation,
+                          _MPBBDataProvider._hasVisualVoicemail, _MPBBDataProvider._identifiersOfVoicemailWaitingForData,
+                          _MPBBDataProvider._inCallServiceRunning, _MPBBDataProvider._lastVoicemailInboxMessage,
+                          _MPBBDataProvider._missedCallBulletinIdentifiers, _MPBBDataProvider._multiwayUUIDsPosted,
+                          _MPBBDataProvider._nonVisualVoicemailBulletinDate, _MPBBDataProvider._nonVisualVoicemailCount,
+                          _MPBBDataProvider._participantIdentifiersPosted, _MPBBDataProvider._queue,
+                          _MPBBDataProvider._recentCallsPredicate, _MPBBDataProvider._recentsManager,
+                          _MPBBDataProvider._sortMapping, _MPBBDataProvider._voicemailManager,
+                          _MPBBDataProvider._voicemailWaitingForPost, _MPBBSortMapping._bulletinRecordIDToSortIdentifier,
+                          _MPBBSortMapping._domain, _MPBBSortMapping._recordIDsToSuppress ]
+...
