@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 35640E39-77A7-3716-81B7-DAFB5831F4D8', 'armv7s: 51D5EE04-E42B-3559-B3FC-C3A9CF5BF4B4', 
+                   'arm64: D03C6337-5865-3698-A54E-98F95348BC23', 'arm64e: FCCA0687-AF4B-31BD-B19B-8D7907B87C21' ]
+platform:        ios
+install-name:    /System/Library/Frameworks/LocalAuthentication.framework/LocalAuthentication
+current-version: 425.222.1
+objc-constraint: none
+exports:         
+  - archs:           [ armv7, armv7s ]
+    symbols:         [ _LAContextCreate, _LAContextGetTypeID, _LACopyACMContext, 
+                       _LACreateNewContextWithACMContext, _LAEvaluateACL, _LAEvaluateAndUpdateACL, 
+                       _LAEvaluatePolicy, _LAIsCredentialSet, _LASetCredential, _LAUpdateAccessControlAfterEvaluation, 
+                       _LocalAuthenticationVersionNumber, _LocalAuthenticationVersionString, 
+                       _cStringFromCFString, _coreauthd_create_message, _coreauthd_message_no_error, 
+                       _coreauthd_message_with_reply_sync, _coreauthd_send_sync_and_do, 
+                       _makeCFError, _makeCFErrorWithUserInfo ]
+    objc-classes:    [ LAClient ]
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _LAAvailableMechanisms, _LACopyExternalizedContext, _LAErrorDomain, 
+                       _LAErrorInfoBiometryType, _LAErrorInfoTCCServerPrompt, _LAErrorInfoTCCService, 
+                       _LAErrorSubcodeKey, _LAFingerDatabaseHash, _LAPasswordRetryTime, 
+                       _LATouchIDAuthenticationMaximumAllowableReuseDuration ]
+    objc-classes:    [ LAContext ]
+...

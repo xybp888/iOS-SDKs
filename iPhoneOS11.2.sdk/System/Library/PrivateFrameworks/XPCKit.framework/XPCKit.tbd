@@ -1,0 +1,23 @@
+---
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/XPCKit.framework/XPCKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:              [ armv7, armv7s, arm64 ]
+    symbols:            [ _XPCSetLogBlocks, __XPCLog, __XPCShouldLog, _kXPCSequenceKey ]
+    objc-classes:       [ _XPCClientConnection, _XPCNSClientConnection, _XPCNSRequest, _XPCNSServiceConnection,
+                          _XPCNSServiceListener, _XPCRequest, _XPCServiceConnection, _XPCServiceListener ]
+    objc-ivars:         [ _XPCClientConnection._connection, _XPCClientConnection._delegate, _XPCClientConnection._queue,
+                          _XPCClientConnection._serviceName, _XPCNSClientConnection._clientConnection,
+                          _XPCNSClientConnection._delegate, _XPCNSRequest._data, _XPCNSRequest._message, _XPCNSRequest._request,
+                          _XPCNSServiceConnection._context, _XPCNSServiceConnection._delegate,
+                          _XPCNSServiceConnection._serviceConnection, _XPCNSServiceListener._delegate,
+                          _XPCNSServiceListener._serviceListener, _XPCRequest._handler, _XPCRequest._message, _XPCRequest._reply,
+                          _XPCRequest._sequence, _XPCServiceConnection._client, _XPCServiceConnection._context,
+                          _XPCServiceConnection._delegate, _XPCServiceConnection._serviceListener,
+                          _XPCServiceConnection._serviceName, _XPCServiceConnection._workQueue, _XPCServiceListener._clientCount,
+                          _XPCServiceListener._delegate, _XPCServiceListener._listener, _XPCServiceListener._serviceConnections,
+                          _XPCServiceListener._serviceName, _XPCServiceListener._workQueue ]
+...

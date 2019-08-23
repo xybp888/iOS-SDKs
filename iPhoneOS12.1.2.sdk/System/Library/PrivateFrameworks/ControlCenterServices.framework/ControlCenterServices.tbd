@@ -1,0 +1,36 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/ControlCenterServices.framework/ControlCenterServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:  [ ControlCenterUI, ControlCenterSettings, SpringBoard, HearingAidUIServer, ControlCenterServicesTests,
+                          'SpringBoard-Tests', TVRemoteConnectionService, com.apple.BarcodeSupport.Helper, HomeKitDaemon ]
+    symbols:            [ _CCSLogModuleSettings, _CCSLogRemoteService, _CCSModuleVisibilityPreferenceDescription,
+                          _CCSModuleVisibilityPreferenceFromNumber, _CCSRegisterControlCenterLogging, _CCSRemoteServiceName,
+                          _CCSRemoteServiceServerInterface, _CCSResolveModuleVisibility, _ControlCenterServicesVersionNumber,
+                          _ControlCenterServicesVersionString, _kVersionNumber ]
+    objc-classes:       [ _CCSControlCenterDefaults, _CCSControlCenterService, _CCSModuleMetadata, _CCSModuleRepository,
+                          _CCSModuleSettingsProvider, _CCSRemoteServiceConnection, _CCSRemoteServiceProvider, _CCSUsageMetrics ]
+    objc-ivars:         [ _CCSControlCenterService._connection, _CCSModuleMetadata._associatedBundleIdentifier,
+                          _CCSModuleMetadata._associatedBundleMinimumVersion, _CCSModuleMetadata._moduleBundleURL,
+                          _CCSModuleMetadata._moduleIdentifier, _CCSModuleMetadata._requiredDeviceCapabilities,
+                          _CCSModuleMetadata._supportedDeviceFamilies, _CCSModuleMetadata._visibilityPreference,
+                          _CCSModuleRepository._allModuleMetadataByIdentifier, _CCSModuleRepository._availableModuleIdentifiers,
+                          _CCSModuleRepository._callOutQueue, _CCSModuleRepository._directoryURLs,
+                          _CCSModuleRepository._ignoreWhitelist, _CCSModuleRepository._interestingBundleIdentifiers,
+                          _CCSModuleRepository._internalDefaultsObserver, _CCSModuleRepository._loadableModuleIdentifiers,
+                          _CCSModuleRepository._mobileGestaltNotificationToken, _CCSModuleRepository._observers,
+                          _CCSModuleRepository._queue, _CCSModuleRepository._whitelistedModuleIdentifiers,
+                          _CCSModuleSettingsProvider._callOutQueue, _CCSModuleSettingsProvider._configurationChangedSource,
+                          _CCSModuleSettingsProvider._observers, _CCSModuleSettingsProvider._orderedFixedModuleIdentifiers,
+                          _CCSModuleSettingsProvider._orderedUserEnabledModuleIdentifiers, _CCSModuleSettingsProvider._queue,
+                          _CCSModuleSettingsProvider._userDisabledModuleIdentifiers, _CCSRemoteServiceConnection._callOutQueue,
+                          _CCSRemoteServiceConnection._connection, _CCSRemoteServiceConnection._queue,
+                          _CCSRemoteServiceProvider._listener, _CCSRemoteServiceProvider._moduleRepository,
+                          _CCSRemoteServiceProvider._settingsProvider ]
+...

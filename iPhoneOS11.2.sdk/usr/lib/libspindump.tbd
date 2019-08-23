@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:           [ armv7, armv7s, arm64 ]
+uuids:           [ 'armv7: 09C195D8-D3CC-3930-8AF9-E19028BA30B8', 'armv7s: 5B729089-475E-376D-B505-64CE47CDBE77', 
+                   'arm64: 5C67BD1C-1698-30F3-9260-89D1274D63CD' ]
+platform:        ios
+install-name:    /usr/lib/libspindump.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ armv7, armv7s, arm64 ]
+    symbols:         [ _SPCachePort, _SPReportCPUUsageResource, _SPReportCPUWakeupsResource, 
+                       _SPReportDiskWritesResource ]
+...

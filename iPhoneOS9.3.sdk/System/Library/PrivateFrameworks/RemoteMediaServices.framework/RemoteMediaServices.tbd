@@ -1,0 +1,17 @@
+---
+archs:           [ armv7, armv7s, arm64, i386, x86_64 ]
+platform:        ios
+install-name:    /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
+current-version: 1.0.0
+compatibility-version: 1.0.0
+exports:
+  - archs:            [ armv7, armv7s, arm64, i386, x86_64 ]
+    symbols:          [ _NSStringFromRMSMessageType,
+                        _RMSDAAPControlSessionTimeout, _RMSPairingSessionTimeout,
+                        _generateRandomPasscode, _NSStringFromRMSResponseCode,
+                        _RMSDiscoverySessionTimeout ]
+    objc-classes:     [ _RMSDAAPControlSession,
+                        _RMSIDSServer, _RMSPairingRecordStore,
+                        _RMSService, _RMSDiscoverySession,
+                        _RMSPairingSession ]
+...

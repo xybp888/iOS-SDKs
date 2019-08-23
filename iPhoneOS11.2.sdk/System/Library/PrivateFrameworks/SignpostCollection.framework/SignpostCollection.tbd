@@ -1,0 +1,18 @@
+---
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/SignpostCollection.framework/SignpostCollection
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:              [ armv7, armv7s, arm64 ]
+    symbols:            [ _SignpostCollectionVersionNumber, _SignpostCollectionVersionString, __signpostcollection_debug_log,
+                          _kSignpostNotification_NoTimeout ]
+    objc-classes:       [ _SignpostSupportObjectSerializer ]
+    objc-ivars:         [ _SignpostSupportObjectSerializer._extractor, _SignpostSupportObjectSerializer._maxBatchSize,
+                          _SignpostSupportObjectSerializer._maxBytesSize,
+                          _SignpostSupportObjectSerializer._outstandingLogMessage,
+                          _SignpostSupportObjectSerializer._outstandingSignpostObjects,
+                          _SignpostSupportObjectSerializer._serializedLogMessageBlock,
+                          _SignpostSupportObjectSerializer._serializedSignpostEventBlock ]
+...

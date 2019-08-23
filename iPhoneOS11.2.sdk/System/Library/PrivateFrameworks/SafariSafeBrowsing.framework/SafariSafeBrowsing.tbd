@@ -1,0 +1,29 @@
+---
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/SafariSafeBrowsing
+current-version:       0
+compatibility-version: 0
+exports:
+  - archs:              [ armv7, armv7s, arm64 ]
+    symbols:            [ _SSBLookupContextDatabasesDidUpdateNotification,
+                          _SSBLookupContextDatabasesDidUpdateNotificationUserInfoProviderKey, _SSBProviderGoogle,
+                          _SSBProviderTencent, __ZN12SafeBrowsing7Service4mainEv ]
+    objc-classes:       [ _ProviderConfiguration, _RemoteConfigurationController, _SSBAvailability, _SSBDatabaseUpdaterStatus,
+                          _SSBLookupContext, _SSBLookupResult, _SSBServiceLookupResult, __SSBDatabaseStatus, __SSBSafeHashCache,
+                          __SSBServiceStatus ]
+    objc-ivars:         [ _ProviderConfiguration._configuration, _ProviderConfiguration._malwareThreatTypeOff,
+                          _ProviderConfiguration._providerOff, _ProviderConfiguration._socialEngineeringThreatTypeOff,
+                          _ProviderConfiguration._unwantedSoftwareThreatTypeOff,
+                          _RemoteConfigurationController._currentConfiguration,
+                          _RemoteConfigurationController._googleConfigurationDidChange,
+                          _RemoteConfigurationController._googleProviderConfiguration,
+                          _RemoteConfigurationController._internalQueue,
+                          _RemoteConfigurationController._tencentConfigurationDidChange,
+                          _RemoteConfigurationController._tencentProviderConfiguration,
+                          _RemoteConfigurationController._updateTimer, _SSBDatabaseUpdaterStatus._databaseUpdaterStatus,
+                          _SSBLookupContext._lookupContext, _SSBLookupContext._observerToken,
+                          _SSBLookupResult._URLContainsUserInfo, _SSBLookupResult._serviceLookupResults,
+                          _SSBServiceLookupResult._lookupResult, __SSBDatabaseStatus._databaseStatus, __SSBSafeHashCache._cache,
+                          __SSBServiceStatus._serviceStatus ]
+...

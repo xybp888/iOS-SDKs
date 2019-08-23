@@ -1,0 +1,26 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/DeviceIdentity.framework/DeviceIdentity
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _DeviceIdentityCreateClientCertificateRequest, _DeviceIdentityIssueClientCertificateWithCompletion,
+                          _kMAOptionsAllowInvalidNetworkCertificates, _kMAOptionsBAAAccessControls, _kMAOptionsBAACACert,
+                          _kMAOptionsBAAClientAttestationData, _kMAOptionsBAAClientAttestationPublicKey,
+                          _kMAOptionsBAAIgnoreExistingKeychainItems, _kMAOptionsBAAKeychainAccessGroup,
+                          _kMAOptionsBAAKeychainLabel, _kMAOptionsBAANetworkTimeoutInterval, _kMAOptionsBAANonce,
+                          _kMAOptionsBAAOIDAccessControls, _kMAOptionsBAAOIDDeviceIdentifiers, _kMAOptionsBAAOIDDeviceIntent,
+                          _kMAOptionsBAAOIDDeviceOSInformation, _kMAOptionsBAAOIDHardwareProperties,
+                          _kMAOptionsBAAOIDIMG4Manifest, _kMAOptionsBAAOIDKeyUsageProperties, _kMAOptionsBAAOIDNonce,
+                          _kMAOptionsBAAOIDSToInclude, _kMAOptionsBAAOIDUCRTDeviceIdentifiers, _kMAOptionsBAASCRTAttestation,
+                          _kMAOptionsBAAValidity, _kMAOptionsBasebandWaitCount, _kMAOptionsResuseExistingKey ]
+    objc-classes:       [ _DeviceTypeDeviceIdentity, _GestaltHlpr ]
+    objc-ivars:         [ _DeviceTypeDeviceIdentity._device_class, _DeviceTypeDeviceIdentity._has_telephony,
+                          _DeviceTypeDeviceIdentity._is_fpga, _DeviceTypeDeviceIdentity._is_internal_build,
+                          _DeviceTypeDeviceIdentity._is_ipad, _DeviceTypeDeviceIdentity._is_ipod,
+                          _DeviceTypeDeviceIdentity._product_type, _DeviceTypeDeviceIdentity._should_hactivate ]
+...

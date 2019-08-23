@@ -1,0 +1,73 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/DoNotDisturb.framework/DoNotDisturb
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:  [ DoNotDisturbKit, DoNotDisturbServer, dndtool, DoNotDisturbModule, DoNotDisturbSettings,
+                          DoNotDisturbTests, DoNotDisturbKitTests, DoNotDisturbServerTests, SpringBoard, 'SpringBoard-Tests',
+                          Carousel, CarouselTests, NanoSettings, NanoSettingsGlance, PineBoard, carkitd, CarKitTests,
+                          HealthDaemon, VisualAlert, callservicesd, callservicesdTests, dmd, PhoneCarouselAlert, MobilePhone,
+                          MobilePhone Tests, CMASCarouselAlert, PBBridgeSupport, MessageUI, itunesstored, CoreAutomationDevice,
+                          ActivityDataProvider, NanoHealthAlertBundle, MobileTimer, DoNotDisturbIntents,
+                          ActionPredictionHeuristics, BTLEServer, Settings, DoNotDisturbAssistant, KnowledgeMonitor ]
+    symbols:            [ _DNDDefaultModeIdentifier, _DNDEnabledSettingToString, _DNDEventSourceTypeToString,
+                          _DNDInterruptionBehaviorToString, _DNDInterruptionSuppressionToString, _DNDLogBehaviorResolution,
+                          _DNDLogModeAssertion, _DNDLogRemoteConnection, _DNDLogSettings, _DNDLogState,
+                          _DNDModeAssertionInvalidationReasonToString, _DNDMostRestrictiveInterruptionSuppression,
+                          _DNDRegisterLogging, _DNDResolvedBedtimeBehaviorEnabledSetting,
+                          _DNDResolvedImmediateBypassEventSourceType, _DNDResolvedInterruptionBehavior,
+                          _DNDResolvedInterruptionBehaviorSetting, _DNDResolvedRepeatEventSourceBehaviorEnabledSetting,
+                          _DNDResolvedScheduleEnabledSetting, _DNDStateUpdateReasonToString,
+                          _DNDStringFromInterruptionBehaviorSetting, _DNDStringFromModeAssertionLifetimeType,
+                          _DNDStringFromModeAssertionSyncSuppressionOptions, _DoNotDisturbVersionNumber,
+                          _DoNotDisturbVersionString, _kDefaultBedtimeBehaviorEnabledSetting,
+                          _kDefaultImmediateBypassEventSourceType, _kDefaultResolvedRepeatEventSourceBehaviorEnabledSetting,
+                          _kDefaultScheduleEnabledSetting, _kDefaultSetting, _kDefaultSettingPhone, _kMaximumLifetimeDuration ]
+    objc-classes:       [ _DNDBehaviorSettings, _DNDBypassSettings, _DNDClientEventBehavior, _DNDClientEventDetails,
+                          _DNDClientEventSource, _DNDEventBehaviorResolutionService, _DNDModeAssertion,
+                          _DNDModeAssertionCalendarEventLifetime, _DNDModeAssertionDateIntervalLifetime,
+                          _DNDModeAssertionDetails, _DNDModeAssertionInvalidation, _DNDModeAssertionLifetime,
+                          _DNDModeAssertionLocationLifetime, _DNDModeAssertionService, _DNDModeAssertionUserRequestedLifetime,
+                          _DNDMutableBehaviorSettings, _DNDMutableBypassSettings, _DNDMutableClientEventDetails,
+                          _DNDMutableScheduleSettings, _DNDMutableScheduleTime, _DNDMutableScheduleTimePeriod,
+                          _DNDRemoteServiceConnection, _DNDRequestDetails, _DNDScheduleSettings, _DNDScheduleTime,
+                          _DNDScheduleTimePeriod, _DNDSettingsService, _DNDState, _DNDStateModeAssertionMetadata,
+                          _DNDStateService, _DNDStateUpdate ]
+    objc-ivars:         [ _DNDBehaviorSettings._interruptionBehaviorSetting,
+                          _DNDBypassSettings._immediateBypassCNGroupIdentifier,
+                          _DNDBypassSettings._immediateBypassEventSourceType,
+                          _DNDBypassSettings._repeatEventSourceBehaviorEnabledSetting, _DNDClientEventBehavior._eventDetails,
+                          _DNDClientEventBehavior._interruptionSuppression, _DNDClientEventDetails._identifier,
+                          _DNDClientEventDetails._shouldAlwaysInterrupt, _DNDClientEventDetails._source,
+                          _DNDClientEventSource._type, _DNDClientEventSource._value,
+                          _DNDEventBehaviorResolutionService._clientIdentifier, _DNDModeAssertion._UUID,
+                          _DNDModeAssertion._details, _DNDModeAssertion._startDate,
+                          _DNDModeAssertionCalendarEventLifetime._eventUniqueID,
+                          _DNDModeAssertionCalendarEventLifetime._occurrenceDate,
+                          _DNDModeAssertionCalendarEventLifetime._onlyDuringEvent,
+                          _DNDModeAssertionDateIntervalLifetime._dateInterval, _DNDModeAssertionDetails._identifier,
+                          _DNDModeAssertionDetails._lifetime, _DNDModeAssertionDetails._modeIdentifier,
+                          _DNDModeAssertionDetails._syncSuppressionOptions, _DNDModeAssertionDetails._userRequested,
+                          _DNDModeAssertionInvalidation._assertion, _DNDModeAssertionInvalidation._reason,
+                          _DNDModeAssertionService._activeAssertions, _DNDModeAssertionService._assertionUpdateListeners,
+                          _DNDModeAssertionService._calloutQueue, _DNDModeAssertionService._clientIdentifier,
+                          _DNDModeAssertionService._queue, _DNDModeAssertionService._registeredForUpdates,
+                          _DNDRemoteServiceConnection._connection, _DNDRemoteServiceConnection._eventListeners,
+                          _DNDRequestDetails._auditUUID, _DNDRequestDetails._clientIdentifier, _DNDRequestDetails._timestamp,
+                          _DNDScheduleSettings._bedtimeBehaviorEnabledSetting, _DNDScheduleSettings._scheduleEnabledSetting,
+                          _DNDScheduleSettings._timePeriod, _DNDScheduleTime._hour, _DNDScheduleTime._minute,
+                          _DNDScheduleTimePeriod._endTime, _DNDScheduleTimePeriod._startTime, _DNDSettingsService._calloutQueue,
+                          _DNDSettingsService._clientIdentifier, _DNDSettingsService._queue,
+                          _DNDSettingsService._registeredForUpdates, _DNDSettingsService._settingsUpdateListeners,
+                          _DNDState._active, _DNDState._activeModeAssertionMetadata, _DNDState._willSuppressInterruptions,
+                          _DNDStateModeAssertionMetadata._activeDateInterval, _DNDStateModeAssertionMetadata._lifetimeType,
+                          _DNDStateModeAssertionMetadata._modeIdentifier, _DNDStateModeAssertionMetadata._userRequested,
+                          _DNDStateService._calloutQueue, _DNDStateService._clientIdentifier, _DNDStateService._queue,
+                          _DNDStateService._registeredForUpdates, _DNDStateService._stateUpdateListeners,
+                          _DNDStateUpdate._previousState, _DNDStateUpdate._reason, _DNDStateUpdate._state ]
+...

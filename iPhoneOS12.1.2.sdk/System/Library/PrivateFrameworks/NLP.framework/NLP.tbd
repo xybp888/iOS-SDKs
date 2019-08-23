@@ -1,0 +1,47 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/NLP.framework/NLP
+current-version:       122.15.20
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _NLEmojiPredictorCreate, _NLEmojiPredictorCreateCandidatesForString,
+                          _NLMessageConversationAddConversationTurn, _NLMessageConversationCopyConversationTurns,
+                          _NLMessageConversationCopyMetadata, _NLMessageConversationCreate,
+                          _NLMessageConversationTurnCopyContent, _NLMessageConversationTurnCopySenderID,
+                          _NLMessageConversationTurnCopyTimestamp, _NLMessageConversationTurnCreate,
+                          _NLMessageConversationUpdateMetadata, _NLMessageIntentCandidateCopyAttributes,
+                          _NLMessageIntentCandidateCreate, _NLMessageIntentCandidateGetIntentType,
+                          _NLMessageIntentCandidateGetScore, _NLMessageIntentRecognizerCopyIntentCandidatesForIntentType,
+                          _NLMessageIntentRecognizerCopyTopIntentCandidate,
+                          _NLMessageIntentRecognizerCopyTopNCandidatesForIntentType,
+                          _NLMessageIntentRecognizerCopyTopNIntentCandidates, _NLMessageIntentRecognizerCopyTopNIntentTypes,
+                          _NLMessageIntentRecognizerCreate, _NLMorphologicalAnalyzerCreate,
+                          _NLMorphologicalAnalyzerEnumerateLemmasForToken, _NLMorphologicalAnalyzerEnumerateVariantsForToken,
+                          _NLSearchAttributeDateComponents, _NLSearchAttributeDateDisplayString, _NLSearchAttributeDateModifier,
+                          _NLSearchAttributeDateType, _NLSearchAttributeEndDateComponents, _NLSearchAttributeStartDateComponents,
+                          _NLSearchParseCandidateCopyAttributedInput, _NLSearchParseCandidateCopyDescription,
+                          _NLSearchParseCandidateCopyRankCategories, _NLSearchParseCandidateCopyRankTerms,
+                          _NLSearchParseCandidateCopyRankingTerms, _NLSearchParseGetConfidence,
+                          _NLSearchParseLanguageIsSupported, _NLSearchParserAppendString, _NLSearchParserCopyAvailableLanguages,
+                          _NLSearchParserCopyParse, _NLSearchParserCopyParseWithOptions, _NLSearchParserCreate,
+                          _NLSearchParserEnumerateSuggestions, _NLSearchParserGetTokenCount,
+                          _NLSearchParserOptionContextIdentifierKey, _NLSearchParserOptionLocaleKey, _NLSearchParserSetContext,
+                          _NLSearchParserSetCustomResourceDirectory, _NLSearchParserSetDate, _NLSearchParserSetLocale,
+                          _NLSearchParserSetString, _NLTransliterationCandidateCopyInputString,
+                          _NLTransliterationCandidateCopyOutputString, _NLTransliterationCandidateCreate,
+                          _NLTransliterationCandidateIsExtensionCandidate, _NLTransliterationCandidateIsInVocabulary,
+                          _NLTransliterationCandidateScore, _NLTransliteratorAcceptCandidate, _NLTransliteratorCopyCandidates,
+                          _NLTransliteratorCreate, _NLTransliteratorFlushDynamicLanguageModel,
+                          _NLTransliteratorResetDynamicLanguageModel, _kNLEmojiPredictionLocaleKey,
+                          _kNLEmojiPredictionResourceDirectoryKey, _kNLMessageIntentAttributeKeywordsKey,
+                          _kNLMessageIntentRecognizerCustomModelPathKey, _kNLMessageIntentRecognizerLocaleKey,
+                          _kNLMorphologicalAnalyzerLocaleKey, _kNLSearchParserContextIdentifierKey,
+                          _kNLSearchParserCustomResourceDirectoryKey, _kNLSearchParserLocaleKey,
+                          _kNLTransliteratorTargetLocaleKey ]
+    objc-classes:       [ _NLSearchParserManager ]
+    objc-ivars:         [ _NLSearchParserManager._parser ]
+...

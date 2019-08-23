@@ -1,0 +1,172 @@
+/*
+	File:  AVAssetDownloadTask.h
+
+	Framework:  AVFoundation
+
+	Copyright 2015 Apple Inc. All rights reserved.
+
+*/
+
+#import <AVFoundation/AVBase.h>
+#import <Foundation/Foundation.h>
+#import	<AVFoundation/AVAsset.h>
+#import <AVFoundation/AVMediaSelection.h>
+#import <CoreMedia/CMTimeRange.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+// Keys for options dictionary for use with -[AVAssetDownloadURLSession assetDownloadTaskWithURLAsset:destinationURL:options:]
+
+/*!
+ @constant		AVAssetDownloadTaskMinimumRequiredMediaBitrateKey
+ @abstract		The lowest media bitrate greater than or equal to this value will be selected. Value should be a NSNumber in bps. If no suitable media bitrate is found, the highest media bitrate will be selected.
+				The value for this key should be a NSNumber.
+ @discussion	By default, the highest media bitrate will be selected for download.
+*/
+AVF_EXPORT NSString *const AVAssetDownloadTaskMinimumRequiredMediaBitrateKey NS_AVAILABLE_IOS(9_0);
+
+/*!
+ @constant		AVAssetDownloadTaskMediaSelectionKey
+ @abstract		The media selection for this download.
+				The value for this key should be an AVMediaSelection.
+ @discussion	By default, media selections for AVAssetDownloadTask will be automatically selected.
+*/
+AVF_EXPORT NSString *const AVAssetDownloadTaskMediaSelectionKey NS_AVAILABLE_IOS(9_0);
+
+/*!
+ @class			AVAssetDownloadTask
+ @abstract		A NSURLSessionTask that accepts remote AVURLAssets to download locally.
+ @discussion	Should be created with -[AVAssetDownloadURLSession assetDownloadTaskWithURLAsset:destinationURL:options:]. To utilize local data for playback for downloads that are in-progress, re-use the URLAsset supplied in initialization. An AVAssetDownloadTask may be instantiated with a destinationURL pointing to an existing asset on disk, for the purpose of completing or augmenting a downloaded asset.
+*/
+
+NS_CLASS_AVAILABLE_IOS(9_0)
+@interface AVAssetDownloadTask : NSURLSessionTask
+
+/*!
+ @property		URLAsset
+ @abstract		The asset supplied to the download task upon initialization.
+*/
+@property (nonatomic, readonly) AVURLAsset *URLAsset;
+
+/*!
+ @property		destinationURL
+ @abstract		The file URL supplied to the download task upon initialization.
+ @discussion	This URL may have been appended with the appropriate extension for the asset.
+*/
+@property (nonatomic, readonly) NSURL *destinationURL;
+
+/*!
+ @property		options
+ @abstract		The options supplied to the download task upon initialization.
+*/
+@property (nonatomic, readonly, nullable) NSDictionary<NSString *, id> *options;
+
+/*!
+ @property		loadedTimeRanges
+ @abstract		This property provides a collection of time ranges for which the download task has media data already downloaded and playable. The ranges provided might be discontinuous.
+ @discussion	Returns an NSArray of NSValues containing CMTimeRanges.
+*/
+@property (nonatomic, readonly) NSArray<NSValue *> *loadedTimeRanges;
+
+// NSURLRequest and NSURLResponse objects are not available for AVAssetDownloadTask
+@property (readonly, copy) NSURLRequest *originalRequest NS_UNAVAILABLE;
+@property (readonly, copy) NSURLRequest *currentRequest NS_UNAVAILABLE;
+@property (readonly, copy) NSURLResponse *response NS_UNAVAILABLE;
+
+@end
+
+
+/*!
+ @protocol		AVAssetDownloadDelegate
+ @abstract		Delegate method to implement when adopting AVAssetDownloadTask.
+*/
+
+@protocol AVAssetDownloadDelegate <NSURLSessionTaskDelegate>
+@optional
+
+/*!
+ @method		URLSession:assetDownloadTask:didLoadTimeRange:totalTimeRangesLoaded:timeRangeExpectedToLoad:
+ @abstract		Method to adopt to subscribe to progress updates of the AVAssetDownloadTask
+ @param			session
+				The session the asset download task is on.
+ @param			assetDownloadTask
+				The AVAssetDownloadTask which is being updated.
+ @param			timeRange
+				A CMTimeRange indicating the time range loaded since the last time this method was called.
+ @param			loadedTimeRanges
+				A NSArray of NSValues of CMTimeRanges indicating all the time ranges loaded by this asset download task.
+ @param			timeRangeExpectedToLoad
+				A CMTimeRange indicating the single time range that is expected to be loaded when the download is complete.
+*/
+- (void)URLSession:(NSURLSession *)session assetDownloadTask:(AVAssetDownloadTask *)assetDownloadTask didLoadTimeRange:(CMTimeRange)timeRange totalTimeRangesLoaded:(NSArray<NSValue *> *)loadedTimeRanges timeRangeExpectedToLoad:(CMTimeRange)timeRangeExpectedToLoad NS_AVAILABLE_IOS(9_0);
+
+/*
+ @method		URLSession:assetDownloadTask:didResolveMediaSelection:
+ @abstract		Method called when the media selection for the download is fully resolved, including any automatic selections.
+ @param			session
+				The session the asset download task is on.
+ @param			assetDownloadTask
+				The AVAssetDownloadTask which is being updated.
+ @param			resolvedMediaSelection
+				The resolved media selection for the download task. For the best chance of playing back downloaded content without further network I/O, apply this selection to subsequent AVPlayerItems.
+*/
+- (void)URLSession:(NSURLSession *)session assetDownloadTask:(AVAssetDownloadTask *)assetDownloadTask didResolveMediaSelection:(AVMediaSelection *)resolvedMediaSelection NS_AVAILABLE_IOS(9_0);
+
+@end
+
+
+/*!
+ @class			AVAssetDownloadURLSession
+ @abstract		A subclass of NSURLSession to support AVAssetDownloadTask.
+*/
+NS_CLASS_AVAILABLE_IOS(9_0)
+@interface AVAssetDownloadURLSession : NSURLSession
+
+/*!
+ @method		sessionWithConfiguration:assetDownloadDelegate:delegateQueue:
+ @abstract		Creates and initializes an AVAssetDownloadURLSession for use with AVAssetDownloadTasks.
+ @param			configuration
+				The configuration for this URLSession. Must be a background configuration.
+ @param			assetDownloadDelegate
+				The delegate object to handle asset download progress updates and other session related events.
+ @param			delegateQueue
+				The queue to receive delegate callbacks on. If nil, a serial queue will be provided.
+*/
++ (AVAssetDownloadURLSession *)sessionWithConfiguration:(NSURLSessionConfiguration *)configuration assetDownloadDelegate:(nullable id <AVAssetDownloadDelegate>)delegate delegateQueue:(nullable NSOperationQueue *)delegateQueue;
+
+/*!
+ @method		assetDownloadTaskWithURLAsset:destinationURL:options:
+ @abstract		Creates and initializes an AVAssetDownloadTask to be used with this AVAssetDownloadURLSession.
+ @discussion	This method may return nil if the URLSession has been invalidated.
+ @param			URLAsset
+				The AVURLAsset to download locally.
+ @param			destinationURL
+				The local URL to download the asset to. This must be a file URL.
+ @param			options
+				See AVAssetDownloadTask*Key above. Configures non-default behavior for the download task. Using this parameter is required for downloading non-default media selections for HLS assets.
+*/
+- (nullable AVAssetDownloadTask *)assetDownloadTaskWithURLAsset:(AVURLAsset *)URLAsset destinationURL:(NSURL *)destinationURL options:(nullable NSDictionary<NSString *, id> *)options;
+
+// only AVAssetDownloadTasks can be created with AVAssetDownloadURLSession
++ (NSURLSession *)sharedSession NS_UNAVAILABLE;
++ (NSURLSession *)sessionWithConfiguration:(NSURLSessionConfiguration *)configuration NS_UNAVAILABLE;
++ (NSURLSession *)sessionWithConfiguration:(NSURLSessionConfiguration *)configuration delegate:(nullable id <NSURLSessionDelegate>)delegate delegateQueue:(nullable NSOperationQueue *)queue NS_UNAVAILABLE;
+- (NSURLSessionDataTask *)dataTaskWithRequest:(NSURLRequest *)request NS_UNAVAILABLE;
+- (NSURLSessionDataTask *)dataTaskWithURL:(NSURL *)url NS_UNAVAILABLE;
+- (NSURLSessionUploadTask *)uploadTaskWithRequest:(NSURLRequest *)request fromFile:(NSURL *)fileURL NS_UNAVAILABLE;
+- (NSURLSessionUploadTask *)uploadTaskWithRequest:(NSURLRequest *)request fromData:(NSData *)bodyData NS_UNAVAILABLE;
+- (NSURLSessionUploadTask *)uploadTaskWithStreamedRequest:(NSURLRequest *)request NS_UNAVAILABLE;
+- (NSURLSessionDownloadTask *)downloadTaskWithRequest:(NSURLRequest *)request NS_UNAVAILABLE;
+- (NSURLSessionDownloadTask *)downloadTaskWithURL:(NSURL *)url NS_UNAVAILABLE;
+- (NSURLSessionDownloadTask *)downloadTaskWithResumeData:(NSData *)resumeData NS_UNAVAILABLE;
+- (NSURLSessionDataTask *)dataTaskWithRequest:(NSURLRequest *)request completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler NS_UNAVAILABLE;
+- (NSURLSessionDataTask *)dataTaskWithURL:(NSURL *)url completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler NS_UNAVAILABLE;
+- (NSURLSessionUploadTask *)uploadTaskWithRequest:(NSURLRequest *)request fromFile:(NSURL *)fileURL completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler NS_UNAVAILABLE;
+- (NSURLSessionUploadTask *)uploadTaskWithRequest:(NSURLRequest *)request fromData:(nullable NSData *)bodyData completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler NS_UNAVAILABLE;
+- (NSURLSessionDownloadTask *)downloadTaskWithRequest:(NSURLRequest *)request completionHandler:(void (^)(NSURL *location, NSURLResponse *response, NSError *error))completionHandler NS_UNAVAILABLE;
+- (NSURLSessionDownloadTask *)downloadTaskWithURL:(NSURL *)url completionHandler:(void (^)(NSURL *location, NSURLResponse *response, NSError *error))completionHandler NS_UNAVAILABLE;
+- (NSURLSessionDownloadTask *)downloadTaskWithResumeData:(NSData *)resumeData completionHandler:(void (^)(NSURL *location, NSURLResponse *response, NSError *error))completionHandler NS_UNAVAILABLE;
+
+@end
+
+NS_ASSUME_NONNULL_END

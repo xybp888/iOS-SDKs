@@ -1,0 +1,72 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/News/Tea.framework/Tea
+current-version:       1
+compatibility-version: 1
+swift-version:         5
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:  [ NewsServices, NewsServicesInternal, NewsToday, News, NVCDemo, ArticleNotificationExtension,
+                          ArticleNotificationServiceExtension, OpenInNews, Feldspar Tests, NewsInternalExtras,
+                          NewsInternalSettings, NewsSettings, NewsUI, newsd, com.apple.news, NewsAnalyticsUpload, Tea, TeaTests ]
+    symbols:            [ _TeaVersionNumber, _TeaVersionString ]
+    objc-classes:       [ _FRArticleRecirculationComponentInserter, _FRArticleRecirculationComponentSizer,
+                          _FRArticleRecirculationComponentSizerFactory, _FRArticleRecirculationComponentView,
+                          _FRArticleRecirculationComponentViewFactory, _TSAnalyticEvent, _TSAnalyticsReferral,
+                          _TSApplicationWorkspace, _TSArticleContext, _TSArticleRecirculationAssembly,
+                          _TSArticleRecirculationCellStyleProvider, _TSArticleRecirculationData,
+                          _TSArticleRecirculationInArticleViewControllerProvider, _TSArticleRecirculationModule,
+                          _TSArticleViewerAssembly, _TSBridgedNewsActivity, _TSBridgedNewsActivityFeedData,
+                          _TSBridgedNewsActivityHeadlineData, _TSBridgedNewsActivityVideoData, _TSDeliveredNotification,
+                          _TSDeliveredNotificationsRemover, _TSEditorialItem, _TSEmailSignupAssembly, _TSEmailSignupModule,
+                          _TSFeedAssembly, _TSFeedModule, _TSFeedViewContext, _TSForYouFeedAssembly, _TSFrameworkAssembly,
+                          _TSHeadlineViewAnimatedViewProperties, _TSHistoryAssembly, _TSImageHeadlineView, _TSImages,
+                          _TSKeyCommand, _TSKeyCommandAssembly, _TSKeyCommandCoordinator, _TSKeyCommandManager,
+                          _TSMenuBarItemConstants, _TSMoreVideosAssembly, _TSMoreVideosModule, _TSNewsActivityInfoDeserializer,
+                          _TSNewsReferralItemWidgetArticleList, _TSNewsReferralItemWidgetVideoPlaylist,
+                          _TSNewsTabSplitViewNavigator, _TSNoImageHeadlineView, _TSNotificationService, _TSNotificationSettings,
+                          _TSPPTRouterAssembly, _TSPlayButtonHeadlineView, _TSRendererAssembly, _TSSKUI, _TSSavedAssembly,
+                          _TSSavedModule, _TSSearchMoreAssembly, _TSSearchMoreModule, _TSServiceAssembly, _TSSpecialEventsAction,
+                          _TSSpecialEventsAssembly, _TSSpecialEventsModule, _TSStylerAssembly, _TSSubscriptionsFoundAssembly,
+                          _TSTabBarSplitViewPresentable, _TSTableOfContentsAssembly, _TSTableOfContentsBrowserAssembly,
+                          _TSTableOfContentsBrowserModule, _TSTableOfContentsDislikedAssembly,
+                          _TSTableOfContentsNotificationsAssembly, _TSTableOfContentsNotificationsModule,
+                          _TSTableOfContentsRouter, _TSTableOfContentsRowView, _TSTopOfFeedAssembly, _TSTopOfFeedModule,
+                          _TSTopVideosAssembly, _TSTopVideosModule, _TSVideoPlayerAssembly, _UserNotificationsAssembly,
+                          __TtC3Tea10LikeButton, __TtC3Tea11AppAssembly, __TtC3Tea11CloseButton, __TtC3Tea11EdgeSpacing,
+                          __TtC3Tea11SpinnerView, __TtC3Tea11WelcomeView, __TtC3Tea12FollowButton, __TtC3Tea12MainAssembly,
+                          __TtC3Tea12SavedService, __TtC3Tea13DislikeButton, __TtC3Tea13HistoryModule, __TtC3Tea13NoContentView,
+                          __TtC3Tea13OffensiveView, __TtC3Tea13SeeMoreButton, __TtC3Tea13SharrowButton, __TtC3Tea13WelcomeModule,
+                          __TtC3Tea14AdMarkerButton, __TtC3Tea14HistoryService, __TtC3Tea14ManagerAssemby,
+                          __TtC3Tea15ForYouTitleView, __TtC3Tea15WelcomeAssembly, __TtC3Tea16EditorialService,
+                          __TtC3Tea16ForYouFeedModule, __TtC3Tea16NewsActivityInfo, __TtC3Tea16ShowAnywayButton,
+                          __TtC3Tea17BootstrapAssembly, __TtC3Tea17WelcomeInteractor, __TtC3Tea18NotificationButton,
+                          __TtC3Tea18NotificationSwitch, __TtC3Tea19ArticleViewerModule, __TtC3Tea19FollowDislikeButton,
+                          __TtC3Tea19NewsActivityManager, __TtC3Tea19SavedViewController, __TtC3Tea19SubscriptionService,
+                          __TtC3Tea20HeadlineViewTextView, __TtC3Tea21HistoryViewController, __TtC3Tea21TitleViewActionButton,
+                          __TtC3Tea21WelcomeViewController, __TtC3Tea22HeadlineViewFooterView, __TtC3Tea22SpecialEventsTitleView,
+                          __TtC3Tea23TopOfFeedViewController, __TtC3Tea23TopVideosViewController,
+                          __TtC3Tea24MoreVideosViewController, __TtC3Tea24SearchMoreViewController,
+                          __TtC3Tea24SubscriptionsFoundModule, __TtC3Tea24TopOfFeedHeadlineContext,
+                          __TtC3Tea25ForYouGroupSizeCalculator, __TtC3Tea25TabBarSplitViewController,
+                          __TtC3Tea25TableOfContentsFooterView, __TtC3Tea25TableOfContentsHeaderView,
+                          __TtC3Tea26ReportConcernViewPresenter, __TtC3Tea27SpecialEventsViewController,
+                          __TtC3Tea27TableOfContentsBrowseButton, __TtC3Tea29ArticleRecirculationComponent,
+                          __TtC3Tea29ArticleRecirculationTitleView, __TtC3Tea29SimpleContainerViewController,
+                          __TtC3Tea29TableOfContentsBadgingService, __TtC3Tea29TableOfContentsDislikedModule,
+                          __TtC3Tea29TableOfContentsViewController, __TtC3Tea30DefaultMenuItemHandlerProvider,
+                          __TtC3Tea30SpecialEventsWebEmbedErrorView, __TtC3Tea31SpecialEventsNavigationObserver,
+                          __TtC3Tea33ArticleRecirculationPublisherView, __TtC3Tea33TableOfContentsSettingsButtonView,
+                          __TtC3Tea34ArticleRecirculationBridgedService, __TtC3Tea34ArticleRecirculationViewController,
+                          __TtC3Tea34NotificationAuthorizationRequester, __TtC3Tea37TableOfContentsDislikedViewController,
+                          __TtC3Tea38EmailSignupShouldPresentDeciderService, __TtC3Tea38TableOfContentsContainerViewController,
+                          __TtC3Tea40TableOfContentsNotificationsDisabledView,
+                          __TtC3Tea42TableOfContentsNotificationsViewController,
+                          __TtC3Tea46ArticleRecirculationBottomMarginViewController, __TtC3Tea7TagView, __TtC3Tea9TitleView,
+                          __TtCC3Tea11WelcomeView10TitleGroup, __TtCC3Tea11WelcomeView14ContinueButton,
+                          __TtCC3Tea11WelcomeView6Footer, __TtCC3Tea11WelcomeView9SiriGroup,
+                          __TtCC3Tea17ImageHeadlineView9AXElement, __TtCC3Tea33ArticleRecirculationPublisherView9AXElement ]
+...

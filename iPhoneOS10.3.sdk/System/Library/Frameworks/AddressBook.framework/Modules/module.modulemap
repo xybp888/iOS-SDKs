@@ -1,0 +1,10 @@
+/*  Because of the symlink AddressBook -> AddressBookLegacy, we have to declare the
+ *  umbrella header for AddressBook (<rdar://problem/23762602>)
+ */
+
+framework module AddressBook [extern_c] {
+    umbrella header "AddressBook.h"
+    export *
+    module * { export * }
+}
+

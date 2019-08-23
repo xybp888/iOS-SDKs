@@ -1,0 +1,32 @@
+---
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DADaemonEAS.bundle/DADaemonEAS
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:              [ armv7, armv7s, arm64 ]
+    symbols:            [ __ASSyncTaskPreservedActionsFromActions, __DASyncableActionsFromDAActions ]
+    objc-classes:       [ _ASAgent, _ASAgentFolderHierarchyContext, _ASContactDataHandler, _ASDaemonAccount,
+                          _ASDaemonPolicyManager, _ASDataHandler, _ASEventDataHandler, _ASFolderChangedHistory,
+                          _ASNoteDataHandler, _ASToDoDataHandler ]
+    objc-ivars:         [ _ASAgent._calUnitTestMergedRequestsBlock, _ASAgent._contactStoresByFolderId,
+                          _ASAgent._currentlySyncingFolderIds, _ASAgent._eventCalendarsByFolderId,
+                          _ASAgent._folderIdToSequentialFailureCount, _ASAgent._folderIdToSequentialServerErrorCount,
+                          _ASAgent._folderItemSyncRequestLock, _ASAgent._isShuttingDown, _ASAgent._matchedRecord,
+                          _ASAgent._noteStoreObjectIdsByFolderId, _ASAgent._numLocalFolderUpdatesInFlight,
+                          _ASAgent._outstandingFolderRequests, _ASAgent._toDoCalendarsByFolderId,
+                          _ASAgentFolderHierarchyContext._isFirstSync, _ASAgentFolderHierarchyContext._oldFolders,
+                          _ASDaemonAccount._attachmentManager, _ASDaemonAccount._busyFolderIds, _ASDaemonAccount._curReplyMethod,
+                          _ASDaemonAccount._delayedPingTimer, _ASDaemonAccount._eventsNumberOfPastDaysToSync,
+                          _ASDaemonAccount._folderChangeHistory, _ASDaemonAccount._folderIdsWithUnacknowledgedPings,
+                          _ASDaemonAccount._foldersToMonitorById, _ASDaemonAccount._hasScheduledWake,
+                          _ASDaemonAccount._hierarchyChangeHistory, _ASDaemonAccount._invitationActionsInFlight,
+                          _ASDaemonAccount._isHierarchyChangeBlackListed, _ASDaemonAccount._isTearingDown,
+                          _ASDaemonAccount._lastPingFolders, _ASDaemonAccount._lastPingHeartBeat, _ASDaemonAccount._noteObserver,
+                          _ASDaemonAccount._pcManager, _ASDaemonAccount._pingBlacklistFolderIds,
+                          _ASDaemonAccount._pingHistoryBlacklistFolderIds, _ASDaemonAccount._pingPowerAssertionUUID,
+                          _ASDaemonAccount._pingTask, _ASDaemonAccount._safeToPing, _ASDaemonPolicyManager._account,
+                          _ASDaemonPolicyManager._preflighter, _ASFolderChangedHistory._count,
+                          _ASFolderChangedHistory._startTime ]
+...

@@ -1,0 +1,18 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/Stocks/NewsFeed.framework/NewsFeed
+current-version:       1
+compatibility-version: 1
+swift-version:         5
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:  [ NewsArticles, NewsArticlesTests, NewsFeed, NewsFeedTests, Stocks, StocksAnalytics,
+                          StocksAnalyticsTests, StocksCore, StocksCoreTests, StocksTests, StocksToday, StocksUI, StocksUITests ]
+    symbols:            [ _NewsFeedVersionNumber, _NewsFeedVersionString ]
+    objc-classes:       [ _NENewsFeedAssembly, _NERendererAssembly, _NEStylerAssembly, __TtC8NewsFeed14GapOfflineView,
+                          __TtC8NewsFeed17ImageHeadlineView, __TtC8NewsFeed18HeadlineFooterView, __TtC8NewsFeed7GapView,
+                          __TtC8NewsFeed9EmptyView ]
+...

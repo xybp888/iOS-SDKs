@@ -1,0 +1,25 @@
+---
+archs:                 [ armv7, armv7s, arm64, i386, x86_64 ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/SpotlightDaemon.framework/SpotlightDaemon
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:              [ armv7, armv7s, arm64, i386, x86_64 ]
+    symbols:            [ _SpotlightDaemonVersionNumber, _SpotlightDaemonVersionString, _startAllAgents, _startIndexAgent ]
+    objc-classes:       [ _MDAgent, _MDAgentDelegate, _MDClient, _MDIndexAgent, _MDSearchAgent, _MDSearchableIndexService,
+                          _SpotlightReceiverConnection, _SpotlightSender ]
+    objc-ivars:         [ _MDAgent._clientLink, _MDAgent._delegate, _MDAgentDelegate._agentClass, _MDAgentDelegate._clients,
+                          _MDAgentDelegate._indexer, _MDClient._bundleID, _MDClient._clientLink, _MDClient._connection,
+                          _MDClient._processID, _MDClient._processName, _MDIndexAgent._service, _MDSearchAgent._clientBundleID,
+                          _MDSearchAgent._finishedQuery, _MDSearchAgent._isInternal, _MDSearchAgent._queryTask,
+                          _MDSearchAgent._resultProcessor, _MDSearchAgent._searchIndex, _MDSearchableIndexService._activityQueue,
+                          _MDSearchableIndexService._agent, _MDSearchableIndexService._clientBundleID,
+                          _MDSearchableIndexService._clientUID, _MDSearchableIndexService._indexer,
+                          _MDSearchableIndexService._isInternal, _MDSearchableIndexService._protectionClass,
+                          _MDSearchableIndexService._quotaDisabled, _MDSearchableIndexService._tccAllowances,
+                          _SpotlightReceiverConnection._bundleIDs, _SpotlightReceiverConnection._queue,
+                          _SpotlightReceiverConnection._receiver, _SpotlightReceiverConnection._requestCount,
+                          _SpotlightReceiverConnection._serviceName, _SpotlightReceiverConnection._types,
+                          _SpotlightReceiverConnection._wantsHTML, _SpotlightReceiverConnection._wantsText ]
+...

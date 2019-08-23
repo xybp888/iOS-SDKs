@@ -1,0 +1,27 @@
+---
+archs:                 [ armv7, armv7s, arm64, i386, x86_64 ]
+platform:              ios
+install-name:          /usr/lib/log/liblog_companionsync.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:              [ armv7, armv7s, arm64, i386, x86_64 ]
+    symbols:            [ _OSLogCopyFormattedString, _OSStateCreateStringWithData ]
+    objc-classes:       [ _SYLogDeviceState, _SYLogEngineState, _SYLogErrorInfo, _SYLogPeerIDPair, _SYLogServiceState,
+                          _SYLogSessionState, _SYLogTransportOption ]
+    objc-ivars:         [ _SYLogDeviceState._buildVersion, _SYLogDeviceState._deviceClass, _SYLogDeviceState._has,
+                          _SYLogDeviceState._identifier, _SYLogDeviceState._state, _SYLogEngineState._buffersSessions,
+                          _SYLogEngineState._has, _SYLogEngineState._inSession, _SYLogEngineState._suspended,
+                          _SYLogEngineState._type, _SYLogErrorInfo._code, _SYLogErrorInfo._domain,
+                          _SYLogPeerIDPair._generationID, _SYLogPeerIDPair._peerID, _SYLogServiceState._engine,
+                          _SYLogServiceState._enqueuedSyncType, _SYLogServiceState._has, _SYLogServiceState._name,
+                          _SYLogServiceState._peerGenerationID, _SYLogServiceState._peerID, _SYLogServiceState._serviceType,
+                          _SYLogServiceState._session, _SYLogServiceState._sessionQueueRunning,
+                          _SYLogServiceState._targetedDevice, _SYLogServiceState._transportOptions,
+                          _SYLogSessionState._canRestart, _SYLogSessionState._canRollback, _SYLogSessionState._canceled,
+                          _SYLogSessionState._error, _SYLogSessionState._fullSessionTimeout, _SYLogSessionState._has,
+                          _SYLogSessionState._identifier, _SYLogSessionState._isReset, _SYLogSessionState._isSending,
+                          _SYLogSessionState._maxConcurrentMessages, _SYLogSessionState._peers,
+                          _SYLogSessionState._perMessageTimeout, _SYLogSessionState._state, _SYLogSessionState._transportOptions,
+                          _SYLogTransportOption._key, _SYLogTransportOption._value ]
+...

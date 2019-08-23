@@ -1,0 +1,18 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/SocialServices.framework/SocialServices
+current-version:       87
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _SLGoogleAuthCodeVerifierKey, _SLGoogleAuthRecievedOpenURLKey,
+                          _SLGoogleAuthRecievedOpenURLNotification ]
+    objc-classes:       [ _SLGoogleAuthController, _SLGoogleAuthKeychainHelper ]
+    objc-ivars:         [ _SLGoogleAuthController._account, _SLGoogleAuthController._accountStore,
+                          _SLGoogleAuthController._completion, _SLGoogleAuthController._presentationBlock,
+                          _SLGoogleAuthController._redirectURI, _SLGoogleAuthController._safariViewController,
+                          _SLGoogleAuthController._uuid ]
+...

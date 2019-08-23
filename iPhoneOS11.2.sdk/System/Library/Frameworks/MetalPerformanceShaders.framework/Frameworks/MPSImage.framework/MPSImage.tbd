@@ -1,0 +1,22 @@
+---
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              ios
+install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSImage.framework/MPSImage
+current-version:       90.3
+compatibility-version: 1
+exports:
+  - archs:              [ armv7, armv7s, arm64 ]
+    allowed-clients:    [ MetalPerformanceShaders ]
+    symbols:            [ _MPSSubTileEncode ]
+    objc-classes:       [ _MPSBinaryImageKernel, _MPSImageAdd, _MPSImageAreaMax, _MPSImageAreaMin, _MPSImageArithmetic,
+                          _MPSImageBilinearScale, _MPSImageBox, _MPSImageConversion, _MPSImageConvolution, _MPSImageCopyToMatrix,
+                          _MPSImageDilate, _MPSImageDivide, _MPSImageErode, _MPSImageFindKeypoints, _MPSImageGaussianBlur,
+                          _MPSImageGaussianPyramid, _MPSImageHistogram, _MPSImageHistogramEqualization,
+                          _MPSImageHistogramSpecification, _MPSImageIntegral, _MPSImageIntegralOfSquares, _MPSImageLanczosScale,
+                          _MPSImageLaplacian, _MPSImageMedian, _MPSImageMultiply, _MPSImageSobel, _MPSImageStatisticsMean,
+                          _MPSImageStatisticsMeanAndVariance, _MPSImageStatisticsMinAndMax, _MPSImageSubtract, _MPSImageTent,
+                          _MPSImageThresholdBinary, _MPSImageThresholdBinaryInverse, _MPSImageThresholdToZero,
+                          _MPSImageThresholdToZeroInverse, _MPSImageThresholdTruncate, _MPSImageTranspose, _MPSUnaryImageKernel ]
+    objc-ivars:         [ _MPSBinaryImageKernel._encode, _MPSBinaryImageKernel._encodeData, _MPSUnaryImageKernel._encode,
+                          _MPSUnaryImageKernel._encodeData, _MPSUnaryImageKernel._getPreferredTileSize ]
+...

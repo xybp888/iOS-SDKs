@@ -1,0 +1,25 @@
+---
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/SyncedDefaults.framework/SyncedDefaults
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:              [ armv7, armv7s, arm64 ]
+    symbols:            [ _LoggingSubsystem, _SYDGetDefaultLog, _SYDGetSchedulerLog, _SYDGetTraceLog,
+                          _SYDRemotePreferencesSourceConfigurationDidChangeNotification,
+                          _SYDRemotePreferencesSourceDidChangeNotification ]
+    objc-classes:       [ _SYDClient, _SYDJournal, _SYDRemotePreferencesSource ]
+    objc-ivars:         [ _SYDClient._additionalSource, _SYDClient._bundleIdentifier, _SYDClient._connection, _SYDClient._queue,
+                          _SYDClient._storeIdentifier, _SYDJournal.journal, _SYDJournal.readonly, _SYDJournal.store,
+                          _SYDRemotePreferencesSource._forceNextSynchronization, _SYDRemotePreferencesSource._generationCount,
+                          _SYDRemotePreferencesSource._isExecutingForClient, _SYDRemotePreferencesSource._lastAccess,
+                          _SYDRemotePreferencesSource._lastGenerationFromDisk, _SYDRemotePreferencesSource._memoryWarningSource,
+                          _SYDRemotePreferencesSource._protectionQueue, _SYDRemotePreferencesSource.cache,
+                          _SYDRemotePreferencesSource.client, _SYDRemotePreferencesSource.configurationDictionary,
+                          _SYDRemotePreferencesSource.dirtyKeys, _SYDRemotePreferencesSource.externalChanges,
+                          _SYDRemotePreferencesSource.initialSyncChangeCount, _SYDRemotePreferencesSource.isInitialSync,
+                          _SYDRemotePreferencesSource.preferenceID, _SYDRemotePreferencesSource.registrationBlock,
+                          _SYDRemotePreferencesSource.registrationQueue, _SYDRemotePreferencesSource.storageChangeCount,
+                          _SYDRemotePreferencesSource.urlOnDisk ]
+...

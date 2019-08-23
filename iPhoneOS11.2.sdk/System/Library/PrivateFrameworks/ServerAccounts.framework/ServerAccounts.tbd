@@ -1,0 +1,16 @@
+---
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/ServerAccounts.framework/ServerAccounts
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:              [ armv7, armv7s, arm64 ]
+    symbols:            [ _SVAccountComputerModelName, _SVAccountComputerName, _SVAccountErrorDomain,
+                          _SVAccountManuallyEnteredHostName, _SVAccountUserTrustedCertificate,
+                          _SVAccountVPNConfigurationIdentifier, _ServerAccountsVersionNumber, _ServerAccountsVersionString ]
+    objc-classes:       [ _SVATrustHandler, _SVAVPNUtility, _SVAVerifier ]
+    objc-ivars:         [ _SVAVerifier._canceledByUser, _SVAVerifier._completionBlock, _SVAVerifier._dataTask,
+                          _SVAVerifier._password, _SVAVerifier._responseData, _SVAVerifier._serverAddress, _SVAVerifier._session,
+                          _SVAVerifier._trustedCertificates, _SVAVerifier._userName ]
+...

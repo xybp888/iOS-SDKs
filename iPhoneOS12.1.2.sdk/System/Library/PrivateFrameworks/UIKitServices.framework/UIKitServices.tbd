@@ -1,0 +1,42 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/UIKitServices.framework/UIKitServices
+current-version:       61000
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _UIKitServicesVersionNumber, _UIKitServicesVersionString, _UISApplicationPushKeepAliveInterval,
+                          _UISApplicationStateServiceIdentifier, _UISApplicationStateServiceMessageKeyBundleIdentifier,
+                          _UISApplicationStateServiceMessageKeyParam1, _UISApplicationSupportMessageKeyParam1,
+                          _UISApplicationSupportServiceIdentifier, __UIKitServicesStateFacilityLogger ]
+    objc-classes:       [ _UISApplicationState, _UISApplicationStateClient, _UISApplicationStateServer,
+                          _UISApplicationStateService, _UISApplicationSupportClient, _UISApplicationSupportDisplayEdgeInfo,
+                          _UISApplicationSupportDisplayEdgeInsetsWrapper, _UISApplicationSupportServer,
+                          _UISApplicationSupportService, _UISDisplayContext, _UISMutableDisplayContext,
+                          __UISApplicationStateClientContext ]
+    objc-ivars:         [ _UISApplicationState._bundleIdentifier, _UISApplicationState._client,
+                          _UISApplicationStateClient._bundleIdentifier, _UISApplicationStateServer._delegate,
+                          _UISApplicationStateServer._delegateFlags, _UISApplicationStateService._calloutQueue,
+                          _UISApplicationStateService._delegate, _UISApplicationStateService._delegateFlags,
+                          _UISApplicationStateService._server,
+                          _UISApplicationSupportDisplayEdgeInfo._homeAffordanceOverlayAllowance,
+                          _UISApplicationSupportDisplayEdgeInfo._infoFlags,
+                          _UISApplicationSupportDisplayEdgeInfo._peripheryInsets,
+                          _UISApplicationSupportDisplayEdgeInfo._safeAreaInsetsLandscapeLeft,
+                          _UISApplicationSupportDisplayEdgeInfo._safeAreaInsetsLandscapeRight,
+                          _UISApplicationSupportDisplayEdgeInfo._safeAreaInsetsPortrait,
+                          _UISApplicationSupportDisplayEdgeInfo._safeAreaInsetsPortraitUpsideDown,
+                          _UISApplicationSupportDisplayEdgeInfo._systemMinimumMargin,
+                          _UISApplicationSupportDisplayEdgeInsetsWrapper._bottomInset,
+                          _UISApplicationSupportDisplayEdgeInsetsWrapper._leftInset,
+                          _UISApplicationSupportDisplayEdgeInsetsWrapper._rightInset,
+                          _UISApplicationSupportDisplayEdgeInsetsWrapper._topInset, _UISApplicationSupportServer._delegate,
+                          _UISApplicationSupportServer._delegateFlags, _UISApplicationSupportService._calloutQueue,
+                          _UISApplicationSupportService._delegate, _UISApplicationSupportService._delegateFlags,
+                          _UISApplicationSupportService._server, _UISDisplayContext._artworkSubtype,
+                          _UISDisplayContext._displayConfiguration, __UISApplicationStateClientContext._bundleIdentifier,
+                          __UISApplicationStateClientContext._clientHandle ]
+...

@@ -1,0 +1,18 @@
+---
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/WirelessCoexManager.framework/WirelessCoexManager
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:              [ armv7, armv7s, arm64 ]
+    symbols:            [ _WCMEnabled, _WirelessRadioManagerDumpLog, _WirelessRadioManagerSetLogToFile ]
+    objc-classes:       [ _WCMClientProxy, _WCMSetting, _WRMClientInterface, _WRM_iRATInterface ]
+    objc-ivars:         [ _WCMClientProxy.mConnection, _WCMClientProxy.mDelegate, _WCMClientProxy.mIsRegistered,
+                          _WCMClientProxy.mProcessId, _WCMClientProxy.mQueue, _WRMClientInterface.mConnection,
+                          _WRMClientInterface.mNotificationBlock, _WRMClientInterface.mProcessId, _WRMClientInterface.mQueue,
+                          _WRM_iRATInterface.mAppLists, _WRM_iRATInterface.mClientSupportsMultipleAppTypes,
+                          _WRM_iRATInterface.mLinkPreferenceSubscriptionEnabled, _WRM_iRATInterface.mLocationAssertionEnabled,
+                          _WRM_iRATInterface.mLocationState, _WRM_iRATInterface.mObserver, _WRM_iRATInterface.mOppModeObserver,
+                          _WRM_iRATInterface.mTelephoneAssertionEnabled, _WRM_iRATInterface.mTelephonyStateEnabled ]
+...

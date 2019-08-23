@@ -1,0 +1,29 @@
+---
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/ControlCenterServices.framework/ControlCenterServices
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:              [ armv7, armv7s, arm64 ]
+    allowed-clients:    [ ControlCenterUI, ControlCenterSettings, SpringBoard, HearingAidUIServer, ControlCenterServicesTests,
+                          Unit Tests ]
+    symbols:            [ _CCSLogModuleSettings, _CCSModuleVisibilityPreferenceDescription,
+                          _CCSModuleVisibilityPreferenceFromNumber, _CCSRegisterControlCenterLogging,
+                          _CCSResolveModuleVisibility, _ControlCenterServicesVersionNumber, _ControlCenterServicesVersionString,
+                          _kVersionNumber ]
+    objc-classes:       [ _CCSControlCenterDefaults, _CCSModuleMetadata, _CCSModuleRepository, _CCSModuleSettingsProvider,
+                          _CCSUsageMetrics ]
+    objc-ivars:         [ _CCSModuleMetadata._associatedBundleIdentifier, _CCSModuleMetadata._associatedBundleMinimumVersion,
+                          _CCSModuleMetadata._moduleBundleURL, _CCSModuleMetadata._moduleIdentifier,
+                          _CCSModuleMetadata._requiredDeviceCapabilities, _CCSModuleMetadata._supportedDeviceFamilies,
+                          _CCSModuleMetadata._visibilityPreference, _CCSModuleRepository._allModuleMetadataByIdentifier,
+                          _CCSModuleRepository._availableModuleIdentifiers, _CCSModuleRepository._directoryURLs,
+                          _CCSModuleRepository._ignoreWhitelist, _CCSModuleRepository._interestingBundleIdentifiers,
+                          _CCSModuleRepository._internalDefaultsObserver, _CCSModuleRepository._loadableModuleIdentifiers,
+                          _CCSModuleRepository._mobileGestaltNotificationToken, _CCSModuleRepository._observers,
+                          _CCSModuleRepository._whitelistedModuleIdentifiers,
+                          _CCSModuleSettingsProvider._configurationChangedSource, _CCSModuleSettingsProvider._observers,
+                          _CCSModuleSettingsProvider._orderedFixedModuleIdentifiers,
+                          _CCSModuleSettingsProvider._orderedUserEnabledModuleIdentifiers ]
+...

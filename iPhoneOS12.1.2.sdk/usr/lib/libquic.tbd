@@ -1,0 +1,13 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
+                   'arm64: 0615A1B7-63D0-3BDA-95A1-5960BF2A0AA5', 'arm64e: 33A30D43-8B81-3088-9510-A86531EA337A' ]
+platform:        ios
+install-name:    /usr/lib/libquic.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _nw_protocol_quic_identifier, _nw_protocol_quic_versions, 
+                       _nw_quic_copy_certificates, _nw_quic_copy_sectrust, _nw_quic_delegate_sectrust, 
+                       _nw_quic_sectrust_result ]
+...

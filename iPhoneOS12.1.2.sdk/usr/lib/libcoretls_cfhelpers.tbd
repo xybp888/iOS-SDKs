@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 0501AFBC-C7B8-351D-99F7-81FD28B353F9', 'armv7s: 1DEBB879-2DFB-36D4-9260-C7D7E1E1F4BD', 
+                   'arm64: DE2A7D3C-5AB1-3E5A-815D-E2CC15ECDD83', 'arm64e: 7198FC9F-CAF5-3466-B815-1EFB7E0EC8D6' ]
+platform:        ios
+install-name:    /usr/lib/libcoretls_cfhelpers.dylib
+current-version: 155.220.1
+objc-constraint: none
+exports:         
+  - archs:           [ armv7, armv7s ]
+    symbols:         [ _SSLAllocBuffer, _SSLAllocCopyBuffer, _SSLCopyBuffer, _SSLCopyBufferFromData, 
+                       _SSLCopyBufferTerm, _SSLFreeBuffer, _SSLReallocBuffer, _coretls_cfhelpersVersionNumber, 
+                       _coretls_cfhelpersVersionString, _sslAllocCopy, _sslFree, 
+                       _sslMalloc, _sslRealloc, _tls_copy_buffer_list, _tls_free_buffer_list ]
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _tls_helper_SSLProtocol_from_version, _tls_helper_create_peer_acceptable_dn_array, 
+                       _tls_helper_create_peer_trust, _tls_helper_set_identity_from_array, 
+                       _tls_helper_set_peer_pubkey, _tls_helper_version_from_SSLProtocol ]
+...

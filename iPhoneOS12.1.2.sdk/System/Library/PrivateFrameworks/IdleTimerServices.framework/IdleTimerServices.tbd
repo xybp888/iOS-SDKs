@@ -1,0 +1,24 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/IdleTimerServices.framework/IdleTimerServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _ITIdleTimerStateServiceIdentifier, _ITIdleTimerStateServiceMessageKeyParam1,
+                          _ITIdleTimerStateServiceMessageKeyParam2, _ITLogIdleTimer, _ITLoggingSubsystem,
+                          _IdleTimerServicesVersionNumber, _IdleTimerServicesVersionString ]
+    objc-classes:       [ _ITIdleTimerDisableAssertion, _ITIdleTimerState, _ITIdleTimerStateClient, _ITIdleTimerStateRequestShim,
+                          _ITIdleTimerStateServer, _ITIdleTimerStateService ]
+    objc-ivars:         [ _ITIdleTimerDisableAssertion._accessQueue, _ITIdleTimerDisableAssertion._internalAssertion,
+                          _ITIdleTimerState._accessQueue, _ITIdleTimerState._idleTimerDisableAssertions,
+                          _ITIdleTimerState._stateCaptureAssertion, _ITIdleTimerStateClient._accessQueue,
+                          _ITIdleTimerStateClient._assertionReasons, _ITIdleTimerStateRequestShim._idleTimerResetTimer,
+                          _ITIdleTimerStateServer._delegate, _ITIdleTimerStateService._assertionReasonsByClientID,
+                          _ITIdleTimerStateService._assertionsByReason, _ITIdleTimerStateService._calloutDispatchQueue,
+                          _ITIdleTimerStateService._calloutQueue, _ITIdleTimerStateService._delegate,
+                          _ITIdleTimerStateService._server, _ITIdleTimerStateService._stateCaptureAssertion ]
+...

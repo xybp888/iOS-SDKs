@@ -1,0 +1,25 @@
+---
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/NanoAppMonitor.framework/NanoAppMonitor
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:              [ armv7, armv7s, arm64 ]
+    symbols:            [ _NAMPBAppReadFrom, _NAMPBCompanionMessageReadFrom, _NanoAppMonitorVersionNumber,
+                          _NanoAppMonitorVersionString, _nam_apps_log ]
+    objc-classes:       [ _NAMPBApp, _NAMPBCompanionMessage, _NanoAppDataProvider, _NanoAppMonitorDaemon, _NanoAppSyncService,
+                          _NanoAppUsage, _NanoAppUsageMonitor, _NanoAppUsageSync ]
+    objc-ivars:         [ _NAMPBApp._companionBundleID, _NAMPBApp._timeIntervalSinceReferenceDate, _NAMPBApp._watchBundleID,
+                          _NAMPBCompanionMessage._apps, _NanoAppDataProvider._appsOnNano, _NanoAppDataProvider._narWorkspace,
+                          _NanoAppMonitorDaemon._appDataProvider, _NanoAppMonitorDaemon._appUsageMonitor,
+                          _NanoAppMonitorDaemon._appUsageSync, _NanoAppSyncService._idsService,
+                          _NanoAppSyncService._nonWakingMessage, _NanoAppSyncService._outstandingRequests,
+                          _NanoAppSyncService._queue, _NanoAppUsage._companionBundleID, _NanoAppUsage._lastInForeground,
+                          _NanoAppUsage._watchBundleID, _NanoAppUsageMonitor._appDataProvider,
+                          _NanoAppUsageMonitor._appStateMonitor, _NanoAppUsageMonitor._delegate,
+                          _NanoAppUsageMonitor._recentlyUsedApps, _NanoAppUsageSync._lastReceivedUsages,
+                          _NanoAppUsageSync._lastSyncdUsages, _NanoAppUsageSync._maximumApps, _NanoAppUsageSync._nass,
+                          _NanoAppUsageSync._nps, _NanoAppUsageSync._springBoardLockStateNotifyToken,
+                          _NanoAppUsageSync._syncWithNPS ]
+...

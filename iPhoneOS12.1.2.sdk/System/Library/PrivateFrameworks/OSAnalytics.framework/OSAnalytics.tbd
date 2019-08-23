@@ -1,0 +1,64 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/PrivateFrameworks/OSAnalytics.framework/OSAnalytics
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _OSAnalyticsVersionNumber, _OSAnalyticsVersionString, _OTALoggingBaseDirectory,
+                          _XPCClientHasEntitlement, _kDomainKey, _kKeyKey, _kPreferenceDomainDataAnalysis, _kRemovalKey,
+                          _kSamplingKey, _kUserKey, _kValueKey, _killDescription, _legacyCertArr, _osa_scanDir, _processName ]
+    objc-classes:       [ _OSAAppleErrorReport, _OSAEphemeralLog, _OSAHttpSubmitter, _OSAJetsamReport, _OSALog,
+                          _OSAProxyConfiguration, _OSAStreamDeflater, _OSASubmitter, _OSASystemConfiguration, _OSATasking,
+                          _OSAXPCServices, _PCCEndpoint, _PCCGroupJob, _PCCIDSEndpoint, _PCCJob, _PCCProxiedDevice,
+                          _PCCProxyingDevice, _PCCRequest ]
+    objc-ivars:         [ _OSAAppleErrorReport._capture_time, _OSAAppleErrorReport._incidentID, _OSAAppleErrorReport._logType,
+                          _OSAAppleErrorReport._logWritingOptions, _OSAAppleErrorReport._logfile, _OSAAppleErrorReport._notes,
+                          _OSAEphemeralLog._content, _OSAHttpSubmitter._connection, _OSAHttpSubmitter._last_thoughput_check,
+                          _OSAHttpSubmitter._payload, _OSAHttpSubmitter._response, _OSAHttpSubmitter._submissionSem,
+                          _OSAHttpSubmitter._submissionURL, _OSAHttpSubmitter._submitOkFlag,
+                          _OSAHttpSubmitter._thoughput_warnings, _OSAJetsamReport._event_code, _OSAJetsamReport._event_reason,
+                          _OSAJetsamReport._isSuspendedOnlyJetsam, _OSAJetsamReport._killedActiveApps,
+                          _OSAJetsamReport._killed_or_suspended_count, _OSAJetsamReport._largestActiveApp,
+                          _OSAJetsamReport._largestProcess, _OSAJetsamReport._snapshot, _OSAJetsamReport._wiredBytes,
+                          _OSALog._bugType, _OSALog._deleteOnRetire, _OSALog._filepath, _OSALog._metaData,
+                          _OSALog._preserveFiles, _OSALog._stream, _OSAProxyConfiguration._automatedContextURL,
+                          _OSAProxyConfiguration._automatedDeviceGroup, _OSAProxyConfiguration._awdReporterKey,
+                          _OSAProxyConfiguration._buildVersion, _OSAProxyConfiguration._crashReporterKey,
+                          _OSAProxyConfiguration._currentTaskingIDByRouting, _OSAProxyConfiguration._experimentGroup,
+                          _OSAProxyConfiguration._identifier, _OSAProxyConfiguration._internalKey,
+                          _OSAProxyConfiguration._logPath, _OSAProxyConfiguration._modelCode, _OSAProxyConfiguration._osTrain,
+                          _OSAProxyConfiguration._productBuildString, _OSAProxyConfiguration._productName,
+                          _OSAProxyConfiguration._productNameVersionBuildString, _OSAProxyConfiguration._productReleaseString,
+                          _OSAProxyConfiguration._productVersion, _OSAProxyConfiguration._releaseType,
+                          _OSAProxyConfiguration._seedGroup, _OSAProxyConfiguration._serialNumber,
+                          _OSAProxyConfiguration._systemId, _OSAProxyConfiguration._targetAudience,
+                          _OSAProxyConfiguration._uiCountryCode, _OSAStreamDeflater._capViolation, _OSAStreamDeflater._in,
+                          _OSAStreamDeflater._out, _OSAStreamDeflater._strm, _OSASubmitter._allowUnsignedBlobs,
+                          _OSASubmitter._connectionType, _OSASubmitter._internalWhitelist, _OSASubmitter._jobCount,
+                          _OSASubmitter._jobs, _OSASubmitter._responseCode, _OSASubmitter._responseData,
+                          _OSASubmitter._responseHeaders, _OSASubmitter._results, _OSASubmitter._submissionCap,
+                          _OSASubmitter._summary, _OSASubmitter._taskings, _OSASubmitter._writeArchives,
+                          _OSASystemConfiguration._appleInternal, _OSASystemConfiguration._logBlacklist,
+                          _OSASystemConfiguration._logConfig, _OSASystemConfiguration._multiUserMode,
+                          _OSASystemConfiguration._pairedWatchOS, _OSAXPCServices._listenerConnection, _OSAXPCServices._txn,
+                          _OSAXPCServices._txnTimer, _PCCEndpoint._delegate, _PCCEndpoint._deviceIds, _PCCEndpoint._fileTimeout,
+                          _PCCGroupJob._consecutive_error_count, _PCCGroupJob._content, _PCCGroupJob._error_count,
+                          _PCCGroupJob._log_sets, _PCCGroupJob._rejected_count, _PCCGroupJob._success_count,
+                          _PCCGroupJob._total_count, _PCCIDSEndpoint._homeDeviceService, _PCCIDSEndpoint._pairedWatchService,
+                          _PCCIDSEndpoint._serviceByDevice, _PCCJob._errObj, _PCCJob._jid, _PCCJob._lastTouch, _PCCJob._metadata,
+                          _PCCJob._options, _PCCJob._package, _PCCJob._target, _PCCProxiedDevice._endpoint,
+                          _PCCProxiedDevice._expiryTimer, _PCCProxiedDevice._groupXferJob, _PCCProxiedDevice._jobByTracker,
+                          _PCCProxiedDevice._jobTimeout, _PCCProxiedDevice._job_queue, _PCCProxiedDevice._txn,
+                          _PCCProxiedDevice.expire_count, _PCCProxiedDevice.file_count, _PCCProxiedDevice.job_count,
+                          _PCCProxiedDevice.msg_count, _PCCProxiedDevice.up_count, _PCCProxyingDevice._endpoint,
+                          _PCCProxyingDevice._expiryTimer, _PCCProxyingDevice._lastTouch, _PCCProxyingDevice._reqById,
+                          _PCCProxyingDevice._reqByTracker, _PCCProxyingDevice._requestTimeout,
+                          _PCCProxyingDevice._request_queue, _PCCProxyingDevice._sync_proxy_queue, _PCCProxyingDevice._txn,
+                          _PCCProxyingDevice.expire_count, _PCCProxyingDevice.file_count, _PCCProxyingDevice.msg_count,
+                          _PCCProxyingDevice.request_count, _PCCProxyingDevice.up_count, _PCCRequest._callback, _PCCRequest._jid,
+                          _PCCRequest._options, _PCCRequest._type ]
+...

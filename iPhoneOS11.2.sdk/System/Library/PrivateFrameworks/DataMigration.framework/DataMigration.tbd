@@ -1,0 +1,21 @@
+---
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/DataMigration.framework/DataMigration
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:              [ armv7, armv7s, arm64 ]
+    symbols:            [ _DMChangeGraphicalProgressVisibility, _DMCopyContext, _DMCopyCurrentBuildVersion,
+                          _DMCopyMigrationPhaseDescription, _DMCopyOrderedPluginIndentifiers, _DMForceMigrationOnNextReboot,
+                          _DMGetPreviousBuildVersion, _DMGetUserDataDisposition, _DMIsMigrationNeeded, _DMPerformMigration,
+                          _DMPerformMigrationIfNeeded, _DMPerformMigrationReturningAfterPlugin, _DMReportMigrationFailure,
+                          _DMSetContext, _DMTestMigrationUI, __DMLog, __DMLogFunc, __DMPerformMigration ]
+    objc-classes:       [ _DMConnection, _DMEnvironment, _DMMigrationPluginWrapperConnection, _DMPluginFileSystemRep,
+                          _DMXPCConnection, _DataClassMigrator ]
+    objc-ivars:         [ _DMConnection._connection, _DMMigrationPluginWrapperConnection._connection,
+                          _DMPluginFileSystemRep._bundle, _DMPluginFileSystemRep._bundleIdentifier, _DMPluginFileSystemRep._name,
+                          _DMPluginFileSystemRep._path, _DMXPCConnection._connection, _DMXPCConnection._interruptionHandler,
+                          _DMXPCConnection._invalidationHandler, _DMXPCConnection._queue, _DMXPCConnection._replyQueue,
+                          _DataClassMigrator._context, _DataClassMigrator._didUpgrade ]
+...

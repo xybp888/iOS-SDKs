@@ -1,0 +1,16 @@
+---
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/StudyLog.framework/StudyLog
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:              [ armv7, armv7s, arm64 ]
+    symbols:            [ _SLGCreateError, _SLGCreateLoggingIsDisabledError, _SLGCreateSessionEndMetadata,
+                          _SLGCreateSessionStartMetadata, _SLGLogDefaultsChangedNotification, _SLGLogDefaultsDomain,
+                          _SLGLogDefaultsEnabledKey, _SLGLogErrorDomain, _SLGLogServiceName, _StudyLogVersionNumber,
+                          _StudyLogVersionString, _slg_general_log ]
+    objc-classes:       [ _SLGLog, _SLGLogXPCClient, _SLGSettingsMonitor ]
+    objc-ivars:         [ _SLGLogXPCClient._connection, _SLGLogXPCClient._queue, _SLGSettingsMonitor._delegate,
+                          _SLGSettingsMonitor._isEnabled, _SLGSettingsMonitor._userDefaults ]
+...

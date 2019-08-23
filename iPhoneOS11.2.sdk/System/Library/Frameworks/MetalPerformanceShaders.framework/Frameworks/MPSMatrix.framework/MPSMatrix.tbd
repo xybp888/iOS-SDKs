@@ -1,0 +1,17 @@
+---
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              ios
+install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/MPSMatrix
+current-version:       90.3
+compatibility-version: 1
+exports:
+  - archs:              [ armv7, armv7s, arm64 ]
+    allowed-clients:    [ MetalPerformanceShaders ]
+    symbols:            [ __Z21MPSDecrementReadCountP18MPSTemporaryMatrix, __Z21MPSDecrementReadCountP18MPSTemporaryVector ]
+    objc-classes:       [ _MPSMatrix, _MPSMatrixBinaryKernel, _MPSMatrixCopy, _MPSMatrixCopyDescriptor,
+                          _MPSMatrixDecompositionCholesky, _MPSMatrixDecompositionLU, _MPSMatrixDescriptor, _MPSMatrixFindTopK,
+                          _MPSMatrixLogSoftMax, _MPSMatrixMultiplication, _MPSMatrixSoftMax, _MPSMatrixSolveCholesky,
+                          _MPSMatrixSolveLU, _MPSMatrixSolveTriangular, _MPSMatrixUnaryKernel, _MPSMatrixVectorMultiplication,
+                          _MPSTemporaryMatrix, _MPSTemporaryVector, _MPSVector, _MPSVectorDescriptor ]
+    objc-ivars:         [ _MPSMatrix._buffer, _MPSVector._buffer ]
+...

@@ -1,0 +1,24 @@
+---
+archs:                 [ armv7, armv7s, arm64, i386, x86_64 ]
+platform:              ios
+install-name:          /System/Library/Frameworks/LocalAuthentication.framework/LocalAuthentication
+current-version:       240.70.2
+compatibility-version: 1
+exports:
+  - archs:              [ armv7, armv7s, arm64, i386, x86_64 ]
+    symbols:            [ _LAAvailableMechanisms, _LAContextCreate, _LAContextGetTypeID, _LACopyACMContext,
+                          _LACopyExternalizedContext, _LACreateNewContextWithACMContext, _LAErrorDomain, _LAErrorSubcodeKey,
+                          _LAEvaluateACL, _LAEvaluateAndUpdateACL, _LAEvaluatePolicy, _LAFingerDatabaseHash, _LAIsCredentialSet,
+                          _LAPasswordRetryTime, _LASetCredential, _LATouchIDAuthenticationMaximumAllowableReuseDuration,
+                          _LAUpdateAccessControlAfterEvaluation, _LocalAuthenticationVersionNumber,
+                          _LocalAuthenticationVersionString, _cStringFromCFString, _coreauthd_create_message,
+                          _coreauthd_message_no_error, _coreauthd_message_with_reply_sync, _coreauthd_send_sync_and_do,
+                          _makeCFError, _makeCFErrorWithUserInfo ]
+    objc-classes:       [ _LAClient, _LAContext ]
+    objc-ivars:         [ _LAClient._cachedExternalizedContext, _LAClient._callInvalidationBlocks, _LAClient._existingContext,
+                          _LAClient._permanentError, _LAClient._remoteContext, _LAClient._serverConnection,
+                          _LAClient._shouldRecoverConnection, _LAClient._uiDelegate, _LAClient._uncork_queue,
+                          _LAContext._cancelButtonVisible, _LAContext._client, _LAContext._evaluatedPolicyDomainState,
+                          _LAContext._externalizedContext, _LAContext._fallbackButtonVisible, _LAContext._maxBiometryFailures,
+                          _LAContext._prearmContext ]
+...

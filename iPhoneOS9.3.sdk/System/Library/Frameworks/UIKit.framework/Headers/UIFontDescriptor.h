@@ -1,0 +1,152 @@
+//
+//  UIFontDescriptor.h
+//  UIKit
+//
+//  Copyright (c) 2013-2015 Apple Inc. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
+#import <UIKit/UIKitDefines.h>
+
+
+NS_ASSUME_NONNULL_BEGIN
+
+typedef NS_OPTIONS(uint32_t, UIFontDescriptorSymbolicTraits) {
+    /* Symbolic Font Traits (Typeface info - lower 16 bits of UIFontDescriptorSymbolicTraits) */
+    /*
+     UIFontDescriptorSymbolicTraits symbolically describes stylistic aspects of a font. The upper 16 bits is used to describe appearance of the font whereas the lower 16 bits for typeface. The font appearance information represented by the upper 16 bits can be used for stylistic font matching.
+     */
+    UIFontDescriptorTraitItalic = 1u << 0,
+    UIFontDescriptorTraitBold = 1u << 1,
+    UIFontDescriptorTraitExpanded = 1u << 5, // expanded and condensed traits are mutually exclusive
+    UIFontDescriptorTraitCondensed = 1u << 6,
+    UIFontDescriptorTraitMonoSpace = 1u << 10, // Use fixed-pitch glyphs if available. May have multiple glyph advances (most CJK glyphs may contain two spaces)
+    UIFontDescriptorTraitVertical = 1u << 11, // Use vertical glyph variants and metrics
+    UIFontDescriptorTraitUIOptimized = 1u << 12, // Synthesize appropriate attributes for UI rendering such as control titles if necessary
+    UIFontDescriptorTraitTightLeading = 1u << 15, // Use tighter leading values
+    UIFontDescriptorTraitLooseLeading = 1u << 16, // Use looser leading values
+    
+    /* Font appearance info (upper 16 bits of NSFontSymbolicTraits */
+    /* UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each identifier, refer to the OpenType specification.
+     */
+    UIFontDescriptorClassMask = 0xF0000000,
+    
+    UIFontDescriptorClassUnknown = 0u << 28,
+    UIFontDescriptorClassOldStyleSerifs = 1u << 28,
+    UIFontDescriptorClassTransitionalSerifs = 2u << 28,
+    UIFontDescriptorClassModernSerifs = 3u << 28,
+    UIFontDescriptorClassClarendonSerifs = 4u << 28,
+    UIFontDescriptorClassSlabSerifs = 5u << 28,
+    UIFontDescriptorClassFreeformSerifs = 7u << 28,
+    UIFontDescriptorClassSansSerif = 8u << 28,
+    UIFontDescriptorClassOrnamentals = 9u << 28,
+    UIFontDescriptorClassScripts = 10u << 28,
+    UIFontDescriptorClassSymbolic = 12u << 28
+} NS_ENUM_AVAILABLE_IOS(7_0);
+
+typedef NSUInteger UIFontDescriptorClass;
+
+@class NSMutableDictionary, NSDictionary, NSArray, NSSet;
+
+NS_CLASS_AVAILABLE_IOS(7_0) @interface UIFontDescriptor : NSObject <NSCopying, NSSecureCoding>
+
+- (instancetype)init;
+- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
+
+// Core attribute access
+@property(nonatomic, readonly) NSString *postscriptName;
+@property(nonatomic, readonly) CGFloat   pointSize;
+@property(nonatomic, readonly) CGAffineTransform matrix;
+@property(nonatomic, readonly) UIFontDescriptorSymbolicTraits symbolicTraits;
+
+- (nullable id)objectForKey:(NSString *)anAttribute;
+
+- (NSDictionary<NSString *, id> *)fontAttributes;
+
+// Instance conversion
+// Returns "normalized" font descriptors matching the receiver. mandatoryKeys is an NSSet instance containing keys that are required to be identical in order to be matched. mandatoryKeys can be nil.
+- (NSArray<UIFontDescriptor *> *)matchingFontDescriptorsWithMandatoryKeys:(nullable NSSet<NSString *> *)mandatoryKeys;
+
+// Instantiation
++ (UIFontDescriptor *)fontDescriptorWithFontAttributes:(NSDictionary<NSString *, id> *)attributes;
++ (UIFontDescriptor *)fontDescriptorWithName:(NSString *)fontName size:(CGFloat)size;
++ (UIFontDescriptor *)fontDescriptorWithName:(NSString *)fontName matrix:(CGAffineTransform)matrix;
+
+// Returns a font descriptor containing the text style and containing the user's selected content size category.
++ (UIFontDescriptor *)preferredFontDescriptorWithTextStyle:(NSString *)style;
+
+- (instancetype)initWithFontAttributes:(NSDictionary<NSString *, id> *)attributes NS_DESIGNATED_INITIALIZER;
+
+- (UIFontDescriptor *)fontDescriptorByAddingAttributes:(NSDictionary<NSString *, id> *)attributes; // the new attributes take precedence over the existing ones in the receiver
+- (UIFontDescriptor *)fontDescriptorWithSymbolicTraits:(UIFontDescriptorSymbolicTraits)symbolicTraits;
+- (UIFontDescriptor *)fontDescriptorWithSize:(CGFloat)newPointSize;
+- (UIFontDescriptor *)fontDescriptorWithMatrix:(CGAffineTransform)matrix;
+- (UIFontDescriptor *)fontDescriptorWithFace:(NSString *)newFace;
+- (UIFontDescriptor *)fontDescriptorWithFamily:(NSString *)newFamily;
+@end
+
+// Predefined font attributes not defined in NSAttributedString.h
+
+UIKIT_EXTERN NSString *const UIFontDescriptorFamilyAttribute NS_AVAILABLE_IOS(7_0);
+UIKIT_EXTERN NSString *const UIFontDescriptorNameAttribute NS_AVAILABLE_IOS(7_0);
+UIKIT_EXTERN NSString *const UIFontDescriptorFaceAttribute NS_AVAILABLE_IOS(7_0);
+UIKIT_EXTERN NSString *const UIFontDescriptorSizeAttribute NS_AVAILABLE_IOS(7_0);
+UIKIT_EXTERN NSString *const UIFontDescriptorVisibleNameAttribute NS_AVAILABLE_IOS(7_0);
+
+UIKIT_EXTERN NSString *const UIFontDescriptorMatrixAttribute NS_AVAILABLE_IOS(7_0); // An NSValue containing a CGAffineTransform. (default: identity matrix)
+UIKIT_EXTERN NSString *const UIFontDescriptorCharacterSetAttribute NS_AVAILABLE_IOS(7_0); // An NSCharacterSet instance representing a set of Unicode characters covered by the font. (default: supplied by font)
+UIKIT_EXTERN NSString *const UIFontDescriptorCascadeListAttribute NS_AVAILABLE_IOS(7_0); // An NSArray instance. Each member of the array is a sub-descriptor. (default: the system default cascading list for user's locale)
+UIKIT_EXTERN NSString *const UIFontDescriptorTraitsAttribute NS_AVAILABLE_IOS(7_0); // An NSDictionary instance fully describing font traits. (default: supplied by font)
+UIKIT_EXTERN NSString *const UIFontDescriptorFixedAdvanceAttribute NS_AVAILABLE_IOS(7_0); // A float represented as an NSNumber. The value overrides glyph advancement specified by the font. (default: supplied by each glyph)
+UIKIT_EXTERN NSString *const UIFontDescriptorFeatureSettingsAttribute NS_AVAILABLE_IOS(7_0); // An array of dictionaries representing non-default font feature settings. Each dictionary contains UIFontFeatureTypeIdentifierKey and UIFontFeatureSelectorIdentifierKey.
+
+// An NSString containing the desired Text Style
+UIKIT_EXTERN NSString *const UIFontDescriptorTextStyleAttribute NS_AVAILABLE_IOS(7_0);
+    
+// Font traits keys
+// This key is used with a trait dictionary to get the symbolic traits value as an NSNumber.
+UIKIT_EXTERN NSString *const UIFontSymbolicTrait NS_AVAILABLE_IOS(7_0);
+
+// This key is used with a trait dictionary to get the normalized weight value as an NSNumber. The valid value range is from -1.0 to 1.0. The value of 0.0 corresponds to the regular or medium font weight.
+UIKIT_EXTERN NSString *const UIFontWeightTrait NS_AVAILABLE_IOS(7_0);
+
+// This key is used with a trait dictionary to get the relative inter-glyph spacing value as an NSNumber. The valid value range is from -1.0 to 1.0. The value of 0.0 corresponds to the regular glyph spacing.
+UIKIT_EXTERN NSString *const UIFontWidthTrait NS_AVAILABLE_IOS(7_0);
+
+// This key is used with a trait dictionary to get the relative slant angle value as an NSNumber. The valid value range is from -1.0 to 1.0. The value or 0.0 corresponds to 0 degree clockwise rotation from the vertical and 1.0 corresponds to 30 degrees clockwise rotation.
+UIKIT_EXTERN NSString *const UIFontSlantTrait NS_AVAILABLE_IOS(7_0);
+
+// Suggested values for use with UIFontWeightTrait, and UIFont's systemFontOfSize:weight:
+// Beware that most fonts will _not_ have variants available in all these weights!
+UIKIT_EXTERN const CGFloat UIFontWeightUltraLight NS_AVAILABLE_IOS(8_2);
+UIKIT_EXTERN const CGFloat UIFontWeightThin NS_AVAILABLE_IOS(8_2);
+UIKIT_EXTERN const CGFloat UIFontWeightLight NS_AVAILABLE_IOS(8_2);
+UIKIT_EXTERN const CGFloat UIFontWeightRegular NS_AVAILABLE_IOS(8_2);
+UIKIT_EXTERN const CGFloat UIFontWeightMedium NS_AVAILABLE_IOS(8_2);
+UIKIT_EXTERN const CGFloat UIFontWeightSemibold NS_AVAILABLE_IOS(8_2);
+UIKIT_EXTERN const CGFloat UIFontWeightBold NS_AVAILABLE_IOS(8_2);
+UIKIT_EXTERN const CGFloat UIFontWeightHeavy NS_AVAILABLE_IOS(8_2);
+UIKIT_EXTERN const CGFloat UIFontWeightBlack NS_AVAILABLE_IOS(8_2);
+
+// Font feature keys
+// A number object specifying font feature type such as ligature, character shape, etc.
+UIKIT_EXTERN NSString *const UIFontFeatureTypeIdentifierKey NS_AVAILABLE_IOS(7_0);
+
+// A number object specifying font feature selector such as common ligature off, traditional character shape, etc.
+UIKIT_EXTERN NSString *const UIFontFeatureSelectorIdentifierKey NS_AVAILABLE_IOS(7_0);
+
+// Font text styles, semantic descriptions of the intended use for a font returned by +[UIFont preferredFontForTextStyle:]
+UIKIT_EXTERN NSString *const UIFontTextStyleTitle1 NS_AVAILABLE_IOS(9_0);
+UIKIT_EXTERN NSString *const UIFontTextStyleTitle2 NS_AVAILABLE_IOS(9_0);
+UIKIT_EXTERN NSString *const UIFontTextStyleTitle3 NS_AVAILABLE_IOS(9_0);
+UIKIT_EXTERN NSString *const UIFontTextStyleHeadline NS_AVAILABLE_IOS(7_0);
+UIKIT_EXTERN NSString *const UIFontTextStyleSubheadline NS_AVAILABLE_IOS(7_0);
+UIKIT_EXTERN NSString *const UIFontTextStyleBody NS_AVAILABLE_IOS(7_0);
+UIKIT_EXTERN NSString *const UIFontTextStyleCallout NS_AVAILABLE_IOS(9_0);
+UIKIT_EXTERN NSString *const UIFontTextStyleFootnote NS_AVAILABLE_IOS(7_0);
+UIKIT_EXTERN NSString *const UIFontTextStyleCaption1 NS_AVAILABLE_IOS(7_0);
+UIKIT_EXTERN NSString *const UIFontTextStyleCaption2 NS_AVAILABLE_IOS(7_0);
+
+NS_ASSUME_NONNULL_END
+
