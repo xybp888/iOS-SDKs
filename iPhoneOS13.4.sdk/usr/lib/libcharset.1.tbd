@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 291D4B64-868C-3268-A7A8-B5741E96D229', 'armv7s: 835F7186-5828-30D4-B918-83A10FE2345C', 
+                   'arm64: 3A1952FA-C60C-363F-B272-0123F782B09C', 'arm64e: A154B58C-372B-3E44-B26A-163EF2E7806A' ]
+platform:        ios
+install-name:    '/usr/lib/libcharset.1.dylib'
+current-version: 2
+compatibility-version: 2
+exports:         
+  - archs:           [ armv7, armv7s ]
+    symbols:         [ ___charset_1VersionNumber, ___charset_1VersionString, _libcharset_relocate ]
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _libcharset_set_relocation_prefix, _locale_charset ]
+...

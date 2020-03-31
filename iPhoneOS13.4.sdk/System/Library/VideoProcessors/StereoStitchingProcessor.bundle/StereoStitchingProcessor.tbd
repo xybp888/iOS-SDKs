@@ -1,0 +1,57 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace, not_app_extension_safe ]
+install-name:          /System/Library/VideoProcessors/StereoStitchingProcessor.bundle/StereoStitchingProcessor
+current-version:       0
+compatibility-version: 0
+exports:
+  - archs:              [ armv7, armv7s, arm64, arm64e ]
+    symbols:            [ _AdaptiveCorrection_applyDistortionModel, _AdaptiveCorrection_applyDistortionModelSimplified,
+                          _AdaptiveCorrection_approximateCorrection, _AdaptiveCorrection_computeStereoRectificationHomographies,
+                          _AdaptiveCorrection_computeVerticalBaselineTransform, _AdaptiveCorrection_create,
+                          _AdaptiveCorrection_createWithConfig, _AdaptiveCorrection_destroy, _AdaptiveCorrection_fullCorrection,
+                          _AdaptiveCorrection_fullCorrectionWithDistortion, _AdaptiveCorrection_getStatus,
+                          _AdaptiveCorrection_rotateCalModel, _AdaptiveCorrection_rotateDistortionModel,
+                          _AdaptiveCorrection_setConfiguration, _AdaptiveCorrection_transformPointsWithMatrix,
+                          _AdjustCalibrationDistorted, _AdjustCalibrationFocalLengthAndOpticalCenterX_Gradient,
+                          _AdjustYOpticalCenterForValidDistanceRange, _CalcDirectZPlaneHomographyAtoBCoords,
+                          _Create420PixelBufferFromPGMFiles, _F16toF32, _F32toF16, _FundamentalDistortionError_MeanVal,
+                          _FundamentalDistortionError_MeanValPlusGradient, _FundamentalEpipolarError_ABSVec,
+                          _FundamentalEpipolarError_MeanVal, _FundamentalEpipolarError_MeanValPlusGradient,
+                          _FundamentalEpipolarError_precomputeFundamental, _SelectPointsWithEpipolarThreshold, _TUGetTiming,
+                          _TUPrintTiming, __readKeyFloat, __readKeyInteger, __readKeyUint32, __readKeyValue,
+                          _adcFocusWindowFromDictionary, _adcInvertExtrinsicAdaptiveCorrectionFloatToAdaptiveCorrectionFloat,
+                          _adcInvertExtrinsicFloatToAdaptiveCorrectionFloat, _determineReferenceFrameIndex, _fmincon_spg,
+                          _getChromaROI, _kADCMetadataReferenceFrameKey, _kSSS_AbsoluteDiffThreshold, _kSSS_AttenuatePercentage,
+                          _kSSS_BaselineDirectionX, _kSSS_BaselineDirectionY, _kSSS_ColorMatching, _kSSS_Confidence,
+                          _kSSS_GridColsCount, _kSSS_GridRowsCount, _kSSS_MaxRange, _kSSS_MinRange, _kSSS_SimilarityLambda,
+                          _kSSS_SimilarityRadius, _kSSS_SimilarityThresholdNarrowChroma, _kSSS_SimilarityThresholdNarrowLuma,
+                          _kSSS_SimilarityThresholdWideChroma, _kSSS_SimilarityThresholdWideLuma, _kSSS_SimilarityWeightLuma,
+                          _kSSS_UnreliableBorder, _loadDefaultsWritesWithPrefix, _makeChromaROI, _makeLocalDefaultsWrites,
+                          _rwppCnrDet_execute, _rwppFeatMatch_execute, _rwppGeomTrans_estimate,
+                          _rwppGeomTrans_estimateRigidTransform, _rwppGeomTrans_estimateRigidTransform2, _rwppPyramid_CopyLuma,
+                          _rwppPyramid_DownscaleLuma, _rwppPyramid_DownscaleLuma10Packed, _rwppPyramid_DownscaleLuma10Unpacked,
+                          _rwppPyramid_accumSparseHistogram, _rwppPyramid_applyHistogram, _rwppPyramid_finalizeSparseHistogram,
+                          _rwppRansac_execute, _rwppRegEngine_checkDefaults, _rwppRegEngine_computeMemoryBlockSize,
+                          _rwppRegEngine_destroy, _rwppRegEngine_execute, _rwppRegEngine_freeResources,
+                          _rwppRegEngine_getDefaults, _rwppRegEngine_init, _rwppRegEngine_reallocResources,
+                          _rwppRegEngine_updateConfiguration, _rwppRunThreads, _videoStabilizationUsesOpenGLES3 ]
+    objc-classes:       [ _ADCTuningParameters, _Calibration, _CameraCalibrationV2, _ColorMatching, _ColorMatchingTuning,
+                          _ConfidenceTuning, _ContentPreservingWarps, _CornerDetectionGPU, _DisparityExtension, _FOVDescriptor,
+                          _FigPlistParser, _FigStillStereoStitchingProcessor, _FigStillStereoStitchingTuningParameters,
+                          _FigStreamingStereoStitchingOutput, _FigStreamingStereoStitchingPrepareDescriptor,
+                          _FigStreamingStereoStitchingProcessor, _FigStreamingStereoStitchingTuningParameters,
+                          _HorizonLineDetector, _LineBendingDetection, _LineDetector, _LinearBlending, _LinearBlendingTuning,
+                          _PlanarSceneDetection, _PyramidBlending, _QualityEstimation, _RegPyramid, _RegWarpPP,
+                          _ShiftmapExtension, _SmoothFlowTransition, _StereoStitchingGpuUtilities, _StreamingTuning,
+                          _disparityDebugUtils ]
+    objc-ivars:         [ _FOVDescriptor._disparityDesc, _FOVDescriptor._disparityExtraBorderHeight,
+                          _FOVDescriptor._disparityExtraBorderHeightAtStitchResolution,
+                          _FOVDescriptor._disparityExtraBorderWidth, _FOVDescriptor._disparityExtraBorderWidthAtStitchResolution,
+                          _FOVDescriptor._disparityHeight, _FOVDescriptor._disparityWidth, _FOVDescriptor._inputBufferHeight,
+                          _FOVDescriptor._inputBufferWidth, _FOVDescriptor._inputExtraBorderHeight,
+                          _FOVDescriptor._inputExtraBorderWidth, _FOVDescriptor._narrowDownscaledHeight,
+                          _FOVDescriptor._narrowDownscaledROI, _FOVDescriptor._narrowDownscaledWidth,
+                          _FigPlistParser._missingKeyExpected, _LinearBlendingTuning.tuning ]
+...

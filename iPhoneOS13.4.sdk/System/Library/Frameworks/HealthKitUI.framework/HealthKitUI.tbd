@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: D1166C69-DEB5-3CC4-900B-81DA10713DF0', 'armv7s: D4A65312-8A89-3B65-9C22-3330A61699C7', 
+                   'arm64: 6DE4CA9F-5A1A-3C96-9FBD-5AB94B5AF59D', 'arm64e: DCF1925A-C877-3D70-A8CB-8836D94B1C61' ]
+platform:        ios
+install-name:    '/System/Library/Frameworks/HealthKitUI.framework/HealthKitUI'
+exports:         
+  - archs:           [ armv7, armv7s ]
+    symbols:         [ _HKRingPercentageValueNoRing ]
+    objc-classes:    [ HKAnimatableObject, HKAnimatableObjectPropertyAnimation, HKCGPointPropertyAnimation, 
+                       HKFloatPropertyAnimation, HKMetricColors, HKRingGroupController, 
+                       HKRingsView, _HKAnimatableProperty, _HKIcon, _HKRing ]
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _HKGLViewSnapshottingDidEndNotification, _HKGLViewSnapshottingWillBeginNotification, 
+                       _HKHealthKitUIFrameworkBundle, _HKScrollPerformanceOptionCategoryKey ]
+    objc-classes:    [ HKActivityRingView, HKGLView ]
+...
