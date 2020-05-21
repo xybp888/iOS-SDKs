@@ -1,0 +1,29 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/UserFS.framework/PlugIns/exfat.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _userfs_plugin_init ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __NSConcreteStackBlock, ___assert_rtn,
+                            ___chkstk_darwin, ___error, ___snprintf_chk,
+                            ___stack_chk_fail, ___stack_chk_guard, __os_log_impl,
+                            _bzero, _calloc, _environ, _err, _free, _fsync, _ioctl, _lseek,
+                            _malloc, _memcmp, _memcpy, _mktime, _os_log_create,
+                            _os_log_type_enabled, _posix_spawn,
+                            _posix_spawn_file_actions_addinherit_np,
+                            _posix_spawn_file_actions_init,
+                            _posix_spawnattr_init, _posix_spawnattr_setflags,
+                            _pread, _pthread_mutex_lock, _pthread_mutex_unlock,
+                            _readv, _strcspn, _strdup, _strerror, _timegm, _waitpid,
+                            _xpc_array_append_value, _xpc_array_get_count,
+                            _xpc_dictionary_create, _xpc_dictionary_set_bool,
+                            _xpc_dictionary_set_date, _xpc_dictionary_set_string,
+                            _xpc_dictionary_set_uint64, _xpc_release,
+                            _xpc_uint64_create, _xpc_uint64_get_value ]
+...

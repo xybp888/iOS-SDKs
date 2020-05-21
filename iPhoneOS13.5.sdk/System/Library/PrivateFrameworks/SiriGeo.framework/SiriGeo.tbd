@@ -1,0 +1,39 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriGeo.framework/SiriGeo
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SiriGeoVersionNumber, _SiriGeoVersionString ]
+    objc-classes:         [ __TtC7SiriGeo23INShareETAIntentHandler,
+                            __TtC7SiriGeo27INStopShareETAIntentHandler,
+                            __TtC7SiriGeo38INRetrieveParkingLocationIntentHandler ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Block_copy, __Block_release, __objc_empty_cache,
+                            _objc_allocWithZone, _objc_lookUpClass, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_release, _objc_retain,
+                            _swift_allocObject, _swift_getInitializedObjCClass,
+                            _swift_getObjCClassMetadata,
+                            _swift_getTypeByMangledNameInContext,
+                            _swift_getWitnessTable, _swift_release ]
+    objc-classes:         [ _CLLocation, _CLPlacemark,
+                            _INRetrieveParkingLocationIntentResponse,
+                            _INShareETAIntentResponse,
+                            _INStopShareETAIntentResponse, _NSObject ]
+    weak-def-symbols:     [ __swift_FORCE_LOAD_$_swiftContacts,
+                            __swift_FORCE_LOAD_$_swiftCoreFoundation,
+                            __swift_FORCE_LOAD_$_swiftCoreGraphics,
+                            __swift_FORCE_LOAD_$_swiftCoreLocation,
+                            __swift_FORCE_LOAD_$_swiftDarwin,
+                            __swift_FORCE_LOAD_$_swiftDispatch,
+                            __swift_FORCE_LOAD_$_swiftFoundation,
+                            __swift_FORCE_LOAD_$_swiftIntents,
+                            __swift_FORCE_LOAD_$_swiftObjectiveC,
+                            __swift_FORCE_LOAD_$_swiftos,
+                            __swift_FORCE_LOAD_$_swiftsimd ]
+...

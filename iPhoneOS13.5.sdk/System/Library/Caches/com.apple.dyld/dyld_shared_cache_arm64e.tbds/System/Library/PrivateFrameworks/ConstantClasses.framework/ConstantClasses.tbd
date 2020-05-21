@@ -1,0 +1,39 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ConstantClasses.framework/ConstantClasses
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFStringHashNSString, __NSConstantDictionaryKeyHash ]
+    objc-classes:         [ __NSConstantArray, __NSConstantArrayEnumerator,
+                            __NSConstantData, __NSConstantDate,
+                            __NSConstantDictionary,
+                            __NSConstantDictionaryEnumerator, __NSConstantNumber,
+                            __NSConstantNumberBool, __NSConstantNumberFloat,
+                            __NSConstantNumberInt ]
+    objc-ivars:           [ __NSConstantArrayEnumerator.capacity,
+                            __NSConstantArrayEnumerator.index,
+                            __NSConstantArrayEnumerator.objects,
+                            __NSConstantDictionaryEnumerator.capacity,
+                            __NSConstantDictionaryEnumerator.currentKey,
+                            __NSConstantDictionaryEnumerator.keyIndex ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSGenericException, _NSStringFromClass,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, _free, _malloc,
+                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass,
+                            _objc_opt_respondsToSelector, _objc_release ]
+    objc-classes:         [ _NSArray, _NSData, _NSDate, _NSDecimalNumber,
+                            _NSDictionary, _NSEnumerator, _NSException,
+                            _NSMutableArray, _NSMutableString, _NSNumber, _NSObject,
+                            _NSString ]
+...

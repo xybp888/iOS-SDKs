@@ -1,0 +1,53 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libBNNS.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:    [ vecLib ]
+    symbols:              [ _BNNSApplyVectorActivationLayer,
+                            _BNNSBatchNormFilterApplyBackwardBatch,
+                            _BNNSBatchNormFilterApplyBatch, _BNNSClearNetwork,
+                            _BNNSDequantize, _BNNSDirectApplyActivationBatch,
+                            _BNNSDirectApplyBroadcastMatMul,
+                            _BNNSDirectApplyConvolutionBatch,
+                            _BNNSDirectApplyFullyConnectedBatch,
+                            _BNNSDirectApplyLossBatch,
+                            _BNNSDirectApplyPoolingBatch,
+                            _BNNSDirectApplyTransposedConvolutionBatch,
+                            _BNNSFilterApply, _BNNSFilterApplyBackwardBatch,
+                            _BNNSFilterApplyBatch,
+                            _BNNSFilterCreateConvolutionLayer,
+                            _BNNSFilterCreateFullyConnectedLayer,
+                            _BNNSFilterCreateFusedLayer,
+                            _BNNSFilterCreateLayerActivation,
+                            _BNNSFilterCreateLayerBatchNorm,
+                            _BNNSFilterCreateLayerConvolution,
+                            _BNNSFilterCreateLayerFullyConnected,
+                            _BNNSFilterCreateLayerLoss,
+                            _BNNSFilterCreateLayerOptimizer,
+                            _BNNSFilterCreateLayerPooling,
+                            _BNNSFilterCreateLayerSparseFullyConnected,
+                            _BNNSFilterCreateLayerTransposedConvolution,
+                            _BNNSFilterCreatePoolingLayer,
+                            _BNNSFilterCreateVectorActivationLayer,
+                            _BNNSFilterDestroy, _BNNSFunctionGRUFusedGates,
+                            _BNNSFusedFilterApplyBackwardBatch,
+                            _BNNSFusedFilterApplyBatch, _BNNSInitGumbel,
+                            _BNNSLossFilterApplyBatch, _BNNSOptimizerFilterApply,
+                            _BNNSSetNetwork ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___chkstk_darwin, ___error, ___memcpy_chk,
+                            ___snprintf_chk, ___stack_chk_fail, ___stack_chk_guard,
+                            __get_cpu_capabilities, __os_log_default,
+                            __os_log_error_impl, __os_log_impl, __tlv_bootstrap,
+                            _bzero, _dispatch_apply, _dispatch_once, _expf, _free, _logf,
+                            _memcpy, _memset_pattern16, _os_log_type_enabled,
+                            _posix_memalign, _rand, _snprintf, _strerror,
+                            _sysctlbyname, _tanhf, _usleep, _vm_page_size ]
+...

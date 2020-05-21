@@ -1,0 +1,72 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriAudioInternal.framework/SiriAudioInternal
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:    [ AudioInternalIntentExtension, IntentsServices,
+                            SiriAudioDESPlugin, SiriAudioHeavyweightTests,
+                            SiriAudioInternal, SiriAudioInternalTests,
+                            SiriAudioSupport, SiriAudioSupportIntegrationTests,
+                            SiriAudioSupportTests, siriaudio_helper ]
+    symbols:              [ _SiriAudioInternalVersionNumber,
+                            _SiriAudioInternalVersionString ]
+    objc-classes:         [ __TtC17SiriAudioInternal23INAddMediaIntentHandler,
+                            __TtC17SiriAudioInternal24INPlayMediaIntentHandler,
+                            __TtC17SiriAudioInternal29INSearchForMediaIntentHandler,
+                            __TtC17SiriAudioInternal34INUpdateMediaAffinityIntentHandler ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Block_copy, __Block_release, ___chkstk_darwin,
+                            __objc_empty_cache, __swiftEmptyArrayStorage,
+                            _malloc_size, _memmove, _objc_allocWithZone,
+                            _objc_lookUpClass, _objc_msgSend, _objc_msgSendSuper2,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue, _swift_allocBox,
+                            _swift_allocObject, _swift_arrayDestroy,
+                            _swift_arrayInitWithCopy, _swift_bridgeObjectRelease,
+                            _swift_bridgeObjectRetain, _swift_deallocObject,
+                            _swift_deallocPartialClassInstance,
+                            _swift_deletedMethodError,
+                            _swift_dynamicCastObjCClass,
+                            _swift_getInitializedObjCClass,
+                            _swift_getObjCClassFromMetadata,
+                            _swift_getObjCClassMetadata, _swift_getObjectType,
+                            _swift_getTypeByMangledNameInContext,
+                            _swift_getTypeByMangledNameInContextInMetadataState,
+                            _swift_getWitnessTable,
+                            _swift_isUniquelyReferenced_nonNull_native,
+                            _swift_once, _swift_projectBox, _swift_release,
+                            _swift_release_n, _swift_retain,
+                            _swift_unknownObjectRelease,
+                            _swift_unknownObjectRetain ]
+    objc-classes:         [ _INAddMediaIntentResponse, _INMediaItem,
+                            _INPlayMediaIntentResponse,
+                            _INPlayMediaMediaItemResolutionResult,
+                            _INSearchForMediaIntentResponse,
+                            _INUpdateMediaAffinityIntentResponse, _NSObject ]
+    weak-def-symbols:     [ __swift_FORCE_LOAD_$_swiftAVFoundation,
+                            __swift_FORCE_LOAD_$_swiftContacts,
+                            __swift_FORCE_LOAD_$_swiftCoreAudio,
+                            __swift_FORCE_LOAD_$_swiftCoreFoundation,
+                            __swift_FORCE_LOAD_$_swiftCoreGraphics,
+                            __swift_FORCE_LOAD_$_swiftCoreImage,
+                            __swift_FORCE_LOAD_$_swiftCoreLocation,
+                            __swift_FORCE_LOAD_$_swiftCoreMIDI,
+                            __swift_FORCE_LOAD_$_swiftCoreMedia,
+                            __swift_FORCE_LOAD_$_swiftDarwin,
+                            __swift_FORCE_LOAD_$_swiftDispatch,
+                            __swift_FORCE_LOAD_$_swiftFoundation,
+                            __swift_FORCE_LOAD_$_swiftIntents,
+                            __swift_FORCE_LOAD_$_swiftMediaPlayer,
+                            __swift_FORCE_LOAD_$_swiftMetal,
+                            __swift_FORCE_LOAD_$_swiftObjectiveC,
+                            __swift_FORCE_LOAD_$_swiftQuartzCore,
+                            __swift_FORCE_LOAD_$_swiftUIKit,
+                            __swift_FORCE_LOAD_$_swiftos,
+                            __swift_FORCE_LOAD_$_swiftsimd ]
+...

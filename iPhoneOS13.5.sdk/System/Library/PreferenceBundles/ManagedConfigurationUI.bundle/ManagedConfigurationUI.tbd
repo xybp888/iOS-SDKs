@@ -1,0 +1,31 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PreferenceBundles/ManagedConfigurationUI.bundle/ManagedConfigurationUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ _MCUIBundleController_iOS ]
+    objc-ivars:           [ _MCUIBundleController_iOS._isOnsiteProfileInstallation ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSLog, _PSIDKey, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_main_q,
+                            __objc_empty_cache, _dispatch_async,
+                            _kMCSettingsURLOnsiteProfileInstallationComponent,
+                            _objc_alloc, _objc_autoreleaseReturnValue,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue ]
+    objc-classes:         [ _MCProfile, _MCProfileConnection,
+                            _MCProfileTitlePageViewController,
+                            _MCProfileTitlePageViewModel, _MCUIBundleController,
+                            _MCUIDataManager,
+                            _MCUIDismissalAwareNavigationController, _NSArray,
+                            _NSNumber, _NSObject, _PSSpecifier, _UIDevice ]
+    objc-ivars:           [ _PSBundleController._parent ]
+...

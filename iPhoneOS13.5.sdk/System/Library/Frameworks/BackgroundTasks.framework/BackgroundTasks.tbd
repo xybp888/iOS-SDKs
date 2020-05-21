@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
+                   'arm64: 727CCD49-7E4B-3A55-8C7C-CEA9FF7B7C19', 'arm64e: 068FFD69-71D6-3A19-AB5B-9A495E547B29' ]
+platform:        ios
+install-name:    '/System/Library/Frameworks/BackgroundTasks.framework/BackgroundTasks'
+exports:         
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _BGTaskSchedulerErrorDomain, __BGTaskSchedulerRunningTasksDidChangeNotification ]
+    objc-classes:    [ BGAppRefreshTask, BGAppRefreshTaskRequest, BGProcessingTask, 
+                       BGProcessingTaskRequest, BGTask, BGTaskRequest, BGTaskScheduler ]
+...

@@ -1,0 +1,22 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/swift/libswiftCoreImage.dylib
+current-version:       0
+compatibility-version: 1
+swift-version:         6
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __swift_FORCE_LOAD_$_swiftCoreImage ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    weak-def-symbols:     [ __swift_FORCE_LOAD_$_swiftCoreFoundation,
+                            __swift_FORCE_LOAD_$_swiftCoreGraphics,
+                            __swift_FORCE_LOAD_$_swiftDarwin,
+                            __swift_FORCE_LOAD_$_swiftDispatch,
+                            __swift_FORCE_LOAD_$_swiftFoundation,
+                            __swift_FORCE_LOAD_$_swiftMetal,
+                            __swift_FORCE_LOAD_$_swiftObjectiveC ]
+...

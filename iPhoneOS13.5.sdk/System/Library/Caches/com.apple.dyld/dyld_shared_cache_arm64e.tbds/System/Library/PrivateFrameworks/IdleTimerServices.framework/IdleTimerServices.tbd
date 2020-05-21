@@ -1,0 +1,58 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IdleTimerServices.framework/IdleTimerServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ITIdleTimerServicesErrorConfigurationDescriptionKey,
+                            _ITIdleTimerServicesErrorDomain,
+                            _ITIdleTimerServicesErrorReasonKey,
+                            _ITIdleTimerStateServiceDomain,
+                            _ITIdleTimerStateServiceMachName,
+                            _ITIdleTimerStateServiceName, _ITLogIdleTimer,
+                            _ITLoggingSubsystem, _IdleTimerServicesVersionNumber,
+                            _IdleTimerServicesVersionString ]
+    objc-classes:         [ _ITIdleTimerAssertion, _ITIdleTimerConfiguration,
+                            _ITIdleTimerServiceProvider, _ITIdleTimerState,
+                            _ITIdleTimerStateClient, _ITIdleTimerStateModel,
+                            _ITIdleTimerStateServer, _ITIdleTimerStateService ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BSDispatchQueueAssert,
+                            _BSLogAddStateCaptureBlockWithTitle,
+                            _NSStringFromClass, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_main_q,
+                            __objc_empty_cache, __os_log_debug_impl,
+                            __os_log_error_impl, __os_log_fault_impl,
+                            __os_log_impl, _dispatch_once, _objc_alloc,
+                            _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_getProperty, _objc_initWeak,
+                            _objc_loadWeakRetained, _objc_moveWeak, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
+                            _objc_storeWeak,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_create, _os_log_type_enabled,
+                            _os_unfair_lock_assert_not_owner,
+                            _os_unfair_lock_assert_owner, _os_unfair_lock_lock,
+                            _os_unfair_lock_unlock ]
+    objc-classes:         [ _BSDescriptionBuilder, _BSObjCProtocol,
+                            _BSServiceConnection, _BSServiceConnectionEndpoint,
+                            _BSServiceConnectionListener, _BSServiceInterface,
+                            _BSServiceQuality, _BSSimpleAssertion,
+                            _NSAssertionHandler, _NSDictionary, _NSError,
+                            _NSMutableArray, _NSMutableDictionary, _NSMutableSet,
+                            _NSNumber, _NSObject, _NSString, _NSUUID ]
+...

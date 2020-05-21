@@ -1,0 +1,46 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/PhotoLibraryServices.axbundle/PhotoLibraryServices
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityCameraUILocalizedString,
+                            _accessibilityPLServicesLocalizedString ]
+    objc-classes:         [ _AXPhotoLibraryServicesGlue,
+                            _PLManagedAssetAccessibility,
+                            ___PLManagedAssetAccessibility_super ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXAttributedStringForBetterPronuciation,
+                            _AXDateStringForFormat, _AXPerformSafeBlock,
+                            _AXPerformValidationChecks,
+                            _AXSystemGetAccessibilityBundlesDirectoryPath,
+                            _UIAXBetterPronuciationKeyLive,
+                            _UIAccessibilityIsImageScreenshot,
+                            _UIAccessibilityMetadataDescriptionForImage,
+                            _UIAccessibilityMetadataDescriptionForVideo,
+                            _UIAccessibilityTokenDurationTimeHHMM,
+                            _UIAccessibilityTokenDurationTimeMMSS,
+                            _UIAccessibilityTraitImage,
+                            __AXFeatureSupportsPhotoDescriptions,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___UIAXStringForVariables, ___objc_personality_v0,
+                            __objc_empty_cache,
+                            _accessibilityUIKitLocalizedString, _dispatch_async,
+                            _dispatch_get_global_queue, _dispatch_once,
+                            _kCFBooleanTrue, _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_opt_class, _objc_opt_isKindOfClass,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue ]
+    objc-classes:         [ _AXAccessQueue, _AXAccessQueueTimer,
+                            _AXAttributedString, _AXValidationManager, _NSBundle,
+                            _NSCalendar, _NSDate, _NSObject, _NSString,
+                            _UIAccessibilitySafeCategory ]
+...

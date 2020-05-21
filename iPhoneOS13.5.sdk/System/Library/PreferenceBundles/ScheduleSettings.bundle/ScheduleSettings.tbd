@@ -1,0 +1,87 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PreferenceBundles/ScheduleSettings.bundle/ScheduleSettings
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MailTableCellImageCenterForLevel,
+                            _MailTableCellTextLeftForLevel,
+                            _ScheduleSettingsAccountKey,
+                            _ScheduleSettingsAccountUniqueIdentifierKey,
+                            _ScheduleSettingsDataclassesKey ]
+    objc-classes:         [ _PushedMailboxTableCell, _ScheduleSettingsController,
+                            _ScheduleSettingsStyleController ]
+    objc-ivars:           [ _PushedMailboxTableCell._level,
+                            _PushedMailboxTableCell._mailboxIcon,
+                            _PushedMailboxTableCell._mailboxName,
+                            _ScheduleSettingsController._accountStore,
+                            _ScheduleSettingsController._checkedSpecifier,
+                            _ScheduleSettingsController._fetchDividerRow,
+                            _ScheduleSettingsController._isLowPowerMode,
+                            _ScheduleSettingsController._radioGroup,
+                            _ScheduleSettingsController._rowToSelect,
+                            _ScheduleSettingsStyleController._account,
+                            _ScheduleSettingsStyleController._ignoringNotifications,
+                            _ScheduleSettingsStyleController._isExchangeAccount,
+                            _ScheduleSettingsStyleController._mailAccountUniqueId,
+                            _ScheduleSettingsStyleController._mailboxInfos,
+                            _ScheduleSettingsStyleController._monitored,
+                            _ScheduleSettingsStyleController._supportsUserPushedMailboxes ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ACAccountStoreDidChangeNotification,
+                            _ACAccountTypeIdentifierExchange,
+                            _ACAccountTypeIdentifierSMTP,
+                            _CFNotificationCenterAddObserver,
+                            _CFNotificationCenterGetDarwinNotifyCenter,
+                            _CFNotificationCenterRemoveObserver, _CGRectGetWidth,
+                            _CGSizeZero, _LocalizableGTStringKeyForKey,
+                            _MSMailboxResultsKeyDisplayName,
+                            _MSMailboxResultsKeyLevel,
+                            _MSMailboxResultsKeyPushState,
+                            _MSMailboxResultsKeyType,
+                            _MSMailboxResultsRelativePath, _NSLog,
+                            _NSProcessInfoPowerStateDidChangeNotification,
+                            _PCSettingsGetClassPollInterval,
+                            _PCSettingsGetClassPushEnabled,
+                            _PCSettingsMobileMeOTASyncAccountIdentifier,
+                            _PCSettingsPurgeDictionariesExceptForCurrent,
+                            _PCSettingsSetClassPollInterval,
+                            _PCSettingsSetClassPushEnabled, _PCSettingsSetStyle,
+                            _PSAlignmentKey, _PSEnabledKey,
+                            _PSFooterAlignmentGroupKey, _PSFooterTextGroupKey,
+                            _PSTableCellKey, _PSTitleKey, _UIRoundToViewScale,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __PCSettingsGetStyle,
+                            ___CFConstantStringClassReference, ___assert_rtn,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __dispatch_main_q, __objc_empty_cache, _dispatch_after,
+                            _dispatch_async, _dispatch_once, _dispatch_time,
+                            _kAccountDataclassBookmarks,
+                            _kAccountDataclassCalendars,
+                            _kAccountDataclassContacts, _kAccountDataclassMail,
+                            _kAccountDataclassNotes, _kAccountDataclassReminders,
+                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain ]
+    objc-classes:         [ _ACAccountStore, _ACUIAccountSummaryCell, _MSAccounts,
+                            _MailAccount, _NSArray, _NSBundle, _NSDictionary,
+                            _NSMutableArray, _NSMutableSet, _NSNotificationCenter,
+                            _NSNumber, _NSObject, _NSProcessInfo, _NSSet,
+                            _PSListController, _PSListItemsController,
+                            _PSSpecifier, _UIColor, _UIDevice, _UIFont, _UIImage,
+                            _UIImageView, _UILabel, _UITableViewCell, _UIView ]
+    objc-ivars:           [ _PSListController._specifiers,
+                            _PSListController._table, _PSSpecifier.cellType,
+                            _PSSpecifier.getter, _PSSpecifier.setter,
+                            _PSSpecifier.target,
+                            _PSViewController._parentController,
+                            _PSViewController._specifier ]
+...

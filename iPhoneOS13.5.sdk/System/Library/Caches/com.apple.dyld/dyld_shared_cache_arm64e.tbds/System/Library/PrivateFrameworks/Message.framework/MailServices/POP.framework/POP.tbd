@@ -1,0 +1,103 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Message.framework/MailServices/POP.framework/POP
+current-version:       3608.100
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MFDeletePOPMessagesCompleted,
+                            _MFDeletePOPMessagesStarted,
+                            _MF_POPAccountDeleteMessagesAfterIntervalKey,
+                            _MF_POPAccountDeleteMessagesOnServerInterval,
+                            _MF_POPAccountDeleteMessagesRightAwayKey,
+                            _MF_POPAccountDeleteMessagesWhenTransferredOutOfInboxKey,
+                            _MF_POPAccountDeletionPolicy,
+                            _MF_POPAccountNeverDeleteMessagesKey ]
+    objc-classes:         [ _MFAPOPAuthScheme, _MFAPOPConnection,
+                            _MFLibraryPOPStore, _MFPOP3Connection, _MFPOP3Fetcher,
+                            _MFPOPDownloadQueue, _MFPOPMessage, _POPAccount ]
+    objc-ivars:           [ _MFPOP3Connection._accountURL,
+                            _MFPOP3Connection._apopTimeStamp,
+                            _MFPOP3Connection._hidingPassword,
+                            _MFPOP3Connection._listResults,
+                            _MFPOP3Connection._messageIdsByNumber,
+                            _MFPOP3Connection._numberOfMessagesAvailable,
+                            _MFPOP3Connection._numbersByMessageId,
+                            _MFPOP3Connection._sendBuffer,
+                            _MFPOP3Connection._state,
+                            _MFPOPDownloadQueue._library,
+                            _MFPOPDownloadQueue._mailbox,
+                            _MFPOPDownloadQueue._uidStore,
+                            _MFPOPDownloadQueue.startDate,
+                            _POPAccount._connection,
+                            _POPAccount._connectionActivityLock,
+                            _POPAccount._connectionTimeout,
+                            _POPAccount._connectionsInUse,
+                            _POPAccount._currentUIDs, _POPAccount._fetchMonitor,
+                            _POPAccount._fetcherNeedsReset,
+                            _POPAccount._hasDoneBackgroundSynchronization,
+                            _POPAccount._newestMessageUID,
+                            _POPAccount._numberOfKnownUIDs,
+                            _POPAccount._oldestMessageUID,
+                            _POPAccount._sharedConnectionCondition,
+                            _POPAccount._shouldAttemptAPOP ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ACAccountTypeIdentifierPOP, _CC_MD5_Final,
+                            _CC_MD5_Init, _CC_MD5_Update, _CSAccountTypePOP,
+                            _ECAccountSchemePOP, _ECAuthenticationSchemeAPOP,
+                            _ECMessageHeaderKeyMessageID, _EFStringWithInt,
+                            _EFStringWithUnsignedInteger,
+                            _MFCreateStringWithData, _MFLogGeneral,
+                            _MFLookupLocalizedString, _MFMessageErrorDomain,
+                            _MFMessageFlagsByApplyingDictionary, _MFUserAgent,
+                            _MSMailAccountStatisticsKindPOP,
+                            _MailboxUserInfoDidChange, _NSPOSIXErrorDomain,
+                            _OBJC_EHTYPE_$_NSException, _StoreServerCountChanged,
+                            __DefaultRuneLocale, __MFLockGlobalLock,
+                            __MFUnlockGlobalLock, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference, ___assert_rtn,
+                            ___maskrune, ___objc_personality_v0, ___snprintf_chk,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_debug_impl,
+                            __os_log_error_impl, __os_log_impl,
+                            _kCFStreamSocketSecurityLevelNegotiatedSSL,
+                            _kCFStreamSocketSecurityLevelNone,
+                            _kCertUIServiceTypePOP3, _kSecAttrProtocolPOP3,
+                            _memchr, _objc_alloc, _objc_allocWithZone,
+                            _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue, _objc_begin_catch,
+                            _objc_end_catch, _objc_enumerationMutation,
+                            _objc_getProperty, _objc_msgSend, _objc_msgSendSuper2,
+                            _objc_opt_class, _objc_opt_isKindOfClass,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
+                            _os_log_type_enabled, _strlen, _strncasecmp, _strncmp,
+                            _strtoul ]
+    objc-classes:         [ _ECAuthenticationScheme,
+                            _EDPersistenceDatabaseGenerationWindow, _EFScheduler,
+                            _MFActivityMonitor, _MFBufferedDataConsumer,
+                            _MFBufferedQueue, _MFConditionLock, _MFConnection,
+                            _MFData, _MFDataHolder, _MFError, _MFInvocationQueue,
+                            _MFLibraryMessage, _MFLibraryStore, _MFLock,
+                            _MFMailMessage, _MFMailMessageLibrary,
+                            _MFMessageHeaders, _MFMonitoredInvocation,
+                            _MFMutableMessageHeaders, _MFNetworkController,
+                            _MFSqliteMessageIDStore, _MailAccount, _NSArray, _NSData,
+                            _NSDate, _NSMutableArray, _NSMutableData,
+                            _NSMutableDictionary, _NSMutableSet, _NSNotification,
+                            _NSNotificationCenter, _NSNumber, _NSObject, _NSSet,
+                            _NSString, _NSThread, _NSUserDefaults ]
+    objc-ivars:           [ _MFConnection._socket,
+                            _MFMailMessageStore._mailboxUid,
+                            _MFMessageDataContainer._data,
+                            _MFMessageDataContainer._incomplete ]
+...

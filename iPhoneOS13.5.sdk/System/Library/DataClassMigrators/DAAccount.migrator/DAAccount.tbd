@@ -1,0 +1,54 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/DataClassMigrators/DAAccount.migrator/DAAccount
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ _DAAccountMigrator ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ACAccountDataclassCalendars,
+                            _ACAccountTypeIdentifierExchange,
+                            _ACAccountTypeIdentifierFacebook, _CFArrayGetCount,
+                            _CFArrayGetValueAtIndex, _CFDictionaryAddValue,
+                            _CFDictionaryCreateMutable, _CFDictionaryGetValue,
+                            _CFDictionarySetValue, _CFEqual,
+                            _CFNotificationCenterGetDarwinNotifyCenter,
+                            _CFNotificationCenterPostNotification, _CFRelease,
+                            _DALoggingwithCategory, _DAUpdateMigrationVersion,
+                            _SecItemCopyMatching, _SecItemUpdate,
+                            __Block_object_assign, __Block_object_dispose,
+                            __CPLog_to_os_log_type, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, __os_log_impl,
+                            _dispatch_group_create, _dispatch_group_enter,
+                            _dispatch_group_leave, _dispatch_group_wait,
+                            _dispatch_once, _dispatch_semaphore_create,
+                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
+                            _kAccountAuthenticationTypeParent,
+                            _kCFAllocatorDefault, _kCFBooleanTrue,
+                            _kCalDAVMainPrincipalUID,
+                            _kCalDAVMobileAccountDelegatePrincipalPath,
+                            _kCalDAVMobileAccountIsDelegate,
+                            _kCalDAVPrincipalsKey, _kDAAccountHost,
+                            _kMobileCalDAVPrincipalPath, _kSecAttrAccessGroup,
+                            _kSecAttrPath, _kSecAttrProtocol,
+                            _kSecAttrProtocolHTTP, _kSecAttrProtocolHTTPS,
+                            _kSecAttrSecurityDomain, _kSecAttrServer, _kSecClass,
+                            _kSecClassInternetPassword, _kSecMatchLimit,
+                            _kSecMatchLimitAll, _kSecReturnAttributes,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_opt_class, _objc_opt_new, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_type_enabled,
+                            _sharedDAAccountStore ]
+    objc-classes:         [ _ACAccountStore, _CDBPreferences, _DataClassMigrator,
+                            _NSArray, _NSMutableSet, _NSNumber, _NSObject, _NSSet ]
+...

@@ -1,0 +1,97 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PrivateFederatedLearning.framework/PrivateFederatedLearning
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PFLClientIsAllowedForIdentifier,
+                            _PFLClientIsEntitled, _PFLPrivatize,
+                            _PFLPrivatizeCustomNorm, _PFLSeparatedDPCustom,
+                            _PFLSimulateCrashIfNecessary,
+                            _PrivateFederatedLearningVersionNumber,
+                            _PrivateFederatedLearningVersionString,
+                            __FindEpsilon, __FindEpsilonFromReconstruction,
+                            __PFLFetchBundleIdentifier,
+                            __PFLFetchValueForEntitlement, __PFLFindGamma,
+                            __PFLPrivatizeCustomNorm, __TestMagnitudePrivatizer,
+                            __TestdeBiasTermUniArray, __Z12innerProductPfmS_m,
+                            __Z12isValidArrayPfm, __Z15arrayNormalizerPfm,
+                            __Z18solveGammaEquationmdd,
+                            __Z19arrayMultiplyScalarPfmf, __Z9arrayNormPfm,
+                            __ZN14PFLSeparatedDP11SeparatedDPEPfmddddidi,
+                            __ZN14PFLSeparatedDP18deBiasTermUniArrayEmddd,
+                            __ZN14PFLSeparatedDP19SeparatedDPUniarrayEPfmdiddd,
+                            __ZN14PFLSeparatedDP20SeparatedDPMagnitudeEdddi,
+                            __ZN20PFLContinuedFraction10valueForCFEdddd,
+                            __ZN20PFLContinuedFraction19logComplementaryCDFEddmd,
+                            __ZN20PFLContinuedFraction21sampleConditionalBetaEmddd,
+                            __ZN20PFLContinuedFraction25regularizeIncompletedBetaEdddd,
+                            __ZN20PFLContinuedFraction8dOfIndexEdddm,
+                            __ZN20PFLContinuedFraction8logCoeffEdd,
+                            __ZN20PFLRejectionSampling19sampleUniformSphereEPfm,
+                            __ZN21PFLUniformRVGenerator27uniformRandomVariableSampleEv,
+                            __ZN21PFLUniformRVGenerator34uniformRandomVariableInRangeSampleEdd,
+                            __ZN22PFLGaussianRVGenerator31PFLGaussianRandomVariableSampleEdd,
+                            _count, _kPFLAllowedEntitlement,
+                            _kPFLCFMaxBetaComputation,
+                            _kPFLPrivatizeIdentifierPhotos,
+                            _kPFLPrivatizeIdentifierProactivePhoneEn,
+                            _kPFLPrivatizeIdentifierProactiveResponses,
+                            _kPFLPrivatizeIdentifierQuickTypeLM,
+                            _kPFLPrivatizeIdentifierVocalClassifier,
+                            _kPFLPrivatizeTaskIdentifierQuickTypeCNNTextClassification,
+                            _kPFLPrivatizeTaskIdentifierQuickTypeLM, _temp ]
+    objc-classes:         [ _PFLDiagnosticReporting, __PFLContinuedFraction,
+                            __PFLGaussianNoiseGenerator, __PFLLog, __PFLMathHelper,
+                            __PFLModelTrainer, __PFLPrivacyParameters,
+                            __PFLRejectionSampling, __PFLVectorPrivatizer ]
+    objc-ivars:           [ __PFLGaussianNoiseGenerator._deviation,
+                            __PFLGaussianNoiseGenerator._mean,
+                            __PFLModelTrainer._imageCount,
+                            __PFLModelTrainer._mlp, __PFLModelTrainer._task,
+                            __PFLPrivacyParameters._dimension,
+                            __PFLPrivacyParameters._identifier,
+                            __PFLPrivacyParameters._maxRejection,
+                            __PFLPrivacyParameters._minCDProduct,
+                            __PFLPrivacyParameters._normmax,
+                            __PFLPrivacyParameters._precision,
+                            __PFLPrivacyParameters._reconstructionProbability,
+                            __PFLPrivacyParameters._rho,
+                            __PFLVectorPrivatizer._nu, __PFLVectorPrivatizer._r ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFRelease, _NSStringFromClass, _NSStringFromSelector,
+                            _NSURLIsDirectoryKey,
+                            _SecTaskCopyValueForEntitlement,
+                            _SecTaskCreateFromSelf, _SimulateCrash,
+                            __Block_object_assign, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference, ___NSArray0__,
+                            ___NSDictionary0__, ___error, ___gxx_personality_v0,
+                            ___sincos_stret, ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_debug_impl,
+                            __os_log_default, __os_log_error_impl, __os_log_impl,
+                            _arc4random, _cos, _dispatch_once, _exp, _getpid,
+                            _kCFBooleanTrue, _lgamma, _log, _malloc, _memcpy,
+                            _objc_alloc, _objc_autorelease,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic, _objc_storeStrong,
+                            _os_log_create, _os_log_type_enabled ]
+    objc-classes:         [ _ETDataSourceFromFolderData,
+                            _ETImageDescriptorExtractor, _ETModelDef,
+                            _ETModelDefMLP, _ETOptimizerDefSGD, _ETTaskClassifier,
+                            _MLModel, _NSArray, _NSBundle, _NSData, _NSDictionary,
+                            _NSFileManager, _NSJSONSerialization, _NSNumber,
+                            _NSObject, _NSString, _NSURL ]
+    weak-def-symbols:     [ __ZdaPv, __ZdlPv, __Znam, __Znwm ]
+...

@@ -1,0 +1,32 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Accounts/Notification/MobileSyncAccountNotificationPlugin.bundle/MobileSyncAccountNotificationPlugin
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ _MobileSyncAccountNotificationObserver ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ACAccountTypeIdentifierAppleAccount,
+                            _ACAccountTypeIdentifierBookmarkDAV,
+                            _ACAccountTypeIdentifierCalDAV,
+                            _ACAccountTypeIdentifierCardDAV,
+                            _ACAccountTypeIdentifierExchange,
+                            _ACAccountTypeIdentifierIMAPNotes,
+                            _SetAccountNameEnabledForDataType,
+                            _SetExternalSourceEnabledForDataType,
+                            __NSConcreteGlobalBlock, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, _dispatch_once,
+                            _kAccountDataclassBookmarks,
+                            _kAccountDataclassCalendars,
+                            _kAccountDataclassContacts, _kAccountDataclassNotes,
+                            _kDataTypeBookmarks, _kDataTypeCalendars,
+                            _kDataTypeContacts, _kDataTypeNotes, _objc_msgSend,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue ]
+    objc-classes:         [ _NSArray, _NSObject, _NSSet ]
+...

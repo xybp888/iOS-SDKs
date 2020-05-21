@@ -1,0 +1,32 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HealthOntology.framework/HealthOntology
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HealthOntologyVersionNumber,
+                            _HealthOntologyVersionString ]
+    objc-classes:         [ _HNNode, _HNOntology, _HNPredicate, _HNQuery,
+                            _HNRelationship ]
+    objc-ivars:           [ _HNNode._identifier, _HNNode._properties,
+                            _HNQuery._predicate, _HNRelationship._type ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSInvalidArgumentException, _NSStringFromSelector,
+                            __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, _arc4random,
+                            _dispatch_once, _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_getProperty,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong ]
+    objc-classes:         [ _NSArray, _NSDictionary, _NSException, _NSObject,
+                            _NSString ]
+...

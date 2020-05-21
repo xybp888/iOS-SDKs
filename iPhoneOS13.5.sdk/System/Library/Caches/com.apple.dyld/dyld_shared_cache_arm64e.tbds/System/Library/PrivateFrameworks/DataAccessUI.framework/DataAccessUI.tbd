@@ -1,0 +1,67 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DataAccessUI.framework/DataAccessUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DAAccountDescriptionFromHostname,
+                            _DiagnosticsEnabledKey,
+                            _kDADiagnosticSaveNotesDelegate ]
+    objc-classes:         [ _DADiagnosticsNotesController,
+                            _DADiagnosticsNotesPane, _DADiagnosticsPSController,
+                            _DASettingsAccountsUIController,
+                            _DASettingsDataclassConfigurationViewController ]
+    objc-ivars:           [ _DADiagnosticsNotesPane._notesView,
+                            _DASettingsAccountsUIController._account ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ACAccountStoreDidChangeNotification,
+                            _ACUIAccountKey, _CFUserNotificationDisplayAlert,
+                            _DALoggingwithCategory, _NSHomeDirectory,
+                            _NSStringFromClass, _OBJC_EHTYPE_$_NSException,
+                            _PSFooterTextGroupKey, _PSKeyNameKey,
+                            _PSPIDForProcessNamed, _PSSetupCustomClassKey,
+                            _PSTableCellKey, _UIApp,
+                            _UITextFieldTextDidChangeNotification,
+                            __Block_object_assign, __CPLog_to_os_log_type,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_main_q,
+                            __objc_empty_cache, __os_log_impl,
+                            _areDADiagnosticsEnabled,
+                            _dataaccess_get_global_queue, _dispatch_async,
+                            _dispatch_get_global_queue, _kDAAccountEmailAddress,
+                            _kDAAccountStolenDisplayUsername, _kill, _objc_alloc,
+                            _objc_autoreleaseReturnValue, _objc_begin_catch,
+                            _objc_end_catch, _objc_enumerationMutation,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _objc_storeWeak,
+                            _os_log_type_enabled, _truncate ]
+    objc-classes:         [ _ACUIDataclassConfigurationViewController,
+                            _ACUIViewController, _DAAccount, _DAAccountLoader,
+                            _DAAggDReporter, _NSArray, _NSAssertionHandler,
+                            _NSBundle, _NSCalendarDate, _NSFileManager,
+                            _NSMutableArray, _NSNotificationCenter, _NSNumber,
+                            _NSObject, _NSString, _NSURL, _PSConfirmationSpecifier,
+                            _PSDetailController, _PSEditableTableCell,
+                            _PSEditingPane, _PSListController, _PSSetupController,
+                            _PSSpecifier, _PSTableCell, _UIAlertAction,
+                            _UIAlertController, _UIAlertView, _UIApplication,
+                            _UIBarButtonItem, _UIDevice, _UIFont, _UITextView, _UIView ]
+    objc-ivars:           [ _PSListController._showingSetupController,
+                            _PSListController._specifiers,
+                            _PSListController._table, _PSSpecifier.action,
+                            _PSSpecifier.cellType,
+                            _PSSpecifier.detailControllerClass,
+                            _PSSpecifier.target ]
+...

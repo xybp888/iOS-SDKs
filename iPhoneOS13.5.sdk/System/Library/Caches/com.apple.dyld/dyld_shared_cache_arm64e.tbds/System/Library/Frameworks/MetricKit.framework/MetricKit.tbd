@@ -1,0 +1,56 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/MetricKit.framework/MetricKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/PrivateFrameworks/SignpostMetrics.framework/SignpostMetrics ]
+    symbols:              [ _MetricKitVersionNumber, _MetricKitVersionString ]
+    objc-classes:         [ _MXAppLaunchMetric, _MXAppResponsivenessMetric,
+                            _MXAppRunTimeMetric, _MXAverage, _MXCPUMetric,
+                            _MXCellularConditionMetric, _MXDiskIOMetric,
+                            _MXDisplayMetric, _MXFramerateMetric, _MXGPUMetric,
+                            _MXHistogram, _MXHistogramBucket,
+                            _MXLocationActivityMetric, _MXMemoryMetric,
+                            _MXMetaData, _MXMetric, _MXMetricManager,
+                            _MXMetricPayload, _MXNetworkTransferMetric,
+                            _MXResourceExceptionMetric, _MXSignpostIntervalData,
+                            _MXSignpostMetric, _MXUnitAveragePixelLuminance,
+                            _MXUnitSignalBars ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSCocoaErrorDomain, _NSInvalidArgumentException,
+                            _NSLocalizedDescriptionKey,
+                            _NSSearchPathForDirectoriesInDomains,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___NSDictionary0__, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_error_impl, __os_log_impl,
+                            _dispatch_async, _dispatch_once,
+                            _dispatch_queue_attr_make_with_qos_class,
+                            _dispatch_queue_create, _notify_cancel,
+                            _notify_register_dispatch, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_copyWeak, _objc_destroyWeak,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_initWeak, _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic, _objc_storeStrong,
+                            _os_log_create, _os_log_type_enabled ]
+    objc-classes:         [ _NSArray, _NSDate, _NSDecimalNumber, _NSDictionary,
+                            _NSDimension, _NSError, _NSException, _NSFileManager,
+                            _NSHashTable, _NSJSONSerialization, _NSKeyedUnarchiver,
+                            _NSMeasurement, _NSMeasurementFormatter,
+                            _NSMutableArray, _NSMutableDictionary, _NSNumber,
+                            _NSObject, _NSSet, _NSString, _NSUnitConverterLinear,
+                            _NSXPCConnection, _NSXPCInterface ]
+...

@@ -1,0 +1,17 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.2.25.8 clang-1103.2.30.20)
+// swift-module-flags: -target armv7-apple-ios10.3 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftMapKit -swift-version 5 -O -enforce-exclusivity=unchecked -module-name MapKit
+import Foundation
+@_exported import MapKit
+import Swift
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, *)
+extension MKLocalSearch.Request {
+  public typealias ResultType = MapKit.MKLocalSearch.ResultType
+}
+extension MKCoordinateSpan : Swift._ObjectiveCBridgeable {
+  public func _bridgeToObjectiveC() -> Foundation.NSValue
+  public static func _forceBridgeFromObjectiveC(_ source: Foundation.NSValue, result: inout MapKit.MKCoordinateSpan?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: Foundation.NSValue, result: inout MapKit.MKCoordinateSpan?) -> Swift.Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: Foundation.NSValue?) -> MapKit.MKCoordinateSpan
+  public typealias _ObjectiveCType = Foundation.NSValue
+}

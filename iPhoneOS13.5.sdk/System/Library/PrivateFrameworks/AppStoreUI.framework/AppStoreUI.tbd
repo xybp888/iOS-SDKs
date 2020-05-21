@@ -1,0 +1,33 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppStoreUI.framework/AppStoreUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ASAppStoreUIBundle ]
+    objc-classes:         [ _ASClientController, _ASPurchaseBatch,
+                            _ASViewControllerFactory ]
+    objc-ivars:           [ _ASClientController._shouldExitAfterPurchases ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFArrayCreate, _CFRelease, _ISErrorIsEqual,
+                            _MGGetBoolAnswer, _SSError, _SSErrorDomain,
+                            _SSErrorNetworkSizeLimitKey, _SSFileLog,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, __os_log_impl,
+                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
+                            _objc_retain, _os_log_type_enabled ]
+    objc-classes:         [ _ISDevice, _ISSoftwareMap, _NSBundle, _NSMutableArray,
+                            _NSMutableDictionary, _NSNumber, _NSObject, _NSString,
+                            _SSDevice, _SSLogConfig, _SUClientController,
+                            _SUClientInterface, _SUGradient,
+                            _SUNetworkLockoutViewController,
+                            _SUPlaceholderViewController, _SUPurchaseBatch,
+                            _SUViewControllerFactory, _UIColor ]
+...

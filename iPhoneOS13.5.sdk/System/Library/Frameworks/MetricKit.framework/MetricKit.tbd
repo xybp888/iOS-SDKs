@@ -1,0 +1,30 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
+                   'arm64: 4EE5FB1F-7F4D-39B0-9499-4E4BDD35D380', 'arm64e: 77AB97E8-2145-3157-81DE-3342C7CE8775' ]
+platform:        ios
+install-name:    '/System/Library/Frameworks/MetricKit.framework/MetricKit'
+exports:         
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    re-exports:      [ '/System/Library/PrivateFrameworks/SignpostMetrics.framework/SignpostMetrics' ]
+    symbols:         [ _MetricKitVersionNumber, _MetricKitVersionString ]
+    objc-classes:    [ MXAppLaunchMetric, MXAppResponsivenessMetric, MXAppRunTimeMetric, 
+                       MXAverage, MXCPUMetric, MXCellularConditionMetric, MXDiskIOMetric, 
+                       MXDisplayMetric, MXFramerateMetric, MXGPUMetric, MXHistogram, 
+                       MXHistogramBucket, MXLocationActivityMetric, MXMemoryMetric, 
+                       MXMetaData, MXMetric, MXMetricManager, MXMetricPayload, MXNetworkTransferMetric, 
+                       MXResourceExceptionMetric, MXSignpostIntervalData, MXSignpostMetric, 
+                       MXUnitAveragePixelLuminance, MXUnitSignalBars ]
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
+                   'arm64: D72273BA-2722-32E4-AE0F-BE5EC6E47289', 'arm64e: 6EDBAF43-B42F-3221-86BE-10844E633103' ]
+platform:        ios
+install-name:    '/System/Library/PrivateFrameworks/SignpostMetrics.framework/SignpostMetrics'
+current-version: 42.2
+exports:         
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _SignpostMetricsVersionNumber, _SignpostMetricsVersionString, 
+                       __MXSignpostMetricsSnapshot ]
+    objc-classes:    [ SignpostMetricsSnapshotter ]
+...

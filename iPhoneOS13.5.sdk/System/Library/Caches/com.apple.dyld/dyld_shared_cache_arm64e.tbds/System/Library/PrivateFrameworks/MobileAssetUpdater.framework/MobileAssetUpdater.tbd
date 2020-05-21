@@ -1,0 +1,41 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MobileAssetUpdater.framework/MobileAssetUpdater
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ _MobileAssetUpdater ]
+    objc-ivars:           [ _MobileAssetUpdater._alternateAssetTypes,
+                            _MobileAssetUpdater._asset,
+                            _MobileAssetUpdater._assetDownloaded,
+                            _MobileAssetUpdater._assetType,
+                            _MobileAssetUpdater._downloadOnCellularAllowed,
+                            _MobileAssetUpdater._lock,
+                            _MobileAssetUpdater._logger,
+                            _MobileAssetUpdater._overrideApplied,
+                            _MobileAssetUpdater._overrideFile,
+                            _MobileAssetUpdater._purgeOverrideFile,
+                            _MobileAssetUpdater._query,
+                            _MobileAssetUpdater._requireAssetMetadata ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MGCopyAnswer, _NSLocalizedDescriptionKey, _NSLog,
+                            _NSLogv, __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, _objc_alloc,
+                            _objc_alloc_init, _objc_autorelease,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release,
+                            _objc_setProperty_atomic,
+                            _objc_setProperty_atomic_copy ]
+    objc-classes:         [ _ASAsset, _MAAsset, _MAAssetQuery, _MADownloadOptions,
+                            _NSDictionary, _NSError, _NSFileManager, _NSLock,
+                            _NSMutableDictionary, _NSNumber, _NSObject, _NSString ]
+...

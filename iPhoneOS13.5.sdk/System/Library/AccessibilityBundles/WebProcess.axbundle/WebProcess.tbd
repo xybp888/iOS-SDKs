@@ -1,0 +1,48 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/WebProcess.axbundle/WebProcess
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Failover, _accessibilityLocalizedString ]
+    objc-classes:         [ _AXWebProcessGlue, _UIAccessibilityLoaderForWebKit,
+                            _WKAccessibilityWebPageObjectAccessibility,
+                            _WKNSObjectAccessibility,
+                            ___WKAccessibilityWebPageObjectAccessibility_super,
+                            ___WKNSObjectAccessibility_super ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXConvertOutgoingValueByFindingLeafDescendant,
+                            _AXDeviceGetMainScreenBounds, _AXLogAppAccessibility,
+                            _AXLogCommon, _AXPerformValidationChecks,
+                            _AXSafeClassFromString, _CGRectContainsPoint,
+                            _NSStringFromPoint, __AXAddToElementCache, __AXAssert,
+                            __AXCreateAXUIElementWithElement,
+                            __AXElementForAXUIElementUniqueId,
+                            __AXUIElementCreateAppElementWithPid,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __UIAXInitializeConstantValues, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___UIAccessibilitySafeClass, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_debug_impl,
+                            __os_log_error_impl, _abort, _dispatch_once,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_initWeak, _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutoreleasedReturnValue,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_type_enabled ]
+    objc-classes:         [ _AXRemoteElement, _AXSimpleRuntimeManager,
+                            _AXValidationManager, _NSArray, _NSBundle, _NSDictionary,
+                            _NSKeyedUnarchiver, _NSNotificationCenter, _NSNumber,
+                            _NSObject, _NSSet, _NSString, _NSValue,
+                            _UIAccessibilityLoader, _UIAccessibilitySafeCategory ]
+...

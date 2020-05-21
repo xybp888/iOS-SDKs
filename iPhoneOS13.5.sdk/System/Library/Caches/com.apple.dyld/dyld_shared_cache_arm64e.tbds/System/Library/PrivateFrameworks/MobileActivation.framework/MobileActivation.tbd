@@ -1,0 +1,73 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MobileActivation.framework/MobileActivation
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MAEActivateDeviceWithError,
+                            _MAECopyActivationRecordWithError, _MAECopyPCRTToken,
+                            _MAECopyUCRTToken, _MAECreateActivationInfo,
+                            _MAECreateActivationRequest,
+                            _MAECreateActivationRequestWithError,
+                            _MAECreateSessionRequestWithError,
+                            _MAECreateStorebagRequest, _MAEDeactivateDevice,
+                            _MAEDeactivateDeviceWithError,
+                            _MAEGetActivationBuild, _MAEGetActivationState,
+                            _MAEGetActivationStateWithError,
+                            _MAEGetActivationURLFromStorebag,
+                            _MAEGetActivationURLFromStorebagWithError,
+                            _MAEGetBrickState, _MAEHandleActivationInfo,
+                            _MAEInFieldCollected, _MAEIssueClientCertificate,
+                            _MAERecertifyDevice, _MAERecertifyDeviceWithError,
+                            _MAETryActivate, _MAEUCRTAvailable,
+                            _MAEUpdateBasebandTicketWithError,
+                            _MAGetActivationState, _MARequestReactivation,
+                            _MAUCRTActivationLocked, _MAUnbrickDevice,
+                            _MobileActivationErrorDomain,
+                            _MobileActivationFunctionNameErrorKey,
+                            _MobileActivationSourceFileLineErrorKey,
+                            _createMobileActivationError,
+                            _kMAActivationStateActivated,
+                            _kMAActivationStateFactoryActivated,
+                            _kMAActivationStateUnactivated,
+                            _kMANotificationCollectionPerformed,
+                            _kMANotificationIdentityChanged,
+                            _kMANotificationUCRTOOBPerformed,
+                            _kMAOptionsActivationLockInfo,
+                            _kMAOptionsActivationResponseHeaders,
+                            _kMAOptionsAllowInvalidNetworkCertificates,
+                            _kMAOptionsBasebandWaitCount,
+                            _kMAOptionsFactoryActivationRequest,
+                            _kNotificationActivationStateChanged,
+                            _kNotificationBrickStateChanged ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSLocalizedDescriptionKey, _NSUnderlyingErrorKey,
+                            _SecCertificateCopyData, _SecKeyCopyAttributes,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            _dispatch_async, _dispatch_get_global_queue,
+                            _kSecAttrTokenOID, _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong,
+                            _os_variant_allows_internal_security_policies ]
+    objc-classes:         [ _NSArray, _NSCalendar, _NSData, _NSDate, _NSDictionary,
+                            _NSError, _NSFileManager, _NSHTTPURLResponse,
+                            _NSMutableCharacterSet, _NSMutableDictionary,
+                            _NSMutableString, _NSMutableURLRequest, _NSNumber,
+                            _NSObject, _NSPropertyListSerialization, _NSString,
+                            _NSURL, _NSXPCConnection, _NSXPCInterface ]
+...

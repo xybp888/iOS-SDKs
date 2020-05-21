@@ -1,0 +1,27 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/TextInput/TextInput_yue.bundle/TextInput_yue
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ _TIInputManagerHandwritingTraditional_yue,
+                            _TIKeyboardInputManagerCangjie_yue,
+                            _TIKeyboardInputManagerWubi_yue ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ ___CFConstantStringClassReference,
+                            __objc_empty_cache, _kCangjieMode,
+                            _kTraditionalCantonese, _kWubihuaMode, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class ]
+    objc-classes:         [ _NSLocale, _NSObject, _TIInputManagerHandwriting,
+                            _TIKeyEventMap_zh_Hant_Cangjie,
+                            _TIKeyEventMap_zh_Hant_Stroke,
+                            _TIKeyboardInputManagerCangjie,
+                            _TIKeyboardInputManagerWubi,
+                            _TIWordSearchCangjie_yue_Hant,
+                            _TIWordSearchWubihua_yue_Hant ]
+...

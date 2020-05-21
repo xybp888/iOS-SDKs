@@ -1,0 +1,28 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreDuetStatistics.framework/CoreDuetStatistics
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ _CDSBasisObject, _CDSEngine ]
+    objc-ivars:           [ _CDSBasisObject._attributeId,
+                            _CDSBasisObject._basisDoubleValue,
+                            _CDSBasisObject._basisUint64Value,
+                            _CDSBasisObject._basisValueString,
+                            _CDSBasisObject._creationDate,
+                            _CDSBasisObject._duration,
+                            _CDSBasisObject._fallingEdge,
+                            _CDSBasisObject._localTime,
+                            _CDSBasisObject._risingEdge, _CDSBasisObject._type ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __objc_empty_cache, _objc_autoreleaseReturnValue,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
+                            _objc_retain, _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong ]
+    objc-classes:         [ _NSObject ]
+...

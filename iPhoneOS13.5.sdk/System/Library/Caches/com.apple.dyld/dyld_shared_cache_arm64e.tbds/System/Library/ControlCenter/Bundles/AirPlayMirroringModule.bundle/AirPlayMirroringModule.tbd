@@ -1,0 +1,59 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/ControlCenter/Bundles/AirPlayMirroringModule.bundle/AirPlayMirroringModule
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ _MPAVAirPlayMirroringMenuModuleItem,
+                            _MPAVAirPlayMirroringMenuModuleViewController,
+                            _MPAVAirPlayMirroringModule,
+                            _MPAVOutputContextController,
+                            _MPAVOutputDeviceDiscoverySessionController ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AVOutputContextOutputDeviceDidChangeNotification,
+                            _AVOutputDeviceDiscoverySessionAvailableOutputDevicesDidChangeNotification,
+                            _CFPreferencesGetAppBooleanValue, _CGRectGetHeight,
+                            _CGRectGetMinY, _CGRectGetWidth, _CGRectInset,
+                            _CGRectZero, _CGSizeZero, _NSDirectionalEdgeInsetsZero,
+                            _NSFontAttributeName,
+                            _UIContentSizeCategoryAccessibilityMedium,
+                            _UIContentSizeCategoryCompareToCategory,
+                            _UIContentSizeCategoryExtraExtraExtraLarge,
+                            _UIContentSizeCategoryIsAccessibilityCategory,
+                            _UIFloorToScale, _UIFontTextStyleFootnote1,
+                            _UIFontWeightBold, _UIFontWeightTrait,
+                            _UIRectIntegralWithScale, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_main_q,
+                            __objc_empty_cache, _dispatch_async,
+                            _dispatch_get_global_queue,
+                            _kCFPreferencesAnyApplication, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_copyWeak, _objc_destroyWeak,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_initWeak, _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic, _objc_storeStrong ]
+    objc-classes:         [ _AVOutputContext, _AVOutputDevice,
+                            _AVOutputDeviceDiscoverySession,
+                            _AVOutputDeviceDiscoverySessionAvailableOutputDevices,
+                            _CCUICAPackageDescription, _CCUIMenuModuleItem,
+                            _CCUIMenuModuleViewController, _NSArray, _NSBundle,
+                            _NSCharacterSet, _NSDictionary, _NSMutableArray,
+                            _NSMutableSet, _NSNotificationCenter, _NSNumber,
+                            _NSObject, _NSSet, _NSStringDrawingContext, _NSUUID,
+                            _UIColor, _UIDevice, _UIFont, _UIFontDescriptor,
+                            _UIFontMetrics, _UIImage, _UILabel, _UITraitCollection,
+                            _UIView ]
+...

@@ -1,0 +1,25 @@
+--- !tapi-tbd-v2
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SensingProtocols.framework/SensingProtocols
+current-version:       2
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BinaryFrameReadFrom, _SensingProtocolsVersionNumber,
+                            _SensingProtocolsVersionString ]
+    objc-classes:         [ _BinaryFrame ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PBReaderSkipValueWithTag,
+                            ___CFConstantStringClassReference,
+                            __objc_empty_cache, _objc_autoreleaseReturnValue,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue ]
+    objc-classes:         [ _NSMutableDictionary, _NSObject, _NSString, _PBCodable ]
+    objc-ivars:           [ _PBDataReader._bytes, _PBDataReader._error,
+                            _PBDataReader._length, _PBDataReader._pos ]
+...
