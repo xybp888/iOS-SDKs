@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/libAWDSupportFramework.dylib
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AWDAddressBookSyncFullSyncEventReadFrom,
@@ -5711,45 +5709,4 @@ exports:
                             _AWDWifiStats._has, _AWDWifiStats._linkRateMbps,
                             _AWDWifiStats._phyType, _AWDWifiStats._powerSaveDur,
                             _AWDWifiStats._rxbytes, _AWDWifiStats._txbytes ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _NSRangeException, _PBDataWriterPlaceMark,
-                            _PBDataWriterRecallMark, _PBDataWriterWriteBOOLField,
-                            _PBDataWriterWriteDataField,
-                            _PBDataWriterWriteDoubleField,
-                            _PBDataWriterWriteFloatField,
-                            _PBDataWriterWriteInt32Field,
-                            _PBDataWriterWriteInt64Field,
-                            _PBDataWriterWriteSint32Field,
-                            _PBDataWriterWriteSint64Field,
-                            _PBDataWriterWriteStringField,
-                            _PBDataWriterWriteSubmessage,
-                            _PBDataWriterWriteUint32Field,
-                            _PBDataWriterWriteUint64Field, _PBReaderPlaceMark,
-                            _PBReaderReadData, _PBReaderReadString,
-                            _PBReaderRecallMark, _PBReaderSkipValueWithTag,
-                            _PBRepeatedInt32Add, _PBRepeatedInt32Clear,
-                            _PBRepeatedInt32Copy, _PBRepeatedInt32Hash,
-                            _PBRepeatedInt32IsEqual, _PBRepeatedInt32NSArray,
-                            _PBRepeatedInt32Set, _PBRepeatedInt64Add,
-                            _PBRepeatedInt64Clear, _PBRepeatedInt64Copy,
-                            _PBRepeatedInt64Hash, _PBRepeatedInt64IsEqual,
-                            _PBRepeatedInt64NSArray, _PBRepeatedInt64Set,
-                            _PBRepeatedUInt32Add, _PBRepeatedUInt32Clear,
-                            _PBRepeatedUInt32Copy, _PBRepeatedUInt32Hash,
-                            _PBRepeatedUInt32IsEqual, _PBRepeatedUInt32NSArray,
-                            _PBRepeatedUInt32Set, _PBRepeatedUInt64Add,
-                            _PBRepeatedUInt64Clear, _PBRepeatedUInt64Copy,
-                            _PBRepeatedUInt64Hash, _PBRepeatedUInt64IsEqual,
-                            _PBRepeatedUInt64NSArray, _PBRepeatedUInt64Set,
-                            ___CFConstantStringClassReference, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache, _fmod, _fmodf,
-                            _objc_alloc, _objc_alloc_init,
-                            _objc_enumerationMutation, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
-                            _objc_retain, _objc_setProperty_nonatomic ]
-    objc-classes:         [ _NSException, _NSMutableArray, _NSMutableDictionary,
-                            _NSNumber, _NSObject, _NSString, _PBCodable ]
-    objc-ivars:           [ _PBDataReader._bytes, _PBDataReader._error,
-                            _PBDataReader._length, _PBDataReader._pos ]
 ...

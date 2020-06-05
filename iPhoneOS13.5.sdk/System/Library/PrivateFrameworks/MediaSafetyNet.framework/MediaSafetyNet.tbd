@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MediaSafetyNet.framework/MediaSafetyNet
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MSNAnnounceMessageExceptionString, _MSNLog,
@@ -36,63 +34,4 @@ exports:
                             _MSNScopedExceptionsServer._activeExceptions,
                             _MSNScopedExceptionsServer._listener,
                             _MSNScopedExceptionsServer._queue, _MSNTTR._url ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _AnalyticsSendEvent, _CFBooleanGetTypeID,
-                            _CFBooleanGetValue, _CFDictionaryGetTypeID,
-                            _CFDictionaryGetValue, _CFGetTypeID, _CFNumberCreate,
-                            _CFPreferencesCopyAppValue,
-                            _CFPreferencesGetAppIntegerValue,
-                            _CFPreferencesSetAppValue, _CFRelease,
-                            _CMNotificationCenterAddListener,
-                            _CMSessionCopyProperty, _CMSessionCreate,
-                            _CMSessionGetNotificationCenter,
-                            _CMSessionSetProperty, _MGCopyAnswer,
-                            _MGGetProductType, _SecTaskCreateFromSelf,
-                            __AXSCommandAndControlEnabled,
-                            __AXSSwitchControlEnabledAndNeedsCameraOnLockScreen,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            ___CFConstantStringClassReference, ___assert_rtn,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __dispatch_main_q, __dispatch_source_type_timer,
-                            __objc_empty_cache, __os_log_debug_impl,
-                            __os_log_error_impl, __os_log_fault_impl,
-                            __os_log_impl, _abort, _abort_report_np, _asprintf,
-                            _dispatch_async, _dispatch_once,
-                            _dispatch_queue_create, _dispatch_resume,
-                            _dispatch_source_create,
-                            _dispatch_source_set_event_handler,
-                            _dispatch_source_set_timer, _dispatch_sync,
-                            _dispatch_time, _dlerror, _dlopen,
-                            _dyld_get_program_sdk_version, _free, _getpid,
-                            _kCFAllocatorDefault, _kCFBooleanFalse,
-                            _kCMSessionGlobalNotificationKey_CarPlayIsConnectedDidChange_IsConnected,
-                            _kCMSessionGlobalNotification_CarPlayIsConnectedDidChange,
-                            _kCMSessionGlobalProperty_CarPlayIsConnected,
-                            _kCMSessionProperty_ClientName,
-                            _kCMSessionProperty_ClientPID,
-                            _kCMSessionProperty_ClientSecTask,
-                            _kCMSessionProperty_ClientType,
-                            _kCMSessionProperty_ClientVersionOfLinkedSDK,
-                            _notify_get_state, _notify_register_dispatch,
-                            _objc_alloc, _objc_alloc_init,
-                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
-                            _objc_autoreleaseReturnValue,
-                            _objc_enumerationMutation, _objc_getClass,
-                            _objc_getProperty, _objc_msgSend, _objc_msgSendSuper2,
-                            _objc_opt_class, _objc_opt_isKindOfClass,
-                            _objc_opt_new, _objc_release, _objc_retain,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_retainBlock, _objc_setProperty_atomic,
-                            _objc_storeStrong, _os_log_create,
-                            _os_log_type_enabled,
-                            _os_variant_allows_internal_security_policies,
-                            _os_variant_has_factory_content, _stat, _strcmp, _strdup ]
-    objc-classes:         [ _FBSDisplayLayoutMonitor,
-                            _FBSDisplayLayoutMonitorConfiguration, _NSArray,
-                            _NSCharacterSet, _NSDate, _NSDictionary, _NSMutableArray,
-                            _NSMutableCharacterSet, _NSMutableSet, _NSObject, _NSSet,
-                            _NSString, _NSURL, _NSXPCConnection, _NSXPCInterface,
-                            _NSXPCListener, _UIStatusBarServer ]
 ...

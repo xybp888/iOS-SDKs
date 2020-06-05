@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/TextInput/TextInput_zh.bundle/TextInput_zh
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     objc-classes:         [ _TIInputManagerHandwritingSimplified,
@@ -71,80 +69,4 @@ exports:
                             _TIZhuyinInputManager._syllableMedialBuffer,
                             _TIZhuyinInputManager._syllableToneBuffer,
                             _TIZhuyinInputManager._syllableVowelBuffer ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFStringTransform,
-                            _CIMMecabraCandidateSyllableSeparator,
-                            _MecabraCandidateCopySyllableLengthArrayForWordAtIndex,
-                            _MecabraCandidateCopySyllableLengthArrayInAnalysisString,
-                            _MecabraCandidateGetDictionaryReading,
-                            _MecabraCandidateGetWordCount,
-                            _MecabraCandidateGetWordLengthAtIndex,
-                            _MecabraCandidateGetWordReadingLengthAtIndex,
-                            _MecabraCandidateWordAtIndexIsFromSystemDictionary,
-                            _TICanLogMessageAtLevel,
-                            _TIInputModeGetComponentsFromIdentifier,
-                            _TILiveConversionPreference, _TIOSLogFacility,
-                            _TIPredictionTimePreference,
-                            _TISpaceConfirmationPreference,
-                            __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __ZN14TIInputManager23sync_with_input_from_UIEv,
-                            ___CFConstantStringClassReference, ___NSArray0__,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __objc_empty_cache, __os_log_debug_impl,
-                            __os_log_default, __os_log_impl, _dispatch_once,
-                            _kCFStringTransformFullwidthHalfwidth, _kCangjieMode,
-                            _kDefaultLayoutTag, _kSimplifiedChinese,
-                            _kTraditionalChinese, _kWubihuaMode, _objc_alloc,
-                            _objc_alloc_init, _objc_autoreleasePoolPop,
-                            _objc_autoreleasePoolPush,
-                            _objc_autoreleaseReturnValue, _objc_copyWeak,
-                            _objc_destroyWeak, _objc_enumerationMutation,
-                            _objc_getProperty, _objc_initWeak,
-                            _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_retainBlock, _objc_setProperty_atomic,
-                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
-                            _objc_sync_enter, _objc_sync_exit,
-                            _objc_unsafeClaimAutoreleasedReturnValue,
-                            _os_log_type_enabled, _uscript_getScript ]
-    objc-classes:         [ _NSArray, _NSAssertionHandler, _NSCharacterSet,
-                            _NSDictionary, _NSLocale, _NSMutableArray,
-                            _NSMutableCharacterSet, _NSMutableString, _NSNumber,
-                            _NSObject, _NSSet, _NSString, _NSTimer, _NSValue,
-                            _TICharacterSetDescription,
-                            _TIInputManagerHandwriting,
-                            _TIKeyEventMap_zh_Hans_Pinyin,
-                            _TIKeyEventMap_zh_Hans_Stroke,
-                            _TIKeyEventMap_zh_Hant_Cangjie,
-                            _TIKeyEventMap_zh_Hant_Pinyin,
-                            _TIKeyEventMap_zh_Hant_Stroke,
-                            _TIKeyEventMap_zh_Hant_Zhuyin,
-                            _TIKeyEventMap_zh_Hant_Zhuyin_LiveConversion,
-                            _TIKeyboardBehaviors_Pinyin,
-                            _TIKeyboardBehaviors_Zhuyin,
-                            _TIKeyboardBehaviors_Zhuyin_LiveConversion,
-                            _TIKeyboardCandidateResultSet,
-                            _TIKeyboardCandidateSingle, _TIKeyboardInput,
-                            _TIKeyboardInputManagerCangjie,
-                            _TIKeyboardInputManagerChinesePhonetic,
-                            _TIKeyboardInputManagerKeyboardContext,
-                            _TIKeyboardInputManagerWubi,
-                            _TIKeyboardInputManager_zh_ja,
-                            _TIKeyboardIntermediateText, _TIKeyboardKeyBehaviors,
-                            _TIKeyboardOutput, _TILabeledKeyboardCandidate,
-                            _TILiveConversionCandidate, _TIMecabraCandidate,
-                            _TIMecabraIMLogger, _TIMecabraSegment,
-                            _TIMutableCharacterSetDescription,
-                            _TIPreferencesController, _TIWordSearch,
-                            _TIWordSearchChinesePhoneticOperationGetCandidates,
-                            _TIWordSearchWubihua_zh_Hans,
-                            _TIWordSearchWubihua_zh_Hant ]
-    objc-ivars:           [ _TIKeyboardInputManager.m_composedText,
-                            _TIKeyboardInputManager.m_impl,
-                            _TIKeyboardInputManagerChinesePhonetic._isInAmbiguousMode ]
 ...

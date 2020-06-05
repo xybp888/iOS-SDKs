@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libsystem_sandbox.dylib
 current-version:       1217.120.7
 compatibility-version: 1
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _APP_SANDBOX_IOKIT_CLIENT, _APP_SANDBOX_MACH,
@@ -94,14 +92,4 @@ exports:
                             _sandbox_spawnattrs_setcontainer,
                             _sandbox_spawnattrs_setprofilename, _sandbox_suspend,
                             _sandbox_unsuspend ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ ___error, ___sandbox_ms, ___stack_chk_fail,
-                            ___stack_chk_guard, __os_assert_log, __os_crash,
-                            __simple_asl_log, _abort, _asprintf, _calloc, _close, _csops,
-                            _dlclose, _dlerror, _dlopen, _dlsym, _fchflags, _free,
-                            _fts_close, _fts_open, _fts_read, _getpid, _getxattr,
-                            _lchflags, _malloc, _memcmp, _memcpy, _memset, _mkdir, _mktemp,
-                            _open, _rmdir, _stat, _strcmp, _strdup, _strerror, _strlen,
-                            _sysctlbyname, _vasprintf ]
 ...

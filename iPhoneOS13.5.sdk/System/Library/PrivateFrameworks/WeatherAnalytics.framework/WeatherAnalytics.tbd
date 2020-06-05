@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WeatherAnalytics.framework/WeatherAnalytics
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _WeatherAnalyticsVersionNumber,
@@ -69,15 +67,4 @@ exports:
                             _WAViewAction._viewAction, _WAViewData._viewAction,
                             _WAViewData._viewSessionID, _WAViewData._viewType,
                             _WAViewType._viewType ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ ___CFConstantStringClassReference, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache, _objc_alloc,
-                            _objc_autoreleaseReturnValue, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class, _objc_opt_new,
-                            _objc_release, _objc_retain,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong ]
-    objc-classes:         [ _AAEventData, _AAEventProperty, _AATimedData,
-                            _NSDictionary, _NSNull, _NSObject ]
 ...

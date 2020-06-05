@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TrackingAvoidance.framework/TrackingAvoidance
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _NSJSONSerializationNSStringErrorDomain,
@@ -287,44 +285,4 @@ exports:
                             _TAVisitStateSettings._qualitySnapshotDwellDuration,
                             _TAVisitStateSettings._snapshotBufferTimeIntervalOfRetention,
                             _TAVisitStateSettings._thresholdOfLocationRelevance ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CLLocationCoordinate2DMake,
-                            _NSLocalizedDescriptionKey,
-                            _NSLocalizedRecoverySuggestionErrorKey, _NSLog,
-                            _NSStringFromClass, _NSUnderlyingErrorKey,
-                            _OBJC_EHTYPE_id, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock, __Unwind_Resume,
-                            ___CFConstantStringClassReference, ___NSArray0__,
-                            ___NSDictionary0__, ___gxx_personality_v0,
-                            ___objc_personality_v0, ___sprintf_chk,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __objc_empty_cache, __os_log_debug_impl,
-                            __os_log_error_impl, __os_log_fault_impl,
-                            __os_log_impl, _dispatch_once,
-                            _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _dispatch_time, _malloc, _objc_alloc, _objc_alloc_init,
-                            _objc_autorelease, _objc_autoreleaseReturnValue,
-                            _objc_begin_catch, _objc_end_catch,
-                            _objc_enumerationMutation, _objc_getProperty,
-                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass,
-                            _objc_opt_respondsToSelector, _objc_release,
-                            _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong, _objc_sync_enter, _objc_sync_exit,
-                            _objc_unsafeClaimAutoreleasedReturnValue,
-                            _os_log_create, _os_log_type_enabled, _strtol ]
-    objc-classes:         [ _CLLocation, _NSArray, _NSBundle, _NSCompoundPredicate,
-                            _NSData, _NSDate, _NSDateInterval, _NSDictionary, _NSError,
-                            _NSFileHandle, _NSHashTable, _NSISO8601DateFormatter,
-                            _NSJSONSerialization, _NSKeyedArchiver,
-                            _NSKeyedUnarchiver, _NSLocale, _NSMutableArray,
-                            _NSMutableDictionary, _NSMutableOrderedSet,
-                            _NSMutableSet, _NSNull, _NSNumber, _NSNumberFormatter,
-                            _NSObject, _NSPredicate, _NSProcessInfo, _NSSet, _NSString,
-                            _NSThread, _NSTimeZone, _OSActivityStream,
-                            _OSLogPersistence ]
 ...

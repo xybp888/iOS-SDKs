@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NewsServices.framework/NewsServices
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _NNHHeadlineLaunchURLComplicationPathPrefix,
@@ -24,48 +22,4 @@ exports:
                             _NSSComplicationDataSource,
                             _NSSNewsArticlePrefetcher,
                             _NSSNewsRemoteViewController, _NSSNewsViewController ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _NSSNewsArticleViewerBundleID,
-                            _NSSNewsWidgetMessageForStaticNewsHeadlineTitle,
-                            _NSSNewsWidgetMessageForStaticNewsSection,
-                            _UIRectFill, __NSConcreteStackBlock, __Unwind_Resume,
-                            ___CFConstantStringClassReference,
-                            ___objc_personality_v0, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache,
-                            __os_log_default, __os_log_error_impl,
-                            _abort_report_np, _dlerror, _dlopen, _dlsym, _objc_alloc,
-                            _objc_alloc_init, _objc_autoreleasePoolPop,
-                            _objc_autoreleasePoolPush,
-                            _objc_autoreleaseReturnValue, _objc_copyWeak,
-                            _objc_destroyWeak, _objc_getProperty, _objc_initWeak,
-                            _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
-                            _objc_retain, _objc_retainAutoreleasedReturnValue,
-                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
-                            _objc_unsafeClaimAutoreleasedReturnValue,
-                            _os_log_type_enabled ]
-    objc-classes:         [ _NSArray, _NSBundle, _NSDictionary, _NSExtension,
-                            _NSObject, _NSSArticleInternal,
-                            _NSSArticleViewControllerInternal, _NSString,
-                            _NSXPCInterface, _UIColor, _UIGraphicsImageRenderer,
-                            _UIGraphicsImageRendererFormat, _UIImage,
-                            _UIViewController, __UIRemoteViewController,
-                            __UIResilientRemoteViewContainerViewController ]
-    weak-def-symbols:     [ _CLKComplicationFamilyCircularMedium,
-                            _OBJC_CLASS_$_CLKComplicationTemplateCircularSmallSimpleImage,
-                            _OBJC_CLASS_$_CLKComplicationTemplateExtraLargeSimpleImage,
-                            _OBJC_CLASS_$_CLKComplicationTemplateGraphicBezelCircularText,
-                            _OBJC_CLASS_$_CLKComplicationTemplateGraphicCircularImage,
-                            _OBJC_CLASS_$_CLKComplicationTemplateGraphicCornerCircularImage,
-                            _OBJC_CLASS_$_CLKComplicationTemplateGraphicRectangularStandardBody,
-                            _OBJC_CLASS_$_CLKComplicationTemplateModularLargeStandardBody,
-                            _OBJC_CLASS_$_CLKComplicationTemplateModularSmallSimpleImage,
-                            _OBJC_CLASS_$_CLKComplicationTemplateUtilitarianLargeFlat,
-                            _OBJC_CLASS_$_CLKComplicationTemplateUtilitarianSmallFlat,
-                            _OBJC_CLASS_$_CLKComplicationTemplateUtilitarianSmallSquare,
-                            _OBJC_CLASS_$_CLKFullColorImageProvider,
-                            _OBJC_CLASS_$_CLKImageProvider,
-                            _OBJC_CLASS_$_CLKSimpleTextProvider ]
 ...

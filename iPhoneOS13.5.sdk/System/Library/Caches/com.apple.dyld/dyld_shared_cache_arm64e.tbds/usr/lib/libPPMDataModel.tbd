@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/libPPMDataModel.dylib
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _OTABMUResistanceReadFrom, _OTAParamRCReadFrom,
@@ -54,25 +52,4 @@ exports:
                             _OTAParamRC._slopeForR3Extraps,
                             _OTAResistanceData._resistance25Cs,
                             _OTAResistanceData._temperatureCoeffs ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _NSRangeException, _PBDataWriterWriteFloatField,
-                            _PBDataWriterWriteInt32Field,
-                            _PBDataWriterWriteSubmessage,
-                            _PBDataWriterWriteUint32Field, _PBReaderPlaceMark,
-                            _PBReaderRecallMark, _PBReaderSkipValueWithTag,
-                            _PBRepeatedFloatAdd, _PBRepeatedFloatClear,
-                            _PBRepeatedFloatCopy, _PBRepeatedFloatHash,
-                            _PBRepeatedFloatIsEqual, _PBRepeatedFloatNSArray,
-                            _PBRepeatedFloatSet,
-                            ___CFConstantStringClassReference,
-                            __objc_empty_cache, _fmod, _objc_alloc_init,
-                            _objc_autoreleaseReturnValue, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
-                            _objc_retain, _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong ]
-    objc-classes:         [ _NSException, _NSMutableDictionary, _NSNumber, _NSObject,
-                            _NSString, _PBCodable ]
-    objc-ivars:           [ _PBDataReader._bytes, _PBDataReader._error,
-                            _PBDataReader._length, _PBDataReader._pos ]
 ...

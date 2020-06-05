@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MetricMeasurement.framework/MetricMeasurement
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MXMAttributeNameOSSignpostCategory,
@@ -53,72 +51,4 @@ exports:
                             _MXMSystemSampleTag, _MXMUnitCycle,
                             _MXMUnitInstruction, _MXMUnitMemory, _MXMUnitPacket,
                             _MXMUtilizationSampleTag, _MXMVirtualMachineProbe ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CACurrentMediaTime,
-                            _CARenderServerGetFrameCounterByIndex, _CFRelease,
-                            _NSDebugDescriptionErrorKey, _NSStringFromClass,
-                            __Block_copy, __Block_object_assign,
-                            __Block_object_dispose, __Block_release,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___NSDictionary0__, ___assert_rtn, ___chkstk_darwin,
-                            ___error, ___objc_personality_v0, ___stack_chk_fail,
-                            ___stack_chk_guard, __dispatch_queue_attr_concurrent,
-                            __objc_empty_cache, __os_log_impl,
-                            __os_signpost_emit_with_name_impl, _bzero,
-                            _dispatch_after, _dispatch_async,
-                            _dispatch_get_global_queue, _dispatch_group_async,
-                            _dispatch_group_create, _dispatch_group_wait,
-                            _dispatch_once, _dispatch_queue_create,
-                            _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _dispatch_time, _free, _getpid, _getprogname,
-                            _host_processor_info, _host_statistics64,
-                            _mach_absolute_time, _mach_continuous_time,
-                            _mach_host_self, _mach_port_space_basic_info,
-                            _mach_task_self_, _mach_thread_self,
-                            _mach_timebase_info, _mach_vm_deallocate, _malloc,
-                            _memcpy, _memset, _objc_alloc, _objc_alloc_init,
-                            _objc_autorelease, _objc_autoreleasePoolPop,
-                            _objc_autoreleasePoolPush,
-                            _objc_autoreleaseReturnValue, _objc_begin_catch,
-                            _objc_copyWeak, _objc_destroyWeak, _objc_end_catch,
-                            _objc_enumerationMutation, _objc_exception_throw,
-                            _objc_getProperty, _objc_initWeak,
-                            _objc_loadWeakRetained, _objc_moveWeak, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new,
-                            _objc_opt_respondsToSelector, _objc_release,
-                            _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_retainBlock, _objc_setProperty_atomic,
-                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
-                            _objc_storeWeak, _objc_sync_enter, _objc_sync_exit,
-                            _objc_terminate,
-                            _objc_unsafeClaimAutoreleasedReturnValue,
-                            _os_log_create, _os_log_type_enabled,
-                            _os_signpost_enabled, _pm_sample_task_and_pid,
-                            _proc_listpids, _proc_name, _proc_pid_rusage,
-                            _proc_pidinfo, _proc_reset_footprint_interval,
-                            _processor_set_default, _processor_set_statistics,
-                            _pthread_attr_destroy, _pthread_attr_init,
-                            _pthread_attr_set_qos_class_np,
-                            _pthread_attr_setschedpolicy, _pthread_create,
-                            _pthread_join, _realloc, _strcmp, _strerror, _task_for_pid,
-                            _thread_selfcounts, _usleep, _vDSP_maxvD, _vDSP_minvD,
-                            _vDSP_normalizeD, _vDSP_sveD ]
-    objc-classes:         [ _CADisplay, _LSBundleProxy, _NSArray,
-                            _NSAssertionHandler, _NSBundle, _NSDate, _NSDictionary,
-                            _NSDimension, _NSError, _NSException, _NSMeasurement,
-                            _NSMutableArray, _NSMutableDictionary, _NSMutableSet,
-                            _NSNotificationCenter, _NSNumber, _NSObject,
-                            _NSOrderedSet, _NSSet, _NSString, _NSThread, _NSUUID,
-                            _NSUnit, _NSUnitConverterLinear, _NSUnitDuration,
-                            _NSXPCConnection, _NSXPCInterface, _OSActivityStream,
-                            _SignpostSupportMachTimeTranslator,
-                            _SignpostSupportObjectExtractor,
-                            _SignpostSupportSubsystemCategoryFilterEntry,
-                            _SignpostSupportSubsystemCategoryWhitelist ]
 ...

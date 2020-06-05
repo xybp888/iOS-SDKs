@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CrashReporterSupport.framework/CrashReporterSupport
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AppAnalyticsEnabled, _CRCreateDirectoryStructure,
@@ -138,83 +136,4 @@ exports:
     objc-classes:         [ _OTATaskingAgentClient, _StructuredDataReport ]
     objc-ivars:           [ _StructuredDataReport._log_type,
                             _StructuredDataReport._raw_logfile ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFAbsoluteTimeGetCurrent, _CFGetTypeID,
-                            _CFPreferencesCopyValue,
-                            _CFPreferencesGetAppBooleanValue,
-                            _CFPreferencesGetAppIntegerValue,
-                            _CFPreferencesSetValue, _CFPreferencesSynchronize,
-                            _CFRelease, _CFStringGetTypeID, _CFUUIDCreate,
-                            _CFUUIDCreateString, _MGCopyAnswer, _MGGetBoolAnswer,
-                            _NSFilePosixPermissions, _NSFileProtectionKey,
-                            _NSFileProtectionNone, _NSFileType,
-                            _NSFileTypeSymbolicLink, _NSLog,
-                            _NSURLIsExcludedFromBackupKey, _OSADateFormat,
-                            __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___assert_rtn, ___error, ___objc_personality_v0,
-                            ___sprintf_chk, ___stack_chk_fail, ___stack_chk_guard,
-                            ___vsnprintf_chk, __objc_empty_cache,
-                            __os_log_debug_impl, __os_log_default,
-                            __os_log_fault_impl, __os_log_impl,
-                            __xpc_error_connection_interrupted,
-                            __xpc_error_key_description, __xpc_type_error, _access,
-                            _close, _closedir,
-                            _container_system_group_path_for_identifier,
-                            _dispatch_async, _dispatch_once,
-                            _dispatch_queue_attr_make_with_qos_class,
-                            _dispatch_queue_create, _dispatch_sync, _dlerror,
-                            _dlopen, _dlsym, _endgrent, _endpwent, _fchmodat, _fchown,
-                            _fchownat, _fclose, _feof, _ferror, _fgetxattr, _fileno,
-                            _fopen, _fputs, _fread, _free, _fsetxattr, _fstat, _getegid,
-                            _geteuid, _getgid, _getgrnam, _getpid, _getprogname,
-                            _getpwnam, _getuid, _getxattr,
-                            _kCFAbsoluteTimeIntervalSince1970,
-                            _kCFAllocatorDefault, _kCFPreferencesCurrentHost,
-                            _kOSALogOptionCreateTmpFile,
-                            _kOSALogOptionMoveSourceFile,
-                            _kOSALogOptionOverrideCountLimit,
-                            _kOSALogOptionOverrideFileExtension,
-                            _kOSALogOptionOverrideFilePrefix,
-                            _kOSALogOptionOverridePath,
-                            _kOSALogScanOptionIncludeProxiesKey, _lstat,
-                            _mach_port_deallocate, _mach_task_self_,
-                            _mach_thread_self, _mkdir, _notify_cancel,
-                            _notify_get_state, _notify_register_check, _objc_alloc,
-                            _objc_alloc_init, _objc_autorelease,
-                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
-                            _objc_autoreleaseReturnValue,
-                            _objc_enumerationMutation, _objc_getClass,
-                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
-                            _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong,
-                            _objc_unsafeClaimAutoreleasedReturnValue, _open,
-                            _open_dprotected_np, _opendir, _os_log_type_enabled,
-                            _readdir, _rename, _setegid, _seteuid, _stat, _strerror,
-                            _strlen, _thread_info, _time, _umask, _unlink, _usleep, _write,
-                            _xpc_array_append_value, _xpc_array_create,
-                            _xpc_connection_create_mach_service,
-                            _xpc_connection_resume, _xpc_connection_send_message,
-                            _xpc_connection_send_message_with_reply_sync,
-                            _xpc_connection_set_event_handler,
-                            _xpc_dictionary_create, _xpc_dictionary_get_bool,
-                            _xpc_dictionary_get_string,
-                            _xpc_dictionary_set_string,
-                            _xpc_dictionary_set_uint64,
-                            _xpc_dictionary_set_value, _xpc_get_type,
-                            _xpc_int64_create, _xpc_release ]
-    objc-classes:         [ _NSArray, _NSData, _NSDictionary, _NSFileHandle,
-                            _NSFileManager, _NSJSONSerialization, _NSMutableArray,
-                            _NSMutableData, _NSMutableDictionary, _NSMutableSet,
-                            _NSMutableString, _NSNumber, _NSObject, _NSProcessInfo,
-                            _NSPropertyListSerialization, _NSSet, _NSString, _NSURL,
-                            _NSXPCConnection, _NSXPCInterface, _OSALog, _OSAReport,
-                            _OSASystemConfiguration ]
-    objc-ivars:           [ _OSAReport._capture_time,
-                            _OSAReport._logWritingOptions ]
 ...

@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SoundBoardServices.framework/SoundBoardServices
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SoundBoardServicesVersionNumber,
@@ -18,27 +16,4 @@ exports:
                             _SBSClient, _SBSDebugInterface, _SBSServer,
                             _SBSSettingsInterface, _SBSStereoLeaderInterface,
                             _SBSSysdiagnoseInterface, _SBSSystemInterface ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _NSCocoaErrorDomain, __Block_object_assign,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___gxx_personality_v0, ___objc_personality_v0,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __objc_empty_cache, __os_log_error_impl, __os_log_impl,
-                            _dispatch_once, _fmod, _objc_alloc, _objc_alloc_init,
-                            _objc_autoreleaseReturnValue, _objc_copyWeak,
-                            _objc_destroyWeak, _objc_enumerationMutation,
-                            _objc_initWeak, _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class, _objc_opt_new,
-                            _objc_opt_respondsToSelector, _objc_release,
-                            _objc_retain, _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong, _objc_storeWeak, _objc_sync_enter,
-                            _objc_sync_exit, _os_log_create, _os_log_type_enabled,
-                            _sysctl ]
-    objc-classes:         [ _HMAccessorySelectionSettingItem, _HMHome, _NSError,
-                            _NSMutableArray, _NSMutableDictionary, _NSMutableSet,
-                            _NSNumber, _NSObject, _NSSet, _NSString, _NSXPCConnection,
-                            _NSXPCInterface, _NSXPCListener ]
 ...

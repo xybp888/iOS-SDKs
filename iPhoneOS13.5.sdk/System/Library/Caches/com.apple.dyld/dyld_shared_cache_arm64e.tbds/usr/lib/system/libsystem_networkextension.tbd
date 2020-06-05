@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libsystem_networkextension.dylib
 current-version:       1
 compatibility-version: 1
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _NEHelperCacheAddRedirectedAddress,
@@ -110,66 +108,4 @@ exports:
                             _nelog_is_debug_logging_enabled,
                             _nelog_is_extra_vpn_logging_enabled,
                             _nelog_is_info_logging_enabled ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CCHmac, _SANDBOX_CHECK_NO_REPORT, __Block_copy,
-                            __Block_object_assign, __Block_object_dispose,
-                            __Block_release, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock, ___assert_rtn, ___error,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __os_log_debug_impl, __os_log_error_impl,
-                            __os_log_fault_impl, __os_log_impl,
-                            __xpc_error_connection_invalid,
-                            __xpc_error_key_description, __xpc_type_array,
-                            __xpc_type_data, __xpc_type_dictionary,
-                            __xpc_type_endpoint, __xpc_type_error,
-                            __xpc_type_string, _audit_session_self, _backtrace,
-                            _backtrace_symbols, _bootstrap_port, _bzero, _calloc,
-                            _close, _csops, _dispatch_async, _dispatch_once,
-                            _dispatch_queue_create, _dispatch_release,
-                            _dispatch_retain, _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _dispatch_sync, _dispatch_time,
-                            _dyld_get_program_sdk_version, _free, _fstat, _getegid,
-                            _geteuid, _getpid, _getsockopt, _inet_pton, _malloc, _memcmp,
-                            _memcpy, _necp_match_policy, _notify_cancel,
-                            _notify_check, _notify_get_state,
-                            _notify_register_check, _notify_register_dispatch,
-                            _open, _os_log_create, _os_log_type_enabled,
-                            _os_unfair_lock_assert_owner, _os_unfair_lock_lock,
-                            _os_unfair_lock_unlock,
-                            _os_variant_has_internal_diagnostics, _pread,
-                            _sandbox_check, _setsockopt, _strcmp, _strerror,
-                            _strerror_r, _strlen, _strncmp, _strstr, _sysctl,
-                            _sysctlbyname, _uuid_clear, _uuid_compare, _uuid_copy,
-                            _uuid_is_null, _uuid_unparse, _xpc_array_append_value,
-                            _xpc_array_apply, _xpc_array_create,
-                            _xpc_array_get_count, _xpc_array_get_data,
-                            _xpc_array_get_string, _xpc_array_get_value,
-                            _xpc_connection_cancel,
-                            _xpc_connection_create_mach_service,
-                            _xpc_connection_resume, _xpc_connection_send_barrier,
-                            _xpc_connection_send_message,
-                            _xpc_connection_send_message_with_reply,
-                            _xpc_connection_send_message_with_reply_sync,
-                            _xpc_connection_set_event_handler, _xpc_copy,
-                            _xpc_copy_description, _xpc_create_from_plist,
-                            _xpc_data_create, _xpc_data_get_bytes,
-                            _xpc_data_get_bytes_ptr, _xpc_data_get_length,
-                            _xpc_dictionary_apply,
-                            _xpc_dictionary_copy_mach_send,
-                            _xpc_dictionary_create, _xpc_dictionary_dup_fd,
-                            _xpc_dictionary_get_bool, _xpc_dictionary_get_data,
-                            _xpc_dictionary_get_dictionary,
-                            _xpc_dictionary_get_int64,
-                            _xpc_dictionary_get_string,
-                            _xpc_dictionary_get_value, _xpc_dictionary_set_bool,
-                            _xpc_dictionary_set_data, _xpc_dictionary_set_fd,
-                            _xpc_dictionary_set_int64,
-                            _xpc_dictionary_set_mach_send,
-                            _xpc_dictionary_set_string,
-                            _xpc_dictionary_set_uint64, _xpc_dictionary_set_uuid,
-                            _xpc_dictionary_set_value, _xpc_get_type, _xpc_release,
-                            _xpc_retain, _xpc_string_create,
-                            _xpc_string_get_string_ptr, _xpc_uuid_create ]
 ...

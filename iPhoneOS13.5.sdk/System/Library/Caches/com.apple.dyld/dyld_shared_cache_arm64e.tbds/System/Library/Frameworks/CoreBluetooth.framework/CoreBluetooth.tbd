@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CBATTErrorDomain, _CBAdvOptionInstanceAddress,
@@ -241,83 +239,4 @@ exports:
                             _CBPeripheralManager, _CBRFCOMMChannel,
                             _CBScalablePipe, _CBScalablePipeManager, _CBService,
                             _CBUUID ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFNumberIsFloatType, _CFRelease,
-                            _CFStreamCreatePairWithSocket, _CFUUIDGetUUIDBytes,
-                            _MGGetBoolAnswer, _NSClassFromString,
-                            _NSLocalizedDescriptionKey, __Block_object_assign,
-                            __Block_object_dispose, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock, __Unwind_Resume,
-                            ___CFConstantStringClassReference, ___NSArray0__,
-                            ___NSDictionary0__, ___chkstk_darwin,
-                            ___objc_personality_v0, ___stack_chk_fail,
-                            ___stack_chk_guard, __dispatch_main_q,
-                            __objc_empty_cache, __os_log_debug_impl,
-                            __os_log_error_impl, __os_log_impl,
-                            __xpc_error_connection_interrupted,
-                            __xpc_error_connection_invalid, __xpc_type_array,
-                            __xpc_type_bool, __xpc_type_data,
-                            __xpc_type_dictionary, __xpc_type_double,
-                            __xpc_type_error, __xpc_type_fd, __xpc_type_int64,
-                            __xpc_type_string, __xpc_type_uint64, __xpc_type_uuid,
-                            _bzero, _close, _dispatch_async,
-                            _dispatch_get_current_queue, _dispatch_once,
-                            _dispatch_once_f,
-                            _dispatch_queue_attr_make_with_autorelease_frequency,
-                            _dispatch_queue_attr_make_with_qos_class,
-                            _dispatch_queue_create,
-                            _dispatch_queue_create_with_target$V2,
-                            _dispatch_queue_get_label,
-                            _dispatch_queue_get_qos_class,
-                            _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _dlopen, _dlsym, _dyld_get_program_sdk_version,
-                            _getprogname, _kCFAllocatorDefault, _memcmp, _objc_alloc,
-                            _objc_alloc_init, _objc_autorelease,
-                            _objc_autoreleaseReturnValue, _objc_destroyWeak,
-                            _objc_enumerationMutation, _objc_getClass,
-                            _objc_getProperty, _objc_loadWeakRetained,
-                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new,
-                            _objc_opt_respondsToSelector, _objc_release,
-                            _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_setProperty_atomic,
-                            _objc_setProperty_atomic_copy,
-                            _objc_setProperty_nonatomic,
-                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
-                            _objc_storeWeak, _objc_sync_enter, _objc_sync_exit,
-                            _os_channel_attr_create, _os_channel_attr_destroy,
-                            _os_channel_attr_set, _os_channel_create_extended,
-                            _os_channel_destroy, _os_log_create,
-                            _os_log_type_enabled, _uuid_parse, _uuid_unparse_upper,
-                            _xpc_array_apply, _xpc_array_create,
-                            _xpc_array_get_count, _xpc_bool_get_value,
-                            _xpc_connection_cancel,
-                            _xpc_connection_create_mach_service,
-                            _xpc_connection_resume, _xpc_connection_send_barrier,
-                            _xpc_connection_send_message,
-                            _xpc_connection_send_message_with_reply_sync,
-                            _xpc_connection_set_event_handler,
-                            _xpc_connection_set_target_queue, _xpc_data_create,
-                            _xpc_data_get_bytes_ptr, _xpc_data_get_length,
-                            _xpc_dictionary_apply, _xpc_dictionary_create,
-                            _xpc_dictionary_get_count, _xpc_dictionary_get_int64,
-                            _xpc_dictionary_get_value, _xpc_double_create,
-                            _xpc_double_get_value, _xpc_fd_dup, _xpc_get_type,
-                            _xpc_int64_create, _xpc_int64_get_value,
-                            _xpc_null_create, _xpc_string_create,
-                            _xpc_string_get_string_ptr, _xpc_uint64_get_value,
-                            _xpc_uuid_create, _xpc_uuid_get_bytes ]
-    objc-classes:         [ _NSArray, _NSAssertionHandler, _NSBundle,
-                            _NSCharacterSet, _NSData, _NSDictionary, _NSError,
-                            _NSException, _NSHashTable, _NSIndexPath, _NSLock,
-                            _NSMapTable, _NSMutableArray, _NSMutableData,
-                            _NSMutableDictionary, _NSMutableSet,
-                            _NSNotificationCenter, _NSNull, _NSNumber, _NSObject,
-                            _NSSet, _NSString, _NSUUID ]
-    weak-def-symbols:     [ _TCCAccessPreflight, _TCCAccessRequest,
-                            _TCCAccessRestricted, _kTCCServiceBluetoothAlways ]
 ...

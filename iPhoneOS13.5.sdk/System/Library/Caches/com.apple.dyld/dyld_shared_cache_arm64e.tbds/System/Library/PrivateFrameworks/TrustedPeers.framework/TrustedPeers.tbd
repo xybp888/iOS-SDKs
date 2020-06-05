@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TrustedPeers.framework/TrustedPeers
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _TPErrorDomain, _TPMachineIDStatusToString,
@@ -123,51 +121,4 @@ exports:
                             _TPPBPolicySecret._secret, _TPPBVoucher._beneficiary,
                             _TPPBVoucher._has, _TPPBVoucher._reason,
                             _TPPBVoucher._sponsor ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CC_SHA224_Final, _CC_SHA224_Init, _CC_SHA224_Update,
-                            _CC_SHA256_Final, _CC_SHA256_Init, _CC_SHA256_Update,
-                            _CC_SHA384_Final, _CC_SHA384_Init, _CC_SHA384_Update,
-                            _CC_SHA512_Final, _CC_SHA512_Init, _CC_SHA512_Update,
-                            _NSLocalizedDescriptionKey, _NSUnderlyingErrorKey,
-                            _PBDataWriterWriteDataField,
-                            _PBDataWriterWriteInt32Field,
-                            _PBDataWriterWriteStringField,
-                            _PBDataWriterWriteSubmessage,
-                            _PBDataWriterWriteUint64Field, _PBReaderPlaceMark,
-                            _PBReaderReadData, _PBReaderReadString,
-                            _PBReaderRecallMark, _PBReaderSkipValueWithTag,
-                            __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___NSArray0__, ___NSDictionary0__,
-                            ___objc_personality_v0, ___stack_chk_fail,
-                            ___stack_chk_guard, __dispatch_queue_attr_concurrent,
-                            __objc_empty_cache, __os_log_impl, _calloc,
-                            _dispatch_barrier_sync, _dispatch_once,
-                            _dispatch_queue_attr_make_with_autorelease_frequency,
-                            _dispatch_queue_create, _dispatch_sync, _free,
-                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
-                            _objc_autoreleaseReturnValue,
-                            _objc_enumerationMutation, _objc_exception_throw,
-                            _objc_getProperty, _objc_msgSend, _objc_msgSendSuper2,
-                            _objc_opt_class, _objc_opt_isKindOfClass,
-                            _objc_opt_new, _objc_release, _objc_retain,
-                            _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_setProperty_atomic,
-                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
-                            _objc_unsafeClaimAutoreleasedReturnValue,
-                            _os_log_create, _os_log_type_enabled ]
-    objc-classes:         [ _NSArray, _NSAssertionHandler, _NSDictionary, _NSError,
-                            _NSException, _NSHashTable, _NSMutableArray,
-                            _NSMutableData, _NSMutableDictionary, _NSMutableSet,
-                            _NSNumber, _NSObject, _NSPredicate, _NSRegularExpression,
-                            _NSSet, _NSString, _PBCodable, __SFECKeyPair,
-                            __SFECKeySpecifier, __SFECPublicKey,
-                            __SFEC_X962SigningOperation,
-                            __SFSHA384DigestOperation, __SFSignedData ]
-    objc-ivars:           [ _PBDataReader._bytes, _PBDataReader._error,
-                            _PBDataReader._length, _PBDataReader._pos ]
 ...

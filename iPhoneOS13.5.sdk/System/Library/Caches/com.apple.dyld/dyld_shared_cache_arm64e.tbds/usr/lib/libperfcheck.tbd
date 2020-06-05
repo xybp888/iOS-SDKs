@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/libperfcheck.dylib
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _abstime_to_msec, _abstime_to_msec_diff,
@@ -62,66 +60,4 @@ exports:
                             _session_set_record_path, _set_threshold,
                             _snapshot_create, _snapshot_create_with_buf,
                             _unitstr_iorunit, _walkargstr, _writeCFObjToFile ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___chkstk_darwin, ___error,
-                            ___memcpy_chk, ___objc_personality_v0, ___snprintf_chk,
-                            ___stack_chk_fail, ___stack_chk_guard, ___stderrp,
-                            ___stdoutp, ___strlcpy_chk,
-                            __dispatch_source_type_signal, _access, _asprintf,
-                            _basename_r, _calloc, _close, _dispatch_activate,
-                            _dispatch_get_global_queue, _dispatch_once,
-                            _dispatch_release, _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _dispatch_source_create,
-                            _dispatch_source_set_event_handler, _environ, _fclose,
-                            _fileno, _fopen, _fprintf, _fputc, _fputs, _free, _fwrite,
-                            _getenv, _getpid, _getprogname, _isatty,
-                            _mach_timebase_info, _malloc, _memcpy,
-                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
-                            _objc_autoreleaseReturnValue,
-                            _objc_enumerationMutation, _objc_msgSend,
-                            _objc_opt_class, _objc_opt_isKindOfClass,
-                            _objc_release, _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong, _open, _pause, _pdunit_kB,
-                            _pdunit_kiloinstructions, _pdunit_ns, _pdwriter_close,
-                            _pdwriter_new_value, _pdwriter_open,
-                            _pdwriter_record_larger_better,
-                            _pdwriter_record_variable_dbl,
-                            _pdwriter_record_variable_str,
-                            _pdwriter_set_description, _posix_spawnp,
-                            _proc_listpids, _proc_name, _proc_pid_rusage,
-                            _proc_reset_footprint_interval, _putchar, _read,
-                            _reallocf, _signal, _sleep, _strcasecmp, _strchr, _strcmp,
-                            _strdup, _strerror, _strlen, _strsep, _strstr, _strtol,
-                            _sysctl, _waitpid, _warn, _warnc, _warnx, _write ]
-    objc-classes:         [ _NSCountedSet, _NSJSONSerialization, _NSMutableString,
-                            _NSNumber, _NSPropertyListSerialization, _NSString,
-                            _PDContainer ]
-    weak-def-symbols:     [ _CFArrayAppendValue, _CFArrayCreateMutable,
-                            _CFArrayGetCount, _CFArrayGetTypeID,
-                            _CFArrayGetValueAtIndex, _CFArraySetValueAtIndex,
-                            _CFDataAppendBytes, _CFDataCreateMutable,
-                            _CFDataGetBytePtr, _CFDataGetLength,
-                            _CFDictionaryContainsKey, _CFDictionaryCreateMutable,
-                            _CFDictionaryGetTypeID, _CFDictionaryGetValue,
-                            _CFDictionarySetValue, _CFGetTypeID, _CFNumberCreate,
-                            _CFNumberGetTypeID, _CFNumberGetValue,
-                            _CFPropertyListCreateData,
-                            _CFPropertyListCreateWithData, _CFRelease, _CFRetain,
-                            _CFStringCompare, _CFStringCreateWithCString,
-                            _CFStringGetCStringPtr, _CFStringGetTypeID,
-                            _OBJC_CLASS_$_NSArray, _OBJC_CLASS_$_NSData,
-                            _OBJC_CLASS_$_NSDictionary,
-                            _OBJC_CLASS_$_NSMutableArray,
-                            _OBJC_CLASS_$_NSMutableDictionary,
-                            _OBJC_CLASS_$_NSMutableSet, _OBJC_CLASS_$_NSSet,
-                            ___CFConstantStringClassReference,
-                            _kCFTypeArrayCallBacks,
-                            _kCFTypeDictionaryKeyCallBacks,
-                            _kCFTypeDictionaryValueCallBacks ]
 ...

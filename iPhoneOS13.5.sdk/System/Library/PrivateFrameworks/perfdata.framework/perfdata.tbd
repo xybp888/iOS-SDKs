@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/perfdata.framework/perfdata
 current-version:       51.100.6
 compatibility-version: 0
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _json_end_array, _json_end_object, _json_key,
@@ -247,54 +245,4 @@ exports:
                             _PDMeasurement._standardDeviation,
                             _PDMeasurement._summary, _PDMeasurement._unitString,
                             _PDMeasurement._value, _PDMeasurement._variables ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFEqual, _CFGetTypeID, _CFRelease, _CFStringGetCString,
-                            _CFStringGetLength,
-                            _CFStringGetMaximumSizeForEncoding,
-                            _CFStringGetTypeID, _IOBSDNameMatching,
-                            _IORegistryEntrySearchCFProperty,
-                            _IOReportChannelGetChannelName,
-                            _IOReportCopyChannelsInGroup, _IOReportCreateSamples,
-                            _IOReportCreateSubscription, _IOReportIterate,
-                            _IOReportPrune, _IOReportSimpleGetIntegerValue,
-                            _IOServiceGetMatchingService, _MGCopyAnswer,
-                            _NSLocalizedDescriptionKey, _SANDBOX_CHECK_NO_REPORT,
-                            __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___NSDictionary0__, ___chkstk_darwin, ___error,
-                            ___objc_personality_v0, ___snprintf_chk,
-                            ___stack_chk_fail, ___stack_chk_guard, ___strlcpy_chk,
-                            __dyld_get_shared_cache_range,
-                            __dyld_shared_cache_optimized, __objc_empty_cache,
-                            __os_assert_log, __os_crash, _access, _bzero, _calloc,
-                            _close, _dispatch_once,
-                            _dyld_shared_cache_some_image_overridden, _fclose,
-                            _fdopen, _fflush, _fopen, _fprintf_l, _free,
-                            _free_printf_domain, _freelocale, _ftell, _fwrite, _getenv,
-                            _gethostuuid, _getpid, _gmtime, _kCFAllocatorDefault,
-                            _kIOMasterPortDefault, _malloc, _mkstemps,
-                            _new_printf_domain, _newlocale, _objc_alloc,
-                            _objc_alloc_init, _objc_autorelease,
-                            _objc_autoreleaseReturnValue, _objc_destroyWeak,
-                            _objc_enumerationMutation, _objc_loadWeakRetained,
-                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
-                            _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong, _objc_storeWeak,
-                            _objc_unsafeClaimAutoreleasedReturnValue,
-                            _open_memstream,
-                            _os_variant_has_internal_diagnostics,
-                            _register_printf_domain_function, _rewind,
-                            _sandbox_check, _setlocale, _statfs, _strcmp, _strcspn,
-                            _strftime, _strlen, _strncmp, _strrchr, _strsnvisx, _sysctl,
-                            _sysctlbyname, _time, _uuid_is_null, _uuid_unparse,
-                            _vfxprintf ]
-    objc-classes:         [ _NSArray, _NSDictionary, _NSError, _NSInputStream,
-                            _NSJSONSerialization, _NSMutableArray,
-                            _NSMutableDictionary, _NSMutableSet, _NSNumber,
-                            _NSNumberFormatter, _NSObject,
-                            _NSPropertyListSerialization, _NSString, _NSURL ]
 ...

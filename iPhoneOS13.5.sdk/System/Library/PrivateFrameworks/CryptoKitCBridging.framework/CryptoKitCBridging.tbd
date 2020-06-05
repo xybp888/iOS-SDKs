@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CryptoKitCBridging.framework/CryptoKitCBridging
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CryptoKitCBridgingVersionNumber,
@@ -30,31 +28,4 @@ exports:
                             _SSPBSecretShare._shareY, _SSPBSecretShare._tag,
                             _SSPBSecretShare._threshold,
                             _SSPBSecretShare._version ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _PBDataWriterWriteDataField,
-                            _PBDataWriterWriteUint32Field, _PBReaderReadData,
-                            _PBReaderSkipValueWithTag, _SecAccessControlCopyData,
-                            ___CFConstantStringClassReference, ___assert_rtn,
-                            ___chkstk_darwin, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache, _bzero,
-                            _cc_clear, _ccaes_cbc_encrypt_mode,
-                            _ccder_decode_seqii_strict,
-                            _ccder_encode_constructed_tl, _ccder_encode_integer,
-                            _ccder_sizeof, _ccder_sizeof_integer,
-                            _ccec_validate_pub, _ccec_x963_import_pub, _ccn_bitlen,
-                            _ccn_cmp, _ccn_read_uint, _ccn_set, _ccn_sub,
-                            _ccn_write_int_size, _ccn_write_uint_padded_ct,
-                            _ccspake_cp_256, _ccspake_sizeof_ctx,
-                            _ccspake_sizeof_w, _ccss_shamir_parameters_init,
-                            _ccss_shamir_share_import, _cczp_init, _free, _malloc,
-                            _memcpy, _objc_alloc, _objc_autoreleaseReturnValue,
-                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_release, _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong, _printf ]
-    objc-classes:         [ _NSMutableData, _NSMutableDictionary, _NSNumber,
-                            _NSObject, _NSString, _PBCodable ]
-    objc-ivars:           [ _PBDataReader._bytes, _PBDataReader._error,
-                            _PBDataReader._length, _PBDataReader._pos ]
 ...

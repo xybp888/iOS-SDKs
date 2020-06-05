@@ -1,20 +1,10 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/TextInput/TextInput_ug.bundle/TextInput_ug
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     objc-classes:         [ _TIKeyboardInputManager_ug ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ __NSConcreteGlobalBlock,
-                            ___CFConstantStringClassReference,
-                            __objc_empty_cache, _dispatch_once,
-                            _objc_autoreleaseReturnValue, _objc_msgSend,
-                            _objc_release, _objc_retainAutoreleasedReturnValue ]
-    objc-classes:         [ _NSCharacterSet, _NSObject, _TIKeyboardInputManager ]
 ...

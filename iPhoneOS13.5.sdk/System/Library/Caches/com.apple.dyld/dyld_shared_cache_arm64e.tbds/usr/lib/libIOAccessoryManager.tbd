@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/libIOAccessoryManager.dylib
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _IOAccesoryManagerGetDigitalIDAccessoryVersionInfo,
@@ -118,47 +116,4 @@ exports:
                             _ResourceArbiterClient._ioNotificationObject,
                             _ResourceArbiterClient._ioNotificationPort,
                             _ResourceArbiterClient._notificationPortQueue ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFArrayContainsValue, _CFArrayGetCount,
-                            _CFArrayGetValueAtIndex, _CFDataCreateMutable,
-                            _CFDataGetBytes, _CFDataGetMutableBytePtr,
-                            _CFDictionaryCreate, _CFDictionaryGetValue,
-                            _CFDictionarySetValue,
-                            _CFMachPortCreateRunLoopSource,
-                            _CFMachPortCreateWithPort, _CFNumberCreate,
-                            _CFNumberGetValue, _CFRelease, _CFRetain,
-                            _IOConnectCallAsyncMethod, _IOConnectCallMethod,
-                            _IOConnectCallScalarMethod,
-                            _IOConnectCallStructMethod, _IOConnectGetService,
-                            _IOConnectMapMemory, _IOConnectSetNotificationPort,
-                            _IODataQueueAllocateNotificationPort,
-                            _IODataQueueDataAvailable, _IODataQueueDequeue,
-                            _IODataQueuePeek, _IONotificationPortCreate,
-                            _IONotificationPortDestroy,
-                            _IONotificationPortGetMachPort,
-                            _IONotificationPortSetDispatchQueue,
-                            _IOObjectConformsTo, _IOObjectRelease, _IOObjectRetain,
-                            _IORegistryEntryCreateCFProperties,
-                            _IORegistryEntryCreateCFProperty,
-                            _IORegistryEntryGetParentEntry,
-                            _IORegistryEntryInPlane,
-                            _IOServiceAddInterestNotification, _IOServiceClose,
-                            _IOServiceGetMatchingService, _IOServiceMatching,
-                            _IOServiceOpen, __Block_object_assign,
-                            __Block_object_dispose, __NSConcreteStackBlock,
-                            ___CFConstantStringClassReference, ___stack_chk_fail,
-                            ___stack_chk_guard, __dispatch_main_q,
-                            __objc_empty_cache, _dispatch_async,
-                            _dispatch_queue_create, _dispatch_release,
-                            _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _kCFAllocatorDefault, _kCFBooleanTrue,
-                            _kCFTypeDictionaryKeyCallBacks,
-                            _kCFTypeDictionaryValueCallBacks,
-                            _kIOMasterPortDefault, _mach_msg, _mach_task_self_,
-                            _objc_destroyWeak, _objc_loadWeak, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_respondsToSelector,
-                            _objc_release, _objc_storeWeak ]
-    objc-classes:         [ _NSObject ]
 ...

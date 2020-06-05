@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/EmojiKit.framework/EmojiKit
 current-version:       21
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     objc-classes:         [ _EMKEmojiSignifier, _EMKEmojiTokenList,
@@ -49,45 +47,4 @@ exports:
                             _EMKTextView._overlayView,
                             _EMKTextView._tappedGlyphIndex,
                             _EMKTextView._tappedGlyphRange, _EMKTextView._timer ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFAbsoluteTimeGetCurrent, _CGContextSetFontSize,
-                            _CGContextSetShadow, _CGContextSetShadowWithColor,
-                            _CGRectContainsPoint, _CGRectIntersectsRect,
-                            _CGRectIsEmpty, _CGRectIsNull, _CGRectNull, _CGRectUnion,
-                            _CGRectZero, _CGSizeZero,
-                            _CTFontGetBoundingRectsForGlyphs,
-                            _EMFEmojiUsageKeywordMatch, _NSFontAttributeName,
-                            _UIAccessibilityIsReduceMotionEnabled,
-                            _UIGraphicsGetCurrentContext,
-                            _UIKeyboardDidShowNotification,
-                            _UITextInputCurrentInputModeDidChangeNotification,
-                            _UITrackingRunLoopMode, __Block_object_assign,
-                            __Block_object_dispose, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock, __Unwind_Resume,
-                            ___CFConstantStringClassReference,
-                            ___objc_personality_v0, ___sincos_stret,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __objc_empty_cache, _bzero, _dispatch_once, _exp,
-                            _memset_pattern16, _objc_alloc, _objc_alloc_init,
-                            _objc_autoreleaseReturnValue,
-                            _objc_enumerationMutation, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong,
-                            _objc_unsafeClaimAutoreleasedReturnValue ]
-    objc-classes:         [ _EMFEmojiLocaleData, _EMFEmojiPreferencesClient,
-                            _EMFEmojiToken, _NSArray, _NSAttributedString, _NSBundle,
-                            _NSCharacterSet, _NSDictionary, _NSLayoutManager,
-                            _NSMutableArray, _NSMutableAttributedString,
-                            _NSMutableCharacterSet, _NSMutableData,
-                            _NSMutableDictionary, _NSNotificationCenter, _NSNull,
-                            _NSNumber, _NSObject, _NSRunLoop, _NSString,
-                            _NSTextContainer, _NSTextStorage, _NSTimer,
-                            _UIBezierPath, _UICalloutBar, _UIColor, _UIFont,
-                            _UIKeyboardEmojiPreferences,
-                            _UIKeyboardInputModeController,
-                            _UITapGestureRecognizer, _UITextView, _UIView ]
 ...

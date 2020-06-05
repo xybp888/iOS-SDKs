@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libsystem_pthread.dylib
 current-version:       416.100.3
 compatibility-version: 1
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ ____chkstk_darwin, ___is_threaded, ___pthread_init,
@@ -136,40 +134,4 @@ exports:
                             _sched_get_priority_max, _sched_get_priority_min,
                             _sched_yield, _sigwait, _sigwait$NOCANCEL,
                             _start_wqthread, _thread_chkstk_darwin, _thread_start ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ ___bsdthread_create, ___bsdthread_ctl,
-                            ___bsdthread_register, ___bsdthread_terminate,
-                            ___disable_threadsignal, ___error, ___exit,
-                            ___gettimeofday, ___kqueue_workloop_ctl,
-                            ___os_once_reset, ___proc_info, ___psynch_cvbroad,
-                            ___psynch_cvclrprepost, ___psynch_cvsignal,
-                            ___psynch_cvwait, ___psynch_mutexdrop,
-                            ___psynch_mutexwait, ___psynch_rw_rdlock,
-                            ___psynch_rw_unlock, ___psynch_rw_wrlock,
-                            ___pthread_canceled, ___pthread_chdir,
-                            ___pthread_fchdir, ___pthread_kill,
-                            ___pthread_markcancel, ___pthread_sigmask,
-                            ___semwait_signal_nocancel, ___sigwait,
-                            ___syscall_logger, ___sysctl, ___thread_selfid,
-                            ___ulock_wait, ___ulock_wake, ___workq_kernreturn,
-                            ___workq_open, __os_alloc_once, __os_alloc_once_table,
-                            __os_once, __os_semaphore_create,
-                            __os_semaphore_dispose, __platform_bzero,
-                            __platform_memmove, __platform_strlcpy,
-                            __platform_strlen, __simple_asl_log, __simple_getenv,
-                            __thread_set_tsd_base, _abort_with_reason, _dladdr,
-                            _getpid, _host_info, _mach_host_self,
-                            _mach_port_deallocate, _mach_port_mod_refs,
-                            _mach_reply_port, _mach_task_self_, _mach_thread_self,
-                            _mach_vm_allocate, _mach_vm_deallocate, _mach_vm_map,
-                            _mach_vm_protect, _mig_dealloc_reply_port,
-                            _os_unfair_lock_lock_no_tsd_4libpthread,
-                            _os_unfair_lock_lock_with_options,
-                            _os_unfair_lock_unlock,
-                            _os_unfair_lock_unlock_no_tsd_4libpthread,
-                            _posix_spawnattr_get_qos_clamp_np,
-                            _posix_spawnattr_set_qos_clamp_np, _swtch_pri,
-                            _thread_destruct_special_reply_port, _thread_info,
-                            _thread_policy, _vm_page_mask, _vm_page_size ]
 ...

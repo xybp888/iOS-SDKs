@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libsystem_platform.dylib
 current-version:       220.100.1
 compatibility-version: 1
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _OSAtomicAdd32, _OSAtomicAdd32Barrier, _OSAtomicAdd64,
@@ -96,21 +94,4 @@ exports:
                             _spin_lock_try, _spin_unlock, _swapcontext,
                             _sys_cache_control, _sys_dcache_flush,
                             _sys_icache_invalidate ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ ___error, ___gettimeofday, ___libkernel_platform_init,
-                            ___sendto, ___sigaction, ___sigreturn, ___sysctl,
-                            ___ulock_wait, ___ulock_wake, __os_alloc_once_table,
-                            _close, _connect, _fcntl, _getgid, _getpid, _getuid,
-                            _mach_absolute_time, _mach_port_deallocate,
-                            _mach_port_mod_refs, _mach_task_self_,
-                            _mach_timebase_info, _mach_vm_allocate,
-                            _mach_vm_deallocate, _mach_vm_map, _mach_vm_read,
-                            _mach_vm_remap, _pid_for_task, _semaphore_create,
-                            _semaphore_destroy, _semaphore_signal, _semaphore_wait,
-                            _sigprocmask, _socket, _task_info, _task_threads,
-                            _thread_abort_safely, _thread_get_state, _thread_info,
-                            _thread_resume, _thread_set_state, _thread_suspend,
-                            _thread_switch, _vm_allocate, _vm_deallocate,
-                            _vm_page_size, _write ]
 ...

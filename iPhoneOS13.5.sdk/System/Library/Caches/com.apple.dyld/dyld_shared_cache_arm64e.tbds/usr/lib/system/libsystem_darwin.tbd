@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libsystem_darwin.dylib
 current-version:       1
 compatibility-version: 1
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ ___libdarwin_init, ___os_temporary_resource_shortage,
@@ -41,36 +39,4 @@ exports:
                             _sysexit_np, _vcrfprintf_np, _verr_np, _verrc_np,
                             _vwarn_np, _vwfprintf_np, _warn_np, _wfprintf_np,
                             _xferfd_np, _zsnprintf_np ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ __NSGetMachExecuteHeader, ___chkstk_darwin, ___error,
-                            ___stack_chk_fail, ___stack_chk_guard, ___stderrp,
-                            ___stdoutp, __dispatch_is_multithreaded,
-                            __dyld_get_image_header,
-                            __dyld_get_image_vmaddr_slide, __dyld_image_count,
-                            __os_avoid_tail_call, __os_crash, __os_crash_fmt,
-                            __os_log_pack_fill, __os_log_pack_size,
-                            __xpc_type_dictionary, _access, _asprintf,
-                            _bootstrap_strerror, _bzero, _calloc, _change_fdguard_np,
-                            _close$NOCANCEL, _dispatch_once_f, _dup, _exit,
-                            _fcntl$NOCANCEL, _feof, _ferror, _fprintf, _fputc, _free,
-                            _fstat, _getattrlistbulk, _geteuid, _getpid, _getprogname,
-                            _getsectdatafromheader_64, _gettimeofday,
-                            _guarded_close_np, _host_get_exception_ports,
-                            _host_get_special_port, _host_set_exception_ports,
-                            _isatty, _localtime_r, _mach_error_string,
-                            _mach_host_self, _mach_port_deallocate,
-                            _mach_port_get_attributes, _mach_port_get_refs,
-                            _mach_port_mod_refs, _mach_port_type, _mach_task_self_,
-                            _malloc, _memcpy, _memset, _open$NOCANCEL,
-                            _openat$NOCANCEL, _optind,
-                            _posix_spawnattr_setexceptionports_np,
-                            _read$NOCANCEL, _sleep$NOCANCEL, _snprintf, _strchr,
-                            _strcmp, _strdup, _strerror, _strlcpy, _strlen, _strncasecmp,
-                            _strrchr, _strsep, _strstr, _strtoll, _sysctl, _sysctlbyname,
-                            _sysctlnametomib, _task_get_exception_ports,
-                            _task_set_exception_ports, _vasprintf, _vfprintf,
-                            _vsnprintf, _xpc_create_from_plist,
-                            _xpc_dictionary_get_string, _xpc_get_type,
-                            _xpc_release ]
 ...

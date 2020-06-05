@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libsystem_info.dylib
 current-version:       1
 compatibility-version: 1
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _LI_get_thread_item, _LI_get_thread_list,
@@ -162,71 +160,4 @@ exports:
                             _yp_all, _yp_bind, _yp_first, _yp_get_default_domain,
                             _yp_maplist, _yp_master, _yp_match, _yp_next, _yp_order,
                             _yp_unbind, _yperr_string, _ypprot_err ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _DNSServiceCreateConnection,
-                            _DNSServiceProcessResult, _DNSServiceQueryRecord,
-                            _DNSServiceRefDeallocate, _DNSServiceRefSockFD,
-                            __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            ___assert_rtn, ___chkstk_darwin, ___error, ___initgroups,
-                            ___memcpy_chk, ___memmove_chk, ___memset_chk,
-                            ___snprintf_chk, ___sprintf_chk, ___stack_chk_fail,
-                            ___stack_chk_guard, ___stderrp, ___stdoutp,
-                            ___strcat_chk, ___strcpy_chk, ___strlcat_chk,
-                            ___strlcpy_chk, ___strncpy_chk, __inet_aton_check,
-                            __os_log_debug_impl, __os_log_default,
-                            __os_log_error_impl, __os_log_fault_impl,
-                            __os_log_impl, __xpc_type_array, __xpc_type_int64,
-                            _abort, _accept$NOCANCEL, _arc4random, _asprintf, _atoi,
-                            _bcmp, _bind, _calloc, _close$NOCANCEL, _closedir,
-                            _connect$NOCANCEL, _devname_r, _dispatch_async,
-                            _dispatch_get_global_queue, _dispatch_once, _dlclose,
-                            _dlerror, _dlopen, _dlsym, _fclose, _fcntl$NOCANCEL, _fflush,
-                            _ffs, _fgets, _fileno, _flock, _fopen, _fprintf, _fread, _free,
-                            _fseek, _fstat, _ftell, _fwrite, _getc, _getegid, _getenv,
-                            _geteuid, _getgroups, _gethostname, _getpid, _getsockname,
-                            _getsockopt, _gettimeofday,
-                            _host_get_multiuser_config_flags, _inet_aton,
-                            _inet_makeaddr, _inet_netof, _inet_ntop, _inet_pton,
-                            _ioctl, _isascii, _isdigit, _issetugid, _isspace, _isupper,
-                            _kevent, _kqueue, _listen, _lseek, _lstat,
-                            _mach_absolute_time, _mach_host_self, _mach_msg,
-                            _mach_msg_destroy, _mach_port_allocate,
-                            _mach_port_deallocate, _mach_port_extract_right,
-                            _mach_port_mod_refs, _mach_task_self_,
-                            _mach_timebase_info, _malloc, _malloc_default_zone,
-                            _malloc_make_nonpurgeable, _malloc_make_purgeable,
-                            _malloc_zone_calloc, _malloc_zone_from_ptr,
-                            _malloc_zone_realloc, _memcmp, _memcpy, _memmove, _memset,
-                            _mmap, _munmap, _nanosleep$NOCANCEL, _notify_cancel,
-                            _notify_check, _notify_get_state, _notify_peek,
-                            _notify_register_check, _notify_register_plain,
-                            _open$NOCANCEL, _opendir, _os_log_create,
-                            _os_log_type_enabled, _os_unfair_lock_lock,
-                            _os_unfair_lock_unlock, _perror, _printf,
-                            _pthread_atfork, _pthread_getspecific,
-                            _pthread_is_threaded_np, _pthread_key_create,
-                            _pthread_main_np, _pthread_mutex_destroy,
-                            _pthread_mutex_init, _pthread_mutex_lock,
-                            _pthread_mutex_unlock, _pthread_once, _pthread_self,
-                            _pthread_setspecific, _qsort, _read$NOCANCEL, _readdir_r,
-                            _realloc, _reallocf, _recv$NOCANCEL, _recvfrom$NOCANCEL,
-                            _select$NOCANCEL, _send$NOCANCEL, _sendto$NOCANCEL,
-                            _seteuid, _setsockopt, _sigblock, _sigsetmask, _socket,
-                            _sscanf, _stat, _statfs, _strchr, _strcmp, _strdup, _strerror,
-                            _strlen, _strncasecmp, _strndup, _strnstr, _strrchr, _strtol,
-                            _sys_nerr, _sysconf, _sysctl, _time, _tolower, _uuid_copy,
-                            _uuid_parse, _uuid_unparse_upper, _vasprintf, _warnx,
-                            _write$NOCANCEL, _writev$NOCANCEL, _xpc_array_apply,
-                            _xpc_array_get_count, _xpc_array_get_string,
-                            _xpc_create_from_plist, _xpc_dictionary_apply,
-                            _xpc_dictionary_create, _xpc_dictionary_get_bool,
-                            _xpc_dictionary_get_value, _xpc_dictionary_set_int64,
-                            _xpc_dictionary_set_string,
-                            _xpc_dictionary_set_uint64, _xpc_get_type,
-                            _xpc_int64_get_value, _xpc_pipe_create,
-                            _xpc_pipe_routine, _xpc_release, _xpc_retain,
-                            _xpc_string_get_string_ptr ]
-    weak-def-symbols:     [ ___darwin_check_fd_set_overflow ]
 ...

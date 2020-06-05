@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AggregateDictionaryHistory.framework/AggregateDictionaryHistory
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ADContainerPath,
@@ -51,41 +49,4 @@ exports:
     objc-classes:         [ _ADHistory, _ADHistoryDistributionEnumerator ]
     objc-ivars:           [ _ADHistory._database, _ADHistory._path,
                             _ADHistoryDistributionEnumerator._iterator ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _MGGetBoolAnswer, __Block_object_assign,
-                            __Block_object_dispose, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock, __Unwind_Resume,
-                            __ZNKSt3__121__basic_string_commonILb1EE20__throw_length_errorEv,
-                            __ZNSt11logic_errorC2EPKc, __ZNSt12length_errorD1Ev,
-                            __ZNSt3__112__next_primeEm,
-                            __ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6appendEPKc,
-                            __ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE9push_backEc,
-                            __ZSt9terminatev, __ZTVSt12length_error,
-                            ___CFConstantStringClassReference, ___chkstk_darwin,
-                            ___cxa_allocate_exception, ___cxa_begin_catch,
-                            ___cxa_free_exception, ___cxa_throw,
-                            ___gxx_personality_v0, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache,
-                            __os_log_default, __os_log_error_impl, __os_log_impl,
-                            _bzero, _container_system_group_path_for_identifier,
-                            _dispatch_once, _dlopen, _dlsym,
-                            _host_check_multiuser_mode, _mach_absolute_time,
-                            _mach_timebase_info, _memcpy, _mktemp, _objc_alloc,
-                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
-                            _os_log_type_enabled, _pow, _sqlite3_bind_double,
-                            _sqlite3_bind_int, _sqlite3_bind_int64,
-                            _sqlite3_bind_text, _sqlite3_busy_timeout,
-                            _sqlite3_clear_bindings, _sqlite3_close,
-                            _sqlite3_column_double, _sqlite3_column_int,
-                            _sqlite3_column_int64, _sqlite3_column_text,
-                            _sqlite3_db_config, _sqlite3_errmsg, _sqlite3_exec,
-                            _sqlite3_file_control, _sqlite3_finalize,
-                            _sqlite3_last_insert_rowid, _sqlite3_open,
-                            _sqlite3_open_v2, _sqlite3_prepare_v2, _sqlite3_reset,
-                            _sqlite3_step, _stat, _strcat, _strcpy, _strlen, _syslog,
-                            _time, _unlink ]
-    objc-classes:         [ _NSAssertionHandler, _NSDate, _NSNumber, _NSObject,
-                            _NSString ]
-    weak-def-symbols:     [ __ZTISt12length_error, __ZdlPv, __Znwm ]
 ...

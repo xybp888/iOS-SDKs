@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libsystem_malloc.dylib
 current-version:       283.100.6
 compatibility-version: 1
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ ___mach_stack_logging_copy_uniquing_table,
@@ -67,30 +65,4 @@ exports:
                             _tiny_print_region_free_list,
                             _turn_off_stack_logging, _turn_on_stack_logging,
                             _valloc, _vfree, _zeroify_scalable_zone ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _OSAtomicDequeue, _OSAtomicEnqueue, __NSGetEnviron,
-                            __NSGetMachExecuteHeader, ___chkstk_darwin, ___error,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __dyld_get_image_slide, __os_once, __platform_bzero,
-                            __platform_memmove, __platform_memset,
-                            __platform_strchr, __platform_strcmp,
-                            __platform_strlcpy, __platform_strlen,
-                            __platform_strncmp, __platform_strstr,
-                            __simple_asl_log, __simple_dprintf, __simple_getenv,
-                            __simple_put, __simple_salloc, __simple_sappend,
-                            __simple_sfree, __simple_sprintf, __simple_string,
-                            __simple_vdprintf, __simple_vsprintf, _abort, _bzero,
-                            _dyld_process_is_restricted, _getentropy, _getenv,
-                            _getpid, _getprogname, _isatty, _issetugid, _kdebug_trace,
-                            _kill, _mach_task_self_, _mach_vm_allocate,
-                            _mach_vm_deallocate, _mach_vm_map, _madvise, _mprotect,
-                            _os_unfair_lock_assert_owner,
-                            _os_unfair_lock_lock_with_options,
-                            _os_unfair_lock_unlock, _printf, _reallocf, _sleep,
-                            _strtol, _strtoul, _strtoull, _strtoull_l, _sysctlbyname,
-                            _thread_stack_pcs, _thread_switch, _vm_allocate,
-                            _vm_kernel_page_mask, _vm_kernel_page_shift,
-                            _vm_kernel_page_size, _vm_page_mask, _vm_page_shift,
-                            _vm_page_size, _vm_purgable_control, _write ]
 ...

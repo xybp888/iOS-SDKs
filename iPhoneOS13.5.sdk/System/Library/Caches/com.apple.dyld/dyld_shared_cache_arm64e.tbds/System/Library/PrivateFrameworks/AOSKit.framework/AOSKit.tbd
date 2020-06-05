@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AOSKit.framework/AOSKit
 current-version:       125.2
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AOSAccountCopyAuthInfo, _AOSAccountCreate,
@@ -75,22 +73,4 @@ exports:
                             _AOSTransaction.didFinish,
                             _AOSTransaction.didSucceed, _AOSTransaction.error,
                             _AOSTransaction.result, _AOSTransaction.waitLock ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFErrorCreate, _CFRelease, _CFRetain, _NSLog,
-                            _OBJC_EHTYPE_$_NSException, __Block_object_assign,
-                            __Block_object_dispose, __CFRuntimeCreateInstance,
-                            __CFRuntimeRegisterClass, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___objc_personality_v0, __objc_empty_cache,
-                            _dispatch_async, _dispatch_get_global_queue,
-                            _dispatch_release, _dispatch_retain,
-                            _kCFAllocatorDefault, _objc_alloc, _objc_alloc_init,
-                            _objc_autorelease, _objc_begin_catch, _objc_end_catch,
-                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
-                            _objc_retain, _objc_sync_enter, _objc_sync_exit ]
-    objc-classes:         [ _AAAccountManager, _NSAutoreleasePool,
-                            _NSConditionLock, _NSMutableDictionary,
-                            _NSMutableString, _NSNumber, _NSObject, _NSString,
-                            _NSThread ]
 ...

@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/libsystemstats.dylib
 current-version:       456.100.1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ __systemstats_boot, __systemstats_copy_cookie_path,
@@ -51,49 +49,4 @@ exports:
                             _systemstats_write_and_dispose_record,
                             _systemstats_write_checkpoint,
                             _systemstats_write_microstackshot ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFBooleanGetTypeID, _CFBooleanGetValue,
-                            _CFCopyTypeIDDescription, _CFGetTypeID,
-                            _CFNumberGetTypeID, _CFNumberGetValue,
-                            _CFPreferencesCopyValue, _CFRelease,
-                            __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___assert_rtn, ___error, ___microstackshot,
-                            ___objc_personality_v0, ___stack_chk_fail,
-                            ___stack_chk_guard, ___strlcpy_chk, __os_assert_log,
-                            __os_assumes_log, __os_crash, __os_log_debug_impl,
-                            __os_log_default, __os_log_error_impl,
-                            __os_log_fault_impl, __os_log_impl, _abort, _asprintf,
-                            _calloc, _close, _closedir, _dirfd,
-                            _dispatch_assert_queue$V2, _dispatch_async,
-                            _dispatch_get_global_queue, _dispatch_once,
-                            _dispatch_queue_attr_make_with_qos_class,
-                            _dispatch_queue_create, _dispatch_release,
-                            _dispatch_retain, _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _dispatch_sync, _dispatch_time, _dup, _fcntl, _flsll, _free,
-                            _fstat, _fstatat, _ftruncate, _getenv, _geteuid,
-                            _gettimeofday, _gzclose, _gzclose_w, _gzdopen, _gzerror,
-                            _gzflush, _gzoffset, _gzopen, _gzread, _gzwrite,
-                            _kCFPreferencesCurrentHost, _lstat,
-                            _mach_absolute_time, _mach_continuous_time,
-                            _mach_timebase_info, _malloc, _memcpy, _memmove,
-                            _mkpath_np, _mkstemps, _notify_cancel, _notify_post,
-                            _notify_register_dispatch, _objc_alloc,
-                            _objc_alloc_init, _objc_autoreleasePoolPop,
-                            _objc_autoreleasePoolPush, _objc_enumerationMutation,
-                            _objc_msgSend, _objc_release, _objc_retain,
-                            _objc_retainAutorelease,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_retainBlock, _open, _opendir, _os_log_type_enabled,
-                            _os_variant_has_internal_diagnostics, _rand, _read,
-                            _readdir, _reallocf, _rename, _sranddev, _stat, _strchr,
-                            _strdup, _strerror, _strlen, _strncmp, _strrchr, _strstr,
-                            _sysctl, _sysctlbyname, _unlink, _uuid_generate_random,
-                            _uuid_parse, _uuid_unparse, _write, _xpc_data_create,
-                            _xpc_dictionary_get_bool, _xpc_dictionary_get_uint64 ]
-    objc-classes:         [ _NSDate, _NSMutableArray, _NSMutableDictionary,
-                            _NSNumber, _NSString ]
 ...

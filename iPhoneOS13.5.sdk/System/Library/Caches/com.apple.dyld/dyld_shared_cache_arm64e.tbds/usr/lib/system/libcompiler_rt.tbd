@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libcompiler_rt.dylib
 current-version:       101.1
 compatibility-version: 1
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ ___atomic_compare_exchange,
@@ -40,11 +38,4 @@ exports:
                             _atomic_flag_test_and_set,
                             _atomic_flag_test_and_set_explicit,
                             _atomic_signal_fence, _atomic_thread_fence ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ __Unwind_GetIP, __Unwind_GetLanguageSpecificData,
-                            __Unwind_GetRegionStart, __Unwind_SetGR,
-                            __Unwind_SetIP, ____chkstk_darwin, ___assert_rtn,
-                            __os_nospin_lock_lock, __os_nospin_lock_unlock,
-                            _memcmp, _memcpy ]
 ...

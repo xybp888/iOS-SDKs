@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudServices.framework/CloudServices
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SecureBackupBackOffDateWithInfo,
@@ -148,67 +146,4 @@ exports:
                             _kSecureBackupiCloudIdentityPublicDataKey ]
     objc-classes:         [ _SecureBackup,
                             _SecureBackupBeginPasscodeRequestResults ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFDataCreateWithBytesNoCopy, _CFDataGetBytePtr,
-                            _CFDataGetLength, _CFRelease, _NSCocoaErrorDomain,
-                            _NSFilePathErrorKey, _NSLocalizedDescriptionKey,
-                            _NSOSStatusErrorDomain, _NSPOSIXErrorDomain,
-                            _NSURLErrorDomain, _NSURLErrorKey,
-                            _NSUnderlyingErrorKey, _OBJC_EHTYPE_$_NSException,
-                            _SecKeyCopyPublicBytes, _SecKeyCopyPublicKey,
-                            _SecKeyCreateDecryptedData,
-                            _SecKeyCreateEncryptedData, _SecKeyCreateRandomKey,
-                            _SecKeyCreateWithData, _SecKeyGetBlockSize,
-                            __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___chkstk_darwin, ___error, ___memcpy_chk,
-                            ___objc_personality_v0, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache,
-                            __os_activity_initiate, __os_feature_enabled_impl,
-                            __os_log_default, __os_log_error_impl, __os_log_impl,
-                            _abort, _bzero, _cc_clear, _ccaes_cbc_decrypt_mode,
-                            _ccaes_cbc_encrypt_mode, _ccaes_ecb_decrypt_mode,
-                            _ccaes_ecb_encrypt_mode, _ccder_decode_rsa_pub_n,
-                            _ccder_decode_rsa_pub_x509_n, _ccder_encode_rsa_priv,
-                            _ccder_encode_rsa_priv_size,
-                            _ccder_encode_rsa_pub_size, _ccdigest, _cchmac_final,
-                            _cchmac_init, _cchmac_update, _ccn_write_uint_size,
-                            _ccpad_pkcs7_decrypt, _ccpad_pkcs7_encrypt,
-                            _ccpbkdf2_hmac, _ccrng, _ccrsa_decrypt_oaep,
-                            _ccrsa_encrypt_oaep, _ccrsa_export_pub,
-                            _ccrsa_generate_fips186_key, _ccrsa_import_pub,
-                            _ccsha1_di, _ccsha256_di,
-                            _ccsrp_client_process_challenge,
-                            _ccsrp_client_start_authentication,
-                            _ccsrp_client_verify_session,
-                            _ccsrp_generate_salt_and_verification,
-                            _ccsrp_gp_rfc5054_2048,
-                            _ccsrp_server_start_authentication,
-                            _ccsrp_server_verify_session, _dispatch_async,
-                            _dispatch_get_global_queue, _dispatch_once, _free,
-                            _getprogname, _getuid, _kCFAllocatorNull,
-                            _kSecAttrIsPermanent, _kSecAttrKeyClass,
-                            _kSecAttrKeyClassPrivate, _kSecAttrKeySizeInBits,
-                            _kSecAttrKeyType, _kSecAttrKeyTypeRSA,
-                            _kSecKeyAlgorithmRSAEncryptionOAEPSHA1,
-                            _kdebug_trace, _malloc, _memcmp, _memcpy, _memmove,
-                            _notify_get_state, _notify_register_check, _objc_alloc,
-                            _objc_alloc_init, _objc_autorelease,
-                            _objc_autoreleaseReturnValue, _objc_begin_catch,
-                            _objc_end_catch, _objc_getProperty, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class, _objc_opt_new,
-                            _objc_release, _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_retainBlock, _objc_setProperty_atomic,
-                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
-                            _os_log_type_enabled, _pthread_main_np, _strerror,
-                            _strlen ]
-    objc-classes:         [ _NSData, _NSDate, _NSDateFormatter, _NSDictionary,
-                            _NSError, _NSMutableData, _NSMutableDictionary,
-                            _NSNumber, _NSObject, _NSProcessInfo,
-                            _NSPropertyListSerialization, _NSString, _NSUUID,
-                            _NSXPCConnection, _NSXPCInterface, _SFAnalytics ]
 ...

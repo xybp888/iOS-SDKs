@@ -1,7 +1,6 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/libsandbox.1.dylib
 current-version:       1
 compatibility-version: 1
@@ -25,12 +24,4 @@ exports:
                             _sandbox_user_state_item_buffer_destroy,
                             _sandbox_user_state_item_buffer_send,
                             _sandbox_user_state_iterate_items ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ ___assert_rtn, ___error, ___sandbox_ms,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __os_log_default, __os_log_error_impl, _asprintf, _bzero,
-                            _calloc, _fclose, _fopen, _free, _mach_task_self_, _malloc,
-                            _memcpy, _os_log_type_enabled, _realloc, _reallocf,
-                            _strcmp, _strdup, _strerror, _strlen, _vm_deallocate ]
 ...

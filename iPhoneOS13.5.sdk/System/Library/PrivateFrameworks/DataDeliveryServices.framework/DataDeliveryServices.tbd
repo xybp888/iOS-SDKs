@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DataDeliveryServices.framework/DataDeliveryServices
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AllowCellularOverride, _AssetCenterQueueName,
@@ -126,78 +124,4 @@ exports:
                             _DDSScheduledTimerImpl._expirationHandler,
                             _DDSServer._clientConnections, _DDSServer._listener,
                             _DDSServer._manager, _DDSServer._queue ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _ASAttributeCompatibilityVersion,
-                            _ASDownloadOptionAllow2G, _ASDownloadOptionAllow3G,
-                            _ASDownloadOptionAllow4G, _ASDownloadOptionAllowWiFi,
-                            _ASDownloadOptionPriority, _ASDownloadPriorityHigh,
-                            _ASOperationCompleted, _ASOperationDownloadPaused,
-                            _ASOperationDownloadQueued,
-                            _ASOperationDownloadingAsset, _ASOperationStalled,
-                            _ASOperationUnarchivingAsset,
-                            _ASOperationVerifyingAsset,
-                            _ASOperationWaitingToDownload, _ASStateOperation,
-                            _BackgroundTaskAgentAddJob,
-                            _BackgroundTaskAgentCopyJob,
-                            _BackgroundTaskAgentInit,
-                            _BackgroundTaskAgentRemoveJob,
-                            _CFNotificationCenterAddObserver,
-                            _CFNotificationCenterGetDarwinNotifyCenter,
-                            _CFNotificationCenterRemoveEveryObserver,
-                            _CFPreferencesAppSynchronize,
-                            _CFPreferencesCopyAppValue,
-                            _CFPreferencesGetAppIntegerValue,
-                            _CFPreferencesSetAppValue, _CFRelease,
-                            _MACleanV1Repository, _MGCopyAnswerWithError,
-                            _MGGetBoolAnswer, _NSCalendarIdentifierGregorian,
-                            _NSHomeDirectory, _NSRunLoopCommonModes,
-                            _NSStringFromClass, _NSStringFromSelector,
-                            _SCNetworkReachabilityCreateWithName,
-                            _SCNetworkReachabilityGetFlags,
-                            _SCNetworkReachabilitySetCallback,
-                            _SCNetworkReachabilitySetDispatchQueue,
-                            __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___NSArray0__, ___NSDictionary0__, ___assert_rtn,
-                            ___objc_personality_v0, ___stack_chk_fail,
-                            ___stack_chk_guard, __dispatch_main_q,
-                            __objc_empty_cache, __os_feature_enabled_impl,
-                            __os_log_error_impl, __os_log_impl,
-                            _arc4random_uniform, _dispatch_async,
-                            _dispatch_get_global_queue, _dispatch_once,
-                            _dispatch_queue_attr_make_with_autorelease_frequency,
-                            _dispatch_queue_attr_make_with_qos_class,
-                            _dispatch_queue_create, _dispatch_sync,
-                            _kBackgroundTaskAgentJobWindowEndTime,
-                            _kBackgroundTaskAgentJobWindowStartTime,
-                            _kBackgroundTaskAgentNetworkRequired,
-                            _kBackgroundTaskAgentRequiredBatteryLevel,
-                            _kCFAllocatorDefault, _objc_alloc, _objc_alloc_init,
-                            _objc_autoreleaseReturnValue, _objc_copyWeak,
-                            _objc_destroyWeak, _objc_enumerationMutation,
-                            _objc_getProperty, _objc_initWeak,
-                            _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
-                            _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_retainBlock, _objc_setProperty_nonatomic_copy,
-                            _objc_storeStrong,
-                            _objc_unsafeClaimAutoreleasedReturnValue,
-                            _os_log_create, _os_log_type_enabled,
-                            _xpc_dictionary_create, _xpc_dictionary_set_bool,
-                            _xpc_dictionary_set_double ]
-    objc-classes:         [ _ASAssetQuery, _MAAsset, _MAAssetQuery,
-                            _MADownloadOptions, _NSArray, _NSCalendar,
-                            _NSCompoundPredicate, _NSData, _NSDate,
-                            _NSDateComponents, _NSDictionary, _NSError,
-                            _NSFileManager, _NSKeyedArchiver, _NSKeyedUnarchiver,
-                            _NSMutableArray, _NSMutableDictionary, _NSMutableSet,
-                            _NSMutableString, _NSNumber, _NSObject, _NSPredicate,
-                            _NSPropertyListSerialization, _NSRunLoop, _NSSet,
-                            _NSString, _NSThread, _NSTimer, _NSURL, _NSXPCConnection,
-                            _NSXPCInterface, _NSXPCListener ]
 ...

@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/libdns_services.dylib
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _DNSXEnableProxy, _DNSXRefDeAlloc,
@@ -29,46 +27,4 @@ exports:
                             _dnssd_getaddrinfo_set_queue,
                             _dnssd_getaddrinfo_set_result_handler,
                             _dnssd_release, _dnssd_retain ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ __Block_copy, __Block_object_assign,
-                            __Block_object_dispose, __Block_release,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            ___snprintf_chk, ___stack_chk_fail, ___stack_chk_guard,
-                            __dispatch_source_type_data_or, __objc_empty_cache,
-                            __os_log_default, __os_log_impl, __os_object_alloc,
-                            __xpc_error_connection_interrupted,
-                            __xpc_error_connection_invalid,
-                            __xpc_error_key_description, __xpc_type_data,
-                            __xpc_type_dictionary, __xpc_type_int64,
-                            __xpc_type_string, __xpc_type_uint64,
-                            _dispatch_activate, _dispatch_async, _dispatch_once,
-                            _dispatch_queue_attr_make_with_qos_class,
-                            _dispatch_queue_create, _dispatch_release,
-                            _dispatch_retain, _dispatch_source_cancel,
-                            _dispatch_source_create, _dispatch_source_get_data,
-                            _dispatch_source_merge_data,
-                            _dispatch_source_set_cancel_handler,
-                            _dispatch_source_set_event_handler, _dispatch_sync,
-                            _free, _inet_ntop, _malloc, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _os_log_type_enabled, _os_release, _os_retain,
-                            _xpc_array_apply, _xpc_connection_activate,
-                            _xpc_connection_create_mach_service,
-                            _xpc_connection_resume,
-                            _xpc_connection_send_message_with_reply,
-                            _xpc_connection_set_event_handler, _xpc_copy,
-                            _xpc_copy_description, _xpc_data_get_bytes_ptr,
-                            _xpc_data_get_length, _xpc_dictionary_create,
-                            _xpc_dictionary_get_array,
-                            _xpc_dictionary_get_string,
-                            _xpc_dictionary_get_uint64,
-                            _xpc_dictionary_get_value, _xpc_dictionary_set_bool,
-                            _xpc_dictionary_set_int64,
-                            _xpc_dictionary_set_string,
-                            _xpc_dictionary_set_uint64, _xpc_dictionary_set_uuid,
-                            _xpc_dictionary_set_value, _xpc_get_type,
-                            _xpc_int64_get_value, _xpc_release,
-                            _xpc_string_get_string_ptr, _xpc_uint64_get_value ]
-    objc-classes:         [ _NSObject, _NSString, _OS_object ]
 ...

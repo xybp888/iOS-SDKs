@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/libAccessibility.dylib
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AXBeginListeningToUserDefaultsChanges,
@@ -701,85 +699,4 @@ exports:
                             _AXSupportDefaultsObserver._axDomain,
                             _AXSupportDefaultsObserver._lastNotificationsQueue,
                             _AXSupportDefaultsObserver._observedPrefs ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _AXAccessibilityBundlesDirectory,
-                            _AXLogAirPodSettings, _AXLogCommon,
-                            _AXSupportLogCommon, _CFArrayAppendValue,
-                            _CFArrayContainsValue, _CFArrayCreate,
-                            _CFArrayCreateCopy, _CFArrayCreateMutable,
-                            _CFArrayCreateMutableCopy, _CFArrayGetCount,
-                            _CFArrayGetTypeID, _CFArrayGetValueAtIndex,
-                            _CFAutorelease, _CFBooleanGetTypeID,
-                            _CFBooleanGetValue,
-                            _CFBundleCopyLocalizedStringForLocalization,
-                            _CFBundleCreate, _CFDataCreateWithBytesNoCopy,
-                            _CFDictionaryAddValue, _CFDictionaryCreateMutable,
-                            _CFDictionaryCreateMutableCopy,
-                            _CFDictionaryGetCount, _CFDictionaryGetTypeID,
-                            _CFDictionaryGetValue, _CFDictionaryRemoveValue,
-                            _CFDictionarySetValue, _CFEqual, _CFGetTypeID,
-                            _CFLocaleGetIdentifier, _CFLog,
-                            _CFNotificationCenterAddObserver,
-                            _CFNotificationCenterGetDarwinNotifyCenter,
-                            _CFNotificationCenterGetLocalCenter,
-                            _CFNotificationCenterPostNotification,
-                            _CFNumberCreate, _CFNumberGetTypeID, _CFNumberGetValue,
-                            _CFPreferencesAppSynchronize,
-                            _CFPreferencesCopyAppValue, _CFPreferencesCopyValue,
-                            _CFPreferencesGetAppBooleanValue,
-                            _CFPreferencesGetAppIntegerValue,
-                            _CFPreferencesSetAppValue, _CFPreferencesSetValue,
-                            _CFPreferencesSynchronize,
-                            _CFPropertyListCreateWithData, _CFRelease, _CFRetain,
-                            _CFSetAddValue, _CFSetContainsValue,
-                            _CFSetCreateMutable, _CFStringCompare,
-                            _CFStringCreateWithFileSystemRepresentation,
-                            _CFStringCreateWithFormat, _GAXLogCommon,
-                            _MACaptionAppearancePrefCopyPreferAccessibleCaptions,
-                            _MACaptionAppearancePrefSetPreferAccessibleCaptions,
-                            _MACaptionAppearanceSetDisplayType,
-                            _MADisplayFilterPrefGetCategoryEnabled,
-                            _MADisplayFilterPrefGetType,
-                            _MADisplayFilterPrefSetCategoryEnabled,
-                            _MADisplayFilterPrefSetType, _NSClassFromString,
-                            _NSKeyValueChangeNewKey, _NSKeyValueChangeOldKey,
-                            _OBJC_EHTYPE_$_NSException, __Block_object_assign,
-                            __Block_object_dispose, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock, __Unwind_Resume,
-                            ___CFConstantStringClassReference, ___error,
-                            ___objc_personality_v0, ___stack_chk_fail,
-                            ___stack_chk_guard, __dispatch_main_q,
-                            __objc_empty_cache, __os_log_error_impl, __os_log_impl,
-                            _abort_report_np, _bootstrap_look_up, _bootstrap_port,
-                            _csops, _dispatch_after, _dispatch_async, _dispatch_once,
-                            _dispatch_queue_create, _dispatch_sync, _dispatch_time,
-                            _dlclose, _dlerror, _dlopen, _dlsym,
-                            _dyld_get_program_sdk_version, _free, _getenv, _geteuid,
-                            _getpid, _getpwuid, _getuid, _kCFAllocatorDefault,
-                            _kCFAllocatorNull, _kCFBooleanFalse, _kCFBooleanTrue,
-                            _kCFPreferencesAnyHost, _kCFPreferencesCurrentUser,
-                            _kCFTypeArrayCallBacks,
-                            _kCFTypeDictionaryKeyCallBacks,
-                            _kCFTypeDictionaryValueCallBacks,
-                            _kCFTypeSetCallBacks, _mach_msg, _malloc, _memcpy,
-                            _notify_post, _objc_alloc, _objc_alloc_init,
-                            _objc_autoreleaseReturnValue, _objc_begin_catch,
-                            _objc_end_catch, _objc_enumerationMutation,
-                            _objc_getClass, _objc_getProperty, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new,
-                            _objc_opt_respondsToSelector, _objc_release,
-                            _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_retainBlock, _objc_setProperty_nonatomic_copy,
-                            _objc_storeStrong, _os_log_type_enabled,
-                            _pthread_mutex_lock, _pthread_mutex_unlock, _strcmp,
-                            _strerror ]
-    objc-classes:         [ _NSArray, _NSBundle, _NSDictionary, _NSLocale,
-                            _NSMutableArray, _NSMutableDictionary, _NSMutableSet,
-                            _NSNotificationCenter, _NSNull, _NSNumber, _NSObject,
-                            _NSOrderedSet, _NSProcessInfo, _NSThread,
-                            _NSUserDefaults, _NSValue ]
 ...

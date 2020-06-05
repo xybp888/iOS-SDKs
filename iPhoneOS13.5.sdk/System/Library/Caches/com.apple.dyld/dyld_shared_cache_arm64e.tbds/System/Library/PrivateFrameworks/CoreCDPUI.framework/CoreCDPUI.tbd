@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreCDPUI.framework/CoreCDPUI
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CDPEnrollmentCancelled, _CDPEnrollmentCompleted,
@@ -48,84 +46,4 @@ exports:
                             _CDPUIController._devices,
                             _CDPUIController._navController,
                             _CDPUIController._remoteSecretValidator ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _AKAppleIDAuthenticationErrorDomain,
-                            _AKAuthenticationIsHSA2Key,
-                            _AKSecurityUpgradeContextGeneric,
-                            _AKSecurityUpgradeContextKeychainSync,
-                            _CDPLocalizedString, _CDPStateErrorDomain,
-                            _CFPreferencesGetAppBooleanValue, _CGRectGetHeight,
-                            _CGRectGetMaxY, _CGRectGetMidX, _CGRectGetMidY,
-                            _CGRectGetWidth, _CGRectZero, _CGSizeZero,
-                            _NSCocoaErrorDomain, _NSFontAttributeName,
-                            _NSForegroundColorAttributeName, _NSStringFromCGRect,
-                            _NSUnderlyingErrorKey, _PSFooterTextGroupKey,
-                            _UIContentSizeCategoryCompareToCategory,
-                            _UIContentSizeCategoryExtraLarge,
-                            _UIContentSizeCategoryIsAccessibilityCategory,
-                            _UIFontTextStyleBody, _UIFontTextStyleCaption1,
-                            _UIFontTextStyleTitle2,
-                            _UIKeyboardLayoutDidChangedNotification,
-                            _UITableViewAutomaticDimension,
-                            __Block_object_assign, __Block_object_dispose,
-                            __CDPLogSystem, __CDPStateError,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___assert_rtn, ___objc_personality_v0,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __dispatch_main_q, __objc_empty_cache,
-                            __os_activity_create, __os_activity_current,
-                            __os_log_debug_impl, __os_log_error_impl,
-                            __os_log_impl, _abort_report_np, _dispatch_after,
-                            _dispatch_async, _dispatch_sync, _dispatch_time,
-                            _dlerror, _dlopen, _kDevicePINControllerDelegate,
-                            _objc_alloc, _objc_alloc_init,
-                            _objc_autoreleaseReturnValue, _objc_copyWeak,
-                            _objc_destroyWeak, _objc_getClass, _objc_getProperty,
-                            _objc_initWeak, _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new,
-                            _objc_opt_respondsToSelector, _objc_release,
-                            _objc_retain, _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_retainBlock, _objc_setProperty_nonatomic_copy,
-                            _objc_storeStrong, _objc_storeWeak,
-                            _objc_unsafeClaimAutoreleasedReturnValue,
-                            _os_activity_scope_enter, _os_activity_scope_leave,
-                            _os_log_type_enabled, _os_unfair_lock_lock,
-                            _os_unfair_lock_unlock ]
-    objc-classes:         [ _AKAccountManager, _AKAppleIDAuthenticationContext,
-                            _AKAppleIDAuthenticationController,
-                            _AKAppleIDAuthenticationInAppContext, _CDPAccount,
-                            _CDPCircleProxyImpl, _CDPContext, _CDPFollowUpContext,
-                            _CDPFollowUpController, _CDPLocalDevice,
-                            _CDPLocalSecret, _CDPLocalizedStringBuilder,
-                            _CDPManateeStateController, _CDPStateController,
-                            _DevicePINController, _DevicePINPane,
-                            _MCProfileConnection, _NSArray, _NSAttributedString,
-                            _NSBundle, _NSDictionary, _NSError, _NSExtension,
-                            _NSExtensionContext, _NSExtensionItem, _NSMutableArray,
-                            _NSMutableDictionary, _NSNotificationCenter, _NSNumber,
-                            _NSObject, _NSString, _NSThread, _NSXPCInterface,
-                            _OBBoldTrayButton, _OBNavigationController,
-                            _OBWelcomeController, _PSEditableTableCell,
-                            _PSKeychainSyncHeaderView,
-                            _PSKeychainSyncSecurityCodeController,
-                            _PSListController, _PSNavBarSpinnerManager,
-                            _PSSetupController, _PSSpecifier,
-                            _UIActivityIndicatorView, _UIAlertAction,
-                            _UIAlertController, _UIBarButtonItem, _UIButton,
-                            _UIColor, _UIDevice, _UIFont, _UIFontMetrics, _UIImage,
-                            _UIKeyboard, _UILabel, _UINavigationBar,
-                            _UINavigationController, _UIScreen, _UIScrollView,
-                            _UIStackView, _UITableView, _UITableViewCell, _UIView,
-                            _UIViewController, __UIRemoteViewController ]
-    objc-ivars:           [ _DevicePINPane._pinView,
-                            _DevicePINPane._transitionView,
-                            _PSDetailController._pane,
-                            _PSKeychainSyncHeaderView._detailLabel,
-                            _PSKeychainSyncHeaderView._titleLabel,
-                            _PSKeychainSyncSecurityCodeController._footerButton,
-                            _PSKeychainSyncSecurityCodeController._footerLabel ]
 ...

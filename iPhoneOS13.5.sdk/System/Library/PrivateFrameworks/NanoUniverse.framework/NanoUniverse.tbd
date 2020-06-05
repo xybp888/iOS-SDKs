@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NanoUniverse.framework/NanoUniverse
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _NULoadMtlTextureFromMemory,
@@ -72,35 +70,4 @@ exports:
                             _NUView._resources, __NUGeometry._icount,
                             __NUGeometry._indices, __NUGeometry._vcount,
                             __NUGeometry._vertices ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CACurrentMediaTime,
-                            _CLKClearCacheRequestNotification,
-                            __NSConcreteGlobalBlock, __Unwind_Resume,
-                            ___CFConstantStringClassReference, ___assert_rtn,
-                            ___objc_personality_v0, ___sincosf_stret,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __objc_empty_cache, __os_log_error_impl, __os_log_impl,
-                            _acosf, _atan2f, _atanf, _dispatch_once, _free,
-                            _kdebug_trace, _memcpy, _objc_alloc, _objc_alloc_init,
-                            _objc_autoreleaseReturnValue, _objc_destroyWeak,
-                            _objc_enumerationMutation, _objc_getProperty,
-                            _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class, _objc_opt_new,
-                            _objc_release, _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_retainBlock, _objc_setProperty_nonatomic_copy,
-                            _objc_storeStrong, _objc_storeWeak, _objc_sync_enter,
-                            _objc_sync_exit, _os_log_create, _os_log_type_enabled,
-                            _qsort, _realloc, _sinf ]
-    objc-classes:         [ _CLKNotificationCenter, _CLKRenderingContext,
-                            _CLKUIAtlasBacking, _CLKUIMetalResourceManager,
-                            _CLKUIQuad, _CLKUIQuadView, _CLKUIResourceManager,
-                            _CLKUIResourceProviderKey, _CLKUITexture, _GEOAlmanac,
-                            _GEOSolarEclipticCelestialBodyData,
-                            _MTLRenderPipelineDescriptor, _MTLTextureDescriptor,
-                            _NSBundle, _NSMutableArray, _NSMutableData,
-                            _NSMutableDictionary, _NSMutableIndexSet, _NSNumber,
-                            _NSObject, _NSThread, _UIView ]
 ...

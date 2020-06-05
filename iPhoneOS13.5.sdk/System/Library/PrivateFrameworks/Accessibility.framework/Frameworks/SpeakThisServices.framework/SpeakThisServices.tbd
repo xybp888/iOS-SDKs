@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/SpeakThisServices.framework/SpeakThisServices
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _STSErrorDomain, _STSMessageKeyAppPointX,
@@ -16,21 +14,4 @@ exports:
                             _SpeakThisServices._errorHandlerFromPriorShowControllerAttempt,
                             _SpeakThisServices._springBoardReady,
                             _SpeakThisServices._triedToShowSpeechControllerBeforeSBReady ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _AXProcessIsBackboard, __AXLogWithFacility,
-                            __AXSSpeakThisEnabled, __Block_object_assign,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            ___CFConstantStringClassReference, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache,
-                            _dispatch_get_global_queue, _dispatch_once,
-                            _notify_get_state, _notify_register_check,
-                            _notify_register_dispatch, _objc_alloc,
-                            _objc_alloc_init, _objc_autoreleaseReturnValue,
-                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
-                            _objc_retain, _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong, _proc_pidinfo ]
-    objc-classes:         [ _AXAccessQueue, _AXSettings, _AXUIClient, _NSDictionary,
-                            _NSError, _NSNumber, _NSObject, _NSProcessInfo, _NSString ]
 ...

@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Futhark.framework/Futhark
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _FKCCGetRecognitionChar, _FKCCMatchGetConfidence,
@@ -26,52 +24,4 @@ exports:
                             _FKTextDetector._timeSequences,
                             _FKTextFeature._backingIndex, _FKTextFeature._scale,
                             _FKTextFeature._session ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFBundleCopyResourceURL,
-                            _CFBundleGetBundleWithIdentifier, _CFRelease,
-                            _CFStringGetCStringPtr, _CFStringGetSystemEncoding,
-                            _CFURLCopyFileSystemPath,
-                            _CGPointCreateDictionaryRepresentation,
-                            _CGPointMakeWithDictionaryRepresentation,
-                            _CGPointZero, _CGRectContainsRect, _CGRectGetMaxX,
-                            _CGRectGetMaxY, _CGRectGetMinX, _CGRectGetMinY,
-                            _CGRectIntersection, _CGRectIntersectsRect,
-                            _CGRectUnion, _CVPixelBufferGetBaseAddress,
-                            _CVPixelBufferGetBaseAddressOfPlane,
-                            _CVPixelBufferGetBytesPerRow,
-                            _CVPixelBufferGetBytesPerRowOfPlane,
-                            _CVPixelBufferGetHeight,
-                            _CVPixelBufferGetPixelFormatType,
-                            _CVPixelBufferGetWidth, _CVPixelBufferIsPlanar,
-                            _CVPixelBufferLockBaseAddress,
-                            _CVPixelBufferUnlockBaseAddress,
-                            _NSLocalizedDescriptionKey, __Block_object_assign,
-                            __Block_object_dispose, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock, __Unwind_Resume,
-                            ___CFConstantStringClassReference, ___NSArray0__,
-                            ___chkstk_darwin, ___objc_personality_v0,
-                            ___sprintf_chk, ___stack_chk_fail, ___stack_chk_guard,
-                            ___stderrp, ___stdoutp, ___strncat_chk, ___tolower,
-                            __dispatch_queue_attr_concurrent, __objc_empty_cache,
-                            _bzero, _calloc, _dispatch_async, _dispatch_barrier_sync,
-                            _dispatch_once, _dispatch_queue_create,
-                            _dispatch_release, _espresso_context_destroy,
-                            _espresso_create_context, _espresso_create_plan,
-                            _espresso_network_bind_buffer,
-                            _espresso_network_change_input_blob_shapes,
-                            _espresso_plan_add_network, _espresso_plan_build,
-                            _espresso_plan_destroy, _espresso_plan_execute_sync,
-                            _fflush, _free, _fwrite, _index, _mach_absolute_time,
-                            _mach_timebase_info, _malloc, _memcpy, _memset,
-                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
-                            _objc_enumerationMutation, _objc_getProperty,
-                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
-                            _objc_setProperty_nonatomic,
-                            _objc_setProperty_nonatomic_copy, _printf, _putchar,
-                            _qsort, _qsort_r, _realloc, _strcpy, _strlen, _strstr,
-                            _vImageScale_Planar8 ]
-    objc-classes:         [ _NSArray, _NSDictionary, _NSError, _NSMutableArray,
-                            _NSObject, _NSString, _NSUserDefaults ]
 ...

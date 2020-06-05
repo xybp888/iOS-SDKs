@@ -1,7 +1,6 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/GPUSupport.framework/libGPUSupportMercury.dylib
 current-version:       1
 compatibility-version: 1
@@ -85,57 +84,4 @@ exports:
                             _gpusReleaseAccumIOSurface, _gpusRowBytes,
                             _gpusSubmitDataBuffers, _gpusTestContextResource,
                             _gpusWaitResource, _gstctxOpState ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFRelease, _CFRetain, _IOAccelCLContextCreate,
-                            _IOAccelCLContextFinishFenceEvent,
-                            _IOAccelCLContextFinishResourceSysMem,
-                            _IOAccelCLContextGetDataBufferClassCount,
-                            _IOAccelCLContextGetDataBufferResource,
-                            _IOAccelCLContextGetFenceBuffer,
-                            _IOAccelCLContextGetSidebandBuffer,
-                            _IOAccelCLContextRelease,
-                            _IOAccelCLContextRequestDataBuffer,
-                            _IOAccelCLContextSetDataBufferClassUsedBytes,
-                            _IOAccelCLContextSubmitDataBuffers,
-                            _IOAccelContextAddResource,
-                            _IOAccelContextSetBackgroundRendering,
-                            _IOAccelDeviceCreateWithAPIProperty,
-                            _IOAccelDeviceGetConfig64, _IOAccelDeviceGetConnect,
-                            _IOAccelDeviceRelease, _IOAccelDeviceTestEvent,
-                            _IOAccelGLContextCreate, _IOAccelGLContextFinish,
-                            _IOAccelGLContextFinishFenceEvent,
-                            _IOAccelGLContextFinishResourceSysMem,
-                            _IOAccelGLContextFlushResourceSysMem,
-                            _IOAccelGLContextGetDataBufferClassCount,
-                            _IOAccelGLContextGetDataBufferResource,
-                            _IOAccelGLContextGetFenceBuffer,
-                            _IOAccelGLContextGetSidebandBuffer,
-                            _IOAccelGLContextReclaimResources,
-                            _IOAccelGLContextRelease,
-                            _IOAccelGLContextRequestDataBuffer,
-                            _IOAccelGLContextSetDataBufferClassUsedBytes,
-                            _IOAccelGLContextSubmitDataBuffersExt2,
-                            _IOAccelGLContextTestResourceSysMem,
-                            _IOAccelResourceCheckSysMem, _IOAccelResourceCreate,
-                            _IOAccelResourceCreateAllocationIdentifierSet,
-                            _IOAccelResourceFinishEvent,
-                            _IOAccelResourceFinishSysMem,
-                            _IOAccelResourceGetClientShared,
-                            _IOAccelResourceGetDataBytes,
-                            _IOAccelResourceGetDataSize, _IOAccelResourcePageoff,
-                            _IOAccelResourceRelease, _IOAccelSharedCreate,
-                            _IOAccelSharedRelease,
-                            _IORegistryEntryGetRegistryEntryID,
-                            _IOSurfaceBindAccel, _IOSurfaceGetID,
-                            ___CFSetLastAllocationEventName, ___stack_chk_fail,
-                            ___stack_chk_guard, __os_log_default,
-                            __os_log_fault_impl, _abort, _bzero, _glgCreateProcessor,
-                            _glgDestroyProcessor, _glgSetTakeLock,
-                            _mach_task_self_, _malloc_zone_calloc,
-                            _malloc_zone_free, _malloc_zone_malloc,
-                            _malloc_zone_realloc, _memcpy, _os_log_type_enabled,
-                            _pthread_mutex_destroy, _pthread_mutex_init,
-                            _pthread_mutex_lock, _pthread_mutex_unlock, _random,
-                            _sys_dcache_flush, _vm_allocate, _vm_deallocate ]
 ...

@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LegacyGameKit.framework/LegacyGameKit
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _GKAlertViewDidFinishAnimatingNotification,
@@ -53,36 +51,4 @@ exports:
                             _GKPeerPickerViewController._state,
                             _GKPeerPickerViewController._statusView,
                             _GKPeerPickerViewController._updating ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CGAffineTransformIdentity, _CGAffineTransformScale,
-                            _CGRectGetHeight, _CGRectGetMaxX, _CGRectGetMaxY,
-                            _CGRectGetWidth, _CGRectZero, _GKActiveLogBits,
-                            _GKBluetoothPowerStatusChangedNotification,
-                            _GKGameCenterUIFrameworkBundle,
-                            _GKGetLocalizedStringFromTableInBundle, _GKOSLogInit,
-                            __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            ___CFConstantStringClassReference, ___stack_chk_fail,
-                            ___stack_chk_guard, __dispatch_main_q,
-                            __objc_empty_cache, __os_log_error_impl, __os_log_impl,
-                            _dispatch_after, _dispatch_async, _dispatch_once,
-                            _dispatch_time, _objc_alloc, _objc_alloc_init,
-                            _objc_autorelease, _objc_enumerationMutation,
-                            _objc_getProperty, _objc_msgSend, _objc_msgSendSuper2,
-                            _objc_opt_class, _objc_opt_respondsToSelector,
-                            _objc_release, _objc_retain,
-                            _objc_setProperty_nonatomic, _os_log_GKLogError,
-                            _os_log_GKLogGeneral, _os_log_GKLogMatch,
-                            _os_log_type_enabled ]
-    objc-classes:         [ _GKBluetoothSupport, _GKSession, _NSArray, _NSBundle,
-                            _NSCharacterSet, _NSDictionary, _NSException,
-                            _NSMutableArray, _NSMutableDictionary,
-                            _NSMutableString, _NSNotificationCenter, _NSNumber,
-                            _NSObject, _NSString, _NSTimer, _UIActivityIndicatorView,
-                            _UIAlertView, _UIApplication, _UIButton, _UIColor,
-                            _UIDevice, _UIFont, _UIImage, _UIImageView, _UILabel,
-                            _UITableView, _UITableViewCell, _UIView,
-                            _UIViewController ]
-    weak-def-symbols:     [ _GKSessionErrorDomain ]
 ...

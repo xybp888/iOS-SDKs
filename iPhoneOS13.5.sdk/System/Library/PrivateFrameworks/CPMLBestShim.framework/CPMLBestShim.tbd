@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CPMLBestShim.framework/CPMLBestShim
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _kCPMLAppTitle, _kCPMLAppType, _kCPMLAppUsageTime,
@@ -25,15 +23,4 @@ exports:
                             _kCPMLWifiCondition ]
     objc-classes:         [ _CPMLBestAppShim, _CPMLBestShim, _CPMLBestShimContext ]
     objc-ivars:           [ _CPMLBestShimContext.orderedSuggestions ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _NSLog, __NSConcreteGlobalBlock,
-                            ___CFConstantStringClassReference,
-                            __objc_empty_cache, _dispatch_once, _objc_alloc_init,
-                            _objc_autoreleaseReturnValue, _objc_getProperty,
-                            _objc_msgSend, _objc_release, _objc_retain,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_setProperty_atomic, _objc_storeStrong ]
-    objc-classes:         [ _NSDictionary, _NSObject ]
 ...

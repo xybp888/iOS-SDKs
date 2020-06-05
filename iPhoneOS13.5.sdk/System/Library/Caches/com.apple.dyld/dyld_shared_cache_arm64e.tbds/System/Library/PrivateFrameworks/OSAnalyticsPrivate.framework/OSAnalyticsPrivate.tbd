@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/OSAnalyticsPrivate.framework/OSAnalyticsPrivate
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _OSAnalyticsPrivateVersionNumber,
@@ -21,62 +19,4 @@ exports:
                             _OSASubmitter._responseHeaders,
                             _PCCEndpoint._delegate, _PCCJob._errObj,
                             _PCCJob._package ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFAbsoluteTimeGetCurrent, _CFPreferencesSetAppValue,
-                            _CFRelease, _NSLocalizedDescriptionKey,
-                            _OSANSDateFormat, _SecCMSVerifyCopyDataAndAttributes,
-                            _SecPolicyCreateApplePinned,
-                            _SecTrustEvaluateWithError, __Block_object_assign,
-                            __Block_object_dispose, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock, __Unwind_Resume,
-                            ___CFConstantStringClassReference,
-                            ___NSDictionary0__, ___assert_rtn, ___error,
-                            ___objc_personality_v0, ___stack_chk_fail,
-                            ___stack_chk_guard, __dispatch_main_q,
-                            __dispatch_source_type_timer, __objc_empty_cache,
-                            __os_log_debug_impl, __os_log_default, __os_log_impl,
-                            _adsc_batchKeys, _adsc_setScalarForKey,
-                            _casc_sendEvent, _deflate, _deflateEnd, _deflateInit_,
-                            _deflateReset, _dispatch_async,
-                            _dispatch_get_global_queue, _dispatch_once,
-                            _dispatch_queue_create, _dispatch_resume,
-                            _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _dispatch_source_cancel, _dispatch_source_create,
-                            _dispatch_source_set_event_handler,
-                            _dispatch_source_set_timer, _dispatch_walltime, _feof,
-                            _ferror, _fmemopen, _fread, _free,
-                            _kOSALogOptionOverridePath, _kPathOptionUntrusted,
-                            _malloc, _objc_alloc, _objc_alloc_init,
-                            _objc_autorelease, _objc_autoreleasePoolPop,
-                            _objc_autoreleasePoolPush,
-                            _objc_autoreleaseReturnValue, _objc_destroyWeak,
-                            _objc_enumerationMutation, _objc_getProperty,
-                            _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
-                            _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_setProperty_atomic_copy, _objc_storeStrong,
-                            _objc_storeWeak,
-                            _objc_unsafeClaimAutoreleasedReturnValue,
-                            _os_log_type_enabled, _os_transaction_create, _pow ]
-    objc-classes:         [ _AWDClientHelpers, _NSArray, _NSCharacterSet, _NSData,
-                            _NSDate, _NSDictionary, _NSError, _NSFileManager,
-                            _NSJSONSerialization, _NSMutableArray, _NSMutableData,
-                            _NSMutableDictionary, _NSMutableURLRequest, _NSNumber,
-                            _NSObject, _NSPropertyListSerialization,
-                            _NSRegularExpression, _NSSet, _NSString, _NSURL,
-                            _NSURLConnection, _NSUUID, _NSXPCInterface, _OSALog,
-                            _OSAProxyConfiguration, _OSASystemConfiguration,
-                            _OSATasking ]
-    objc-ivars:           [ _OSALog._filepath, _OSALog._metaData, _OSALog._stream ]
-    weak-def-symbols:     [ _IDSCopyIDForDevice, _IDSDefaultPairedDevice,
-                            _IDSSendMessageOptionBypassDuetKey,
-                            _IDSSendMessageOptionForceLocalDeliveryKey,
-                            _IDSSendMessageOptionTimeoutKey,
-                            _IDSSendMessageOptionWantsClientAcknowledgementKey,
-                            _OBJC_CLASS_$_IDSService ]
 ...

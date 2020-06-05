@@ -1,37 +1,13 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/Accounts/Notification/CoreRecentsAccountNotificationPlugin.bundle/CoreRecentsAccountNotificationPlugin
 current-version:       0
 compatibility-version: 0
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CRMailAccountReceiveEmailAliasAddresses,
                             _CRMailAliasDefaultKey ]
     objc-classes:         [ _CRMailAccountIterator,
                             _CoreRecentsAccountNotificationPlugin ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _ACAccountPropertyIdentityEmailAddress,
-                            _ACAccountTypeIdentifierAppleAccount,
-                            _ACEmailAliasKeyEmailAddresses, _CRRecentsDomainMail,
-                            _CRiCloudAccountChangedNotification,
-                            _MSAccountResultsKeyFromEmailAddressesIncludingDisabled,
-                            _MSAccountResultsKeyRestrictedFromSyncingRecents,
-                            _NSLog, __NSConcreteGlobalBlock,
-                            ___CFConstantStringClassReference, ___NSArray0__,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __objc_empty_cache, _kAccountDataclassContacts,
-                            _kAccountDataclassMail, _notify_post, _objc_alloc_init,
-                            _objc_autorelease, _objc_autoreleaseReturnValue,
-                            _objc_enumerationMutation, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
-                            _objc_retainAutoreleasedReturnValue ]
-    objc-classes:         [ _ACAccountStore, _CNFoundationError, _CNPromise,
-                            _CRRecentContactsLibrary, _CRSearchQuery,
-                            _EAEmailAddressParser, _MSAccounts, _NSArray, _NSDate,
-                            _NSDictionary, _NSMutableSet, _NSObject, _NSPredicate ]
 ...

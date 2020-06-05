@@ -1,7 +1,6 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/libresolv.9.dylib
 current-version:       1
 compatibility-version: 1
@@ -66,40 +65,4 @@ exports:
                             _res_get_bitstringsuffix, _res_get_nibblesuffix,
                             _res_get_nibblesuffix2, _res_protocolname,
                             _res_servicename ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _DNSServiceProcessResult, _DNSServiceQueryRecord,
-                            _DNSServiceRefDeallocate, _DNSServiceRefSockFD,
-                            __DefaultRuneLocale, ___chkstk_darwin, ___error,
-                            ___maskrune, ___memcpy_chk, ___snprintf_chk,
-                            ___sprintf_chk, ___stack_chk_fail, ___stack_chk_guard,
-                            ___stderrp, ___stdoutp, ___strcpy_chk, ___strncpy_chk,
-                            ___tolower, ___toupper, __res, _abort, _arc4random,
-                            _asprintf, _atoi, _bind, _bzero, _calloc, _close, _closedir,
-                            _connect, _dns_configuration_copy,
-                            _dns_configuration_free,
-                            _dns_configuration_notify_key, _endprotoent,
-                            _endservent, _fclose, _fgets, _fopen, _fprintf, _fputc, _fputs,
-                            _free, _freeifaddrs, _fwrite, _getenv, _gethostname,
-                            _getifaddrs, _getnameinfo, _getpeername,
-                            _getprotobynumber, _getprotoent, _getservbyport,
-                            _getservent, _getsockname, _gettimeofday, _gmtime,
-                            _h_errno, _if_indextoname, _if_nametoindex, _inet_aton,
-                            _inet_nsap_ntoa, _inet_ntoa, _inet_ntop, _inet_pton,
-                            _kevent, _kqueue, _malloc, _memchr, _memcmp, _memcpy, _memmove,
-                            _notify_cancel, _notify_check, _notify_get_state,
-                            _notify_monitor_file, _notify_register_check,
-                            _notify_register_plain, _opendir, _printf,
-                            _pthread_getspecific, _pthread_mutex_lock,
-                            _pthread_mutex_unlock, _pthread_self, _putc, _puts, _read,
-                            _readdir, _realloc, _reallocf, _recvmsg, _select, _sendto,
-                            _setbuf, _setprotoent, _setservent, _setsockopt,
-                            _si_async_call, _si_async_cancel,
-                            _si_async_handle_reply, _si_item_release,
-                            _si_module_release, _si_module_with_name, _sleep,
-                            _socket, _stat, _strcasecmp, _strchr, _strcmp, _strcpy,
-                            _strcspn, _strdup, _strerror, _strlen, _strncasecmp,
-                            _strncmp, _strncpy, _strpbrk, _strrchr, _strtol, _strtoul,
-                            _time, _vfprintf, _writev ]
-    weak-def-symbols:     [ ___darwin_check_fd_set_overflow ]
 ...

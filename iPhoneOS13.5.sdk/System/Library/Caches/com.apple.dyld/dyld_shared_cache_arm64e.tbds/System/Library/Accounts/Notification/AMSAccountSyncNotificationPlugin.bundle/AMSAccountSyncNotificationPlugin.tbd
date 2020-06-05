@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/Accounts/Notification/AMSAccountSyncNotificationPlugin.bundle/AMSAccountSyncNotificationPlugin
 current-version:       0
 compatibility-version: 0
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AMSAccountSyncNotificationPluginIsRemoteDeviceChange,
@@ -15,44 +13,4 @@ exports:
                             _AMSBagKeyPrivacyAcknowledgementURL ]
     objc-classes:         [ _AMSAccountSyncNotificationPlugin,
                             _AMSSyncAccountFlagsResult, _AMSSyncAccountFlagsTask ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _ACErrorDomain, _ACRemoteDeviceCommandAddAccount,
-                            _ACRemoteDeviceCommandDeleteAccount,
-                            _ACRemoteDeviceCommandUpdateAccount,
-                            _ACRemoteDeviceOptionAskForReply,
-                            _AMSAccountMediaTypeAppStoreBeta,
-                            _AMSAuthenticateOptionsLogKeyKey, _AMSError,
-                            _AMSHashIfNeeded, _AMSLogKey, _AMSLogableError,
-                            _AMSQueryParameterKeyGUID, _AMSSetLogKey,
-                            _AMSSetLogKeyIfNeeded, _IDSErrorDomain,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___NSDictionary0__, ___objc_personality_v0,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __objc_empty_cache, __os_log_impl, _abort_report_np,
-                            _dispatch_assert_queue$V2, _dispatch_async,
-                            _dispatch_once,
-                            _dispatch_queue_attr_make_with_autorelease_frequency,
-                            _dispatch_queue_create, _dlerror, _dlopen, _dlsym,
-                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
-                            _objc_autoreleaseReturnValue, _objc_copyWeak,
-                            _objc_destroyWeak, _objc_initWeak,
-                            _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
-                            _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong,
-                            _objc_unsafeClaimAutoreleasedReturnValue,
-                            _os_log_type_enabled ]
-    objc-classes:         [ _ACAccount, _ACAccountStore,
-                            _AKAppleIDAuthenticationController, _AKDevice, _AMSBag,
-                            _AMSBagKeySet, _AMSBinaryPromise, _AMSDevice,
-                            _AMSDeviceOfferRegistrationTask, _AMSLogConfig,
-                            _AMSMetrics, _AMSMutableBagKeySet, _AMSPurchaseQueue,
-                            _AMSTask, _AMSURLRequestEncoder, _AMSURLSession, _NSDate,
-                            _NSDictionary, _NSMutableDictionary, _NSNumber,
-                            _NSObject ]
 ...

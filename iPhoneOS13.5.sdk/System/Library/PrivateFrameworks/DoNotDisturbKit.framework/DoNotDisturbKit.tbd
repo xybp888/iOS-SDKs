@@ -1,14 +1,12 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DoNotDisturbKit.framework/DoNotDisturbKit
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
-    allowable-clients:    [ DoNotDisturbKitTests, DoNotDisturbModule, NanoSettings,
+    allowed-clients:      [ DoNotDisturbKitTests, DoNotDisturbModule, NanoSettings,
                             NanoSettingsGlance, SpringBoard, SpringBoardCore ]
     symbols:              [ _DNDEndOfEventAssertionIdentifier,
                             _DNDKitRegisterLogging, _DNDLogLocation,
@@ -55,38 +53,4 @@ exports:
                             _DNDNotificationsService._queue,
                             _DNDNotificationsService._sleepActive,
                             _DNDNotificationsService._workoutActive ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _AWDPostSimpleMetricWithInteger,
-                            _CFNotificationCenterAddObserver,
-                            _CFNotificationCenterGetDarwinNotifyCenter,
-                            _DNDResolvedImmediateBypassEventSourceType,
-                            _DNDResolvedInterruptionBehaviorSetting,
-                            _MTBedtimeDNDIdentifier, __Block_object_assign,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            ___CFConstantStringClassReference, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache,
-                            __os_log_error_impl, __os_log_impl,
-                            _dispatch_assert_queue$V2, _dispatch_async,
-                            _dispatch_get_global_queue, _dispatch_once,
-                            _dispatch_queue_attr_make_with_autorelease_frequency,
-                            _dispatch_queue_create, _dispatch_sync, _objc_alloc,
-                            _objc_alloc_init, _objc_autoreleaseReturnValue,
-                            _objc_destroyWeak, _objc_enumerationMutation,
-                            _objc_getProperty, _objc_loadWeakRetained,
-                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass,
-                            _objc_opt_respondsToSelector, _objc_release,
-                            _objc_retain, _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong, _objc_storeWeak, _os_log_create,
-                            _os_log_type_enabled ]
-    objc-classes:         [ _BSDateFormatterCache, _BSPlatform, _CLLocationManager,
-                            _DNDModeAssertionLifetime, _DNDModeAssertionService,
-                            _DNDSettingsService, _DNDStateService,
-                            _EKCalendarVisibilityManager, _EKEventStore, _NSArray,
-                            _NSBundle, _NSCalendar, _NSDate, _NSDateInterval,
-                            _NSMutableArray, _NSObject, _NSString,
-                            _UNMutableNotificationContent,
-                            _UNNotificationRequest, _UNUserNotificationCenter ]
 ...

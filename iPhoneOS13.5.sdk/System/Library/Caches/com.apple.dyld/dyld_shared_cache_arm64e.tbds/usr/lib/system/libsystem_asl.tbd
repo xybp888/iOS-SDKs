@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libsystem_asl.dylib
 current-version:       377.60.2
 compatibility-version: 1
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ASL_LEVEL_TO_STRING, __asl_evaluate_send,
@@ -111,57 +109,4 @@ exports:
                             _asl_trigger_aslmanager, _asl_unset, _asl_unset_key,
                             _asl_vlog, _aslresponse_free, _aslresponse_next,
                             _closelog, _openlog, _setlogmask, _syslog, _vsyslog ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _NDR_record, __Block_object_assign,
-                            __Block_object_dispose, __DefaultRuneLocale,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __NSGetArgv, ___assert_rtn, ___error, ___maskrune,
-                            ___memcpy_chk, ___snprintf_chk, ___stack_chk_fail,
-                            ___stack_chk_guard, ___stderrp, ___stdoutp,
-                            __dispatch_source_type_read, __os_activity_current,
-                            __os_log_default, _asprintf, _atexit, _atoi, _atoll,
-                            _bootstrap_look_up2, _bootstrap_port, _bzero, _calloc,
-                            _close, _closedir, _ctime_r, _dispatch_data_create_map,
-                            _dispatch_data_get_size, _dispatch_group_create,
-                            _dispatch_group_enter, _dispatch_group_leave,
-                            _dispatch_group_wait, _dispatch_io_create,
-                            _dispatch_io_read, _dispatch_io_set_low_water,
-                            _dispatch_once, _dispatch_once_f,
-                            _dispatch_queue_create, _dispatch_release,
-                            _dispatch_resume, _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _dispatch_set_context, _dispatch_source_cancel,
-                            _dispatch_source_create, _dispatch_source_get_handle,
-                            _dispatch_source_set_cancel_handler_f,
-                            _dispatch_source_set_event_handler_f, _dispatch_sync,
-                            _dispatch_time, _dup2, _fclose, _fcntl, _fdopen, _fflush,
-                            _fileno, _fileport_makefd, _fls, _fopen, _fprintf, _fputc,
-                            _fputs, _fread, _free, _fseek, _fseeko, _ftello, _fwrite,
-                            _getegid, _getenv, _geteuid, _getgid, _getpid, _gettimeofday,
-                            _getuid, _gmtime_r, _localtime_r, _mach_msg,
-                            _mach_msg_destroy, _mach_port_deallocate,
-                            _mach_task_self_, _malloc, _mbr_check_membership,
-                            _mbr_gid_to_uuid, _mbr_uid_to_uuid, _memcmp, _memcpy,
-                            _memmove, _memset, _mig_dealloc_reply_port,
-                            _mig_get_reply_port, _mig_put_reply_port, _mkdir,
-                            _mktime, _notify_check, _notify_get_state, _notify_post,
-                            _notify_register_check, _notify_register_plain, _open,
-                            _opendir, _os_activity_get_identifier,
-                            _os_log_shim_enabled, _os_log_with_args, _pipe,
-                            _pthread_mutex_init, _pthread_mutex_lock,
-                            _pthread_mutex_unlock, _qsort, _read, _readdir, _realloc,
-                            _reallocf, _regcomp, _regexec, _regfree, _rename,
-                            _setlinebuf, _stat, _strcasecmp, _strchr, _strcmp, _strdup,
-                            _strerror_r, _strlen, _strncasecmp, _strncmp, _strrchr,
-                            _time, _timegm, _unlink, _uuid_parse, _vasprintf,
-                            _vm_allocate, _vm_deallocate, _vm_page_size, _write,
-                            _xpc_connection_create_mach_service,
-                            _xpc_connection_resume,
-                            _xpc_connection_send_message_with_reply_sync,
-                            _xpc_connection_set_event_handler, _xpc_date_create,
-                            _xpc_dictionary_create, _xpc_dictionary_set_value,
-                            _xpc_int64_create, _xpc_null_create, _xpc_release,
-                            _xpc_string_create, _xpc_uuid_create ]
-    weak-def-symbols:     [ _voucher_mach_msg_set ]
 ...

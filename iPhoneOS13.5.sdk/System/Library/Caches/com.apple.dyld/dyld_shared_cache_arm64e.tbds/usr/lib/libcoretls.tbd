@@ -1,7 +1,6 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/libcoretls.dylib
 current-version:       167
 compatibility-version: 1
@@ -128,46 +127,4 @@ exports:
                             _tls_record_set_record_splitting,
                             _tls_stream_parser_create,
                             _tls_stream_parser_destroy, _tls_stream_parser_parse ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ __NSConcreteGlobalBlock, ___chkstk_darwin, ___error,
-                            ___memset_chk, ___stack_chk_fail, ___stack_chk_guard,
-                            ___stderrp, __xpc_error_key_description,
-                            __xpc_type_bool, __xpc_type_dictionary, _abort,
-                            _arc4random_uniform, _bzero, _ccDRBGGetRngState,
-                            _cc_clear, _cc_cmp_safe, _ccaes_cbc_decrypt_mode,
-                            _ccaes_cbc_encrypt_mode, _ccaes_gcm_decrypt_mode,
-                            _ccaes_gcm_encrypt_mode, _ccder_decode_dhparam_n,
-                            _ccder_decode_dhparams, _ccdes3_cbc_decrypt_mode,
-                            _ccdes3_cbc_encrypt_mode, _ccdh_compute_key,
-                            _ccdh_export_pub, _ccdh_generate_key,
-                            _ccdh_gp_rfc5114_MODP_2048_256, _ccdh_import_pub,
-                            _ccdigest_init, _ccdigest_update, _ccec_cp_256,
-                            _ccec_cp_384, _ccec_cp_521, _ccec_export_pub,
-                            _ccec_generate_key, _ccec_import_pub, _ccec_verify,
-                            _ccecdh_compute_shared_secret, _ccgcm_inc_iv,
-                            _ccgcm_init_with_iv, _ccmd5_di, _ccn_bitlen,
-                            _ccn_read_uint, _ccn_write_uint,
-                            _ccn_write_uint_padded_ct, _ccn_write_uint_size,
-                            _ccrng, _ccrsa_init_pub, _ccrsa_pub_crypt,
-                            _ccrsa_verify_pkcs1v15, _ccsha1_di, _ccsha256_di,
-                            _ccsha384_di, _ccsha512_di, _cczp_init, _close, _csops,
-                            _dispatch_once,
-                            _dispatch_queue_attr_make_with_qos_class,
-                            _dispatch_queue_create, _fprintf, _free, _fstat, _getpid,
-                            _malloc, _memcmp, _memcpy, _memmove, _memset, _open,
-                            _pthread_mutex_destroy, _pthread_mutex_init,
-                            _pthread_mutex_lock, _pthread_mutex_unlock,
-                            _pthread_once, _puts, _read, _realloc, _strcmp, _strcpy,
-                            _strdup, _strlen, _strncmp, _syslog, _time, _vasprintf,
-                            _xpc_bool_get_value,
-                            _xpc_connection_create_mach_service,
-                            _xpc_connection_resume,
-                            _xpc_connection_send_notification,
-                            _xpc_connection_set_event_handler,
-                            _xpc_create_from_plist, _xpc_dictionary_create,
-                            _xpc_dictionary_get_string,
-                            _xpc_dictionary_get_value, _xpc_dictionary_set_int64,
-                            _xpc_dictionary_set_string, _xpc_get_type,
-                            _xpc_release, _xpc_retain ]
 ...

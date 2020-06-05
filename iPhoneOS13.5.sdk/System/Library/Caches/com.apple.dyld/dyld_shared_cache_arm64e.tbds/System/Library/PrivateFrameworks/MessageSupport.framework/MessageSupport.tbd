@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MessageSupport.framework/MessageSupport
 current-version:       3608.100
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MFAccountsLog, _MFAutoFetchLog,
@@ -56,15 +54,4 @@ exports:
                             _kMFNumberOfActiveAccountsChangedNotification,
                             _kMFProfileListChangedDomain,
                             _mf_defaultsKeyForFeature, _mf_isFeatureEnabled ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _MGGetBoolAnswer, __NSConcreteGlobalBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___objc_personality_v0, _dispatch_once,
-                            _objc_autoreleaseReturnValue, _objc_msgSend,
-                            _objc_release, _objc_retain,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue, _os_log_create ]
-    objc-classes:         [ _LSApplicationProxy, _NSAssertionHandler, _NSBundle,
-                            _NSString, _NSUserDefaults ]
 ...

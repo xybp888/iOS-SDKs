@@ -1,14 +1,12 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/MPSMatrix
 current-version:       122.5.5
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
-    allowable-clients:    [ MPSNeuralNetwork, MetalPerformanceShaders ]
+    allowed-clients:      [ MPSNeuralNetwork, MetalPerformanceShaders ]
     symbols:              [ __Z21MPSDecrementReadCountP18MPSTemporaryMatrix,
                             __Z21MPSDecrementReadCountP18MPSTemporaryVector ]
     objc-classes:         [ _MPSMatrixBinaryKernel, _MPSMatrixCopy,
@@ -23,36 +21,4 @@ exports:
                             _MPSMatrixSolveCholesky, _MPSMatrixSolveLU,
                             _MPSMatrixSolveTriangular, _MPSMatrixUnaryKernel,
                             _MPSMatrixVectorMultiplication ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _MTLReportFailure, _MTLReportFailureTypeEnabled,
-                            _NSClassFromString, _NSStringFromClass,
-                            __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteStackBlock, __Unwind_Resume,
-                            __Z21MPSDecrementReadCountP18MPSTemporaryMatrix,
-                            __Z21MPSDecrementReadCountP18MPSTemporaryVector,
-                            __ZN10MPSLibrary15GetComputeStateEjRK23MPSFunctionConstantList30MPSThreadGroupSizeMultipleType,
-                            __ZN10MPSLibrary19ReleaseComputeStateEPU34objcproto23MTLComputePipelineState11objc_object,
-                            __ZN13MPSAutoBuffer14AllocateBufferEP8NSString,
-                            __ZN9MPSDevice22GetMPSLibrary_DoNotUseEPK14MPSLibraryInfo,
-                            __ZSt9terminatev, ___CFConstantStringClassReference,
-                            ___cxa_begin_catch, ___gxx_personality_v0,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __objc_empty_cache, _bzero, _free, _kMPSEmptyLibraryInfo,
-                            _malloc, _objc_alloc, _objc_autorelease, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class, _objc_opt_new,
-                            _objc_release, _objc_retain ]
-    objc-classes:         [ _MPSKernel, _MPSMatrix, _MPSMatrixDescriptor,
-                            _MPSParallelRandomDistributionDescriptor,
-                            _MPSParallelRandomMTGP32, _MPSParallelRandomPhilox,
-                            _MTLFunctionConstantValues, _MTLTextureDescriptor,
-                            _NSObject, _NSString ]
-    objc-ivars:           [ _MPSKernel._device, _MPSKernel._fileVersion,
-                            _MPSKernel._label, _MPSKernel._library,
-                            _MPSKernel._options, _MPSMatrix._buffer,
-                            _MPSMatrix._columns, _MPSMatrix._dataType,
-                            _MPSMatrix._matrixBytes, _MPSMatrix._offset,
-                            _MPSMatrix._rowBytes, _MPSMatrix._rows,
-                            _MPSVector._buffer, _MPSVector._offset ]
-    weak-def-symbols:     [ __ZdlPv, __Znwm ]
 ...

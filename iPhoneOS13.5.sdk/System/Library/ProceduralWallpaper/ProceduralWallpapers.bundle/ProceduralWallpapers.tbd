@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/ProceduralWallpaper/ProceduralWallpapers.bundle/ProceduralWallpapers
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     objc-classes:         [ _Bokeh, _BokehParallaxNode, _BokehParallaxScene,
@@ -89,50 +87,4 @@ exports:
                             _WKOpenGLESView.displayLink,
                             _WKOpenGLESView.displayQueue,
                             _WKOpenGLESView.frameInterval ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFRelease, _CFRetain, _CGPointZero, _CGRectGetMaxX,
-                            _CGRectGetMaxY, _CGRectGetMinX, _CGRectGetMinY,
-                            _CGRectInset, _CGRectIntersection, _CGRectIsEmpty,
-                            _CGRectStandardize, _NSInvalidArgumentException,
-                            _NSRunLoopCommonModes, _SKSetResourceBundle,
-                            __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___gxx_personality_v0, ___objc_personality_v0,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __dispatch_main_q, __dispatch_queue_attr_concurrent,
-                            __objc_empty_cache, _calloc, _dispatch_async,
-                            _dispatch_queue_create, _dispatch_sync,
-                            _glBindFramebuffer, _glBindRenderbuffer,
-                            _glDiscardFramebufferEXT, _glFramebufferRenderbuffer,
-                            _glGenFramebuffers, _glGenRenderbuffers,
-                            _glGetRenderbufferParameteriv, _glViewport,
-                            _mach_absolute_time, _memmove, _objc_alloc,
-                            _objc_alloc_init, _objc_autoreleaseReturnValue,
-                            _objc_copyStruct, _objc_copyWeak, _objc_destroyWeak,
-                            _objc_enumerationMutation, _objc_getProperty,
-                            _objc_initWeak, _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
-                            _objc_retain, _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_setProperty_atomic,
-                            _objc_setProperty_atomic_copy, _objc_storeStrong,
-                            _objc_storeWeak, _rand, _srand ]
-    objc-classes:         [ _CADisplayLink, _CAEAGLLayer, _CAMetalLayer,
-                            _CMMotionManager, _EAGLContext, _NSArray, _NSBundle,
-                            _NSData, _NSDictionary, _NSException, _NSKeyedArchiver,
-                            _NSKeyedUnarchiver, _NSMutableArray,
-                            _NSMutableDictionary, _NSNumber, _NSObject,
-                            _NSOperationQueue, _NSProcessInfo, _NSRunLoop, _NSSet,
-                            _NSString, _NSUserDefaults, _SBFProceduralWallpaper,
-                            _SKAction, _SKEffectNode, _SKLabelNode, _SKNode, _SKScene,
-                            _SKSpriteNode, _SKTexture, _SKTextureAtlas, _SKView,
-                            _UIApplication, _UIColor, _UIScreen, _UIView ]
-    weak-def-symbols:     [ _IOSurfaceCreate, _IOSurfaceGetID, __ZdaPv, __Znam,
-                            _kIOSurfaceAllocSize, _kIOSurfaceBytesPerElement,
-                            _kIOSurfaceBytesPerRow, _kIOSurfaceCacheMode,
-                            _kIOSurfaceHeight, _kIOSurfaceIsGlobal,
-                            _kIOSurfacePixelFormat, _kIOSurfaceWidth ]
 ...

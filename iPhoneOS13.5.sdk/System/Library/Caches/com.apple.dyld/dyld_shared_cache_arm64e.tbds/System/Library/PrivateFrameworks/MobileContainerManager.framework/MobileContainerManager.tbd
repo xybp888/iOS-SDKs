@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileContainerManager.framework/MobileContainerManager
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MCMErrorDomain, _MCMFunctionNameErrorKey,
@@ -80,41 +78,4 @@ exports:
                             _MCMSystemDataContainer, _MCMTempDirDataContainer,
                             _MCMVPNPluginContainer, _MCMVPNPluginDataContainer,
                             _MCMXPCServiceDataContainer ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _MOLogWrite, _NSStringFromClass, __Block_object_assign,
-                            __CFXPCCreateCFObjectFromXPCObject,
-                            __CFXPCCreateXPCObjectFromCFObject,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            ___CFConstantStringClassReference, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache, _abort, _calloc,
-                            _container_copy_info,
-                            _container_copy_info_value_for_key,
-                            _container_copy_path,
-                            _container_create_or_lookup_for_current_user,
-                            _container_delete_all_container_content,
-                            _container_delete_array_of_containers,
-                            _container_disk_usage,
-                            _container_free_array_of_containers,
-                            _container_free_object,
-                            _container_get_all_with_class_for_current_user,
-                            _container_get_identifier,
-                            _container_get_persona_unique_string,
-                            _container_is_transient,
-                            _container_recreate_structure,
-                            _container_regenerate_uuid, _container_replace,
-                            _container_set_info_value, _dispatch_once, _free,
-                            _objc_alloc, _objc_autoreleaseReturnValue,
-                            _objc_enumerationMutation, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
-                            _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong, _strdup, _uuid_clear, _uuid_copy,
-                            _uuid_is_null, _xpc_connection_create_mach_service,
-                            _xpc_connection_resume,
-                            _xpc_connection_set_event_handler ]
-    objc-classes:         [ _NSArray, _NSError, _NSMutableArray, _NSObject, _NSString,
-                            _NSURL, _NSUUID ]
 ...

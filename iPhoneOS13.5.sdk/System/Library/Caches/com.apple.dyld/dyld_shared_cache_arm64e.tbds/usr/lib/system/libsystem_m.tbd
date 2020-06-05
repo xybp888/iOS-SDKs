@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libsystem_m.dylib
 current-version:       3178
 compatibility-version: 1
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ __FE_DFL_DISABLE_DENORMS_ENV, __FE_DFL_ENV,
@@ -99,7 +97,4 @@ exports:
                             _sin, _sinf, _sinh, _sinhf, _sinhl, _sinl, _sqrt, _sqrtf, _sqrtl,
                             _tan, _tanf, _tanh, _tanhf, _tanhl, _tanl, _tgamma, _tgammaf,
                             _tgammal, _trunc, _truncf, _truncl, _y0, _y1, _yn ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ ___chkstk_darwin, ___muldc3, ___mulsc3 ]
 ...

@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libsystem_containermanager.dylib
 current-version:       1
 compatibility-version: 1
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CONTAINER_CURRENT_MOBILE_UID,
@@ -61,55 +59,4 @@ exports:
                             _container_system_path_for_identifier,
                             _container_user_managed_assets_path,
                             _container_user_managed_assets_relative_path ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            ___error, ___snprintf_chk, ___stack_chk_fail,
-                            ___stack_chk_guard, ___strlcat_chk,
-                            __os_log_debug_impl, __os_log_error_impl,
-                            __os_log_fault_impl, __os_log_impl,
-                            __xpc_error_connection_interrupted,
-                            __xpc_error_connection_invalid, __xpc_type_array,
-                            __xpc_type_dictionary, __xpc_type_error,
-                            __xpc_type_string, __xpc_type_uuid, _bzero, _calloc,
-                            _csops_audittoken, _dispatch_get_global_queue,
-                            _dispatch_once, _dispatch_queue_create, _dlerror,
-                            _dlopen, _dlsym, _free, _geteuid, _getpid, _getpwnam,
-                            _getpwuid, _getuid, _kpersona_getpath, _kpersona_info,
-                            _lstat, _mach_task_self_, _malloc,
-                            _notify_register_dispatch, _os_log_create,
-                            _os_log_type_enabled, _os_unfair_lock_lock,
-                            _os_unfair_lock_unlock, _realpath$DARWIN_EXTSN,
-                            _rindex, _sandbox_container_path_for_pid,
-                            _sandbox_extension_consume,
-                            _sandbox_extension_release, _sem_close, _sem_open,
-                            _setenv, _strcmp, _strdup, _strerror, _strncmp, _strndup,
-                            _strnlen, _strstr, _task_info, _uuid_copy, _uuid_is_null,
-                            _voucher_get_current_persona,
-                            _xpc_array_append_value, _xpc_array_apply,
-                            _xpc_array_create, _xpc_array_get_count,
-                            _xpc_array_get_value, _xpc_array_set_string,
-                            _xpc_array_set_uint64, _xpc_array_set_uuid,
-                            _xpc_connection_cancel,
-                            _xpc_connection_create_mach_service,
-                            _xpc_connection_resume,
-                            _xpc_connection_send_message_with_reply,
-                            _xpc_connection_send_message_with_reply_sync,
-                            _xpc_connection_set_event_handler,
-                            _xpc_dictionary_apply, _xpc_dictionary_create,
-                            _xpc_dictionary_get_array, _xpc_dictionary_get_bool,
-                            _xpc_dictionary_get_count,
-                            _xpc_dictionary_get_dictionary,
-                            _xpc_dictionary_get_string,
-                            _xpc_dictionary_get_uint64, _xpc_dictionary_get_uuid,
-                            _xpc_dictionary_get_value, _xpc_dictionary_set_bool,
-                            _xpc_dictionary_set_int64,
-                            _xpc_dictionary_set_string,
-                            _xpc_dictionary_set_uint64, _xpc_dictionary_set_uuid,
-                            _xpc_dictionary_set_value, _xpc_get_type,
-                            _xpc_int64_create, _xpc_int64_get_value, _xpc_release,
-                            _xpc_retain, _xpc_string_create,
-                            _xpc_string_get_length, _xpc_string_get_string_ptr,
-                            _xpc_uuid_get_bytes ]
 ...

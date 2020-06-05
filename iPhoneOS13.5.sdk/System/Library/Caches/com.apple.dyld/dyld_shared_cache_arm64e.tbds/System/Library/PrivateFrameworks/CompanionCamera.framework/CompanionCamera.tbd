@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CompanionCamera.framework/CompanionCamera
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ __ccCaptureModeFromNCCaptureMode,
@@ -23,35 +21,4 @@ exports:
                             _nanocamera_log_app, _nanocamera_log_control,
                             _nanocamera_log_preview ]
     objc-classes:         [ _CCCameraConnection, _CCCameraConnectionInternal ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _FigCameraViewfinderPhotoThumbnailMaxDimensionKey,
-                            _FigCameraViewfinderSessionPreviewStreamDestinationKey,
-                            __Block_object_assign, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock, __Unwind_Resume,
-                            ___CFConstantStringClassReference,
-                            ___objc_personality_v0, ___stack_chk_fail,
-                            ___stack_chk_guard, __dispatch_main_q,
-                            __dispatch_source_type_timer, __objc_empty_cache,
-                            __os_log_debug_impl, __os_log_error_impl,
-                            __os_log_impl, _abort_report_np, _dispatch_async,
-                            _dispatch_once, _dispatch_resume,
-                            _dispatch_source_create,
-                            _dispatch_source_set_event_handler,
-                            _dispatch_source_set_timer, _dispatch_time, _dlerror,
-                            _dlopen, _notify_cancel, _notify_register_dispatch,
-                            _objc_alloc, _objc_alloc_init,
-                            _objc_autoreleaseReturnValue, _objc_copyWeak,
-                            _objc_destroyWeak, _objc_getClass, _objc_initWeak,
-                            _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_respondsToSelector, _objc_release,
-                            _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong, _objc_storeWeak, _os_log_create,
-                            _os_log_type_enabled, _strcmp ]
-    objc-classes:         [ _FigCameraViewfinder, _NSDate, _NSDictionary, _NSNumber,
-                            _NSObject, _NSOrderedSet, _NSSet, _NSString,
-                            _NSXPCConnection, _NSXPCInterface, _UIApplication ]
 ...

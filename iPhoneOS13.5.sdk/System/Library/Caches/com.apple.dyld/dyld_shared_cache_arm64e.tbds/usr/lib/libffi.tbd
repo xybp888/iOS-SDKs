@@ -1,7 +1,6 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/libffi.dylib
 current-version:       26
 compatibility-version: 1
@@ -23,12 +22,4 @@ exports:
                             _ffi_type_sint32, _ffi_type_sint64, _ffi_type_sint8,
                             _ffi_type_uint16, _ffi_type_uint32, _ffi_type_uint64,
                             _ffi_type_uint8, _ffi_type_void ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ __NSConcreteGlobalBlock, ___assert_rtn,
-                            ___chkstk_darwin, ___stack_chk_fail,
-                            ___stack_chk_guard, _abort, _calloc, _dispatch_once,
-                            _dlopen, _dlsym, _free, _mach_task_self_, _malloc, _memcpy,
-                            _pthread_mutex_lock, _pthread_mutex_unlock,
-                            _vm_allocate, _vm_deallocate, _vm_remap ]
 ...

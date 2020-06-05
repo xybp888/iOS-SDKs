@@ -1,7 +1,6 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/libncurses.5.4.dylib
 current-version:       5.4
 compatibility-version: 5.4
@@ -158,26 +157,4 @@ exports:
                             _wresize, _wscanw, _wscrl, _wsetscrreg, _wstandend,
                             _wstandout, _wsyncdown, _wsyncup, _wtimeout, _wtouchln,
                             _wunctrl, _wvline, _wvline_set ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ __DefaultRuneLocale, ___chkstk_darwin, ___error,
-                            ___maskrune, ___memcpy_chk, ___sprintf_chk,
-                            ___stack_chk_fail, ___stack_chk_guard, ___stderrp,
-                            ___stdinp, ___stdoutp, ___strcat_chk, ___strcpy_chk,
-                            ___strncat_chk, ___tolower, ___vsnprintf_chk, _access,
-                            _atoi, _btowc, _bzero, _calloc, _cfgetospeed, _chdir,
-                            _clearerr, _close, _exit, _fclose, _feof, _ferror, _fflush,
-                            _fgets, _fileno, _fopen, _fprintf, _fputc, _fread, _free, _ftell,
-                            _fwrite, _getcwd, _getenv, _getpgrp, _getpid, _gettimeofday,
-                            _ioctl, _isatty, _kill, _link, _malloc, _mblen, _mbrtowc,
-                            _mbtowc, _memchr, _memcmp, _memcpy, _memmove, _memset, _mkdir,
-                            _nanosleep, _nl_langinfo, _open, _perror, _putc, _read,
-                            _realloc, _remove, _select, _setlocale, _setvbuf, _sigaction,
-                            _sigprocmask, _sleep, _sscanf, _stat, _strchr, _strcmp,
-                            _strcpy, _strdup, _strlen, _strncmp, _strncpy, _strrchr,
-                            _strstr, _strtol, _tcflush, _tcgetattr, _tcgetpgrp,
-                            _tcsetattr, _vfprintf, _vsscanf, _wcrtomb, _wcslen,
-                            _wcsrtombs, _wcstombs, _wctob, _wcwidth, _wmemchr, _wmemcpy,
-                            _write ]
-    weak-def-symbols:     [ ___darwin_check_fd_set_overflow ]
 ...

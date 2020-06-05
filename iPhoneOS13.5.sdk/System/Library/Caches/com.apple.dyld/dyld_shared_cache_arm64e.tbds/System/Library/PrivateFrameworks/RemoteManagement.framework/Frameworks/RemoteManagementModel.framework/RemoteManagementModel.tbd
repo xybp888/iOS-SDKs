@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/RemoteManagement.framework/Frameworks/RemoteManagementModel.framework/RemoteManagementModel
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _RMModelAccountMailDeclaration_IncomingServer_AuthenticationMethod_CRAMMD5,
@@ -111,27 +109,4 @@ exports:
                             _RMModelUserIdentityDeclaration,
                             _RMModelUserNameAndPasswordCredentialsDeclaration,
                             _RMModelVPPOnDemandLicenseAssignmentDeclaration ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CC_SHA1_Final, _CC_SHA1_Init, _CC_SHA1_Update,
-                            _NSLocalizedDescriptionKey, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock,
-                            ___CFConstantStringClassReference, ___NSArray0__,
-                            ___NSDictionary0__, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache, _dispatch_once,
-                            _objc_alloc, _objc_autorelease,
-                            _objc_autoreleaseReturnValue,
-                            _objc_enumerationMutation, _objc_getProperty,
-                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
-                            _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_setProperty_nonatomic_copy, _objc_storeStrong ]
-    objc-classes:         [ _NSArray, _NSData, _NSDate, _NSDateFormatter,
-                            _NSDictionary, _NSError, _NSJSONSerialization, _NSLocale,
-                            _NSMutableArray, _NSMutableDictionary, _NSMutableSet,
-                            _NSNull, _NSNumber, _NSObject,
-                            _NSPropertyListSerialization, _NSSet, _NSString,
-                            _NSTimeZone, _NSURL, _NSUUID ]
 ...

@@ -1,7 +1,6 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/libcmph.dylib
 current-version:       1
 compatibility-version: 1
@@ -121,11 +120,4 @@ exports:
                             _vqueue_remove, _vstack_destroy, _vstack_empty,
                             _vstack_new, _vstack_pop, _vstack_push, _vstack_reserve,
                             _vstack_size, _vstack_top ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ ___assert_rtn, ___sprintf_chk, ___stack_chk_fail,
-                            ___stack_chk_guard, ___stderrp, _bzero, _calloc, _exit,
-                            _fclose, _feof, _ferror, _fgets, _fopen, _fprintf, _fread, _free,
-                            _fwrite, _log, _malloc, _memcpy, _memset, _perror, _printf,
-                            _rand, _realloc, _rewind, _strcmp, _strcpy, _strlen ]
 ...

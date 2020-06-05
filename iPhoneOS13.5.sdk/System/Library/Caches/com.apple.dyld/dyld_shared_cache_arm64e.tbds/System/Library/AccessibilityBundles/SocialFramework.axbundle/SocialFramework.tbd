@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/AccessibilityBundles/SocialFramework.axbundle/SocialFramework
 current-version:       0
 compatibility-version: 0
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ __Failover, _accessibilityLocalizedString ]
@@ -24,21 +22,4 @@ exports:
                             ___UIButtonAccessibility__Social__UIKit_super,
                             ___UITableViewAccessibility__Social__UIKit_super,
                             ___UITextViewAccessibility__Social__UIKit_super ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _UIAccessibilityAnnouncementNotification,
-                            _UIAccessibilityLayoutChangedNotification,
-                            _UIAccessibilityPostNotification,
-                            _UIAccessibilityTokenHint,
-                            _UIAccessibilityTraitSpacer, __AXTraitsRemoveTrait,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            ___CFConstantStringClassReference,
-                            ___UIAXStringForVariables, __objc_empty_cache,
-                            _kAXTextAreaTrait, _kCFBooleanTrue, _objc_alloc_init,
-                            _objc_autoreleaseReturnValue, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
-                            _objc_retain, _objc_retainAutoreleasedReturnValue ]
-    objc-classes:         [ _AXAttributedString, _AXValidationManager, _NSBundle,
-                            _NSMutableArray, _NSObject,
-                            _UIAccessibilitySafeCategory ]
 ...

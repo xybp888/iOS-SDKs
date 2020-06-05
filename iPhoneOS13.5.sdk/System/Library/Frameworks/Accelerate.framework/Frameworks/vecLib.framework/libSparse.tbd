@@ -1,13 +1,12 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libSparse.dylib
 current-version:       1
 compatibility-version: 1
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
-    allowable-clients:    [ vecLib ]
+    allowed-clients:      [ vecLib ]
     symbols:              [ __SparseAMD, __SparseAMDWorkspaceSize,
                             __SparseCGIterate_Double, __SparseCGIterate_Float,
                             __SparseCGSolve_Double, __SparseCGSolve_Float,
@@ -205,27 +204,4 @@ exports:
                             __Z27SparseConvertFromCoordinateiilh18SparseAttributes_tPKiS1_PKdPvS4_,
                             __Z27SparseConvertFromCoordinateiilh18SparseAttributes_tPKiS1_PKf,
                             __Z27SparseConvertFromCoordinateiilh18SparseAttributes_tPKiS1_PKfPvS4_ ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _APL_dgemm, _APL_dtrsm, _APL_sgemm, _APL_strsm,
-                            _APPLE_NTHREADS, __Block_object_assign,
-                            __Block_object_dispose, __NSConcreteStackBlock,
-                            ___chkstk_darwin, ___snprintf_chk, ___stack_chk_fail,
-                            ___stack_chk_guard, ___stderrp, ___ulock_wait,
-                            ___ulock_wake, __os_log_default, __os_log_error_impl,
-                            __tlv_bootstrap, _bzero, _cblas_daxpy, _cblas_ddot,
-                            _cblas_dgemm, _cblas_dgemv, _cblas_dnrm2, _cblas_drotg,
-                            _cblas_dscal, _cblas_dsyrk, _cblas_dtrmm, _cblas_dtrsm,
-                            _cblas_dtrsv, _cblas_saxpy, _cblas_sdot, _cblas_sgemm,
-                            _cblas_sgemv, _cblas_snrm2, _cblas_srotg, _cblas_sscal,
-                            _cblas_ssyrk, _cblas_strmm, _cblas_strsm, _cblas_strsv,
-                            _dispatch_apply, _dlarfb_, _dlarfg_, _dlarft_, _dormlq_,
-                            _dpotf2_, _exit, _fflush, _fprintf, _fputc, _free, _fwrite,
-                            _getline, _getrusage, _ilaenv_, _log2, _longjmp, _malloc,
-                            _memcpy, _memmove, _memset, _memset_pattern16,
-                            _os_log_type_enabled, _printf, _putchar, _puts, _raise,
-                            _rand, _realloc, _setjmp, _signal, _slarf_, _slarfb_, _slarfg_,
-                            _slarft_, _sormlq_, _sparse_commit, _spotf2_, _srand,
-                            _sscanf, _strcasecmp, _strlen, _strncmp, _strncpy, _strtod,
-                            _strtok, _strtol, _vfprintf ]
 ...

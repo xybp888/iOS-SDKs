@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libdyld.dylib
 current-version:       750.4.2
 compatibility-version: 1
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _NSVersionOfLinkTimeLibrary,
@@ -65,48 +63,4 @@ exports:
                             _dyld_shared_cache_iterate_text,
                             _dyld_shared_cache_some_image_overridden, _environ,
                             dyld_stub_binder ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _SANDBOX_CHECK_NO_REPORT, __Block_object_assign,
-                            __Block_object_dispose, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock, __NSGetMachExecuteHeader,
-                            ___assert_rtn, ___chkstk_darwin, ___cxa_atexit,
-                            ___cxa_finalize, ___cxa_finalize_ranges, ___error,
-                            ___stack_chk_fail, ___stack_chk_guard, ___stderrp,
-                            __dispatch_source_type_mach_recv, __os_once,
-                            __simple_asl_log, __simple_salloc, __simple_sfree,
-                            __simple_string, __simple_vdprintf, __simple_vsprintf,
-                            _abort, _abort_report_np, _bzero, _calloc, _cc_clear,
-                            _ccdigest_init, _ccdigest_update, _ccsha1_di,
-                            _ccsha256_di, _ccsha384_di, _close, _closedir,
-                            _dispatch_activate, _dispatch_async, _dispatch_release,
-                            _dispatch_retain, _dispatch_source_cancel,
-                            _dispatch_source_create,
-                            _dispatch_source_set_cancel_handler,
-                            _dispatch_source_set_event_handler, _exit, _fcntl,
-                            _fprintf, _free, _fstat, _fwrite, _getpid, _ioctl,
-                            _kdebug_is_enabled, _kdebug_trace,
-                            _kdebug_trace_string, _mach_absolute_time, _mach_msg,
-                            _mach_msg_destroy, _mach_port_allocate,
-                            _mach_port_construct, _mach_port_deallocate,
-                            _mach_port_destruct, _mach_port_extract_right,
-                            _mach_port_insert_right,
-                            _mach_port_request_notification, _mach_task_self_,
-                            _mach_vm_region, _mach_vm_remap, _malloc, _malloc_size,
-                            _memcmp, _memcpy, _mkdir, _mmap, _mprotect,
-                            _mremap_encrypted, _munmap, _open, _opendir,
-                            _os_unfair_recursive_lock_lock_with_options,
-                            _os_unfair_recursive_lock_unlock,
-                            _os_unfair_recursive_lock_unlock_forked_child,
-                            _pid_for_task, _proc_regionfilename,
-                            _pthread_getspecific, _pthread_key_create,
-                            _pthread_mutex_lock, _pthread_mutex_unlock,
-                            _pthread_setspecific, _qsort, _readdir_r,
-                            _realpath$DARWIN_EXTSN, _sandbox_check, _snprintf, _stat,
-                            _strcat, _strchr, _strcmp, _strcpy, _strlcat, _strlcpy,
-                            _strlen, _strncmp, _strncpy, _strnlen, _strrchr, _strstr,
-                            _sysctlbyname, _task_info, _usleep, _uuid_unparse_upper,
-                            _vm_allocate, _vm_copy, _vm_deallocate,
-                            _vm_kernel_page_mask, _vm_page_size, _vm_protect,
-                            _vproc_swap_integer, _write ]
 ...

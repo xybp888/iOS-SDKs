@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Jet.framework/Jet
 current-version:       8.16
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ __Z10jet_assertbP8NSString, __Z13xglCheckErrorv,
@@ -306,85 +304,4 @@ exports:
                             __ZTV15jet_render_mode, __ZTV16jet_stencil_mode,
                             __ZTV17jet_context_Metal, __ZTV18jet_context_OpenGL,
                             __ZTV22jet_depth_stencil_mode, __ZTV9jet_fence ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFRelease, _CGColorSpaceCreateDeviceRGB,
-                            _CGColorSpaceRelease, _CGRectIsEmpty,
-                            _IOSurfaceGetBytesPerRowOfPlane, _IOSurfaceLookup,
-                            _MTLCreateSystemDefaultDevice, _NSLogv,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume,
-                            __ZNKSt3__121__basic_string_commonILb1EE20__throw_length_errorEv,
-                            __ZNKSt9exception4whatEv, __ZNSt11logic_errorC2EPKc,
-                            __ZNSt12length_errorD1Ev, __ZNSt3__112__next_primeEm,
-                            __ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6appendEPKcm,
-                            __ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1ERKS5_,
-                            __ZNSt3__119__shared_weak_count14__release_weakEv,
-                            __ZNSt3__119__shared_weak_countD2Ev,
-                            __ZNSt9exceptionD2Ev, __ZSt9terminatev,
-                            __ZTINSt3__119__shared_weak_countE,
-                            __ZTISt9exception,
-                            __ZTVN10__cxxabiv117__class_type_infoE,
-                            __ZTVN10__cxxabiv120__si_class_type_infoE,
-                            __ZTVSt12length_error,
-                            ___CFConstantStringClassReference, ___assert_rtn,
-                            ___cxa_allocate_exception, ___cxa_begin_catch,
-                            ___cxa_free_exception, ___cxa_pure_virtual,
-                            ___cxa_throw, ___dynamic_cast, ___gxx_personality_v0,
-                            ___stack_chk_fail, ___stack_chk_guard, _abort,
-                            _dispatch_once, _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _free, _glActiveTexture, _glAttachShader, _glBindBuffer,
-                            _glBindFramebuffer, _glBindRenderbuffer,
-                            _glBindTexture, _glBlendEquation, _glBlendFunc,
-                            _glBlendFuncSeparate, _glBufferData,
-                            _glCheckFramebufferStatus, _glClear, _glClearColor,
-                            _glClearStencil, _glClientWaitSyncAPPLE, _glColorMask,
-                            _glCompileShader, _glCreateProgram, _glCreateShader,
-                            _glDeleteBuffers, _glDeleteFramebuffers,
-                            _glDeleteProgram, _glDeleteRenderbuffers,
-                            _glDeleteShader, _glDeleteSyncAPPLE, _glDeleteTextures,
-                            _glDepthFunc, _glDepthMask, _glDetachShader, _glDisable,
-                            _glDiscardFramebufferEXT, _glDrawArrays,
-                            _glDrawElements, _glEnable, _glEnableVertexAttribArray,
-                            _glFenceSyncAPPLE, _glFlush,
-                            _glFramebufferRenderbuffer, _glFramebufferTexture2D,
-                            _glGenBuffers, _glGenFramebuffers, _glGenRenderbuffers,
-                            _glGenTextures, _glGenerateMipmap,
-                            _glGetAttribLocation, _glGetBooleanv, _glGetError,
-                            _glGetFloatv, _glGetFramebufferAttachmentParameteriv,
-                            _glGetIntegerv, _glGetProgramInfoLog, _glGetProgramiv,
-                            _glGetRenderbufferParameteriv, _glGetShaderInfoLog,
-                            _glGetShaderiv, _glGetUniformLocation,
-                            _glGetVertexAttribiv, _glLinkProgram,
-                            _glMapBufferRangeEXT, _glPixelStorei, _glReadPixels,
-                            _glRenderbufferStorage, _glScissor, _glShaderSource,
-                            _glStencilFuncSeparate, _glStencilMask,
-                            _glStencilOpSeparate, _glTexImage2D, _glTexParameteri,
-                            _glTexSubImage2D, _glUniform1f, _glUniform1fv,
-                            _glUniform1i, _glUniform1iv, _glUniform2f, _glUniform2fv,
-                            _glUniform2i, _glUniform2iv, _glUniform3f, _glUniform3fv,
-                            _glUniform3i, _glUniform3iv, _glUniform4f, _glUniform4fv,
-                            _glUniform4i, _glUniform4iv, _glUniformMatrix2fv,
-                            _glUniformMatrix3fv, _glUniformMatrix4fv,
-                            _glUnmapBufferOES, _glUseProgram, _glValidateProgram,
-                            _glVertexAttribPointer, _glViewport,
-                            _kCIContextOutputColorSpace,
-                            _kCIContextOutputPremultiplied,
-                            _kCIContextWorkingColorSpace, _malloc, _memcmp, _memcpy,
-                            _objc_alloc, _objc_autoreleaseReturnValue,
-                            _objc_enumerationMutation, _objc_msgSend,
-                            _objc_opt_class, _objc_opt_isKindOfClass,
-                            _objc_opt_new, _objc_release, _objc_retain,
-                            _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong, _pow, _strcmp, _strlen ]
-    objc-classes:         [ _CIContext, _CIImage, _EAGLContext,
-                            _MTLDepthStencilDescriptor, _MTLRenderPassDescriptor,
-                            _MTLRenderPipelineDescriptor, _MTLSamplerDescriptor,
-                            _MTLStencilDescriptor, _MTLTextureDescriptor,
-                            _NSBundle, _NSMutableDictionary, _NSNull, _NSNumber,
-                            _NSString, _NSUserDefaults ]
-    weak-def-symbols:     [ __ZTISt12length_error, __ZdlPv, __Znwm ]
 ...

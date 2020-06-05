@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/IAP.framework/IAP
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _Generate32BitConnectionID,
@@ -573,83 +571,4 @@ exports:
                             _IAPNavigationAccessoryComponent._name,
                             _IAPNavigationAccessoryComponent._requestSourceName,
                             _IAPNavigationAccessoryComponent._requestSourceSupportsRouteGuidance ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFArrayAppendValue, _CFArrayCreateMutable,
-                            _CFDataGetBytePtr, _CFDataGetLength,
-                            _CFDictionaryCreateMutable, _CFDictionaryGetValue,
-                            _CFDictionarySetValue, _CFMachPortCreateWithPort,
-                            _CFMachPortSetInvalidationCallBack,
-                            _CFNotificationCenterAddObserver,
-                            _CFNotificationCenterGetDarwinNotifyCenter,
-                            _CFNotificationCenterGetLocalCenter,
-                            _CFNotificationCenterPostNotification,
-                            _CFNotificationCenterRemoveObserver, _CFNumberCreate,
-                            _CFPreferencesGetAppBooleanValue,
-                            _CFPropertyListCreateData, _CFRelease,
-                            _CFStringGetCString, _CFStringGetCStringPtr,
-                            _CFStringGetLength, _CPSystemRootDirectory,
-                            _GSSystemRootDirectory, _NSClassFromString, _NSLog,
-                            __Block_copy, __Block_object_assign,
-                            __Block_object_dispose, __Block_release,
-                            __CFXPCCreateCFObjectFromXPCMessage,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___assert_rtn, ___gxx_personality_v0,
-                            ___objc_personality_v0, ___snprintf_chk,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __dispatch_main_q, __objc_empty_cache,
-                            __xpc_error_connection_interrupted,
-                            __xpc_error_connection_invalid,
-                            __xpc_error_key_description, __xpc_type_array,
-                            __xpc_type_connection, __xpc_type_dictionary,
-                            __xpc_type_error, _arc4random, _bootstrap_look_up,
-                            _bootstrap_port, _dispatch_async,
-                            _dispatch_get_global_queue, _dispatch_once,
-                            _dispatch_queue_create, _dispatch_release,
-                            _dispatch_retain, _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _dispatch_sync, _dispatch_time, _dlopen, _dlsym, _free,
-                            _getprogname, _kCFAllocatorDefault,
-                            _kCFTypeArrayCallBacks, _mach_port_deallocate,
-                            _mach_task_self_, _malloc, _memset, _notify_cancel,
-                            _notify_check, _notify_get_state, _notify_post,
-                            _notify_register_check, _notify_set_state, _objc_alloc,
-                            _objc_alloc_init, _objc_autoreleasePoolPop,
-                            _objc_autoreleasePoolPush,
-                            _objc_autoreleaseReturnValue, _objc_destroyWeak,
-                            _objc_enumerationMutation, _objc_getProperty,
-                            _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
-                            _objc_retainAutorelease,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_setProperty_atomic, _objc_storeStrong,
-                            _objc_storeWeak, _pthread_mutex_lock,
-                            _pthread_mutex_unlock, _snprintf, _strcmp, _strlcpy,
-                            _syslog, _xpc_array_apply, _xpc_connection_cancel,
-                            _xpc_connection_create_mach_service,
-                            _xpc_connection_resume, _xpc_connection_send_message,
-                            _xpc_connection_send_message_with_reply,
-                            _xpc_connection_send_message_with_reply_sync,
-                            _xpc_connection_set_event_handler,
-                            _xpc_connection_set_target_queue,
-                            _xpc_dictionary_create, _xpc_dictionary_create_reply,
-                            _xpc_dictionary_get_array, _xpc_dictionary_get_bool,
-                            _xpc_dictionary_get_data, _xpc_dictionary_get_double,
-                            _xpc_dictionary_get_string,
-                            _xpc_dictionary_get_uint64,
-                            _xpc_dictionary_get_value, _xpc_dictionary_set_bool,
-                            _xpc_dictionary_set_data, _xpc_dictionary_set_double,
-                            _xpc_dictionary_set_string,
-                            _xpc_dictionary_set_uint64, _xpc_get_type,
-                            _xpc_release, _xpc_retain, _xpc_string_get_string_ptr ]
-    objc-classes:         [ _CPDistributedNotificationCenter, _NSArray,
-                            _NSAutoreleasePool, _NSBundle, _NSData, _NSDictionary,
-                            _NSDistributedNotificationCenter, _NSException,
-                            _NSKeyedArchiver, _NSLock, _NSMutableArray,
-                            _NSMutableDictionary, _NSMutableSet,
-                            _NSNotificationCenter, _NSNumber, _NSObject,
-                            _NSPredicate, _NSPropertyListSerialization, _NSString,
-                            _NSURL ]
 ...

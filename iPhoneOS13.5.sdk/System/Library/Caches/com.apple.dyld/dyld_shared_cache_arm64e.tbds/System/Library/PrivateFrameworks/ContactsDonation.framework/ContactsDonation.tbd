@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ContactsDonation.framework/ContactsDonation
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CNDDonationsEnabledNotificationName,
@@ -77,54 +75,4 @@ exports:
                             _CNDonationOrigin._donationDate,
                             _CNDonationOrigin._donationIdentifier,
                             _CNDonationOrigin._expirationDate ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFNotificationCenterGetDarwinNotifyCenter,
-                            _CFNotificationCenterPostNotification,
-                            _CFPreferencesCopyAppValue,
-                            _CFPreferencesSetAppValue, _CFRelease, _CFRetain,
-                            _CNAbstractMethodException, _CNIsNotNull,
-                            _CNIsStringEmpty, _NSCocoaErrorDomain,
-                            _NSInvalidArgumentException, _NSLog,
-                            _NSStringFromClass, _NSStringFromSelector,
-                            _NSUnderlyingErrorKey, __Block_object_assign,
-                            __Block_object_dispose,
-                            __CTServerConnectionCreateOnTargetQueue,
-                            __CTServerConnectionRegisterBlockForNotification,
-                            __CTServerConnectionUnregisterForNotification,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___NSArray0__, ___objc_personality_v0,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __objc_empty_cache, __os_log_debug_impl,
-                            __os_log_default, __os_log_error_impl, __os_log_impl,
-                            _dispatch_once, _dispatch_queue_create,
-                            _kCFAllocatorDefault,
-                            _kCTSettingPhoneNumberChangedNotification,
-                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
-                            _objc_autoreleaseReturnValue, _objc_copyWeak,
-                            _objc_destroyWeak, _objc_enumerationMutation,
-                            _objc_exception_throw, _objc_getProperty,
-                            _objc_initWeak, _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
-                            _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong, _objc_sync_enter, _objc_sync_exit,
-                            _objc_unsafeClaimAutoreleasedReturnValue,
-                            _os_log_create, _os_log_type_enabled ]
-    objc-classes:         [ _CNCancelationToken, _CNContact, _CNDescriptionBuilder,
-                            _CNEither, _CNEqualsBuilder, _CNFuture, _CNHashBuilder,
-                            _CNMutableContact, _CNMutablePostalAddress,
-                            _CNObservable, _CNObserver, _CNPhoneNumber,
-                            _CNPostalAddress, _CNPromise, _CNReplaySubject,
-                            _CNSchedulerProvider, _CNValueOrigin, _CNXPC,
-                            _CoreTelephonyClient, _NSArray, _NSBundle, _NSData,
-                            _NSDate, _NSDictionary,
-                            _NSDistributedNotificationCenter, _NSError,
-                            _NSException, _NSExtension, _NSExtensionContext,
-                            _NSMutableArray, _NSMutableDictionary, _NSNull,
-                            _NSNumber, _NSObject, _NSPersonNameComponents, _NSSet,
-                            _NSString, _NSUUID, _NSXPCConnection, _NSXPCInterface ]
 ...

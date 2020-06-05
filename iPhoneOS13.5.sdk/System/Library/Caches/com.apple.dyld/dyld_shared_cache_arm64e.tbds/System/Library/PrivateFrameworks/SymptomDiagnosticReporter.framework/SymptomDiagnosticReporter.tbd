@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SymptomDiagnosticReporter.framework/SymptomDiagnosticReporter
 current-version:       1238.120.1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SDRGetAllLogFileURLs, _diagnosticErrorStringForCode,
@@ -159,30 +157,4 @@ exports:
                             _kSymptomDiagnosticTypeOperational,
                             _kSymptomDiagnosticTypePerformance ]
     objc-classes:         [ _SDRDiagnosticReporter ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _NSPOSIXErrorDomain, __Block_object_assign,
-                            __Block_object_dispose, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock, __Unwind_Resume,
-                            ___CFConstantStringClassReference,
-                            ___objc_personality_v0, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache,
-                            __os_log_debug_impl, __os_log_error_impl,
-                            __os_log_impl, _dispatch_async,
-                            _dispatch_get_global_queue, _dispatch_once,
-                            _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _dispatch_time, _kCFURLNameKey, _objc_alloc,
-                            _objc_alloc_init, _objc_autoreleaseReturnValue,
-                            _objc_copyWeak, _objc_destroyWeak, _objc_initWeak,
-                            _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_respondsToSelector,
-                            _objc_release, _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong, _objc_storeWeak, _os_log_create,
-                            _os_log_type_enabled,
-                            _os_variant_has_internal_diagnostics ]
-    objc-classes:         [ _NSArray, _NSDictionary, _NSError, _NSFileManager,
-                            _NSMutableArray, _NSMutableDictionary, _NSNumber,
-                            _NSObject, _NSURL, _NSXPCConnection, _NSXPCInterface ]
 ...

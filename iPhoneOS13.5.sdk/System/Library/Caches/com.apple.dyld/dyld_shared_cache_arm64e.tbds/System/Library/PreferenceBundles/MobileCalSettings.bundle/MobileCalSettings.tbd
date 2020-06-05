@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PreferenceBundles/MobileCalSettings.bundle/MobileCalSettings
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CSDefaultAlarmsSourcesKey,
@@ -49,81 +47,4 @@ exports:
                             _CalendarSettingsPlugin._syncDaysSpecifier,
                             _CalendarSettingsPlugin._timeZoneSupportSpecifier,
                             _CalendarSettingsPlugin._weekViewStartsOnTodaySpecifier ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFNotificationCenterGetDarwinNotifyCenter,
-                            _CFNotificationCenterPostNotification, _CFRelease,
-                            _CFTimeZoneCreateWithName, _CFTimeZoneGetName,
-                            _CGRectGetHeight, _CGRectGetMaxX, _CGRectGetMaxY,
-                            _CGRectGetMinX, _CGRectGetWidth, _CGRectZero,
-                            _CalAlarmCopyDefaultAllDayAlarmOffset,
-                            _CalAlarmCopyDefaultTimedAlarmOffset,
-                            _CalAlarmSetDefaultAllDayAlarmOffset,
-                            _CalAlarmSetDefaultTimedAlarmOffset,
-                            _CalAlertInviteeDeclines,
-                            _CalCopyDefaultTimeZoneSetting,
-                            _CalDisplayedTitleForCalendar,
-                            _CalDisplayedTitleForSource,
-                            _CalLocaleChangedNotification,
-                            _CalSetAlertInviteeDeclines, _CalSetDefaultTimeZone,
-                            _CalStringForDayOfWeek, _CalStringForRelativeOffset,
-                            _EKDirectoryRecordPrincipalPathKey,
-                            _EKEventStoreChangedNotification,
-                            _EKEventStoreChangedObjectIDsUserInfoKey,
-                            _EKUIApplicationFrame,
-                            _EKUICurrentWidthSizeClassIsCompactInViewHierarchy,
-                            _EKUIHasFallbackSizingContext,
-                            _EKUIPopFallbackSizingContextWithWindow,
-                            _EKUIPushFallbackSizingContextWithWindow,
-                            _EKUIUseLargeFormatPhoneUI, _NSClassFromString,
-                            _NSLocaleCountryCode, _NSLog, _PSCellClassKey,
-                            _PSCityForSpecifier, _PSCityForTimeZone,
-                            _PSDefaultValueKey, _PSDefaultsKey,
-                            _PSDeferItemSelectionKey, _PSEnabledKey,
-                            _PSFooterTextGroupKey, _PSKeyNameKey,
-                            _PSTableCellSubtitleTextKey,
-                            _UIContentSizeCategoryIsAccessibilityCategory,
-                            _UIFontTextStyleFootnote, _UISystemFontBoldForSize,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            ___CFConstantStringClassReference, ___NSArray0__,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __dispatch_main_q, __objc_empty_cache, __os_log_impl,
-                            _dispatch_async, _dispatch_once,
-                            _kAccountDataclassCalendars, _kCFBooleanTrue,
-                            _kCalBirthdayDefaultAlarmChangedNote, _objc_alloc,
-                            _objc_alloc_init, _objc_autorelease,
-                            _objc_autoreleaseReturnValue, _objc_destroyWeak,
-                            _objc_enumerationMutation, _objc_loadWeakRetained,
-                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new,
-                            _objc_opt_respondsToSelector, _objc_release,
-                            _objc_retain, _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong, _objc_storeWeak,
-                            _objc_unsafeClaimAutoreleasedReturnValue,
-                            _os_log_create, _os_log_type_enabled ]
-    objc-classes:         [ _ACAccountStore, _ALCity, _CDBPreferences,
-                            _CNAutocompleteFetchContext,
-                            _CNAutocompleteFetchRequest, _CNAutocompleteStore,
-                            _CUIKDateStrings,
-                            _CUIKTimeToLeaveDescriptionGenerator,
-                            _CalGrantedDelegate, _CalendarEventAlarmTable,
-                            _CalendarModel, _CalendarPreferences,
-                            _EKCalendarChooser, _EKEventStore, _EKFeatureSet,
-                            _EKObjectID, _EKUIAccountRefresher, _IntlUtility,
-                            _NSArray, _NSBundle, _NSCalendar, _NSDictionary, _NSLocale,
-                            _NSMutableArray, _NSNotificationCenter, _NSNumber,
-                            _NSNumberFormatter, _NSObject, _NSPredicate, _NSSet,
-                            _NSString, _NSTimeZone, _PSDetailController,
-                            _PSEditingPane, _PSListController,
-                            _PSListItemsController, _PSSpecifier,
-                            _PSSystemPolicyForApp, _PSTableCell,
-                            _PSTimeZoneController, _UIActivityIndicatorView,
-                            _UIAlertAction, _UIAlertController, _UIApplication,
-                            _UIBarButtonItem, _UIColor, _UIDevice, _UIFont, _UILabel,
-                            _UINavigationController, _UISearchController,
-                            _UITableView, _UITableViewCell, _UIView ]
-    objc-ivars:           [ _PSListController._specifiers,
-                            _PSViewController._parentController,
-                            _PSViewController._specifier ]
 ...

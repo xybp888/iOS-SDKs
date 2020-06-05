@@ -1,14 +1,12 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/MPSCore
 current-version:       122.5.5
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
-    allowable-clients:    [ MPSImage, MPSMatrix, MPSNDArray, MPSNeuralNetwork,
+    allowed-clients:      [ MPSImage, MPSMatrix, MPSNDArray, MPSNeuralNetwork,
                             MPSParallelPrimitives, MPSRayIntersector,
                             MetalPerformanceShaders ]
     symbols:              [ _MPSConvertFloatToHalf, _MPSConvertHalfToFloat,
@@ -138,62 +136,4 @@ exports:
                             _MPSState._resourceCount, _MPSState._resources,
                             _MPSTemporaryImage._readCount, _MPSVector._buffer,
                             _MPSVector._offset ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _ADClientSetValueForScalarKey,
-                            _IOSurfaceGetBaseAddress,
-                            _IOSurfaceGetBaseAddressOfPlane,
-                            _IOSurfaceGetBytesPerRowOfPlane,
-                            _MTLCreateSystemDefaultDevice,
-                            _MTLPixelFormatGetInfoForDevice,
-                            _MTLPixelFormatGetName, _MTLReportFailure,
-                            _MTLReportFailureTypeEnabled, _NSClassFromString,
-                            _NSKeyedArchiveRootObjectKey,
-                            _NSLocalizedDescriptionKey,
-                            _NSLocalizedFailureReasonErrorKey, _NSLog,
-                            _NSStringFromClass, _NSStringFromSelector,
-                            __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, __ZSt9terminatev,
-                            ___CFConstantStringClassReference, ___assert_rtn,
-                            ___chkstk_darwin, ___cxa_begin_catch,
-                            ___cxa_pure_virtual, ___gxx_personality_v0,
-                            ___memcpy_chk, ___objc_personality_v0,
-                            ___stack_chk_fail, ___stack_chk_guard, ___stderrp,
-                            __dispatch_main_q,
-                            __dispatch_source_type_memorypressure,
-                            __dispatch_source_type_timer, __objc_empty_cache,
-                            _bzero, _calloc, _dispatch_async,
-                            _dispatch_get_global_queue, _dispatch_group_create,
-                            _dispatch_group_enter, _dispatch_group_leave,
-                            _dispatch_group_wait, _dispatch_once, _dispatch_once_f,
-                            _dispatch_release, _dispatch_resume,
-                            _dispatch_source_cancel, _dispatch_source_create,
-                            _dispatch_source_set_event_handler,
-                            _dispatch_source_set_timer, _dispatch_time, _dladdr,
-                            _dlopen, _dlsym, _fprintf, _free, _getenv, _malloc, _memcmp,
-                            _memcpy, _memset, _objc_alloc, _objc_alloc_init,
-                            _objc_autorelease, _objc_autoreleasePoolPop,
-                            _objc_autoreleasePoolPush, _objc_begin_catch,
-                            _objc_end_catch, _objc_exception_rethrow,
-                            _objc_getProperty, _objc_msgSend, _objc_msgSendSuper2,
-                            _objc_opt_class, _objc_opt_isKindOfClass,
-                            _objc_opt_new, _objc_opt_respondsToSelector,
-                            _objc_release, _objc_retain,
-                            _objc_setProperty_atomic_copy,
-                            _objc_setProperty_nonatomic, _objc_terminate,
-                            _os_unfair_lock_lock, _os_unfair_lock_unlock, _printf,
-                            _pthread_mutex_destroy, _pthread_mutex_init,
-                            _pthread_mutex_lock, _pthread_mutex_unlock,
-                            _pthread_rwlock_destroy, _pthread_rwlock_rdlock,
-                            _pthread_rwlock_unlock, _pthread_rwlock_wrlock,
-                            _putchar, _puts, _snprintf, _stat, _strlen, _strncpy, _strtol,
-                            _vfprintf, _vm_page_size ]
-    objc-classes:         [ _MTLComputePipelineDescriptor,
-                            _MTLFunctionConstantValues, _MTLHeapDescriptor,
-                            _MTLSamplerDescriptor, _MTLTextureDescriptor, _NSArray,
-                            _NSAutoreleasePool, _NSBundle, _NSKeyedUnarchiver,
-                            _NSMutableArray, _NSMutableDictionary, _NSMutableSet,
-                            _NSObject, _NSSet, _NSString ]
-    weak-def-symbols:     [ __ZdlPv, __Znwm ]
 ...

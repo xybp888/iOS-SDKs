@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Cornobble.framework/Cornobble
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CRNAxisFromScrollDirection,
@@ -21,21 +19,4 @@ exports:
                             _CRNPagingScrollTestParameters,
                             _CRNStandardScrollTestParameters,
                             _CornobbleTestRunner ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CGRectGetMaxX, _CGRectGetMaxY, _CGRectGetMidX,
-                            _CGRectGetMidY, _CGRectGetMinX, _CGRectGetMinY,
-                            __Block_object_assign, __NSConcreteStackBlock,
-                            ___CFConstantStringClassReference, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache,
-                            _abort_report_np, _dlerror, _dlopen, _objc_alloc,
-                            _objc_autoreleaseReturnValue,
-                            _objc_enumerationMutation, _objc_getClass,
-                            _objc_getProperty, _objc_msgSend, _objc_msgSendSuper2,
-                            _objc_release, _objc_retain,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_retainBlock, _objc_setProperty_nonatomic_copy,
-                            _objc_storeStrong ]
-    objc-classes:         [ _NSArray, _NSObject, _UIApplication, _UIDevice ]
 ...

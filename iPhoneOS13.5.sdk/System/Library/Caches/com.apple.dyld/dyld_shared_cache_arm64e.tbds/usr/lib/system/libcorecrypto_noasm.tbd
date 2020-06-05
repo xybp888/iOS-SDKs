@@ -1,14 +1,12 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libcorecrypto_noasm.dylib
 current-version:       866.120.3
 compatibility-version: 1
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
-    allowable-clients:    [ cc_fips_test, corecrypto_test ]
+    allowed-clients:      [ cc_fips_test, corecrypto_test ]
     symbols:              [ _cc_abort, _cc_atfork_child, _cc_atfork_parent,
                             _cc_atfork_prepare, _cc_clear, _cc_cmp_safe, _cc_muxp,
                             _ccaes_arm_cbc_decrypt_mode,
@@ -335,14 +333,4 @@ exports:
                             _cczp_power_fast,
                             _csss_shamir_share_bag_can_recover_secret,
                             _fipspost_post, _fipspost_trace_vtable ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ ___memcpy_chk, ___memset_chk, ___stack_chk_fail,
-                            ___stack_chk_guard, ___stderrp, ___toupper, __os_once,
-                            _abort, _bzero, _fprintf, _fputc, _free, _fwrite, _getentropy,
-                            _mach_absolute_time, _mach_timebase_info, _malloc,
-                            _memcmp, _memcpy, _memmove, _memset, _memset_s,
-                            _os_unfair_lock_assert_owner, _os_unfair_lock_lock,
-                            _os_unfair_lock_unlock, _printf, _putchar, _strcmp,
-                            _strlen, _strncmp ]
 ...

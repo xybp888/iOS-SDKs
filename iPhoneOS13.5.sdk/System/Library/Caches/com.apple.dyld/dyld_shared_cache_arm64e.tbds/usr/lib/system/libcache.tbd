@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libcache.dylib
 current-version:       83
 compatibility-version: 1
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _cache_create, _cache_destroy, _cache_get,
@@ -26,19 +24,4 @@ exports:
                             _cache_simulate_memory_warning_event,
                             _cache_value_make_nonpurgeable_cb,
                             _cache_value_make_purgeable_cb ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ __NSConcreteStackBlock, ___snprintf_chk,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __dispatch_source_type_memorypressure,
-                            __os_alloc_once, __os_alloc_once_table, _atoi, _calloc,
-                            _dispatch_async, _dispatch_get_global_queue,
-                            _dispatch_resume, _dispatch_source_create,
-                            _dispatch_source_get_data,
-                            _dispatch_source_set_event_handler, _free, _getenv,
-                            _mach_absolute_time, _mach_timebase_info, _malloc,
-                            _malloc_make_nonpurgeable, _malloc_make_purgeable,
-                            _os_unfair_lock_lock_with_options,
-                            _os_unfair_lock_unlock, _printf, _putchar, _strcmp,
-                            _strdup, _strlen ]
 ...

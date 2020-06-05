@@ -1,12 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libdispatch.dylib
 current-version:       1173.100.2
 compatibility-version: 1
-objc-constraint:       retain_release
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ __dispatch_begin_NSAutoReleasePool, __dispatch_bug,
@@ -242,87 +239,4 @@ exports:
                             _OS_dispatch_queue_serial, _OS_dispatch_semaphore,
                             _OS_dispatch_source, _OS_dispatch_workloop, _OS_object,
                             _OS_voucher ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _NDR_record, __Block_copy, __Block_object_assign,
-                            __Block_object_dispose, __Block_release,
-                            __Block_use_RR2, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock, __Unwind_Resume,
-                            ___chkstk_darwin, ___error, ___libkernel_voucher_init,
-                            ___objc_personality_v0, ___snprintf_chk,
-                            ___stack_chk_fail, ___stack_chk_guard, ___strlcpy_chk,
-                            ___telemetry, ___udivti3, ___ulock_wait, ___ulock_wake,
-                            ___vsnprintf_chk, __dyld_is_memory_immutable,
-                            __objc_atfork_child, __objc_atfork_parent,
-                            __objc_atfork_prepare, __objc_empty_cache, __objc_init,
-                            __os_semaphore_create, __os_semaphore_dispose,
-                            __pthread_qos_class_decode,
-                            __pthread_qos_class_encode,
-                            __pthread_qos_override_end_direct,
-                            __pthread_qos_override_start_direct,
-                            __pthread_set_properties_self,
-                            __pthread_workloop_create,
-                            __pthread_workloop_destroy,
-                            __pthread_workqueue_addthreads,
-                            __pthread_workqueue_override_reset,
-                            __pthread_workqueue_override_start_direct,
-                            __pthread_workqueue_override_start_direct_check_owner,
-                            __pthread_workqueue_set_event_manager_priority,
-                            __pthread_workqueue_should_narrow,
-                            __pthread_workqueue_supported, __simple_asl_log,
-                            _asprintf, _atoi, _bzero, _calloc, _class_createInstance,
-                            _clock_gettime_nsec_np, _close$NOCANCEL, _dprintf,
-                            _fcntl$NOCANCEL, _free, _fstat, _getenv, _getpid,
-                            _getprogname, _gettimeofday, _guarded_close_np,
-                            _guarded_open_np, _host_create_mach_voucher,
-                            _host_get_special_port, _host_request_notification,
-                            _kdebug_trace, _kevent_id, _kevent_qos, _kpersona_get,
-                            _lseek, _lstat, _mach_absolute_time,
-                            _mach_approximate_time,
-                            _mach_continuous_approximate_time,
-                            _mach_continuous_time, _mach_error_string,
-                            _mach_generate_activity_id, _mach_get_times,
-                            _mach_host_self, _mach_make_memory_entry_64, _mach_msg,
-                            _mach_msg_destroy, _mach_port_construct,
-                            _mach_port_deallocate, _mach_port_destruct,
-                            _mach_port_kernel_object, _mach_port_mod_refs,
-                            _mach_port_request_notification, _mach_task_self_,
-                            _mach_timebase_info, _mach_vm_allocate,
-                            _mach_vm_deallocate, _mach_vm_map,
-                            _mach_voucher_attr_command, _mach_voucher_deallocate,
-                            _mach_voucher_debug_info,
-                            _mach_voucher_extract_attr_recipe, _madvise, _malloc,
-                            _malloc_engaged_nano, _malloc_memory_event_handler,
-                            _memcmp, _memcpy, _mig_dealloc_special_reply_port,
-                            _mig_get_special_reply_port, _munmap,
-                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
-                            _objc_begin_catch, _objc_destructInstance,
-                            _objc_end_catch, _objc_lookUpClass, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
-                            _objc_retain, _objc_terminate, _object_getClassName,
-                            _open$NOCANCEL, _os_fault_with_payload,
-                            _os_variant_has_internal_diagnostics,
-                            _pread$NOCANCEL, _proc_pidinfo, _pthread_attr_destroy,
-                            _pthread_attr_get_qos_class_np,
-                            _pthread_attr_getschedparam,
-                            _pthread_attr_getschedpolicy, _pthread_attr_init,
-                            _pthread_attr_setcpupercent_np,
-                            _pthread_attr_setdetachstate,
-                            _pthread_attr_setschedparam,
-                            _pthread_attr_setschedpolicy, _pthread_create,
-                            _pthread_exit, _pthread_get_stackaddr_np,
-                            _pthread_key_init_np, _pthread_main_np,
-                            _pthread_qos_max_parallelism, _pthread_self,
-                            _pthread_sigmask, _pthread_workqueue_setup,
-                            _pwrite$NOCANCEL, _qos_class_main, _read$NOCANCEL,
-                            _realloc, _semaphore_create, _semaphore_destroy,
-                            _semaphore_signal, _semaphore_timedwait,
-                            _semaphore_wait, _sigsuspend$NOCANCEL, _sleep$NOCANCEL,
-                            _stat, _strcasecmp, _strcmp, _strerror, _strlen, _strrchr,
-                            _sysctl, _task_get_special_port,
-                            _thread_destruct_special_reply_port,
-                            _thread_get_special_reply_port, _thread_switch,
-                            _valloc, _vasprintf, _vm_page_mask, _vm_page_size,
-                            _write$NOCANCEL ]
-    objc-classes:         [ _NSObject ]
 ...

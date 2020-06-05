@@ -1,14 +1,12 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/RemoteStateDumpKit.framework/RemoteStateDumpKit
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
-    allowable-clients:    [ SpringBoard, SpringBoardCore, Tuner, prototyped ]
+    allowed-clients:      [ SpringBoard, SpringBoardCore, Tuner, prototyped ]
     symbols:              [ _RemoteStateDumpKitVersionNumber,
                             _RemoteStateDumpKitVersionString ]
     objc-classes:         [ _RSPeerToPeerClientController,
@@ -24,22 +22,4 @@ exports:
                             _RSPeerToPeerServerController._serviceAdvertiser,
                             _RSStateInfo._actionRevision,
                             _RSStateInfo._stateType ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _NSStringFromClass, __Block_object_assign,
-                            __NSConcreteStackBlock,
-                            ___CFConstantStringClassReference, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache,
-                            __os_log_default, __os_log_impl, _objc_alloc,
-                            _objc_autoreleaseReturnValue, _objc_destroyWeak,
-                            _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_respondsToSelector, _objc_release,
-                            _objc_retain, _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong, _objc_storeWeak,
-                            _os_log_type_enabled ]
-    objc-classes:         [ _MCNearbyServiceAdvertiser, _MCNearbyServiceBrowser,
-                            _MCPeerID, _MCSession, _NSArray, _NSJSONSerialization,
-                            _NSMutableArray, _NSMutableDictionary, _NSNumber,
-                            _NSObject ]
 ...

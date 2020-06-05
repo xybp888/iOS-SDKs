@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HealthRecordServices.framework/HealthRecordServices
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _HDCIErrorDomain,
@@ -33,31 +31,4 @@ exports:
                             _HDReferenceExtractionRequest,
                             _HDReferenceExtractionResult,
                             _HDUnresolvedReferenceSet ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _HKCreateSerialDispatchQueue, _HKHTTPErrorDomain,
-                            _HKLogHealthRecords, _HKSafeObject,
-                            _HKSensitiveLogItem, _NSInvalidArgumentException,
-                            _NSLocalizedDescriptionKey, _NSStringFromClass,
-                            _NSStringFromSelector, __Block_object_assign,
-                            __HKInitializeLogging, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock,
-                            ___CFConstantStringClassReference, ___NSArray0__,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __objc_empty_cache, __os_log_error_impl,
-                            _dispatch_async, _objc_alloc, _objc_alloc_init,
-                            _objc_autoreleaseReturnValue,
-                            _objc_enumerationMutation, _objc_getProperty,
-                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
-                            _objc_unsafeClaimAutoreleasedReturnValue,
-                            _os_log_type_enabled ]
-    objc-classes:         [ _HKClinicalRecord, _HKFHIRIdentifier, _HKMedicalRecord,
-                            _NSArray, _NSAssertionHandler, _NSCharacterSet, _NSData,
-                            _NSDate, _NSDictionary, _NSError, _NSException,
-                            _NSJSONSerialization, _NSMutableArray,
-                            _NSMutableDictionary, _NSNumber, _NSObject, _NSSet,
-                            _NSString, _NSURL, _NSXPCInterface, __HKXPCConnection ]
 ...

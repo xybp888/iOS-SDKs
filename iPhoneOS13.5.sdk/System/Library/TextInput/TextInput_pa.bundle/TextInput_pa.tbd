@@ -1,31 +1,11 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/TextInput/TextInput_pa.bundle/TextInput_pa
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     objc-classes:         [ _TIKeyboardInputManager_pa ]
     objc-ivars:           [ _TIKeyboardInputManager_pa._isPhoneticLayout ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ __ZN14TIInputManager17delete_from_inputEv,
-                            __ZN14TIInputManager24delete_suffix_from_inputERKN2KB6StringE,
-                            __ZN14TIInputManager35delete_from_favonius_stroke_historyEv,
-                            __ZN2KB11utf8_stringEP8NSString,
-                            __ZN2KB15lower_characterEjPK10__CFLocale,
-                            __ZN2KB6StringD1Ev, __ZN2KB9ns_stringERKNS_6StringE,
-                            __ZNK14TIInputManager10input_stemEv,
-                            __ZNK14TIInputManager12input_stringEv,
-                            ___CFConstantStringClassReference, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache,
-                            _objc_autoreleaseReturnValue, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_release, _objc_retain,
-                            _objc_retainAutoreleasedReturnValue ]
-    objc-classes:         [ _NSObject, _TIKeyboardInputManager ]
-    objc-ivars:           [ _TIKeyboardInputManager.m_composedText,
-                            _TIKeyboardInputManager.m_impl ]
 ...

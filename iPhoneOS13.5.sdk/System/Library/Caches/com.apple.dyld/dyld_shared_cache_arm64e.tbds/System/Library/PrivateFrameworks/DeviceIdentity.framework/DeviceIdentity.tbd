@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DeviceIdentity.framework/DeviceIdentity
 current-version:       0
 compatibility-version: 0
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _DeviceIdentityCreateClientCertificateRequest,
@@ -34,70 +32,4 @@ exports:
                             _kMAOptionsBAAValidity, _kMAOptionsBasebandWaitCount,
                             _kMAOptionsResuseExistingKey,
                             _kMAOptionsUseSoftwareGeneratedKey ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFGetTypeID, _CFRelease, _CFRetain, _IOObjectRelease,
-                            _IORegistryEntryCreateCFProperty,
-                            _IORegistryEntryFromPath, _MGCopyAnswer,
-                            _NSLocalizedDescriptionKey, _NSUnderlyingErrorKey,
-                            _SecAccessControlCreate,
-                            _SecAccessControlCreateWithFlags,
-                            _SecAccessControlGetTypeID,
-                            _SecAccessControlSetProtection,
-                            _SecCertificateCreateWithData,
-                            _SecCertificateIsValid, _SecCertificateNotValidAfter,
-                            _SecCertificateNotValidBefore, _SecItemAdd,
-                            _SecItemCopyMatching, _SecItemDelete,
-                            _SecKeyCopyAttestationKey, _SecKeyCopyAttributes,
-                            _SecKeyCopyExternalRepresentation,
-                            _SecKeyCopyPublicKey, _SecKeyCreateAttestation,
-                            _SecKeyCreateRandomKey, _SecKeyCreateSignature,
-                            _SecKeyCreateWithData, _SecKeySetParameter,
-                            _SecTaskCopySigningIdentifier,
-                            _SecTaskCopyValueForEntitlement,
-                            _SecTaskCreateFromSelf, __Block_object_assign,
-                            __Block_object_dispose, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock, __Unwind_Resume,
-                            ___CFConstantStringClassReference, ___chkstk_darwin,
-                            ___objc_personality_v0, ___stack_chk_fail,
-                            ___stack_chk_guard, ___strlcpy_chk, __objc_empty_cache,
-                            _abort_report_np, _bzero,
-                            _container_system_group_path_for_identifier,
-                            _dispatch_async, _dispatch_get_global_queue,
-                            _dispatch_once, _dlerror, _dlopen, _free, _getpid,
-                            _kCFAllocatorDefault, _kIOMasterPortDefault,
-                            _kSecAttrAccessControl, _kSecAttrAccessGroup,
-                            _kSecAttrAccessible,
-                            _kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly,
-                            _kSecAttrAccessibleAlwaysThisDeviceOnlyPrivate,
-                            _kSecAttrAccessibleUntilReboot, _kSecAttrIsPermanent,
-                            _kSecAttrKeyType, _kSecAttrKeyTypeECSECPrimeRandom,
-                            _kSecAttrKeyTypeECSECPrimeRandomPKA, _kSecAttrLabel,
-                            _kSecAttrNoLegacy, _kSecAttrTokenID,
-                            _kSecAttrTokenIDAppleKeyStore, _kSecAttrTokenOID,
-                            _kSecClass, _kSecClassCertificate, _kSecClassKey,
-                            _kSecKeyAlgorithmECDSASignatureMessageX962SHA256,
-                            _kSecKeyParameterSETokenAttestationNonce,
-                            _kSecReturnRef, _kSecUseAuthenticationContext,
-                            _kSecUseAuthenticationUI, _kSecUseSystemKeychain,
-                            _kSecValueRef, _objc_alloc, _objc_alloc_init,
-                            _objc_autoreleaseReturnValue,
-                            _objc_enumerationMutation, _objc_getClass,
-                            _objc_getProperty, _objc_msgSend, _objc_msgSendSuper2,
-                            _objc_opt_class, _objc_opt_isKindOfClass,
-                            _objc_opt_new, _objc_release, _objc_retain,
-                            _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_storeStrong,
-                            _os_variant_allows_internal_security_policies,
-                            _os_variant_has_internal_diagnostics, _proc_pidpath,
-                            _strlen, _sysctlbyname ]
-    objc-classes:         [ _NSArray, _NSCalendar, _NSCharacterSet, _NSData, _NSDate,
-                            _NSDictionary, _NSError, _NSFileManager,
-                            _NSHTTPURLResponse, _NSMutableArray,
-                            _NSMutableDictionary, _NSMutableString,
-                            _NSMutableURLRequest, _NSNumber, _NSObject,
-                            _NSPropertyListSerialization, _NSString, _NSURL,
-                            _NSUserDefaults, _NSXPCConnection, _NSXPCInterface ]
 ...

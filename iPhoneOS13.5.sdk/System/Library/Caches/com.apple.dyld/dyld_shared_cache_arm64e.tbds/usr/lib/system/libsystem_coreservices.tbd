@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /usr/lib/system/libsystem_coreservices.dylib
 current-version:       114
 compatibility-version: 1
-parent-umbrella:       System
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _NSGetNextSearchPathEnumeration,
@@ -18,17 +16,4 @@ exports:
                             _sysdir_get_next_search_path_enumeration,
                             _sysdir_start_search_path_enumeration,
                             _sysdir_start_search_path_enumeration_private ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _NDR_record, ___error, ___snprintf_chk, ___strlcat_chk,
-                            ___strlcpy_chk, __os_alloc_once, __os_alloc_once_table,
-                            __os_once, _abort, _bzero, _calloc, _chmod,
-                            _container_create_or_lookup_path_for_current_user,
-                            _container_system_path_for_identifier,
-                            _dyld_process_is_restricted, _free, _getenv, _getpwuid,
-                            _getuid, _lstat, _mach_msg, _mach_msg_destroy,
-                            _mig_dealloc_reply_port, _mig_get_reply_port,
-                            _mig_put_reply_port, _mkdir, _pthread_mutex_init,
-                            _setenv, _strcmp, _strdup, _strlen, _strnstr ]
-    weak-def-symbols:     [ _voucher_mach_msg_set ]
 ...

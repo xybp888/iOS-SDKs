@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HDRProcessing.framework/HDRProcessing
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ATFMTLfloat2half_rtz, _ATFMTLhalf2float,
@@ -531,65 +529,4 @@ exports:
                             _SpatialResampler._horizontalResampleKernel,
                             _SpatialResampler._verticalResampleChromaKernel,
                             _SpatialResampler._verticalResampleKernel ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFBooleanGetValue, _CFDataCreate,
-                            _CFDictionaryAddValue, _CFDictionaryCreateMutable,
-                            _CFDictionaryGetValue, _CFDictionarySetValue, _CFEqual,
-                            _CFErrorCreate, _CFGetAllocator, _CFGetTypeID,
-                            _CFNumberCreate, _CFNumberGetTypeID, _CFNumberGetValue,
-                            _CFPreferencesCopyAppValue,
-                            _CFPreferencesGetAppIntegerValue, _CFRelease,
-                            _CFRetain, _CFStringCreateWithFormat,
-                            _CVPixelBufferGetIOSurface, _CVPixelBufferPoolCreate,
-                            _CVPixelBufferPoolCreatePixelBuffer,
-                            _IOSurfaceGetBulkAttachments, _IOSurfaceGetHeight,
-                            _IOSurfaceGetHeightOfPlane, _IOSurfaceGetID,
-                            _IOSurfaceGetPixelFormat, _IOSurfaceGetPlaneCount,
-                            _IOSurfaceGetProtectionOptions, _IOSurfaceGetWidth,
-                            _IOSurfaceGetWidthOfPlane,
-                            _IOSurfaceSetBulkAttachments2, _IOSurfaceSetValue,
-                            _MTLCreateSystemDefaultDevice, _NSLog,
-                            __Block_object_assign, __CFRuntimeCreateInstance,
-                            __CFRuntimeRegisterClass, __NSConcreteGlobalBlock,
-                            __NSConcreteStackBlock, __Unwind_Resume,
-                            __ZSt9terminatev, ___CFConstantStringClassReference,
-                            ___cxa_begin_catch, ___gxx_personality_v0,
-                            ___invert_f3, ___sprintf_chk, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache,
-                            __os_log_default, __os_log_error_impl, __os_log_impl,
-                            _asctime_r, _bcopy, _bzero, _dispatch_async,
-                            _dispatch_once, _dispatch_queue_create,
-                            _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _exit, _expf, _fclose, _fflush, _fopen, _fprintf, _fputc, _free,
-                            _kCFAllocatorDefault, _kCFTypeDictionaryKeyCallBacks,
-                            _kCFTypeDictionaryValueCallBacks,
-                            _kCVImageBufferColorPrimaries_ITU_R_2020,
-                            _kCVImageBufferColorPrimaries_ITU_R_709_2,
-                            _kCVImageBufferColorPrimaries_P3_D65,
-                            _kCVPixelBufferHeightKey,
-                            _kCVPixelBufferIOSurfacePropertiesKey,
-                            _kCVPixelBufferPixelFormatTypeKey,
-                            _kCVPixelBufferPlaneAlignmentKey,
-                            _kCVPixelBufferWidthKey, _kIOSurfaceCacheMode,
-                            _kIOSurfaceEDRFactor, _localtime_r, _log, _log10f, _log2f,
-                            _logf, _malloc, _memcmp, _memcpy, _memmove, _objc_alloc,
-                            _objc_alloc_init, _objc_autoreleaseReturnValue,
-                            _objc_getProperty, _objc_msgSend, _objc_msgSendSuper2,
-                            _objc_opt_new, _objc_release, _objc_retain,
-                            _objc_retainAutorelease,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_setProperty_atomic, _objc_storeStrong,
-                            _os_log_type_enabled, _pow, _powf, _printf,
-                            _shape_alloc_bounds, _shape_difference,
-                            _shape_enum_alloc, _shape_enum_free, _shape_enum_next,
-                            _shape_free, _shape_intersect, _shape_union, _syslog,
-                            _time ]
-    objc-classes:         [ _MTLComputePipelineDescriptor,
-                            _MTLFunctionConstantValues, _MTLRenderPassDescriptor,
-                            _MTLRenderPipelineDescriptor, _MTLSamplerDescriptor,
-                            _MTLTextureDescriptor, _NSBundle, _NSMutableData,
-                            _NSObject ]
-    weak-def-symbols:     [ __ZdlPv, __Znwm ]
 ...

@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WiFiCloudSyncEngine.framework/WiFiCloudSyncEngine
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _WiFiCloudSyncEngineAddNetworkToCloud,
@@ -33,46 +31,4 @@ exports:
                             _WiFiCloudSyncEngineCore.context,
                             _WiFiCloudSyncEngineCore.iCloudSyncingEnabled,
                             _WiFiCloudSyncEngineCore.keyValueStore ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFAbsoluteTimeGetCurrent, _CFArrayAppendValue,
-                            _CFArrayCreateMutable, _CFArrayGetCount,
-                            _CFArrayGetValueAtIndex, _CFArrayRemoveAllValues,
-                            _CFArrayRemoveValueAtIndex, _CFDateCreate,
-                            _CFDateGetAbsoluteTime, _CFEqual,
-                            _CFMachPortCreateRunLoopSource,
-                            _CFMachPortCreateWithPort, _CFMachPortInvalidate,
-                            _CFRelease, _CFRetain, _CFRunLoopAddSource,
-                            _CFRunLoopAddTimer, _CFRunLoopPerformBlock,
-                            _CFRunLoopRemoveSource,
-                            _CFRunLoopTimerCreateWithHandler,
-                            _CFRunLoopTimerGetNextFireDate,
-                            _CFRunLoopTimerInvalidate, _CFRunLoopWakeUp,
-                            _MGCopyAnswer, _NSLog,
-                            _NSUbiquitousKeyValueStoreChangeReasonKey,
-                            _NSUbiquitousKeyValueStoreChangedKeysKey,
-                            _NSUbiquitousKeyValueStoreDidChangeExternallyNotification,
-                            _SOSCCView, __Block_object_assign,
-                            __Block_object_dispose, __CFRuntimeCreateInstance,
-                            __CFRuntimeRegisterClass, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___objc_personality_v0,
-                            __dispatch_source_type_data_add, __objc_empty_cache,
-                            _dispatch_async, _dispatch_get_global_queue,
-                            _dispatch_queue_create, _dispatch_release,
-                            _dispatch_resume, _dispatch_source_cancel,
-                            _dispatch_source_create, _dispatch_source_get_data,
-                            _dispatch_source_merge_data,
-                            _dispatch_source_set_event_handler,
-                            _kCFAllocatorDefault, _kCFTypeArrayCallBacks,
-                            _kSOSCCViewMembershipChangedNotification,
-                            _kSOSViewWiFi, _notify_register_mach_port, _objc_alloc,
-                            _objc_autorelease, _objc_msgSend, _objc_msgSendSuper2,
-                            _objc_opt_class, _objc_opt_isKindOfClass,
-                            _objc_release, _objc_retain, _pthread_once,
-                            _pthread_self ]
-    objc-classes:         [ _NSDictionary, _NSMutableArray, _NSMutableDictionary,
-                            _NSNotificationCenter, _NSNumber, _NSObject,
-                            _NSProcessInfo, _NSString, _NSThread,
-                            _NSUbiquitousKeyValueStore ]
 ...

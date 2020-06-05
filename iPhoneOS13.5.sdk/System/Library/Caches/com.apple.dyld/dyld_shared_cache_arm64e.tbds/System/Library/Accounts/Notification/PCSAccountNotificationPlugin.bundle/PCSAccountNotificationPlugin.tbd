@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/Accounts/Notification/PCSAccountNotificationPlugin.bundle/PCSAccountNotificationPlugin
 current-version:       0
 compatibility-version: 0
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _PCSAccountNotificationPluginVersionNumber,
@@ -17,43 +15,4 @@ exports:
                             _pcsLogDisable, _pcsLogEnable, _pcsLogEnabled,
                             _pcsLogObjForScope ]
     objc-classes:         [ _PCSAccountNotificationPlugin ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _AAAccountClassFull,
-                            _ACAccountDataclassProtectedCloudStorage,
-                            _ACAccountTypeIdentifierAppleAccount,
-                            _CFAbsoluteTimeGetCurrent,
-                            _CFCopyHomeDirectoryURLForUser, _CFDateCreate,
-                            _CFDateFormatterCreate,
-                            _CFDateFormatterCreateStringWithDate,
-                            _CFDateFormatterSetFormat, _CFDictionaryAddValue,
-                            _CFDictionaryCreateMutable, _CFDictionaryGetValue,
-                            _CFEqual, _CFLocaleCopyCurrent, _CFRelease, _CFRetain,
-                            _CFStringCreateWithCString,
-                            _CFStringCreateWithFormat,
-                            _CFStringCreateWithFormatAndArguments,
-                            _CFStringGetCString, _CFStringGetCStringPtr,
-                            _CFStringGetLength,
-                            _CFStringGetMaximumSizeForEncoding,
-                            _CFURLCreateCopyAppendingPathComponent,
-                            _CFURLGetFileSystemRepresentation, _MGCopyAnswer,
-                            _PCSIdentityLegacySetup, _PCSIdentityNeedsSetup,
-                            _PCSIdentitySetup, _PCSIdentityiCDPSignOut,
-                            __CFRuntimeCreateInstance, __CFRuntimeRegisterClass,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            ___CFConstantStringClassReference, ___stack_chk_fail,
-                            ___stack_chk_guard, __objc_empty_cache,
-                            __os_log_default, __os_log_disabled, __os_log_impl,
-                            _asprintf, _close, _dispatch_once, _free, _fstat, _ftruncate,
-                            _kAccountDataclassBackup, _kCFAllocatorDefault,
-                            _kCFCopyStringDictionaryKeyCallBacks,
-                            _kPCSSetupAuthToken, _kPCSSetupDSID,
-                            _kPCSSetupEscrowURL, _kPCSSetupPassword,
-                            _kPCSSetupUsername, _kPCSSetupiCloudEnvironment,
-                            _malloc, _notify_post, _objc_msgSend, _open,
-                            _os_log_create, _os_log_type_enabled, _os_release,
-                            _os_unfair_lock_lock_with_options,
-                            _os_unfair_lock_unlock, _pthread_mutex_lock,
-                            _pthread_mutex_unlock, _strdup, _time, _write ]
-    objc-classes:         [ _ACAccount, _NSDictionary, _NSObject ]
 ...

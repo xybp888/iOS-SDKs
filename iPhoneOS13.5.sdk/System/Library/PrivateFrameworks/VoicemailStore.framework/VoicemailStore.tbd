@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VoicemailStore.framework/VoicemailStore
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _VMStoreAddRecord, _VMStoreChangedExternally,
@@ -77,81 +75,4 @@ exports:
                             __VMStoreRemoveAllRecords, __VMStoreSetToken,
                             __VMStoreSetTokenForKey,
                             __VMStoreUtilitiesInitialize, _vm_vmstore_log ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFAbsoluteTimeGetCurrent, _CFAllocatorAllocate,
-                            _CFAllocatorDeallocate, _CFArrayAppendValue,
-                            _CFArrayCreateMutable, _CFArrayGetCount,
-                            _CFArrayGetValueAtIndex,
-                            _CFCopyHomeDirectoryURLForUser,
-                            _CFDictionaryCreateMutable, _CFDictionaryGetValue,
-                            _CFDictionarySetValue, _CFEqual,
-                            _CFNotificationCenterGetDarwinNotifyCenter,
-                            _CFNotificationCenterGetLocalCenter,
-                            _CFNotificationCenterPostNotification, _CFRelease,
-                            _CFRetain, _CFSetAddValue, _CFSetApplyFunction,
-                            _CFSetCreateMutable, _CFSetGetCount, _CFSetRemoveValue,
-                            _CFStringAppend, _CFStringCompare,
-                            _CFStringCreateMutableCopy,
-                            _CFStringCreateWithCString,
-                            _CFStringCreateWithFormat, _CFStringGetBytes,
-                            _CFStringGetCString,
-                            _CFStringGetFileSystemRepresentation,
-                            _CFStringGetIntValue, _CFStringGetLength,
-                            _CFURLCopyFileSystemPath, _CSDBIntegerMethods,
-                            _CSDBRecordCreate, _CSDBRecordGetID,
-                            _CSDBRecordGetProperty,
-                            _CSDBRecordIndexOfPropertyNamed,
-                            _CSDBRecordSaveStore, _CSDBRecordSetProperty,
-                            _CSDBRecordStoreAddRecord,
-                            _CSDBRecordStoreCopyInstanceOfClassWithUID,
-                            _CSDBRecordStoreCopyValueForProperty,
-                            _CSDBRecordStoreCreateTablesForClass,
-                            _CSDBRecordStoreCreateWithPath,
-                            _CSDBRecordStoreDestroy, _CSDBRecordStoreGetDatabase,
-                            _CSDBRecordStoreInvalidateCachesWithStore,
-                            _CSDBRecordStoreProcessStatement,
-                            _CSDBRecordStoreRegisterClass,
-                            _CSDBRecordStoreRemoveRecord,
-                            _CSDBRecordStoreSetSetupHandler,
-                            _CSDBRecordStoreSetValueForProperty,
-                            _CSDBSqliteConnectionBegin,
-                            _CSDBSqliteConnectionCommit,
-                            _CSDBSqliteConnectionCopyValuesForPropertiesLike,
-                            _CSDBSqliteConnectionIntegerForProperty,
-                            _CSDBSqliteConnectionPerformSQL,
-                            _CSDBSqliteConnectionSetValueForProperty,
-                            _CSDBSqliteConnectionStatementForSQL,
-                            _CSDBSqliteDatabaseConnectionForReading,
-                            _CSDBSqliteDatabaseConnectionForWriting,
-                            _CSDBSqliteDatabaseCopyValueForProperty,
-                            _CSDBSqliteDatabaseSetDataProtectionClass,
-                            _CSDBSqliteDatabaseSetMigrationHandlers,
-                            _CSDBSqliteDatabaseSetValueForProperty,
-                            _CSDBSqliteDatabaseSetVersion,
-                            _CSDBSqliteDatabaseStatementForReading,
-                            _CSDBSqliteErrMsg, _CSDBSqliteStatementIntegerResult,
-                            _CSDBSqliteStatementPerform,
-                            _CSDBSqliteStatementReset,
-                            _CSDBSqliteStatementSendResults, _CSDBStringMethods,
-                            _NSFilePosixPermissions, _NSHomeDirectoryForUser,
-                            _NSLog, __Block_copy, __Block_release,
-                            __NSConcreteGlobalBlock,
-                            ___CFConstantStringClassReference, ___chkstk_darwin,
-                            ___error, ___memcpy_chk, ___snprintf_chk,
-                            ___stack_chk_fail, ___stack_chk_guard, ___strlcat_chk,
-                            ___strlcpy_chk, __os_log_impl, _atoi, _bzero, _chmod, _chown,
-                            _closedir, _dispatch_once, _getpwnam,
-                            _kCFAllocatorDefault, _kCFBooleanTrue,
-                            _kCFTypeDictionaryKeyCallBacks, _memchr, _mkdir,
-                            _objc_alloc, _objc_autorelease,
-                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
-                            _objc_msgSend, _objc_retain, _opendir, _os_log_create,
-                            _os_log_type_enabled, _pthread_mutex_lock,
-                            _pthread_mutex_unlock, _readdir, _rmdir,
-                            _sqlite3_bind_int, _sqlite3_bind_int64,
-                            _sqlite3_bind_text, _sqlite3_column_int, _stat, _strlen,
-                            _strncmp, _unlink ]
-    objc-classes:         [ _NSAssertionHandler, _NSDictionary, _NSFileManager,
-                            _NSNumber, _NSString ]
 ...

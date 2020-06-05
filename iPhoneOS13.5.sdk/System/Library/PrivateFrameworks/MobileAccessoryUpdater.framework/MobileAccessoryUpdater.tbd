@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileAccessoryUpdater.framework/MobileAccessoryUpdater
 current-version:       0
 compatibility-version: 0
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _FUDError, _FudLog, _FudLogCopyMessages, _FudLogInit,
@@ -93,56 +91,4 @@ exports:
                             _MobileAccessoryUpdater._didUnregister,
                             _MobileAccessoryUpdater._isInternalClient,
                             _MobileAccessoryUpdater._sessionQueue ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFDataCreateWithBytesNoCopy, _CFDictionaryGetTypeID,
-                            _CFGetTypeID, _CFPropertyListCreateWithData,
-                            _CFRelease, _NSLocalizedDescriptionKey, _NSLog,
-                            _OBJC_EHTYPE_$_NSException, __Block_copy,
-                            __Block_object_assign, __Block_object_dispose,
-                            __Block_release, __CFXPCCreateCFObjectFromXPCObject,
-                            __CFXPCCreateXPCObjectFromCFObject,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___error, ___objc_personality_v0, __objc_empty_cache,
-                            __xpc_type_error, _asl_free, _asl_get, _asl_log, _asl_new,
-                            _asl_open, _asl_parse_time, _asl_search, _asl_set_filter,
-                            _asl_set_query, _aslresponse_free, _aslresponse_next,
-                            _calloc, _csops, _dispatch_async, _dispatch_once,
-                            _dispatch_queue_attr_make_with_qos_class,
-                            _dispatch_queue_create, _dispatch_release,
-                            _dispatch_retain, _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _dispatch_sync, _fprintf, _free, _getpid,
-                            _kCFAllocatorNull, _malloc, _memcpy, _notify_cancel,
-                            _notify_register_dispatch, _objc_alloc,
-                            _objc_alloc_init, _objc_autorelease, _objc_begin_catch,
-                            _objc_end_catch, _objc_getProperty, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new,
-                            _objc_opt_respondsToSelector, _objc_release,
-                            _objc_retain, _objc_setProperty_nonatomic,
-                            _os_log_create, _printf, _strcmp, _strdup, _strerror,
-                            _xpc_connection_cancel,
-                            _xpc_connection_create_mach_service,
-                            _xpc_connection_resume, _xpc_connection_send_message,
-                            _xpc_connection_send_message_with_reply,
-                            _xpc_connection_send_message_with_reply_sync,
-                            _xpc_connection_set_event_handler,
-                            _xpc_copy_description, _xpc_dictionary_create,
-                            _xpc_dictionary_get_bool, _xpc_dictionary_get_data,
-                            _xpc_dictionary_get_double,
-                            _xpc_dictionary_get_int64,
-                            _xpc_dictionary_get_remote_connection,
-                            _xpc_dictionary_get_string, _xpc_dictionary_set_bool,
-                            _xpc_dictionary_set_data, _xpc_dictionary_set_int64,
-                            _xpc_dictionary_set_string, _xpc_get_type,
-                            _xpc_release, _xpc_retain ]
-    objc-classes:         [ _NSArray, _NSBundle, _NSData, _NSDate, _NSDateFormatter,
-                            _NSDictionary, _NSError, _NSKeyedArchiver,
-                            _NSKeyedUnarchiver, _NSMutableArray,
-                            _NSMutableDictionary, _NSMutableString,
-                            _NSNotificationCenter, _NSNumber, _NSObject,
-                            _NSProcessInfo, _NSSet, _NSString, _NSUserDefaults,
-                            _NSXPCInterface, _NSXPCListener ]
 ...

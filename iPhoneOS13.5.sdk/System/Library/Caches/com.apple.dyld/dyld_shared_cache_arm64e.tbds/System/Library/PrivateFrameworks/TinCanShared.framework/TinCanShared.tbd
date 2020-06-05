@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TinCanShared.framework/TinCanShared
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AWDTinCanAvailabilityStateReadFrom,
@@ -86,90 +84,4 @@ exports:
                             _AWDTinCanInCallEvent._eventType,
                             _AWDTinCanInCallEvent._has,
                             _AWDTinCanInCallEvent._offsetTimeMs ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFNotificationCenterAddObserver,
-                            _CFNotificationCenterGetDarwinNotifyCenter,
-                            _CFNotificationCenterRemoveEveryObserver,
-                            _CNContactEmailAddressesKey, _CNContactIdentifierKey,
-                            _CNContactLinkIdentifierKey,
-                            _CNContactPhoneNumbersKey,
-                            _CNContactStoreDidChangeNotification, _CNLabelHome,
-                            _CNLabelPhoneNumberMain, _CRAddressKindEmail,
-                            _CRAddressKindPhoneNumber, _CRRecentsDomainFaceTime,
-                            _CRRecentsDomainMessages,
-                            _IDSCopyRawAddressForDestination, _MGGetBoolAnswer,
-                            _MGGetProductType, _MGGetStringAnswer,
-                            _MKBDeviceUnlockedSinceBoot, _MKBGetDeviceLockState,
-                            _NPSHasCompletedInitialSync,
-                            _NRPairedDeviceRegistryDeviceDidPairNotification,
-                            _NSDefaultRunLoopMode,
-                            _NSPersonNamePreferencesDidChangeNotification,
-                            _NSStringFromBOOL, _NSStringFromSelector,
-                            _PBDataWriterWriteBOOLField,
-                            _PBDataWriterWriteInt64Field,
-                            _PBDataWriterWriteStringField,
-                            _PBDataWriterWriteSubmessage,
-                            _PBDataWriterWriteUint32Field,
-                            _PBDataWriterWriteUint64Field, _PBReaderPlaceMark,
-                            _PBReaderReadString, _PBReaderRecallMark,
-                            _PBReaderSkipValueWithTag, _TUHomeCountryCode,
-                            _TUStringForCallStatus, __Block_object_assign,
-                            __Block_object_dispose,
-                            __CFPreferencesSetFileProtectionClass,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___objc_personality_v0, ___stack_chk_fail,
-                            ___stack_chk_guard, __dispatch_main_q,
-                            __dispatch_queue_attr_concurrent,
-                            __dispatch_source_type_timer, __objc_empty_cache,
-                            __os_log_error_impl, __os_log_impl, _dispatch_after,
-                            _dispatch_assert_queue$V2, _dispatch_async,
-                            _dispatch_once,
-                            _dispatch_queue_attr_make_with_qos_class,
-                            _dispatch_queue_create, _dispatch_resume,
-                            _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _dispatch_source_cancel, _dispatch_source_create,
-                            _dispatch_source_set_event_handler,
-                            _dispatch_source_set_timer, _dispatch_time,
-                            _kCFPreferencesCurrentHost,
-                            _kCFPreferencesCurrentUser,
-                            _kCHCoalescingStrategyRecents,
-                            _kNPSInitialSyncCompletionDarwinNotification,
-                            _kdebug_trace, _notify_cancel,
-                            _notify_register_dispatch, _objc_alloc,
-                            _objc_alloc_init, _objc_autoreleaseReturnValue,
-                            _objc_copyWeak, _objc_destroyWeak,
-                            _objc_enumerationMutation, _objc_getAssociatedObject,
-                            _objc_getProperty, _objc_initWeak,
-                            _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new,
-                            _objc_opt_respondsToSelector, _objc_release,
-                            _objc_retain, _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_retainBlock, _objc_setAssociatedObject,
-                            _objc_storeStrong, _objc_storeWeak,
-                            _objc_unsafeClaimAutoreleasedReturnValue,
-                            _os_log_create, _os_log_type_enabled,
-                            _os_unfair_lock_lock, _os_unfair_lock_unlock ]
-    objc-classes:         [ _CHManager, _CNCoalescingTimer, _CNContact,
-                            _CNContactFormatter, _CNContactStore,
-                            _CNContactsUserDefaults, _CNFavorites, _CNLabeledValue,
-                            _CNMutableContact, _CNPhoneNumber,
-                            _CNSchedulerProvider, _CRRecentContactsLibrary,
-                            _CRSearchQuery, _IDSBatchIDQueryController,
-                            _NPSManager, _NRPairedDeviceRegistry, _NSArray,
-                            _NSBundle, _NSCharacterSet, _NSDate, _NSDictionary,
-                            _NSHashTable, _NSIndexSet, _NSMutableArray,
-                            _NSMutableDictionary, _NSMutableOrderedSet,
-                            _NSMutableSet, _NSMutableString, _NSNotificationCenter,
-                            _NSNumber, _NSObject, _NSPredicate, _NSRunLoop, _NSSet,
-                            _NSString, _NSTimer, _NSURLComponents, _NSURLQueryItem,
-                            _NSUserDefaults, _NSXPCConnection, _NSXPCInterface,
-                            _NSXPCListener, _PBCodable, _TUCall, _TUDialRequest,
-                            _TUPhoneNumber, _UIApplication ]
-    objc-ivars:           [ _PBDataReader._bytes, _PBDataReader._error,
-                            _PBDataReader._length, _PBDataReader._pos ]
 ...

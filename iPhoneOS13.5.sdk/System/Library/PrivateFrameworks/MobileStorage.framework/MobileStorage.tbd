@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileStorage.framework/MobileStorage
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MobileStorageCopyAndFixPlist,
@@ -46,71 +44,4 @@ exports:
                             _kPTPCameraAttachedNotification,
                             _kStorageMounterName ]
     objc-classes:         [ _PlistProcessor ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFArrayGetCount, _CFArrayGetValueAtIndex,
-                            _CFDataCreate, _CFDataGetBytePtr, _CFDataGetLength,
-                            _CFDataGetTypeID, _CFDictionaryCreateMutable,
-                            _CFDictionaryGetValue, _CFDictionarySetValue, _CFEqual,
-                            _CFGetTypeID, _CFPropertyListCreateData,
-                            _CFPropertyListCreateWithData, _CFRelease, _CFRetain,
-                            _CFStringCreateWithBytes, _CFStringCreateWithCString,
-                            _CFStringGetCString, _CFStringGetTypeID,
-                            _CFURLCopyLastPathComponent,
-                            _CFURLCreateFromFileSystemRepresentation,
-                            _CFURLCreateWithString, _IOBSDNameMatching,
-                            _IOIteratorNext, _IOObjectConformsTo, _IOObjectRelease,
-                            _IOObjectRetain, _IORegistryEntryCreateCFProperties,
-                            _IORegistryEntryCreateCFProperty,
-                            _IORegistryEntryCreateIterator,
-                            _IORegistryEntryGetParentEntry,
-                            _IORegistryEntrySearchCFProperty,
-                            _IOServiceGetMatchingService,
-                            _IOServiceGetMatchingServices, _IOServiceMatching,
-                            _NSLocalizedDescriptionKey, _NSUnderlyingErrorKey,
-                            __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___chkstk_darwin, ___error, ___objc_personality_v0,
-                            ___snprintf_chk, ___stack_chk_fail, ___stack_chk_guard,
-                            ___strlcpy_chk, __objc_empty_cache,
-                            __os_log_debug_impl, __os_log_default, __os_log_impl,
-                            __xpc_error_connection_invalid,
-                            __xpc_error_key_description, __xpc_type_array,
-                            __xpc_type_bool, __xpc_type_connection,
-                            __xpc_type_data, __xpc_type_date,
-                            __xpc_type_dictionary, __xpc_type_double,
-                            __xpc_type_error, __xpc_type_fd, __xpc_type_int64,
-                            __xpc_type_null, __xpc_type_shmem, __xpc_type_string,
-                            __xpc_type_uint64, __xpc_type_uuid, _bzero, _close,
-                            _dispatch_once, _free, _getfsstat, _kCFAllocatorDefault,
-                            _kCFBooleanFalse, _kCFBooleanTrue,
-                            _kCFTypeDictionaryKeyCallBacks,
-                            _kCFTypeDictionaryValueCallBacks,
-                            _kIOMasterPortDefault, _lchflags, _lstat, _malloc, _mkdir,
-                            _objc_alloc, _objc_alloc_init,
-                            _objc_autoreleaseReturnValue,
-                            _objc_enumerationMutation, _objc_msgSend,
-                            _objc_opt_class, _objc_opt_isKindOfClass,
-                            _objc_release, _objc_retain, _objc_retainAutorelease,
-                            _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue, _open,
-                            _os_log_type_enabled,
-                            _os_variant_allows_internal_security_policies, _read,
-                            _realpath$DARWIN_EXTSN, _removefile,
-                            _removefile_state_alloc, _removefile_state_free,
-                            _removefile_state_get, _removefile_state_set, _strcmp,
-                            _strdup, _strlen, _strncmp, _strnstr, _strtol, _unlink,
-                            _xpc_connection_cancel,
-                            _xpc_connection_create_mach_service,
-                            _xpc_connection_resume,
-                            _xpc_connection_send_message_with_reply_sync,
-                            _xpc_connection_set_event_handler,
-                            _xpc_copy_description, _xpc_dictionary_create,
-                            _xpc_dictionary_get_data, _xpc_dictionary_get_string,
-                            _xpc_dictionary_set_data, _xpc_get_type ]
-    objc-classes:         [ _NSArray, _NSCharacterSet, _NSDictionary, _NSError,
-                            _NSFileManager, _NSMutableArray, _NSMutableData,
-                            _NSMutableDictionary, _NSMutableString, _NSNumber,
-                            _NSObject, _NSString ]
 ...

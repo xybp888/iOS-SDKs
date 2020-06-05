@@ -1,11 +1,9 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TimeSync.framework/TimeSync
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _TSASCapableKey,
@@ -465,78 +463,4 @@ exports:
                             _TSgPTPTime._timeTraceable,
                             ___TSKernelClockNotification._clock,
                             ___TSgPTPPortNotification._port ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CFBooleanGetValue, _CFDataGetBytePtr,
-                            _CFDictionaryRemoveValue, _CFRelease, _CFRetain,
-                            _DNSServiceBrowse, _DNSServiceGetAddrInfo,
-                            _DNSServiceRefDeallocate, _DNSServiceRegister,
-                            _DNSServiceResolve, _DNSServiceSetDispatchQueue,
-                            _IOConnectCallAsyncScalarMethod,
-                            _IOConnectCallMethod, _IOConnectCallScalarMethod,
-                            _IOConnectCallStructMethod, _IOIteratorNext,
-                            _IOMasterPort, _IONotificationPortCreate,
-                            _IONotificationPortDestroy,
-                            _IONotificationPortGetMachPort,
-                            _IONotificationPortSetDispatchQueue,
-                            _IOObjectConformsTo, _IOObjectGetClass,
-                            _IOObjectRelease, _IOObjectRetain,
-                            _IORegistryEntryCreateCFProperties,
-                            _IORegistryEntryCreateCFProperty,
-                            _IORegistryEntryGetChildIterator,
-                            _IORegistryEntryGetParentEntry,
-                            _IORegistryEntryGetParentIterator,
-                            _IOServiceAddInterestNotification,
-                            _IOServiceAddMatchingNotification, _IOServiceClose,
-                            _IOServiceGetMatchingService,
-                            _IOServiceGetMatchingServices, _IOServiceMatching,
-                            _IOServiceOpen, _NSClassFromString,
-                            _NSInvalidArgumentException,
-                            _NSLocalizedDescriptionKey,
-                            _NSLocalizedFailureReasonErrorKey,
-                            _NSStringFromClass, _NSStringFromSelector,
-                            __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            ___CFConstantStringClassReference, ___assert_rtn,
-                            ___error, ___stack_chk_fail, ___stack_chk_guard,
-                            __dispatch_queue_attr_concurrent, __objc_empty_cache,
-                            __os_log_debug_impl, __os_log_default,
-                            __os_log_error_impl, __os_log_impl, _bzero, _calloc,
-                            _close, _connect, _cos, _dispatch_async,
-                            _dispatch_get_global_queue, _dispatch_group_async,
-                            _dispatch_group_create, _dispatch_group_wait,
-                            _dispatch_once, _dispatch_queue_create,
-                            _dispatch_release, _dispatch_retain,
-                            _dispatch_semaphore_create,
-                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
-                            _dispatch_sync, _dispatch_time, _fclose, _fcntl, _fopen,
-                            _fprintf, _free, _fwrite, _if_indextoname,
-                            _kCFAllocatorDefault, _kIOMasterPortDefault,
-                            _mach_absolute_time, _mach_task_self_,
-                            _mach_thread_self, _mach_timebase_info, _malloc, _memcmp,
-                            _memcpy, _objc_alloc, _objc_alloc_init,
-                            _objc_autorelease, _objc_autoreleasePoolPop,
-                            _objc_autoreleasePoolPush, _objc_destroyWeak,
-                            _objc_enumerationMutation, _objc_getProperty,
-                            _objc_loadWeak, _objc_msgSend, _objc_msgSendSuper2,
-                            _objc_opt_class, _objc_opt_isKindOfClass,
-                            _objc_opt_respondsToSelector, _objc_release,
-                            _objc_retain, _objc_setProperty_nonatomic,
-                            _objc_setProperty_nonatomic_copy, _objc_storeWeak,
-                            _os_log_type_enabled, _printf, _pthread_cond_destroy,
-                            _pthread_cond_init,
-                            _pthread_cond_timedwait_relative_np,
-                            _pthread_mutex_destroy, _pthread_mutex_init,
-                            _pthread_mutex_lock, _pthread_mutex_unlock,
-                            _semaphore_create, _semaphore_destroy,
-                            _semaphore_signal, _semaphore_wait, _sin, _socket, _sysctl,
-                            _thread_policy_set, _usleep, _vDSP_conv, _vDSP_maxvD,
-                            _vDSP_maxvi, _vDSP_meanv, _vDSP_meanvD, _vDSP_svesqD,
-                            _vDSP_vabs, _vDSP_vaddD, _vDSP_vqint, _vDSP_vsmul,
-                            _vDSP_vsmulD, _vDSP_vsubD, _vDSP_vswmaxD ]
-    objc-classes:         [ _NSArray, _NSBundle, _NSData, _NSDate, _NSDictionary,
-                            _NSError, _NSException, _NSISO8601DateFormatter,
-                            _NSMutableArray, _NSMutableData, _NSMutableDictionary,
-                            _NSMutableString, _NSNumber, _NSObject, _NSPointerArray,
-                            _NSProcessInfo, _NSSet, _NSString, _NSThread, _NSTimeZone ]
 ...

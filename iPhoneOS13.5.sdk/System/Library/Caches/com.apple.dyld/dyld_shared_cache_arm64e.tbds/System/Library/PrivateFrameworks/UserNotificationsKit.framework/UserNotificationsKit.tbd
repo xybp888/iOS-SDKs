@@ -1,14 +1,12 @@
---- !tapi-tbd-v2
+---
 archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              ios
-flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UserNotificationsKit.framework/UserNotificationsKit
 current-version:       1
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64, arm64e ]
-    allowable-clients:    [ CoverSheet, Crescent, SpringBoard, SpringBoardCore,
+    allowed-clients:      [ CoverSheet, Crescent, SpringBoard, SpringBoardCore,
                             "SpringBoardCore-Tests", "SpringBoardFramework-Tests",
                             UNUIKitTestsHostApp, UserNotificationsKitTests,
                             UserNotificationsUI, UserNotificationsUIKit,
@@ -143,36 +141,4 @@ exports:
                             _NCNotificationSound._soundType,
                             _NCNotificationSound._systemSoundID,
                             _NCNotificationSound._vibrationPattern ]
-undefineds:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _BSDispatchMain, _BSDispatchQueueAssertMain,
-                            _NSStringFromClass,
-                            _UNNotificationDefaultActionIdentifier,
-                            _UNNotificationDismissActionIdentifier, _UNSafeCast,
-                            __Block_object_assign, __Block_object_dispose,
-                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
-                            __Unwind_Resume, ___CFConstantStringClassReference,
-                            ___NSArray0__, ___objc_personality_v0,
-                            ___stack_chk_fail, ___stack_chk_guard,
-                            __objc_empty_cache, __os_activity_create,
-                            __os_activity_current, __os_log_debug_impl,
-                            __os_log_error_impl, __os_log_impl, _dispatch_once,
-                            _objc_alloc, _objc_alloc_init,
-                            _objc_autoreleaseReturnValue, _objc_destroyWeak,
-                            _objc_enumerationMutation, _objc_getProperty,
-                            _objc_loadWeakRetained, _objc_msgSend,
-                            _objc_msgSendSuper2, _objc_opt_class,
-                            _objc_opt_isKindOfClass, _objc_opt_new,
-                            _objc_opt_respondsToSelector, _objc_release,
-                            _objc_retain, _objc_retainAutoreleaseReturnValue,
-                            _objc_retainAutoreleasedReturnValue,
-                            _objc_setProperty_atomic, _objc_storeStrong,
-                            _objc_storeWeak,
-                            _objc_unsafeClaimAutoreleasedReturnValue,
-                            _os_activity_scope_enter, _os_activity_scope_leave,
-                            _os_log_create, _os_log_type_enabled ]
-    objc-classes:         [ _BSDescriptionBuilder, _NSArray, _NSBundle, _NSDate,
-                            _NSHashTable, _NSMutableArray, _NSMutableDictionary,
-                            _NSMutableSet, _NSMutableString, _NSObject, _NSPredicate,
-                            _NSSet, _NSString, _NSUserDefaults ]
 ...
