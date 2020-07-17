@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 25A12018-F847-39E2-9294-352F85DE348E', 'armv7s: 5157B3DF-FCCD-3659-8FD2-29DD8890965C', 
+                   'arm64: EBB804D8-5EA6-39DE-8CE9-06F0942257A4', 'arm64e: 09E587C5-79FC-3D65-8DA6-679E9634BD64' ]
+platform:        ios
+install-name:    '/usr/lib/libgermantok.dylib'
+exports:         
+  - archs:           [ armv7, armv7s ]
+    symbols:         [ ___gt_mutex, _btrie_build, _btrie_close, _btrie_common_prefix_search, 
+                       _btrie_data, _btrie_exact_match_search, _btrie_open, _btrie_prefix_match_search, 
+                       _btrie_wildcard_match_search ]
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _germantok_tokenize ]
+...

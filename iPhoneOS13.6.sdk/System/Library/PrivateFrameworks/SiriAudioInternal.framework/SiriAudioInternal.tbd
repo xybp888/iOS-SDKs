@@ -1,0 +1,20 @@
+---
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/SiriAudioInternal.framework/SiriAudioInternal
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    allowed-clients:      [ AudioInternalIntentExtension, IntentsServices,
+                            SiriAudioDESPlugin, SiriAudioHeavyweightTests,
+                            SiriAudioInternal, SiriAudioInternalTests,
+                            SiriAudioSupport, SiriAudioSupportIntegrationTests,
+                            SiriAudioSupportTests, siriaudio_helper ]
+    symbols:              [ _SiriAudioInternalVersionNumber,
+                            _SiriAudioInternalVersionString ]
+    objc-classes:         [ __TtC17SiriAudioInternal23INAddMediaIntentHandler,
+                            __TtC17SiriAudioInternal24INPlayMediaIntentHandler,
+                            __TtC17SiriAudioInternal29INSearchForMediaIntentHandler,
+                            __TtC17SiriAudioInternal34INUpdateMediaAffinityIntentHandler ]
+...

@@ -1,0 +1,36 @@
+---
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/LoginPerformanceKit.framework/LoginPerformanceKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LPKIsRestrictionlessLoginEnabled,
+                            _LoginPerformanceKitVersionNumber,
+                            _LoginPerformanceKitVersionString,
+                            _kLocalUserSwitchDestination,
+                            _kLocalUserSwitchTestCycleCountKey,
+                            _kLocalUserSwitchTestHasFinishedSuccessfullyKey,
+                            _kLocalUserSwitchTestOngoingKey,
+                            _kLocalUserSwitchTestPasswordKey,
+                            _kLocalUserSwitchTestTypeKey,
+                            _kLocalUserSwitchTestUsernameKey ]
+    objc-classes:         [ _LPKLoginEvent, _LPKLogoutEvent,
+                            _LPKPerfResultAnalyzer, _LPKPerfResultEntry,
+                            _LPKPerformanceTestIntermediary, _LPKSignpostEvent,
+                            _LPKUserSwitchCycleController, _LPKUserSwitchEvent ]
+    objc-ivars:           [ _LPKPerfResultEntry._entryName,
+                            _LPKPerfResultEntry._entryValues,
+                            _LPKPerfResultEntry._meanValue,
+                            _LPKPerfResultEntry._medianValue,
+                            _LPKPerfResultEntry._needsReCalculation,
+                            _LPKSignpostEvent._duration,
+                            _LPKSignpostEvent._endDate, _LPKSignpostEvent._name,
+                            _LPKSignpostEvent._processName,
+                            _LPKSignpostEvent._startDate,
+                            _LPKUserSwitchCycleController._delegate,
+                            _LPKUserSwitchEvent._endDate,
+                            _LPKUserSwitchEvent._signposts,
+                            _LPKUserSwitchEvent._startDate ]
+...

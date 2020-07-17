@@ -1,0 +1,20 @@
+---
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/PipelineKit.framework/PipelineKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    allowed-clients:      [ MediaMiningKit, PhotoAnalysis, PhotosGraph ]
+    symbols:              [ _PIErrorDomain, _PipelineKitVersionNumber,
+                            _PipelineKitVersionString,
+                            _kPIReachabilityChangedNotification ]
+    objc-classes:         [ _PICLGeocoderOperation, _PIEKEventStoreOperation,
+                            _PIError, _PIGroup, _PILogging,
+                            _PIMKLocalSearchOperation, _PIOperation,
+                            _PIOperationSubclass, _PIPipeline, _PIReachability,
+                            _PIStatisticsElapsedTime, _PIURLDataOperation,
+                            _PIURLDownloadOperation,
+                            _PIURLSessionOperationSubclass ]
+...

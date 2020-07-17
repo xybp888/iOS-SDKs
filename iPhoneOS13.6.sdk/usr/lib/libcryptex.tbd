@@ -1,0 +1,13 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
+                   'arm64: 813CEEC5-8B7A-3323-B418-D5F76FFAE8A0', 'arm64e: 4B22B7EE-B5C9-310A-BCB3-CAD197BCF162' ]
+platform:        ios
+install-name:    '/usr/lib/libcryptex.dylib'
+current-version: 9.100.8
+exports:         
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    re-exports:      [ '/usr/lib/libcryptex_core.dylib' ]
+    symbols:         [ __cryptex_version, _codex_copy_cryptex, _codex_copy_system, 
+                       _codex_install_candidate, _cryptex_candidate_create ]
+...

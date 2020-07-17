@@ -1,0 +1,16 @@
+---
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+install-name:          /usr/lib/libsysdiagnose.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _metricCompression, _metricGetLogCopying,
+                            _metricGetLogGeneration, _metricGetOSLogArchive,
+                            _metricGetTimeSensitive, _metricLogCopying,
+                            _metricLogGeneration, _metricOSLogarchiveGeneration,
+                            _metricStartToTar, _metricTimeSensitive,
+                            _metricTotalSize, _sdProgressPercent, _sdProgressPhase ]
+    objc-classes:         [ _Libsysdiagnose ]
+...

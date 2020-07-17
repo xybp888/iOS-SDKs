@@ -1,0 +1,33 @@
+---
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared,
+                            /System/Library/PrivateFrameworks/SafariSharedUI.framework/SafariSharedUI ]
+    symbols:              [ _WBUABAddressKey, _WBUABStreetKey,
+                            _WBUAutoFillClearDataClasses,
+                            _WBUAutoFillDisableDataClasses,
+                            _WBUAutoFillGetEnabledDataClasses,
+                            _WBUFeatureManagerCloudKitBookmarksAvailabilityDidChangeNotification,
+                            _WBUFeatureManagerCloudTabsAvailabilityDidChangeNotification,
+                            _WBUFormAutoFillPasswordGenerationAssistanceBecameAvailableNotification,
+                            _WBUPasswordGenerationExistingPasswordOverwrittenOnAppSuspendAggdKey,
+                            _WBUPasswordGenerationExistingPasswordOverwrittenOnViewCloseAggdKey,
+                            _WBUPasswordGenerationPasswordAcceptedAggdKey,
+                            _WBUPasswordGenerationPasswordSavedAggdKey,
+                            _WBUPasswordGenerationPromptShownAggdKey,
+                            _incrementAggdKey, _setAggdKey,
+                            _webuiCookieAcceptPolicyPreferencesKey ]
+    objc-classes:         [ _WBUAlertController, _WBUAutoFillDisplayData,
+                            _WBUCreditCardDataController, _WBUFeatureManager,
+                            _WBUFormAutoFillPrompt, _WBUFormAutoFillWhiteList,
+                            _WBUFormDataController,
+                            _WBUGeneratedPasswordCredentialUpdateRequest,
+                            _WBUGeneratedPasswordCredentialUpdater, _WBUHistory,
+                            _WBUSheetController, _WebUIAlert,
+                            _WebUICertificateError, __WBUDynamicMeCard ]
+...

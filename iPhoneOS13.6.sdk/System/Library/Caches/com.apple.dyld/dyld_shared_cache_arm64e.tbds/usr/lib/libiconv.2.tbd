@@ -1,0 +1,13 @@
+---
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+install-name:          /usr/lib/libiconv.2.dylib
+current-version:       7
+compatibility-version: 7
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /usr/lib/libcharset.1.dylib ]
+    symbols:              [ __libiconv_version, _iconv, _iconv_canonicalize,
+                            _iconv_close, _iconv_open, _iconvctl, _iconvlist,
+                            _libiconv_set_relocation_prefix ]
+...

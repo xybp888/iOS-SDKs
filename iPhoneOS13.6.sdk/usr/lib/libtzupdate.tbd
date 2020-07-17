@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 6668D2AE-0647-367E-8669-02B4B34688C1', 'armv7s: 157D20C1-67E7-3E5D-890E-54C892ED4E53', 
+                   'arm64: B5DB437E-EB46-34B1-9FAE-76A0FEA6E22E', 'arm64e: 917E5BB2-063E-301F-B65B-454A2D878602' ]
+platform:        ios
+install-name:    '/usr/lib/libtzupdate.dylib'
+exports:         
+  - archs:           [ armv7, armv7s ]
+    symbols:         [ _TZDAssetError, _TZDErrorDomain, _kTZXPCConnectionEntitlement, 
+                       _kTZXPCConnectionName, _libtzupdateVersionNumber, _libtzupdateVersionString ]
+    objc-classes:    [ TZDLogging, TZDeviceInfoHelper, TZFileSystemInterface, TZPreferencesController, 
+                       TZUtilities, TZVersionInfo, TZXPCConstants ]
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:    [ TZUpdate ]
+...
