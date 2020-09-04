@@ -1,0 +1,25 @@
+---
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/ReminderMigration.framework/ReminderMigration
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _kCalAccountIdentifierDictionaryKey,
+                            _kCalAccountTypeDictionaryKey, _kCalBackupFileName,
+                            _kCalDefaultListName,
+                            _kCalLastReminderMigrationCleanupSystemVersionDefaultsKey,
+                            _kCalLocalAccountName,
+                            _kCalMaximumCalendarDirectorySizeAllowedForBackupInBytes,
+                            _kCalReminderMigrationErrorDomain,
+                            _kCalShouldBackupBeforeReminderMigrationDefaultsKey,
+                            _kCalendarDatabaseCalendarDirectoryRelativeToHome ]
+    objc-classes:         [ _CalCalendarDatabaseReminderMigrator,
+                            _CalDefaultReminderKitDatabaseMigrationContext,
+                            _CalDefaultReminderKitProvider,
+                            _CalDefaultReminderMigrationDefaultsProvider,
+                            _CalInProcessReminderMigrator,
+                            _CalReminderMigrationFailure,
+                            _CalReminderMigrationLog ]
+...

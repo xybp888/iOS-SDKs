@@ -1,0 +1,16 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 313375A3-9C25-329A-A4B4-B26F4138ADCD', 'armv7s: 625AAF2B-E8C2-3B12-93AA-CA6EF45E5E34', 
+                   'arm64: 39453AF6-E5E4-3DB0-BB34-C99580C9BEF0', 'arm64e: 6735FEB5-870E-3B55-B2C5-6492F12A01FC' ]
+platform:        ios
+install-name:    '/usr/lib/libTelephonyDebugDynamic.dylib'
+exports:         
+  - archs:           [ armv7, armv7s ]
+    weak-def-symbols: [ __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _TelephonyBasebandWatchdogStart, _TelephonyBasebandWatchdogStartWithStackshot, 
+                       _TelephonyBasebandWatchdogStop ]
+...

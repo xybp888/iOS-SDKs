@@ -1,0 +1,31 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 09A6C896-886A-333C-A7CE-A62F458B8096', 'armv7s: 2B542DFB-C92B-3E56-ACAB-556DF08E8F4F', 
+                   'arm64: 02CF6CCA-2C73-3B66-9B4B-2EC487741DD7', 'arm64e: 904C2496-56B6-3CF4-ABAC-9BF9DD111597' ]
+platform:        ios
+install-name:    '/usr/lib/libPCITransport.dylib'
+exports:         
+  - archs:           [ armv7, armv7s ]
+    symbols:         [ __ZN3pci5event8Listener6notifyE12abpErrorTypePvS3_, __ZN3pci5event8Listener9notifyPDPE17abpPDPMessageTypePv ]
+    weak-def-symbols: [ __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__114default_deleteIN3pci5event8ListenerEEE, __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
+  - archs:           [ arm64, arm64e ]
+    symbols:         [ __ZN3pci5event8Listener6notifyENSt3__14pairINS_9transport6kernel7variantEjEEPvS8_, 
+                       __ZN3pci5event8Listener9notifyPDPENSt3__14pairINS_9transport6kernel7variantEjEEPv, 
+                       __ZN3pci9transport13kernelControl6createEv, __ZN3pci9transport6kernel12probeVariantEv, 
+                       __ZN3pci9transport6kernel13errorAsStringENSt3__14pairINS1_7variantEjEE, 
+                       __ZN3pci9transport6kernel15errorAsUnsignedENSt3__14pairINS1_7variantEjEE, 
+                       __ZN3pci9transport6kernel16isServicePresentEPKc, __ZN3pci9transport6kernel6createEv, 
+                       __ZNK3pci9transport6kernel21getTimesyncBufferSizeEj, __ZNK3pci9transport6kernel22marshalTimesyncResultsEPvj ]
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _TelephonyBasebandPCITransportCreate, _TelephonyBasebandPCITransportDeregisterTimeEvent, 
+                       _TelephonyBasebandPCITransportInitParameters, _TelephonyBasebandPCITransportMapRegion, 
+                       _TelephonyBasebandPCITransportRegisterTimeEvent, _TelephonyBasebandPCITransportTimesync, 
+                       _TelephonyBasebandPCITransportUnmapRegion, __ZN3pci5event8Listener4initEv, 
+                       __ZN3pci5event8Listener6createEN8dispatch5blockIU13block_pointerFvNS0_4typeEONSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEjEEEP11__CFRunLoop, 
+                       __ZN3pci5event8ListenerC1EN8dispatch5blockIU13block_pointerFvNS0_4typeEONSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEjEEEP11__CFRunLoop, 
+                       __ZN3pci5event8ListenerC2EN8dispatch5blockIU13block_pointerFvNS0_4typeEONSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEjEEEP11__CFRunLoop, 
+                       __ZN3pci5event8ListenerD1Ev, __ZN3pci5event8ListenerD2Ev ]
+...

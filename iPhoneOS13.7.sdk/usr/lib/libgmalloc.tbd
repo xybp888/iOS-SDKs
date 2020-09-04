@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 2FD58707-F690-3198-949A-29E0CEA75071', 'armv7s: CF23BDEE-01DF-35B2-85EC-5CBB7B6F09CD', 
+                   'arm64: F8F4E10F-C0EF-3599-B044-B9B8C279A468', 'arm64e: E956C901-F0DB-3B97-B441-7F09F8170925' ]
+platform:        ios
+install-name:    '/usr/lib/libgmalloc.dylib'
+exports:         
+  - archs:           [ armv7, armv7s ]
+    symbols:         [ _GM_malloc_fork_child, _GM_malloc_fork_parent, _GM_malloc_fork_prepare, 
+                       _GMcalloc, _GMfree, _GMmalloc, _GMmalloc_create_zone, _GMmalloc_default_purgeable_zone, 
+                       _GMmalloc_default_zone, _GMmalloc_good_size, _GMmalloc_make_nonpurgeable, 
+                       _GMmalloc_make_purgeable, _GMmalloc_set_zone_name, _GMmprotect, 
+                       _GMposix_memalign, _GMrealloc, _GMvalloc, _GuardMalloc_check, 
+                       _GuardMalloc_checkEnviron, _GuardMalloc_createZone, _GuardMalloc_destroyZone, 
+                       _GuardMalloc_enumerator, _GuardMalloc_force_lock, _GuardMalloc_force_unlock, 
+                       _GuardMalloc_free, _GuardMalloc_freeInternal, _GuardMalloc_goodSize, 
+                       _GuardMalloc_initializeBuckets, _GuardMalloc_introspect, _GuardMalloc_log, 
+                       _GuardMalloc_nodeSize, _GuardMalloc_noteAllocation, _GuardMalloc_noteFree, 
+                       _GuardMalloc_printPtr, _GuardMalloc_printZone, _GuardMalloc_statistics, 
+                       _GuardMalloc_validateHeader, _GuardMalloc_zone_locked, _addrLock, 
+                       _breakIfDebugging, _checkPointer, _libgmallocVersionNumber, 
+                       _libgmallocVersionString, _malloc_printf, _malloc_printf_for_ABORT, 
+                       _protectBefore ]
+...

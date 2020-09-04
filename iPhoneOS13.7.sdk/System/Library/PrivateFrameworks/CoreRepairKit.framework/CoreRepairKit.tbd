@@ -1,0 +1,22 @@
+---
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/CoreRepairKit.framework/CoreRepairKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CoreRepairKitVersionNumber,
+                            _CoreRepairKitVersionString, __logHandler, _connObj,
+                            _getDeviceChemID, _hasHadBatteryRepair,
+                            _hasHadBatteryRepairUsingCBCC,
+                            _kMRDataCollectionQueryTimeout ]
+    objc-classes:         [ _CRFDRSeal, _CRRepairStatus, _MRDataCollectionNotice ]
+    objc-ivars:           [ _CRFDRSeal.FDRCAURL, _CRFDRSeal.FDRDSURL,
+                            _CRFDRSeal.FDRSealingURL, _CRFDRSeal.apTicketData,
+                            _CRFDRSeal.dataDirectoryURL, _CRFDRSeal.delegate,
+                            _CRFDRSeal.doSeal, _CRFDRSeal.enableProxy,
+                            _CRFDRSeal.metadataDict, _CRFDRSeal.serialNumber,
+                            _CRFDRSeal.trustObjectURL, _CRFDRSeal.updateClassStr,
+                            _CRFDRSeal.updatePropertiesStr ]
+...

@@ -1,0 +1,22 @@
+---
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+install-name:          /System/Library/Frameworks/MetricKit.framework/MetricKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/PrivateFrameworks/SignpostMetrics.framework/SignpostMetrics ]
+    symbols:              [ _MetricKitVersionNumber, _MetricKitVersionString ]
+    objc-classes:         [ _MXAppLaunchMetric, _MXAppResponsivenessMetric,
+                            _MXAppRunTimeMetric, _MXAverage, _MXCPUMetric,
+                            _MXCellularConditionMetric, _MXDiskIOMetric,
+                            _MXDisplayMetric, _MXFramerateMetric, _MXGPUMetric,
+                            _MXHistogram, _MXHistogramBucket,
+                            _MXLocationActivityMetric, _MXMemoryMetric,
+                            _MXMetaData, _MXMetric, _MXMetricManager,
+                            _MXMetricPayload, _MXNetworkTransferMetric,
+                            _MXResourceExceptionMetric, _MXSignpostIntervalData,
+                            _MXSignpostMetric, _MXUnitAveragePixelLuminance,
+                            _MXUnitSignalBars ]
+...

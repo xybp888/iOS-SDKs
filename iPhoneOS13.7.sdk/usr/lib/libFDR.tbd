@@ -1,0 +1,61 @@
+--- !tapi-tbd-v3
+archs:           [ armv7, armv7s, arm64, arm64e ]
+uuids:           [ 'armv7: 06679423-8432-30F7-B26C-54DC4540D634', 'armv7s: 3E08F7BA-A82B-3C3E-AFEA-07923C33315E', 
+                   'arm64: D8A47E03-A0C9-3790-AC51-D35125627315', 'arm64e: 29A1BA81-3495-3817-8279-134FB48F8EC2' ]
+platform:        ios
+install-name:    '/usr/lib/libFDR.dylib'
+exports:         
+  - archs:           [ armv7, armv7s ]
+    symbols:         [ _AMFDRGetVersion, _AMFDRSealingMapSetMGCopyAnswer ]
+  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    symbols:         [ _AMFDRAppendPermissionsString, _AMFDRCertificateSigningRequest, 
+                       _AMFDRCertificationRequest, _AMFDRClearMemoryStore, _AMFDRCopyClientId, 
+                       _AMFDRCopyDeviceKeys, _AMFDRCopyDisposableKeys, _AMFDRCopyLibraryVersionString, 
+                       _AMFDRCopyUnderlyingDictionary, _AMFDRCreateInstanceString, 
+                       _AMFDRCreateLocalPending, _AMFDRCreatePermissionsString, _AMFDRCreateTypeWithOptions, 
+                       _AMFDRCreateWithOptions, _AMFDRCryptoCreateCsr, _AMFDRCryptoCreateSignedCsr, 
+                       _AMFDRDataApTicketCopyObjectProperty, _AMFDRDataApTicketIsTrusted, 
+                       _AMFDRDataApTicketPopulate, _AMFDRDataAppendPermissionsString, 
+                       _AMFDRDataCopy, _AMFDRDataCopyDigest, _AMFDRDataCopyRawAndFormatted, 
+                       _AMFDRDataCopySslRoots, _AMFDRDataCopyTrustObject, _AMFDRDataCreatePermissionsString, 
+                       _AMFDRDataDelete, _AMFDRDataExport, _AMFDRDataGetSigningVersion, 
+                       _AMFDRDataHttpChallengeClaim, _AMFDRDataIterate, _AMFDRDataLocalCreateFullKey, 
+                       _AMFDRDataMultiClaim, _AMFDRDataMultiCopy, _AMFDRDataMultiDelete, 
+                       _AMFDRDataMultiExport, _AMFDRDataMultiPut, _AMFDRDataPrefetch, 
+                       _AMFDRDataPresent, _AMFDRDataPut, _AMFDRDataPutForSysCfgKey, 
+                       _AMFDRDataRecover, _AMFDRDataSetApTicketAndGetNewestTrustObject, 
+                       _AMFDRDeviceRefKeyCopyAttestation, _AMFDRDeviceRefKeyCopyKeyBlob, 
+                       _AMFDRDeviceRefKeyCreate, _AMFDRDeviceRefKeyCreateWithData, 
+                       _AMFDRDeviceRefKeyGetPublicKey, _AMFDRDeviceRefKeySign, _AMFDRFlushMemoryStoreToFile, 
+                       _AMFDRGetCert, _AMFDRGetInfo, _AMFDRGetMemoryStore, _AMFDRGetOptions, 
+                       _AMFDRGetTrustError, _AMFDRGetTypeID, _AMFDRIsSupported, _AMFDRLoadMemoryStoreFromFile, 
+                       _AMFDRLogSetHandler, _AMFDRModuleCertification, _AMFDRPerformManifestCheck, 
+                       _AMFDRPermissionsRequest, _AMFDRRegisterModuleChallengeCallback, 
+                       _AMFDRSealedDataCommit, _AMFDRSealedDataConfigureOptionsForRecover, 
+                       _AMFDRSealedDataCreate, _AMFDRSealedDataCreateSealingRequest, 
+                       _AMFDRSealedDataGetTypeID, _AMFDRSealedDataIsEmpty, _AMFDRSealedDataPopulate, 
+                       _AMFDRSealedDataRestoreOptions, _AMFDRSealedDataVerify, _AMFDRSealingManifestCopyDataClassesInstancesAndProperties, 
+                       _AMFDRSealingMapAutoChallengeClaim, _AMFDRSealingMapCallMGCopyAnswer, 
+                       _AMFDRSealingMapCopyInstanceForClass, _AMFDRSealingMapCopyInstanceWithIdentifiers, 
+                       _AMFDRSealingMapCopyLocalData, _AMFDRSealingMapCopyLocalDataForClass, 
+                       _AMFDRSealingMapCopyManifestProperties, _AMFDRSealingMapCopyManifestPropertiesForDevice, 
+                       _AMFDRSealingMapCopyMultiInstanceForClass, _AMFDRSealingMapCopyMultiInstanceWithIdentifiers, 
+                       _AMFDRSealingMapCopyRequiredIdentifiers, _AMFDRSealingMapCreateAndPopulateSealedData, 
+                       _AMFDRSealingMapCreateRecoveryPermissions, _AMFDRSealingMapCreateRecoveryPermissionsWithOption, 
+                       _AMFDRSealingMapEntryHasAttribute, _AMFDRSealingMapGetEntriesForDevice, 
+                       _AMFDRSealingMapGetEntry, _AMFDRSealingMapGetFDRDataVersionForDevice, 
+                       _AMFDRSealingMapGetFDRManifestVersionForDevice, _AMFDRSealingMapPopulateSealingManifest, 
+                       _AMFDRSealingMapRecoverCurrentDevice, _AMFDRSealingMapRecoverCurrentDeviceWithMemoryStore, 
+                       _AMFDRSealingMapVerifyAndCommitSealedData, _AMFDRSealingMapVerifySealing, 
+                       _AMFDRSealingMapVerifySealingManifestPropertyMatching, _AMFDRServicePreflightRecoveryCopyData, 
+                       _AMFDRSetCopyMGOverrideCallback, _AMFDRSetMemoryStore, _AMFDRSetOption, 
+                       _AMFDRSetRecoveryVerifier, _AMFDRSetSealingMap, _AMFDRSetSsoCreateServiceTicketCallback, 
+                       _kAMFDRSealingMapAttributeChallengeClaim, _kAMFDRSealingMapAttributeDeviceOnlySigning, 
+                       _kAMFDRSealingMapAttributeGeneratedByRestore, _kAMFDRSealingMapAttributePopulateIORegistry, 
+                       _kAMFDRSealingMapAttributePopulateSysCfg, _kAMFDRSealingMapAttributeRequiredToPerformManifestCheck, 
+                       _kAMFDRSealingMapAttributeRequiredToSeal, _kAMFDRSealingMapAttributeServerOnlySigning, 
+                       _kAMFDRSealingMapAttributeStoreCombined, _kAMFDRSealingMapAttributeVersion2, 
+                       _kAMFDRSealingMapAttributes, _kAMFDRSealingMapDataInstanceIdentifier, 
+                       _kAMFDRSealingMapDataInstanceIdentifierList, _kAMFDRSealingMapMaxSize, 
+                       _kAMFDRSealingMapMultiDataInstanceIdentifierList, _kAMFDRSealingMapTag ]
+...

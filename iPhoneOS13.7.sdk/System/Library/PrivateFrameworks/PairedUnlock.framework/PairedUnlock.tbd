@@ -1,0 +1,28 @@
+---
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/PairedUnlock.framework/PairedUnlock
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PURemoteActionToString,
+                            _kPUDidRemoveLockoutNotification, _pu_log ]
+    objc-classes:         [ _PUConnection, _PUConnectionUnlockClient, _PUError,
+                            _PURemoteDeviceState, _PURemotePasscodePolicy ]
+    objc-ivars:           [ _PUConnection._delegate,
+                            _PUConnection._delegateQueue,
+                            _PUConnection._remoteDeviceRemoveLockoutHandler,
+                            _PUConnection._serverConnection,
+                            _PUConnection._serverConnectionQueue,
+                            _PUConnection._unlockClient,
+                            _PUConnectionUnlockClient._connection,
+                            _PURemoteDeviceState._passcodeLocked,
+                            _PURemoteDeviceState._passcodePolicy,
+                            _PURemoteDeviceState._passcodeSet,
+                            _PURemoteDeviceState._unlockOnly,
+                            _PURemoteDeviceState._version,
+                            _PURemoteDeviceState._wristDetectEnabled,
+                            _PURemotePasscodePolicy._modificationAllowed,
+                            _PURemotePasscodePolicy._passcodeMinimumLength ]
+...

@@ -1,0 +1,23 @@
+---
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/DoNotDisturbKit.framework/DoNotDisturbKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    allowed-clients:      [ DoNotDisturbKitTests, DoNotDisturbModule, NanoSettings,
+                            NanoSettingsGlance, SpringBoard, SpringBoardCore ]
+    symbols:              [ _DNDEndOfEventAssertionIdentifier,
+                            _DNDKitRegisterLogging, _DNDLogLocation,
+                            _DNDLogNotifications, _DNDOneHourLifetimeIdentifier,
+                            _DNDUntilEveningAssertionIdentifier,
+                            _DNDUntilILeaveAssertionIdentifier,
+                            _DNDUntilMorningAssertionIdentifier,
+                            _DoNotDisturbKitVersionNumber,
+                            _DoNotDisturbKitVersionString, _kEventSearchTime,
+                            _kLOIHighConfidence ]
+    objc-classes:         [ _DNDAWDMetricsService, _DNDLifetimeDetails,
+                            _DNDLifetimeDetailsProvider,
+                            _DNDNotificationsService ]
+...

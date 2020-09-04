@@ -1,0 +1,22 @@
+---
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+install-name:          /System/Library/PrivateFrameworks/OSAnalyticsPrivate.framework/OSAnalyticsPrivate
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _OSAnalyticsPrivateVersionNumber,
+                            _OSAnalyticsPrivateVersionString ]
+    objc-classes:         [ _OSAEphemeralLog, _OSAHttpSubmitter, _OSALegacyXform,
+                            _OSAStreamDeflater, _OSASubmissionPolicy,
+                            _OSASubmitter, _PCCEndpoint, _PCCGroupJob,
+                            _PCCIDSEndpoint, _PCCJob, _PCCProxiedDevice,
+                            _PCCProxyingDevice, _PCCRequest ]
+    objc-ivars:           [ _OSASubmitter._dryRun, _OSASubmitter._responseCode,
+                            _OSASubmitter._responseData,
+                            _OSASubmitter._responseError,
+                            _OSASubmitter._responseHeaders,
+                            _PCCEndpoint._delegate, _PCCJob._errObj,
+                            _PCCJob._package ]
+...
