@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RevealCore.framework/RevealCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _RevealCoreVersionNumber, _RevealCoreVersionString ]
+    objc-classes:         [ RVDocumentContext, RVItem, RVSelection ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DDBinderAuthCodeKey, _DDBinderMoneyKey,
+                            _DDResultCopyExtractedURL, _DDResultGetCategory,
+                            _DDResultGetRangeForURLification, _DDResultHasType,
+                            _NLTagSchemeLexicalClass, _NLTagSchemeNameType,
+                            _NLTagSchemeTokenType, _NSRangeFromString,
+                            _NSStringFromRange, _NSZoneFree, _NSZoneMalloc,
+                            __DefaultRuneLocale, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___maskrune,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, _objc_alloc,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
+                            dyld_stub_binder ]
+    objc-classes:         [ DDScannerResult, DDScannerService,
+                            DDScannerServiceConfiguration, NLTagger, NSArray,
+                            NSCharacterSet, NSDictionary, NSObject, NSString, NSURL ]
+...

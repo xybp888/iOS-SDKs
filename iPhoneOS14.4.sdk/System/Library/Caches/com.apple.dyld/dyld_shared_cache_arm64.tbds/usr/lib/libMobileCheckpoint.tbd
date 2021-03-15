@@ -1,0 +1,30 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libMobileCheckpoint.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MCCopyCheckpoint, _MCCopyCheckpointData,
+                            _MCCopyCheckpointValue ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFDictionaryGetValue, _CFRelease, _CFRetain,
+                            _MOXPCTransportClose, _MOXPCTransportOpen,
+                            _MOXPCTransportReceiveMessage, _MOXPCTransportResume,
+                            _MOXPCTransportSendMessage,
+                            __CFPropertyListCreateFiltered,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, _objc_alloc,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_unsafeClaimAutoreleasedReturnValue, _stat,
+                            _syslog, _usleep, dyld_stub_binder ]
+    objc-classes:         [ NSData, NSDictionary, NSNumber,
+                            NSPropertyListSerialization, NSSet, NSString ]
+...

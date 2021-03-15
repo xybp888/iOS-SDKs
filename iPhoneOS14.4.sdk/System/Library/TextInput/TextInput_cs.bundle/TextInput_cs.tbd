@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/TextInput/TextInput_cs.bundle/TextInput_cs
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ TIKeyboardFeatureSpecialization_cs ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __ZN2KB11utf8_stringEP8NSString,
+                            __ZN2KB18compose_diacriticsERKNS_6StringEPK4USet,
+                            __ZN2KB20decompose_diacriticsERKNS_6StringERKNSt3__16vectorIjNS3_9allocatorIjEEEEPK4USet,
+                            __ZN2KB6StringD1Ev, __ZN2KB9ns_stringERKNS_6StringE,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSConstantArray, NSObject,
+                            TIKeyboardFeatureSpecialization ]
+...

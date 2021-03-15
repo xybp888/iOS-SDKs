@@ -1,0 +1,56 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AssistantCardServiceSupport.framework/AssistantCardServiceSupport
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ ACSCardService, ACSCardServiceHelper ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CRErrorDomain, _CRLogContextCards,
+                            _INExtractAppInfoFromSiriLaunchId, _INIntentCreate,
+                            _INIntentResponseCreate,
+                            _INIntentSchemaGetIntentDescriptionWithFacadeClass,
+                            _INIntentSchemaGetIntentResponseDescriptionWithFacadeClass,
+                            _NSDebugDescriptionErrorKey, _NSLocaleCurrencyCode,
+                            _NSStringFromSelector, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference,
+                            ___NSArray0__struct, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, __os_log_impl,
+                            _dispatch_once, _objc_alloc, _objc_alloc_init,
+                            _objc_autorelease, _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_opt_class, _objc_opt_isKindOfClass,
+                            _objc_opt_new, _objc_opt_respondsToSelector,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ CLPlacemark, INAddTasksIntent,
+                            INAddTasksIntentResponse, INBillPayee,
+                            INCreateNoteIntent, INCreateNoteIntentResponse,
+                            INCurrencyAmount, INImageNoteContent, INIntent,
+                            INIntentResponse, INInteraction, INNoteContent,
+                            INParameter, INPayBillIntent, INPaymentAccount, INPerson,
+                            INPlayMediaIntent, INPriceRange,
+                            INRequestPaymentIntent,
+                            INRequestPaymentIntentResponse, INRequestRideIntent,
+                            INRequestRideIntentResponse, INSendPaymentIntent,
+                            INSendPaymentIntentResponse, INStartWorkoutIntent,
+                            INTextNoteContent, INTransferMoneyIntent,
+                            INTransferMoneyIntentResponse,
+                            INUISearchFoundationImageAdapter, LSApplicationProxy,
+                            NSArray, NSBundle, NSCalendar, NSConstantIntegerNumber,
+                            NSDateFormatter, NSDictionary, NSError, NSLocale,
+                            NSMutableArray, NSMutableDictionary, NSNumberFormatter,
+                            NSObject, NSString, NSUUID, SFButton, SFCard, SFCardSection,
+                            SFColor, SFDescriptionCardSection,
+                            SFDetailedRowCardSection, SFFormattedText,
+                            SFImagesCardSection, SFLatLng, SFMapCardSection,
+                            SFNamedProtobufMessage, SFNullCardSection, SFRichText,
+                            SFRichTitleCardSection, SFRowCardSection ]
+...

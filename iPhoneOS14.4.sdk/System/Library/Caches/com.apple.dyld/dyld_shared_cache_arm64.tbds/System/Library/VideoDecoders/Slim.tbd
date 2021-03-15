@@ -1,0 +1,68 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/VideoDecoders/Slim.videodecoder
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SLIMRegister ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFDataCreateWithBytesNoCopy, _CFDataGetBytePtr,
+                            _CFDataGetLength, _CFDictionaryAddValue,
+                            _CFDictionaryCreateMutable, _CFDictionaryGetValue,
+                            _CFDictionaryGetValueIfPresent, _CFNumberCreate,
+                            _CFNumberGetValue, _CFPropertyListCreateWithData,
+                            _CFRelease, _CFRetain, _CFStringAppendFormat,
+                            _CFStringCreateMutable,
+                            _CMBaseObjectGetDerivedStorage,
+                            _CMBlockBufferCreateContiguous,
+                            _CMBlockBufferGetDataLength,
+                            _CMBlockBufferGetDataPointer,
+                            _CMBlockBufferIsRangeContiguous,
+                            _CMDerivedObjectCreate,
+                            _CMFormatDescriptionGetExtension,
+                            _CMSampleBufferGetDataBuffer, _CMSetAttachment,
+                            _CMVideoFormatDescriptionGetDimensions,
+                            _CVPixelBufferCreate, _CVPixelBufferGetBaseAddress,
+                            _CVPixelBufferGetBaseAddressOfPlane,
+                            _CVPixelBufferGetBytesPerRow,
+                            _CVPixelBufferGetBytesPerRowOfPlane,
+                            _CVPixelBufferGetExtendedPixels,
+                            _CVPixelBufferGetHeight,
+                            _CVPixelBufferGetPixelFormatType,
+                            _CVPixelBufferGetPlaneCount, _CVPixelBufferGetWidth,
+                            _CVPixelBufferIsPlanar,
+                            _CVPixelBufferLockBaseAddress,
+                            _CVPixelBufferPoolCreatePixelBuffer,
+                            _CVPixelBufferUnlockBaseAddress,
+                            _FigCFDictionaryGetInt32IfPresent,
+                            _FigCFDictionarySetInt32,
+                            _FigCreatePixelBufferAttributesWithIOSurfaceSupport,
+                            _FigFormatDescriptionRelease,
+                            _FigFormatDescriptionRetain, _FigSignalErrorAt,
+                            _VTDecoderSessionEmitDecodedFrame,
+                            _VTDecoderSessionGetPixelBufferPool,
+                            _VTDecoderSessionSetPixelBufferAttributes,
+                            _VTRegisterVideoDecoder,
+                            _VTVideoDecoderGetCMBaseObject,
+                            _VTVideoDecoderGetClassID, __Unwind_Resume,
+                            __ZNKSt3__120__vector_base_commonILb1EE20__throw_length_errorEv,
+                            __ZNSt3__16threadD1Ev,
+                            ___CFConstantStringClassReference, ___assert_rtn,
+                            ___gxx_personality_v0, _bzero, _calloc, _free,
+                            _kCFAllocatorDefault, _kCFAllocatorNull,
+                            _kCFTypeDictionaryKeyCallBacks,
+                            _kCFTypeDictionaryValueCallBacks,
+                            _kCMFormatDescriptionExtension_SampleDescriptionExtensionAtoms,
+                            _kCMFormatDescriptionExtension_Version,
+                            _kCVPixelBufferBytesPerRowAlignmentKey,
+                            _kCVPixelBufferExtendedPixelsBottomKey,
+                            _kCVPixelBufferHeightKey,
+                            _kCVPixelBufferPixelFormatTypeKey,
+                            _kCVPixelBufferWidthKey, _longjmp, _malloc, _setjmp,
+                            dyld_stub_binder ]
+...

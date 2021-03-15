@@ -1,0 +1,72 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AudioServerApplication.framework/AudioServerApplication
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ ASAAudioDevice, ASAAudioFormat, ASABooleanControl,
+                            ASABox, ASAClockDevice, ASAControl, ASACoreAudio,
+                            ASALevelControl, ASAObject, ASAPlaythrough, ASAPlugin,
+                            ASASelectorControl, ASAStream ]
+    objc-ivars:           [ ASAAudioFormat._bitsPerChannel,
+                            ASAAudioFormat._bytesPerFrame,
+                            ASAAudioFormat._bytesPerPacket,
+                            ASAAudioFormat._channelsPerFrame,
+                            ASAAudioFormat._formatFlags,
+                            ASAAudioFormat._formatID,
+                            ASAAudioFormat._framesPerPacket,
+                            ASAAudioFormat._maximumSampleRate,
+                            ASAAudioFormat._minimumSampleRate,
+                            ASAAudioFormat._sampleRate, ASACoreAudio._cadPort,
+                            ASACoreAudio._clients, ASACoreAudio._deathQueue,
+                            ASACoreAudio._deathSource, ASACoreAudio._plugins,
+                            ASAObject._objectID, ASAPlaythrough._aggregateID,
+                            ASAPlaythrough._aggregateUID,
+                            ASAPlaythrough._audioDevice,
+                            ASAPlaythrough._channelMapping,
+                            ASAPlaythrough._ioContext, ASAPlaythrough._playing,
+                            ASAPlaythrough._procID,
+                            ASASelectorControl._currentItems ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AudioConverterConvertComplexBuffer,
+                            _AudioConverterDispose, _AudioConverterNew,
+                            _AudioConverterSetProperty,
+                            _AudioDeviceCreateIOProcID,
+                            _AudioDeviceDestroyIOProcID, _AudioDeviceStart,
+                            _AudioDeviceStop,
+                            _AudioObjectAddPropertyListenerBlock,
+                            _AudioObjectGetPropertyData,
+                            _AudioObjectGetPropertyDataSize,
+                            _AudioObjectHasProperty,
+                            _AudioObjectIsPropertySettable,
+                            _AudioObjectRemovePropertyListenerBlock,
+                            _AudioObjectSetPropertyData, _CFRelease,
+                            _NSInvalidArgumentException, _NSOSStatusErrorDomain,
+                            _NSStringFromClass, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_source_type_mach_send,
+                            __objc_empty_cache, __os_log_debug_impl,
+                            __os_log_default, __os_log_impl, _bootstrap_look_up2,
+                            _bootstrap_port, _bzero, _calloc, _dispatch_once,
+                            _dispatch_queue_create, _dispatch_resume,
+                            _dispatch_source_cancel, _dispatch_source_create,
+                            _dispatch_source_set_event_handler, _dispatch_sync,
+                            _free, _malloc, _objc_alloc, _objc_alloc_init,
+                            _objc_autorelease, _objc_autoreleasePoolPop,
+                            _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic, _objc_storeStrong,
+                            _os_log_type_enabled, _printf, _usleep, dyld_stub_binder ]
+    objc-classes:         [ NSDictionary, NSError, NSException, NSMutableArray,
+                            NSMutableString, NSNumber, NSObject, NSString ]
+...

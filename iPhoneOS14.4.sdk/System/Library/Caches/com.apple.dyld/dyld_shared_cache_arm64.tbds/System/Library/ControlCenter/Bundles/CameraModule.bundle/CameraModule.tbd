@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/ControlCenter/Bundles/CameraModule.bundle/CameraModule
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CameraModuleVersionNumber,
+                            _CameraModuleVersionString ]
+    objc-classes:         [ CCUICameraModule ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AVCapturePrewarm, _CCUILogUserInterface,
+                            __objc_empty_cache,
+                            __os_signpost_emit_with_name_impl, _kdebug_trace,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
+                            _objc_retainAutoreleasedReturnValue,
+                            _os_signpost_enabled, dyld_stub_binder ]
+    objc-classes:         [ CCUIAppLauncherModule, NSObject ]
+...

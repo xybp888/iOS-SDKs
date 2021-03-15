@@ -1,0 +1,65 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DoNotDisturbKit.framework/DoNotDisturbKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:    [ DoNotDisturbKitTests, DoNotDisturbModule,
+                            DoNotDisturbSettings, NanoSettings, NanoSettingsGlance,
+                            SpringBoard, SpringBoardCore ]
+    symbols:              [ _DNDEndOfEventAssertionIdentifier,
+                            _DNDKitRegisterLogging, _DNDLogLocation,
+                            _DNDLogNotifications, _DNDLogToggleManager,
+                            _DNDOneHourLifetimeIdentifier,
+                            _DNDStringFromToggleTargetState,
+                            _DNDUntilEveningAssertionIdentifier,
+                            _DNDUntilILeaveAssertionIdentifier,
+                            _DNDUntilMorningAssertionIdentifier,
+                            _DoNotDisturbKitVersionNumber,
+                            _DoNotDisturbKitVersionString, _kEventSearchTime,
+                            _kLOIHighConfidence ]
+    objc-classes:         [ DNDAWDMetricsService, DNDLifetimeDetails,
+                            DNDLifetimeDetailsProvider, DNDNotificationsService,
+                            DNDToggleManager ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AWDPostSimpleMetricWithInteger,
+                            _CFNotificationCenterAddObserver,
+                            _CFNotificationCenterGetDarwinNotifyCenter,
+                            _DNDDefaultScheduleIdentifier,
+                            _DNDResolvedImmediateBypassEventSourceType,
+                            _DNDResolvedInterruptionBehaviorSetting,
+                            _HKSPSleepModeIdentifier, _HKSPWindDownIdentifier,
+                            __Block_object_assign, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_error_impl, __os_log_impl,
+                            _dispatch_assert_queue$V2, _dispatch_async,
+                            _dispatch_get_global_queue, _dispatch_once,
+                            _dispatch_queue_attr_make_with_autorelease_frequency,
+                            _dispatch_queue_create, _dispatch_sync, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_getProperty, _objc_loadWeakRetained,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _objc_storeWeak, _os_log_create,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ BSDateFormatterCache, BSPlatform, CLLocationManager,
+                            DNDModeAssertionLifetime, DNDModeAssertionService,
+                            DNDMutableModeAssertionDetails, DNDSettingsService,
+                            DNDStateService, EKCalendarVisibilityManager,
+                            EKEventStore, NSArray, NSBundle, NSCalendar, NSDate,
+                            NSDateInterval, NSMutableArray, NSObject, NSString,
+                            UNMutableNotificationContent, UNNotificationRequest,
+                            UNUserNotificationCenter ]
+...

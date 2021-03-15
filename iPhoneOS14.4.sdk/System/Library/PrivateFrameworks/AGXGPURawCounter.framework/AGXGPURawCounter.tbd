@@ -1,0 +1,39 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AGXGPURawCounter.framework/AGXGPURawCounter
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __ZN16AGXGPURawCounter14createInstanceEj,
+                            __ZN16AGXGPURawCounter15destroyInstanceEv,
+                            __ZN16AGXGPURawCounter8instanceEv,
+                            __ZNK16AGXGPURawCounter19sourceBufferMinSizeEv,
+                            __ZNK16AGXGPURawCounter25sourceBufferSizeAlignmentEv ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFArrayGetCount, _CFArrayGetValueAtIndex,
+                            _CFDataCreateMutable, _CFDataGetMutableBytePtr,
+                            _CFDataSetLength, _CFDictionaryGetValue,
+                            _CFNumberGetValue, _CFPropertyListCreateWithData,
+                            _CFRelease, _CFStringGetCString, _CFStringGetLength,
+                            _IOConnectCallStructMethod, _IOGPUDeviceCreate,
+                            _IOGPUDeviceGetConnect, _IOGPUDeviceGetName,
+                            _IOGPUDeviceRelease,
+                            _IORegistryEntryCreateCFProperty,
+                            __NSConcreteGlobalBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___gxx_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, ___stderrp, _abort, _bsearch_b, _bzero,
+                            _fclose, _fopen, _fprintf, _fread, _free, _fseek, _ftell,
+                            _kCFAllocatorDefault, _malloc, _memcpy,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_msgSend, _objc_release, _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue, _posix_memalign,
+                            _qsort_b, _snprintf, _strcmp, _strlen, _strstr,
+                            _sys_dcache_flush, _syslog, _usleep, dyld_stub_binder ]
+    objc-classes:         [ NSBundle, NSString ]
+...

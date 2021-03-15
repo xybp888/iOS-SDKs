@@ -1,0 +1,49 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/TextInput/TextInput_pa.bundle/TextInput_pa
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __ZNK2KB26GurmukhiInputSegmentFilter28allows_composed_substitutionEjjj,
+                            __ZNK2KB26GurmukhiInputSegmentFilter28character_is_letter_modifierEj,
+                            __ZNK2KB26GurmukhiInputSegmentFilter41character_is_precomposed_diacritic_letterEj,
+                            __ZTVN2KB26GurmukhiInputSegmentFilterE ]
+    objc-classes:         [ TIKeyboardInputManager_pa ]
+    objc-ivars:           [ TIKeyboardInputManager_pa._isPhoneticLayout ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __ZN14TIInputManager17delete_from_inputEv,
+                            __ZN14TIInputManager24delete_suffix_from_inputERKN2KB6StringE,
+                            __ZN14TIInputManager35delete_from_favonius_stroke_historyEv,
+                            __ZN14TIInputManagerC1Ev,
+                            __ZN2KB11utf8_stringEP8NSString,
+                            __ZN2KB15lower_characterEjPK10__CFLocale,
+                            __ZN2KB26InputManagerSpecializationC2EPK10__CFLocale,
+                            __ZN2KB26InputManagerSpecializationD2Ev,
+                            __ZN2KB41character_is_precomposed_diacritic_letterEj,
+                            __ZN2KB6StringD1Ev, __ZN2KB9ns_stringERKNS_6StringE,
+                            __ZNK14TIInputManager10input_stemEv,
+                            __ZNK14TIInputManager12input_stringEv,
+                            __ZNK14TIInputManager15favonius_layoutEv,
+                            __ZNK2KB18InputSegmentFilter19allows_substitutionEjjPb,
+                            __ZNK2KB18InputSegmentFilter20character_is_digraphEj,
+                            __ZNK2KB18InputSegmentFilter28allows_composed_substitutionEjjj,
+                            __ZNK2KB18InputSegmentFilter28word_is_acceptable_for_inputERNS_4WordERKNS_6StringE,
+                            __ZNK2KB18InputSegmentFilter39letter_combines_with_selective_modifierEjj,
+                            __ZNKSt3__119__shared_weak_count13__get_deleterERKSt9type_info,
+                            __ZNSt3__119__shared_weak_count14__release_weakEv,
+                            __ZNSt3__119__shared_weak_countD2Ev,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue, _u_charType,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSObject, TIKeyboardInputManager ]
+    objc-ivars:           [ TIKeyboardInputManager.m_composedText,
+                            TIKeyboardInputManager.m_impl ]
+...

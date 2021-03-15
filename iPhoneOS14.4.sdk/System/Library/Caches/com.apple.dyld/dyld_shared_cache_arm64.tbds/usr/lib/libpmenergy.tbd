@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libpmenergy.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _pm_energy_impact, _pm_energy_impact_internal,
+                            _pm_mach_time_to_ns, _pm_task_add, _pm_task_subtract ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFDataGetBytePtr, _CFDataGetLength, _CFDataGetTypeID,
+                            _CFGetTypeID, _CFRelease, _IOObjectRelease,
+                            _IORegistryEntryCreateCFProperty,
+                            _IORegistryEntryFromPath, __NSConcreteGlobalBlock,
+                            ___CFConstantStringClassReference, ___assert_rtn,
+                            ___memcpy_chk, ___stack_chk_fail, ___stack_chk_guard,
+                            ___stderrp, __xpc_type_dictionary, __xpc_type_double,
+                            _close, _dispatch_once, _fprintf, _free, _fwrite,
+                            _getpagesize, _kIOMasterPortDefault, _lseek,
+                            _mach_timebase_info, _malloc, _open, _read, _snprintf,
+                            _strcmp, _xpc_create_from_plist, _xpc_dictionary_apply,
+                            _xpc_dictionary_get_value, _xpc_double_get_value,
+                            _xpc_get_type, _xpc_release, dyld_stub_binder ]
+...

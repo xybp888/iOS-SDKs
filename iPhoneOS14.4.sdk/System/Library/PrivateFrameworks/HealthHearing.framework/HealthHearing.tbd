@@ -1,0 +1,75 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HealthHearing.framework/HealthHearing
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HHHearingLogCategoryAction,
+                            _HHHearingLogCategoryAnalytics,
+                            _HHHearingLogCategoryClient,
+                            _HHHearingLogCategoryDaemon,
+                            _HHHearingLogCategoryDefault,
+                            _HHHearingLogCategoryForCategory,
+                            _HHHearingLogCategoryNotification,
+                            _HHHearingLogCategoryPersist,
+                            _HHHearingLogCategoryPlugin,
+                            _HHHearingLogCategoryQuery,
+                            _HHHearingLogCategoryServer,
+                            _HHHearingLogCategorySync, _HHHearingLogCategoryTest,
+                            _HHHearingLogCategoryView, _HHHearingLogCategoryXPC,
+                            _HHHearingLogForCategory, _HHHearingLogSubsystem,
+                            _HKHeadphoneAudioExposureControlClientInterface,
+                            _HKHeadphoneAudioExposureControlServerInterface,
+                            _HKHeadphoneAudioExposureEventType,
+                            _HKHeadphoneAudioExposureType,
+                            _HKHearingFeatureHeadphoneExposureNotificationsEnabledDidChange,
+                            _HKHearingPluginIdentifier ]
+    objc-classes:         [ HKHeadphoneAudioExposureControl, HKHearingFeatures ]
+    objc-ivars:           [ HKHeadphoneAudioExposureControl._proxyProvider ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ADAFDarwinNotificationKey,
+                            _ADAFDarwinNotificationKeyNano,
+                            _ADAFPreferenceKeyHAEEnableHKWrite,
+                            _ADAFPreferenceKeyHAEEnableOtherDevices,
+                            _ADAFPreferenceKeyHAENotificationFeatureEnabled,
+                            _ADAFPreferenceKeyHAENotificationIsMandatory,
+                            _ADAFPreferenceKeyHAESampleTransient,
+                            _CFNotificationCenterAddObserver,
+                            _CFNotificationCenterGetDarwinNotifyCenter,
+                            _CFNotificationCenterRemoveEveryObserver,
+                            _HKCategoryTypeIdentifierHeadphoneAudioExposureEvent,
+                            _HKLogHearing, _HKMetadataKeyAudioExposureDuration,
+                            _HKMetadataKeyAudioExposureLevel,
+                            _HKQuantityTypeIdentifierHeadphoneAudioExposure,
+                            _HKStringFromBool, _NSStringFromClass,
+                            _NSStringFromSelector, __Block_object_assign,
+                            __HKInitializeLogging, __HKLogDroppedError,
+                            __HKPrivateMetadataKeyNotificationIncludesPrunableData,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___assert_rtn,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_error_impl,
+                            __os_log_fault_impl, __os_log_impl, _dispatch_once,
+                            _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_create, _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ ADASManager, HKAudioExposureUtilities,
+                            HKCategorySample, HKCategoryType, HKQuantity,
+                            HKQuantitySample, HKQuantityType, HKStatistics,
+                            HKTaskServerProxyProvider, HKUnit, NSArray,
+                            NSDateInterval, NSDictionary, NSError,
+                            NSNotificationCenter, NSNumber, NSObject, NSUUID,
+                            NSXPCInterface ]
+...

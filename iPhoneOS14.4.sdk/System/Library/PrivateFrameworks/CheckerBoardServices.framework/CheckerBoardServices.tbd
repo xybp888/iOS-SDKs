@@ -1,0 +1,81 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CheckerBoardServices.framework/CheckerBoardServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CheckerBoardLogHandleForCategory,
+                            _CheckerBoardServicesVersionNumber,
+                            _CheckerBoardServicesVersionString, _kCellIdentifier,
+                            _kCheckerBoardIdentifier,
+                            _kCheckerBoardRebootEntitlement,
+                            _kCheckerBoardRebootReason,
+                            _kCheckerBoardRemoteAlertsEntitlement,
+                            _kCheckerBoardRemoteServerMachName,
+                            _kCheckerBoardServicesEntitlement,
+                            _kCheckerBoardSystemServicesEntitlement,
+                            _kOneTimeBootCommandCheckerBoard,
+                            _kOneTimeBootCommandNVRamVariable ]
+    objc-classes:         [ CBSClient, CBSNVRamUtil, CBSPaneViewController,
+                            CBSProxyServer, CBSTableViewController, CBSUIAlert,
+                            CBSUIAlertAction, CBSUtilities ]
+    objc-ivars:           [ CBSClient._connection,
+                            CBSPaneViewController._primaryButton,
+                            CBSPaneViewController._secondaryButton,
+                            CBSProxyServer._port, CBSProxyServer._server,
+                            CBSProxyServer._token,
+                            CBSTableViewController._attributedDetailDescriptionText,
+                            CBSTableViewController._containerFooterView,
+                            CBSTableViewController._containerFooterViewFrame,
+                            CBSTableViewController._detailDescriptionText,
+                            CBSTableViewController._headerView,
+                            CBSTableViewController._tableView,
+                            CBSTableViewController._titleText,
+                            CBSUIAlert._actions, CBSUIAlert._identifier,
+                            CBSUIAlert._isActive, CBSUIAlert._message,
+                            CBSUIAlert._preferredStyle, CBSUIAlert._title,
+                            CBSUIAlertAction._handler, CBSUIAlertAction._style,
+                            CBSUIAlertAction._title ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFPreferencesAppSynchronize,
+                            _CFPreferencesGetAppBooleanValue, _CGRectGetMaxY,
+                            _CGRectZero, _IOObjectRelease,
+                            _IORegistryEntryFromPath,
+                            _IORegistryEntrySetCFProperty, _MGGetBoolAnswer,
+                            _NSStringFromClass, _UILayoutFittingCompressedSize,
+                            _UIRoundToViewScale, _UITableViewAutomaticDimension,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___assert_rtn, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_disabled,
+                            __os_log_error_impl, __os_log_impl, _dispatch_once,
+                            _dispatch_semaphore_create,
+                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
+                            _dispatch_time, _kIOMasterPortDefault, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_copyWeak, _objc_destroyWeak,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_initWeak, _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_setProperty_nonatomic_copy,
+                            _objc_storeStrong, _os_log_create,
+                            _os_log_type_enabled, _xpc_bool_get_value,
+                            _xpc_copy_entitlement_for_self, dyld_stub_binder ]
+    objc-classes:         [ BFFPaneHeaderView, BFFStyle, FBSShutdownOptions,
+                            FBSSystemService, NSConstantIntegerNumber,
+                            NSMutableArray, NSNumber, NSObject, NSSet, NSString, NSUUID,
+                            NSXPCConnection, NSXPCInterface, UIAlertAction,
+                            UIAlertController, UIButton, UIColor, UIDevice, UIFont,
+                            UIImage, UITableView, UIView, UIViewController ]
+...

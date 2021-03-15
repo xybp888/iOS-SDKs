@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Accounts/Notification/ADAccountsNotificationPlugin.bundle/ADAccountsNotificationPlugin
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ADAccountsNotificationPluginVersionNumber,
+                            _ADAccountsNotificationPluginVersionString ]
+    objc-classes:         [ ADAccountsNotificationPlugin ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ACAccountTypeIdentifierAppleAccount,
+                            _ACAccountTypeIdentifieriTunesStore,
+                            _CFNotificationCenterGetDarwinNotifyCenter,
+                            _CFNotificationCenterPostNotification, __ADLog,
+                            __NSConcreteGlobalBlock,
+                            ___CFConstantStringClassReference, __dispatch_main_q,
+                            __objc_empty_cache, _dispatch_async, _objc_msgSend,
+                            _objc_opt_class, _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            dyld_stub_binder ]
+    objc-classes:         [ ADCoreSettings, NSObject, NSString ]
+...

@@ -1,0 +1,75 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libReverseProxyDevice.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _RPCopyProxyDictionary,
+                            _RPCopyProxyDictionaryWithOptions,
+                            _RPRegisterForAvailability,
+                            _RPRegistrationInvalidate, _RPRegistrationResume,
+                            _RPSetLogLevel, __RPCopyProxyDictionaryWithOptions,
+                            __RPRegisterForAvailability, __RPSetLogLevel ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFArrayAppendValue, _CFArrayCreateMutable,
+                            _CFDataCreateMutable, _CFDataCreateWithBytesNoCopy,
+                            _CFDataGetBytePtr, _CFDataGetLength,
+                            _CFDataGetMutableBytePtr, _CFDataSetLength,
+                            _CFDictionaryCreateMutable, _CFDictionaryGetTypeID,
+                            _CFDictionaryGetValue, _CFDictionarySetValue, _CFEqual,
+                            _CFGetTypeID, _CFNumberCreate, _CFNumberGetTypeID,
+                            _CFNumberGetValue, _CFPreferencesCopyAppValue,
+                            _CFPreferencesCopyValue, _CFPropertyListCreateData,
+                            _CFPropertyListCreateWithData, _CFRelease, _CFRetain,
+                            _CFStringCompare, _CFStringCreateByCombiningStrings,
+                            _CFStringCreateWithCString,
+                            _CFStringCreateWithFormat,
+                            _CFStringCreateWithFormatAndArguments,
+                            _CFStringGetCString, _CFStringGetLength,
+                            _CFStringGetMaximumSizeForEncoding,
+                            _CFURLCopyHostName, _MGCopyAnswerWithError,
+                            __Block_copy, __Block_object_assign,
+                            __Block_object_dispose, __Block_release,
+                            __CFCopySystemVersionDictionary,
+                            __CFRuntimeCreateInstance, __CFRuntimeRegisterClass,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, __ZSt9terminatev,
+                            __ZTVN10__cxxabiv117__class_type_infoE,
+                            __ZTVN10__cxxabiv120__si_class_type_infoE,
+                            ___CFConstantStringClassReference,
+                            ___cxa_begin_catch, ___cxa_pure_virtual, ___error,
+                            ___gxx_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, ___stderrp,
+                            __dispatch_source_type_read, _accept, _asl_log, _bzero,
+                            _calloc, _close, _connect, _csops,
+                            _dispatch_get_global_queue, _dispatch_once,
+                            _dispatch_once_f, _dispatch_queue_create,
+                            _dispatch_release, _dispatch_resume, _dispatch_retain,
+                            _dispatch_semaphore_create,
+                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
+                            _dispatch_set_context, _dispatch_source_cancel,
+                            _dispatch_source_create,
+                            _dispatch_source_set_cancel_handler_f,
+                            _dispatch_source_set_event_handler_f,
+                            _dispatch_suspend, _dispatch_sync, _dispatch_sync_f,
+                            _dlopen, _dlsym, _fopen, _fputs, _free, _getpid, _getprogname,
+                            _getsockname, _getsockopt, _isatty, _kCFAllocatorNull,
+                            _kCFBooleanFalse, _kCFBooleanTrue,
+                            _kCFPreferencesAnyHost,
+                            _kCFStreamPropertySOCKSProxyHost,
+                            _kCFStreamPropertySOCKSProxyPort,
+                            _kCFTypeArrayCallBacks,
+                            _kCFTypeDictionaryKeyCallBacks,
+                            _kCFTypeDictionaryValueCallBacks, _kevent, _kqueue,
+                            _localtime_r, _malloc, _os_release,
+                            _pthread_mutex_destroy, _pthread_mutex_init,
+                            _pthread_mutex_lock, _pthread_mutex_unlock, _read,
+                            _setsockopt, _shutdown, _socket, _strerror, _strftime,
+                            _strlen, _strstr, _sysctlbyname, _time, _usleep, _write,
+                            dyld_stub_binder ]
+...

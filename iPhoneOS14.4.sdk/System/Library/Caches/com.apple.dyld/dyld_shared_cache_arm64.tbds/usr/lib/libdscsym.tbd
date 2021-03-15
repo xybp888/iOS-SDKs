@@ -1,0 +1,48 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libdscsym.dylib
+current-version:       275
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _dscsym_buffer_iterate,
+                            _dscsym_buffer_iterate_binaries,
+                            _dscsym_copy_dscsym_files,
+                            _dscsym_generate_dscsym_file, _dscsym_iterate,
+                            _dscsym_iterate_binaries, _dscsym_iterate_buffer,
+                            _dscsym_mmap_dscsym_for_uuid,
+                            _dscsym_save_dscsyms_for_current_caches,
+                            _dscsym_uuid_iterate ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSSearchPathForDirectoriesInDomains,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___assert_rtn, ___error, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard, ___strncpy_chk,
+                            __os_assert_log, __os_crash, __os_log_debug_impl,
+                            __os_log_default, __os_log_error_impl,
+                            __os_log_fault_impl, __os_log_impl, __simple_salloc,
+                            __simple_sfree, __simple_string, __simple_vsprintf,
+                            _abort_report_np, _access, _asprintf, _basename, _bzero,
+                            _close, _closedir, _copyfile, _dispatch_once,
+                            _dyld_shared_cache_iterate_text, _free, _fstat, _memmove,
+                            _mkdir, _mmap, _munmap, _objc_alloc,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_opt_class, _objc_opt_isKindOfClass,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue, _open, _opendir,
+                            _os_log_type_enabled, _readdir, _realloc,
+                            _realpath$DARWIN_EXTSN, _snprintf, _stat, _strchr, _strcmp,
+                            _strdup, _strlcpy, _strlen, _strncmp, _strncpy, _strnstr,
+                            _strstr, _sysctl, _time, _unlink, _uuid_compare, _uuid_copy,
+                            _uuid_is_null, _uuid_unparse, dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSData, NSDictionary, NSMutableArray,
+                            NSMutableDictionary, NSNumber,
+                            NSPropertyListSerialization, NSString, NSUUID ]
+...

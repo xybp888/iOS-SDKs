@@ -1,0 +1,54 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/LoginPerformanceKit.framework/LoginPerformanceKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LPKIsRestrictionlessLoginEnabled,
+                            _LoginPerformanceKitVersionNumber,
+                            _LoginPerformanceKitVersionString,
+                            _kLocalUserSwitchDestination,
+                            _kLocalUserSwitchTestCycleCountKey,
+                            _kLocalUserSwitchTestHasFinishedSuccessfullyKey,
+                            _kLocalUserSwitchTestOngoingKey,
+                            _kLocalUserSwitchTestPasswordKey,
+                            _kLocalUserSwitchTestTypeKey,
+                            _kLocalUserSwitchTestUsernameKey ]
+    objc-classes:         [ LPKLoginEvent, LPKLogoutEvent, LPKPerfResultAnalyzer,
+                            LPKPerfResultEntry, LPKPerformanceTestIntermediary,
+                            LPKSignpostEvent, LPKUserSwitchCycleController,
+                            LPKUserSwitchEvent ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MKBUserSessionIsLoginSession, _NSCocoaErrorDomain,
+                            _NSLog, __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___kCFBooleanTrue, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __dispatch_main_q, __objc_empty_cache,
+                            __os_log_default, __os_log_error_impl, __os_log_impl,
+                            _dispatch_after, _dispatch_semaphore_create,
+                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
+                            _dispatch_time, _objc_alloc,
+                            _objc_autoreleaseReturnValue, _objc_destroyWeak,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
+                            _objc_retain, _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
+                            _objc_storeWeak, _os_log_type_enabled, _system,
+                            dyld_stub_binder ]
+    objc-classes:         [ LKLoginController, LKPlatformSupport,
+                            LKUniversalDiskStorage, NSArray, NSData, NSDate,
+                            NSDateFormatter, NSDictionary, NSJSONSerialization,
+                            NSLocale, NSMutableArray, NSMutableDictionary, NSNumber,
+                            NSObject, NSPredicate, NSRegularExpression,
+                            OSLogEventStore, OSLogEventStream, UMMutableUser,
+                            UMUserManager ]
+...

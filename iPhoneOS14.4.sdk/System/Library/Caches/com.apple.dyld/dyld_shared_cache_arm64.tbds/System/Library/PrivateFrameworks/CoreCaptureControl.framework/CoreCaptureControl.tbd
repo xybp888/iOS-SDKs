@@ -1,0 +1,48 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreCaptureControl.framework/CoreCaptureControl
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CoreCaptureControlCapture,
+                            _CoreCaptureControlCaptureWithComponentDirectory,
+                            _CoreCaptureControlConfigurePipe,
+                            _CoreCaptureControlConfigureProfile,
+                            _CoreCaptureControlConfigureStream,
+                            _CoreCaptureControlCreate, _CoreCaptureControlStart,
+                            _CoreCaptureControlStop ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFDataCreateWithBytesNoCopy, _CFDataGetBytePtr,
+                            _CFDataGetLength, _CFDictionaryAddValue,
+                            _CFDictionaryCreateMutable, _CFNumberCreate,
+                            _CFPropertyListCreateData, _CFRelease,
+                            _CFStringCreateArrayBySeparatingStrings,
+                            _CFStringCreateWithBytes, _CFStringCreateWithCString,
+                            _CFStringGetCStringPtr, __CFRuntimeCreateInstance,
+                            __CFRuntimeRegisterClass, __NSConcreteGlobalBlock,
+                            ___CFConstantStringClassReference, ___error,
+                            ___stack_chk_fail, ___stack_chk_guard, ___stdoutp,
+                            __xpc_error_key_description, __xpc_type_array,
+                            __xpc_type_bool, __xpc_type_connection,
+                            __xpc_type_data, __xpc_type_date,
+                            __xpc_type_dictionary, __xpc_type_double,
+                            __xpc_type_error, __xpc_type_fd, __xpc_type_int64,
+                            __xpc_type_null, __xpc_type_shmem, __xpc_type_string,
+                            __xpc_type_uint64, __xpc_type_uuid,
+                            _dispatch_queue_create, _fprintf, _fwrite,
+                            _kCFAllocatorDefault, _kCFAllocatorNull,
+                            _kCFTypeDictionaryKeyCallBacks,
+                            _kCFTypeDictionaryValueCallBacks, _pthread_once,
+                            _sleep, _strlen, _strncmp, _strtouq,
+                            _xpc_connection_create_mach_service,
+                            _xpc_connection_resume,
+                            _xpc_connection_send_message_with_reply,
+                            _xpc_connection_set_event_handler,
+                            _xpc_dictionary_create, _xpc_dictionary_get_string,
+                            _xpc_dictionary_set_string, _xpc_get_type,
+                            _xpc_release, dyld_stub_binder ]
+...

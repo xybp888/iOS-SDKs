@@ -1,0 +1,41 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Assistant/Plugins/AssistantTTSPlugin.assistantBundle/AssistantTTSPlugin
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ VSPluginTTSDurationEstimation,
+                            VSPluginTTSForwardStreamHandler,
+                            VSPluginTTSUnspeakableRangeHandler ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AceObjectClassPListKey,
+                            _SABaseAceObjectClassIdentifier,
+                            _SATTSSpeechSynthesisStreamingBeginClassIdentifier,
+                            _SATTSSpeechSynthesisStreamingChunkClassIdentifier,
+                            _SATTSSpeechSynthesisStreamingEndClassIdentifier,
+                            _VSGetLogObject, ___NSDictionary0__struct,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_error_impl, __os_log_impl,
+                            _objc_alloc, _objc_alloc_init,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_type_enabled,
+                            dyld_stub_binder ]
+    objc-classes:         [ AFSpeakableUtteranceParser, NSLocale, NSMutableArray,
+                            NSNumber, NSObject, SARange,
+                            SATTSEstimateTTSRequestDuration,
+                            SATTSEstimateTTSRequestDurationCompleted,
+                            SATTSGetUnspeakableRangeOfText,
+                            SATTSGetUnspeakableRangeOfTextCompleted,
+                            SATTSSpeechSynthesisStreamingBegin,
+                            SATTSSpeechSynthesisStreamingChunk,
+                            SATTSSpeechSynthesisStreamingEnd,
+                            VSSpeechCharacterSet, VSSpeechRequest,
+                            VSSpeechSynthesizer, VSVoiceAsset ]
+...

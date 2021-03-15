@@ -1,0 +1,81 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DataAccessUI.framework/DataAccessUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DAAccountDescriptionFromHostname,
+                            _DiagnosticsEnabledKey,
+                            _kDADiagnosticSaveNotesDelegate ]
+    objc-classes:         [ DADiagnosticsNotesController, DADiagnosticsNotesPane,
+                            DADiagnosticsPSController,
+                            DASettingsAccountsUIController,
+                            DASettingsDataclassConfigurationViewController ]
+    objc-ivars:           [ DADiagnosticsNotesPane._notesView,
+                            DADiagnosticsPSController._savingDataAlert,
+                            DADiagnosticsPSController._simpleAlert,
+                            DADiagnosticsPSController._simpleConfirmSheetDismissedSEL,
+                            DASettingsAccountsUIController._account,
+                            DASettingsAccountsUIController._accountNeedsAdd,
+                            DASettingsAccountsUIController._attemptedValidation,
+                            DASettingsAccountsUIController._confirmedUnvalidatedAccount,
+                            DASettingsAccountsUIController._didSetFullHostURL,
+                            DASettingsAccountsUIController._haveRegisteredForAccountsChanged,
+                            DASettingsAccountsUIController._isSettingUpNewAccount,
+                            DASettingsAccountsUIController._needsSave,
+                            DASettingsAccountsUIController._transitioningToFinishedAccountSetup,
+                            DASettingsAccountsUIController._validatedSuccessfully,
+                            DASettingsDataclassConfigurationViewController._daAccount,
+                            DASettingsDataclassConfigurationViewController._haveRegisteredForAccountsChanged ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ACAccountStoreDidChangeNotification,
+                            _ACUIAccountKey, _CFUserNotificationDisplayAlert,
+                            _DALoggingwithCategory, _NSHomeDirectory,
+                            _NSStringFromClass, _PSFooterTextGroupKey,
+                            _PSKeyNameKey, _PSPIDForProcessNamed,
+                            _PSSetupCustomClassKey, _PSTableCellKey, _UIApp,
+                            _UITextFieldTextDidChangeNotification,
+                            __Block_object_assign, __CPLog_to_os_log_type,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_main_q,
+                            __objc_empty_cache, __os_log_impl,
+                            _areDADiagnosticsEnabled,
+                            _dataaccess_get_global_queue, _dispatch_async,
+                            _dispatch_get_global_queue, _kDAAccountEmailAddress,
+                            _kDAAccountStolenDisplayUsername, _kill, _objc_alloc,
+                            _objc_autoreleaseReturnValue, _objc_begin_catch,
+                            _objc_end_catch, _objc_enumerationMutation,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_opt_new,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _objc_storeWeak,
+                            _os_log_type_enabled, _truncate, dyld_stub_binder ]
+    objc-classes:         [ ACUIDataclassConfigurationViewController,
+                            ACUIViewController, DAAccount, DAAccountLoader,
+                            DAAnalyticsReporter, NSArray, NSAssertionHandler,
+                            NSBundle, NSCalendarDate, NSFileManager, NSMutableArray,
+                            NSNotificationCenter, NSNumber, NSObject, NSString, NSURL,
+                            PSConfirmationSpecifier, PSDetailController,
+                            PSEditableTableCell, PSEditingPane, PSListController,
+                            PSSetupController, PSSpecifier, PSTableCell,
+                            UIAlertAction, UIAlertController, UIAlertView,
+                            UIApplication, UIBarButtonItem, UIDevice, UIFont,
+                            UITextView, UIView ]
+    objc-eh-types:        [ NSException ]
+    objc-ivars:           [ PSListController._showingSetupController,
+                            PSListController._specifiers,
+                            PSListController._table, PSSpecifier.action,
+                            PSSpecifier.cellType,
+                            PSSpecifier.detailControllerClass,
+                            PSSpecifier.target ]
+...

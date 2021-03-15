@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AdminLite.framework/AdminLite
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AdminLiteNVRAMSet, _nvram_set ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NDR_record, ___stack_chk_fail, ___stack_chk_guard,
+                            ___stderrp, _bootstrap_look_up, _bootstrap_port,
+                            _bootstrap_strerror, _fprintf, _mach_error_string,
+                            _mach_msg, _mach_msg_destroy, _mach_port_deallocate,
+                            _mach_task_self_, _mig_dealloc_reply_port,
+                            _mig_get_reply_port, _mig_put_reply_port, _mig_strncpy,
+                            dyld_stub_binder ]
+...

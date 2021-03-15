@@ -1,0 +1,61 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          "/System/Library/CoreAccessories/PlugIns/Features/Navigation-iOS.feature/Navigation-iOS"
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ascii_to_hex, _getMemoryUse, _init_logging,
+                            _kProcessingQueueName,
+                            _kXPCIAPNavigationAccessoriesConnectedStr,
+                            _kXPCIAPNavigationAccessoryidentifierStr,
+                            _kXPCIAPNavigationComponentidentifierStr,
+                            _kXPCIAPNavigationFrameworkShouldPollNotificationStr,
+                            _kXPCIAPNavigationPayloadStr,
+                            _kXPCIAPNavigationRequestConnectedAccessoriesStr,
+                            _kXPCIAPNavigationSendGuidanceUpdateStr,
+                            _kXPCIAPNavigationSendManeuverUpdateStr,
+                            _obfuscatedPointer, _printBytes, _removeNewline ]
+    objc-classes:         [ ACCNavigationFeaturePlugin, ACCNavigationShim,
+                            ACCNavigationShimAccessory ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSClassFromString, _NSStringFromClass,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_default,
+                            __os_log_error_impl, __os_log_impl, _dispatch_async,
+                            _dispatch_once, _dispatch_queue_create, _dispatch_sync,
+                            _kXPCRequestTypeStr, _kXPCResultStr, _mach_task_self_,
+                            _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_destroyWeak,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic, _objc_storeStrong,
+                            _objc_storeWeak, _os_log_create, _os_log_type_enabled,
+                            _printf, _putchar, _random, _strcmp, _strlen, _task_info,
+                            _xpc_array_append_value, _xpc_array_create,
+                            _xpc_connection_send_message, _xpc_dictionary_create,
+                            _xpc_dictionary_create_reply,
+                            _xpc_dictionary_get_data, _xpc_dictionary_get_string,
+                            _xpc_dictionary_get_uint64, _xpc_dictionary_set_bool,
+                            _xpc_dictionary_set_string,
+                            _xpc_dictionary_set_uint64,
+                            _xpc_dictionary_set_value, dyld_stub_binder ]
+    objc-classes:         [ ACCNavigationManeuverUpdateInfo,
+                            ACCNavigationProvider,
+                            ACCNavigationRouteGuidanceUpdateInfo,
+                            ACCiAP2ShimAccessory, ACCiAP2ShimServer, NSArray, NSData,
+                            NSKeyedUnarchiver, NSMutableArray, NSMutableDictionary,
+                            NSNumber, NSObject, NSSet, NSString, NSUUID ]
+...

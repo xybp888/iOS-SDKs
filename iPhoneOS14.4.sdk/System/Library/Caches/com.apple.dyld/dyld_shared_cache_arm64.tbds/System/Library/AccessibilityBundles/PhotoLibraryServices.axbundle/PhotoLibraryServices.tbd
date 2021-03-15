@@ -1,0 +1,40 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/PhotoLibraryServices.axbundle/PhotoLibraryServices
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityCameraUILocalizedString,
+                            _accessibilityPLServicesLocalizedString ]
+    objc-classes:         [ AXPhotoLibraryServicesGlue,
+                            PLManagedAssetAccessibility,
+                            __PLManagedAssetAccessibility_super ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXAttributedStringForBetterPronuciation,
+                            _AXDateStringForFormat, _AXPerformValidationChecks,
+                            _UIAXBetterPronuciationKeyLive,
+                            _UIAccessibilityIsImageScreenshot,
+                            _UIAccessibilityMetadataDescriptionForImage,
+                            _UIAccessibilityMetadataDescriptionForVideo,
+                            _UIAccessibilityTokenDurationTimeHHMM,
+                            _UIAccessibilityTokenDurationTimeMMSS,
+                            _UIAccessibilityTraitImage,
+                            __AXSCopyPathForAccessibilityBundle,
+                            __NSConcreteGlobalBlock,
+                            ___CFConstantStringClassReference,
+                            ___UIAXStringForVariables, __objc_empty_cache,
+                            _accessibilityUIKitLocalizedString, _kCFBooleanTrue,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_opt_class, _objc_opt_isKindOfClass,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            dyld_stub_binder ]
+    objc-classes:         [ AXAttributedString, AXValidationManager, NSBundle,
+                            NSCalendar, NSDate, NSObject, NSString,
+                            UIAccessibilitySafeCategory ]
+...

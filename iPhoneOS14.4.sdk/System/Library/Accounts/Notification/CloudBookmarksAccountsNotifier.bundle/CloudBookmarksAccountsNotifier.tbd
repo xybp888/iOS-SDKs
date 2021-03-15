@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Accounts/Notification/CloudBookmarksAccountsNotifier.bundle/CloudBookmarksAccountsNotifier
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __NSConcreteGlobalBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, __objc_empty_cache,
+                            __os_activity_create, __os_activity_current,
+                            __os_log_impl, _dispatch_once,
+                            _kAccountDataclassBookmarks, _objc_alloc_init,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
+                            _objc_retain, _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_activity_scope_enter,
+                            _os_activity_scope_leave, _os_log_create,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ NSObject, WBSSafariBookmarksSyncAgentProxy ]
+...

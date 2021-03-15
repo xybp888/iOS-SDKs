@@ -1,0 +1,34 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WiFiLogCapture.framework/WiFiLogCapture
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ WiFiLogDumpTaker ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFRelease, _CoreCaptureControlCapture,
+                            _CoreCaptureControlCreate, _NSLog,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, __objc_empty_cache,
+                            __xpc_type_dictionary, __xpc_type_error,
+                            _dispatch_queue_create, _kCFAllocatorDefault,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_release, _objc_retain,
+                            _objc_storeStrong,
+                            _objc_unsafeClaimAutoreleasedReturnValue, _strncmp,
+                            _xpc_connection_create_mach_service,
+                            _xpc_connection_resume,
+                            _xpc_connection_send_message_with_reply,
+                            _xpc_connection_set_event_handler,
+                            _xpc_dictionary_create, _xpc_dictionary_get_string,
+                            _xpc_dictionary_set_string, _xpc_get_type,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSObject ]
+...

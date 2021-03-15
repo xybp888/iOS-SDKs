@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PhoneNumbers.framework/PhoneNumbers
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/PrivateFrameworks/CorePhoneNumbers.framework/CorePhoneNumbers ]
+    symbols:              [ _PhoneNumbersVersionNumber,
+                            _PhoneNumbersVersionString, _pn_default_log ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __NSConcreteGlobalBlock,
+                            __PNCopyInternationalCodeForCountry,
+                            __PNCopyNationalDirectDialingPrefixForCountry,
+                            _dispatch_once, _kCFAllocatorDefault,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_opt_class, _objc_release,
+                            _objc_retainAutoreleasedReturnValue, _os_log_create,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSLocale ]
+...

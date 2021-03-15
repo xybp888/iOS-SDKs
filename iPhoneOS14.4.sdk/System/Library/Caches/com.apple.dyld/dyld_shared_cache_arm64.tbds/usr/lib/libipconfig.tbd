@@ -1,0 +1,66 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libipconfig.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _IPConfigurationForgetNetwork,
+                            _IPConfigurationServiceCopyInformation,
+                            _IPConfigurationServiceCreate,
+                            _IPConfigurationServiceGetNotificationKey,
+                            _IPConfigurationServiceGetTypeID,
+                            _IPConfigurationServiceRefreshConfiguration,
+                            _kIPConfigurationServiceOptionAPNName,
+                            _kIPConfigurationServiceOptionEnableCLAT46,
+                            _kIPConfigurationServiceOptionEnableDAD,
+                            _kIPConfigurationServiceOptionIPv6Entity,
+                            _kIPConfigurationServiceOptionIPv6LinkLocalAddress,
+                            _kIPConfigurationServiceOptionMTU,
+                            _kIPConfigurationServiceOptionPerformNUD ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFArrayGetCount, _CFArrayGetTypeID,
+                            _CFBooleanGetTypeID, _CFBooleanGetValue,
+                            _CFDataGetBytePtr, _CFDataGetLength,
+                            _CFDictionaryContainsKey, _CFDictionaryCreate,
+                            _CFDictionaryCreateMutableCopy,
+                            _CFDictionaryGetTypeID, _CFDictionaryGetValue,
+                            _CFDictionaryRemoveValue, _CFDictionarySetValue,
+                            _CFEqual, _CFGetAllocator, _CFGetTypeID,
+                            _CFNumberGetTypeID, _CFPropertyListCreateData,
+                            _CFRelease, _CFStringAppend, _CFStringAppendFormat,
+                            _CFStringCreateMutable, _CFStringCreateWithFormat,
+                            _CFStringGetBytes, _CFStringGetCString,
+                            _CFStringGetLength, _CFStringGetTypeID, _CFUUIDCreate,
+                            _CFUUIDCreateString, _NDR_record,
+                            _SCDynamicStoreCopyValue, _SCDynamicStoreCreate,
+                            _SCDynamicStoreKeyCreateNetworkServiceEntity,
+                            _SCDynamicStoreSetDisconnectCallBack,
+                            _SCDynamicStoreSetDispatchQueue,
+                            __CFRuntimeCreateInstance, __CFRuntimeRegisterClass,
+                            __NSConcreteStackBlock, __SC_syslog_os_log_mapping,
+                            ___CFConstantStringClassReference, ___SC_log_enabled,
+                            ___SC_log_send, ___chkstk_darwin, ___error,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __os_log_pack_fill, __os_log_pack_size, _abort,
+                            _bootstrap_look_up, _bootstrap_port,
+                            _dispatch_queue_create, _dispatch_release,
+                            _dispatch_sync, _free, _inet_pton, _kCFBooleanTrue,
+                            _kCFTypeDictionaryKeyCallBacks,
+                            _kCFTypeDictionaryValueCallBacks,
+                            _kSCDynamicStoreDomainState, _kSCEntNetIPv6,
+                            _kSCPropNetIPv6Addresses,
+                            _kSCPropNetIPv6ConfigMethod,
+                            _kSCPropNetIPv6LinkLocalAddress,
+                            _kSCPropNetIPv6PrefixLength,
+                            _kSCValNetIPv6ConfigMethodAutomatic,
+                            _kSCValNetIPv6ConfigMethodLinkLocal,
+                            _kSCValNetIPv6ConfigMethodManual, _mach_error_string,
+                            _mach_msg, _mach_msg_destroy, _mach_port_deallocate,
+                            _mach_task_self_, _malloc, _mig_dealloc_reply_port,
+                            _mig_get_reply_port, _mig_put_reply_port,
+                            _os_log_create, _pthread_once, dyld_stub_binder ]
+...

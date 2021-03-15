@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libcompression.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _compression_decode_buffer,
+                            _compression_decode_scratch_buffer_size,
+                            _compression_encode_buffer,
+                            _compression_encode_scratch_buffer_size,
+                            _compression_stream_destroy,
+                            _compression_stream_get_decode_state_size,
+                            _compression_stream_get_encode_state_size,
+                            _compression_stream_get_state_size,
+                            _compression_stream_identify_algorithm,
+                            _compression_stream_init,
+                            _compression_stream_init_with_state_buffer,
+                            _compression_stream_is_state_valid,
+                            _compression_stream_process,
+                            _compression_stream_reinit ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ ___chkstk_darwin, ___stack_chk_fail,
+                            ___stack_chk_guard, _bzero, _free, _lzma_auto_decoder,
+                            _lzma_code, _lzma_easy_buffer_encode,
+                            _lzma_easy_encoder, _lzma_end,
+                            _lzma_stream_buffer_decode, _malloc, _memcpy, _memmove,
+                            _memset, _memset_pattern16, _memset_pattern8, _memset_s,
+                            dyld_stub_binder ]
+...

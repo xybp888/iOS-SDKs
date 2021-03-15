@@ -1,0 +1,96 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/PassKit.framework/PassKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore,
+                            /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI ]
+    symbols:              [ _PKRemoteAddPaymentPassViewControllerExportedInterface,
+                            _PKRemotePaymentSetupViewControllerExportedInterface,
+                            _PKServiceAddPaymentPassViewControllerExportedInterface,
+                            _PKServicePaymentSetupViewControllerExportedInterface ]
+    objc-classes:         [ PKAddPassButton, PKAddPaymentPassViewController,
+                            PKDisbursementAuthorizationController,
+                            PKExtensionRemoteViewController,
+                            PKPaymentAuthorizationController,
+                            PKPaymentAuthorizationCoreViewController,
+                            PKPaymentAuthorizationViewController,
+                            PKPaymentButton, PKPaymentSetupController,
+                            PKPaymentSetupViewController,
+                            PKRemoteAddPaymentPassViewController,
+                            PKRemotePaymentSetupViewController ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CATransform3DIdentity, _CATransform3DMakeScale,
+                            _CFRelease, _CGContextDrawImage, _CGImageRelease,
+                            _CGPointZero, _CGRectDivide, _CGRectGetMaxX,
+                            _CGRectGetMaxY, _CGRectGetMinX, _CGRectZero, _CGSizeZero,
+                            _NSBackgroundColorAttributeName,
+                            _NSFontAttributeName,
+                            _NSForegroundColorAttributeName,
+                            _NSInternalInconsistencyException,
+                            _NSLocalizedDescriptionKey,
+                            _NSParagraphStyleAttributeName,
+                            _NSShadowAttributeName, _NSUnderlyingErrorKey,
+                            _PKAddPaymentPassEntitlement,
+                            _PKApplePayButtonDefaultCornerRadius,
+                            _PKContentAlignmentCentered,
+                            _PKCreateApplePayButtonImageWithCornerRadius,
+                            _PKFloatFloorToPixel, _PKFloatRoundToPixel, _PKIsPad,
+                            _PKLocalizedPaymentString, _PKLocalizedString,
+                            _PKLogFacility, _PKLogObject, _PKPassKitErrorDomain,
+                            _PKPeerPaymentLogFacility,
+                            _PKProvisioningBackgroundColor,
+                            _PKSecureElementIsAvailable, _PKSizeAlignedInRect,
+                            _SecTaskCopyValueForEntitlement,
+                            _SecTaskCreateFromSelf, _UIAccessibilityTraitButton,
+                            _UIEdgeInsetsZero, _UIGraphicsGetCurrentContext,
+                            _UIRectCenteredAboutPoint, _UIRectCenteredXInRect,
+                            __Block_object_assign, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___NSArray0__struct, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __dispatch_main_q, __objc_empty_cache,
+                            __os_log_error_impl, __os_log_impl, _dispatch_async,
+                            _dispatch_once, _dlopen, _dyld_program_sdk_at_least,
+                            _kCAFillModeForwards, _kCAFilterMultiplyColor,
+                            _kdebug_trace, _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_getClass, _objc_initWeak,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _objc_storeWeak,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ CABasicAnimation, CAFilter, CAShapeLayer, NSArray,
+                            NSAttributedString, NSBundle, NSConstantIntegerNumber,
+                            NSData, NSDictionary, NSError, NSException,
+                            NSMutableAttributedString, NSMutableDictionary,
+                            NSMutableParagraphStyle, NSNumber, NSObject, NSSet,
+                            NSShadow, NSString, NSXPCInterface,
+                            PKAddPaymentPassRequest,
+                            PKAddPaymentPassRequestConfiguration, PKContact,
+                            PKDisbursementPaymentRequest, PKExtension,
+                            PKExtensionProvider, PKInAppPaymentService,
+                            PKPassLibrary, PKPaymentAuthorizationCoordinator,
+                            PKPaymentAuthorizationResult, PKPaymentPass,
+                            PKPaymentRequest,
+                            PKPaymentRequestMerchantSessionUpdate,
+                            PKPaymentRequestPaymentMethodUpdate,
+                            PKPaymentRequestShippingContactUpdate,
+                            PKPaymentRequestShippingMethodUpdate, PKShapeView,
+                            UIActivityIndicatorView, UIApplication, UIBezierPath,
+                            UIButton, UIColor, UIDevice, UIFont, UIImage, UIImageView,
+                            UILabel, UIScreen, UIViewController,
+                            _UIRemoteViewController ]
+...

@@ -1,0 +1,58 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/UserNotificationsUI.framework/UserNotificationsUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _UNAppLaunchOriginContentExtension, _UNLogExtensions,
+                            _UNRegisterUserNotificationsUILogging,
+                            _UserNotificationsUIVersionNumber,
+                            _UserNotificationsUIVersionString,
+                            __UNNotificationContentExtensionHostInterface,
+                            __UNNotificationContentExtensionVendorInterface,
+                            __UNNotificationExtensionActionsKey ]
+    objc-classes:         [ _UNNotificationContentExtensionHostContext,
+                            _UNNotificationContentExtensionVendorContext,
+                            _UNNotificationContentExtensionViewController,
+                            _UNNotificationContentExtensionViewControllerView ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CGRectGetWidth, _CGSizeZero,
+                            _FBSOpenApplicationOptionKeyLaunchOrigin,
+                            _FBSOpenApplicationOptionKeyPromptUnlockDevice,
+                            _FBSOpenApplicationOptionKeyUnlockDevice,
+                            _NSKeyValueChangeNewKey, _NSStringFromClass,
+                            _NSStringFromProtocol, __Block_object_assign,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___NSArray0__struct, ___kCFBooleanTrue,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_main_q,
+                            __objc_empty_cache, __os_log_error_impl, __os_log_impl,
+                            _dispatch_activate, _dispatch_async,
+                            _dispatch_get_global_queue, _dispatch_once,
+                            _dispatch_queue_attr_make_initially_inactive,
+                            _dispatch_queue_attr_make_with_autorelease_frequency,
+                            _dispatch_queue_create, _dispatch_resume,
+                            _dispatch_suspend, _dispatch_sync, _objc_alloc,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_getProperty, _objc_initWeak,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _objc_storeWeak, _os_log_create,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ LSApplicationWorkspace, NSArray, NSBundle, NSData,
+                            NSDictionary, NSExtensionContext, NSKeyedArchiver,
+                            NSKeyedUnarchiver, NSMutableArray, NSObject, NSSet,
+                            NSValue, NSXPCInterface, UIPeripheralHost, UIScreen,
+                            UIScrollViewDelayedTouchesBeganGestureRecognizer,
+                            UIView, UIViewController, UNNotificationAction ]
+...

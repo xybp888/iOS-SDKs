@@ -1,0 +1,35 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SidecarUI.framework/SidecarUI
+current-version:       227
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ SidecarServiceViewController ]
+    objc-ivars:           [ SidecarServiceViewController._allowsDisplaySleep,
+                            SidecarServiceViewController._backgrounded,
+                            SidecarServiceViewController._calledServiceReady,
+                            SidecarServiceViewController._request,
+                            SidecarServiceViewController._terminationRequested,
+                            SidecarServiceViewController._waitForReconnect,
+                            SidecarServiceViewController._wantsVolumeButtonEvents ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SidecarOptOutOfReconnect,
+                            _SidecarRegisterServiceProvider,
+                            _SidecarServiceProviderReady, _UIApp,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_main_q,
+                            __objc_empty_cache, __os_log_impl, _dispatch_async,
+                            _dispatch_once, _objc_msgSend, _objc_msgSendSuper2,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_create,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ NSBundle, NSObject, NSXPCInterface, UIViewController ]
+...

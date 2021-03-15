@@ -1,0 +1,46 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SocialServices.framework/SocialServices
+current-version:       87
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ SLGoogleAuthController ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ACAccountPropertyFullName,
+                            _ACAccountTypeIdentifierGmail,
+                            _ASWebAuthenticationSessionErrorDomain, _CFRelease,
+                            _CFUserNotificationCreate,
+                            _CFUserNotificationReceiveResponse,
+                            _CPSystemRootDirectory, _NSURLErrorDomain,
+                            _NSUnderlyingErrorKey, _SLErrorDomain,
+                            _SLSocialFrameworkBundle, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteStackBlock,
+                            __SLLog, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_main_q,
+                            __objc_empty_cache, _dispatch_async,
+                            _dispatch_get_global_queue, _kCFAllocatorDefault,
+                            _kCFUserNotificationAlertHeaderKey,
+                            _kCFUserNotificationAlertMessageKey,
+                            _kCFUserNotificationDefaultButtonTitleKey,
+                            _kCFUserNotificationLocalizationURLKey, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_respondsToSelector,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_storeStrong, dyld_stub_binder ]
+    objc-classes:         [ ACAccount, ACAccountCredential, ACAccountStore,
+                            ASWebAuthenticationSession, NSDictionary, NSError,
+                            NSMutableDictionary, NSNumber, NSObject, NSString, NSURL,
+                            NSUUID, SLExternalServiceGatekeeper,
+                            SLGoogleWebAuthRequest, SLGoogleWebClient,
+                            SLWebAuthController, SLWebAuthIdentity,
+                            SLWebTokenHandlerController ]
+...

@@ -1,0 +1,56 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/GPURawCounter.framework/GPURawCounter
+current-version:       17.2
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CTRCopyAllCounterSourceGroup,
+                            _CTRReleaseAllCounterSourceGroup,
+                            _GPURawCounterVersionNumber,
+                            _GPURawCounterVersionString,
+                            _GRCCopyAllCounterSourceGroup,
+                            _GRCReleaseAllCounterSourceGroup ]
+    objc-classes:         [ GPURawCounterSelect,
+                            GPURawCounterSourceTriggerSelect, _GPURawCounter,
+                            _GPURawCounterSource, _GPURawCounterSourceGroup,
+                            _GPURawCounterSourceTrigger ]
+    objc-ivars:           [ GPURawCounterSelect._name,
+                            GPURawCounterSelect._options,
+                            GPURawCounterSelect._width,
+                            GPURawCounterSourceTriggerSelect._name,
+                            GPURawCounterSourceTriggerSelect._options,
+                            _GPURawCounter._counterValueType,
+                            _GPURawCounter._description, _GPURawCounter._name,
+                            _GPURawCounterSource._name,
+                            _GPURawCounterSource._options,
+                            _GPURawCounterSource._sourceGroup,
+                            _GPURawCounterSourceGroup._acceleratorPort,
+                            _GPURawCounterSourceGroup._name,
+                            _GPURawCounterSourceGroup._options,
+                            _GPURawCounterSourceGroup._samplingPeriodInMicroseconds,
+                            _GPURawCounterSourceGroup._samplingTriggers,
+                            _GPURawCounterSourceGroup._sourceList,
+                            _GPURawCounterSourceTrigger._description,
+                            _GPURawCounterSourceTrigger._name,
+                            _GPURawCounterSourceTrigger._options ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFGetTypeID, _CFRelease, _CFStringCreateWithCString,
+                            _CFStringGetTypeID, _IOIteratorNext, _IOMasterPort,
+                            _IOObjectRelease, _IORegistryEntryCreateCFProperty,
+                            _IOServiceGetMatchingServices, _IOServiceMatching,
+                            _NSLog, __NSConcreteGlobalBlock,
+                            ___CFConstantStringClassReference,
+                            __objc_empty_cache, _bootstrap_port, _dispatch_once,
+                            _dispatch_queue_create, _dispatch_sync, _getenv,
+                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_getProperty, _objc_msgSend, _objc_msgSendSuper2,
+                            _objc_opt_class, _objc_release,
+                            _objc_setProperty_atomic_copy, dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSBundle, NSMutableArray, NSObject, NSString ]
+...

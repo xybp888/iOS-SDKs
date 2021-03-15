@@ -1,0 +1,69 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IDSHashPersistence.framework/IDSHashPersistence
+current-version:       800
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ IDSMessageHashStore ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFAbsoluteTimeGetCurrent,
+                            _CSDBCreateDirectoriesToPath,
+                            _CSDBCreateThreadedRecordStoreWithQOSClassAndLookAsideBufferConfig,
+                            _CSDBDataMethods, _CSDBGetMobileUserDirectory,
+                            _CSDBGetMobileUserGID, _CSDBGetMobileUserUID,
+                            _CSDBIntegerMethods, _CSDBPerformLocked,
+                            _CSDBPerformLockedSectionForRecordStore,
+                            _CSDBPerformLockedSectionForRecordStoreWithoutInitialize,
+                            _CSDBPerformUnlockedSectionForQueryForReading,
+                            _CSDBPerformUnlockedSectionForQueryForWriting,
+                            _CSDBRecordSaveStore,
+                            _CSDBRecordStoreCreateTablesForClass,
+                            _CSDBRecordStoreInvalidateCachesWithStore,
+                            _CSDBSqliteBindBlobFromCFData, _CSDBSqliteBindInt64,
+                            _CSDBSqliteConnectionPerformSQL,
+                            _CSDBSqliteDatabaseSetVersion,
+                            _CSDBSqliteSetDefaultPageCacheSize,
+                            _CSDBSqliteStatementInteger64ResultColumn,
+                            _CSDBSqliteStatementPerform, _CSDBSqliteStep,
+                            _CSDBThreadedRecordStoreEnsureDatabaseSetupWithProtection,
+                            _CSDBThreadedRecordStoreRegisterClass,
+                            _CSDBThreadedRecordStoreTeardownDatabase,
+                            _IMWeakLinkClass, _OSLogHandleForIDSCategory,
+                            __Block_object_assign, __Block_object_dispose,
+                            __IDSLogV, __IDSShouldLog, __IMWarn,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_source_type_timer,
+                            __objc_empty_cache, __os_log_impl, _dispatch_async,
+                            _dispatch_get_global_queue, _dispatch_once,
+                            _dispatch_queue_attr_make_with_autorelease_frequency,
+                            _dispatch_queue_attr_make_with_qos_class,
+                            _dispatch_queue_create,
+                            _dispatch_queue_create_with_target$V2,
+                            _dispatch_resume, _dispatch_source_cancel,
+                            _dispatch_source_create,
+                            _dispatch_source_set_event_handler,
+                            _dispatch_source_set_timer, _dispatch_time,
+                            _mach_continuous_time, _mach_timebase_info,
+                            _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue, _objc_begin_catch,
+                            _objc_end_catch, _objc_msgSend, _objc_msgSendSuper2,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong,
+                            _os_log_shim_legacy_logging_enabled,
+                            _os_log_type_enabled, _os_unfair_lock_assert_owner,
+                            _os_unfair_lock_lock, _os_unfair_lock_unlock,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSDate, NSMutableArray, NSObject, NSProcessInfo,
+                            NSString ]
+    objc-eh-types:        [ NSException ]
+...

@@ -1,0 +1,50 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AXIDSServices.framework/AXIDSServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXIDSServiceDataKey,
+                            _AXIDSServiceDeviceIDSIdentifierKey,
+                            _AXIDSServiceDeviceNRIdentifierKey,
+                            _AXIDSServiceDevicesKey,
+                            _AXIDSServiceExpectsResponseKey,
+                            _AXIDSServiceFromIDKey,
+                            _AXIDSServiceIncomingIdentifierKey,
+                            _AXIDSServiceMessageKey,
+                            _AXIDSServiceOutgoingIdentifierKey,
+                            _AXIDSServicePriorityKey, _AXIDSServiceRegisterKey,
+                            _AXIDSServiceRequestingResponseKey,
+                            _AXIDSServiceResourceURLKey, _AXIDSServiceResultKey,
+                            _AXIDSServiceSendErrorKey,
+                            _AXIDSServiceSendIdentifierKey,
+                            _AXIDSServicesVersionNumber,
+                            _AXIDSServicesVersionString ]
+    objc-classes:         [ AXIDSServices ]
+    objc-ivars:           [ AXIDSServices._cachedConnectedDevices,
+                            AXIDSServices._clients, AXIDSServices._clientsLock,
+                            AXIDSServices._connectedDevicesLock,
+                            AXIDSServices._idsServerClient ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference,
+                            ___kCFBooleanFalse, ___kCFBooleanTrue,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, _dispatch_once, _getpid, _objc_alloc,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_unfair_lock_lock,
+                            _os_unfair_lock_unlock, dyld_stub_binder ]
+    objc-classes:         [ AXAccessQueue, AXUIClient, NSArray, NSDictionary,
+                            NSHashTable, NSNumber, NSObject, NSString ]
+...

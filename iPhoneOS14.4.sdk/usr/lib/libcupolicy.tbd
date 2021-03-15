@@ -1,0 +1,74 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libcupolicy.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _network_usage_policy_create_client,
+                            _network_usage_policy_destroy_client,
+                            _network_usage_policy_get_WiFi_data_allowed_from_policy,
+                            _network_usage_policy_get_bundle_from_policy,
+                            _network_usage_policy_get_cell_data_allowed_from_policy,
+                            _network_usage_policy_get_datausage_policies,
+                            _network_usage_policy_get_first_use_flow_performed_from_policy,
+                            _network_usage_policy_get_for_bundle,
+                            _network_usage_policy_set_changed_handler,
+                            _perform_first_network_use_flow ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFBooleanGetTypeID, _CFGetTypeID, _CFRelease,
+                            _MGCopyAnswer, __Block_copy, __Block_object_assign,
+                            __Block_object_dispose, __Block_release,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            __ZN3ctu11OsLogLoggerC1EPKcS2_,
+                            __ZN3ctu11OsLogLoggerD1Ev,
+                            __ZN3ctu2cf6assignERbPK11__CFBoolean,
+                            __ZN3ctu9XpcClient14setServer_syncEN3xpc10connectionE,
+                            __ZN3ctu9XpcClientC2ENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE,
+                            __ZN3ctu9XpcClientD2Ev,
+                            __ZN3xpc19dyn_cast_or_defaultERKNS_6objectERKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEE,
+                            __ZN3xpc19dyn_cast_or_defaultERKNS_6objectEb,
+                            __ZNK3xpc6object9to_stringEv,
+                            __ZNKSt3__121__basic_string_commonILb1EE20__throw_length_errorEv,
+                            __ZNSt3__112bad_weak_ptrD1Ev,
+                            __ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1ERKS5_,
+                            __ZNSt3__119__shared_weak_count14__release_weakEv,
+                            __ZNSt3__119__shared_weak_count4lockEv,
+                            __ZNSt3__119__shared_weak_countD2Ev,
+                            __ZSt9terminatev, __ZTIN3ctu9XpcClientE,
+                            __ZTINSt3__112bad_weak_ptrE,
+                            __ZTINSt3__119__shared_weak_countE,
+                            __ZTVN10__cxxabiv117__class_type_infoE,
+                            __ZTVN10__cxxabiv120__si_class_type_infoE,
+                            __ZTVN10__cxxabiv121__vmi_class_type_infoE,
+                            __ZTVNSt3__112bad_weak_ptrE,
+                            ___CFConstantStringClassReference,
+                            ___cxa_allocate_exception, ___cxa_begin_catch,
+                            ___cxa_end_catch, ___cxa_rethrow, ___cxa_throw,
+                            ___gxx_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __os_log_default,
+                            __os_log_error_impl, __os_log_impl,
+                            __xpc_error_connection_interrupted, __xpc_type_array,
+                            __xpc_type_connection, __xpc_type_dictionary,
+                            __xpc_type_null, __xpc_type_string, _dispatch_async,
+                            _dispatch_async_and_wait, _dispatch_barrier_async_f,
+                            _dispatch_get_global_queue, _dispatch_release,
+                            _dispatch_retain, _dispatch_sync, _getprogname, _memcmp,
+                            _memcpy, _notify_cancel, _notify_register_dispatch,
+                            _os_log_type_enabled, _strcmp, _strlen,
+                            _xpc_array_append_value, _xpc_array_create,
+                            _xpc_array_get_count, _xpc_array_get_value,
+                            _xpc_bool_create,
+                            _xpc_connection_create_mach_service,
+                            _xpc_connection_send_message,
+                            _xpc_connection_send_message_with_reply, _xpc_copy,
+                            _xpc_dictionary_create, _xpc_dictionary_get_value,
+                            _xpc_dictionary_set_value, _xpc_get_type,
+                            _xpc_null_create, _xpc_release, _xpc_retain,
+                            _xpc_string_create, _xpc_string_get_string_ptr,
+                            dyld_stub_binder ]
+...

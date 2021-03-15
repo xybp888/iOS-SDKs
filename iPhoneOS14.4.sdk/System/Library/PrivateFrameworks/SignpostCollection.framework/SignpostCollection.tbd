@@ -1,0 +1,85 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SignpostCollection.framework/SignpostCollection
+current-version:       56
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SignpostCollectionVersionNumber,
+                            _SignpostCollectionVersionString,
+                            _SignpostPlatformForDevice,
+                            _SignpostPlatformForString,
+                            _SignpostSystemTimebaseRatio,
+                            _StringForSignpostPlatform,
+                            __signpostcollection_debug_log,
+                            _kSignpostNotification_NoTimeout ]
+    objc-classes:         [ SignpostSerializationFilterConfiguration,
+                            SignpostSupportObjectSerializer ]
+    objc-ivars:           [ SignpostSerializationFilterConfiguration._pidFilter,
+                            SignpostSerializationFilterConfiguration._processNameFilter,
+                            SignpostSerializationFilterConfiguration._subsystemCategoryFilter,
+                            SignpostSerializationFilterConfiguration._uniquePidFilter,
+                            SignpostSupportObjectSerializer._extractor,
+                            SignpostSupportObjectSerializer._filterConfiguration,
+                            SignpostSupportObjectSerializer._maxBatchSize,
+                            SignpostSupportObjectSerializer._maxBytesSize,
+                            SignpostSupportObjectSerializer._outstandingLogMessage,
+                            SignpostSupportObjectSerializer._outstandingSignpostObjects,
+                            SignpostSupportObjectSerializer._redactPrivacySensitiveData,
+                            SignpostSupportObjectSerializer._serializedLogMessageBlock,
+                            SignpostSupportObjectSerializer._serializedSignpostEventBlock ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _IOAllowPowerChange, _IODeregisterForSystemPower,
+                            _IONotificationPortDestroy,
+                            _IONotificationPortSetDispatchQueue,
+                            _IORegisterForSystemPower, __Block_object_assign,
+                            __Block_object_dispose, __DefaultRuneLocale,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __SignpostSupportSerializationDataFromObjectArray,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___assert_rtn, ___error, ___maskrune,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, ___stderrp,
+                            __dispatch_source_type_timer, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_impl,
+                            __os_signpost_emit_with_name_impl, _dispatch_once,
+                            _dispatch_queue_create, _dispatch_resume,
+                            _dispatch_semaphore_wait, _dispatch_source_create,
+                            _dispatch_source_set_event_handler,
+                            _dispatch_source_set_timer, _dispatch_sync,
+                            _dispatch_time, _fprintf, _ktrace_chunk_map_data,
+                            _ktrace_chunk_size, _ktrace_chunk_tag,
+                            _ktrace_chunk_unmap_data, _ktrace_file_close,
+                            _ktrace_file_iterate, _ktrace_file_open,
+                            _mach_get_times, _mach_timebase_info, _objc_alloc,
+                            _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_getProperty, _objc_initWeak,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_setProperty_nonatomic_copy,
+                            _objc_storeStrong,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_create, _os_log_type_enabled,
+                            _os_signpost_enabled, _strerror, _strnstr, _strstr,
+                            dyld_stub_binder ]
+    objc-classes:         [ KtraceLoggingDataSource, NSArray, NSData, NSDate, NSError,
+                            NSMutableArray, NSMutableDictionary, NSMutableSet,
+                            NSNumberFormatter, NSObject, NSString, NSURL,
+                            OSLogDeserializedEventStream, OSLogEventLiveStore,
+                            OSLogEventLiveStream, OSLogEventStore,
+                            OSLogEventStream, SignpostEvent, SignpostStackFrame,
+                            SignpostStreamEvent, SignpostSupportLogMessage,
+                            SignpostSupportMachTimeTranslator,
+                            SignpostSupportMetadataSegment,
+                            SignpostSupportObjectExtractor ]
+...

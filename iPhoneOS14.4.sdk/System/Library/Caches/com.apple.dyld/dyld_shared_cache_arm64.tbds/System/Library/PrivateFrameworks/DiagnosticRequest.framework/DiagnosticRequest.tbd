@@ -1,0 +1,69 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DiagnosticRequest.framework/DiagnosticRequest
+current-version:       0
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DRShouldEnableLogGathering, _DRShouldGatherLog,
+                            _DRSubmitLog, _DRTailspinRequest,
+                            __DPCEnableLogGatheringQueryMessage,
+                            __DPCInjectEnableLogGatheringQueryResult,
+                            __DPCSubmitLogRequestMessage,
+                            __DPCTailspinRequestMessage,
+                            __DPCTriggerRequestClean, __DPClientXPCSendMessage,
+                            __DPClientXPCSendMessageWithReplySync,
+                            __DRCResetDampeningConfigurationToDefault,
+                            __DRCSetDampeningConfigurationDefaults,
+                            __DRCSetDampeningIsEnabled, __DRCTriggerCloudKitWork,
+                            __DRRequestPassesTailspinHysteresis,
+                            _kDRRequestClientError,
+                            _kDRRequestOversizedContextDictErrorString,
+                            _kMinimumTailspinLeewaySeconds ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSLocalizedDescriptionKey, _NSStringFromClass,
+                            _SANDBOX_EXTENSION_DEFAULT, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_error_impl,
+                            __os_signpost_emit_with_name_impl,
+                            __xpc_error_connection_interrupted,
+                            __xpc_error_connection_invalid,
+                            __xpc_type_dictionary, _dispatch_once,
+                            _dispatch_queue_create, _dispatch_sync,
+                            _mach_continuous_time, _mach_timebase_info,
+                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_create,
+                            _os_log_type_enabled, _os_signpost_enabled,
+                            _sandbox_extension_issue_file,
+                            _xpc_connection_activate, _xpc_connection_cancel,
+                            _xpc_connection_create_mach_service,
+                            _xpc_connection_send_message,
+                            _xpc_connection_send_message_with_reply_sync,
+                            _xpc_connection_set_context,
+                            _xpc_connection_set_event_handler,
+                            _xpc_connection_set_finalizer_f,
+                            _xpc_dictionary_create, _xpc_dictionary_get_bool,
+                            _xpc_dictionary_get_string,
+                            _xpc_dictionary_get_uint64,
+                            _xpc_dictionary_get_value, _xpc_dictionary_set_bool,
+                            _xpc_dictionary_set_data, _xpc_dictionary_set_double,
+                            _xpc_dictionary_set_string,
+                            _xpc_dictionary_set_uint64, _xpc_get_type,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSDictionary, NSError, NSObject,
+                            NSPropertyListSerialization, NSString ]
+...

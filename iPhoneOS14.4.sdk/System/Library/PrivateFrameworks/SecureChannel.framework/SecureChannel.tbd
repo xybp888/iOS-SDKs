@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SecureChannel.framework/SecureChannel
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ SecureChannelAction, SecureChannelController,
+                            SecureChannelServiceProxy ]
+    objc-ivars:           [ SecureChannelAction._message,
+                            SecureChannelAction._title, SecureChannelAction._url,
+                            SecureChannelServiceProxy._connectionToService,
+                            SecureChannelServiceProxy._remoteObject ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSLog, __Block_object_assign, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference,
+                            __objc_empty_cache, _dispatch_once, _objc_alloc,
+                            _objc_alloc_init, _objc_getProperty, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, dyld_stub_binder ]
+    objc-classes:         [ NSObject, NSString, NSURL, NSXPCConnection, NSXPCInterface ]
+...

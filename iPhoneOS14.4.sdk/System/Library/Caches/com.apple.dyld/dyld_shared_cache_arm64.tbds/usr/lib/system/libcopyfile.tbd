@@ -1,0 +1,45 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/system/libcopyfile.dylib
+current-version:       1
+compatibility-version: 1
+parent-umbrella:       System
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _copyfile, _copyfile_state_alloc, _copyfile_state_free,
+                            _copyfile_state_get, _copyfile_state_set, _fcopyfile,
+                            _xattr_flags_from_name, _xattr_intent_with_flags,
+                            _xattr_name_with_flags, _xattr_name_without_flags,
+                            _xattr_preserve_for_intent ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __NSConcreteGlobalBlock, ___chkstk_darwin, ___error,
+                            ___memcpy_chk, ___stack_chk_fail, ___stack_chk_guard,
+                            ___strlcpy_chk, __xpc_runtime_is_app_sandboxed,
+                            _acl_add_perm, _acl_clear_perms, _acl_copy_entry,
+                            _acl_create_entry, _acl_create_entry_np,
+                            _acl_delete_entry, _acl_free, _acl_from_text,
+                            _acl_get_entry, _acl_get_flag_np, _acl_get_flagset_np,
+                            _acl_get_permset, _acl_get_qualifier,
+                            _acl_get_tag_type, _acl_init, _acl_set_fd,
+                            _acl_set_permset, _acl_set_qualifier,
+                            _acl_set_tag_type, _acl_to_text, _asprintf, _basename,
+                            _calloc, _chmod, _chmodx_np, _clonefileat, _close,
+                            _dirname_r, _dispatch_once, _fchflags, _fchmod,
+                            _fchmodx_np, _fchown, _fcntl, _fgetxattr, _filesec_dup,
+                            _filesec_free, _filesec_get_property, _filesec_init,
+                            _filesec_set_property, _flistxattr, _fpathconf, _free,
+                            _fremovexattr, _fsetattrlist, _fsetxattr, _fstat, _fstatfs,
+                            _fstatx_np, _ftruncate, _fts_close, _fts_open, _fts_read,
+                            _fts_set, _getattrlist, _getenv, _geteuid, _getuid,
+                            _listxattr, _lseek, _lstat, _lstatx_np, _malloc,
+                            _mbr_uid_to_uuid, _memchr, _memcmp, _memcpy, _memmove,
+                            _mkdir, _open, _open_dprotected_np, _pread, _pwrite,
+                            _qsort_b, _read, _readlink, _realloc,
+                            _realpath$DARWIN_EXTSN, _remove, _stat, _statfs, _statx_np,
+                            _strcmp, _strdup, _strlcpy, _strlen, _strncasecmp, _strncmp,
+                            _strrchr, _strtol, _symlink, _syslog, _unlink, _write,
+                            dyld_stub_binder ]
+...

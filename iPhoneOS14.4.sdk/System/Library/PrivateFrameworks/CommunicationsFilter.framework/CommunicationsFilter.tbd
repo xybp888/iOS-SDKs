@@ -1,0 +1,78 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CommunicationsFilter.framework/CommunicationsFilter
+current-version:       800
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CMFAgentName, _CMFBlockListAddItemForAllServices,
+                            _CMFBlockListCopyItemsForAllServicesService,
+                            _CMFBlockListIsItemBlocked,
+                            _CMFBlockListRemoveItemFromAllServices,
+                            _CMFBlockListUpdatedNotification,
+                            _CMFDictionaryResultKey, _CMFItemCopyBusinessID,
+                            _CMFItemCopyEmailAddress, _CMFItemCopyPhoneNumber,
+                            _CMFItemCreateWithBusinessID,
+                            _CMFItemCreateWithEmailAddress,
+                            _CMFItemCreateWithPhoneNumber, _CMFItemGetType,
+                            _CMFSyncAgentBlockListUpdated, _CMFXPCEventCode,
+                            _CMFXPCParameterKeyItem, _CMFXPCResponseKey,
+                            _CreateCMFItemFromString ]
+    objc-classes:         [ CommunicationFilterItem,
+                            CommunicationFilterItemCache,
+                            CommunicationsFilterBlockList,
+                            CommunicationsFilterBlockListCache ]
+    objc-ivars:           [ CommunicationFilterItem._emailAddress,
+                            CommunicationFilterItem._phoneNumber,
+                            CommunicationFilterItemCache._filterItem,
+                            CommunicationFilterItemCache._isInList,
+                            CommunicationsFilterBlockList._cache,
+                            CommunicationsFilterBlockList._connection,
+                            CommunicationsFilterBlockList._queue,
+                            CommunicationsFilterBlockList._recentObjectsTested,
+                            CommunicationsFilterBlockList._retries,
+                            CommunicationsFilterBlockListCache._listIsEmpty,
+                            CommunicationsFilterBlockListCache._notifyEmptyListToken,
+                            CommunicationsFilterBlockListCache._recentItems ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFEqual, _CFRelease, _CFRetain,
+                            _IMCountryCodeCFPhoneNumberRef,
+                            _IMGetXPCCodableFromDictionaryWithStandardWhitelist,
+                            _IMGetXPCDictionaryFromDictionary,
+                            _IMInsertDictionariesToXPCDictionary,
+                            _IMPhoneNumberRefCopyForPhoneNumber,
+                            _IMRemoteURLConnectionErrorDomain,
+                            _IMStringIsBusinessID,
+                            _IMUnformattedPhoneNumberForCFPhoneNumberRef,
+                            _IMXPCConfigureConnection,
+                            _IMXPCCreateConnectionForServiceWithQueue,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_main_q,
+                            __objc_empty_cache, __os_log_error_impl, __os_log_impl,
+                            __xpc_error_connection_interrupted,
+                            __xpc_error_connection_invalid,
+                            __xpc_type_dictionary, __xpc_type_error,
+                            _dispatch_once, _dispatch_queue_create,
+                            _dispatch_release, _dispatch_sync, _notify_get_state,
+                            _notify_register_dispatch, _objc_alloc,
+                            _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_sync_enter, _objc_sync_exit, _os_log_create,
+                            _os_log_type_enabled, _xpc_connection_cancel,
+                            _xpc_connection_send_message_with_reply_sync,
+                            _xpc_dictionary_create, _xpc_dictionary_set_int64,
+                            _xpc_get_type, _xpc_release, dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSDistributedNotificationCenter, NSError,
+                            NSMutableArray, NSMutableDictionary,
+                            NSNotificationCenter, NSNumber, NSObject ]
+...

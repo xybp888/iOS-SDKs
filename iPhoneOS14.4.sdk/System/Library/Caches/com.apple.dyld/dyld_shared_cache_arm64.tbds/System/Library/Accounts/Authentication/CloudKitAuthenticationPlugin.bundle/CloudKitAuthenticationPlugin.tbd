@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Accounts/Authentication/CloudKitAuthenticationPlugin.bundle/CloudKitAuthenticationPlugin
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ACAccountTypeIdentifierCloudKit, _ACErrorDomain,
+                            __CKUseSystemInstalledBinariesBackingBool,
+                            ___CFConstantStringClassReference,
+                            ___sTestOverridesAvailable, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_error_impl, __os_log_impl,
+                            _ck_log_facilities_initailize_static,
+                            _ck_log_facility_ck, _ck_log_facility_ck_test,
+                            _kACDAllAccountsAccessEntitlement,
+                            _kACDAppleAccountsFullAccessEntitlement,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_msgSend, _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ AAKeychainManager, ACAccountCredential,
+                            ACDKeychainManager, NSError, NSObject ]
+...

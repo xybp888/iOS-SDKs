@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/UserManagementUI.framework/UserManagementUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _UIImagePNGRepresentation,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_opt_new, _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            dyld_stub_binder ]
+    objc-classes:         [ CNContact, CNMutableContact, NSData, UIImage, UMUser ]
+...
