@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SetupKit.framework/SetupKit
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ SKDevice, SKFlow, SKSetupHomeKitClient,
+                            SKSetupHomeKitServer, SKStepWiFiSetupClient,
+                            SKStepWiFiSetupServer ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CUFatalErrorF, _LogCategoryReplaceF,
+                            _LogCategory_Remove, _LogPrintF, _NSErrorF,
+                            _NSOSStatusErrorDomain, _NSPrintF,
+                            __Block_object_assign, __LogCategory_Initialize,
+                            __NSConcreteStackBlock, __dispatch_main_q,
+                            __objc_empty_cache, _dispatch_async, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_getProperty,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_setProperty_nonatomic_copy,
+                            _objc_storeStrong, dyld_stub_binder ]
+    objc-classes:         [ NSMutableArray, NSObject ]
+...

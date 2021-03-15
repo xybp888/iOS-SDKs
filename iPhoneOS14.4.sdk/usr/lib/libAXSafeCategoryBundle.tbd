@@ -1,0 +1,40 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libAXSafeCategoryBundle.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXSetUIAXReportSenderErrorLoggerFunction,
+                            _AXSetValidationErrorLoggingFunction,
+                            _UIAccessibilityInstallSafeCategories,
+                            _UIAccessibilityInstallSafeCategory ]
+    objc-classes:         [ UIAccessibilitySafeCategory ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFRelease, _CFRunLoopGetMain, _CFRunLoopPerformBlock,
+                            _CFStringCompare, _NSClassFromString,
+                            _NSStringFromClass, _NSStringFromSelector,
+                            __AXClearIMPCachesNotification,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            _class_addMethodsBulk, _class_copyMethodList,
+                            _class_getInstanceMethod, _class_getSuperclass,
+                            _class_replaceMethodsBulk, _dispatch_once, _free,
+                            _kCFRunLoopDefaultMode, _malloc,
+                            _method_getImplementation, _method_getName,
+                            _method_getTypeEncoding, _objc_alloc,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_opt_class, _objc_opt_new, _objc_release,
+                            _objc_retain, _objc_retainAutoreleasedReturnValue,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _object_getClass, _os_log_create, _os_log_with_args,
+                            _qsort_b, dyld_stub_binder ]
+    objc-classes:         [ NSMutableArray, NSMutableSet, NSMutableString,
+                            NSNotificationCenter, NSObject, NSString ]
+...

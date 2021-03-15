@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libgermantok.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ ___gt_mutex, _btrie_build, _btrie_close,
+                            _btrie_common_prefix_search, _btrie_data,
+                            _btrie_exact_match_search, _btrie_open,
+                            _btrie_prefix_match_search,
+                            _btrie_wildcard_match_search, _germantok_tokenize ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFStringAppendCharacters, _CFStringGetLength,
+                            ___chkstk_darwin, ___stack_chk_fail,
+                            ___stack_chk_guard, ___strlcat_chk, ___strlcpy_chk,
+                            ___strncpy_chk, _bzero, _close, _free, _fstat, _getenv,
+                            _malloc, _memcmp, _memcpy, _mmap, _open, _pow,
+                            _pthread_mutex_lock, _pthread_mutex_unlock, _qsort,
+                            _realloc, _strlen, _u_memcpy, _u_strFromUTF8,
+                            _u_strToLower, _u_strToUTF8, _u_strToUpper,
+                            dyld_stub_binder ]
+...

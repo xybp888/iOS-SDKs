@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreDuetDebugLogging.framework/CoreDuetDebugLogging
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CDDSetError, _CDDebugErrorStrings ]
+    objc-classes:         [ CDDebug ]
+    objc-ivars:           [ CDDebug.verboseMode ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSLocalizedFailureReasonErrorKey,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, ___stderrp, __objc_empty_cache,
+                            _fprintf, _fputc, _fwrite, _localtime, _objc_autorelease,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
+                            _objc_retainAutoreleasedReturnValue, _strftime, _time,
+                            _vfprintf, dyld_stub_binder ]
+    objc-classes:         [ NSDictionary, NSError, NSObject, NSString ]
+...

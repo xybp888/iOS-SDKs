@@ -1,0 +1,47 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/URLFormatting.framework/URLFormatting
+current-version:       146.8
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ URLFormattingTestingOverrides ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFStringCreateWithCharacters,
+                            _CFStringGetCharacters, _CFStringGetLength,
+                            _CFStringTrimWhitespace,
+                            _CFURLCreateAbsoluteURLWithBytes,
+                            _CFURLCreateStringByReplacingPercentEscapes,
+                            _CFURLCreateWithBytes, _CFURLGetBaseURL,
+                            _CFURLGetByteRangeForComponent, _CFURLGetBytes, _NSLog,
+                            _NSSearchPathForDirectoriesInDomains,
+                            __Block_object_assign, __Block_object_dispose,
+                            __CFHostIsDomainTopLevel, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            __ZNKSt3__120__vector_base_commonILb1EE20__throw_length_errorEv,
+                            ___CFConstantStringClassReference, ___chkstk_darwin,
+                            ___gxx_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_default, __os_log_error_impl, _abort, _bzero,
+                            _dispatch_once, _fclose, _fopen, _free, _fscanf, _malloc,
+                            _memcmp, _memcpy, _memmove, _objc_alloc_init,
+                            _objc_autorelease, _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_opt_class, _objc_release, _objc_retain,
+                            _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_type_enabled, _realloc,
+                            _u_getPropertyValueEnum, _u_hasBinaryProperty,
+                            _u_isUWhiteSpace, _u_isprint, _uidna_nameToASCII,
+                            _uidna_nameToUnicode, _uidna_openUTS46,
+                            _uscript_getScript, dyld_stub_binder ]
+    objc-classes:         [ NSCharacterSet, NSData, NSMutableArray, NSMutableString,
+                            NSObject, NSString, NSURL, NSValue ]
+...

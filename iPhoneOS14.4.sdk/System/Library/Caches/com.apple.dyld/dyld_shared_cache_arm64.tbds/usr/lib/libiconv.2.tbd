@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libiconv.2.dylib
+current-version:       7
+compatibility-version: 7
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /usr/lib/libcharset.1.dylib ]
+    symbols:              [ __libiconv_version, _iconv, _iconv_canonicalize,
+                            _iconv_close, _iconv_open, _iconvctl, _iconvlist,
+                            _libiconv_set_relocation_prefix ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ ___chkstk_darwin, ___error, ___mb_cur_max,
+                            ___stack_chk_fail, ___stack_chk_guard, _abort, _free,
+                            _locale_charset, _malloc, _mbrtowc, _memcpy, _qsort, _strcmp,
+                            _strlen, _wcrtomb, dyld_stub_binder ]
+...

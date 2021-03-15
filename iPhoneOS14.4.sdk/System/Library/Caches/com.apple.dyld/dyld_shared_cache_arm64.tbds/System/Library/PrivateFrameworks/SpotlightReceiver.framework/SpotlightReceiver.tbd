@@ -1,0 +1,56 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SpotlightReceiver.framework/SpotlightReceiver
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SpotlightReceiverEntitlement,
+                            _SpotlightReceiverRegister,
+                            _SpotlightReceiverVersionNumber,
+                            _SpotlightReceiverVersionString,
+                            _SpotlightSenderEntitlement ]
+    objc-classes:         [ CSRecieverConnection ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFRelease, _NSKeyedArchiveRootObjectKey,
+                            _SecTaskCopyValueForEntitlement,
+                            _SecTaskCreateWithAuditToken, __MDPlistArrayGetCount,
+                            __MDPlistArrayGetPlistObjectAtIndex,
+                            __MDPlistArrayIterate, __MDPlistContainerCopyObject,
+                            __MDPlistGetPlistObjectType, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_error_impl,
+                            __os_log_impl, __xpc_type_data, _dispatch_once,
+                            _kCFAllocatorDefault, _logForCSLogCategoryDefault,
+                            _objc_alloc, _objc_alloc_init, _objc_begin_catch,
+                            _objc_end_catch, _objc_getProperty, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_respondsToSelector, _objc_opt_self,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_type_enabled, _strcmp,
+                            _xpc_connection_get_audit_token,
+                            _xpc_connection_get_pid,
+                            _xpc_connection_send_message,
+                            _xpc_data_get_bytes_ptr, _xpc_data_get_length,
+                            _xpc_dictionary_create_reply,
+                            _xpc_dictionary_get_date,
+                            _xpc_dictionary_get_remote_connection,
+                            _xpc_dictionary_get_uint64,
+                            _xpc_dictionary_get_value, _xpc_dictionary_set_int64,
+                            _xpc_dictionary_set_uint64, _xpc_get_type,
+                            dyld_stub_binder ]
+    objc-classes:         [ CSDecoder, CSSearchableItem,
+                            CSSearchableItemCodedArray, CSXPCConnection,
+                            INInteraction, INRelevantShortcut, NSArray, NSData, NSDate,
+                            NSKeyedUnarchiver, NSObject, NSSet ]
+    objc-eh-types:        [ NSException ]
+...

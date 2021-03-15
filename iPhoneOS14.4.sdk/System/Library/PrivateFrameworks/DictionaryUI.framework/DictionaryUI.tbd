@@ -1,0 +1,71 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DictionaryUI.framework/DictionaryUI
+current-version:       33
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DUDefinitionElementKeyHeadword,
+                            _DUDefinitionElementKeyPartOfSpeech,
+                            _DUDefinitionElementKeyPronunciation,
+                            _DUDefinitionElementKeyRecordID,
+                            _DUDefinitionElementKeySenses,
+                            _DUDefinitionElementKeySyllabifiedHeadword,
+                            _DictionaryUIVersionNumber,
+                            _DictionaryUIVersionString ]
+    objc-classes:         [ DUDefinitionDictionary, DUDefinitionValue,
+                            DUDictionaryManager, DUEntryViewController ]
+    objc-ivars:           [ DUDefinitionDictionary._activated,
+                            DUDefinitionDictionary._assetToUpgrade,
+                            DUDefinitionDictionary._definitionLanguage,
+                            DUDefinitionDictionary._dictionary,
+                            DUDefinitionDictionary._isAppleDictionary,
+                            DUDefinitionDictionary._isTTYDictionary,
+                            DUDefinitionDictionary._preferredOrder,
+                            DUDefinitionDictionary._progress,
+                            DUDefinitionDictionary._rawAsset,
+                            DUDefinitionValue._definition,
+                            DUDefinitionValue._definitionElements,
+                            DUDefinitionValue._foundRecordRefs,
+                            DUDefinitionValue._localizedDictionaryName,
+                            DUDefinitionValue._longDefinition,
+                            DUDefinitionValue._rawAsset, DUDefinitionValue._term,
+                            DUDictionaryManager._availableDefinitionDictionaries,
+                            DUDictionaryManager._initiallyEmptyAssets,
+                            DUEntryViewController._definitionValue ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFArrayGetCount, _CFArrayGetValueAtIndex, _CFRelease,
+                            _DCSCopyDefinitionRecords,
+                            _DCSDictionaryAssetGetAssetType,
+                            _DCSDictionaryAssetGetCompatibilityVersion,
+                            _DCSDictionaryCreateWithAssetAttributes,
+                            _DCSHasDefinitionForTerm,
+                            _DCSPreferredOrderOfDictionaryAssetAttributesForLanguages,
+                            _DCSRecordCopyDefinition, _DCSRecordCopyTextElements,
+                            _NSLog, _NSStringFromClass, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, _dispatch_once,
+                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_new, _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic, _objc_storeStrong,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            dyld_stub_binder ]
+    objc-classes:         [ ASAssetQuery, MAAsset, MAAssetQuery, MADownloadOptions,
+                            NSArray, NSBundle, NSHTMLReader, NSLocale, NSMutableArray,
+                            NSMutableString, NSObject, NSString, UIColor,
+                            UIViewController, WKUserContentController, WKWebView,
+                            WKWebViewConfiguration, _WKUserStyleSheet ]
+...

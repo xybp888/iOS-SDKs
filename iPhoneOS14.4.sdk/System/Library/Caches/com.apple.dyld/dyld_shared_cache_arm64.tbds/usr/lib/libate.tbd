@@ -1,0 +1,51 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libate.dylib
+current-version:       3.0.4
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _at_block_format_convert_to_MTLPixelFormat,
+                            _at_block_format_to_MTLPixelFormat,
+                            _at_block_get_features, _at_encoder_compress_texels,
+                            _at_encoder_create, _at_encoder_decompress_texels,
+                            _at_encoder_get_block_address,
+                            _at_encoder_get_block_alpha,
+                            _at_encoder_get_block_counts,
+                            _at_encoder_get_block_dimensions,
+                            _at_encoder_get_block_format,
+                            _at_encoder_get_block_size,
+                            _at_encoder_get_texel_alpha,
+                            _at_encoder_get_texel_format,
+                            _at_encoder_get_version,
+                            _at_encoder_is_compression_monolithic,
+                            _at_encoder_is_decompression_monolithic,
+                            _at_encoder_set_capabilities_mask,
+                            _at_texel_format_to_MTLPixelFormat ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, __ZSt9terminatev, __ZTIi,
+                            __ZTVN10__cxxabiv117__class_type_infoE,
+                            __ZTVN10__cxxabiv120__si_class_type_infoE,
+                            ___assert_rtn, ___chkstk_darwin,
+                            ___cxa_allocate_exception, ___cxa_begin_catch,
+                            ___cxa_call_unexpected, ___cxa_end_catch,
+                            ___cxa_pure_virtual, ___cxa_throw,
+                            ___gxx_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, ___stderrp, __objc_empty_cache,
+                            __os_object_alloc, _abort, _bzero, _calloc,
+                            _dispatch_apply_f, _dispatch_get_global_queue,
+                            _dispatch_once, _dladdr, _dlopen, _dlsym, _fprintf, _free,
+                            _fwrite, _malloc, _memcpy, _memset, _memset_pattern16,
+                            _memset_pattern4, _memset_pattern8, _objc_lookUpClass,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _os_release, _posix_memalign, _printf,
+                            _pthread_get_stackaddr_np, _pthread_get_stacksize_np,
+                            _pthread_self, _puts, _qos_class_self, _snprintf,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSObject, OS_object ]
+...

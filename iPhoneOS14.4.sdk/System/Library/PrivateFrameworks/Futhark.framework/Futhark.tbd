@@ -1,0 +1,97 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Futhark.framework/Futhark
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FKCCMatchGetConfidence, _FKComponentPrint,
+                            _FKGetBuildAPIVersion, _FKGetBuildGitHash,
+                            _FKGetBuildTimestamp, _FKGetFrameworkVersion,
+                            _FKPrintLinesegList, _FKPrintRender,
+                            _FKRecognizeConcomp, _FKSeqMatchGetConfidence,
+                            _FutharkVersionNumber, _FutharkVersionString ]
+    objc-classes:         [ FKTextCandidate, FKTextDetector, FKTextFeature ]
+    objc-ivars:           [ FKTextCandidate._confidence, FKTextCandidate._text,
+                            FKTextDetector._binarizerLimit,
+                            FKTextDetector._colorSplits,
+                            FKTextDetector._contrastLimit,
+                            FKTextDetector._createFeaturesForAllConcomps,
+                            FKTextDetector._detectDiacritics,
+                            FKTextDetector._enableBinarizerFiltering,
+                            FKTextDetector._memoryUsage,
+                            FKTextDetector._mergeSettings,
+                            FKTextDetector._minimizeFalseDetections,
+                            FKTextDetector._minimumCharacterHeight,
+                            FKTextDetector._multiThreadingQueue,
+                            FKTextDetector._recognitionLanguage,
+                            FKTextDetector._recognitionLanguages,
+                            FKTextDetector._recognizer,
+                            FKTextDetector._returnSubFeatures,
+                            FKTextDetector._roi, FKTextDetector._sessions,
+                            FKTextDetector._size,
+                            FKTextDetector._thresholdingAlgorithm,
+                            FKTextDetector._timeBinarizer,
+                            FKTextDetector._timeConcomps,
+                            FKTextDetector._timeDownscale,
+                            FKTextDetector._timeRecognizer,
+                            FKTextDetector._timeSequences,
+                            FKTextFeature._backingIndex,
+                            FKTextFeature._boundingBox,
+                            FKTextFeature._candidates, FKTextFeature._confidence,
+                            FKTextFeature._corners, FKTextFeature._featureID,
+                            FKTextFeature._scale, FKTextFeature._session,
+                            FKTextFeature._subFeatures, FKTextFeature._text,
+                            FKTextFeature._type ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFBundleCopyResourceURL,
+                            _CFBundleGetBundleWithIdentifier, _CFRelease,
+                            _CFStringGetCStringPtr, _CFStringGetSystemEncoding,
+                            _CFURLCopyFileSystemPath,
+                            _CGPointCreateDictionaryRepresentation,
+                            _CGPointMakeWithDictionaryRepresentation,
+                            _CGPointZero, _CGRectIntersection,
+                            _CGRectIntersectsRect, _CGRectUnion,
+                            _CVPixelBufferGetBaseAddress,
+                            _CVPixelBufferGetBaseAddressOfPlane,
+                            _CVPixelBufferGetBytesPerRow,
+                            _CVPixelBufferGetBytesPerRowOfPlane,
+                            _CVPixelBufferGetHeight,
+                            _CVPixelBufferGetPixelFormatType,
+                            _CVPixelBufferGetWidth, _CVPixelBufferIsPlanar,
+                            _CVPixelBufferLockBaseAddress,
+                            _CVPixelBufferUnlockBaseAddress,
+                            _NSLocalizedDescriptionKey, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___NSArray0__struct, ___chkstk_darwin,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, ___stderrp, ___stdoutp,
+                            ___strncat_chk, ___tolower,
+                            __dispatch_queue_attr_concurrent, __objc_empty_cache,
+                            _bzero, _calloc, _dispatch_async, _dispatch_barrier_sync,
+                            _dispatch_once, _dispatch_queue_create,
+                            _dispatch_release, _espresso_context_destroy,
+                            _espresso_create_context, _espresso_create_plan,
+                            _espresso_network_bind_buffer,
+                            _espresso_network_change_input_blob_shapes,
+                            _espresso_plan_add_network, _espresso_plan_build,
+                            _espresso_plan_destroy, _espresso_plan_execute_sync,
+                            _fflush, _free, _fwrite, _index, _mach_absolute_time,
+                            _mach_timebase_info, _malloc, _memcpy, _memset,
+                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_setProperty_nonatomic,
+                            _objc_setProperty_nonatomic_copy, _printf, _putchar,
+                            _qsort, _qsort_r, _realloc, _sprintf, _strcpy, _strlen,
+                            _strstr, _vImageScale_Planar8, dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSDictionary, NSError, NSMutableArray, NSObject,
+                            NSString, NSUserDefaults ]
+...

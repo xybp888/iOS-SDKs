@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/CoreServices/Encodings/libJapaneseConverter.dylib
+current-version:       90
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ ___CFStringEncodingGetJapaneseConverterDefinition ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ ___stack_chk_fail, ___stack_chk_guard, _memcpy, _strlen,
+                            _strncmp, _strncpy, dyld_stub_binder ]
+...

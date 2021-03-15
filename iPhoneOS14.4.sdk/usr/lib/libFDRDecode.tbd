@@ -1,0 +1,65 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libFDRDecode.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AMFDRDecodeCertificate,
+                            _AMFDRDecodeCheckCertRevocation,
+                            _AMFDRDecodeCheckProducerIDRevocation,
+                            _AMFDRDecodeCombined, _AMFDRDecodeEvaluateTrust,
+                            _AMFDRDecodeEvaluateTrustCombined,
+                            _AMFDRDecodeEvaluateTrustCombinedWithSik,
+                            _AMFDRDecodeEvaluateTrustOffline,
+                            _AMFDRDecodeEvaluateTrustWithSik,
+                            _AMFDRDecodeFDR2Data, _AMFDRDecodeGetImg4Manifest,
+                            _AMFDRDecodeGetImg4RawData,
+                            _AMFDRDecodeIterateCertChainBegin,
+                            _AMFDRDecodeIterateCertChainNext,
+                            _AMFDRDecodeIterateProducerIDBegin,
+                            _AMFDRDecodeIterateProducerIDNext,
+                            _AMFDRDecodeIterateTrustObjectRevokedBegin,
+                            _AMFDRDecodeIterateTrustObjectRevokedNext,
+                            _AMFDRDecodeIterateTrustObjectSslRootBegin,
+                            _AMFDRDecodeIterateTrustObjectSslRootNext,
+                            _AMFDRDecodeIterateTrustObjectTrustedBegin,
+                            _AMFDRDecodeIterateTrustObjectTrustedNext,
+                            _AMFDRDecodeLogSetHandler, _AMFDRDecodeManifestBody,
+                            _AMFDRDecodeManifestBodyDestroy,
+                            _AMFDRDecodeManifestBodyNext, _AMFDRDecodeMetadata,
+                            _AMFDRDecodeMultiResponse,
+                            _AMFDRDecodeMultiSealingResponse,
+                            _AMFDRDecodeOfflineBlob,
+                            _AMFDRDecodeParseDERLengthFromBuffer,
+                            _AMFDRDecodeSealingRequest,
+                            _AMFDRDecodeTrustEvaluation, _AMFDRDecodeTrustObject,
+                            _AMFDRDecodeVerifyCertIssuer,
+                            _AMFDRDecodeVerifySealingManifest,
+                            _AMFDRDecodeVerifySealingRequest ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AMSupportDigestSha1, _AMSupportDigestSha256,
+                            _AMSupportDigestSha384,
+                            _AMSupportEcDsaVerifySignature, _AMSupportLogFormat,
+                            _AMSupportRsaVerifySignatureSha1,
+                            _AMSupportRsaVerifySignatureSha256,
+                            _AMSupportRsaVerifySignatureSha384,
+                            _DERImg4DecodeContentFindItemWithTag,
+                            _DERImg4DecodeFindProperty, _DERImg4DecodeManifest,
+                            _DERImg4DecodeProperty,
+                            _Img4DecodeEvaluateManifestProperties,
+                            _Img4DecodeEvaluateObjectProperties,
+                            _Img4DecodeGetObjectPropertyData,
+                            _Img4DecodeGetPayloadType,
+                            _Img4DecodeGetPropertyBoolean,
+                            _Img4DecodeGetPropertyData, _Img4DecodeInit,
+                            _Img4DecodeInitManifest,
+                            _Img4DecodePerformTrustEvaluatation,
+                            _Img4DecodePerformTrustEvaluatationWithCallbacks,
+                            ___stack_chk_fail, ___stack_chk_guard, _bzero, _free,
+                            _kImg4TagStr_IM4M, _malloc, _memcmp, _vsnprintf,
+                            dyld_stub_binder ]
+...

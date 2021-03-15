@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MTLCompiler.framework/libMTLCompilerHelper.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _createCompilerHelper, _deleteCompilerHelper ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Unwind_Resume,
+                            __ZN4llvm12MemoryBuffer12getMemBufferENS_9StringRefES1_b,
+                            __ZN4llvm12MemoryBuffer7getFileERKNS_5TwineExbb,
+                            __ZN4llvm16parseBitcodeFileENS_15MemoryBufferRefERNS_11LLVMContextE,
+                            __ZN4llvm24DisableABIBreakingChecksE,
+                            __ZN4llvm29errorToErrorCodeAndEmitErrorsERNS_11LLVMContextENS_5ErrorE,
+                            __ZN4llvm6Linker11linkModulesERNS_6ModuleENSt3__110unique_ptrIS1_NS3_14default_deleteIS1_EEEEjNS3_8functionIFvS2_RKNS_9StringSetINS_15MallocAllocatorEEEEEE,
+                            __ZN4llvm6ModuleD1Ev,
+                            __ZNK4llvm11GlobalValue13isDeclarationEv,
+                            __ZNK4llvm12MemoryBuffer15getMemBufferRefEv,
+                            __ZNK4llvm5Value7getNameEv,
+                            __ZNKSt3__120__vector_base_commonILb1EE20__throw_length_errorEv,
+                            __ZNKSt3__121__basic_string_commonILb1EE20__throw_length_errorEv,
+                            __ZNSt11logic_errorC2EPKc, __ZNSt12length_errorD1Ev,
+                            __ZNSt3__115system_categoryEv,
+                            __ZTVN10__cxxabiv117__class_type_infoE,
+                            __ZTVN10__cxxabiv120__si_class_type_infoE,
+                            __ZTVSt12length_error, ___cxa_allocate_exception,
+                            ___cxa_free_exception, ___cxa_throw,
+                            ___gxx_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, _abort, _free, _malloc, _memcpy, _memset,
+                            _strcmp, _strlen, dyld_stub_binder ]
+...

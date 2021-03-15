@@ -1,0 +1,43 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AccessibilityFocusEngine.framework/AccessibilityFocusEngine
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AccessibilityFocusEngineVersionNumber,
+                            _AccessibilityFocusEngineVersionString ]
+    objc-classes:         [ AXFocusManager ]
+    objc-ivars:           [ AXFocusManager._movementQueue,
+                            AXFocusManager._pidForSuccessfulTypeaheadMovement,
+                            AXFocusManager._typeaheadString ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXInCallServiceName, _AXLogFocusEngine, _CFRelease,
+                            _CGSizeZero,
+                            __AXShouldDispatchNonMainThreadCallbacksOnMainThreadPopReason,
+                            __AXShouldDispatchNonMainThreadCallbacksOnMainThreadPushReason,
+                            __AXUIElementCreateAppElementWithPid,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___kCFBooleanFalse, ___kCFBooleanTrue,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_error_impl,
+                            __os_log_impl, _dispatch_async,
+                            _dispatch_queue_attr_make_with_qos_class,
+                            _dispatch_queue_create, _objc_autorelease,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_getAssociatedObject,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setAssociatedObject, _objc_storeStrong,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ AXElement, AXSpringBoardServer, NSArray, NSNumber,
+                            NSObject ]
+...

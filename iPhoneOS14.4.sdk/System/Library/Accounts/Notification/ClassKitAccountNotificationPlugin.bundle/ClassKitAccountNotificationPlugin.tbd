@@ -1,0 +1,32 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Accounts/Notification/ClassKitAccountNotificationPlugin.bundle/ClassKitAccountNotificationPlugin
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ ClassKitAccountNotificationPlugin ]
+    objc-ivars:           [ ClassKitAccountNotificationPlugin._connection,
+                            ClassKitAccountNotificationPlugin._queue ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AAAccountClassPrimary,
+                            _ACAccountTypeIdentifierAppleAccount, _CLSInitLog,
+                            _CLSLogDebugCurrentPersona, _CLSLogDefault,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_error_impl, __os_log_impl, _dispatch_async,
+                            _dispatch_queue_attr_make_with_autorelease_frequency,
+                            _dispatch_queue_attr_make_with_qos_class,
+                            _dispatch_queue_create, _objc_autoreleaseReturnValue,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
+                            _objc_retain, _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _objc_sync_enter, _objc_sync_exit,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ CLSEndpointConnection, NSObject, NSString ]
+...

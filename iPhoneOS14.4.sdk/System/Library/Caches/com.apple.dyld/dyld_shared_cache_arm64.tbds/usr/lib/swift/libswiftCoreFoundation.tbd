@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/swift/libswiftCoreFoundation.dylib
+current-version:       1.6
+compatibility-version: 1
+swift-abi-version:     6
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$s14CoreFoundation9_CFObjectMp,
+                            _$s14CoreFoundation9_CFObjectPAAE2eeoiySbx_xtFZ,
+                            _$s14CoreFoundation9_CFObjectPAAE4hash4intoys6HasherVz_tF,
+                            _$s14CoreFoundation9_CFObjectPAAE9hashValueSivg,
+                            _$s14CoreFoundation9_CFObjectPAAE9hashValueSivpMV,
+                            _$s14CoreFoundation9_CFObjectPSHTb,
+                            _$s14CoreFoundation9_CFObjectTL,
+                            __swift_FORCE_LOAD_$_swiftCoreFoundation ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$sSH9hashValueSivgTj, _$sSHMp,
+                            _$ss6HasherV8_combineyySuF, _CFEqual, _CFHash,
+                            dyld_stub_binder ]
+...

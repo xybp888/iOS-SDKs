@@ -1,0 +1,31 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PowerlogDatabaseReader.framework/PowerlogDatabaseReader
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ PLDatabaseReader ]
+    objc-ivars:           [ PLDatabaseReader._dbConnection ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSLog, ___CFConstantStringClassReference,
+                            ___stack_chk_fail, ___stack_chk_guard, ___stderrp,
+                            __objc_empty_cache, _fprintf,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_new, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue, _sqlite3_close,
+                            _sqlite3_column_count, _sqlite3_column_double,
+                            _sqlite3_column_int64, _sqlite3_column_name,
+                            _sqlite3_column_text, _sqlite3_column_type,
+                            _sqlite3_errmsg, _sqlite3_exec, _sqlite3_initialize,
+                            _sqlite3_open_v2, _sqlite3_prepare_v2, _sqlite3_sleep,
+                            _sqlite3_step, dyld_stub_binder ]
+    objc-classes:         [ NSMutableArray, NSMutableString, NSNull, NSNumber,
+                            NSObject, NSString ]
+...

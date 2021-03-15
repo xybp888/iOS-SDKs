@@ -1,0 +1,50 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MorphunAssetsUpdater.framework/MorphunAssetsUpdater
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MorphunAssetsUpdaterVersionNumber,
+                            _MorphunAssetsUpdaterVersionString ]
+    objc-classes:         [ ForceUpdateMessage, GetAssetPathsMessage,
+                            MorphunAssetsUpdater ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSLocalizedDescriptionKey, _NSLog,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___NSDictionary0__struct, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache,
+                            __xpc_error_connection_interrupted,
+                            __xpc_error_connection_invalid,
+                            __xpc_type_dictionary, __xpc_type_string, _bzero,
+                            _dispatch_semaphore_create,
+                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
+                            _dispatch_time, _objc_alloc, _objc_alloc_init,
+                            _objc_autorelease, _objc_autoreleaseReturnValue,
+                            _objc_getProperty, _objc_msgSend, _objc_msgSendSuper2,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _xpc_array_create,
+                            _xpc_connection_activate, _xpc_connection_cancel,
+                            _xpc_connection_create_mach_service,
+                            _xpc_connection_send_message,
+                            _xpc_connection_set_event_handler,
+                            _xpc_connection_suspend, _xpc_dictionary_apply,
+                            _xpc_dictionary_create,
+                            _xpc_dictionary_get_dictionary,
+                            _xpc_dictionary_get_string,
+                            _xpc_dictionary_get_uint64,
+                            _xpc_dictionary_set_uint64,
+                            _xpc_dictionary_set_value, _xpc_get_type,
+                            _xpc_string_create, _xpc_string_get_string_ptr,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSDictionary, NSError, NSMutableArray,
+                            NSMutableDictionary, NSObject, NSString ]
+...

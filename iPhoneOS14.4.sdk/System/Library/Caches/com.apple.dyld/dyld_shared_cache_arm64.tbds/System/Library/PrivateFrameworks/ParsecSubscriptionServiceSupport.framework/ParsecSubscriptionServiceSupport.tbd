@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ParsecSubscriptionServiceSupport.framework/ParsecSubscriptionServiceSupport
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ParsecSubscriptionServiceSupportVersionNumber,
+                            _ParsecSubscriptionServiceSupportVersionString ]
+    objc-classes:         [ PSSSSubscriptionManager,
+                            PSSSSubscriptionManagerInternal ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _VSSubscriptionFetchOptionSources,
+                            _VSSubscriptionFetchOptionSubscriptionInfo,
+                            _VSSubscriptionFetchOptionsForBundleIdentifiersAndDomainNames,
+                            _VSSubscriptionFetchOptionsForWebSubscriptionsCreatedAfterDate,
+                            __Block_object_assign, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, _objc_alloc,
+                            _objc_alloc_init, _objc_enumerationMutation,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_new,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSDate, NSDateInterval, NSDictionary,
+                            NSMutableDictionary, NSNumber, NSObject, VSSubscription,
+                            VSSubscriptionRegistrationCenter,
+                            VSSubscriptionSource ]
+...

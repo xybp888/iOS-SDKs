@@ -1,0 +1,79 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/system/libsystem_darwin.dylib
+current-version:       1
+compatibility-version: 1
+parent-umbrella:       System
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ ___libdarwin_init, ___os_temporary_resource_shortage,
+                            _claimfd_np, _close_drop_np, _close_drop_optional_np,
+                            _crfprintf_np, _dirstat_np, _dirstatat_np, _dup_np,
+                            _err_np, _errc_np, _fcheck_np, _memdup2_np, _memdup_np,
+                            _os_assert_mach, _os_assert_mach_port_status,
+                            _os_crash_get_reporter_port_array,
+                            _os_crash_port_array_deallocate,
+                            _os_crash_set_reporter_port,
+                            _os_crash_spawnattr_set_reporter_port,
+                            _os_flagset_copy_string, _os_localtime_file,
+                            _os_mach_msg_copy_description,
+                            _os_mach_msg_get_audit_trailer,
+                            _os_mach_msg_get_context_trailer,
+                            _os_mach_msg_get_trailer,
+                            _os_mach_msg_trailer_copy_description,
+                            _os_mach_port_copy_description,
+                            _os_parse_boot_arg_int, _os_parse_boot_arg_string,
+                            _os_simple_hash, _os_simple_hash_string,
+                            _os_simple_hash_string_with_seed,
+                            _os_simple_hash_with_seed, _os_subcommand_fprintf,
+                            _os_subcommand_main, _os_subcommand_vfprintf,
+                            _os_variant_allows_internal_security_policies,
+                            _os_variant_check, _os_variant_copy_description,
+                            _os_variant_has_factory_content,
+                            _os_variant_has_internal_content,
+                            _os_variant_has_internal_diagnostics,
+                            _os_variant_has_internal_ui,
+                            _os_variant_init_4launchd, _os_variant_is_darwinos,
+                            _os_variant_is_recovery,
+                            _os_variant_uses_ephemeral_storage, _realpath_np,
+                            _strerror_np, _strexit_np, _symerror_np, _symexit_np,
+                            _sysctl_get_data_np, _sysctlbyname_get_data_np,
+                            _sysexit_np, _vcrfprintf_np, _verr_np, _verrc_np,
+                            _vwarn_np, _vwfprintf_np, _warn_np, _wfprintf_np,
+                            _xferfd_np, _zsnprintf_np ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __NSConcreteGlobalBlock, __NSGetMachExecuteHeader,
+                            ____toupper, ___chkstk_darwin, ___error,
+                            ___stack_chk_fail, ___stack_chk_guard, ___stderrp,
+                            ___stdoutp, __dispatch_is_multithreaded,
+                            __dyld_get_image_header,
+                            __dyld_get_image_vmaddr_slide, __dyld_image_count,
+                            __os_avoid_tail_call, __os_crash, __os_crash_fmt,
+                            __os_log_pack_fill, __os_log_pack_size,
+                            __xpc_type_dictionary, _access, _asprintf,
+                            _bootstrap_strerror, _bzero, _calloc, _change_fdguard_np,
+                            _close$NOCANCEL, _dispatch_once, _dup, _exit, _fclose,
+                            _fcntl$NOCANCEL, _feof, _ferror, _fprintf, _fputc, _fputs,
+                            _free, _fstat, _getattrlistbulk, _getenv, _geteuid, _getpid,
+                            _getprogname, _getsectdatafromheader_64, _gettimeofday,
+                            _guarded_close_np, _host_get_exception_ports,
+                            _host_get_special_port, _host_set_exception_ports,
+                            _ioctl, _isatty, _localtime_r, _mach_error_string,
+                            _mach_host_self, _mach_port_deallocate,
+                            _mach_port_get_attributes, _mach_port_get_refs,
+                            _mach_port_mod_refs, _mach_port_type, _mach_task_self_,
+                            _malloc, _memcpy, _memset, _open$NOCANCEL, _open_memstream,
+                            _openat$NOCANCEL, _optind,
+                            _posix_spawnattr_setexceptionports_np,
+                            _read$NOCANCEL, _sleep$NOCANCEL, _snprintf, _strchr,
+                            _strcmp, _strdup, _strerror, _strlcpy, _strlen, _strncasecmp,
+                            _strrchr, _strsep, _strstr, _strtoll, _strtoul, _sysctl,
+                            _sysctlbyname, _sysctlnametomib,
+                            _task_get_exception_ports, _task_set_exception_ports,
+                            _vasprintf, _vfprintf, _vsnprintf,
+                            _xpc_create_from_plist, _xpc_dictionary_get_string,
+                            _xpc_get_type, _xpc_release, dyld_stub_binder ]
+...

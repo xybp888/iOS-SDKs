@@ -1,0 +1,75 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libSystem.B.dylib
+current-version:       1292.60.1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /usr/lib/system/libcache.dylib,
+                            /usr/lib/system/libcommonCrypto.dylib,
+                            /usr/lib/system/libcompiler_rt.dylib,
+                            /usr/lib/system/libcopyfile.dylib,
+                            /usr/lib/system/libcorecrypto.dylib,
+                            /usr/lib/system/libdispatch.dylib,
+                            /usr/lib/system/libdyld.dylib,
+                            /usr/lib/system/liblaunch.dylib,
+                            /usr/lib/system/libmacho.dylib,
+                            /usr/lib/system/libremovefile.dylib,
+                            /usr/lib/system/libsystem_asl.dylib,
+                            /usr/lib/system/libsystem_blocks.dylib,
+                            /usr/lib/system/libsystem_c.dylib,
+                            /usr/lib/system/libsystem_collections.dylib,
+                            /usr/lib/system/libsystem_configuration.dylib,
+                            /usr/lib/system/libsystem_containermanager.dylib,
+                            /usr/lib/system/libsystem_coreservices.dylib,
+                            /usr/lib/system/libsystem_darwin.dylib,
+                            /usr/lib/system/libsystem_dnssd.dylib,
+                            /usr/lib/system/libsystem_featureflags.dylib,
+                            /usr/lib/system/libsystem_info.dylib,
+                            /usr/lib/system/libsystem_kernel.dylib,
+                            /usr/lib/system/libsystem_m.dylib,
+                            /usr/lib/system/libsystem_malloc.dylib,
+                            /usr/lib/system/libsystem_networkextension.dylib,
+                            /usr/lib/system/libsystem_notify.dylib,
+                            /usr/lib/system/libsystem_platform.dylib,
+                            /usr/lib/system/libsystem_product_info_filter.dylib,
+                            /usr/lib/system/libsystem_pthread.dylib,
+                            /usr/lib/system/libsystem_sandbox.dylib,
+                            /usr/lib/system/libsystem_symptoms.dylib,
+                            /usr/lib/system/libsystem_trace.dylib,
+                            /usr/lib/system/libunwind.dylib,
+                            /usr/lib/system/libxpc.dylib ]
+    symbols:              [ ___crashreporter_info__, _libSystem_atfork_child,
+                            _libSystem_atfork_parent, _libSystem_atfork_prepare,
+                            _mach_init_routine ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ ___error, ___libdarwin_init, ___libkernel_init,
+                            ___libplatform_init, ___malloc_init, ___pthread_init,
+                            ___stack_logging_early_finished, __asl_fork_child,
+                            __container_init, __dirhelper, __dyld_atfork_parent,
+                            __dyld_atfork_prepare, __dyld_fork_child,
+                            __dyld_initializer, __libSC_info_fork_child,
+                            __libSC_info_fork_parent, __libSC_info_fork_prepare,
+                            __libc_fork_child, __libc_initializer,
+                            __libcoreservices_fork_child, __libtrace_fork_child,
+                            __libtrace_init, __libxpc_initializer,
+                            __mach_fork_child, __malloc_fork_child,
+                            __malloc_fork_parent, __malloc_fork_prepare,
+                            __notify_fork_child, __pthread_atfork_child,
+                            __pthread_atfork_child_handlers,
+                            __pthread_atfork_parent,
+                            __pthread_atfork_parent_handlers,
+                            __pthread_atfork_prepare,
+                            __pthread_atfork_prepare_handlers,
+                            __pthread_exit_if_canceled, _cc_atfork_child,
+                            _cc_atfork_parent, _cc_atfork_prepare,
+                            _dispatch_atfork_child, _dispatch_atfork_parent,
+                            _dispatch_atfork_prepare, _dlopen, _dlsym, _exit, _free,
+                            _kdebug_trace, _libdispatch_init, _malloc,
+                            _pthread_current_stack_contains_np, _realloc,
+                            _xpc_atfork_child, _xpc_atfork_parent,
+                            _xpc_atfork_prepare, dyld_stub_binder ]
+...

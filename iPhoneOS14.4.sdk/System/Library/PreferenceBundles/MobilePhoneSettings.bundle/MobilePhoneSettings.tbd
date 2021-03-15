@@ -1,0 +1,85 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PreferenceBundles/MobilePhoneSettings.bundle/MobilePhoneSettings
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PHDefaultLog ]
+    objc-classes:         [ PHSettingsRootListController, PHViewController,
+                            VMAccountButton, VMAccountsView,
+                            VMAccountsViewController, VMAccountsViewDataSource,
+                            VMNavigationController,
+                            VMPasscodeChangeViewController, VMViewController ]
+    objc-ivars:           [ PHSettingsRootListController._queue,
+                            PHSettingsRootListController._subscriptions,
+                            PHSettingsRootListController._telephonyController,
+                            PHSettingsRootListController._voicemailManager,
+                            PHViewController._contentUnavailable,
+                            PHViewController._contentUnavailableView,
+                            PHViewController._contentUnavailableViewTitle,
+                            PHViewController._whitePointAdaptivityStyle,
+                            VMAccountButton._preferredIntrinsicContentSizeWidth,
+                            VMAccountsView._buttonStackView,
+                            VMAccountsView._buttons, VMAccountsView._dataSource,
+                            VMAccountsView._delegate,
+                            VMAccountsView._messageLabel,
+                            VMAccountsViewController._accounts,
+                            VMAccountsViewController._accountsView,
+                            VMAccountsViewController._delegate,
+                            VMAccountsViewDataSource._accounts,
+                            VMNavigationController._manager,
+                            VMPasscodeChangeViewController._accounts,
+                            VMPasscodeChangeViewController._accountsViewController,
+                            VMPasscodeChangeViewController._selectedAccount,
+                            VMViewController._manager ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CGRectInset, _CGRectZero, _NSSelectorFromString,
+                            _NSStringFromCGSize,
+                            _TUBundleIdentifierMobilePhoneApplication,
+                            _UIFontDescriptorTextStyleAttribute,
+                            _UIGraphicsBeginImageContextWithOptions,
+                            _UIGraphicsEndImageContext,
+                            _UIGraphicsGetImageFromCurrentImageContext,
+                            _UIViewNoIntrinsicMetric,
+                            _VMVoicemailManagerAccountsDidChangeNotification,
+                            __Block_object_assign, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_main_q,
+                            __objc_empty_cache, __os_log_impl, _dispatch_async,
+                            _dispatch_once,
+                            _dispatch_queue_attr_make_with_autorelease_frequency,
+                            _dispatch_queue_create, _kVVErrorDomain,
+                            _kVVPDPActivationErrorDomain, _objc_alloc,
+                            _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_getProperty, _objc_initWeak,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_setProperty_nonatomic_copy,
+                            _objc_storeStrong, _objc_storeWeak, _objc_sync_enter,
+                            _objc_sync_exit, _os_log_create, _os_log_type_enabled,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSBundle, NSCache, NSError, NSInvocation,
+                            NSMutableArray, NSNotificationCenter, NSNumber, NSObject,
+                            NSString, PSListController, PSSystemPolicyForApp,
+                            TPSTelephonyController, TPSetPINViewController,
+                            UIApplication, UIBarButtonItem, UIBezierPath, UIButton,
+                            UIColor, UIFont, UIFontMetrics, UILabel,
+                            UINavigationController, UIStackView, UITabBarItem,
+                            UIView, UIViewController, VMVoicemailManager,
+                            _UIContentUnavailableView ]
+    objc-ivars:           [ PSListController._specifiers ]
+...

@@ -1,0 +1,86 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Calculate.framework/Calculate
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CalculateExpression, _CalculateExpressionError,
+                            _CalculateInternationalExpression,
+                            _CalculatePerformExpression ]
+    objc-classes:         [ Converter, CurrencyCache ]
+    objc-ivars:           [ Converter._additionalResults,
+                            Converter._conversionType,
+                            Converter._currencyUpdateTimeOut,
+                            Converter._inputString, Converter._inputUnit,
+                            Converter._inputValue, Converter._isCurrency,
+                            Converter._localizedInputValueAndUnit,
+                            Converter._localizedOutputUnit,
+                            Converter._localizedOutputValue,
+                            Converter._localizedOutputValueAndUnit,
+                            Converter._outputUnit, Converter._outputValue,
+                            CurrencyCache._currencyData,
+                            CurrencyCache._currentCurrency,
+                            CurrencyCache._currentRate,
+                            CurrencyCache._currentString,
+                            CurrencyCache._lastRefreshDate,
+                            CurrencyCache._mutableCurrencyCache,
+                            CurrencyCache._serializer, CurrencyCache._uuid ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFPreferencesAppSynchronize,
+                            _CFPreferencesCopyAppValue,
+                            _CFPreferencesSetAppValue,
+                            _NSCalendarIdentifierGregorian,
+                            _NSCurrentLocaleDidChangeNotification,
+                            _NSLocaleCurrencyCode, _NSLocaleGroupingSeparator,
+                            _NSLog, _OBJC_EHTYPE_id, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference, ___chkstk_darwin,
+                            ___error, ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, ___stderrp, ___stdinp, ___stdoutp,
+                            __dispatch_queue_attr_concurrent, __objc_empty_cache,
+                            __os_log_error_impl, __os_log_impl, _acos, _acosh, _asin,
+                            _asinh, _atan, _atanh, _calloc, _cbrt, _clearerr, _cos, _cosh,
+                            _dispatch_async, _dispatch_barrier_async,
+                            _dispatch_group_create, _dispatch_group_enter,
+                            _dispatch_group_leave, _dispatch_group_wait,
+                            _dispatch_once,
+                            _dispatch_queue_attr_make_with_autorelease_frequency,
+                            _dispatch_queue_attr_make_with_qos_class,
+                            _dispatch_queue_create, _dispatch_semaphore_create,
+                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
+                            _dispatch_sync, _dispatch_time, _erf, _erfc, _exit, _exp,
+                            _ferror, _fflush, _fmod, _fprintf, _fread, _free, _fwrite, _getc,
+                            _hypot, _j0, _j1, _lgamma, _log, _log10, _malloc, _memcpy, _modf,
+                            _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue, _objc_begin_catch,
+                            _objc_end_catch, _objc_enumerationMutation,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_storeStrong,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_create, _os_log_type_enabled, _pow, _puts, _raise,
+                            _realloc, _remainder, _sin, _sinh, _snprintf, _sprintf,
+                            _strlcpy, _strlen, _strtod, _strtold, _strtoull, _tan, _tanh,
+                            _tgamma, _u_austrcpy, _u_charDigitValue, _u_isdigit,
+                            _u_uastrncpy, _unum_close, _unum_formatDoubleCurrency,
+                            _unum_open, _y0, _y1, dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSBundle, NSCalendar, NSCharacterSet,
+                            NSConstantArray, NSConstantDoubleNumber,
+                            NSConstantIntegerNumber, NSDate, NSDateFormatter,
+                            NSDecimalNumber, NSDecimalNumberHandler, NSDictionary,
+                            NSJSONSerialization, NSLocale, NSMutableArray,
+                            NSMutableDictionary, NSMutableString,
+                            NSMutableURLRequest, NSNotificationCenter, NSNumber,
+                            NSNumberFormatter, NSObject, NSRegularExpression,
+                            NSScanner, NSString, NSURL, NSURLSession, OACredential,
+                            OAURLRequestSigner ]
+...

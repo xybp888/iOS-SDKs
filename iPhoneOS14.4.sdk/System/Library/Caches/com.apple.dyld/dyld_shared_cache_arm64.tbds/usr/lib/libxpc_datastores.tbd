@@ -1,0 +1,93 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libxpc_datastores.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __xdo_fetch_ds_data_req_serialize,
+                            __xdo_fetch_ds_data_resp_deserialize,
+                            __xdp_register_ds_req_serialize,
+                            __xdp_register_ds_resp_deserialize,
+                            __xdp_set_ds_data_req_serialize,
+                            __xds_fetch_ds_info_req_serialize,
+                            __xds_fetch_ds_info_resp_deserialize,
+                            __xpc_datastore_publisher_alloc,
+                            __xpc_datastore_publisher_create_suspended,
+                            __xpc_datastore_publisher_resume,
+                            __xpc_datastore_subscriber_alloc,
+                            __xpc_datastore_subscriber_initial_handshake,
+                            __xpc_datastore_subscriber_invalidated,
+                            __xpc_datastore_subscriber_refresh,
+                            __xpc_datastores_service_connection,
+                            _xpc_datastore_copy_state,
+                            _xpc_datastore_publisher_create,
+                            _xpc_datastore_publisher_invalidate_state,
+                            _xpc_datastore_subscriber_create ]
+    objc-classes:         [ OS_xds_local_cache, OS_xpc_datastore_object,
+                            OS_xpc_datastore_publisher,
+                            OS_xpc_datastore_subscriber ]
+    objc-ivars:           [ OS_xds_local_cache.data, OS_xds_local_cache.ds_type,
+                            OS_xds_local_cache.size,
+                            OS_xpc_datastore_object.conn,
+                            OS_xpc_datastore_object.ds_name,
+                            OS_xpc_datastore_object.ds_type,
+                            OS_xpc_datastore_object.local_data,
+                            OS_xpc_datastore_object.lock,
+                            OS_xpc_datastore_object.max_size,
+                            OS_xpc_datastore_publisher.activated,
+                            OS_xpc_datastore_publisher.dq,
+                            OS_xpc_datastore_publisher.pending_work_dq,
+                            OS_xpc_datastore_publisher.publish_data,
+                            OS_xpc_datastore_subscriber.recvp ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___error, __objc_empty_cache, __os_assert_log,
+                            __os_assumes_log, __os_crash,
+                            __xpc_error_connection_interrupted,
+                            __xpc_error_connection_invalid, __xpc_event_key_name,
+                            __xpc_type_endpoint, __xpc_type_error, _asprintf,
+                            _dispatch_activate, _dispatch_async_and_wait,
+                            _dispatch_get_global_queue, _dispatch_once,
+                            _dispatch_queue_attr_make_initially_inactive,
+                            _dispatch_queue_create, _dispatch_set_target_queue,
+                            _free, _mach_port_allocate, _mach_port_deallocate,
+                            _mach_port_destruct, _mach_port_insert_right,
+                            _mach_task_self_, _malloc, _memcpy, _mmap, _mprotect,
+                            _munmap, _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_storeStrong,
+                            _os_unfair_lock_lock,
+                            _os_unfair_lock_lock_with_options,
+                            _os_unfair_lock_unlock, _strdup,
+                            _xpc_connection_activate, _xpc_connection_cancel,
+                            _xpc_connection_create_from_endpoint,
+                            _xpc_connection_create_mach_service,
+                            _xpc_connection_send_message,
+                            _xpc_connection_send_message_with_reply_sync,
+                            _xpc_connection_set_event_handler, _xpc_copy_event,
+                            _xpc_create_from_serialization,
+                            _xpc_dictionary_create, _xpc_dictionary_create_reply,
+                            _xpc_dictionary_get_bool, _xpc_dictionary_get_data,
+                            _xpc_dictionary_get_pointer,
+                            _xpc_dictionary_get_string,
+                            _xpc_dictionary_get_uint64,
+                            _xpc_dictionary_get_value,
+                            _xpc_dictionary_send_reply, _xpc_dictionary_set_data,
+                            _xpc_dictionary_set_pointer,
+                            _xpc_dictionary_set_string,
+                            _xpc_dictionary_set_uint64,
+                            _xpc_dictionary_set_value, _xpc_get_type,
+                            _xpc_mach_send_create, _xpc_make_serialization,
+                            _xpc_pipe_receive, _xpc_set_event_stream_handler,
+                            _xpc_shmem_create_readonly, _xpc_shmem_map,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSObject ]
+...

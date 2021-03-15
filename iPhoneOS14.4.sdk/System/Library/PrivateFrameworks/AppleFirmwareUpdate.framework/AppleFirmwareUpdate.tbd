@@ -1,0 +1,56 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppleFirmwareUpdate.framework/AppleFirmwareUpdate
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AppleFirmwareUpdateVersionNumber,
+                            _AppleFirmwareUpdateVersionString, _errorString ]
+    objc-classes:         [ AppleFirmwareUpdateController ]
+    objc-ivars:           [ AppleFirmwareUpdateController._fdrClasses,
+                            AppleFirmwareUpdateController._fwAssetDirectory,
+                            AppleFirmwareUpdateController._fwAssetFile,
+                            AppleFirmwareUpdateController._fwAssetSignatureType,
+                            AppleFirmwareUpdateController._fwAssetSize,
+                            AppleFirmwareUpdateController._fwAssetVersion,
+                            AppleFirmwareUpdateController._img4Tag,
+                            AppleFirmwareUpdateController._log,
+                            AppleFirmwareUpdateController._registryEntryID ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AMFDRSealingMapCopyLocalDataForClass, _CFRelease,
+                            _IOConnectCallScalarMethod, _IOIteratorNext,
+                            _IOObjectRelease, _IORegistryEntryCreateCFProperties,
+                            _IORegistryEntryCreateCFProperty,
+                            _IORegistryEntryGetRegistryEntryID,
+                            _IORegistryEntryIDMatching, _IOServiceClose,
+                            _IOServiceGetMatchingService,
+                            _IOServiceGetMatchingServices, _IOServiceMatching,
+                            _IOServiceOpen, ___CFConstantStringClassReference,
+                            ___chkstk_darwin, ___kCFBooleanTrue, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, __os_log_impl,
+                            _bzero, _ccdigest, _ccdigest_init, _ccdigest_update,
+                            _ccec_get_cp, _ccec_import_pub,
+                            _ccec_keysize_is_supported, _ccec_verify,
+                            _ccec_x963_import_pub_size, _ccmd5_ltc_di,
+                            _ccn_read_uint, _ccrsa_verify_pkcs1v15, _ccsha1_ltc_di,
+                            _ccsha256_ltc_di, _ccsha384_ltc_di, _ccsha512_ltc_di,
+                            _cczp_init, _close, _kCFAllocatorDefault,
+                            _kIOMasterPortDefault, _mach_task_self_, _memcmp,
+                            _memcpy, _memset, _mmap, _munmap, _objc_alloc,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _open, _os_log_create,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ MSUDataAccessor, NSArray, NSData, NSDictionary, NSError,
+                            NSFileManager, NSMutableData, NSMutableDictionary,
+                            NSNumber, NSObject, NSString ]
+...

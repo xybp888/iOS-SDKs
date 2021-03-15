@@ -1,0 +1,96 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Assistant/Plugins/FMF.assistantBundle/FMF
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FMFUrlBase, _LogCategory_Unspecified,
+                            _PreferencesBundleID, _RedirectedHostKey ]
+    objc-classes:         [ Common, ContactsUtilities, FMFBaseCmd, FMFSABaseModel,
+                            FMFSADataSource, FMFSALocation, FMFSAMyLocation,
+                            FMFSAPunchOutFriend, FMFSASearch, FMFSASetGeoFence,
+                            FMFSAUtils, FMFSAVisibility, GetLocationsCmd,
+                            SetGeoFenceCmd, ShowHideLocationCmd ]
+    objc-ivars:           [ FMFSADataSource._mockLocations ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFPhoneNumberCreate, _CFPhoneNumberCreateString,
+                            _CFPreferencesAppSynchronize,
+                            _CFPreferencesCopyAppValue,
+                            _CFPreferencesSetAppValue, _CFRelease,
+                            _CLLocationCoordinate2DIsValid,
+                            _CLLocationCoordinate2DMake, _CNContactBirthdayKey,
+                            _CNContactCropRectKey, _CNContactDatesKey,
+                            _CNContactDepartmentNameKey,
+                            _CNContactEmailAddressesKey, _CNContactFamilyNameKey,
+                            _CNContactGivenNameKey,
+                            _CNContactImageDataAvailableKey,
+                            _CNContactImageDataKey,
+                            _CNContactInstantMessageAddressesKey,
+                            _CNContactJobTitleKey, _CNContactMiddleNameKey,
+                            _CNContactNamePrefixKey, _CNContactNameSuffixKey,
+                            _CNContactNicknameKey,
+                            _CNContactNonGregorianBirthdayKey, _CNContactNoteKey,
+                            _CNContactOrganizationNameKey,
+                            _CNContactPhoneNumbersKey,
+                            _CNContactPhoneticGivenNameKey,
+                            _CNContactPhoneticMiddleNameKey,
+                            _CNContactPostalAddressesKey,
+                            _CNContactPreferredApplePersonaIdentifierKey,
+                            _CNContactPreferredLikenessSourceKey,
+                            _CNContactPreviousFamilyNameKey,
+                            _CNContactRelationsKey, _CNContactSocialProfilesKey,
+                            _CNContactThumbnailImageDataKey, _CNContactTypeKey,
+                            _CNContactUrlAddressesKey,
+                            _CPPhoneNumberCopyHomeCountryCode,
+                            _FMCommandRedirectedNotification,
+                            _MKBGetDeviceLockState, _NSLocaleCountryCode,
+                            _SAFmfAddressNotFoundErrorCode,
+                            _SAFmfFenceTypeNotifyMeValue,
+                            _SAFmfGeoFenceNotCreatedErrorCode,
+                            _SAFmfGeoFenceTriggerImmediateValue,
+                            _SAFmfGeoFenceTriggerOnArrivalValue,
+                            _SAFmfGeoFenceTriggerOnDepartureValue,
+                            _SAFmfLabelNotFoundErrorCode, _SAFmfLockedErrorCode,
+                            _SAFmfNoFriendsErrorCode, _SAFmfNotAFriendErrorCode,
+                            _SAFmfNotLoggedInErrorCode,
+                            _SAFmfServiceNotAvailableErrorCode,
+                            _SAFmfServiceRestrictedInAccountErrorCode,
+                            _SAFmfServiceRestrictedInRegionErrorCode,
+                            __Block_object_assign, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_error_impl, __os_log_impl, _dispatch_once,
+                            _kCFAllocatorDefault, _objc_alloc, _objc_alloc_init,
+                            _objc_autorelease, _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
+                            _os_log_create, _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ AFLocalization, AFPreferences, CLLocation,
+                            CNAssistantConversion, CNAssistantID, CNContact,
+                            CNContactFormatter, CNContactStore,
+                            CNMutablePostalAddress, CNPhoneNumber,
+                            CNPostalAddressFormatter, FMDistanceCalculator,
+                            FMFSession, FMJSONCommand,
+                            FMServerInteractionController, FMSystemInfo,
+                            GEOCountryConfiguration, LSApplicationWorkspace,
+                            NSArray, NSBundle, NSCalendar, NSCharacterSet, NSDate,
+                            NSDictionary, NSLocale, NSMutableArray,
+                            NSMutableCharacterSet, NSMutableDictionary,
+                            NSMutableString, NSNotificationCenter, NSNull, NSNumber,
+                            NSNumberFormatter, NSObject, NSString, NSURL,
+                            SACommandFailed, SAEmail, SAFmfGeoFence,
+                            SAFmfGeoFenceSet, SAFmfGeoFenceSetCompleted,
+                            SAFmfLocation, SAFmfSearch, SAFmfSearchCompleted,
+                            SAFmfVisibilitySetCompleted, SAFmfVisibilityStateSet,
+                            SALocation, SAPerson, SAPersonAttribute, SAPhone ]
+...

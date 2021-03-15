@@ -1,0 +1,56 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ContactsDonationFeedback.framework/ContactsDonationFeedback
+current-version:       0
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ContactsDonationFeedbackVersionNumber,
+                            _ContactsDonationFeedbackVersionString,
+                            _kCDFErrorDomain, _kCDFInsufficientValuesToHashError,
+                            _kCDFMissingIdentifierError,
+                            _kCDFUnhandledValueTypeError ]
+    objc-classes:         [ CDFDonationFeedbackStore,
+                            CNDFDonationStringCollector ]
+    objc-ivars:           [ CDFDonationFeedbackStore._hashes,
+                            CDFDonationFeedbackStore._kvs,
+                            CDFDonationFeedbackStore._resetGeneration,
+                            CDFDonationFeedbackStore._resetTimestamp,
+                            CDFDonationFeedbackStore._userSalt,
+                            CNDFDonationStringCollector._visitedStrings ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CC_SHA256_Final, _CC_SHA256_Init, _CC_SHA256_Update,
+                            _CFStringGetBytes, _CFStringGetCStringPtr,
+                            _CNIsArrayEmpty, _CNIsStringEmpty, _CNIsStringNonempty,
+                            _NSUbiquitousKeyValueStoreDidChangeExternallyNotification,
+                            __Block_object_assign, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_error_impl,
+                            __os_log_impl, _arc4random_buf, _dispatch_async,
+                            _dispatch_get_global_queue, _dispatch_once,
+                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_exception_throw,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _objc_sync_enter, _objc_sync_exit,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_create, _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ CNDescriptionBuilder, NSArray, NSConstantArray,
+                            NSConstantDoubleNumber, NSConstantIntegerNumber,
+                            NSData, NSDate, NSDictionary, NSException, NSKeyedArchiver,
+                            NSKeyedUnarchiver, NSMutableArray, NSMutableSet,
+                            NSNotificationCenter, NSNumber, NSObject, NSSet, NSString,
+                            NSUbiquitousKeyValueStore ]
+...

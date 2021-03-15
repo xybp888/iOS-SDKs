@@ -1,0 +1,42 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/RemoteUIFramework.axbundle/RemoteUIFramework
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Failover, _accessibilityLocalizedString ]
+    objc-classes:         [ AXRemoteUIGlue, RUIPageAccessibility,
+                            RUITableViewRowAccessibility,
+                            RUIWebContainerViewAccessibility,
+                            RemoteUITableViewCellAccessibility,
+                            __RUIPageAccessibility_super,
+                            __RUITableViewRowAccessibility_super,
+                            __RUIWebContainerViewAccessibility_super,
+                            __RemoteUITableViewCellAccessibility_super ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXFormatInteger, _AXPerformSafeBlock,
+                            _AXPerformValidationChecks, _AXSafeClassFromString,
+                            _UIAXLabelForElements, _UIAccessibilityTraitButton,
+                            _UIAccessibilityTraitSelected, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___UIAXStringForVariables,
+                            ___UIAccessibilityCastAsClass,
+                            ___UIAccessibilitySafeClass, ___objc_personality_v0,
+                            __objc_empty_cache, _abort, _objc_allocWithZone,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            dyld_stub_binder ]
+    objc-classes:         [ AXValidationManager, NSBundle, NSObject, NSString,
+                            RUITableViewRow,
+                            UIAccessibilityElementTraversalOptions,
+                            UIAccessibilitySafeCategory, UIImageView, UITableView ]
+...

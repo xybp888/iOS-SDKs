@@ -1,0 +1,47 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/TextInput/TextInput_th.bundle/TextInput_th
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __ZN2KB18CandidateFilter_th20do_filter_candidatesERNSt3__16vectorINS_9CandidateENS1_9allocatorIS3_EEEERKS3_RKNS1_8functionIFNS_10ByteStringERKNS_6StringEEEEP10__CFString,
+                            __ZN2KB18CandidateFilter_th31remove_low_word_score_candidateERNSt3__16vectorINS_9CandidateENS1_9allocatorIS3_EEEERKS3_P10__CFString,
+                            __ZN2KB18CandidateFilter_th34remove_candidate_having_more_wordsERNSt3__16vectorINS_9CandidateENS1_9allocatorIS3_EEEERKS3_P10__CFString,
+                            __ZN2KB18CandidateFilter_th53remove_duplicate_candidate_with_the_same_surface_formERNSt3__16vectorINS_9CandidateENS1_9allocatorIS3_EEEERKS3_P10__CFString,
+                            __ZNK17TIInputManager_th30create_custom_candidate_filterEN2KB10LookupTypeE,
+                            __ZNK2KB18CandidateFilter_th27num_words_overlapping_inputERKNS_9CandidateES3_,
+                            __ZTV17TIInputManager_th,
+                            __ZTVN2KB18CandidateFilter_thE ]
+    objc-classes:         [ TIKeyboardInputManager_th ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFRelease, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteStackBlock,
+                            __ZN14TIInputManager15autocorrectionsE14TIShiftContext,
+                            __ZN14TIInputManager15set_input_indexEj,
+                            __ZN14TIInputManager21completion_candidatesEj14TIShiftContext,
+                            __ZN14TIInputManagerC2Ev, __ZN14TIInputManagerD2Ev,
+                            __ZN2KB10ByteStringaSEOS0_,
+                            __ZN2KB13append_formatEP10__CFStringPKcz,
+                            __ZN2KB6String6appendERKS0_, __ZN2KB6StringC1EOS0_,
+                            __ZN2KB6StringC1Ev, __ZN2KB6StringD1Ev,
+                            __ZN2KB6StringaSEOS0_, __ZN2KB9CandidateD1Ev,
+                            __ZNK14TIInputManager21create_quality_filterERKN2KB19CandidateCollectionENS0_10LookupTypeE,
+                            __ZNK2KB6String11starts_withERKS0_NS0_21StringSensitivityTypeE,
+                            __ZNK2KB9Candidate18capitalized_stringEv,
+                            __ZNKSt3__119__shared_weak_count13__get_deleterERKSt9type_info,
+                            __ZNSt3__119__shared_weak_countD2Ev,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
+                            _objc_retain, _objc_retainAutoreleasedReturnValue,
+                            _strcmp, dyld_stub_binder ]
+    objc-classes:         [ NSObject, NSString, TIKeyboardBehaviors_Thai,
+                            TIKeyboardInputManager ]
+    objc-ivars:           [ TIKeyboardInputManager.m_impl ]
+...

@@ -1,0 +1,56 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AVConference.framework/Frameworks/GKSPerformance.framework/GKSPerformance
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AWDGCKSubmitLinkStatusMetric,
+                            _GKSSubmitAWDMetricsFromGameD ]
+    objc-classes:         [ AWDAdaptor, AWDStats ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFAbsoluteTimeGetCurrent, _CFArrayGetCount,
+                            _CFArrayGetTypeID, _CFArrayGetValueAtIndex,
+                            _CFDictionaryGetValue, _CFGetTypeID,
+                            _CFNumberGetTypeID, _CFNumberGetValue,
+                            _VRTraceErrorLogLevelToCSTR,
+                            _VRTraceGetErrorLogLevelForModule,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume,
+                            __ZN3awd13MetricFactory22getSharedMetricFactoryEv,
+                            __ZN3awd13MetricFactory32newMetricContainerWithIdentifierEj,
+                            __ZN3awd15MetricContainer11storeMetricEyjRKN20wireless_diagnostics6google8protobuf11MessageLiteE,
+                            __ZN3awd15MetricContainerD1Ev,
+                            __ZN3awd15getAWDTimestampEv,
+                            __ZN3awd19AWDServerConnection12SubmitMetricEPNS_15MetricContainerE,
+                            __ZN3awd19AWDServerConnectionC1Ej,
+                            __ZN3awd19AWDServerConnectionD1Ev,
+                            __ZN3awd7metrics19GCKLinkStatusReportC1Ev,
+                            ___CFConstantStringClassReference,
+                            ___cxa_call_unexpected, ___gxx_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_debug_impl,
+                            __os_log_error_impl, __os_log_impl, _arc4random, _bzero,
+                            _calloc, _dispatch_async, _dispatch_once,
+                            _dispatch_queue_create, _dispatch_release,
+                            _dispatch_sync, _free, _gVRTraceOSLog, _gettimeofday,
+                            _mach_absolute_time, _mach_timebase_info, _memcpy,
+                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_setProperty_atomic,
+                            _objc_setProperty_nonatomic_copy,
+                            _os_log_type_enabled, _pthread_mutex_lock,
+                            _pthread_mutex_unlock, _time, _usleep, dyld_stub_binder ]
+    objc-classes:         [ AWDServerConnection, AWDWifiCallingCallEndReport,
+                            CallSegment, NSArray, NSConstantArray, NSDictionary,
+                            NSMutableArray, NSMutableDictionary, NSObject,
+                            TimingCollection, VCHistogram ]
+...

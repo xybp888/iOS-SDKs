@@ -1,0 +1,53 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libsp.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _spd_client_checkin_socket,
+                            _spd_client_checkout_all_sockets,
+                            _spd_client_checkout_socket, _spd_client_create,
+                            _spd_client_destroy, _spd_client_session_create,
+                            _spd_client_session_destroy,
+                            _spd_client_session_set_callbacks,
+                            _spd_client_session_set_dispatch_queue,
+                            _spd_client_start_monitoring_all_sockets,
+                            _spd_client_start_monitoring_all_sockets_for_pid,
+                            _spd_client_start_monitoring_socket,
+                            _spd_client_stop_monitoring_all_sockets,
+                            _spd_client_stop_monitoring_all_sockets_for_pid,
+                            _spd_client_stop_monitoring_socket ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Block_copy, __Block_object_assign,
+                            __Block_object_dispose, __Block_release,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __os_log_debug_impl, __os_log_error_impl,
+                            __os_log_impl, __xpc_error_key_description,
+                            __xpc_type_dictionary, __xpc_type_error, _calloc,
+                            _dispatch_async, _dispatch_once,
+                            _dispatch_queue_create, _dlsym,
+                            _dyld_program_sdk_at_least, _free, _getpeername, _getpid,
+                            _getsockname, _gettimeofday, _os_log_create,
+                            _os_log_type_enabled, _pthread_cond_broadcast,
+                            _pthread_cond_timedwait, _pthread_mutex_lock,
+                            _pthread_mutex_unlock, _uuid_copy, _uuid_is_null,
+                            _vsyslog, _xpc_connection_cancel,
+                            _xpc_connection_resume, _xpc_connection_send_message,
+                            _xpc_connection_send_message_with_reply_sync,
+                            _xpc_connection_set_event_handler,
+                            _xpc_connection_set_target_queue,
+                            _xpc_dictionary_create,
+                            _xpc_dictionary_create_connection,
+                            _xpc_dictionary_get_int64,
+                            _xpc_dictionary_get_string, _xpc_dictionary_get_uuid,
+                            _xpc_dictionary_get_value, _xpc_dictionary_set_bool,
+                            _xpc_dictionary_set_fd, _xpc_dictionary_set_int64,
+                            _xpc_dictionary_set_uuid, _xpc_get_type, _xpc_release,
+                            _xpc_retain, _xpc_set_event,
+                            _xpc_set_event_stream_handler, dyld_stub_binder ]
+...

@@ -1,0 +1,67 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/StudyLog.framework/StudyLog
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SLGCreateError, _SLGCreateLoggingIsDisabledError,
+                            _SLGCreateSessionEndMetadata,
+                            _SLGCreateSessionStartMetadata,
+                            _SLGLogDefaultsDomain, _SLGLogDefaultsEnabledKey,
+                            _SLGLogErrorDomain, _SLGLogIsEnabled,
+                            _SLGLogServiceName, _StudyLogVersionNumber,
+                            _StudyLogVersionString, _slg_general_log ]
+    objc-classes:         [ SLGActivatableLogger, SLGDomainWhitelist, SLGLog,
+                            SLGLogXPCClient, SLGNotificationActivatedLogger,
+                            SLGNotificationActivatedLoggerRegistration,
+                            SLGTimedLogger ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFNotificationCenterAddObserver,
+                            _CFNotificationCenterGetDarwinNotifyCenter,
+                            _CFNotificationCenterPostNotification,
+                            _CFNotificationCenterRemoveObserver,
+                            _CFPreferencesCopyAppValue,
+                            _CFPreferencesGetAppBooleanValue,
+                            _CFPreferencesSetAppValue,
+                            _NSLocalizedDescriptionKey, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_main_q,
+                            __dispatch_source_type_timer, __objc_empty_cache,
+                            __os_log_error_impl, __os_log_impl,
+                            _dispatch_assert_queue$V2,
+                            _dispatch_assert_queue_not$V2, _dispatch_async,
+                            _dispatch_get_global_queue, _dispatch_once,
+                            _dispatch_queue_attr_make_with_qos_class,
+                            _dispatch_queue_create, _dispatch_resume,
+                            _dispatch_source_cancel, _dispatch_source_create,
+                            _dispatch_source_set_event_handler,
+                            _dispatch_source_set_timer, _dispatch_sync,
+                            _dispatch_time, _getpid, _mach_absolute_time,
+                            _notify_cancel, _notify_register_dispatch, _objc_alloc,
+                            _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleaseReturnValue, _objc_begin_catch,
+                            _objc_copyWeak, _objc_destroyWeak, _objc_end_catch,
+                            _objc_enumerationMutation, _objc_initWeak,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_release, _objc_retain,
+                            _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_storeStrong, _objc_storeWeak,
+                            _os_log_create, _os_log_type_enabled,
+                            _os_unfair_lock_lock, _os_unfair_lock_unlock,
+                            _proc_pidinfo, dyld_stub_binder ]
+    objc-classes:         [ NSDate, NSDictionary, NSError, NSHashTable,
+                            NSJSONSerialization, NSMutableDictionary, NSMutableSet,
+                            NSNumber, NSObject, NSSet, NSString, NSUUID, NSXPCConnection,
+                            NSXPCInterface ]
+    objc-eh-types:        [ NSException ]
+...

@@ -1,0 +1,46 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/LinkPresentation.axbundle/LinkPresentation
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Failover, _accessibilityLocalizedString ]
+    objc-classes:         [ AXLinkPresentationGlue, LPLinkViewAccessibility,
+                            LPTextViewAccessibility,
+                            __LPLinkViewAccessibility_super,
+                            __LPTextViewAccessibility_super ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXFormatFloatWithPercentage, _AXLabelForElements,
+                            _AXPerformSafeBlock, _AXPerformValidationChecks,
+                            _AXSafeClassFromString, _CGRectContainsRect,
+                            _UIAccessibilityAnnouncementNotification,
+                            _UIAccessibilityPostNotification,
+                            _UIAccessibilityTokenAnnouncementPriority,
+                            _UIAccessibilityTraitButton,
+                            _UIAccessibilityTraitLink,
+                            _UIAccessibilityTraitStartsMediaSession,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___AXStringForVariables,
+                            ___CFConstantStringClassReference,
+                            ___UIAXStringForVariables,
+                            ___UIAccessibilityCastAsClass,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, _abort,
+                            _objc_alloc, _objc_allocWithZone,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_initWeak, _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            dyld_stub_binder ]
+    objc-classes:         [ AXAttributedString, AXValidationManager, NSBundle,
+                            NSConstantIntegerNumber, NSMutableArray, NSObject,
+                            NSString, UIAccessibilityCustomAction,
+                            UIAccessibilitySafeCategory, UIButton, UIView ]
+...

@@ -1,0 +1,73 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HIDAnalytics.framework/HIDAnalytics
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HIDAnalyticsEventActivate,
+                            _HIDAnalyticsEventAddField,
+                            _HIDAnalyticsEventAddHistogramField,
+                            _HIDAnalyticsEventCancel, _HIDAnalyticsEventCreate,
+                            _HIDAnalyticsEventSetIntegerValueForField,
+                            _HIDAnalyticsHistogramEventCreate,
+                            _HIDAnalyticsHistogramEventSetIntegerValue,
+                            _HIDAnalyticsVersionNumber,
+                            _HIDAnalyticsVersionString ]
+    objc-classes:         [ HIDAnalyticsEvent, HIDAnalyticsEventField,
+                            HIDAnalyticsHistogramEvent,
+                            HIDAnalyticsHistogramEventField,
+                            HIDAnalyticsReporter ]
+    objc-ivars:           [ HIDAnalyticsEvent._desc, HIDAnalyticsEvent._fields,
+                            HIDAnalyticsEvent._isLogged,
+                            HIDAnalyticsEvent._isUpdated,
+                            HIDAnalyticsEvent._name,
+                            HIDAnalyticsEventField._fieldName,
+                            HIDAnalyticsEventField.integerValue,
+                            HIDAnalyticsHistogramEvent._field,
+                            HIDAnalyticsHistogramEvent._isUpdated,
+                            HIDAnalyticsHistogramEventField._fieldName,
+                            HIDAnalyticsHistogramEventField._segmentCount,
+                            HIDAnalyticsHistogramEventField._segments,
+                            HIDAnalyticsReporter._events,
+                            HIDAnalyticsReporter._lock,
+                            HIDAnalyticsReporter._queue,
+                            HIDAnalyticsReporter._timer ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AnalyticsSendEventLazy,
+                            _CFPropertyListCreateDeepCopy,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_source_type_timer,
+                            __objc_empty_cache, __os_log_default, __os_log_impl,
+                            _bzero, _dispatch_activate, _dispatch_async,
+                            _dispatch_once,
+                            _dispatch_queue_attr_make_with_qos_class,
+                            _dispatch_queue_create, _dispatch_source_cancel,
+                            _dispatch_source_create,
+                            _dispatch_source_set_event_handler,
+                            _dispatch_source_set_timer, _dispatch_time, _free,
+                            _kCFAllocatorDefault, _malloc, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleasePoolPop,
+                            _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_getProperty, _objc_initWeak,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic, _objc_storeStrong,
+                            _os_log_type_enabled, _os_unfair_lock_lock,
+                            _os_unfair_lock_unlock, dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSConstantIntegerNumber, NSDictionary,
+                            NSJSONSerialization, NSMutableArray,
+                            NSMutableDictionary, NSMutableSet, NSNumber, NSObject,
+                            NSSet, NSString ]
+...

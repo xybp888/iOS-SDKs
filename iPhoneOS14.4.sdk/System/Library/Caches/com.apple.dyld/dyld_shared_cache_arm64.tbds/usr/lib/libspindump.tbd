@@ -1,0 +1,47 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libspindump.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SPCachePort, _SPExpectedHIDResponseDelayUntil,
+                            _SPGenerateSpindump, _SPHIDResponseDelayThreshold,
+                            _SPReportCPUUsageResource,
+                            _SPReportCPUWakeupsResource,
+                            _SPReportDiskWritesResource,
+                            _SPReportHIDResponseDelay ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFPreferencesGetAppIntegerValue, __Block_copy,
+                            __Block_object_assign, __Block_object_dispose,
+                            __Block_release, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __NSGetExecutablePath,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, ___strlcpy_chk,
+                            __os_log_debug_impl, __os_log_default,
+                            __os_log_error_impl, __os_log_fault_impl,
+                            __xpc_error_connection_interrupted,
+                            __xpc_error_key_description,
+                            __xpc_error_termination_imminent,
+                            __xpc_type_dictionary, __xpc_type_error,
+                            _dispatch_async, _dispatch_get_global_queue,
+                            _dispatch_once, _free, _getpid,
+                            _kCFAbsoluteTimeIntervalSince1970,
+                            _kCFPreferencesCurrentApplication,
+                            _mach_absolute_time, _mach_timebase_info, _malloc,
+                            _os_log_type_enabled, _strnlen, _sysctl,
+                            _xpc_connection_create_mach_service,
+                            _xpc_connection_resume, _xpc_connection_send_message,
+                            _xpc_connection_send_message_with_reply,
+                            _xpc_connection_set_event_handler,
+                            _xpc_dictionary_create, _xpc_dictionary_get_int64,
+                            _xpc_dictionary_get_string, _xpc_dictionary_set_bool,
+                            _xpc_dictionary_set_double,
+                            _xpc_dictionary_set_int64,
+                            _xpc_dictionary_set_string,
+                            _xpc_dictionary_set_uint64, _xpc_get_type,
+                            _xpc_release, dyld_stub_binder ]
+...

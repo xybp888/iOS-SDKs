@@ -1,0 +1,42 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libapp_launch_measurement.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __alm_build_launch_info,
+                            _alm_FrontBoard_lifecycle_log, _alm_app_did_present,
+                            _alm_app_extended_launch_end,
+                            _alm_app_measurement_ongoing, _alm_app_will_launch,
+                            _alm_app_will_launch_with_details,
+                            _alm_app_will_launch_with_signpost_id,
+                            _alm_application_launch_log, _alm_build_launch_info,
+                            _alm_build_version_string,
+                            _alm_clear_responsive_launch_bailed,
+                            _alm_did_reach_launch_milestone,
+                            _alm_execute_when_main_queue_idle,
+                            _alm_execute_when_main_queue_idle_with_condition,
+                            _alm_execute_when_measurement_complete,
+                            _alm_general_log, _alm_has_reached_launch_milestone,
+                            _alm_is_responsive_launch_bailed,
+                            _alm_legacy_app_regular_or_extended_launch_end,
+                            _alm_reset_launch_milestone,
+                            _alm_stop_tracking_responsive_launch,
+                            _uikit_app_lifecycle_log ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Block_copy, __Block_object_assign,
+                            __Block_object_dispose, __Block_release,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___assert_rtn, ___stack_chk_fail, ___stack_chk_guard,
+                            __dispatch_main_q, __dyld_launch_mode,
+                            __os_signpost_emit_with_name_impl, _clock_gettime,
+                            _dispatch_after, _dispatch_time, _log2,
+                            _mach_continuous_time, _mach_timebase_info,
+                            _os_log_create, _os_signpost_enabled,
+                            _os_signpost_id_generate, _strlcat, _strlcpy, _strlen,
+                            dyld_stub_binder ]
+...

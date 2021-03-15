@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PLSnapshot.framework/PLSnapshot
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ PLSnapshotCPUStats, PLSnapshotUtilities ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __NSConcreteGlobalBlock, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_assumes_log, __os_log_debug_impl,
+                            __os_log_default, _coalition_info_resource_usage,
+                            _dispatch_once, _free, _mach_timebase_info, _malloc,
+                            _objc_msgSend, _os_log_type_enabled,
+                            _proc_listcoalitions, _proc_pid_rusage,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSObject ]
+...

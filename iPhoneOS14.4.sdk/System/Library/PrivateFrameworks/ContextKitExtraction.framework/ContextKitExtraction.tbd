@@ -1,0 +1,83 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ContextKitExtraction.framework/ContextKitExtraction
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ContextKitExtractionVersionNumber,
+                            _ContextKitExtractionVersionString ]
+    objc-classes:         [ CKContextContentProvider,
+                            CKContextContentProviderManager,
+                            CKContextContentProviderUIScene, CKContextDonation,
+                            CKContextDonationItem, CKContextExecutor ]
+    objc-ivars:           [ CKContextContentProviderManager._providers,
+                            CKContextContentProviderUIScene.__scene,
+                            CKContextContentProviderUIScene._allowDebugControls,
+                            CKContextContentProviderUIScene._debugButton,
+                            CKContextContentProviderUIScene._toolInstallationTimer,
+                            CKContextDonation._donorBundleIdentifier,
+                            CKContextDonation._items, CKContextDonation._nonce,
+                            CKContextDonationItem._contentAuthor,
+                            CKContextDonationItem._contentDescription,
+                            CKContextDonationItem._contentKeywords,
+                            CKContextDonationItem._debugText,
+                            CKContextDonationItem._debugUrlString,
+                            CKContextDonationItem._languageTag,
+                            CKContextDonationItem._text,
+                            CKContextDonationItem._title,
+                            CKContextExecutor._completionCondition,
+                            CKContextExecutor._completionHandler,
+                            CKContextExecutor._completionQueue,
+                            CKContextExecutor._context, CKContextExecutor._done,
+                            CKContextExecutor._group,
+                            CKContextExecutor._timeoutAfter,
+                            CKContextExecutor._workItemQueue ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFCharacterSetGetPredefined,
+                            _CFCharacterSetIsCharacterMember,
+                            _CFStringGetCStringPtr, _CFStringGetCharacters,
+                            _CFStringGetCharactersPtr, _CGRectGetHeight,
+                            _CGRectGetWidth, _NSStringFromClass,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___kCFBooleanTrue, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __dispatch_main_q, __objc_empty_cache,
+                            __os_activity_initiate, __os_log_debug_impl,
+                            __os_log_default, __os_log_error_impl, __os_log_impl,
+                            __sl_dlopen_audited, _abort_report_np, _dispatch_after,
+                            _dispatch_async, _dispatch_get_global_queue,
+                            _dispatch_group_async, _dispatch_group_create,
+                            _dispatch_group_enter, _dispatch_group_leave,
+                            _dispatch_group_wait, _dispatch_once, _dispatch_sync,
+                            _dispatch_time, _dlerror, _dlsym, _free, _getprogname,
+                            _malloc, _notify_get_state, _notify_register_dispatch,
+                            _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_getClass, _objc_initWeak, _objc_loadWeakRetained,
+                            _objc_lookUpClass, _objc_msgSend, _objc_msgSendSuper2,
+                            _objc_opt_class, _objc_opt_isKindOfClass,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_storeStrong, _objc_storeWeak,
+                            _objc_sync_enter, _objc_sync_exit,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_type_enabled,
+                            _os_variant_has_internal_content, _strncmp, _time,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSAttributedString, NSBundle, NSCharacterSet,
+                            NSCondition, NSConstantArray, NSHashTable,
+                            NSLayoutConstraint, NSMutableArray,
+                            NSNotificationCenter, NSObject, NSRegularExpression,
+                            NSSet, NSString, NSTimer, NSUserDefaults, NSXPCConnection,
+                            NSXPCInterface ]
+...

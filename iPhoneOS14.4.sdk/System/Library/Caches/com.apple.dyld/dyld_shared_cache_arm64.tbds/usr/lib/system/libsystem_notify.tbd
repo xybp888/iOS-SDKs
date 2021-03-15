@@ -1,0 +1,63 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/system/libsystem_notify.dylib
+current-version:       279.40.4
+compatibility-version: 1
+parent-umbrella:       System
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __notify_fork_child, _notify_cancel, _notify_check,
+                            _notify_dump_status, _notify_get_event,
+                            _notify_get_state, _notify_is_valid_token,
+                            _notify_monitor_file, _notify_peek, _notify_post,
+                            _notify_register_check, _notify_register_dispatch,
+                            _notify_register_file_descriptor,
+                            _notify_register_mach_port, _notify_register_plain,
+                            _notify_register_signal, _notify_resume,
+                            _notify_resume_pid, _notify_set_options,
+                            _notify_set_state, _notify_simple_post,
+                            _notify_suspend, _notify_suspend_pid ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NDR_record, __Block_copy, __Block_object_assign,
+                            __Block_object_dispose, __Block_release,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___assert_rtn, ___error, ___stack_chk_fail,
+                            ___stack_chk_guard,
+                            __dispatch_is_fork_of_multithreaded_parent,
+                            __dispatch_is_multithreaded,
+                            __dispatch_source_type_mach_recv,
+                            __dispatch_source_type_proc,
+                            __dyld_is_memory_immutable, __os_alloc_once,
+                            __os_alloc_once_table, __simple_asl_log,
+                            __xpc_bool_true, _bootstrap_look_up2, _bootstrap_port,
+                            _calloc, _close$NOCANCEL, _creat$NOCANCEL,
+                            _dispatch_async, _dispatch_async_f,
+                            _dispatch_block_create, _dispatch_get_global_queue,
+                            _dispatch_once, _dispatch_queue_create,
+                            _dispatch_release, _dispatch_resume, _dispatch_retain,
+                            _dispatch_set_context, _dispatch_source_cancel,
+                            _dispatch_source_create,
+                            _dispatch_source_set_cancel_handler,
+                            _dispatch_source_set_event_handler_f,
+                            _fileport_makeport, _free, _geteuid, _getpid, _kill,
+                            _mach_absolute_time, _mach_msg, _mach_msg_destroy,
+                            _mach_port_allocate, _mach_port_deallocate,
+                            _mach_port_destruct, _mach_port_insert_right,
+                            _mach_task_self_, _malloc, _memcpy,
+                            _mig_dealloc_special_reply_port,
+                            _mig_get_special_reply_port, _mig_strncpy, _mmap,
+                            _os_fault_with_payload, _os_unfair_lock_assert_owner,
+                            _os_unfair_lock_lock_with_options,
+                            _os_unfair_lock_unlock,
+                            _os_variant_has_internal_diagnostics, _pipe, _realloc,
+                            _reallocf, _shm_open, _snprintf, _strcmp, _strdup, _strlen,
+                            _strncmp, _usleep$NOCANCEL, _vasprintf, _write$NOCANCEL,
+                            _xpc_copy_entitlement_for_token,
+                            _xpc_dictionary_create, _xpc_dictionary_set_string,
+                            _xpc_dictionary_set_uint64,
+                            _xpc_event_publisher_fire_noboost, _xpc_release,
+                            dyld_stub_binder ]
+...

@@ -1,0 +1,98 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MetricKitCore.framework/MetricKitCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MetricKitCoreVersionNumber,
+                            _MetricKitCoreVersionString ]
+    objc-classes:         [ MXCore, MXCorePayloadConstructor, MXSource ]
+    objc-ivars:           [ MXCore._MXCoreLogHandle,
+                            MXCore._MXCoreXcodeSupportLogHandle,
+                            MXCore._clientDictionary,
+                            MXCore._currentDataActivityDate,
+                            MXCore._currentDataActivityRetryCount,
+                            MXCore._iVarQueue, MXCore._requestQueue,
+                            MXCore._services, MXCore._source, MXCore._xpcListener,
+                            MXSource._MXSourceLogHandle, MXSource._fileManager,
+                            MXSource._iVarQueue, MXSource._requestQueue,
+                            MXSource._xpcListener ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AnalyticsSendEventLazy, _CFBundleGetIdentifier,
+                            _CFRelease, _NSCocoaErrorDomain,
+                            _NSFileProtectionCompleteUntilFirstUserAuthentication,
+                            _NSFileProtectionKey, _SecTaskCopySigningIdentifier,
+                            _SecTaskCreateWithAuditToken,
+                            _XPC_ACTIVITY_ALLOW_BATTERY, _XPC_ACTIVITY_CHECK_IN,
+                            _XPC_ACTIVITY_CPU_INTENSIVE, _XPC_ACTIVITY_DELAY,
+                            _XPC_ACTIVITY_EXPECTED_DURATION,
+                            _XPC_ACTIVITY_GRACE_PERIOD, _XPC_ACTIVITY_INTERVAL,
+                            _XPC_ACTIVITY_INTERVAL_1_DAY,
+                            _XPC_ACTIVITY_INTERVAL_1_HOUR,
+                            _XPC_ACTIVITY_INTERVAL_5_MIN,
+                            _XPC_ACTIVITY_MEMORY_INTENSIVE,
+                            _XPC_ACTIVITY_PRIORITY,
+                            _XPC_ACTIVITY_PRIORITY_MAINTENANCE,
+                            _XPC_ACTIVITY_REPEATING,
+                            _XPC_ACTIVITY_REQUIRE_SCREEN_SLEEP,
+                            __CFBundleCopyBundleURLForExecutableURL,
+                            __CFBundleCreateUnique, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_default,
+                            __os_log_error_impl, __os_log_impl, _dispatch_async,
+                            _dispatch_once,
+                            _dispatch_queue_attr_make_with_qos_class,
+                            _dispatch_queue_create, _dispatch_sync,
+                            _kCFAllocatorDefault, _notify_post, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleasePoolPop,
+                            _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue, _objc_begin_catch,
+                            _objc_end_catch, _objc_enumerationMutation,
+                            _objc_getProperty, _objc_msgSend, _objc_msgSendSuper2,
+                            _objc_opt_class, _objc_opt_isKindOfClass,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic, _objc_storeStrong,
+                            _os_log_create, _os_log_type_enabled, _proc_pidpath,
+                            _xpc_activity_copy_criteria, _xpc_activity_get_state,
+                            _xpc_activity_register, _xpc_activity_set_criteria,
+                            _xpc_activity_unregister, _xpc_dictionary_create,
+                            _xpc_dictionary_set_bool, _xpc_dictionary_set_int64,
+                            _xpc_dictionary_set_string, dyld_stub_binder ]
+    objc-classes:         [ LSApplicationProxy, MXAnimationMetric, MXAppExitMetric,
+                            MXAppLaunchMetric, MXAppResponsivenessMetric,
+                            MXAppRunTimeMetric, MXAverage, MXBackgroundExitData,
+                            MXCPUExceptionDiagnostic, MXCPUMetric,
+                            MXCallStackFrame, MXCallStackThread, MXCallStackTree,
+                            MXCellularConditionMetric, MXCrashDiagnostic,
+                            MXDiagnosticPayload, MXDiskIOMetric,
+                            MXDiskWriteExceptionDiagnostic, MXDisplayMetric,
+                            MXForegroundExitData, MXGPUMetric, MXHangDiagnostic,
+                            MXHangTracerData, MXHangTracerService,
+                            MXHistogramBucket, MXLocationActivityMetric,
+                            MXMemoryMetric, MXMetaData, MXMetricPayload,
+                            MXNetworkTransferMetric, MXPowerlogData,
+                            MXPowerlogService, MXReportCrashData,
+                            MXReportCrashService, MXSignpostIntervalData,
+                            MXSignpostMetric, MXSourceData, MXSourceXPCPayload,
+                            MXSpinTracerData, MXSpinTracerService,
+                            MXUnitAveragePixelLuminance, MXUnitSignalBars,
+                            MXUtilities, NSArray, NSConstantArray,
+                            NSConstantIntegerNumber, NSDate, NSDateFormatter,
+                            NSDictionary, NSFileManager, NSKeyedArchiver, NSLocale,
+                            NSMeasurement, NSMutableArray, NSMutableDictionary,
+                            NSMutableSet, NSNumber, NSObject, NSSet, NSString,
+                            NSTimeZone, NSURL, NSUUID, NSUnit, NSUnitDuration,
+                            NSUnitInformationStorage, NSUserDefaults,
+                            NSXPCConnection, NSXPCInterface, NSXPCListener ]
+    objc-eh-types:        [ NSException ]
+...

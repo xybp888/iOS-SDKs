@@ -1,0 +1,55 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/NewsstandKit.framework/NewsstandKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NKIssueDownloadCompletedNotification ]
+    objc-classes:         [ NKAssetDownload, NKIssue, NKLibrary ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFRelease, _CFUUIDCreate, _CFUUIDCreateString,
+                            _CacheDeleteAllowAutoPurge,
+                            _CacheDeleteDoNotAutoPurge, _NSGenericException,
+                            _NSInvalidArgumentException, _NSLog, _NSLogv,
+                            _NSRunLoopCommonModes,
+                            _NSURLConnectionBackgroundDownloadCompletedInvocation,
+                            _NSURLConnectionBackgroundDownloadIdentifier,
+                            _NSURLConnectionBackgroundDownloadMediaKind,
+                            _NSURLConnectionBackgroundDownloadPreCompletedInvocation,
+                            _NSURLConnectionIsBackgroundDownload,
+                            _NSURLIsDirectoryKey, _NSURLNameKey,
+                            _UIApplicationDidEnterBackgroundNotification,
+                            _UIApplicationDidFinishLaunchingNotification,
+                            _UIApplicationWillTerminateNotification,
+                            _UIBackgroundTaskInvalid, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_main_q,
+                            __objc_empty_cache, _dispatch_after, _dispatch_async,
+                            _dispatch_get_global_queue, _dispatch_once,
+                            _dispatch_time, _kCFAllocatorDefault, _objc_alloc,
+                            _objc_alloc_init, _objc_autorelease, _objc_begin_catch,
+                            _objc_end_catch, _objc_enumerationMutation,
+                            _objc_getProperty, _objc_loadWeak, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_opt_self, _objc_release,
+                            _objc_retain, _objc_setProperty_atomic,
+                            _objc_setProperty_atomic_copy, _objc_storeWeak,
+                            _objc_sync_enter, _objc_sync_exit, _sel_getName,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSAssertionHandler, NSBundle, NSData, NSDate,
+                            NSDictionary, NSException, NSFileManager, NSInvocation,
+                            NSKeyedArchiver, NSKeyedUnarchiver, NSMapTable,
+                            NSMutableArray, NSMutableDictionary, NSMutableSet,
+                            NSMutableString, NSNotificationCenter, NSNumber,
+                            NSObject, NSPropertyListSerialization, NSRunLoop, NSSet,
+                            NSString, NSURLConnection, NSURLRequest, UIApplication ]
+    objc-eh-types:        [ NSException ]
+...

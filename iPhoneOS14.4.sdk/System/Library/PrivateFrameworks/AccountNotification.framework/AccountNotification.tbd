@@ -1,0 +1,73 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AccountNotification.framework/AccountNotification
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ANAccountNotificationClientEntitlement,
+                            _ANAccountNotificationManagerEntitlement,
+                            _ANDaemonMachServiceName,
+                            _AccountNotificationVersionNumber,
+                            _AccountNotificationVersionString, __ANLogSystem ]
+    objc-classes:         [ ANAccountNotification, ANAccountNotifier,
+                            ANClientCallbackInterface, ANDaemonInterface,
+                            ANManagedAccountNotification,
+                            ANManagedNotificationAction, ANNotificationAction,
+                            ANSectionSubtypeDescriptor ]
+    objc-ivars:           [ ANAccountNotification._accountTypeID,
+                            ANAccountNotification._activateAction,
+                            ANAccountNotification._activateButtonTitle,
+                            ANAccountNotification._callbackMachService,
+                            ANAccountNotification._date,
+                            ANAccountNotification._destinations,
+                            ANAccountNotification._dismissAction,
+                            ANAccountNotification._eventIdentifier,
+                            ANAccountNotification._identifier,
+                            ANAccountNotification._message,
+                            ANAccountNotification._sectionSubtype,
+                            ANAccountNotification._title,
+                            ANAccountNotification._userInfo,
+                            ANAccountNotifier._bulletinResponseListener,
+                            ANAccountNotifier._callbackMachService,
+                            ANAccountNotifier._daemonConnection,
+                            ANAccountNotifier._delegate,
+                            ANNotificationAction._isInternalURL,
+                            ANNotificationAction._options,
+                            ANNotificationAction._url,
+                            ANSectionSubtypeDescriptor._accountTypeID,
+                            ANSectionSubtypeDescriptor._allowsAddingToLockScreenWhenUnlocked,
+                            ANSectionSubtypeDescriptor._fullUnlockActionLabel,
+                            ANSectionSubtypeDescriptor._subtype ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSObjectInaccessibleException,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_error_impl,
+                            __os_log_impl, _dispatch_once, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_begin_catch, _objc_copyWeak, _objc_destroyWeak,
+                            _objc_end_catch, _objc_exception_throw,
+                            _objc_getProperty, _objc_initWeak,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
+                            _objc_storeWeak, _os_log_create, _os_log_type_enabled,
+                            dyld_stub_binder ]
+    objc-classes:         [ LSApplicationWorkspace, NSArray, NSDate, NSDictionary,
+                            NSManagedObject, NSMutableDictionary, NSNumber, NSObject,
+                            NSSet, NSString, NSURL, NSUUID, NSXPCConnection,
+                            NSXPCInterface, NSXPCListener ]
+    objc-eh-types:        [ NSException ]
+...

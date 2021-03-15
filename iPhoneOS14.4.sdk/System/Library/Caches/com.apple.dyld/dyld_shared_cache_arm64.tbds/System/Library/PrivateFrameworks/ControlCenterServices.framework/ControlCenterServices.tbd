@@ -1,0 +1,96 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ControlCenterServices.framework/ControlCenterServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:    [ ConnectivityModule, ControlCenterServicesTests,
+                            ControlCenterSettings, ControlCenterUI, CoverSheet,
+                            HearingAidUIServer, HomeKitDaemon, LoginKit,
+                            PerformanceTraceModule, SUIAKit, SUIATPTests, SUICITests,
+                            SUISimulatorTests, SleepDaemon, SleepLockScreen,
+                            SpringBoard, SpringBoardCore,
+                            TVRemoteConnectionService,
+                            com.apple.BarcodeSupport.Helper, controlcentertool,
+                            logind, replayd ]
+    symbols:              [ _CCSControlCenterServicesErrorDomain,
+                            _CCSIsInternalInstall, _CCSLogModuleSettings,
+                            _CCSLogRemoteService,
+                            _CCSModuleVisibilityPreferenceDescription,
+                            _CCSRegisterControlCenterLogging,
+                            _CCSRemoteServiceName,
+                            _CCSRemoteServiceServerInterface,
+                            _CCSResolveModuleVisibility,
+                            _CCSVisibilityPreferenceForBundleInfoDictionary,
+                            _CCSVisibilityPreferenceForBundleProxy,
+                            _ControlCenterServicesVersionNumber,
+                            _ControlCenterServicesVersionString, _kVersionNumber ]
+    objc-classes:         [ CCSControlCenterDefaults, CCSControlCenterService,
+                            CCSModuleMetadata, CCSModulePresentationOptions,
+                            CCSModuleRepository, CCSModuleSettingsProvider,
+                            CCSRemoteServiceConnection, CCSRemoteServiceProvider,
+                            CCSUsageMetrics ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BSCurrentUserDirectory, _BSEqualObjects,
+                            _BSSystemRootDirectory,
+                            _CFBundleCopyInfoDictionaryInDirectory,
+                            _CFNotificationCenterAddObserver,
+                            _CFNotificationCenterGetDarwinNotifyCenter,
+                            _CFNotificationCenterPostNotification,
+                            _CFNotificationCenterRemoveObserver,
+                            _CFPreferencesCopyAppValue,
+                            _CFPreferencesSetAppValue, _MGCancelNotifications,
+                            _MGCopyMultipleAnswers, _MGGetBoolAnswer,
+                            _MGIsQuestionValid, _MGRegisterForBulkUpdates,
+                            _NSDebugDescriptionErrorKey,
+                            _NSSearchPathForDirectoriesInDomains,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___NSArray0__struct, ___kCFBooleanFalse,
+                            ___kCFBooleanTrue, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __dispatch_main_q, __dispatch_source_type_vnode,
+                            __objc_empty_cache, __os_activity_create,
+                            __os_activity_current, __os_log_error_impl,
+                            __os_log_impl, _close, _dispatch_assert_queue$V2,
+                            _dispatch_async, _dispatch_group_create,
+                            _dispatch_group_enter, _dispatch_group_leave,
+                            _dispatch_group_wait, _dispatch_once,
+                            _dispatch_queue_attr_make_with_autorelease_frequency,
+                            _dispatch_queue_create, _dispatch_resume,
+                            _dispatch_source_cancel, _dispatch_source_create,
+                            _dispatch_source_set_cancel_handler,
+                            _dispatch_source_set_event_handler, _dispatch_sync,
+                            _kCFBooleanFalse, _kCFBooleanTrue,
+                            _kCFBundleIdentifierKey, _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_getProperty, _objc_initWeak,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _objc_sync_enter, _objc_sync_exit,
+                            _objc_unsafeClaimAutoreleasedReturnValue, _open,
+                            _os_activity_apply, _os_log_create,
+                            _os_log_type_enabled,
+                            _os_variant_has_internal_content, dyld_stub_binder ]
+    objc-classes:         [ BSAbstractDefaultDomain, BSAuditToken,
+                            BSDescriptionBuilder, BSHashBuilder, BSPlatform,
+                            LSApplicationProxy, LSApplicationWorkspace, NSArray,
+                            NSAssertionHandler, NSBundle, NSConstantArray,
+                            NSConstantIntegerNumber, NSDictionary, NSError,
+                            NSFileManager, NSHashTable, NSInputStream,
+                            NSMutableArray, NSMutableDictionary, NSMutableSet,
+                            NSNumber, NSObject, NSPredicate,
+                            NSPropertyListSerialization, NSSet, NSString, NSURL,
+                            NSXPCConnection, NSXPCInterface, NSXPCListener ]
+...
