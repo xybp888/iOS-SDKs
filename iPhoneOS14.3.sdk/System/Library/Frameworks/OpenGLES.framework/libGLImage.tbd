@@ -1,0 +1,38 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/OpenGLES.framework/libGLImage.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _glgCompress, _glgConvertPixelHeightToBlocks,
+                            _glgConvertPixelWidthToBlocks, _glgConvertPixels,
+                            _glgConvertType, _glgCreateProcessor, _glgDecompress,
+                            _glgDestroyProcessor, _glgGetCompressedBlockBytes,
+                            _glgGetCompressedBlockHeight,
+                            _glgGetCompressedBlockWidth,
+                            _glgGetCompressedImageBytes,
+                            _glgGetCompressedMinBlockDimensions,
+                            _glgGetPixelSize, _glgInitializeLibrary,
+                            _glgPixelCenters, _glgProcessPixelsWithProcessor,
+                            _glgSaveImageToFile, _glgSaveImageToFileGLG,
+                            _glgSetTakeLock, _glgTerminateLibrary ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___chkstk_darwin, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_queue_attr_concurrent,
+                            _abort, _dispatch_group_async, _dispatch_group_create,
+                            _dispatch_group_wait, _dispatch_once,
+                            _dispatch_queue_create, _dispatch_queue_set_width,
+                            _dispatch_release, _fclose, _fflush, _fopen, _free, _fwrite,
+                            _malloc, _memcpy, _powf, _pthread_exit,
+                            _pthread_getspecific, _pthread_key_create,
+                            _pthread_key_delete, _pthread_mutex_destroy,
+                            _pthread_mutex_init, _pthread_mutex_lock,
+                            _pthread_mutex_unlock, _pthread_setspecific,
+                            _sysctlbyname, dyld_stub_binder ]
+...

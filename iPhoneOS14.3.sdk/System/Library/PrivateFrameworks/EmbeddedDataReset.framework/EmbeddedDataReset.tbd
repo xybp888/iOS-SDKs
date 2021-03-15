@@ -1,0 +1,44 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/EmbeddedDataReset.framework/EmbeddedDataReset
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ DDRResetOptions, DDRResetRequest, DDRResetService ]
+    objc-ivars:           [ DDRResetOptions._disallowProximitySetup,
+                            DDRResetOptions._eraseDataPlan,
+                            DDRResetOptions._hideProgress, DDRResetRequest._mode,
+                            DDRResetRequest._options, DDRResetRequest._reason,
+                            DDRResetService._currentResetState,
+                            DDRResetService._dataResetXPCConnection,
+                            DDRResetService._invalidated, DDRResetService._lock,
+                            DDRResetService._mode, DDRResetService._obervers,
+                            DDRResetService._observerNonLaunchingXPCConnection,
+                            DDRResetService._observerQueue ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___assert_rtn, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_impl, _dispatch_once,
+                            _dispatch_queue_create, _dispatch_sync, _objc_alloc,
+                            _objc_alloc_init, _objc_copyWeak, _objc_destroyWeak,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_initWeak, _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_create,
+                            _os_log_type_enabled, _os_unfair_lock_lock,
+                            _os_unfair_lock_unlock,
+                            _xpc_connection_set_non_launching, dyld_stub_binder ]
+    objc-classes:         [ NSError, NSHashTable, NSObject, NSSet, NSString,
+                            NSXPCConnection, NSXPCInterface ]
+...

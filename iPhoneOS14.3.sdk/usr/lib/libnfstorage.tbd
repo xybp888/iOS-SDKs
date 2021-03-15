@@ -1,0 +1,51 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libnfstorage.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _nfstorageVersionNumber, _nfstorageVersionString ]
+    objc-classes:         [ ExpressESEEntity, ExpressIcfEntity,
+                            NFStorageController, NFStorageControllerESEExpress,
+                            NFStorageControllerIcfExpress,
+                            PurpleTrustAppletEntity, PurpleTrustClientEntity,
+                            PurpleTrustKeyEntity ]
+    objc-ivars:           [ NFStorageController._managedObjectContext,
+                            NFStorageController._managedObjectModel,
+                            NFStorageController._persistentStoreCoordinator ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NFSharedLogLock, _NFSharedLogUnlock, _NFSharedLogv,
+                            _NSFileProtectionCompleteUntilFirstUserAuthentication,
+                            _NSFileProtectionNone, _NSLocalizedDescriptionKey,
+                            _NSLocalizedFailureReasonErrorKey,
+                            _NSMigratePersistentStoresAutomaticallyOption,
+                            _NSPersistentStoreFileProtectionKey,
+                            _NSSQLiteStoreType, _NSStringFromClass,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference, ___kCFBooleanTrue,
+                            ___objc_personality_v0, ___snprintf_chk,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, _class_isMetaClass, _geteuid,
+                            _getpwuid, _gettimeofday, _getuid, _objc_alloc,
+                            _objc_autorelease, _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_opt_class, _objc_opt_isKindOfClass,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _object_getClass, _object_getClassName, _sel_getName,
+                            _snprintf, _strlen, _strncpy, dyld_stub_binder ]
+    objc-classes:         [ NSBatchDeleteRequest, NSDictionary,
+                            NSEntityDescription, NSError, NSFetchRequest,
+                            NSFileManager, NSManagedObject, NSManagedObjectContext,
+                            NSManagedObjectModel, NSMutableDictionary, NSObject,
+                            NSPersistentStoreCoordinator, NSString, NSURL ]
+...

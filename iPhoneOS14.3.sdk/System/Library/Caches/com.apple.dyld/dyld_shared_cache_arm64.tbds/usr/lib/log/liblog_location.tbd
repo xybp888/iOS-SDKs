@@ -1,0 +1,40 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/log/liblog_location.dylib
+current-version:       2420.12.14
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _OSLogCopyFormattedString,
+                            _OSStateCreateStringWithData,
+                            _liblog_locationVersionNumber,
+                            _liblog_locationVersionString ]
+    objc-classes:         [ CLLogFormatter ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSSelectorFromString, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            __ZNKSt3__121__basic_string_commonILb1EE20__throw_length_errorEv,
+                            ___CFConstantStringClassReference,
+                            ___gxx_personality_v0, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __dispatch_queue_attr_concurrent, __objc_empty_cache,
+                            _dispatch_barrier_sync, _dispatch_once,
+                            _dispatch_queue_attr_make_with_autorelease_frequency,
+                            _dispatch_queue_create, _dispatch_sync, _memcpy,
+                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_begin_catch, _objc_end_catch, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_opt_new,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _strlen, dyld_stub_binder ]
+    objc-classes:         [ NSAttributedString, NSData, NSDictionary, NSInvocation,
+                            NSJSONSerialization, NSMutableArray,
+                            NSMutableDictionary, NSNumber, NSObject, NSString, NSValue ]
+    objc-eh-types:        [ NSException ]
+...

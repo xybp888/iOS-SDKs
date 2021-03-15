@@ -1,0 +1,43 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DAAPKit.framework/DAAPKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DKDAAPParserErrorDomain, _DKDAAPWriterErrorDomain,
+                            _DKParseUtilitiesCopyStringFromBytes,
+                            _NSStringFromDAAPCode, _NSStringFromDAAPValueType ]
+    objc-classes:         [ DKDAAPParser, DKDAAPParserContainer, DKDAAPWriter,
+                            DKDAAPWriterContainer ]
+    objc-ivars:           [ DKDAAPParser._canceled, DKDAAPParser._containerStack,
+                            DKDAAPParser._delegate, DKDAAPParser._inputStream,
+                            DKDAAPParser._state, DKDAAPParserContainer._code,
+                            DKDAAPParserContainer._length,
+                            DKDAAPParserContainer._remaining,
+                            DKDAAPWriter._containerStack, DKDAAPWriter._error,
+                            DKDAAPWriter._outputStream, DKDAAPWriter._state,
+                            DKDAAPWriterContainer._childData,
+                            DKDAAPWriterContainer._code ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSDebugDescriptionErrorKey, _NSLog,
+                            _NSUnderlyingErrorKey, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, _malloc,
+                            _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue, _objc_destroyWeak,
+                            _objc_getProperty, _objc_loadWeakRetained,
+                            _objc_msgSend, _objc_msgSendSuper2,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic, _objc_storeStrong,
+                            _objc_storeWeak, _strlen, _strncpy, dyld_stub_binder ]
+    objc-classes:         [ NSDictionary, NSError, NSInputStream, NSMutableArray,
+                            NSMutableData, NSMutableDictionary, NSObject, NSString ]
+...

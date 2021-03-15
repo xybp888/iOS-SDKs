@@ -1,0 +1,41 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/iOSScreenSharing.framework/iOSScreenSharing
+current-version:       1.1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SS_SendStatusBarTapToScreenSharingServer ]
+    objc-classes:         [ ViewServiceHelper ]
+    objc-ivars:           [ ViewServiceHelper._delegate,
+                            ViewServiceHelper._listener ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFBooleanGetTypeID, _CFBooleanGetValue, _CFGetTypeID,
+                            _CFRelease, _NSLog,
+                            _SBSUIActivateRemoteAlertWithLifecycleNotifications,
+                            _SBSUIRemoteAlertOptionDisableFadeInAnimation,
+                            _SBSUIRemoteAlertOptionDismissWithHomeButton,
+                            _SBSUIRemoteAlertOptionStatusBarStyle,
+                            _SBSUIRemoteAlertOptionUserInfo,
+                            _SBSUIRemoteAlertOptionViewControllerClass,
+                            _SecTaskCopyValueForEntitlement,
+                            _SecTaskCreateWithAuditToken,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___kCFBooleanTrue,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_default, __os_log_impl,
+                            _dispatch_async, _dispatch_get_global_queue,
+                            _objc_alloc, _objc_getProperty, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_respondsToSelector,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic, _objc_storeStrong,
+                            _os_log_type_enabled, _syslog, dyld_stub_binder ]
+    objc-classes:         [ NSDate, NSDictionary, NSMutableDictionary, NSNumber,
+                            NSObject, NSRunLoop, NSXPCConnection, NSXPCInterface,
+                            NSXPCListener ]
+...

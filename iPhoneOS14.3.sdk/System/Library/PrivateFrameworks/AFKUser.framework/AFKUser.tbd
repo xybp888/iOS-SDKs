@@ -1,0 +1,65 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AFKUser.framework/AFKUser
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AFKUserVersionNumber, _AFKUserVersionString,
+                            _kAFKEventCancel, _kAFKEventError ]
+    objc-classes:         [ AFKEndpointInterface ]
+    objc-ivars:           [ AFKEndpointInterface._asyncPort,
+                            AFKEndpointInterface._commandHandler,
+                            AFKEndpointInterface._connect,
+                            AFKEndpointInterface._dataQueue,
+                            AFKEndpointInterface._dataQueueMachChannel,
+                            AFKEndpointInterface._dataQueuePort,
+                            AFKEndpointInterface._dataQueueSize,
+                            AFKEndpointInterface._eventHandler,
+                            AFKEndpointInterface._properties,
+                            AFKEndpointInterface._queue,
+                            AFKEndpointInterface._regID,
+                            AFKEndpointInterface._reportHandler,
+                            AFKEndpointInterface._responseHandler,
+                            AFKEndpointInterface._service,
+                            AFKEndpointInterface._source,
+                            AFKEndpointInterface._state ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _IOCFSerialize, _IOConnectCallAsyncMethod,
+                            _IOConnectCallMethod, _IOConnectCallScalarMethod,
+                            _IOConnectMapMemory, _IOConnectSetNotificationPort,
+                            _IOConnectUnmapMemory,
+                            _IODataQueueAllocateNotificationPort,
+                            _IODataQueueDequeue, _IODataQueuePeek,
+                            _IONotificationPortCreate,
+                            _IONotificationPortDestroy,
+                            _IONotificationPortGetMachPort,
+                            _IONotificationPortSetDispatchQueue,
+                            _IOObjectRelease, _IOObjectRetain,
+                            _IORegistryEntryGetRegistryEntryID, _IOServiceClose,
+                            _IOServiceOpen, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            __ZSt9terminatev, ___CFConstantStringClassReference,
+                            ___chkstk_darwin, ___cxa_begin_catch, ___error,
+                            ___gxx_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, __os_crash_fmt,
+                            __os_log_error_impl, __os_log_pack_fill,
+                            __os_log_pack_size, _calloc, _dispatch_async,
+                            _dispatch_mach_cancel, _dispatch_mach_connect,
+                            _dispatch_mach_create_f, _dispatch_once, _free,
+                            _kIOMasterPortDefault, _mach_port_mod_refs,
+                            _mach_task_self_, _malloc, _objc_alloc,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_new, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_storeStrong, _os_log_create,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ NSError, NSMutableDictionary, NSObject ]
+...

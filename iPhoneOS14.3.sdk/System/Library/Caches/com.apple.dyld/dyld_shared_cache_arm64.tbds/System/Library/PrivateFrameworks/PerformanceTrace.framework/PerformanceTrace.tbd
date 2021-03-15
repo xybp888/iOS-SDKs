@@ -1,0 +1,39 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PerformanceTrace.framework/PerformanceTrace
+current-version:       100.1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PerformanceTraceVersionNumber,
+                            _PerformanceTraceVersionString,
+                            _traceConfigTemplateForString, _traceGroupForString,
+                            _traceTypeForString ]
+    objc-classes:         [ PTTraceConfig, PTTraceSession ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSInvalidArgumentException,
+                            _NSLocalizedDescriptionKey, _NSUnderlyingErrorKey,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_default, __os_log_error_impl, __os_log_impl,
+                            _getpid, _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_type_enabled, _proc_name,
+                            _sysconf, dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSConstantIntegerNumber, NSDictionary, NSError,
+                            NSException, NSMutableArray, NSNumber, NSObject, NSSet,
+                            NSString, NSURL, NSXPCConnection, NSXPCInterface ]
+...

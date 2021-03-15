@@ -1,0 +1,32 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/OpenGLES.framework/libCoreFSCache.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _fscache_close, _fscache_element_get_data,
+                            _fscache_find_and_retain, _fscache_get_cache_keys,
+                            _fscache_insert_and_retain, _fscache_open,
+                            _fscache_open_with_key, _fscache_print_status,
+                            _fscache_release, _fscache_remove_all,
+                            _fscache_remove_and_release, _fscache_retain,
+                            _fscache_sync, _fscache_sync_element ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteStackBlock, ___error, ___stack_chk_fail,
+                            ___stack_chk_guard, __os_log_default,
+                            __os_log_error_impl, _abort, _bzero, _calloc,
+                            _change_fdguard_np, _chmod, _dispatch_async,
+                            _dispatch_queue_create, _dispatch_release,
+                            _dispatch_sync, _fclose, _fcntl, _fflush, _fileno, _flock,
+                            _fopen, _fread, _free, _fseek, _fsetattrlist, _fsetxattr,
+                            _fstat, _ftell, _ftruncate, _fwrite, _getenv, _malloc,
+                            _memmove, _mmap, _msync, _munmap, _os_log_type_enabled,
+                            _printf_l, _realloc, _remove, _rename, _rewind, _strerror,
+                            _strlen, _strncmp, _strnlen, _sysctlbyname, _vm_page_mask,
+                            _vm_page_size, dyld_stub_binder ]
+...

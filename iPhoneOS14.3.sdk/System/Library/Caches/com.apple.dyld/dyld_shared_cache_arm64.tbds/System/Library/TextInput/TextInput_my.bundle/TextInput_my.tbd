@@ -1,0 +1,32 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/TextInput/TextInput_my.bundle/TextInput_my
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ TIKeyboardInputManager_my ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __ZN14TIInputManager17delete_from_inputEv,
+                            __ZN14TIInputManager24delete_suffix_from_inputERKN2KB6StringE,
+                            __ZN2KB11utf8_stringEP8NSString, __ZN2KB6StringD1Ev,
+                            __ZN2KB9ns_stringERKNS_6StringE,
+                            __ZNK14TIInputManager10input_stemEv,
+                            __ZNK14TIInputManager12input_stringEv,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, _dispatch_once,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _qsort_b, dyld_stub_binder ]
+    objc-classes:         [ NSCharacterSet, NSObject, NSRegularExpression, NSString,
+                            TIKeyboardInputManager ]
+    objc-ivars:           [ TIKeyboardInputManager.m_composedText,
+                            TIKeyboardInputManager.m_impl ]
+...

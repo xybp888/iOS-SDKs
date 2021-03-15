@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/system/libsystem_featureflags.dylib
+current-version:       28.60.1
+compatibility-version: 1
+objc-constraint:       retain_release
+parent-umbrella:       System
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __os_feature_enabled_impl,
+                            __os_feature_enabled_simple_impl ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ ___error, ___stack_chk_fail, ___stack_chk_guard,
+                            ___strlcat_chk, ___strlcpy_chk, __os_once,
+                            __xpc_bool_false, __xpc_bool_true, __xpc_type_bool,
+                            __xpc_type_dictionary, _abort, _close, _free, _fstat, _lseek,
+                            _malloc, _mmap, _munmap, _objc_autoreleaseReturnValue,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue, _open,
+                            _os_unfair_lock_lock, _os_unfair_lock_unlock, _pread,
+                            _shm_open, _strlen, _xpc_bool_get_value,
+                            _xpc_create_from_plist, _xpc_dictionary_create,
+                            _xpc_dictionary_get_value, _xpc_dictionary_set_bool,
+                            _xpc_dictionary_set_value, _xpc_get_type,
+                            dyld_stub_binder ]
+...

@@ -1,0 +1,70 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libAppleEXR.dylib
+current-version:       1.2.7
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _axr_channel_type_get_name,
+                            _axr_compression_get_name, _axr_data_create,
+                            _axr_data_get_channel_count,
+                            _axr_data_get_channel_info,
+                            _axr_data_get_layer_count, _axr_data_get_layer_info,
+                            _axr_data_get_level_count, _axr_data_get_level_size,
+                            _axr_data_get_part_count, _axr_data_get_part_info,
+                            _axr_data_get_property, _axr_data_get_property_count,
+                            _axr_decoder_append_channel,
+                            _axr_decoder_append_constant_value_channel,
+                            _axr_decoder_clear_channel_list, _axr_decoder_copy,
+                            _axr_decoder_create, _axr_decoder_create_colorspace,
+                            _axr_decoder_create_rgba,
+                            _axr_decoder_create_rgba_colorspace,
+                            _axr_decoder_get_channel_count,
+                            _axr_decoder_get_channel_info, _axr_decoder_get_data,
+                            _axr_decoder_get_info, _axr_decoder_read_pixels,
+                            _axr_decoder_read_planes,
+                            _axr_decoder_read_rgba_pixels,
+                            _axr_decoder_set_subregion,
+                            _axr_decoder_translate_channel_index,
+                            _axr_encoder_append_part, _axr_encoder_compress,
+                            _axr_encoder_create, _axr_error_get_name,
+                            _axr_flags_get_name, _axr_get_version,
+                            _axr_introspect_data, _axr_level_mode_get_name,
+                            _axr_line_order_get_name, _axr_part_append_attribute,
+                            _axr_part_append_channels,
+                            _axr_part_create_colorspace,
+                            _axr_part_get_rip_level_counts,
+                            _axr_part_set_chromaticities, _axr_part_set_preview,
+                            _axr_property_flags_get_name, _axr_type_get_name,
+                            _axr_type_get_size ]
+    objc-classes:         [ OS_axr_data, OS_axr_decoder, OS_axr_encoder, OS_axr_part ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Block_copy, __Block_release, __Unwind_Resume,
+                            __ZSt9terminatev,
+                            __ZTVN10__cxxabiv116__enum_type_infoE,
+                            __ZTVN10__cxxabiv117__class_type_infoE,
+                            __ZTVN10__cxxabiv120__si_class_type_infoE,
+                            ___CFConstantStringClassReference, ___chkstk_darwin,
+                            ___cxa_allocate_exception, ___cxa_begin_catch,
+                            ___cxa_end_catch, ___cxa_pure_virtual, ___cxa_throw,
+                            ___gxx_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, __os_log_impl,
+                            __os_object_alloc, __os_object_dealloc, _bzero, _calloc,
+                            _compress, _compressBound, _dispatch_apply_f,
+                            _dispatch_get_global_queue, _dispatch_once_f, _dladdr,
+                            _dlopen, _dlsym, _free, _getenv, _malloc, _memcpy, _memset,
+                            _memset_pattern16, _memset_pattern4, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
+                            _objc_retain, _os_log_create, _os_log_type_enabled,
+                            _os_release, _os_unfair_lock_lock,
+                            _os_unfair_lock_unlock, _posix_memalign,
+                            _qos_class_self, _qsort, _reallocf, _snprintf, _sprintf,
+                            _stpcpy, _strcmp, _strlen, _strncasecmp, _strncmp, _strncpy,
+                            _strnlen, _strtoull, _sysctlbyname, _uncompress,
+                            _vsnprintf, dyld_stub_binder ]
+    objc-classes:         [ NSObject, NSString, OS_object ]
+...

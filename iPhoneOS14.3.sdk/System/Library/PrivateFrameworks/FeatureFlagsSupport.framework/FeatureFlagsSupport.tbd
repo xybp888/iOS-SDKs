@@ -1,0 +1,41 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FeatureFlagsSupport.framework/FeatureFlagsSupport
+current-version:       28.60.1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ FFConfiguration, FFFeatureAttribute, FFFeatureState ]
+    objc-ivars:           [ FFConfiguration._domains,
+                            FFConfiguration.configByLevel, FFConfiguration.lock,
+                            FFConfiguration.metaByLevel,
+                            FFConfiguration.searchPaths,
+                            FFFeatureAttribute._name, FFFeatureAttribute._value,
+                            FFFeatureState._attributes, FFFeatureState._domain,
+                            FFFeatureState._feature, FFFeatureState._hidden,
+                            FFFeatureState._value ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSFileGroupOwnerAccountID, _NSFileOwnerAccountID,
+                            _NSFilePosixPermissions, __DefaultRuneLocale,
+                            ___CFConstantStringClassReference,
+                            ___kCFBooleanFalse, ___kCFBooleanTrue, ___maskrune,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_once, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_unfair_lock_lock,
+                            _os_unfair_lock_unlock, dyld_stub_binder ]
+    objc-classes:         [ NSConstantIntegerNumber, NSDictionary, NSException,
+                            NSFileManager, NSMutableArray, NSMutableDictionary,
+                            NSMutableSet, NSNumber, NSObject, NSString, NSURL ]
+...

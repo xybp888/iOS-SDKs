@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/OSAServicesClient.framework/OSAServicesClient
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _OSAServicesClientVersionNumber,
+                            _OSAServicesClientVersionString ]
+    objc-classes:         [ OSAServicesClient ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFPreferencesCopyAppValue, _CFStringCompare,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___assert_rtn, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_default,
+                            __os_log_fault_impl, __os_log_impl,
+                            _dispatch_get_global_queue, _dispatch_group_async,
+                            _dispatch_group_create, _dispatch_group_wait,
+                            _dispatch_once, _dispatch_queue_create, _dispatch_sync,
+                            _dispatch_time, _getpwnam, _getuid, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_type_enabled, _time,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSObject, NSXPCConnection, NSXPCInterface ]
+...

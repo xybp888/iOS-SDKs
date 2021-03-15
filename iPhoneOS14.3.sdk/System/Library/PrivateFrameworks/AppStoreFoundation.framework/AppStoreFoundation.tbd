@@ -1,0 +1,86 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppStoreFoundation.framework/AppStoreFoundation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ ASFAsn1IntegerToken, ASFAsn1OSToken,
+                            ASFAsn1ReceiptIAPToken, ASFAsn1ReceiptToken,
+                            ASFAsn1SequenceToken, ASFAsn1SetToken, ASFAsn1Token,
+                            ASFIAPItem, ASFReceipt ]
+    objc-ivars:           [ ASFAsn1IntegerToken.mValue, ASFAsn1OSToken.mValue,
+                            ASFAsn1ReceiptIAPToken.mContentToken,
+                            ASFAsn1ReceiptIAPToken.mType,
+                            ASFAsn1ReceiptIAPToken.mTypeVersion,
+                            ASFAsn1ReceiptToken.mContentToken,
+                            ASFAsn1ReceiptToken.mType,
+                            ASFAsn1ReceiptToken.mTypeVersion,
+                            ASFAsn1SequenceToken.mReadPointer,
+                            ASFAsn1SetToken.mReadPointer, ASFAsn1Token.mClass,
+                            ASFAsn1Token.mContent, ASFAsn1Token.mIdentifier,
+                            ASFAsn1Token.mLength,
+                            ASFIAPItem._originalPurchaseDate,
+                            ASFIAPItem._originalTransactionID,
+                            ASFIAPItem._productID, ASFIAPItem._purchaseDate,
+                            ASFIAPItem._quantity, ASFIAPItem._transactionID,
+                            ASFReceipt._bundleID, ASFReceipt._bundleIDData,
+                            ASFReceipt._bundleVersion,
+                            ASFReceipt._cancellationReason,
+                            ASFReceipt._creationDate, ASFReceipt._developerID,
+                            ASFReceipt._downloadID, ASFReceipt._expirationDate,
+                            ASFReceipt._frAppVersion, ASFReceipt._frToolVersion,
+                            ASFReceipt._hwtype, ASFReceipt._iaps,
+                            ASFReceipt._installerVersionID, ASFReceipt._itemID,
+                            ASFReceipt._mutableIAPs, ASFReceipt._opaqueDSIDData,
+                            ASFReceipt._opaqueDSIDString,
+                            ASFReceipt._organizationDisplayName,
+                            ASFReceipt._parentalControls, ASFReceipt._path,
+                            ASFReceipt._purchaseDate, ASFReceipt._receiptType,
+                            ASFReceipt._renewalDate, ASFReceipt._sha1,
+                            ASFReceipt._verbose ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFArrayAppendValue, _CFArrayCreateMutable,
+                            _CFDataCreate, _CFDataGetBytePtr,
+                            _CFDictionaryAddValue, _CFDictionaryCreateMutable,
+                            _CFRelease, _NSCocoaErrorDomain, _NSLog,
+                            _SecCertificateCreateWithData,
+                            _SecCmsContentInfoGetContent,
+                            _SecCmsContentInfoGetContentTypeTag,
+                            _SecCmsDecoderCreate, _SecCmsDecoderDestroy,
+                            _SecCmsDecoderFinish, _SecCmsDecoderUpdate,
+                            _SecCmsMessageContentLevel,
+                            _SecCmsMessageContentLevelCount,
+                            _SecCmsMessageDestroy, _SecCmsMessageGetContent,
+                            _SecCmsSignedDataGetCertificateList,
+                            _SecPolicyCreateWithProperties,
+                            _SecTrustCreateWithCertificates,
+                            _SecTrustEvaluateWithError, _SecTrustSetPolicies,
+                            _SecTrustSetVerifyDate, __NSConcreteGlobalBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_disabled, __os_log_error_impl, __os_log_impl,
+                            _dispatch_once, _kCFAllocatorDefault,
+                            _kCFTypeArrayCallBacks,
+                            _kCFTypeDictionaryKeyCallBacks,
+                            _kCFTypeDictionaryValueCallBacks,
+                            _kSecPolicyAppleRevocation,
+                            _kSecPolicyAppleX509Basic,
+                            _kSecPolicyMacAppStoreReceipt,
+                            _kSecPolicyRevocationFlags, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleasePoolPop,
+                            _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue, _objc_getProperty,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic_copy, _objc_storeStrong,
+                            _os_log_create, _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ LSApplicationRecord, NSData, NSDateFormatter, NSLocale,
+                            NSMutableArray, NSNumber, NSObject, NSString, NSURL ]
+...

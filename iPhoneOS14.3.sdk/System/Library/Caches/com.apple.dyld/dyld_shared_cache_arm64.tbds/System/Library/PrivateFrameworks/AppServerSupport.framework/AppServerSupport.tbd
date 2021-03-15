@@ -1,0 +1,56 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppServerSupport.framework/AppServerSupport
+current-version:       2038.40.38
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __launch_get_last_exit_reason_4SB,
+                            _launch_get_running_pid_4SB ]
+    objc-classes:         [ LASSProperties4RB, OSLaunchdDomain, OSLaunchdError,
+                            OSLaunchdJob, OSLaunchdJobExitStatus, OSLaunchdJobInfo ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSLocalizedFailureReasonErrorKey,
+                            _NSPOSIXErrorDomain, __Block_object_assign,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___error,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __dispatch_source_type_mach_recv,
+                            __launch_job_routine, __launch_job_routine_async,
+                            __objc_empty_cache, __os_assumes_log, __os_crash_fmt,
+                            __os_log_impl, __os_log_pack_fill, __os_log_pack_size,
+                            __xpc_service_routine, __xpc_type_dictionary,
+                            _dispatch_activate, _dispatch_once,
+                            _dispatch_source_cancel, _dispatch_source_create,
+                            _dispatch_source_set_event_handler,
+                            _dispatch_source_set_mandatory_cancel_handler,
+                            _mach_port_destruct, _mach_task_self_, _memset,
+                            _objc_alloc, _objc_autorelease,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_storeStrong, _os_log_create,
+                            _os_log_type_enabled, _xpc_array_get_count,
+                            _xpc_array_get_uuid, _xpc_dictionary_create,
+                            _xpc_dictionary_extract_mach_recv,
+                            _xpc_dictionary_get_array, _xpc_dictionary_get_int64,
+                            _xpc_dictionary_get_string,
+                            _xpc_dictionary_get_uint64, _xpc_dictionary_get_uuid,
+                            _xpc_dictionary_get_value, _xpc_dictionary_set_bool,
+                            _xpc_dictionary_set_int64,
+                            _xpc_dictionary_set_string,
+                            _xpc_dictionary_set_uint64, _xpc_dictionary_set_uuid,
+                            _xpc_dictionary_set_value, _xpc_get_type,
+                            _xpc_int64_get_value,
+                            _xpc_mach_send_create_with_disposition,
+                            _xpc_pipe_receive, _xpc_strerror,
+                            _xpc_uint64_get_value, dyld_stub_binder ]
+    objc-classes:         [ NSDictionary, NSError, NSMutableArray, NSObject, NSString,
+                            NSUUID ]
+...

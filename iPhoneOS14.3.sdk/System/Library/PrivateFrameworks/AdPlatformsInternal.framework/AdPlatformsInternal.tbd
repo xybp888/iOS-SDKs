@@ -1,0 +1,53 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AdPlatformsInternal.framework/AdPlatformsInternal
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AdPlatformsInternalVersionNumber,
+                            _AdPlatformsInternalVersionString ]
+    objc-classes:         [ ADAttributionRequester, ADAttributionService ]
+    objc-ivars:           [ ADAttributionRequester._bundleID,
+                            ADAttributionRequester._connection,
+                            ADAttributionRequester._transactionToken,
+                            ADAttributionService._clients,
+                            ADAttributionService._listener,
+                            ADAttributionService._transactionID ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MCFeatureLimitAdTrackingForced, _MGGetBoolAnswer,
+                            _NSLocalizedDescriptionKey, _NSUnderlyingErrorKey,
+                            _TCCAccessPreflightWithAuditToken, __ADLog,
+                            __Block_object_assign, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, _dispatch_once,
+                            _kCFBundleIdentifierKey, _kTCCServiceUserTracking,
+                            _objc_alloc, _objc_alloc_init, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_getProperty, _objc_initWeak,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_setProperty_atomic,
+                            _objc_storeStrong, _objc_sync_enter, _objc_sync_exit,
+                            _releaseXPCTransaction, _takeXPCTransaction,
+                            dyld_stub_binder ]
+    objc-classes:         [ ADAttributionRequest, ADAttributionResponse, ADCapData,
+                            ADCoreDefaults, ADCoreSettings, ADIDManager, ADServer,
+                            ADSingleton, ADWatchDogManager,
+                            BKSApplicationStateMonitor, LSApplicationProxy,
+                            MCProfileConnection, NSBundle, NSConstantArray, NSData,
+                            NSDate, NSDateFormatter, NSDictionary,
+                            NSDistributedNotificationCenter, NSError,
+                            NSHTTPURLResponse, NSLocale, NSMutableDictionary,
+                            NSNumber, NSObject, NSPropertyListSerialization,
+                            NSString, NSTimeZone, NSXPCInterface, NSXPCListener ]
+...

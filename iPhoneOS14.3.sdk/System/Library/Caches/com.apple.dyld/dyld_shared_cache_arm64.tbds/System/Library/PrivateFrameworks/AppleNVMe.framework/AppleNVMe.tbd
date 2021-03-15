@@ -1,0 +1,46 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppleNVMe.framework/AppleNVMe
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AppleNVMeDeviceSupportsPanicLogAccess,
+                            _AppleNVMeNamespaceAccessFindServiceByNSType,
+                            _AppleNVMeNamespaceAccessFindServiceByName,
+                            _AppleNVMeNamespaceAccessGetBlockCount,
+                            _AppleNVMeNamespaceAccessGetBlockSize,
+                            _AppleNVMeNamespaceAccessOpenConection,
+                            _AppleNVMeNamespaceAccessReadData,
+                            _AppleNVMeNamespaceAccessUnmapRange,
+                            _AppleNVMeNamespaceAccessWriteData,
+                            _AppleNVMePanicLogSourcePath,
+                            _AppleNVMeReadPanicLogData, _AppleNVMeVersionNumber,
+                            _AppleNVMeVersionString,
+                            _sNVMeEmbeddedNamespaceTypeNames ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFDictionaryCreateMutable, _CFDictionarySetValue,
+                            _CFRelease, _CFRunLoopAddSource, _CFRunLoopGetCurrent,
+                            _CFRunLoopRunInMode,
+                            _CFStringCreateFromExternalRepresentation,
+                            _CFStringCreateWithCString, _CFStringGetCString,
+                            _IOConnectCallMethod, _IOIteratorNext,
+                            _IONotificationPortCreate,
+                            _IONotificationPortDestroy,
+                            _IONotificationPortGetRunLoopSource,
+                            _IOObjectRelease, _IOObjectRetain,
+                            _IORegistryEntryCreateCFProperty,
+                            _IORegistryEntryFromPath,
+                            _IOServiceAddMatchingNotification, _IOServiceClose,
+                            _IOServiceMatching, _IOServiceOpen,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, ___stderrp, _fprintf,
+                            _kCFAllocatorDefault, _kCFBooleanTrue,
+                            _kCFTypeDictionaryKeyCallBacks,
+                            _kCFTypeDictionaryValueCallBacks,
+                            _kIOMasterPortDefault, _mach_task_self_,
+                            dyld_stub_binder ]
+...

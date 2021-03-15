@@ -1,0 +1,71 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Accounts/Notification/AMSAccountNotificationPlugin.bundle/AMSAccountNotificationPlugin
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AMSAccountNotificationPluginVersionNumber,
+                            _AMSAccountNotificationPluginVersionString,
+                            _AMSBagKeyAccountFlagsURL, _AMSBagKeyAuthenticateURL,
+                            _AMSBagKeyPrivacyAcknowledgementURL ]
+    objc-classes:         [ AMSAccountNotificationPlugin, AMSLogoutTask,
+                            AMSSyncAccountFlagsResult, AMSSyncAccountFlagsTask ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ACAccountPropertyPersonaIdentifier,
+                            _ACAccountTypeIdentifieriTunesStore,
+                            _ACAccountTypeIdentifieriTunesStoreSandbox,
+                            _AMSError, _AMSErrorDomain, _AMSHashIfNeeded, _AMSLogKey,
+                            _AMSLogableError, _AMSQueryParameterKeyGUID,
+                            _AMSSetLogKey,
+                            _CFNotificationCenterGetDarwinNotifyCenter,
+                            _CFNotificationCenterPostNotification,
+                            _CFPreferencesAppSynchronize,
+                            _CFPreferencesCopyAppValue,
+                            _CFPreferencesGetAppBooleanValue,
+                            _CFPreferencesSetAppValue,
+                            _CPSharedResourcesDirectory, _NSClassFromString,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___NSArray0__struct, ___NSDictionary0__struct,
+                            ___kCFBooleanTrue, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_impl, __sl_dlopen_audited,
+                            _abort_report_np, _dispatch_assert_queue$V2,
+                            _dispatch_async, _dispatch_get_global_queue,
+                            _dispatch_once,
+                            _dispatch_queue_attr_make_with_autorelease_frequency,
+                            _dispatch_queue_create, _dlerror, _dlsym,
+                            _kCFBooleanFalse, _notify_post, _objc_alloc,
+                            _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_getClass, _objc_initWeak, _objc_loadWeakRetained,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_type_enabled, _xpc_dictionary_create,
+                            _xpc_dictionary_set_int64, dyld_stub_binder ]
+    objc-classes:         [ ACAccount, ACAccountStore, AMSAcknowledgePrivacyTask,
+                            AMSAuthenticateOptions, AMSAuthenticateTask, AMSBag,
+                            AMSBagKeySet, AMSBinaryPromise, AMSBiometrics,
+                            AMSDefaults, AMSDevice, AMSDeviceOfferRegistrationTask,
+                            AMSFollowUp, AMSLogConfig, AMSMetrics,
+                            AMSMetricsIdentifier, AMSMutableBagKeySet, AMSPromise,
+                            AMSPurchaseQueue, AMSPushNotificationService, AMSTask,
+                            AMSURLRequestEncoder, AMSURLSession, AMSUnitTests,
+                            NSArray, NSConstantArray, NSDate, NSDictionary,
+                            NSFileManager, NSHTTPCookie, NSMutableArray,
+                            NSMutableDictionary, NSMutableSet, NSNumber, NSObject,
+                            NSString ]
+...

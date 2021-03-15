@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WatchdogClient.framework/WatchdogClient
+current-version:       98.60.1
+compatibility-version: 0
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _wd_endpoint_activate, _wd_endpoint_add_queue,
+                            _wd_endpoint_add_work_processor,
+                            _wd_endpoint_register, _wd_endpoint_set_alive_func ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NDR_record, __Block_copy, __NSConcreteStackBlock,
+                            ___stack_chk_fail, ___stack_chk_guard, ___strlcat_chk,
+                            __os_assert_log, __os_crash, _asprintf,
+                            _bootstrap_check_in, _bootstrap_port,
+                            _clock_gettime_nsec_np, _dispatch_async,
+                            _dispatch_mach_connect, _dispatch_mach_create_f,
+                            _dispatch_mach_mig_demux, _dispatch_mach_msg_get_msg,
+                            _dispatch_queue_attr_make_with_qos_class,
+                            _dispatch_queue_create, _dispatch_queue_get_label,
+                            _free, _mach_msg, _mach_msg_destroy,
+                            _mach_port_set_attributes, _mach_task_self_,
+                            _mig_strncpy, _os_unfair_lock_lock,
+                            _os_unfair_lock_unlock, _snprintf, _strdup,
+                            dyld_stub_binder ]
+...

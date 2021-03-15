@@ -1,0 +1,44 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WeatherAnalytics.framework/WeatherAnalytics
+current-version:       1726
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _WeatherAnalyticsVersionNumber,
+                            _WeatherAnalyticsVersionString ]
+    objc-classes:         [ WAAQIAvailabilityData, WAAQIData, WAAppData,
+                            WAAppSessionEndEvent, WAAppSessionStartEvent,
+                            WACellularRadioAccessTechnology,
+                            WACoarseLocationData, WACoarseLocationStatus,
+                            WADataTableExposureEvent, WADebugData, WADeviceData,
+                            WADeviceOrientation, WADevicePlatform, WAEndReason,
+                            WAFollowingLocationListData,
+                            WAFollowingLocationListEvent, WAInterfaceOrientation,
+                            WALinkTapEvent, WAListViewEvent, WALocationAccessData,
+                            WALocationCondition, WALocationConditionData,
+                            WALocationData, WALocationExposureEvent,
+                            WALocationListPositionData, WALocationViewEvent,
+                            WAMobileData, WANetworkEventData, WANetworkEventType,
+                            WAOrientationData, WAOsInstallVariant,
+                            WAPrivateUserData, WAProviderDataOrigination,
+                            WAReferralData, WASessionData, WASessionEndData,
+                            WAStartMethod, WATelemetryEvent, WATemperatureScale,
+                            WATemperatureScaleChangeEvent,
+                            WATemperatureScaleData, WAURLData, WAUserData,
+                            WAViewAction, WAViewData, WAViewEvent, WAViewType ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, _objc_alloc,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class, _objc_opt_new,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, dyld_stub_binder ]
+    objc-classes:         [ AAEventData, AAEventProperty, AATimedData, NSDictionary,
+                            NSNull, NSObject ]
+...

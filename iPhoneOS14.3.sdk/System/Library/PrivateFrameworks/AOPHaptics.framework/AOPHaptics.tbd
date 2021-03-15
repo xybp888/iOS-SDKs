@@ -1,0 +1,47 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AOPHaptics.framework/AOPHaptics
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AOPHapticsActionKey, _AOPHapticsGainKey,
+                            _AOPHapticsOutputTypeKey,
+                            _AOPHapticsPreSilenceDurationKey,
+                            _AOPHapticsPriorityKey,
+                            _AOPHapticsRequestTimestampKey,
+                            _AOPHapticsSlotIndexKey ]
+    objc-classes:         [ AOPHapticsController ]
+    objc-ivars:           [ AOPHapticsController._activated,
+                            AOPHapticsController._arrivalNotification,
+                            AOPHapticsController._cancelHandler,
+                            AOPHapticsController._cancelled,
+                            AOPHapticsController._connect,
+                            AOPHapticsController._notificationPort,
+                            AOPHapticsController._queue,
+                            AOPHapticsController._readyHandler,
+                            AOPHapticsController._service ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _IOConnectCallStructMethod, _IOIteratorNext,
+                            _IONotificationPortCreate,
+                            _IONotificationPortDestroy,
+                            _IONotificationPortSetDispatchQueue,
+                            _IOObjectRelease, _IOServiceAddMatchingNotification,
+                            _IOServiceClose, _IOServiceNameMatching,
+                            _IOServiceOpen, _NSOSStatusErrorDomain,
+                            __NSConcreteGlobalBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_error_impl,
+                            __os_log_impl, _dispatch_async, _dispatch_once,
+                            _dispatch_queue_create_with_target$V2, _getpid,
+                            _kIOMasterPortDefault, _mach_continuous_time,
+                            _mach_task_self_, _objc_enumerationMutation,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
+                            _os_log_create, _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ NSError, NSObject ]
+...

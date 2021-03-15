@@ -1,0 +1,50 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DASDaemon.framework/DASDaemon
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DASDaemonVersionNumber, _DASDaemonVersionString ]
+    objc-classes:         [ _DASLogCondition, _DASLogConditionHistory,
+                            _DASLogEntry, _DASLogExtractor, _DASLogValueInterval ]
+    objc-ivars:           [ _DASLogCondition._condition,
+                            _DASLogCondition._isIdeal,
+                            _DASLogConditionHistory._conditions,
+                            _DASLogConditionHistory._intervals,
+                            _DASLogEntry._category, _DASLogEntry._date,
+                            _DASLogEntry._message, _DASLogExtractor._category,
+                            _DASLogExtractor._dateFormatter,
+                            _DASLogExtractor._eventStream,
+                            _DASLogExtractor._logStore,
+                            _DASLogExtractor._subsystem,
+                            _DASLogValueInterval._endDate,
+                            _DASLogValueInterval._startDate,
+                            _DASLogValueInterval._value ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSLog, __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___NSArray0__struct, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard, ___stdoutp,
+                            __objc_empty_cache, _dispatch_once,
+                            _dispatch_semaphore_create,
+                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
+                            _dispatch_time, _fprintf, _fwrite, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class, _objc_opt_new,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, dyld_stub_binder ]
+    objc-classes:         [ NSCalendar, NSCharacterSet, NSCompoundPredicate, NSDate,
+                            NSDateFormatter, NSDateInterval, NSDictionary,
+                            NSMutableArray, NSMutableDictionary, NSMutableString,
+                            NSNumber, NSObject, NSPredicate, NSSet, NSString, NSTimeZone,
+                            OSLogEventStore, OSLogEventStream ]
+...

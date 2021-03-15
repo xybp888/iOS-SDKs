@@ -1,0 +1,42 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/log/liblog_mdns.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DNSComputeDNSKeyTag, _DNSMessageCollapse,
+                            _DNSMessageExtractDomainName,
+                            _DNSMessageExtractDomainNameString,
+                            _DNSMessageExtractQuestion, _DNSMessageExtractRecord,
+                            _DNSMessageGetAnswerSection, _DNSMessageGetOptRecord,
+                            _DNSMessagePrintObfuscatedIPv4Address,
+                            _DNSMessagePrintObfuscatedIPv6Address,
+                            _DNSMessagePrintObfuscatedString,
+                            _DNSMessageToString, _DNSMessageWriteQuery,
+                            _DNSRCodeFromString, _DNSRCodeToString,
+                            _DNSRecordDataToStringEx,
+                            _DNSRecordTypeStringToValue,
+                            _DNSRecordTypeValueToString, _DomainLabelEqual,
+                            _DomainNameAppendDomainName, _DomainNameAppendString,
+                            _DomainNameDupEx, _DomainNameEqual,
+                            _DomainNameFromString, _DomainNameLabelCount,
+                            _DomainNameLength, _DomainNameToString,
+                            _OSLogCopyFormattedString ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSPrintTypedObject, __NSConcreteGlobalBlock,
+                            ___CFConstantStringClassReference, ___memcpy_chk,
+                            ___stack_chk_fail, ___stack_chk_guard, _bsearch, _calloc,
+                            _dispatch_once, _dlopen, _dlsym, _free, _malloc, _memcmp,
+                            _memcpy, _objc_alloc, _objc_autoreleaseReturnValue,
+                            _objc_msgSend, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue, _snprintf,
+                            _strcasecmp, _stricmp_prefix, _strlen, dyld_stub_binder ]
+    objc-classes:         [ NSAttributedString, NSData, NSNumber, NSString ]
+...

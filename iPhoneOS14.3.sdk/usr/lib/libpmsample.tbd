@@ -1,0 +1,51 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libpmsample.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _pm_sample_pid, _pm_sample_task,
+                            _pm_sample_task_and_pid, _pm_samples_copy,
+                            _pm_samples_delta, _pm_samples_destroy,
+                            _pm_samples_get, _pm_samples_init,
+                            _pm_samples_num_tasks, _pm_samples_sample,
+                            _pm_samples_to_array ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFDataCreate, _CFDataGetBytePtr, _CFDataGetBytes,
+                            _CFDictionaryCreateMutable, _CFDictionaryGetCount,
+                            _CFDictionaryGetKeysAndValues, _CFDictionaryGetValue,
+                            _CFDictionaryRemoveValue, _CFDictionarySetValue,
+                            _CFNumberCreate, _CFNumberGetValue, _CFRelease,
+                            _CFRetain, _NStatManagerAddAllTCP,
+                            _NStatManagerAddAllUDP, _NStatManagerCreate,
+                            _NStatManagerQueryAllSources, _NStatSourceCopyCounts,
+                            _NStatSourceCopyProperties,
+                            _NStatSourceQueryDescription,
+                            _NStatSourceSetCountsBlock,
+                            _NStatSourceSetDescriptionBlock,
+                            _NStatSourceSetRemovedBlock, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, ___assert_rtn,
+                            ___chkstk_darwin, ___error, ___stack_chk_fail,
+                            ___stack_chk_guard, ___stderrp, ___strlcpy_chk, _abort,
+                            _dispatch_async, _dispatch_once,
+                            _dispatch_queue_create, _dispatch_semaphore_create,
+                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
+                            _dispatch_sync, _fprintf, _free, _fwrite, _geteuid,
+                            _host_processor_set_priv, _host_processor_sets,
+                            _kCFAllocatorDefault, _kCFTypeDictionaryKeyCallBacks,
+                            _kCFTypeDictionaryValueCallBacks, _kNStatSrcKeyPID,
+                            _kNStatSrcKeyRxBytes, _kNStatSrcKeyRxPackets,
+                            _kNStatSrcKeyTxBytes, _kNStatSrcKeyTxPackets,
+                            _mach_absolute_time, _mach_error_string,
+                            _mach_host_self, _mach_port_deallocate,
+                            _mach_task_self_, _mach_vm_deallocate, _malloc, _memcpy,
+                            _pid_for_task, _pm_task_subtract, _proc_pid_rusage,
+                            _proc_pidpath, _processor_set_tasks, _qsort_b, _realloc,
+                            _strrchr, _task_for_pid, _task_info, _vsnprintf,
+                            dyld_stub_binder ]
+...

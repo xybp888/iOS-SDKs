@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PowerlogControl.framework/PowerlogControl
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PowerlogControlDefaultsChanged,
+                            _PowerlogControlEnablePowerLog,
+                            _PowerlogControlEnablePowerLogOld,
+                            _PowerlogControlModeKey, _PowerlogControlModeKeyOld,
+                            _PowerlogControlReadMode, _PowerlogControlSwitchMode,
+                            _allowModeTransition, _containerPath, _validValue ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFNotificationCenterGetDarwinNotifyCenter,
+                            _CFNotificationCenterPostNotification, _NSLog,
+                            __CFPreferencesAppSynchronizeWithContainer,
+                            __CFPreferencesCopyValueWithContainer,
+                            __CFPreferencesSetAppValueWithContainer,
+                            __NSConcreteGlobalBlock,
+                            ___CFConstantStringClassReference, _chown,
+                            _container_system_group_path_for_identifier,
+                            _dispatch_once, _free, _getpwnam, _kCFPreferencesAnyUser,
+                            _kCFPreferencesCurrentHost,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_opt_class, _objc_opt_isKindOfClass,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSFileManager, NSNumber, NSString ]
+...

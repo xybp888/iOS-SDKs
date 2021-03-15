@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/iWorkXPC.framework/iWorkXPC
+current-version:       13
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _iWorkXPCVersionNumber, _iWorkXPCVersionString ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ ___assert_rtn, ___divti3, ___stack_chk_fail,
+                            ___stack_chk_guard, ___udivti3, _abort, _bzero,
+                            _dispatch_once_f, _dlsym, _fclose, _fopen, _fread, _free,
+                            _fseek, _ftell, _logbl, _malloc, _memcpy,
+                            _pthread_getspecific, _pthread_key_create,
+                            _pthread_mutex_lock, _pthread_mutex_unlock,
+                            _pthread_once, _pthread_setspecific, _realloc, _rewind,
+                            _scalbn, _scalbnf, _scalbnl, _sscanf, dyld_stub_binder ]
+...

@@ -1,0 +1,38 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/log/liblog_coreacc.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSObjectIfNotNull, _OSLogCopyFormattedString,
+                            _base64DecodeArray, _base64EncodeArray,
+                            _classImplementsMethodsInProtocol,
+                            _convertNSDataToNSString, _convertNSStringToNSData,
+                            _isNSObjectEqual, _isNSObjectNull,
+                            _kACCConnection_Type_Strings,
+                            _kACCEndpoint_Protocol_Strings,
+                            _kACCEndpoint_TransportType_Strings, _readJSONFile,
+                            _removeBidirectionalUnicodeCharacters,
+                            _trimBidirectionalUnicodeCharacters, _writeJSONFile ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSStringFromClass, _NSStringFromSelector,
+                            ___CFConstantStringClassReference,
+                            ___NSDictionary0__struct, ___stack_chk_fail,
+                            ___stack_chk_guard, _free, _malloc, _objc_alloc,
+                            _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_opt_class, _objc_opt_isKindOfClass,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue,
+                            _protocol_copyMethodDescriptionList, _strcmp, _strlen,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSAttributedString, NSCharacterSet, NSData,
+                            NSJSONSerialization, NSMutableArray, NSMutableSet,
+                            NSMutableString, NSNull, NSNumber, NSSet, NSString ]
+...

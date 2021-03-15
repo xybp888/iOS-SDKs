@@ -1,0 +1,67 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/LocalAuthentication.framework/Support/DaemonUtils.framework/DaemonUtils
+current-version:       827.60.15
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LANVRAMNamespaceStartupManager, __libBiometricKit ]
+    objc-classes:         [ BiometryHelper, Caller, CredentialRequest, DaemonUtils,
+                            EvaluationRequest, InstalledAppsCache, LANVRAM,
+                            PushButtonMonitor, Request, StorageRequest ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFDataGetTypeID, _CFEqual, _CFGetTypeID,
+                            _CFNotificationCenterAddObserver,
+                            _CFNotificationCenterGetDarwinNotifyCenter,
+                            _CFNotificationCenterGetDistributedCenter,
+                            _CFNotificationCenterGetLocalCenter,
+                            _CFNotificationCenterRemoveObserver, _CFRelease,
+                            _IOObjectRelease, _IORegistryEntryCreateCFProperty,
+                            _IORegistryEntryFromPath,
+                            _IORegistryEntrySetCFProperty, _LALogForCategory,
+                            _LALogForPolicy, _MGGetBoolAnswer, _MGIsQuestionValid,
+                            _NSClassFromString,
+                            _NSInternalInconsistencyException, _NSLog,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_source_type_timer,
+                            __objc_empty_cache, __os_log_error_impl,
+                            __os_log_fault_impl, __os_log_impl,
+                            _audit_token_to_pid, _dispatch_after, _dispatch_async,
+                            _dispatch_block_cancel, _dispatch_block_create,
+                            _dispatch_block_testcancel, _dispatch_once,
+                            _dispatch_queue_create, _dispatch_resume,
+                            _dispatch_source_cancel, _dispatch_source_create,
+                            _dispatch_source_set_event_handler,
+                            _dispatch_source_set_timer, _dispatch_time, _dlclose,
+                            _dlopen, _geteuid, _getpid, _kCFAllocatorDefault,
+                            _kCFBooleanTrue,
+                            _kCFLocaleCurrentLocaleDidChangeNotification,
+                            _kIOMasterPortDefault, _objc_alloc, _objc_alloc_init,
+                            _objc_autorelease, _objc_autoreleasePoolPop,
+                            _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_initWeak, _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _objc_storeWeak, _objc_sync_enter,
+                            _objc_sync_exit, _os_log_create, _os_log_type_enabled,
+                            _proc_pidinfo, _proc_pidoriginatorinfo,
+                            dyld_stub_binder ]
+    objc-classes:         [ LAErrorHelper, LAUtils, LSApplicationProxy,
+                            LSApplicationWorkspace, LSBundleProxy, NSArray,
+                            NSConstantIntegerNumber, NSData, NSDate, NSDictionary,
+                            NSException, NSMutableArray, NSMutableDictionary,
+                            NSNumber, NSObject, NSSet, NSString, NSThread, NSUUID, NSValue,
+                            NSXPCConnection ]
+...

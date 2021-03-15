@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libBBUpdaterDynamic_stubs.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BBUpdaterExecCommand, _BBUpdaterExtremeCreate,
+                            _BBUpdaterSetOptions ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __NSConcreteGlobalBlock, ___stderrp, _access,
+                            _dispatch_once, _dlopen, _dlsym, _fprintf, _getprogname,
+                            _syslog, dyld_stub_binder ]
+...

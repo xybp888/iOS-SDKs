@@ -1,0 +1,38 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/system/libsystem_blocks.dylib
+current-version:       78
+compatibility-version: 1
+objc-constraint:       retain_release
+parent-umbrella:       System
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _Block_size, __Block_copy, __Block_extended_layout,
+                            __Block_has_signature, __Block_isDeallocating,
+                            __Block_layout, __Block_object_assign,
+                            __Block_object_dispose, __Block_release,
+                            __Block_signature, __Block_tryRetain, __Block_use_RR2,
+                            __Block_use_stret, __NSConcreteAutoBlock,
+                            __NSConcreteFinalizingBlock, __NSConcreteGlobalBlock,
+                            __NSConcreteMallocBlock, __NSConcreteStackBlock,
+                            __NSConcreteWeakBlockVariable,
+                            _system_blocksVersionNumber,
+                            _system_blocksVersionString ]
+    objc-classes:         [ __NSAutoBlock__, __NSBlockVariable__,
+                            __NSFinalizingBlock__, __NSGlobalBlock__,
+                            __NSMallocBlock__, __NSStackBlock__ ]
+    objc-ivars:           [ __NSBlockVariable__.byref_destroy,
+                            __NSBlockVariable__.byref_keep,
+                            __NSBlockVariable__.containedObject,
+                            __NSBlockVariable__.flags,
+                            __NSBlockVariable__.forwarding,
+                            __NSBlockVariable__.size ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __objc_empty_cache, __os_assert_log, __os_assumes_log,
+                            __os_crash, __platform_memmove, _free, _malloc,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSObject ]
+...

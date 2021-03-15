@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/DeviceCheck.framework/DeviceCheck
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DCErrorDomain, __DCAALogSystem, __DCLogSystem ]
+    objc-classes:         [ DCAppAttestService, DCContext, DCDevice,
+                            DCDeviceMetadataDaemonConnection,
+                            DCDeviceMetadataInterface ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_error_impl,
+                            _dispatch_once, _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_getProperty, _objc_initWeak,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class, _objc_opt_new,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic_copy, _objc_storeStrong,
+                            _os_log_create, _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ NSError, NSLock, NSMutableDictionary, NSMutableString,
+                            NSNumber, NSObject, NSString, NSUUID, NSUserDefaults,
+                            NSXPCConnection, NSXPCInterface ]
+...

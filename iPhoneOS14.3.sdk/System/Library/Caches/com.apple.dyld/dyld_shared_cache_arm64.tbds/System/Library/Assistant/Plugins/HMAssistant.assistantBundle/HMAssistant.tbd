@@ -1,0 +1,52 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Assistant/Plugins/HMAssistant.assistantBundle/HMAssistant
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HMDDidReceiveRemoteMessageWithNoListenerNotification,
+                            _HMErrorCodeNilEventDescription,
+                            _kAccessAllowedWhenLockedKey,
+                            _kAccessAllowedWhenLockedUpdatedNotificationKey,
+                            _kApplyDeviceUnlockKey,
+                            _kCanCacheHomeConfigurationKey,
+                            _kCanUseCachedHomeConfigurationKey,
+                            _kCloudDataSyncInProgressUpdatedNotification,
+                            _kCloudDataSyncTimerExpiredNotification,
+                            _kCloudServerTokenDataResetNotification,
+                            _kConfigTestingModeKey, _kFilenameKey, _kHomeCountKey,
+                            _kNetworkIdentifierKey, _kProvisioningStatusKey,
+                            _kRemoteUsersDeregisteredKey,
+                            _kResidentProvisioningStatusChangedNotificationKey,
+                            _kUpdateAccessAllowedWhenLockedRequestKey ]
+    objc-classes:         [ HMAssistantSyncHome ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HMDispatchQueueNameString, _HMFGetLogCategory,
+                            _HMFGetLogIdentifier, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, __os_log_impl,
+                            _dispatch_async, _dispatch_group_create,
+                            _dispatch_group_enter, _dispatch_group_leave,
+                            _dispatch_group_wait, _dispatch_queue_create,
+                            _dispatch_time, _getAssistantConfigurationSnapshot,
+                            _getAssistantConfigurationVersion,
+                            _getLastSyncedAssistantConfigurationVersion,
+                            _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_initWeak, _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_release, _objc_retain,
+                            _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_type_enabled,
+                            dyld_stub_binder ]
+    objc-classes:         [ AFSyncSnapshot, HMClientConnection, NSMutableArray,
+                            NSObject, NSString, SAHAEntity ]
+...

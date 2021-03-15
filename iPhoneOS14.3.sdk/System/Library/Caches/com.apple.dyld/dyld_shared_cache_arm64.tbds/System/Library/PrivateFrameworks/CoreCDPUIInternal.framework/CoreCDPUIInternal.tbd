@@ -1,0 +1,59 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreCDPUIInternal.framework/CoreCDPUIInternal
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CoreCDPUIInternalVersionNumber,
+                            _CoreCDPUIInternalVersionString ]
+    objc-classes:         [ CDPRecoveryTestController,
+                            DummyRemoteDeviceSecretValidator, SettingsController ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CDPFMIPRecoveryKey, _CDPIDMSPasswordResetKey,
+                            _CDPIDMSRecordMIDKey, _CFPreferencesAppSynchronize,
+                            _CFPreferencesCopyAppValue,
+                            _CFPreferencesGetAppBooleanValue,
+                            _CFPreferencesSetAppValue, _CFPreferencesSynchronize,
+                            _NSLog, _PSDefaultValueKey, _PSDefaultsKey,
+                            _PSEnabledKey, _PSKeyNameKey, _PSTableCellKey,
+                            _PSTitleKey, _PSValueChangedNotificationKey,
+                            __Block_object_assign, __Block_object_dispose,
+                            __CDPLogSystem, __CDPStateError,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___NSArray0__struct, ___kCFBooleanFalse,
+                            ___kCFBooleanTrue, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __dispatch_main_q, __objc_empty_cache,
+                            __os_log_debug_impl, _dispatch_after, _dispatch_async,
+                            _dispatch_get_global_queue, _dispatch_time,
+                            _kCFBooleanTrue, _kCFPreferencesAnyHost,
+                            _kCFPreferencesCurrentUser,
+                            _kSecureBackupIDMSDataKey, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ ACAccountStore, AKAppleIDAuthenticationController,
+                            AKAppleIDAuthenticationInAppContext, CDPAccount,
+                            CDPContext, CDPDBackupInfoRecoveryFlowController,
+                            CDPDRecoveryFlowContext, CDPDSecureBackupController,
+                            CDPDevice, CDPRecoveryController,
+                            CDPRemoteDeviceSecretValidator, CDPStateController,
+                            CDPStateUIProviderProxy,
+                            CDPUIAccountRecoveryController, CDPUIController,
+                            NSArray, NSConstantDictionary, NSConstantIntegerNumber,
+                            NSDictionary, NSFileManager, NSKeyedArchiver,
+                            NSMutableArray, NSNumber, NSObject, NSString,
+                            PSListController, PSSpecifier, UIActivityIndicatorView,
+                            UIAlertAction, UIAlertController ]
+    objc-ivars:           [ PSListController._specifiers ]
+...

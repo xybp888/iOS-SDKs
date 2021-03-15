@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libCTGreenTeaLogger.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ct_green_tea_logger_create,
+                            _ct_green_tea_logger_create_static,
+                            _ct_green_tea_logger_destroy,
+                            _ct_green_tea_logging_enabled,
+                            _getCTGreenTeaOsLogHandle,
+                            _kCTGreenTeaMessageDeleteLoggingFormat,
+                            _kCTGreenTeaMessageReadLoggingFormat,
+                            _kCTGreenTeaMessageTransmitLoggingFormat,
+                            _kCTGreenTeaPhoneNumberTransmitLoggingFormat ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFEqual, _CFRelease, __NSConcreteGlobalBlock,
+                            __Unwind_Resume,
+                            __ZNKSt3__119__shared_weak_count13__get_deleterERKSt9type_info,
+                            __ZNSt3__119__shared_weak_count14__release_weakEv,
+                            __ZNSt3__119__shared_weak_countD2Ev,
+                            __ZNSt3__15mutex4lockEv, __ZNSt3__15mutex6unlockEv,
+                            __ZSt9terminatev, __ZTINSt3__119__shared_weak_countE,
+                            __ZTVN10__cxxabiv117__class_type_infoE,
+                            __ZTVN10__cxxabiv120__si_class_type_infoE,
+                            ___CFConstantStringClassReference,
+                            ___cxa_begin_catch, ___cxa_guard_abort,
+                            ___cxa_guard_acquire, ___cxa_guard_release,
+                            ___gxx_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __os_log_default, __os_log_impl,
+                            _dispatch_once, _os_log_create, _os_log_type_enabled,
+                            _os_release, dyld_stub_binder ]
+...

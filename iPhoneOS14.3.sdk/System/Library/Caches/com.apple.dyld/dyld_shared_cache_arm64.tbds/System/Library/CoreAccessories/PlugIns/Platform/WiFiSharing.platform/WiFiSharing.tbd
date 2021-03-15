@@ -1,0 +1,52 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/CoreAccessories/PlugIns/Platform/WiFiSharing.platform/WiFiSharing
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _init_logging,
+                            _kCFWiFiSharing_LegacyAccessoryExternalAccessoryConnectionID,
+                            _kCFWiFiSharing_WiFiNetworkInformationChannel,
+                            _kCFWiFiSharing_WiFiNetworkInformationSecurityType,
+                            _kCFWiFiSharing_WiFiNetworkInformationStatus,
+                            _kCFWiFiSharing_WiFiNetworkInformationWifiBSSID,
+                            _kCFWiFiSharing_WiFiNetworkInformationWifiPassphrase,
+                            _kCFWiFiSharing_WiFiNetworkInformationWifiSSID ]
+    objc-classes:         [ ACCPlatformPluginWiFiSharing ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFArrayCreate, _CFArrayGetCount,
+                            _CFArrayGetValueAtIndex, _CFDictionaryAddValue,
+                            _CFDictionaryContainsKey, _CFDictionaryCreateMutable,
+                            _CFNumberCreate, _CFRelease,
+                            _CRSaveWiFiCredentialsForAccessoryConnectionIdentifier,
+                            _MGGetBoolAnswer, _NSStringFromClass,
+                            _WiFiDeviceClientCopyCurrentNetwork,
+                            _WiFiManagerClientAddNetwork,
+                            _WiFiManagerClientCopyDevices,
+                            _WiFiManagerClientCreate, _WiFiNetworkCopyPassword,
+                            _WiFiNetworkCopyRecord, _WiFiNetworkCreate,
+                            _WiFiNetworkGetSSID, _WiFiNetworkIsWEP,
+                            _WiFiNetworkIsWPA, _WiFiNetworkRequiresIdentity,
+                            _WiFiNetworkRequiresUsername,
+                            _WiFiNetworkSetPassword, _WiFiNetworkSetProperty,
+                            __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_default,
+                            __os_log_error_impl, __os_log_impl, _dispatch_once,
+                            _kCFAllocatorDefault, _kCFBooleanTrue,
+                            _kCFTypeArrayCallBacks,
+                            _kCFTypeDictionaryKeyCallBacks,
+                            _kCFTypeDictionaryValueCallBacks, _objc_alloc,
+                            _objc_alloc_init, _objc_msgSend, _objc_opt_class,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue, _os_log_create,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ NSConstantIntegerNumber, NSMutableDictionary, NSNumber,
+                            NSObject ]
+...

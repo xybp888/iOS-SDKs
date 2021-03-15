@@ -1,0 +1,70 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IncomingCallFilter.framework/IncomingCallFilter
+current-version:       800
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ICFCallProviderShouldAllowIncomingCall,
+                            _ICFCallProviderShouldAllowIncomingCallWithQueue,
+                            _ICFRegisterCallFilterBlockWithIdentifier,
+                            _ICFRegisterCallFilterResultBlockWithIdentifier,
+                            _ICFServiceIdentifierFaceTime,
+                            _ICFServiceIdentifierFaceTimeAudio,
+                            _ICFServiceIdentifierTelephony,
+                            _ICFServiceIdentifierTelephonyRelay, _ICFUnknownID,
+                            _ICFUnregisterCallFilterBlockWithIdentifier,
+                            _ICFUnregisterCallFilterResultBlockWithIdentifier ]
+    objc-classes:         [ ICFCallServer ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFDictionaryCreateMutable, _CFRelease,
+                            _CMFBlockListIsItemBlocked,
+                            _CMFItemCreateWithEmailAddress,
+                            _CMFItemCreateWithPhoneNumber,
+                            _IMDAuditTokenTaskHasEntitlement,
+                            _IMDispatchForNotify, _IMGetXPCStringFromDictionary,
+                            _IMInsertBoolsToXPCDictionary,
+                            _IMInsertNSStringsToXPCDictionary,
+                            _IMPhoneNumberRefCopyForPhoneNumber,
+                            _IMProcessNameForPid, _IMWeakLinkSymbol,
+                            _IMXPCCreateConnectionForServiceWithQueue,
+                            _IMXPCCreateServerConnection, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_main_q,
+                            __objc_empty_cache, __os_log_error_impl, __os_log_impl,
+                            __xpc_error_connection_interrupted,
+                            __xpc_error_connection_invalid,
+                            __xpc_error_key_description,
+                            __xpc_error_termination_imminent,
+                            __xpc_type_dictionary, __xpc_type_error,
+                            _dispatch_async, _dispatch_get_global_queue,
+                            _dispatch_group_create, _dispatch_group_enter,
+                            _dispatch_group_leave, _dispatch_group_notify,
+                            _dispatch_once, _dispatch_queue_create,
+                            _dispatch_release, _free, _kCFAllocatorDefault,
+                            _kCFTypeDictionaryKeyCallBacks,
+                            _kCFTypeDictionaryValueCallBacks, _notify_post,
+                            _objc_alloc_init, _objc_enumerationMutation,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
+                            _os_log_create, _os_log_type_enabled,
+                            _xpc_connection_cancel,
+                            _xpc_connection_get_audit_token,
+                            _xpc_connection_get_pid, _xpc_connection_resume,
+                            _xpc_connection_send_message,
+                            _xpc_connection_send_message_with_reply,
+                            _xpc_connection_send_message_with_reply_sync,
+                            _xpc_connection_set_event_handler,
+                            _xpc_copy_description, _xpc_dictionary_create,
+                            _xpc_dictionary_create_reply,
+                            _xpc_dictionary_get_bool, _xpc_dictionary_get_string,
+                            _xpc_dictionary_set_bool, _xpc_get_type, _xpc_release,
+                            _xpc_retain, dyld_stub_binder ]
+    objc-classes:         [ NSLock, NSMutableArray, NSObject, NSRecursiveLock ]
+...

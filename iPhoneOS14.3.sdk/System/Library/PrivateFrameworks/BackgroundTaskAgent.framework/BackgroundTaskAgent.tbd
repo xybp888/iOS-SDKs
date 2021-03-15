@@ -1,0 +1,55 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BackgroundTaskAgent.framework/BackgroundTaskAgent
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BackgroundTaskAgentAddJob,
+                            _BackgroundTaskAgentCopyJob,
+                            _BackgroundTaskAgentInit,
+                            _BackgroundTaskAgentRemoveJob, _btaLock, _btaUnlock,
+                            _gClientName, _initSem, _initialized,
+                            _kBackgroundTaskAgentAllowedDuringRoaming,
+                            _kBackgroundTaskAgentAllowedDuringVoiceCall,
+                            _kBackgroundTaskAgentCellularAllowed,
+                            _kBackgroundTaskAgentJobExpired,
+                            _kBackgroundTaskAgentJobStatus,
+                            _kBackgroundTaskAgentJobStatusBatteryLevel,
+                            _kBackgroundTaskAgentJobStatusNetwork,
+                            _kBackgroundTaskAgentJobStatusPowerPluggedin,
+                            _kBackgroundTaskAgentJobStatusScreenBlanked,
+                            _kBackgroundTaskAgentJobWindowAdjustTime,
+                            _kBackgroundTaskAgentJobWindowEndTime,
+                            _kBackgroundTaskAgentJobWindowStartTime,
+                            _kBackgroundTaskAgentNetworkRequired,
+                            _kBackgroundTaskAgentPowerOptLevel,
+                            _kBackgroundTaskAgentPowerPluggedinTime,
+                            _kBackgroundTaskAgentRequiredBatteryLevel,
+                            _kBackgroundTaskAgentScreenBlankedTime,
+                            _kBackgroundTaskAgentUserContext ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___assert_rtn, ___stack_chk_fail, ___stack_chk_guard,
+                            __os_log_default, __os_log_error_impl,
+                            __xpc_error_key_description, __xpc_event_key_name,
+                            __xpc_type_dictionary, __xpc_type_error,
+                            __xpc_type_string, _dispatch_once,
+                            _dispatch_semaphore_create,
+                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
+                            _free, _malloc, _os_log_type_enabled, _strcpy, _strlen,
+                            _xpc_copy_event, _xpc_dictionary_get_bool,
+                            _xpc_dictionary_get_count, _xpc_dictionary_get_int64,
+                            _xpc_dictionary_get_string,
+                            _xpc_dictionary_get_value,
+                            _xpc_dictionary_set_string,
+                            _xpc_dictionary_set_value, _xpc_get_type, _xpc_release,
+                            _xpc_retain, _xpc_set_event,
+                            _xpc_set_event_stream_handler,
+                            _xpc_string_get_string_ptr, dyld_stub_binder ]
+...

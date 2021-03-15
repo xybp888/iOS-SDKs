@@ -1,0 +1,45 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/StoreBookkeeperClient.framework/StoreBookkeeperClient
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ SBCPlaybackPositionDomain, SBCPlaybackPositionEntity,
+                            SBCPlaybackPositionService,
+                            SBCPlaybackPositionServiceInterface,
+                            SBCPlaybackPositionSyncService,
+                            SBCPlaybackPositionValueService, SBCXPCService,
+                            SBCXPCServiceInterface ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFNotificationCenterAddObserver,
+                            _CFNotificationCenterGetDarwinNotifyCenter,
+                            _CFPreferencesCopyAppValue, _NSLog, _NSStringFromClass,
+                            _NSStringFromSelector, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            _dispatch_async, _dispatch_get_global_queue,
+                            _dispatch_once, _dispatch_queue_create, _dispatch_sync,
+                            _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_getProperty, _objc_initWeak,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic, _objc_storeStrong,
+                            dyld_stub_binder ]
+    objc-classes:         [ ML3MusicLibrary, NSArray, NSAssertionHandler, NSData,
+                            NSDate, NSDictionary, NSError, NSMutableDictionary, NSNull,
+                            NSNumber, NSObject, NSSet, NSString, NSXPCConnection,
+                            NSXPCInterface, NSXPCListener, SBKStoreURLBagContext,
+                            SBKUniversalPlaybackPositionMetadata ]
+...

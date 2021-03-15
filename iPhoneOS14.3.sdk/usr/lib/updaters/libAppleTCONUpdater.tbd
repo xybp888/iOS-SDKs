@@ -1,0 +1,48 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/updaters/libAppleTCONUpdater.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AppleTCONUpdaterCreate,
+                            _AppleTCONUpdaterExecCommand,
+                            _AppleTCONUpdaterIsDone ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AMSupportCFDictionarySetBoolean,
+                            _AMSupportCFDictionarySetInteger32,
+                            _AMSupportGetUInt32,
+                            _AMSupportGetValueForKeyPathInDict,
+                            _AMSupportSafeFree, _AMSupportSafeRelease,
+                            _AMSupportSafeRetain, _CFBooleanGetTypeID,
+                            _CFBooleanGetValue, _CFDataCreate, _CFDataGetBytePtr,
+                            _CFDataGetBytes, _CFDataGetLength, _CFDataGetTypeID,
+                            _CFDictionaryAddValue, _CFDictionaryCreateMutable,
+                            _CFDictionaryGetTypeID, _CFDictionaryGetValue,
+                            _CFErrorCopyDescription, _CFErrorCreate,
+                            _CFGetAllocator, _CFGetTypeID, _CFNumberGetTypeID,
+                            _CFNumberGetValue, _CFPropertyListCreateWithData,
+                            _CFRelease, _CFStringCompare,
+                            _CFStringCreateWithFormat, _CFStringGetCStringPtr,
+                            _IOAVDisplayMemoryCreateWithName,
+                            _IOAVDisplayMemoryRead, _IOAVDisplayMemoryWrite,
+                            _IOObjectRelease, _IORegistryEntryCreateCFProperty,
+                            _IORegistryEntryFromPath, __CFRuntimeCreateInstance,
+                            __CFRuntimeRegisterClass, __NSConcreteGlobalBlock,
+                            __Unwind_Resume, __ZSt9terminatev,
+                            __ZTVN10__cxxabiv117__class_type_infoE,
+                            __ZTVN10__cxxabiv120__si_class_type_infoE,
+                            ___CFConstantStringClassReference, ___chkstk_darwin,
+                            ___cxa_begin_catch, ___gxx_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard, _calloc,
+                            _dispatch_once, _free, _kCFAllocatorDefault,
+                            _kCFCopyStringDictionaryKeyCallBacks,
+                            _kCFErrorLocalizedDescriptionKey,
+                            _kCFTypeDictionaryKeyCallBacks,
+                            _kCFTypeDictionaryValueCallBacks,
+                            _kIOMasterPortDefault, _malloc, _memcpy, _memset,
+                            _snprintf, _usleep, _vsnprintf, dyld_stub_binder ]
+...

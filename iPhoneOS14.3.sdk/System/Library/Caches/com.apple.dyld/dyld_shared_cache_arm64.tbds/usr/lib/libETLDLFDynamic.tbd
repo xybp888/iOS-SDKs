@@ -1,0 +1,30 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libETLDLFDynamic.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ETLDLFAddVersionReport,
+                            _ETLDLFConversionParametersInit, _ETLDLFConvert,
+                            _ETLDLFConvertDebugData, _ETLDLFConvertExt,
+                            _ETLDLFConverter, _ETLDLFParse ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ETLDecompress, _ETLDecompressCheck,
+                            _ETLDecompressProcessNonHDLCData,
+                            _ETLEVENTProcessEventItemTSLength,
+                            _ETLEVENTProcessHeader, _ETLLOGParseLogHeader,
+                            _ETLLOGParseLogRecord, _ETLMESSAGECreateFromQSR,
+                            _ETLMESSAGECreateFromQSR4,
+                            _ETLMESSAGEParseMessageHeader,
+                            _ETLParseLogEventOrMessageExt,
+                            _ETLTimestampFromTimeval, _ETLTimestampGetTimeval,
+                            __ETLDebugPrint, __ETLDebugPrintBinary,
+                            ___chkstk_darwin, ___stack_chk_fail,
+                            ___stack_chk_guard, ___strlcpy_chk, _free, _localtime_r,
+                            _malloc, _memcpy, _snprintf, _strlcat, _strlen,
+                            dyld_stub_binder ]
+...

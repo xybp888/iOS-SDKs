@@ -1,0 +1,39 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MessagesBlastDoorSupport.framework/MessagesBlastDoorSupport
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:    [ IMDaemonCore, IMDaemonCoreEmbeddedTests,
+                            IMSharedUtilities, MessagesBlastDoorTester ]
+    symbols:              [ _MessagesBlastDoorSupportVersionNumber,
+                            _MessagesBlastDoorSupportVersionString ]
+    objc-classes:         [ IMMessagesBlastDoorInterface ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSTemporaryDirectory, __Block_copy, __Block_release,
+                            ___chkstk_darwin, __objc_empty_cache,
+                            __swiftEmptyArrayStorage, _objc_allocWithZone,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_self,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            _swift_allocError, _swift_allocObject,
+                            _swift_bridgeObjectRelease,
+                            _swift_bridgeObjectRelease_n,
+                            _swift_bridgeObjectRetain, _swift_deallocObject,
+                            _swift_deletedMethodError, _swift_dynamicCast,
+                            _swift_errorRelease, _swift_errorRetain,
+                            _swift_getEnumCaseMultiPayload,
+                            _swift_getObjCClassMetadata,
+                            _swift_getTypeByMangledNameInContext,
+                            _swift_getTypeByMangledNameInContextInMetadataState,
+                            _swift_getWitnessTable, _swift_release, _swift_retain,
+                            _swift_unexpectedError, _swift_willThrow,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSFileManager, NSObject, NSPropertyListSerialization,
+                            NSURL, OS_dispatch_queue ]
+...

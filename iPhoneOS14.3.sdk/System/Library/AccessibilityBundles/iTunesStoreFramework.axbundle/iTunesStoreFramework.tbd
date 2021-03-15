@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/iTunesStoreFramework.axbundle/iTunesStoreFramework
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Failover, _accessibilityLocalizedString ]
+    objc-classes:         [ AXiTunesStoreGlue ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXPerformBlockOnMainThreadAfterDelay, __AXAssert,
+                            __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference,
+                            __objc_empty_cache, _objc_allocWithZone,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSBundle, NSNotificationCenter, NSObject,
+                            UIAccessibilityLoader ]
+...

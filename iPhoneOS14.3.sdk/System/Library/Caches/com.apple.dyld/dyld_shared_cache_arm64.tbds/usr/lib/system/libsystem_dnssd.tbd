@@ -1,0 +1,64 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/system/libsystem_dnssd.dylib
+current-version:       1310.60.3
+compatibility-version: 1
+objc-constraint:       retain_release
+parent-umbrella:       System
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DNSServiceAddRecord, _DNSServiceBrowse,
+                            _DNSServiceBrowserCreate,
+                            _DNSServiceConstructFullName,
+                            _DNSServiceCreateConnection,
+                            _DNSServiceCreateDelegateConnection,
+                            _DNSServiceDiscoveryDeallocate,
+                            _DNSServiceDiscoveryMachPort,
+                            _DNSServiceDiscovery_handleReply,
+                            _DNSServiceEnumerateDomains, _DNSServiceGetAddrInfo,
+                            _DNSServiceGetPID, _DNSServiceGetProperty,
+                            _DNSServiceNATPortMappingCreate,
+                            _DNSServiceProcessResult, _DNSServiceQueryRecord,
+                            _DNSServiceReconfirmRecord, _DNSServiceRefDeallocate,
+                            _DNSServiceRefSockFD, _DNSServiceRegister,
+                            _DNSServiceRegisterRecord, _DNSServiceRemoveRecord,
+                            _DNSServiceResolve, _DNSServiceResolverResolve,
+                            _DNSServiceSetDefaultDomainForUser,
+                            _DNSServiceSetDispatchQueue,
+                            _DNSServiceSetResolverDefaults,
+                            _DNSServiceSleepKeepalive,
+                            _DNSServiceSleepKeepalive_sockaddr,
+                            _DNSServiceUpdateRecord, _PeerConnectionRelease,
+                            _TXTRecordContainsKey, _TXTRecordCreate,
+                            _TXTRecordDeallocate, _TXTRecordGetBytesPtr,
+                            _TXTRecordGetCount, _TXTRecordGetItemAtIndex,
+                            _TXTRecordGetLength, _TXTRecordGetValuePtr,
+                            _TXTRecordRemoveValue, _TXTRecordSetValue ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSVersionOfLinkTimeLibrary, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock,
+                            ___darwin_check_fd_set_overflow, ___error,
+                            ___memcpy_chk, ___stack_chk_fail, ___stack_chk_guard,
+                            __dispatch_source_type_read, _bzero, _calloc,
+                            _close$NOCANCEL, _connect$NOCANCEL, _dispatch_once,
+                            _dispatch_release, _dispatch_resume,
+                            _dispatch_source_cancel, _dispatch_source_create,
+                            _dispatch_source_set_cancel_handler,
+                            _dispatch_source_set_event_handler, _dlopen,
+                            _fcntl$NOCANCEL, _free, _getenv, _getpeername,
+                            _getsockname, _getsockopt, _inet_ntop, _malloc, _memcpy,
+                            _memmove, _objc_autoreleasePoolPop,
+                            _objc_autoreleasePoolPush, _objc_getClass,
+                            _objc_msgSend, _open$NOCANCEL, _os_unfair_lock_lock,
+                            _os_unfair_lock_unlock, _puts, _recv$NOCANCEL,
+                            _select$NOCANCEL, _send$NOCANCEL, _sendmsg$NOCANCEL,
+                            _setsockopt, _shutdown, _sleep$NOCANCEL, _snprintf,
+                            _socket, _socketpair, _strcmp, _strerror, _strlen,
+                            _strncasecmp, _syslog, _xpc_dictionary_create,
+                            _xpc_dictionary_get_bool, _xpc_dictionary_get_data,
+                            _xpc_dictionary_set_bool, _xpc_dictionary_set_data,
+                            _xpc_release, _xpc_retain, dyld_stub_binder ]
+...

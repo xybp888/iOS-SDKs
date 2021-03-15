@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ZhuGeSupport.framework/ZhuGeSupport
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ZhuGeCopyValueWithError ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFRelease, _IOObjectRelease,
+                            _IORegistryEntryCreateCFProperty,
+                            _IORegistryEntryFromPath, _NSLocalizedDescriptionKey,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, ___stderrp, ___stdoutp,
+                            __os_log_impl, _dispatch_once, _fclose, _fopen, _fprintf,
+                            _kCFAllocatorDefault, _kIOMasterPortDefault,
+                            _objc_alloc, _objc_autoreleasePoolPop,
+                            _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_create,
+                            _os_log_type_enabled, _os_parse_boot_arg_int,
+                            _os_variant_has_internal_content,
+                            _pthread_mutex_lock, _pthread_mutex_unlock, _strrchr,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSDictionary, NSError, NSScanner, NSString,
+                            NSXPCConnection, NSXPCInterface ]
+...
