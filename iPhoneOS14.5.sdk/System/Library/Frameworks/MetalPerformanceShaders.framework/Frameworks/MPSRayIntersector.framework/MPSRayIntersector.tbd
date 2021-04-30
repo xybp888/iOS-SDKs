@@ -1,0 +1,98 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSRayIntersector.framework/MPSRayIntersector
+current-version:       124.2.4
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:    [ MetalPerformanceShaders ]
+    symbols:              [ _MPSAccelerationStructureBuilderCPU,
+                            _MPSAccelerationStructureBuilderGPU,
+                            _MPSAccelerationStructureGPUBuilderTypeDefault,
+                            _MPSAccelerationStructureGPUBuilderTypeFast,
+                            _MPSAccelerationStructureNodeLayoutAOS,
+                            _MPSAccelerationStructureNodeLayoutSOA,
+                            _MPSAccelerationStructureOptionBatchSize,
+                            _MPSAccelerationStructureOptionBins,
+                            _MPSAccelerationStructureOptionBranchingFactor,
+                            _MPSAccelerationStructureOptionBuilder,
+                            _MPSAccelerationStructureOptionComputeStatistics,
+                            _MPSAccelerationStructureOptionFragmentCost,
+                            _MPSAccelerationStructureOptionGPUBuilderType,
+                            _MPSAccelerationStructureOptionMaxDepth,
+                            _MPSAccelerationStructureOptionMaxFragmentsPerLeaf,
+                            _MPSAccelerationStructureOptionMaximumConcurrentNodeSize,
+                            _MPSAccelerationStructureOptionMinFragmentsPerLeaf,
+                            _MPSAccelerationStructureOptionMinimumOverlap,
+                            _MPSAccelerationStructureOptionNodeLayout,
+                            _MPSAccelerationStructureOptionSplitHeuristic,
+                            _MPSAccelerationStructureSplitHeuristicBinnedSAH,
+                            _MPSAccelerationStructureSplitHeuristicBinnedSpatialSAH,
+                            _MPSAccelerationStructureSplitHeuristicObjectMedian,
+                            _MPSAccelerationStructureSplitHeuristicSAH ]
+    objc-classes:         [ MPSAccelerationStructure,
+                            MPSAccelerationStructureGroup,
+                            MPSInstanceAccelerationStructure,
+                            MPSPolygonAccelerationStructure, MPSPolygonBuffer,
+                            MPSQuadrilateralAccelerationStructure,
+                            MPSRayIntersector, MPSSVGF,
+                            MPSSVGFDefaultTextureAllocator, MPSSVGFDenoiser,
+                            MPSTemporalAA, MPSTriangleAccelerationStructure ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MPSCreateFunctionConstantValues, _MTLReportFailure,
+                            _MTLReportFailureTypeEnabled, _NSStringFromClass,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume,
+                            __ZN10MPSLibrary13ReleaseMPSKeyEP11MPSKey_data,
+                            __ZN10MPSLibrary15GetComputeStateEjRK23MPSFunctionConstantList30MPSThreadGroupSizeMultipleType24MPSDriverCompilerOptions,
+                            __ZN10MPSLibrary19CreateUberShaderKeyEP8NSStringRK23MPSFunctionConstantListyPFvPU21objcproto10MTLLibrary11objc_objectPK13MPSKernelInfoS4_U13block_pointerFvPU22objcproto11MTLFunction11objc_objectP7NSErrorEEy30MPSThreadGroupSizeMultipleType24MPSDriverCompilerOptionsP18MPSKernelDAGObject,
+                            __ZN10MPSLibrary25GetPipelineStateForMPSKeyEP11MPSKey_dataPU27objcproto16MTLCommandBuffer11objc_object,
+                            __ZN9MPSDevice12GetMPSDeviceEPU19objcproto9MTLDevice11objc_object,
+                            __ZN9MPSDevice12GetPixelInfoE14MTLPixelFormat28MPSImageFeatureChannelFormat,
+                            __ZN9MPSDevice22GetMPSLibrary_DoNotUseEPK14MPSLibraryInfo,
+                            __ZN9MPSDevice8GetQueueEv,
+                            __ZNKSt3__120__vector_base_commonILb1EE20__throw_length_errorEv,
+                            __ZNSt11logic_errorC2EPKc, __ZNSt12length_errorD1Ev,
+                            __ZNSt3__112__next_primeEm, __ZNSt3__15mutex4lockEv,
+                            __ZNSt3__15mutex6unlockEv, __ZNSt3__15mutexD1Ev,
+                            __ZSt9terminatev,
+                            __ZTVN10__cxxabiv117__class_type_infoE,
+                            __ZTVN10__cxxabiv120__si_class_type_infoE,
+                            __ZTVSt12length_error,
+                            ___CFConstantStringClassReference, ___assert_rtn,
+                            ___chkstk_darwin, ___cxa_allocate_exception,
+                            ___cxa_atexit, ___cxa_begin_catch,
+                            ___cxa_free_exception, ___cxa_guard_acquire,
+                            ___cxa_guard_release, ___cxa_pure_virtual,
+                            ___cxa_throw, ___gxx_personality_v0, ___invert_f4,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __dispatch_queue_attr_concurrent, __objc_empty_cache,
+                            _bzero, _dispatch_apply, _dispatch_async,
+                            _dispatch_get_global_queue, _dispatch_group_async,
+                            _dispatch_group_create, _dispatch_group_wait,
+                            _dispatch_queue_attr_make_with_qos_class,
+                            _dispatch_queue_create, _dispatch_release,
+                            _dispatch_semaphore_create,
+                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
+                            _exp2, _free, _getenv, _getpagesize, _kdebug_trace, _log2,
+                            _malloc, _memcmp, _memcpy, _memmove, _mmap, _munmap,
+                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
+                            _objc_retain, _objc_setProperty_nonatomic,
+                            _posix_memalign, _printf, _putchar, _sysctlbyname,
+                            dyld_stub_binder ]
+    objc-classes:         [ MPSKernel, MPSParallelRadixSort, MTLArgumentDescriptor,
+                            MTLHeapDescriptor, MTLSharedEventListener,
+                            MTLTextureDescriptor, NSArray, NSDate, NSDictionary,
+                            NSMutableArray, NSMutableDictionary, NSMutableSet,
+                            NSNumber, NSObject, NSSet, NSString ]
+    objc-ivars:           [ MPSKernel._device, MPSKernel._fileVersion,
+                            MPSKernel._library, MPSKernel._options ]
+...

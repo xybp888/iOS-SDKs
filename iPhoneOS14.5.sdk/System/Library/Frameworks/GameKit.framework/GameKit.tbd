@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/GameKit.framework/GameKit
+current-version:       785.20
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/Frameworks/GameController.framework/GameController,
+                            /System/Library/Frameworks/GameplayKit.framework/GameplayKit,
+                            /System/Library/Frameworks/ModelIO.framework/ModelIO,
+                            /System/Library/Frameworks/ReplayKit.framework/ReplayKit,
+                            /System/Library/Frameworks/SceneKit.framework/SceneKit,
+                            /System/Library/Frameworks/SpriteKit.framework/SpriteKit,
+                            /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation,
+                            /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI,
+                            /System/Library/PrivateFrameworks/GameCenterUICore.framework/GameCenterUICore,
+                            /System/Library/PrivateFrameworks/LegacyGameKit.framework/LegacyGameKit ]
+    symbols:              [ _GKGameKitUmbrellaFrameworkStub,
+                            _kGameKitGameKitVersionNumber,
+                            _kGameKitGameKitVersionString ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ dyld_stub_binder ]
+...

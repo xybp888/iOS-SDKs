@@ -1,0 +1,44 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriSignals.framework/SiriSignals
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ SISignalStore ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AFSystemRootDirectory, ___chkstk_darwin,
+                            __objc_empty_cache, __os_log_impl,
+                            __swiftEmptyArrayStorage, _malloc_size, _memcpy,
+                            _memmove, _objc_allocWithZone, _objc_autorelease,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_self,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            _os_log_type_enabled, _swift_allocBox,
+                            _swift_allocError, _swift_allocObject,
+                            _swift_arrayDestroy, _swift_arrayInitWithCopy,
+                            _swift_arrayInitWithTakeBackToFront,
+                            _swift_arrayInitWithTakeFrontToBack,
+                            _swift_bridgeObjectRelease,
+                            _swift_bridgeObjectRetain, _swift_conformsToProtocol,
+                            _swift_deletedMethodError, _swift_dynamicCast,
+                            _swift_dynamicCastClass, _swift_errorRelease,
+                            _swift_errorRetain, _swift_getErrorValue,
+                            _swift_getForeignTypeMetadata,
+                            _swift_getObjCClassMetadata, _swift_getObjectType,
+                            _swift_getTypeByMangledNameInContext,
+                            _swift_getTypeByMangledNameInContextInMetadataState,
+                            _swift_getWitnessTable,
+                            _swift_isUniquelyReferenced_nonNull_native,
+                            _swift_isaMask, _swift_lookUpClassMethod, _swift_once,
+                            _swift_release, _swift_retain, _swift_slowAlloc,
+                            _swift_slowDealloc, _swift_unknownObjectRelease,
+                            _swift_unknownObjectRetain, _swift_willThrow,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSBundle, NSFileManager, NSKeyedUnarchiver, NSObject,
+                            OS_os_log ]
+...

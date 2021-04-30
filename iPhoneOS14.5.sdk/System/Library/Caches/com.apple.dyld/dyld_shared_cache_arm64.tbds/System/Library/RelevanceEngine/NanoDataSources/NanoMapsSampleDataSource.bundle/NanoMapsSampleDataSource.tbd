@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/RelevanceEngine/NanoDataSources/NanoMapsSampleDataSource.bundle/NanoMapsSampleDataSource
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NanoMapsSampleDataSourceVersionNumber,
+                            _NanoMapsSampleDataSourceVersionString ]
+    objc-classes:         [ NanoMapsSampleDataSource,
+                            NanoMapsSampleDataSourceConfiguration ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSClassFromString, _REDefaultSectionIdentifier,
+                            _RESampleDataSourceKey,
+                            _REUISampleRelevanceProviderForSamplePosition,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_msgSend, _objc_opt_class, _objc_release,
+                            _objc_retain, _objc_retainAutoreleasedReturnValue,
+                            dyld_stub_binder ]
+    objc-classes:         [ CLKSimpleTextProvider, NSArray, NSBundle, NSObject,
+                            NSString, NSUUID, REBundleConfiguration, REContent,
+                            REElement, REElementDataSource, UIImage ]
+...

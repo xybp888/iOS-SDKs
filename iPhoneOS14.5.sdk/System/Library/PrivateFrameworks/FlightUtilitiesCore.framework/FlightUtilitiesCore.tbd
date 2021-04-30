@@ -1,0 +1,71 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FlightUtilitiesCore.framework/FlightUtilitiesCore
+current-version:       141
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FUFactoryProvider_Default,
+                            _FUFactoryProvider_Parsec ]
+    objc-classes:         [ FUAirline, FUAirport, FUFlight, FUFlightCodeShare,
+                            FUFlightFactory, FUFlightFactory_Parsec, FUFlightLeg,
+                            FUFlightStep, FUStepTime, FUUtils ]
+    objc-ivars:           [ FUAirline._FAACode, FUAirline._IATACode,
+                            FUAirline._URL, FUAirline._name,
+                            FUAirline._phoneNumber, FUAirport._IATACode,
+                            FUAirport._city, FUAirport._location, FUAirport._name,
+                            FUAirport._placemark, FUAirport._timeZone,
+                            FUFlight._airline, FUFlight._allLegs,
+                            FUFlight._arrivalLegIndex,
+                            FUFlight._cancellationMessage, FUFlight._codeShares,
+                            FUFlight._departureLegIndex,
+                            FUFlight._displayAirline,
+                            FUFlight._displayFlightNumber,
+                            FUFlight._expirationDate, FUFlight._flightIdentifier,
+                            FUFlight._flightNumber, FUFlight._identifier,
+                            FUFlight._legs, FUFlight._queriedAirlineTitle,
+                            FUFlight._rawResponse, FUFlightCodeShare._airline,
+                            FUFlightCodeShare._flightNumber,
+                            FUFlightLeg._arrival, FUFlightLeg._baggageClaim,
+                            FUFlightLeg._departure, FUFlightLeg._duration,
+                            FUFlightLeg._status, FUFlightStep._actualTime,
+                            FUFlightStep._airport,
+                            FUFlightStep._delayFromSchedule,
+                            FUFlightStep._departure, FUFlightStep._estimatedTime,
+                            FUFlightStep._gate, FUFlightStep._legStatus,
+                            FUFlightStep._plannedTime, FUFlightStep._runwayTime,
+                            FUFlightStep._scheduledTime, FUFlightStep._terminal,
+                            FUStepTime._date, FUStepTime._type ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFArrayGetCount, _CFArrayGetValueAtIndex, _CFRelease,
+                            _CLLocationCoordinate2DMake, _DDBinderAirlineCodeKey,
+                            _DDBinderFlightInformationKey,
+                            _DDBinderFlightNumberKey,
+                            _DDResultGetSubresultWithType, _DDResultGetValue,
+                            _DDResultHasType, _DDScannerCopyResultsWithOptions,
+                            _DDScannerCreate, _DDScannerScanString,
+                            _NSCalendarIdentifierGregorian, _NSLog,
+                            __Block_object_assign, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_main_q,
+                            __objc_empty_cache, _dispatch_async,
+                            _dispatch_get_global_queue, _kCFBundleVersionKey,
+                            _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_copyStruct,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic, _objc_storeStrong,
+                            dyld_stub_binder ]
+    objc-classes:         [ CLGeocoder, CLLocation, CLPlacemark, NSArray, NSBundle,
+                            NSCalendar, NSConstantIntegerNumber, NSDate,
+                            NSDateFormatter, NSError, NSLocale, NSMutableArray,
+                            NSNumber, NSObject, NSSet, NSString, NSTimeZone, NSURL,
+                            PARRequest, PARSession, PARSessionConfiguration ]
+...

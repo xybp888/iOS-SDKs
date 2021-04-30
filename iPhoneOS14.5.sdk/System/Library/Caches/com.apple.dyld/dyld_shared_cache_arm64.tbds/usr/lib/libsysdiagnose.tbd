@@ -1,0 +1,62 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libsysdiagnose.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _metricCompression, _metricGetLogCopying,
+                            _metricGetLogGeneration, _metricGetOSLogArchive,
+                            _metricGetTimeSensitive, _metricLogCopying,
+                            _metricLogGeneration, _metricOSLogarchiveGeneration,
+                            _metricStartToTar, _metricTimeSensitive,
+                            _metricTotalSize, _sdProgressPercent, _sdProgressPhase ]
+    objc-classes:         [ Libsysdiagnose ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSLocalizedDescriptionKey, _NSURLCreationDateKey,
+                            _NSURLIsDirectoryKey, _NSURLNameKey, _NSURLPathKey,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_activity_initiate, __os_log_default,
+                            __os_log_impl, __xpc_error_key_description,
+                            __xpc_type_dictionary, __xpc_type_double,
+                            __xpc_type_error, _bzero, _dispatch_async,
+                            _dispatch_get_global_queue,
+                            _dispatch_semaphore_create,
+                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
+                            _free, _malloc, _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_opt_class, _objc_opt_isKindOfClass,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_storeStrong, _os_log_create,
+                            _os_log_type_enabled, _perror, _proc_listallpids,
+                            _proc_pidpath, _sleep, _strcmp, _sysctl,
+                            _xpc_array_get_count, _xpc_array_get_string,
+                            _xpc_connection_create_mach_service,
+                            _xpc_connection_resume,
+                            _xpc_connection_send_message_with_reply,
+                            _xpc_connection_send_message_with_reply_sync,
+                            _xpc_connection_set_event_handler,
+                            _xpc_dictionary_apply, _xpc_dictionary_create,
+                            _xpc_dictionary_get_double,
+                            _xpc_dictionary_get_string,
+                            _xpc_dictionary_get_uint64,
+                            _xpc_dictionary_get_value, _xpc_dictionary_set_bool,
+                            _xpc_dictionary_set_data, _xpc_dictionary_set_fd,
+                            _xpc_dictionary_set_string,
+                            _xpc_dictionary_set_uint64, _xpc_double_get_value,
+                            _xpc_get_type, dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSConstantIntegerNumber, NSDate, NSDictionary,
+                            NSError, NSFileManager, NSIndexSet, NSKeyedArchiver,
+                            NSMutableArray, NSMutableDictionary, NSNumber, NSObject,
+                            NSRegularExpression, NSString, NSURL ]
+...

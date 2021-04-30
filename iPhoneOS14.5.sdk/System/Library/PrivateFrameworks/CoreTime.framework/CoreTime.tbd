@@ -1,0 +1,91 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreTime.framework/CoreTime
+current-version:       284.0.3
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _TMBBTimeActiveNotification, _TMConfirmTimeZone,
+                            _TMConvertTicksToSeconds, _TMCopyComputedTimeZone,
+                            _TMFetchNTP, _TMGetBAFinderTime,
+                            _TMGetKernelMonotonicClock, _TMGetRTCResetCount,
+                            _TMGetReferenceTime, _TMGetTrustedInterval,
+                            _TMIsAutomaticTimeEnabled,
+                            _TMIsAutomaticTimeZoneEnabled, _TMIsBBTimeActive,
+                            _TMIsTimeZoneConfirmed,
+                            _TMLocationTimeZoneActiveNotification,
+                            _TMProvideBBTime, _TMProvideCellularTimeZone,
+                            _TMSetAuthenticatedSourceTime,
+                            _TMSetAutomaticTimeEnabled,
+                            _TMSetAutomaticTimeZoneEnabled, _TMSetManualTime,
+                            _TMSetSourceAvailable, _TMSetSourceTime,
+                            _TMSetSourceTimeZone, _TMSetSourceUnavailable,
+                            _TMSetupTime, _TMSetupTimeZone, _TMSourceAPNS,
+                            _TMSourceAirPlay, _TMSourceCdma, _TMSourceGps,
+                            _TMSourceHarvestServer, _TMSourceLocation,
+                            _TMSourceLocationServer, _TMSourceMobileLockdown,
+                            _TMSourceNitz, _TMSourceNtp, _TMSourceNtpLowConfidence,
+                            _TMSourceNtpPacket, _TMSourceProxBuddy,
+                            _TMSourceiTunesServer,
+                            _TMTimeZoneConfirmedNotification ]
+    objc-classes:         [ TMTime, TMTimeZone ]
+    objc-ivars:           [ TMTime._reliability, TMTime._rtc_ns, TMTime._sf,
+                            TMTime._sfUnc, TMTime._source, TMTime._synthesized,
+                            TMTime._utcUnc_s, TMTime._utc_ns,
+                            TMTimeZone._olsonName, TMTimeZone._source ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFNotificationCenterAddObserver,
+                            _CFNotificationCenterGetDarwinNotifyCenter,
+                            _CFNotificationCenterRemoveObserver,
+                            _CFStringCreateWithCString,
+                            _NSLocalizedDescriptionKey, _NSLog, _NSStringFromClass,
+                            __Block_copy, __Block_object_assign,
+                            __Block_object_dispose, __Block_release,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___assert_rtn, ___error, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_activity_create,
+                            __os_activity_current, __os_log_default,
+                            __os_log_error_impl, __os_log_impl,
+                            __xpc_error_connection_interrupted,
+                            __xpc_error_connection_invalid,
+                            __xpc_type_dictionary, __xpc_type_error,
+                            _dispatch_after, _dispatch_async, _dispatch_once,
+                            _dispatch_queue_create, _dispatch_release,
+                            _dispatch_retain, _dispatch_sync, _dispatch_time,
+                            _kCFAbsoluteTimeIntervalSince1904,
+                            _kCFAbsoluteTimeIntervalSince1970,
+                            _mach_absolute_time, _mach_continuous_time,
+                            _mach_get_times, _mach_timebase_info, _modf, _objc_alloc,
+                            _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_getProperty, _objc_msgSend, _objc_msgSendSuper2,
+                            _objc_opt_class, _objc_release, _objc_retain,
+                            _objc_setProperty_atomic_copy,
+                            _objc_setProperty_nonatomic_copy,
+                            _os_activity_scope_enter, _os_activity_scope_leave,
+                            _os_log_type_enabled, _panic, _sleep, _strerror, _sysctl,
+                            _sysctlnametomib,
+                            _xpc_connection_create_mach_service,
+                            _xpc_connection_resume, _xpc_connection_send_message,
+                            _xpc_connection_send_message_with_reply,
+                            _xpc_connection_send_message_with_reply_sync,
+                            _xpc_connection_set_event_handler,
+                            _xpc_dictionary_create, _xpc_dictionary_get_bool,
+                            _xpc_dictionary_get_double,
+                            _xpc_dictionary_get_string,
+                            _xpc_dictionary_get_uint64,
+                            _xpc_dictionary_get_value, _xpc_dictionary_set_bool,
+                            _xpc_dictionary_set_double,
+                            _xpc_dictionary_set_int64,
+                            _xpc_dictionary_set_string, _xpc_get_type,
+                            _xpc_release, _xpc_retain, dyld_stub_binder ]
+    objc-classes:         [ NSAssertionHandler, NSAutoreleasePool,
+                            NSConstantIntegerNumber, NSDictionary, NSError,
+                            NSMutableDictionary, NSNumber, NSObject, NSString, NSValue ]
+...

@@ -1,0 +1,62 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WatchReplies.framework/WatchReplies
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _WRBundle, _WRDeviceLanguage,
+                            _WRLocalizedCategoryString,
+                            _WRLocalizedStringForLanguage, _WRSmartRepliesMarker,
+                            _WatchRepliesVersionNumber,
+                            _WatchRepliesVersionString,
+                            __WRCannedRepliesStore_handleStoreChange ]
+    objc-classes:         [ WRCalendarReplyStoreInfo, WRCannedRepliesStore,
+                            WRCannedRepliesViewController, WRCannedReply,
+                            WRMailReplyStoreInfo, WRMessagesReplyStoreInfo,
+                            WRPhoneReplyStoreInfo, WRReplyStoreInfo,
+                            WRThirdPartyReplyStoreInfo ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BPSAccessoryColor, _BPSAccessoryHighlightColor,
+                            _BPSBridgeTintColor,
+                            _BPSDeviceHasCapabilityForString,
+                            _BPSReorderableCustomRepliesCapabilityKey,
+                            _CFNotificationCenterAddObserver,
+                            _CFNotificationCenterGetDarwinNotifyCenter,
+                            _CFNotificationCenterPostNotification,
+                            _CFNotificationCenterRemoveEveryObserver,
+                            _NSInternalInconsistencyException,
+                            _NSLocaleCountryCode, _PSEnabledKey,
+                            _PSFooterTextGroupKey, _UIApp,
+                            _UITextFieldTextDidChangeNotification,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___assert_rtn, ___kCFBooleanTrue,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_default, __os_log_impl,
+                            _dispatch_once, _objc_alloc, _objc_alloc_init,
+                            _objc_autorelease, _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_release, _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_create, _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ NPSDomainAccessor, NPSManager, NRPairedDeviceRegistry,
+                            NSArray, NSBundle, NSCache, NSCharacterSet,
+                            NSConstantArray, NSConstantIntegerNumber, NSDictionary,
+                            NSException, NSLocale, NSMutableArray,
+                            NSMutableOrderedSet, NSNotificationCenter, NSNumber,
+                            NSObject, NSSet, NSString, PSListController, PSSpecifier,
+                            PSTextFieldSpecifier ]
+    objc-ivars:           [ PSListController._specifiers,
+                            PSSpecifier.autoCapsType ]
+...

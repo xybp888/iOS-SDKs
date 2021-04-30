@@ -1,0 +1,18 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/UIKit.framework/UIKit
+current-version:       4218.1.101
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/Frameworks/FileProvider.framework/FileProvider,
+                            /System/Library/PrivateFrameworks/DocumentManager.framework/DocumentManager,
+                            /System/Library/PrivateFrameworks/ShareSheet.framework/ShareSheet,
+                            /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ dyld_stub_binder ]
+...

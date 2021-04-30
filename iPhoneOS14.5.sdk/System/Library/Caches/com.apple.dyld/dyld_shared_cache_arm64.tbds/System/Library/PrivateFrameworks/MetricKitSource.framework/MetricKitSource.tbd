@@ -1,0 +1,50 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MetricKitSource.framework/MetricKitSource
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MetricKitSourceVersionNumber,
+                            _MetricKitSourceVersionString ]
+    objc-classes:         [ MXHangTracerData, MXPowerlogData, MXReportCrashData,
+                            MXSampleAnalysisParser, MXSourceData, MXSourceManager,
+                            MXSourceUtilities, MXSourceXPCPayload,
+                            MXSpinTracerData ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AppAnalyticsEnabled, _CFPreferencesCopyValue,
+                            _NSLocaleCountryCode, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_default,
+                            __os_log_error_impl, _dispatch_once,
+                            _kCFPreferencesAnyHost, _kCFPreferencesCurrentHost,
+                            _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_getProperty,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic, _objc_storeStrong,
+                            _os_log_create, _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ MXAnimationMetric, MXAppExitMetric, MXAppLaunchMetric,
+                            MXAppResponsivenessMetric, MXAppRunTimeMetric,
+                            MXBackgroundExitData, MXCPUExceptionDiagnostic,
+                            MXCPUMetric, MXCallStackFrame, MXCallStackThread,
+                            MXCallStackTree, MXCellularConditionMetric,
+                            MXCrashDiagnostic, MXDiskIOMetric,
+                            MXDiskWriteExceptionDiagnostic, MXDisplayMetric,
+                            MXForegroundExitData, MXGPUMetric, MXHangDiagnostic,
+                            MXLocationActivityMetric, MXMemoryMetric, MXMetaData,
+                            MXNetworkTransferMetric, MXSignpostMetric, NSArray,
+                            NSDate, NSDictionary, NSLocale, NSMeasurement,
+                            NSMutableArray, NSMutableDictionary, NSNumber, NSObject,
+                            NSSet, NSString, NSUnitDuration,
+                            NSUnitInformationStorage, NSXPCConnection,
+                            NSXPCInterface ]
+...

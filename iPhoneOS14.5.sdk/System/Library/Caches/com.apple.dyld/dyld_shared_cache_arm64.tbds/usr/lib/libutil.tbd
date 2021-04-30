@@ -1,0 +1,49 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libutil.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _expand_number, _freemntopts, _getmnt_silent,
+                            _getmntoptnum, _getmntopts, _getmntoptstr,
+                            _humanize_number, _pidfile_close, _pidfile_open,
+                            _pidfile_remove, _pidfile_write, _realhostname,
+                            _realhostname_sa, _reexec_to_match_kernel,
+                            _reexec_to_match_lp64ness, _tzlink, _wipefs_alloc,
+                            _wipefs_except_blocks, _wipefs_free,
+                            _wipefs_include_blocks, _wipefs_wipe ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __NSConcreteGlobalBlock, __NSGetArgv, __NSGetEnviron,
+                            __NSGetExecutablePath, __NSGetMachExecuteHeader,
+                            __ZTISt9bad_alloc, ___cxa_begin_catch,
+                            ___cxa_end_catch, ___error, ___gxx_personality_v0,
+                            ___memmove_chk, ___stack_chk_fail, ___stack_chk_guard,
+                            ___strlcpy_chk, ___tolower, __os_log_default,
+                            __os_log_error_impl, __xpc_type_dictionary, _bzero,
+                            _calloc, _close, _err, _errx, _fcntl, _flock, _free,
+                            _freeaddrinfo, _fstat, _ftruncate, _getaddrinfo, _getenv,
+                            _gethostbyaddr, _gethostbyname, _gethostname,
+                            _getnameinfo, _getpid, _getprogname, _host_info,
+                            _inet_ntoa, _ioctl, _localeconv, _mach_host_self, _malloc,
+                            _memchr, _memcmp, _memmove, _open, _os_log_type_enabled,
+                            _posix_spawn, _posix_spawn_file_actions_addopen,
+                            _posix_spawn_file_actions_destroy,
+                            _posix_spawn_file_actions_init,
+                            _posix_spawnattr_init,
+                            _posix_spawnattr_setbinpref_np,
+                            _posix_spawnattr_setflags, _pwrite, _read, _snprintf,
+                            _strcasecmp, _strchr, _strdup, _strlen, _strncasecmp,
+                            _strncmp, _strncpy, _strrchr, _strspn, _strtok_r, _strtol,
+                            _strtoumax, _sysctl, _unlink, _waitpid,
+                            _xpc_connection_create_mach_service,
+                            _xpc_connection_resume,
+                            _xpc_connection_send_message_with_reply_sync,
+                            _xpc_connection_set_event_handler,
+                            _xpc_dictionary_create, _xpc_dictionary_get_uint64,
+                            _xpc_dictionary_set_string, _xpc_get_type,
+                            _xpc_release, dyld_stub_binder ]
+...

@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/AXActionSheetUIServer.axuiservice/AXActionSheetUIServer
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ AXActionSheetUIServer ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXLogCommon, _UISpringBoardLockScreenWindowLevel,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___kCFBooleanFalse, ___kCFBooleanTrue,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_error_impl, __os_log_impl, _getpid,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_type_enabled,
+                            dyld_stub_binder ]
+    objc-classes:         [ AXAccessQueue, AXSpringBoardServer,
+                            AXUIClientMessenger, AXUIDisplayManager,
+                            NSConstantDictionary, NSDictionary, NSMutableSet,
+                            NSNumber, NSObject, NSString, UIAlertAction,
+                            UIAlertController, UIImage, UIViewController ]
+...

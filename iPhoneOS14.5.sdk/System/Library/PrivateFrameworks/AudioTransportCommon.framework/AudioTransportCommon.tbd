@@ -1,0 +1,60 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AudioTransportCommon.framework/AudioTransportCommon
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AudioTransportCommonVersionNumber,
+                            _AudioTransportCommonVersionString,
+                            _Float64ToIOAudio2Fixed64, _IOAudio2Fixed64ToFloat64 ]
+    objc-classes:         [ ATCIOA2Device, ATCIOA2Stream, ATCIOA2StreamFormat ]
+    objc-ivars:           [ ATCIOA2Device._availableSampleRates,
+                            ATCIOA2Device._connection,
+                            ATCIOA2Device._engineStatus,
+                            ATCIOA2Device._inputStreams, ATCIOA2Device._name,
+                            ATCIOA2Device._notificationPort,
+                            ATCIOA2Device._notificationSource,
+                            ATCIOA2Device._outputStreams, ATCIOA2Device._queue,
+                            ATCIOA2Device._service, ATCIOA2Device._uid,
+                            ATCIOA2Stream._availableFormats,
+                            ATCIOA2Stream._connection,
+                            ATCIOA2Stream._currentFormat, ATCIOA2Stream._index,
+                            ATCIOA2Stream._input, ATCIOA2Stream._physicalID,
+                            ATCIOA2Stream._service,
+                            ATCIOA2Stream._startingChannel,
+                            ATCIOA2StreamFormat._bitsPerChannel,
+                            ATCIOA2StreamFormat._bytesPerFrame,
+                            ATCIOA2StreamFormat._bytesPerPacket,
+                            ATCIOA2StreamFormat._channelsPerFrame,
+                            ATCIOA2StreamFormat._formatFlags,
+                            ATCIOA2StreamFormat._formatID,
+                            ATCIOA2StreamFormat._framesPerPacket,
+                            ATCIOA2StreamFormat._sampleRate ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSStringFromClass, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_source_type_mach_recv,
+                            __objc_empty_cache, __os_log_default, __os_log_impl,
+                            _dispatch_queue_create, _dispatch_resume,
+                            _dispatch_source_create,
+                            _dispatch_source_set_event_handler, _mach_msg,
+                            _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_getProperty,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_setProperty_nonatomic_copy,
+                            _objc_storeStrong, _os_log_type_enabled,
+                            dyld_stub_binder ]
+    objc-classes:         [ IOKNotificationPort, IOKService, NSArray,
+                            NSConstantArray, NSConstantIntegerNumber,
+                            NSMutableArray, NSNumber, NSObject, NSString ]
+...

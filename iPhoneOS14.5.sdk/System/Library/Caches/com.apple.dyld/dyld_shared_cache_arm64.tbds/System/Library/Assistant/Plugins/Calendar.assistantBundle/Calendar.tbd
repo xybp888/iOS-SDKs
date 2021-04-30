@@ -1,0 +1,55 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Assistant/Plugins/Calendar.assistantBundle/Calendar
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CreateAceEventFromEKEvent ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AFSiriLogContextService,
+                            _CFAbsoluteTimeAddGregorianUnits, _CFRelease,
+                            _CFTimeZoneCreateWithName, _CalCopyTimeZone,
+                            _SACalendarEventStatusCANCELEDValue,
+                            _SACalendarEventStatusCONFIRMEDValue,
+                            _SACalendarEventStatusNONEValue,
+                            _SACalendarEventStatusTENTATIVEValue,
+                            _SACalendarParticipantStatusACCEPTEDValue,
+                            _SACalendarParticipantStatusCOMPLETEDValue,
+                            _SACalendarParticipantStatusDECLINEDValue,
+                            _SACalendarParticipantStatusDELEGATEDValue,
+                            _SACalendarParticipantStatusIN_PROCESSValue,
+                            _SACalendarParticipantStatusPENDINGValue,
+                            _SACalendarParticipantStatusTENTATIVEValue,
+                            _SACalendarParticipantStatusUNKNOWNValue,
+                            __Block_object_assign, __EKEventURLScheme,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_error_impl,
+                            _dispatch_once, _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_opt_class, _objc_opt_isKindOfClass,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_create,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ CNAssistantID, EKAlarm, EKAttendee,
+                            EKCalendarVisibilityManager, EKEvent, EKEventStore,
+                            EKRecurrenceEnd, EKRecurrenceRule, NSArray, NSBundle,
+                            NSDate, NSMutableArray, NSNumber, NSObject, NSString, NSURL,
+                            SACalendarDefaultSourceGetCompleted, SACalendarEvent,
+                            SACalendarEventSearch,
+                            SACalendarEventSearchCompleted, SACalendarRecurrence,
+                            SACalendarSource, SACommandFailed,
+                            SADomainObjectCommit, SADomainObjectCommitCompleted,
+                            SADomainObjectDelete, SADomainObjectDeleteCompleted,
+                            SADomainObjectRetrieve,
+                            SADomainObjectRetrieveCompleted, SAPersonAttribute ]
+...

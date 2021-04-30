@@ -1,0 +1,58 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IOCEC.framework/IOCEC
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _IOCECFrameStringWithFrame,
+                            _IOCECInterfaceCloseReceiveQueue,
+                            _IOCECInterfaceCopyProperty, _IOCECInterfaceCreate,
+                            _IOCECInterfaceCreateWithService,
+                            _IOCECInterfaceGetTypeID,
+                            _IOCECInterfaceListenerCreate,
+                            _IOCECInterfaceListenerGetTypeID,
+                            _IOCECInterfaceListenerRegisterAddInterfaceCallback,
+                            _IOCECInterfaceListenerScheduleWithDispatchQueue,
+                            _IOCECInterfaceListenerUnscheduleFromDispatchQueue,
+                            _IOCECInterfaceOpenReceiveQueue,
+                            _IOCECInterfaceRegisterReceiveCallback,
+                            _IOCECInterfaceRegisterStatusCallback,
+                            _IOCECInterfaceRegisterTerminatedCallback,
+                            _IOCECInterfaceScheduleWithDispatchQueue,
+                            _IOCECInterfaceSendFrame,
+                            _IOCECInterfaceSetLogicalAddressMask,
+                            _IOCECInterfaceUnscheduleFromDispatchQueue,
+                            _IOCECPhysicalAddressStringWithAddress ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFGetAllocator, _CFRelease, _CFRetain,
+                            _IOConnectCallMethod, _IOConnectCallScalarMethod,
+                            _IOConnectMapMemory64, _IOConnectSetNotificationPort,
+                            _IOConnectUnmapMemory64,
+                            _IODataQueueAllocateNotificationPort,
+                            _IODataQueueDataAvailable, _IODataQueueDequeue,
+                            _IOIteratorNext, _IONotificationPortCreate,
+                            _IONotificationPortDestroy,
+                            _IONotificationPortSetDispatchQueue,
+                            _IOObjectConformsTo, _IOObjectRelease, _IOObjectRetain,
+                            _IORegistryEntryCreateCFProperty,
+                            _IOServiceAddInterestNotification,
+                            _IOServiceAddMatchingNotification, _IOServiceClose,
+                            _IOServiceGetMatchingService, _IOServiceMatching,
+                            _IOServiceOpen, __CFRuntimeCreateInstance,
+                            __CFRuntimeRegisterClass, ___assert_rtn,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __dispatch_source_type_mach_recv, _dispatch_release,
+                            _dispatch_resume, _dispatch_set_context,
+                            _dispatch_source_cancel, _dispatch_source_create,
+                            _dispatch_source_set_cancel_handler_f,
+                            _dispatch_source_set_event_handler_f,
+                            _dispatch_source_set_registration_handler_f,
+                            _dispatch_source_testcancel, _kCFAllocatorDefault,
+                            _kIOMasterPortDefault, _mach_msg,
+                            _mach_port_deallocate, _mach_task_self_, _pthread_once,
+                            _snprintf, dyld_stub_binder ]
+...

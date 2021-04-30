@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/VideoProcessors/MetalFilter.bundle/MetalFilter
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ FigColorCubeMetalFilter ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFRelease, _CVPixelBufferCreate,
+                            _CVPixelBufferGetIOSurface, _FigSignalErrorAt,
+                            _MTLPixelFormatGetInfoForDevice,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference,
+                            ___NSDictionary0__struct, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, _dispatch_once,
+                            _dlopen, _free, _kCFAllocatorDefault,
+                            _kCGColorSpaceDisplayP3,
+                            _kCVPixelBufferIOSurfacePropertiesKey, _malloc,
+                            _objc_alloc, _objc_enumerationMutation, _objc_getClass,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_new, _objc_release, _objc_retain,
+                            _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _vImageConvert_PlanarFtoPlanar8,
+                            dyld_stub_binder ]
+    objc-classes:         [ FigMetalContext, MTLFunctionConstantValues,
+                            MTLRenderPassDescriptor, MTLRenderPipelineDescriptor,
+                            MTLTextureDescriptor, MTLVertexDescriptor, NSBundle,
+                            NSConstantArray, NSConstantIntegerNumber, NSDictionary,
+                            NSMutableData, NSObject ]
+...

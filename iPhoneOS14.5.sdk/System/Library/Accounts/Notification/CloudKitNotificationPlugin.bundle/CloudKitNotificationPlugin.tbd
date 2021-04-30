@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Accounts/Notification/CloudKitNotificationPlugin.bundle/CloudKitNotificationPlugin
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ACAccountTypeIdentifierAppleAccount,
+                            _ACAccountTypeIdentifierCloudKit,
+                            _NSStringFromSelector,
+                            __CKUseSystemInstalledBinariesBackingBool,
+                            __NSConcreteStackBlock, ___sTestOverridesAvailable,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_debug_impl,
+                            __os_log_error_impl, __os_log_impl,
+                            _ck_log_facilities_initailize_static,
+                            _ck_log_facility_ck, _ck_log_facility_ck_test,
+                            _dispatch_semaphore_create,
+                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
+                            _dispatch_time, _kAccountDataclassCKDatabaseService,
+                            _objc_alloc, _objc_enumerationMutation, _objc_msgSend,
+                            _objc_opt_new, _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ ACAccount, CKContainer, NSMutableSet, NSObject ]
+...

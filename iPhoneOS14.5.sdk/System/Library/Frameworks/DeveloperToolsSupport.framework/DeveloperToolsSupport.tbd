@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/DeveloperToolsSupport.framework/DeveloperToolsSupport
+current-version:       10
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DeveloperToolsSupportVersionNumber,
+                            _DeveloperToolsSupportVersionString ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __swiftEmptyArrayStorage, _malloc_size, _memmove,
+                            _swift_allocObject, _swift_bridgeObjectRelease,
+                            _swift_bridgeObjectRetain,
+                            _swift_getTypeByMangledNameInContext, _swift_release,
+                            _swift_retain, dyld_stub_binder ]
+...

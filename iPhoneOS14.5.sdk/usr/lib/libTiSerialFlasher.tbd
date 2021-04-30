@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           4D8596C3-4668-365A-92B7-923644FF8B4C
+  - target:          armv7s-ios
+    value:           263E584E-5A4F-3243-A652-29866945420A
+  - target:          arm64-ios
+    value:           9DE9A6B1-D0AE-3696-93CD-2AC06AB7D1FB
+  - target:          arm64e-ios
+    value:           99293396-821B-3C83-B6F7-BDE6F1534140
+install-name:    '/usr/lib/libTiSerialFlasher.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _AssertDtr, _AssertRts, _BlockingRead, _BlockingWrite, _CalculateChecksum, 
+                       _CalibrateDCO, _ChangeBaudRate, _CheckBslVersion, _CheckChipId, 
+                       _CloseSerialPort, _EnterBslMode, _EstablishSync, _LeaveBslMode, 
+                       _LockSectionA, _MassErase, _OpenSerialPort, _ReadMemory, _ReleaseDtr, 
+                       _ReleaseLines, _ReleaseRts, _SendData, _SendLoadPC, _SendMessage, 
+                       _SendPassword, _SetBaudRate, _SetGPIO, _TiSerialFlasher, _TiSerialFlasher_internal, 
+                       _ValidatePacket, _WaitForAck, _WaitForData, _applicationFilename, 
+                       _bslMachineInit, _bslMachineTaskStep, _chunkIdx, _chunks, 
+                       _crc_ccitt, _decisionMakerCrc, _doesFirmwareNeedReflashing, 
+                       _ensureValidOpenableFile, _gFileBuffer, _gInputReport, _gOutputReport, 
+                       _gPasswordBSLFlash, _gPasswordDecisionMaker, _gReportID, _gSerialPortFileDescriptor, 
+                       _gSerialPortPath, _gState, _gTimerRef, _getHardwarePlatformId_iokit, 
+                       _isMcuFlashSkipVarPresent_iokit, _isMcuFlashSkipVarPresent_nvram, 
+                       _isMcuNubPresent, _logMessage, _msleep, _order, _polynom, 
+                       _primaryCrc, _registerDevicePath, _registerFilename, _reportProgress, 
+                       _secondaryCrc, _transferMSP430TXTFile ]
+...

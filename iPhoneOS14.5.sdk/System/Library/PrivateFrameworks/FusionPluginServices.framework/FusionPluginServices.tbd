@@ -1,0 +1,50 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FusionPluginServices.framework/FusionPluginServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FusionPluginServicesVersionNumber,
+                            _FusionPluginServicesVersionString, _getLogHandle ]
+    objc-classes:         [ FusionPluginServer, HSMessage, HSMessageRequest,
+                            HSMessageResponse ]
+    objc-ivars:           [ FusionPluginServer._connection,
+                            FusionPluginServer._exportedObject,
+                            FusionPluginServer._listener,
+                            FusionPluginServer._principalClass,
+                            HSMessage._deviceEnvironment,
+                            HSMessage._hostEnvironment, HSMessage._uuid,
+                            HSMessageRequest._messageDict,
+                            HSMessageRequest._messageStr,
+                            HSMessageResponse._error,
+                            HSMessageResponse._errorDescription,
+                            HSMessageResponse._messageStr,
+                            HSMessageResponse._responseDict,
+                            HSMessageResponse._statusCode ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSKeyedArchiveRootObjectKey, _NSLog,
+                            _NSStringFromClass, __NSConcreteGlobalBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_disabled, __os_log_impl, _dispatch_once,
+                            _objc_alloc, _objc_autoreleaseReturnValue,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_new, _objc_release, _objc_retain,
+                            _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_create,
+                            _os_log_type_enabled, _xpc_dictionary_create,
+                            _xpc_dictionary_get_data, _xpc_dictionary_get_uint64,
+                            _xpc_dictionary_set_data, _xpc_dictionary_set_uint64,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSConstantIntegerNumber, NSData, NSDictionary,
+                            NSError, NSKeyedArchiver, NSKeyedUnarchiver,
+                            NSMutableArray, NSMutableDictionary, NSMutableString,
+                            NSNull, NSNumber, NSObject, NSSet, NSString, NSURL, NSUUID,
+                            NSXPCInterface, NSXPCListener ]
+...

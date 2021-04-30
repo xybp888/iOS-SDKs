@@ -1,0 +1,62 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/MPSMatrix
+current-version:       124.2.4
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:    [ MPSNDArray, MPSNeuralNetwork, MetalPerformanceShaders ]
+    symbols:              [ __Z21MPSDecrementReadCountP18MPSTemporaryMatrix,
+                            __Z21MPSDecrementReadCountP18MPSTemporaryVector ]
+    objc-classes:         [ MPSMatrixBinaryKernel, MPSMatrixCopy,
+                            MPSMatrixCopyDescriptor,
+                            MPSMatrixDecompositionCholesky,
+                            MPSMatrixDecompositionLU, MPSMatrixFindTopK,
+                            MPSMatrixLogSoftMax, MPSMatrixLogSoftMaxGradient,
+                            MPSMatrixMultiplication, MPSMatrixRandom,
+                            MPSMatrixRandomDistributionDescriptor,
+                            MPSMatrixRandomMTGP32, MPSMatrixRandomPhilox,
+                            MPSMatrixSoftMax, MPSMatrixSoftMaxGradient,
+                            MPSMatrixSolveCholesky, MPSMatrixSolveLU,
+                            MPSMatrixSolveTriangular, MPSMatrixUnaryKernel,
+                            MPSMatrixVectorMultiplication ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MPSCreateFunctionConstantValues,
+                            _MPSGetDataTypeName, _MTLReportFailure,
+                            _MTLReportFailureTypeEnabled, _NSStringFromClass,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            __Z21MPSDecrementReadCountP18MPSTemporaryMatrix,
+                            __Z21MPSDecrementReadCountP18MPSTemporaryVector,
+                            __ZN10MPSLibrary13ReleaseMPSKeyEP11MPSKey_data,
+                            __ZN10MPSLibrary15GetComputeStateEjRK23MPSFunctionConstantList30MPSThreadGroupSizeMultipleType24MPSDriverCompilerOptions,
+                            __ZN10MPSLibrary19CreateUberShaderKeyEP8NSStringRK23MPSFunctionConstantListyPFvPU21objcproto10MTLLibrary11objc_objectPK13MPSKernelInfoS4_U13block_pointerFvPU22objcproto11MTLFunction11objc_objectP7NSErrorEEy30MPSThreadGroupSizeMultipleType24MPSDriverCompilerOptionsP18MPSKernelDAGObject,
+                            __ZN10MPSLibrary19ReleaseComputeStateEPU34objcproto23MTLComputePipelineState11objc_object,
+                            __ZN10MPSLibrary25GetPipelineStateForMPSKeyEP11MPSKey_dataPU27objcproto16MTLCommandBuffer11objc_object,
+                            __ZN13MPSAutoBuffer14AllocateBufferEP8NSString,
+                            __ZN9MPSDevice22GetMPSLibrary_DoNotUseEPK14MPSLibraryInfo,
+                            __ZSt9terminatev, ___CFConstantStringClassReference,
+                            ___assert_rtn, ___cxa_begin_catch,
+                            ___gxx_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, ___stderrp, __objc_empty_cache,
+                            _atoi, _bzero, _free, _getenv, _kMPSEmptyLibraryInfo,
+                            _malloc, _objc_alloc, _objc_autorelease, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
+                            _objc_retain, _vfprintf, dyld_stub_binder ]
+    objc-classes:         [ MPSComputeEncoder, MPSKernel, MPSMatrix,
+                            MPSMatrixDescriptor,
+                            MPSParallelRandomDistributionDescriptor,
+                            MPSParallelRandomMTGP32, MPSParallelRandomPhilox,
+                            MTLTextureDescriptor, NSObject, NSString ]
+    objc-ivars:           [ MPSKernel._device, MPSKernel._fileVersion,
+                            MPSKernel._label, MPSKernel._library,
+                            MPSKernel._options, MPSMatrix._buffer,
+                            MPSMatrix._columns, MPSMatrix._dataType,
+                            MPSMatrix._matrixBytes, MPSMatrix._offset,
+                            MPSMatrix._rowBytes, MPSMatrix._rows,
+                            MPSVector._buffer, MPSVector._offset ]
+...

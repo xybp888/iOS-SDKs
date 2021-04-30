@@ -1,0 +1,48 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libPPM.dylib
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _gNotifyPort ]
+    objc-classes:         [ PPMClient, PPMClientUserClientInterface ]
+    objc-ivars:           [ PPMClient.connect, PPMClient.identifier,
+                            PPMClient.userClient, PPMClient.version,
+                            PPMClientUserClientInterface._attribute,
+                            PPMClientUserClientInterface._connect ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFArrayGetCount, _CFArrayGetTypeID, _CFArrayGetValues,
+                            _CFDictionaryGetCount, _CFDictionaryGetKeysAndValues,
+                            _CFDictionaryGetValue, _CFGetTypeID,
+                            _CFNumberGetTypeID, _CFNumberGetValue,
+                            _CFStringCompare, _CFStringGetCString,
+                            _IOConnectCallScalarMethod,
+                            _IOConnectCallStructMethod, _IOIteratorNext,
+                            _IONotificationPortCreate,
+                            _IONotificationPortDestroy,
+                            _IONotificationPortSetDispatchQueue,
+                            _IOObjectRelease, _IORegistryEntryGetName,
+                            _IORegistryEntryGetPath,
+                            _IOServiceAddInterestNotification,
+                            _IOServiceGetMatchingServices, _IOServiceMatching,
+                            _IOServiceOpen, _NSLog, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference,
+                            ___NSDictionary0__struct, ___sprintf_chk,
+                            ___stack_chk_fail, ___stack_chk_guard, ___strcat_chk,
+                            __objc_empty_cache, _bzero, _dispatch_once,
+                            _dispatch_queue_create, _kIOMasterPortDefault,
+                            _mach_task_self_, _objc_alloc, _objc_alloc_init,
+                            _objc_getProperty, _objc_msgSend, _objc_msgSendSuper2,
+                            _objc_opt_class, _objc_opt_isKindOfClass,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_setProperty_atomic,
+                            _objc_storeStrong, _strcpy, dyld_stub_binder ]
+    objc-classes:         [ NSMutableDictionary, NSNumber, NSObject ]
+...

@@ -1,0 +1,49 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ProactiveWidgetTracker.framework/ProactiveWidgetTracker
+current-version:       294.6
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ProactiveWidgetTrackerVersionNumber,
+                            _ProactiveWidgetTrackerVersionString ]
+    objc-classes:         [ _PWTWidgetEventTracker ]
+    objc-ivars:           [ _PWTWidgetEventTracker._activeDisplayMode,
+                            _PWTWidgetEventTracker._conversionTracker,
+                            _PWTWidgetEventTracker._didBecomeVisibleWhileLocked,
+                            _PWTWidgetEventTracker._foregroundingTracker,
+                            _PWTWidgetEventTracker._hasReceivedActiveDisplayModeChangeNotificationOnce,
+                            _PWTWidgetEventTracker._identifier,
+                            _PWTWidgetEventTracker._isCurrentlyVisible,
+                            _PWTWidgetEventTracker._lastAppearTime,
+                            _PWTWidgetEventTracker._loggingQueue,
+                            _PWTWidgetEventTracker._resizeTracker,
+                            _PWTWidgetEventTracker._screenLingerTracker,
+                            _PWTWidgetEventTracker._updateTracker,
+                            _PWTWidgetEventTracker._widgetIsForeground,
+                            _PWTWidgetEventTracker._widgetWasEverForeground,
+                            _PWTWidgetEventTracker._willBecomeVisible ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFAbsoluteTimeGetCurrent, _NSStringFromClass,
+                            _SBGetScreenLockStatus, _SBSSpringBoardServerPort,
+                            __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference,
+                            ___NSArray0__struct, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            _dispatch_async,
+                            _dispatch_queue_attr_make_with_autorelease_frequency,
+                            _dispatch_queue_attr_make_with_qos_class,
+                            _dispatch_queue_create, _objc_alloc, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSConstantArray, NSConstantIntegerNumber,
+                            NSDictionary, NSNumber, NSObject,
+                            PETDistributionEventTracker, PETEventProperty,
+                            PETGoalConversionEventTracker, PETScalarEventTracker ]
+...

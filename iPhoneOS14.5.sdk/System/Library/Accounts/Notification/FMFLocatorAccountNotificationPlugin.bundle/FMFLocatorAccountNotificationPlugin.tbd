@@ -1,0 +1,46 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Accounts/Notification/FMFLocatorAccountNotificationPlugin.bundle/FMFLocatorAccountNotificationPlugin
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LogCategory_Locations, _LogCategory_SecureLocations,
+                            _LogCategory_Traffic, _LogCategory_Unspecified,
+                            _NSXPC_SERVICE_NAME, _kAccountDataclassPropAPSEnvKey,
+                            _kAccountDataclassPropAppServerHostnameKey,
+                            _kAccountDataclassPropHostnameKey,
+                            _kDataclassShareLocation, _kFMFAccountInfoAPSEnvKey,
+                            _kFMFAccountInfoAppHostnameKey,
+                            _kFMFAccountInfoAppTokenKey, _kFMFAccountInfoDSIDKey,
+                            _kFMFAccountInfoHostnameKey,
+                            _kFMFAccountInfoInternalTokenKey,
+                            _kFMFAccountInfoSchemeKey,
+                            _kFMFAccountInfoUsernameKey, _kFMFLocatorErrorDomain ]
+    objc-classes:         [ FMFLocatorAccountNotificationPlugin ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ACAccountTypeIdentifierAppleAccount,
+                            _ACAccountTypeIdentifierFindMyFriends,
+                            _ACFindMyFriendsAppTokenKey,
+                            _ACFindMyFriendsTokenKey, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_error_impl,
+                            __os_log_impl, _dispatch_async,
+                            _dispatch_get_global_queue, _dispatch_once,
+                            _dispatch_queue_create, _dispatch_sync, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_create,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ ACAccount, ACAccountStore, FMSynchronizer, NSDictionary,
+                            NSMutableDictionary, NSObject, NSXPCConnection,
+                            NSXPCInterface ]
+...

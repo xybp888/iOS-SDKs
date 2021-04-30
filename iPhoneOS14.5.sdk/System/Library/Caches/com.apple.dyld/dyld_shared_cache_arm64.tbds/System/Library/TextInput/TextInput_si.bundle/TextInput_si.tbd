@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/TextInput/TextInput_si.bundle/TextInput_si
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ TIKeyboardInputManager_si ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __ZN14TIInputManager17delete_from_inputEv,
+                            __ZN14TIInputManager9add_inputERKN2KB6StringEj,
+                            __ZN2KB6StringC1Ej, __ZN2KB6StringD1Ev,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, _objc_autoreleaseReturnValue,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_release,
+                            _objc_retain, _objc_retainAutoreleasedReturnValue,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSObject, NSString, TIKeyboardInputManager ]
+    objc-ivars:           [ TIKeyboardInputManager.m_impl ]
+...

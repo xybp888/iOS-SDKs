@@ -1,0 +1,52 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          "/System/Library/Frameworks/MediaToolbox.framework/Support/libSTS-N.dylib"
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _STSCreateFlavorN ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AudioUnitSetParameter, _AudioUnitSetProperty,
+                            _CFDataGetBytePtr, _CFDataGetBytes, _CFDataGetLength,
+                            _CFDictionaryAddValue, _CFDictionaryApplyFunction,
+                            _CFDictionaryCreateMutable,
+                            _CFDictionaryCreateMutableCopy,
+                            _CFDictionaryGetCount, _CFDictionaryGetValue,
+                            _CFDictionaryRemoveValue, _CFDictionarySetValue,
+                            _CFEqual, _CFGetAllocator, _CFGetRetainCount,
+                            _CFNotificationCenterAddObserver,
+                            _CFNotificationCenterGetLocalCenter,
+                            _CFNotificationCenterPostNotification,
+                            _CFNumberCreate, _CFNumberGetValue, _CFRelease,
+                            _CFRetain, _CFSetAddValue, _CFSetApplyFunction,
+                            _CFSetCreate, _CFSetCreateMutable, _CFSetGetCount,
+                            _CFSetRemoveValue, _CFStringAppendFormat,
+                            _CFStringCreateMutable, _CFStringGetCString,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___gxx_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_queue_attr_concurrent,
+                            __os_log_debug_impl, __os_log_error_impl,
+                            __sl_dlopen_audited, _asinf, _atan2f,
+                            _dispatch_barrier_sync, _dispatch_once,
+                            _dispatch_queue_attr_make_with_autorelease_frequency,
+                            _dispatch_queue_create, _dispatch_sync, _dlerror, _dlsym,
+                            _free, _kCFAllocatorDefault,
+                            _kCFCopyStringDictionaryKeyCallBacks,
+                            _kCFTypeDictionaryKeyCallBacks,
+                            _kCFTypeDictionaryValueCallBacks,
+                            _kCFTypeSetCallBacks, _malloc,
+                            _matrix_identity_float4x4, _objc_msgSend,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue, _os_log_create,
+                            _os_log_type_enabled, _os_unfair_lock_lock,
+                            _os_unfair_lock_unlock, _strtoul, dyld_stub_binder ]
+    objc-classes:         [ NSAssertionHandler, NSString ]
+...

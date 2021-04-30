@@ -1,0 +1,78 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriAudioInternal.framework/SiriAudioInternal
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:    [ AudioFlowDelegatePlugin,
+                            AudioFlowDelegatePluginTests,
+                            AudioInternalIntentExtension, IntentsServices,
+                            SiriAudioDESPlugin, SiriAudioHeavyweightTests,
+                            SiriAudioInternal, SiriAudioInternalTests,
+                            SiriAudioSupport, SiriAudioSupportIntegrationTests,
+                            SiriAudioSupportTests, SiriMediaFlowDelegatePlugin,
+                            siriaudio_helper ]
+    symbols:              [ _SiriAudioInternalVersionNumber,
+                            _SiriAudioInternalVersionString,
+                            __Z23SAHWorkaroundInitializev ]
+    objc-classes:         [ _TtC17SiriAudioInternal23INAddMediaIntentHandler,
+                            _TtC17SiriAudioInternal24INPlayMediaIntentHandler,
+                            _TtC17SiriAudioInternal29INSearchForMediaIntentHandler,
+                            _TtC17SiriAudioInternal34INUpdateMediaAffinityIntentHandler ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Block_copy, __Block_release,
+                            __INAddMediaIntentResponseCodeFailureAlreadyInLibrary,
+                            __INAddMediaMediaItemUnsupportedReasonAlreadyInLibrary,
+                            __INAddMediaMediaItemUnsupportedReasonCloudSyncOff,
+                            __INPlayMediaMediaItemUnsupportedReasonCreateRadioFailed,
+                            __INPlayMediaMediaItemUnsupportedReasonEmptyLibrary,
+                            __INPlayMediaMediaItemUnsupportedReasonPlaybackDeviceNotFound,
+                            __INPlayMediaMediaItemUnsupportedReasonUnsupportedPlaybackQueueLocation,
+                            __NSConcreteStackBlock, ___chkstk_darwin,
+                            __objc_empty_cache, __os_log_impl,
+                            __swiftEmptyArrayStorage, _malloc_size, _memcpy,
+                            _memmove, _objc_allocWithZone, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_self, _objc_release,
+                            _objc_retain, _objc_retainAutoreleasedReturnValue,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_type_enabled, _swift_allocBox,
+                            _swift_allocObject, _swift_arrayAssignWithTake,
+                            _swift_arrayDestroy, _swift_arrayInitWithCopy,
+                            _swift_arrayInitWithTakeBackToFront,
+                            _swift_arrayInitWithTakeFrontToBack,
+                            _swift_beginAccess, _swift_bridgeObjectRelease,
+                            _swift_bridgeObjectRelease_n,
+                            _swift_bridgeObjectRetain,
+                            _swift_bridgeObjectRetain_n, _swift_deallocObject,
+                            _swift_deallocPartialClassInstance,
+                            _swift_deletedMethodError, _swift_dynamicCast,
+                            _swift_dynamicCastClass, _swift_dynamicCastObjCClass,
+                            _swift_errorRelease, _swift_errorRetain,
+                            _swift_getErrorValue, _swift_getForeignTypeMetadata,
+                            _swift_getObjCClassFromMetadata,
+                            _swift_getObjCClassMetadata, _swift_getObjectType,
+                            _swift_getTypeByMangledNameInContext,
+                            _swift_getWitnessTable, _swift_initStackObject,
+                            _swift_isUniquelyReferencedNonObjC_nonNull_bridgeObject,
+                            _swift_isUniquelyReferenced_nonNull_native,
+                            _swift_makeBoxUnique, _swift_once, _swift_release,
+                            _swift_release_n, _swift_retain, _swift_retain_n,
+                            _swift_slowAlloc, _swift_slowDealloc,
+                            _swift_stdlib_random, _swift_unknownObjectRelease,
+                            _swift_unknownObjectRetain, dyld_stub_binder ]
+    objc-classes:         [ INAddMediaIntentResponse,
+                            INAddMediaMediaDestinationResolutionResult,
+                            INAddMediaMediaItemResolutionResult, INMediaItem,
+                            INMediaSubItem, INPlayMediaIntentResponse,
+                            INPlayMediaMediaItemResolutionResult,
+                            INSearchForMediaIntentResponse,
+                            INUpdateMediaAffinityIntentResponse, MPMediaLibrary,
+                            MPMediaQuery, MPMusicPlayerController, NSNumber,
+                            NSObject, NSString, OS_os_log, _INPBMediaItemValue,
+                            _INPBPlayMediaIntent ]
+...

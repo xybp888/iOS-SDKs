@@ -1,0 +1,74 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DeviceOMatic.framework/DeviceOMatic
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DOMRegisterForMatching,
+                            _DOMServiceIsAttachedToRemovableDevice ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFArrayAppendValue, _CFArrayCreateMutable,
+                            _CFArrayGetCount, _CFArrayGetValueAtIndex,
+                            _CFBooleanGetTypeID, _CFDictionaryCreateMutable,
+                            _CFDictionarySetValue, _CFEqual, _CFGetTypeID,
+                            _CFNumberCreate, _CFRelease, _CFStringCreateWithFormat,
+                            _CFStringGetCString, _IOIteratorNext,
+                            _IOObjectGetClass, _IOObjectRelease, _IOObjectRetain,
+                            _IORegistryEntryCreateCFProperties,
+                            _IORegistryEntryCreateCFProperty,
+                            _IORegistryEntryGetChildIterator,
+                            _IORegistryEntryGetNameInPlane,
+                            _IORegistryEntryGetParentEntry,
+                            _IORegistryEntryGetPath,
+                            _IORegistryEntryGetRegistryEntryID,
+                            _IORegistryEntryIDMatching,
+                            _IOServiceGetMatchingService,
+                            _IOServiceMatchPropertyTable, _IOServiceWaitQuiet,
+                            _MOLogOpen, __Block_object_assign,
+                            __Block_object_dispose,
+                            __CFXPCCreateCFObjectFromXPCObject,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___error, ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __os_log_default,
+                            __os_log_error_impl, __os_log_impl,
+                            __xpc_error_connection_invalid,
+                            __xpc_error_key_description, __xpc_type_array,
+                            __xpc_type_bool, __xpc_type_connection,
+                            __xpc_type_data, __xpc_type_date,
+                            __xpc_type_dictionary, __xpc_type_double,
+                            __xpc_type_error, __xpc_type_fd, __xpc_type_int64,
+                            __xpc_type_null, __xpc_type_shmem, __xpc_type_string,
+                            __xpc_type_uint64, __xpc_type_uuid, _dispatch_once,
+                            _kCFBooleanTrue, _kCFTypeDictionaryKeyCallBacks,
+                            _kCFTypeDictionaryValueCallBacks,
+                            _kIOMasterPortDefault, _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_opt_class, _objc_opt_isKindOfClass,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_type_enabled, _strerror, _xpc_array_get_count,
+                            _xpc_array_get_uint64, _xpc_connection_cancel,
+                            _xpc_connection_create_mach_service,
+                            _xpc_connection_resume, _xpc_connection_send_message,
+                            _xpc_connection_set_event_handler,
+                            _xpc_dictionary_create_reply,
+                            _xpc_dictionary_get_int64,
+                            _xpc_dictionary_get_remote_connection,
+                            _xpc_dictionary_get_string,
+                            _xpc_dictionary_get_uint64,
+                            _xpc_dictionary_get_value, _xpc_dictionary_set_bool,
+                            _xpc_dictionary_set_int64,
+                            _xpc_dictionary_set_uint64, _xpc_get_type,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSDictionary, NSMutableDictionary,
+                            NSMutableString, NSSet ]
+...

@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/log/liblog_SystemConfiguration.dylib
+current-version:       1109.100.4
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _OSLogCopyFormattedString,
+                            _OSStateCreateStringWithData ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFDataCreate, _CFRelease, _CFStringAppend,
+                            _CFStringAppendFormat, _CFStringCreateMutable,
+                            __SC_LOG_DEFAULT, __SC_sockaddr_to_string,
+                            __SC_syslog_os_log_mapping,
+                            ___CFConstantStringClassReference, ___SC_log_enabled,
+                            ___SC_log_send, ___chkstk_darwin, ___error,
+                            ___stack_chk_fail, ___stack_chk_guard, ___strlcat_chk,
+                            ___strlcpy_chk, __os_log_pack_fill, __os_log_pack_size,
+                            _bzero, _free, _inet_ntop, _malloc, _memcpy,
+                            _nwi_ifstate_get_flags, _nwi_ifstate_get_generation,
+                            _nwi_ifstate_get_ifname,
+                            _nwi_ifstate_get_reachability_flags,
+                            _nwi_ifstate_get_signature,
+                            _nwi_ifstate_get_vpn_server,
+                            _nwi_state_get_generation,
+                            _nwi_state_get_interface_names,
+                            _nwi_state_get_reachability_flags, _objc_alloc,
+                            _objc_msgSend, _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue, _snprintf,
+                            _strcmp, _strlcat, dyld_stub_binder ]
+    objc-classes:         [ NSAttributedString, NSMutableString, NSString ]
+...

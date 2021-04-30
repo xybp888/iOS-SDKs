@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/ControlCenter/Bundles/FlashlightModule.bundle/FlashlightModule
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FlashlightModuleVersionNumber,
+                            _FlashlightModuleVersionString ]
+    objc-classes:         [ CCUIFlashlightBackgroundViewController,
+                            CCUIFlashlightModule,
+                            CCUIFlashlightModuleViewController ]
+    objc-ivars:           [ CCUIFlashlightModule._backgroundViewController,
+                            CCUIFlashlightModule._viewController ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CCUICompactModuleContinuousCornerRadius,
+                            _CCUISliderExpandedContentModuleHeight,
+                            _CCUISliderExpandedContentModuleWidth,
+                            _CCUISliderExpandedModuleContinuousCornerRadius,
+                            __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, __dispatch_main_q,
+                            __objc_empty_cache, _dispatch_assert_queue$V2,
+                            _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, dyld_stub_binder ]
+    objc-classes:         [ CCUIButtonModuleViewController,
+                            CCUISliderModuleBackgroundViewController,
+                            CCUISteppedSliderView, NSBundle, NSObject,
+                            SBUIFlashlightController, UIColor, UIImage ]
+...

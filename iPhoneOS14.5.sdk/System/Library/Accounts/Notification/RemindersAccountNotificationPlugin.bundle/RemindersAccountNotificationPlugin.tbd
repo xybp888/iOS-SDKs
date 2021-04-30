@@ -1,0 +1,39 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Accounts/Notification/RemindersAccountNotificationPlugin.bundle/RemindersAccountNotificationPlugin
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _RemindersAccountNotificationPluginVersionNumber,
+                            _RemindersAccountNotificationPluginVersionString ]
+    objc-classes:         [ RemindersAccountNotificationPlugin ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AAAccountClassPrimary,
+                            _ACAccountTypeIdentifierAppleAccount,
+                            _ACAccountTypeIdentifierCalDAV,
+                            _ACAccountTypeIdentifierExchange,
+                            _ACAccountTypeIdentifierHotmail,
+                            _ACAccountTypeIdentifierYahoo,
+                            _ACPropertyKeyEnabledDataclasses,
+                            _REMACAccountPropertyDidFinishMigration,
+                            _REMDynamicCast, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_error_impl,
+                            __os_log_impl, _dispatch_async, _dispatch_once,
+                            _dispatch_queue_attr_make_with_autorelease_frequency,
+                            _dispatch_queue_create, _kAccountDataclassReminders,
+                            _objc_alloc_init, _objc_msgSend, _objc_msgSendSuper2,
+                            _objc_opt_class, _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_type_enabled,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSNumber, NSObject, NSSet, REMLog, REMStore ]
+...

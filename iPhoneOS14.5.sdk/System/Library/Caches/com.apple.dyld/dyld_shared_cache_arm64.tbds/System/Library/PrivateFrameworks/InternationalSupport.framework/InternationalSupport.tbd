@@ -1,0 +1,53 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/InternationalSupport.framework/InternationalSupport
+current-version:       61.1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _InternationalSupportVersionNumber,
+                            _InternationalSupportVersionString ]
+    objc-classes:         [ ISUtilities ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFPreferencesCopyValue, _NSGlobalDomain,
+                            _NSLocaleCountryCode, _NSLocaleLanguageCode,
+                            _NSLocaleScriptCode, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference,
+                            ___NSArray0__struct, ___chkstk_darwin,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_default,
+                            __os_log_fault_impl, _dispatch_once,
+                            _kCFPreferencesAnyApplication,
+                            _kCFPreferencesAnyUser, _kCFPreferencesCurrentHost,
+                            _objc_alloc, _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_opt_class, _objc_opt_new, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _os_log_type_enabled, _os_unfair_lock_lock,
+                            _os_unfair_lock_unlock, _ualoc_getAppleParent,
+                            _ualoc_getLanguagesForRegion, _uenum_close,
+                            _uenum_next, _uidna_close, _uidna_labelToASCII,
+                            _uidna_openUTS46, _uldn_close, _uldn_localeDisplayName,
+                            _uldn_openForContext, _uldn_regionDisplayName,
+                            _uloc_addLikelySubtags, _uloc_minimizeSubtags,
+                            _unumsys_close, _unumsys_getName, _unumsys_getRadix,
+                            _unumsys_isAlgorithmic, _unumsys_open,
+                            _uregion_getAvailable, _uregion_getContainingRegion,
+                            _uregion_getContainingRegionOfType,
+                            _uregion_getRegionCode, _uregion_getRegionFromCode,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSBundle, NSCache, NSConstantArray,
+                            NSConstantDictionary, NSConstantIntegerNumber,
+                            NSDictionary, NSLocale, NSMutableArray,
+                            NSMutableDictionary, NSMutableOrderedSet, NSMutableSet,
+                            NSNumberFormatter, NSObject, NSOrderedSet, NSSet, NSString,
+                            NSUserDefaults ]
+...

@@ -1,0 +1,66 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreDuetDaemonProtocol.framework/CoreDuetDaemonProtocol
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CDAttributeAdmissionBypassUsageHistory,
+                            _CDDProtocolMessageXPCFieldBudgetOptions,
+                            _CDDProtocolMessageXPCFieldEndTimestamps,
+                            _CDDProtocolMessageXPCFieldStartTimestamps,
+                            __CDDComplicationChangeNotificationString,
+                            __CDDComplicationChangeOverCloudNotificationString,
+                            __CDDCurrentActiveComplications,
+                            __CDDExtensionIdForCompanionBundle ]
+    objc-classes:         [ CDDClientConnection, CDDHistoryWindow,
+                            CDDServerResponder, CDDXPCConnection,
+                            CDPClientConnection ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CDDSetError, _CDDebugErrorStrings,
+                            __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference, ___assert_rtn,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_default, __os_log_error_impl, __os_log_impl,
+                            __xpc_error_connection_interrupted,
+                            __xpc_error_connection_invalid,
+                            __xpc_type_dictionary, __xpc_type_error,
+                            _dispatch_queue_attr_make_with_autorelease_frequency,
+                            _dispatch_queue_create, _dispatch_semaphore_create,
+                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
+                            _dispatch_sync, _dispatch_time, _dlerror, _dlopen, _dlsym,
+                            _mach_absolute_time, _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_getClass, _objc_getProperty, _objc_initWeak,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_type_enabled, _strcmp,
+                            _xpc_array_append_value, _xpc_array_create,
+                            _xpc_connection_cancel,
+                            _xpc_connection_create_mach_service,
+                            _xpc_connection_resume, _xpc_connection_send_barrier,
+                            _xpc_connection_send_message,
+                            _xpc_connection_send_message_with_reply,
+                            _xpc_connection_set_event_handler,
+                            _xpc_dictionary_create, _xpc_dictionary_set_bool,
+                            _xpc_dictionary_set_double,
+                            _xpc_dictionary_set_int64,
+                            _xpc_dictionary_set_string,
+                            _xpc_dictionary_set_uint64,
+                            _xpc_dictionary_set_value, _xpc_double_create,
+                            _xpc_get_type, _xpc_int64_create, _xpc_string_create,
+                            dyld_stub_binder ]
+    objc-classes:         [ CDDebug, NSArray, NSConstantIntegerNumber, NSDate,
+                            NSMutableArray, NSNumber, NSObject, NSString ]
+...

@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PreferenceBundles/AirPortSettings.bundle/AirPortSettings
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFPreferencesCopyAppValue,
+                            _CFPreferencesGetAppBooleanValue, _CFRelease,
+                            _CFStringCompare, _WFWiFiTitleString,
+                            ___CFConstantStringClassReference,
+                            __objc_empty_cache, _notify_post,
+                            _notify_register_check, _notify_set_state, _objc_alloc,
+                            _objc_alloc_init, _objc_msgSend, _objc_msgSendSuper2,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, dyld_stub_binder ]
+    objc-classes:         [ NSObject, NSURL, PSViewController,
+                            WFAirportViewController, WFHealthIssueOverrides,
+                            WFNetworkListController ]
+...

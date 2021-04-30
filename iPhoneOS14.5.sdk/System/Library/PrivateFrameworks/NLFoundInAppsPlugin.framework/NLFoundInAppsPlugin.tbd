@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NLFoundInAppsPlugin.framework/NLFoundInAppsPlugin
+current-version:       210.2
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ NLFIAPluginDelegate, NLFoundInAppsPlugin ]
+    objc-ivars:           [ NLFIAPluginDelegate._recordStore,
+                            NLFoundInAppsPlugin._FIAPBundle,
+                            NLFoundInAppsPlugin._FIAPResult,
+                            NLFoundInAppsPlugin._delegates ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFStringTokenizerCopyBestStringLanguage,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_error_impl,
+                            _dispatch_once, _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_create,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ DESRecordStore, NSArray, NSBundle, NSDictionary, NSLocale,
+                            NSMutableArray, NSObject, NSURL ]
+...

@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/log/liblog_network.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _OSLogCopyFormattedString ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, _dispatch_once, _dlsym,
+                            _gai_strerror, _getnameinfo, _inet_ntop, _memset,
+                            _nw_log_delta_to_ms, _nw_log_ring_parse,
+                            _nw_protocol_get_quic_image, _objc_alloc,
+                            _objc_msgSend, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue, _snprintf,
+                            _strcmp, dyld_stub_binder ]
+    objc-classes:         [ NSData, NSMutableAttributedString, NSMutableString,
+                            NSNumber, NSString ]
+...

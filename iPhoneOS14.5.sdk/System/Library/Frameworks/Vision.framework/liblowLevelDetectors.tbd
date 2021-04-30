@@ -1,0 +1,41 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/Vision.framework/liblowLevelDetectors.dylib
+current-version:       4.2.6
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CCRectLowLevel, _createPerMeshForFFTSIZE,
+                            _horizonDetectionFFT, _horizonDetectionFFTAngles,
+                            _initializePerMesh ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CGBitmapContextCreate, _CGBitmapContextCreateImage,
+                            _CGColorSpaceCreateDeviceGray,
+                            _CGColorSpaceCreateDeviceRGB, _CGColorSpaceRelease,
+                            _CGContextDrawImage, _CGContextRelease,
+                            _CGContextSetInterpolationQuality,
+                            _CGDataProviderCreateWithData,
+                            _CGDataProviderRelease, _CGImageCreate,
+                            _CGImageRelease, __Unwind_Resume,
+                            __ZNKSt3__120__vector_base_commonILb1EE20__throw_length_errorEv,
+                            __ZNSt9bad_allocC1Ev, __ZNSt9bad_allocD1Ev,
+                            __ZTISt9bad_alloc, ___assert_rtn, ___chkstk_darwin,
+                            ___cxa_allocate_exception, ___cxa_throw,
+                            ___gxx_personality_v0, ___sincos_stret,
+                            ___sincosf_stret, ___stack_chk_fail,
+                            ___stack_chk_guard, _aligned_alloc, _atan2f, _bzero,
+                            _calloc, _cos, _cosf, _fmodf, _free, _malloc, _memcpy, _memmove,
+                            _memset, _memset_pattern16, _memset_pattern4, _modff,
+                            _sinf, _tanf, _vDSP_create_fftsetup, _vDSP_ctoz,
+                            _vDSP_destroy_fftsetup, _vDSP_f5x5, _vDSP_fft2d_zrop,
+                            _vDSP_maxv, _vDSP_minv, _vDSP_vdist, _vDSP_vfixr16,
+                            _vDSP_vfixru16, _vDSP_vfltu16, _vDSP_vmaxmg, _vDSP_vmma,
+                            _vDSP_vsmsa, _vDSP_vsorti,
+                            _vImageConvert_ARGB8888toPlanar8,
+                            _vImageConvert_Planar8toPlanarF,
+                            _vImageConvolve_PlanarF, _vvintf, _vvnintf, _vvsqrtf,
+                            dyld_stub_binder ]
+...

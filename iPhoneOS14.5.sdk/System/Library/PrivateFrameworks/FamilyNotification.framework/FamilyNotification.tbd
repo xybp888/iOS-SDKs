@@ -1,0 +1,61 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FamilyNotification.framework/FamilyNotification
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __FALogSystem ]
+    objc-classes:         [ FAFamilyNotification, FAFamilyNotifier ]
+    objc-ivars:           [ FAFamilyNotification._actionButtonLabel,
+                            FAFamilyNotification._activateActionURL,
+                            FAFamilyNotification._clientIdentifier,
+                            FAFamilyNotification._delegateMachServiceName,
+                            FAFamilyNotification._dismissActionlURL,
+                            FAFamilyNotification._displayStyle,
+                            FAFamilyNotification._expiryDate,
+                            FAFamilyNotification._familyMemberDSID,
+                            FAFamilyNotification._hasActionButton,
+                            FAFamilyNotification._identifier,
+                            FAFamilyNotification._informativeText,
+                            FAFamilyNotification._launchActionArguments,
+                            FAFamilyNotification._launchActionURL,
+                            FAFamilyNotification._otherButtonLabel,
+                            FAFamilyNotification._relevanceDate,
+                            FAFamilyNotification._shouldPersistWhenActivated,
+                            FAFamilyNotification._shouldPersistWhenDismissed,
+                            FAFamilyNotification._title,
+                            FAFamilyNotification._unlockActionLabel,
+                            FAFamilyNotification._userInfo,
+                            FAFamilyNotification._uuid, FAFamilyNotifier._conn,
+                            FAFamilyNotifier._connLock,
+                            FAFamilyNotifier._delegate,
+                            FAFamilyNotifier._identifier,
+                            FAFamilyNotifier._listener,
+                            FAFamilyNotifier._serviceName ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Block_object_assign, __Block_object_dispose,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            __Unwind_Resume, ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, __os_log_impl,
+                            _dispatch_once, _dispatch_semaphore_create,
+                            _dispatch_semaphore_signal, _dispatch_semaphore_wait,
+                            _objc_alloc, _objc_alloc_init,
+                            _objc_autoreleaseReturnValue, _objc_destroyWeak,
+                            _objc_getProperty, _objc_loadWeakRetained,
+                            _objc_msgSend, _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_atomic_copy, _objc_storeStrong,
+                            _objc_storeWeak, _os_log_create, _os_log_type_enabled,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSData, NSDate, NSDictionary, NSLock,
+                            NSMutableDictionary, NSNumber, NSObject, NSSet, NSString,
+                            NSURL, NSXPCConnection, NSXPCInterface, NSXPCListener ]
+...

@@ -1,0 +1,35 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SearchSuggestions.framework/SearchSuggestions
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SGTLocalizedSuggestion, _SGTNormalizedQueryString,
+                            _SGTNormalizedQueryStringIgnoreDiacritics,
+                            _SGTSearchSuggestionsErrorDomain,
+                            _SGTSearchSuggestionsSupportedScopes,
+                            _SearchSuggestionsVersionNumber,
+                            _SearchSuggestionsVersionString, _splitCounts ]
+    objc-classes:         [ SGTSearchSuggestions ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CSQueryContinuationActionType,
+                            _SSSectionIdentifierSuggestions,
+                            __NSConcreteGlobalBlock,
+                            ___CFConstantStringClassReference,
+                            ___NSArray0__struct, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache, _bzero,
+                            _dispatch_once, _objc_alloc, _objc_alloc_init,
+                            _objc_autorelease, _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_opt_new, _objc_release, _objc_retain,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue, _os_log_create,
+                            _strippedURL, dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSBundle, NSCharacterSet, NSMutableArray,
+                            NSMutableSet, NSObject, SFSearchSuggestion ]
+...

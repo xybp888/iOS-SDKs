@@ -1,0 +1,89 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ShazamInsights.framework/ShazamInsights
+current-version:       99
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SHInsightsErrorDomain ]
+    objc-classes:         [ SHAffinityGroup, SHAffinityGroupQuery,
+                            SHCDNDataFetcher, SHDataStoreMetadata,
+                            SHDateGeohashServerResponseParser, SHFileReader,
+                            SHInsightsBag, SHInsightsError,
+                            SHInsightsPersistenceController,
+                            SHLouvainClusterDataStore, SHLouvainClusterImport,
+                            SHLouvainClusterQuery, SHNetworkRequester, SHRegion,
+                            SHRegionAffinityGroup, SHTargetingMetadataMO,
+                            SHTargetingTrackMO ]
+    objc-ivars:           [ SHAffinityGroup._clusterType,
+                            SHAffinityGroup._cohesionLevel,
+                            SHAffinityGroup._mutableMediaItems,
+                            SHAffinityGroupQuery._dataManager,
+                            SHDataStoreMetadata._etag,
+                            SHDataStoreMetadata._fetchDate,
+                            SHDataStoreMetadata._storefront,
+                            SHFileReader._filePath, SHFileReader.chunkSize,
+                            SHFileReader.currentOffset, SHFileReader.fileHandle,
+                            SHFileReader.lineDelimiter,
+                            SHFileReader.totalFileLength,
+                            SHInsightsBag._bagContents,
+                            SHInsightsPersistenceController._cloudServiceController,
+                            SHInsightsPersistenceController._dataFetcher,
+                            SHInsightsPersistenceController._dataStore,
+                            SHLouvainClusterDataStore._persistentContainer,
+                            SHLouvainClusterDataStore._query,
+                            SHLouvainClusterDataStore._useInMemoryStore,
+                            SHLouvainClusterImport._dataStore,
+                            SHLouvainClusterQuery._moc, SHRegion._geohash,
+                            SHRegion._location,
+                            SHRegionAffinityGroup._affinityGroup,
+                            SHRegionAffinityGroup._regions ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CLLocationCoordinate2DMake,
+                            _NSDebugDescriptionErrorKey, _NSInMemoryStoreType,
+                            _NSLocalizedDescriptionKey,
+                            _NSSQLiteManualVacuumOption, _NSSQLitePragmasOption,
+                            _NSSearchPathForDirectoriesInDomains,
+                            _NSStringFromClass, _NSUnderlyingErrorKey,
+                            _SHMediaItemAppleMusicID, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___NSDictionary0__struct, ___cxa_guard_abort,
+                            ___cxa_guard_acquire, ___cxa_guard_release,
+                            ___gxx_personality_v0, ___objc_personality_v0,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_impl, _bzero,
+                            _dispatch_once, _free, _malloc, _memchr, _objc_alloc,
+                            _objc_alloc_init, _objc_autorelease,
+                            _objc_autoreleasePoolPop, _objc_autoreleasePoolPush,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_getProperty, _objc_initWeak,
+                            _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class,
+                            _objc_opt_isKindOfClass, _objc_opt_new, _objc_release,
+                            _objc_retain, _objc_retainAutorelease,
+                            _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_setProperty_nonatomic_copy, _objc_storeStrong,
+                            _objc_sync_enter, _objc_sync_exit,
+                            _objc_unsafeClaimAutoreleasedReturnValue,
+                            _os_log_create, _os_log_type_enabled, _strlen,
+                            dyld_stub_binder ]
+    objc-classes:         [ AMSBag, AMSBagKeySet, AMSMutableBagKeySet, CLLocation,
+                            NSArray, NSBatchDeleteRequest, NSBatchInsertRequest,
+                            NSBundle, NSCalendar, NSConstantDictionary, NSData, NSDate,
+                            NSDictionary, NSEntityDescription, NSError,
+                            NSFetchRequest, NSFileHandle, NSFileManager,
+                            NSJSONSerialization, NSManagedObject,
+                            NSManagedObjectModel, NSMutableArray,
+                            NSMutableDictionary, NSMutableURLRequest, NSNumber,
+                            NSObject, NSPersistentContainer, NSPredicate, NSSet,
+                            NSString, NSURL, NSURLSession, SHMediaItem,
+                            SKCloudServiceController ]
+...

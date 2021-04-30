@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/MetalPerformanceShaders
+current-version:       124.2.4
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/MPSCore,
+                            /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSImage.framework/MPSImage,
+                            /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/MPSMatrix,
+                            /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNDArray.framework/MPSNDArray,
+                            /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNeuralNetwork.framework/MPSNeuralNetwork,
+                            /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSRayIntersector.framework/MPSRayIntersector ]
+    symbols:              [ _MPSGetPreferredDevice,
+                            _MPSHintTemporaryMemoryHighWaterMark,
+                            _MPSSetHeapCacheDuration, _MPSSupportsMTLDevice ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MTLCreateSystemDefaultDevice,
+                            __NSConcreteStackBlock,
+                            __ZN12MPSAutoCache16PrefetchHeapSizeEPU27objcproto16MTLCommandBuffer11objc_objectm,
+                            __ZN12MPSAutoCache20SetHeapCacheDurationEPU27objcproto16MTLCommandBuffer11objc_objectd,
+                            __ZN9MPSDevice12GetMPSDeviceEPU19objcproto9MTLDevice11objc_object,
+                            _dispatch_once, dyld_stub_binder ]
+...

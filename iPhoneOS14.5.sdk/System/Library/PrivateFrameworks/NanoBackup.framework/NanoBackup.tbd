@@ -1,0 +1,70 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NanoBackup.framework/NanoBackup
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NBBackupDirectoryPath, _NBLoggingDaemonObjectInit,
+                            _NBLoggingFrameworkObjectInit, _NanoBackupDomain,
+                            _iCloudBackupsEnabled, _nb_daemon_log,
+                            _nb_framework_log ]
+    objc-classes:         [ NBBackup, NBExclusionListManager, NBManager ]
+    objc-ivars:           [ NBBackup._activeWatchFaceFileURL,
+                            NBBackup._backingColor, NBBackup._backupType,
+                            NBBackup._bcmWindowMaterial,
+                            NBBackup._bottomEnclosureMaterial,
+                            NBBackup._coverGlassColor, NBBackup._deviceCSN,
+                            NBBackup._deviceColor,
+                            NBBackup._deviceEnclosureColor,
+                            NBBackup._diagnosticsOptInEnabled,
+                            NBBackup._fcmMaterial,
+                            NBBackup._hasResolvedActiveWatchFaceFilePath,
+                            NBBackup._housingColor,
+                            NBBackup._lastModificationDate,
+                            NBBackup._locationOptInEnabled,
+                            NBBackup._marketingVersion, NBBackup._name,
+                            NBBackup._productName, NBBackup._productType,
+                            NBBackup._sizeInBytes, NBBackup._systemBuildVersion,
+                            NBBackup._systemVersion,
+                            NBBackup._topEnclosureMaterial, NBBackup._uuid,
+                            NBBackup._watchFace, NBBackup._watchFaceColor,
+                            NBBackup._watchFaceData,
+                            NBExclusionListManager._excludedPerGizmoDomainSettings,
+                            NBExclusionListManager._excludedPerGizmoDomains,
+                            NBExclusionListManager._hasReadConfiguration,
+                            NBManager._externalQueue, NBManager._internalQueue,
+                            NBManager._xpcConnection ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFPreferencesGetAppBooleanValue,
+                            _NRDevicePropertyPairingID,
+                            _NSInvalidArgumentException,
+                            _NSSearchPathForDirectoriesInDomains,
+                            _NSStringFromClass, __Block_object_assign,
+                            __Block_object_dispose, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, __Unwind_Resume,
+                            ___CFConstantStringClassReference,
+                            ___objc_personality_v0, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_main_q,
+                            __objc_empty_cache, __os_log_impl, _dispatch_async,
+                            _dispatch_once,
+                            _dispatch_queue_attr_make_with_autorelease_frequency,
+                            _dispatch_queue_create, _dispatch_sync, _objc_alloc,
+                            _objc_autoreleaseReturnValue, _objc_copyWeak,
+                            _objc_destroyWeak, _objc_enumerationMutation,
+                            _objc_initWeak, _objc_loadWeakRetained, _objc_msgSend,
+                            _objc_msgSendSuper2, _objc_opt_class, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_retainBlock, _objc_storeStrong, _objc_sync_enter,
+                            _objc_sync_exit, _os_log_create, _os_log_type_enabled,
+                            dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSBundle, NSData, NSDate, NSError, NSException,
+                            NSFileManager, NSMutableDictionary, NSNumber, NSObject,
+                            NSPropertyListSerialization, NSSet, NSString, NSURL,
+                            NSUUID, NSXPCConnection, NSXPCInterface ]
+...

@@ -1,0 +1,45 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SymptomReporter.framework/SymptomReporter
+current-version:       1431.100.22
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _set_symptom_verbosity, _symptom_create,
+                            _symptom_framework_init,
+                            _symptom_framework_set_version,
+                            _symptom_framework_stats, _symptom_new, _symptom_send,
+                            _symptom_send_immediate,
+                            _symptom_set_additional_digest,
+                            _symptom_set_additional_qualifier,
+                            _symptom_set_qualifier ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CC_SHA256, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock, ___stack_chk_fail,
+                            ___stack_chk_guard, ___strlcpy_chk,
+                            __dispatch_is_fork_of_multithreaded_parent,
+                            __dispatch_is_multithreaded, __os_alloc_once,
+                            __os_alloc_once_table, __os_log_debug_impl,
+                            __os_log_default, __os_log_impl,
+                            __xpc_error_connection_interrupted,
+                            __xpc_error_connection_invalid,
+                            __xpc_error_key_description,
+                            __xpc_error_termination_imminent,
+                            __xpc_type_dictionary, __xpc_type_error, _asprintf,
+                            _calloc, _dispatch_after, _dispatch_async_f,
+                            _dispatch_once, _dispatch_once_f,
+                            _dispatch_queue_create, _dispatch_sync, _dispatch_time,
+                            _free, _gettimeofday, _malloc, _memcpy,
+                            _os_log_type_enabled, _printf, _puts, _rand_r, _snprintf,
+                            _strlcpy, _strlen, _strncmp, _strrchr,
+                            _xpc_connection_create_mach_service,
+                            _xpc_connection_resume, _xpc_connection_send_message,
+                            _xpc_connection_set_event_handler,
+                            _xpc_connection_set_target_queue,
+                            _xpc_dictionary_create, _xpc_dictionary_get_data,
+                            _xpc_dictionary_get_string, _xpc_dictionary_set_data,
+                            _xpc_get_type, _xpc_release, dyld_stub_binder ]
+...

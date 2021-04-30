@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/vecLib
+current-version:       760.100.3
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    allowable-clients:    [ Accelerate ]
+    re-exports:           [ /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libBLAS.dylib,
+                            /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libBNNS.dylib,
+                            /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libLAPACK.dylib,
+                            /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libLinearAlgebra.dylib,
+                            /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libQuadrature.dylib,
+                            /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libSparse.dylib,
+                            /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libSparseBLAS.dylib,
+                            /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libvDSP.dylib,
+                            /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libvMisc.dylib ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ dyld_stub_binder ]
+...

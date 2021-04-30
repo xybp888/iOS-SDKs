@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Accounts/Notification/AAIDMSAccountNotificationPlugin.bundle/AAIDMSAccountNotificationPlugin
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ AAIDMSAccountNotificationPlugin ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ACContinuationTokenKey, _ACPropertyKeyCredential,
+                            __AALogSystem, __AKLogSystem, __NSConcreteStackBlock,
+                            ___kCFBooleanTrue, ___stack_chk_fail,
+                            ___stack_chk_guard, __objc_empty_cache,
+                            __os_log_debug_impl, __os_log_error_impl,
+                            __os_log_impl, _kACRenewCredentialsShouldAvoidUIKey,
+                            _kACRenewCredentialsShouldForceKey, _objc_msgSend,
+                            _objc_release, _objc_retain,
+                            _objc_retainAutoreleasedReturnValue,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ AADataclassManager, AKAccountManager, NSDictionary,
+                            NSNumber, NSObject ]
+...

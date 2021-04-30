@@ -1,0 +1,57 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/EmergencyAlerts.framework/EmergencyAlerts
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _EACategoryIdentifierAlert,
+                            _EACategoryIdentifierConfigurableAlert,
+                            _EALogDefault, _EALogSubsystem,
+                            _EANotificationCarrierBundleIdentifierKey,
+                            _EANotificationExternalToneFilePathKey,
+                            _EANotificationExternalVibrationPatternFilePathKey,
+                            _EANotificationFromPhoneKey,
+                            _EANotificationSoundIsMutableInRelayModeKey,
+                            _EARegisterUserNotificationsLogging,
+                            _EmergencyAlertsVersionNumber,
+                            _EmergencyAlertsVersionString,
+                            _kEADefaultMaxDuration ]
+    objc-classes:         [ EACellBroadcastMessageListener,
+                            EAEmergencyAlertCenter ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _TLAlertTopicEmergencyNonInterrupting,
+                            _TLToneIdentifierNone, _TUAddTelephonyCenterObserver,
+                            _TURemoveTelephonyCenterObserver,
+                            __Block_object_assign, __NSConcreteGlobalBlock,
+                            __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___kCFBooleanTrue,
+                            ___stack_chk_fail, ___stack_chk_guard,
+                            __objc_empty_cache, __os_log_error_impl, __os_log_impl,
+                            _dispatch_once,
+                            _kCTSMSCellBroadcastAlertConfiguration,
+                            _kCTSMSCellBroadcastAlertType,
+                            _kCTSMSCellBroadcastBundleIdentifier,
+                            _kCTSMSCellBroadcastEmergencyUserAlert,
+                            _kCTSMSCellBroadcastString,
+                            _kCTSMSCellBroadcastStringReceivedNotification,
+                            _kCTSMSCellBroadcastTranslatedSound,
+                            _kCTSMSCellBroadcastTranslatedText,
+                            _kCTSMSCellBroadcastTranslatedTitle, _objc_alloc,
+                            _objc_alloc_init, _objc_autoreleaseReturnValue,
+                            _objc_msgSend, _objc_msgSendSuper2,
+                            _objc_opt_respondsToSelector, _objc_release,
+                            _objc_retain, _objc_retainAutoreleaseReturnValue,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_create,
+                            _os_log_type_enabled, dyld_stub_binder ]
+    objc-classes:         [ NSArray, NSBundle, NSDate, NSDateFormatter, NSDictionary,
+                            NSMutableDictionary, NSNumber, NSObject, NSString, NSURL,
+                            NSUUID, TUCallCenter, UNMutableNotificationContent,
+                            UNMutableNotificationSound, UNNotificationRequest,
+                            UNUserNotificationCenter ]
+...

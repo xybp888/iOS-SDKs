@@ -1,0 +1,70 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/CoreAccessories/PlugIns/Platform/BatteryPackAnalytics.platform/BatteryPackAnalytics
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _acc_analytics_createBucketizeBatteryPackConnectionDuration,
+                            _acc_analytics_createBucketizePowerSourceChargingTime,
+                            _acc_analytics_createBucketizedAnalyticEventDuration,
+                            _acc_analytics_createBucketizedBatteryChargeDelta,
+                            _acc_analytics_createBucketizedBatteryChargeLevel,
+                            _acc_analytics_createBucketizedInductiveAuthDuration,
+                            _acc_analytics_createBucketizedUnlockDialogAnalyticEventTime,
+                            _acc_analytics_createBucketizedWiredAuthDuration,
+                            _init_logging,
+                            _kBatteryPackAnalyticsDictionaryMaxCount,
+                            _systemInfo_copyDeviceClass,
+                            _systemInfo_copyProductType,
+                            _systemInfo_copyRegionCode,
+                            _systemInfo_getCurrentUnixTime,
+                            _systemInfo_getCurrentUnixTimeMS,
+                            _systemInfo_isDeveloperBuild, _systemInfo_isHomePod,
+                            _systemInfo_isInternalBuild,
+                            _systemInfo_systemSupportsPearl,
+                            _systemInfo_systemSupportsWAPI ]
+    objc-classes:         [ ACCPlatformPluginBatteryPackAnalytics ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AnalyticsSendEvent, _CFArrayGetCount,
+                            _CFArrayGetValueAtIndex, _CFEqual, _CFGetTypeID,
+                            _CFNumberCreate, _CFRelease, _CFRunLoopAddSource,
+                            _CFRunLoopGetMain, _CFRunLoopRemoveSource,
+                            _CFStringCompare, _CFStringGetTypeID,
+                            _IOAccesoryManagerGetDigitalIDAccessoryVersionInfo,
+                            _IOAccessoryManagerCopyDeviceInfo,
+                            _IOAccessoryManagerGetDigitalID,
+                            _IOAccessoryManagerGetServiceWithPrimaryPort,
+                            _IOPSAccCreateLimitedPowerNotification,
+                            _IOPSAccNotificationCreateRunLoopSource,
+                            _IOPSCopyExternalPowerAdapterDetails,
+                            _IOPSCopyPowerSourcesByType,
+                            _IOPSCopyPowerSourcesList,
+                            _IOPSGetPowerSourceDescription,
+                            _IOPSNotificationCreateRunLoopSource, _MGCopyAnswer,
+                            _MGGetBoolAnswer, _NSStringFromClass,
+                            __NSConcreteGlobalBlock, __NSConcreteStackBlock,
+                            ___CFConstantStringClassReference, ___stack_chk_fail,
+                            ___stack_chk_guard, __dispatch_source_type_timer,
+                            __objc_empty_cache, __os_log_debug_impl,
+                            __os_log_default, __os_log_error_impl, __os_log_impl,
+                            _dispatch_assert_queue$V2, _dispatch_async,
+                            _dispatch_once, _dispatch_queue_create,
+                            _dispatch_resume, _dispatch_source_create,
+                            _dispatch_source_set_event_handler,
+                            _dispatch_source_set_timer, _dispatch_walltime,
+                            _kCFAllocatorDefault, _kCFRunLoopDefaultMode,
+                            _objc_autoreleaseReturnValue,
+                            _objc_enumerationMutation, _objc_msgSend,
+                            _objc_opt_class, _objc_release, _objc_retain,
+                            _objc_retainAutorelease,
+                            _objc_retainAutoreleasedReturnValue,
+                            _objc_storeStrong, _os_log_create,
+                            _os_log_type_enabled, _usleep, dyld_stub_binder ]
+    objc-classes:         [ NSDate, NSMutableArray, NSMutableDictionary, NSNumber,
+                            NSObject, NSString, NSUserDefaults ]
+...

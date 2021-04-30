@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SignpostMetrics.framework/SignpostMetrics
+current-version:       60
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __MXSignpostMetricsSnapshot ]
+    objc-classes:         [ SignpostMetricsSnapshotter ]
+undefineds:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __NSConcreteGlobalBlock, __objc_empty_cache,
+                            _dispatch_once, _free, _getpid, _objc_alloc_init,
+                            _objc_msgSend, _objc_release, _objc_retain,
+                            _pc_session_create, _pc_session_create_snapshot_buf,
+                            _pc_session_set_procpid, dyld_stub_binder ]
+    objc-classes:         [ NSObject ]
+...
