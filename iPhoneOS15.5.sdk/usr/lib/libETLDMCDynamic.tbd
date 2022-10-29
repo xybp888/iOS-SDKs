@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           7E3717CD-E4FC-3ABE-AA22-6FF17D5463F1
+  - target:          armv7s-ios
+    value:           C2DC1842-B5E4-357B-B435-82DE9A0855F7
+  - target:          arm64-ios
+    value:           89A5B0C6-3A6E-3AC4-8FA5-573F60B27EDC
+  - target:          arm64e-ios
+    value:           8D0E5112-CA85-30EC-9158-6B23733095EE
+install-name:    '/usr/lib/libETLDMCDynamic.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    weak-symbols:    [ __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __Z21ETLDMCDebugGetQtracesP17__ETLDMCHandleTag10ETLDMCView ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _ETLDMCAppend, _ETLDMCCreateFromFile, _ETLDMCCreateViewFromFile, 
+                       _ETLDMCEventGetNumRanges, _ETLDMCEventGetRange, _ETLDMCFileName, 
+                       _ETLDMCFree, _ETLDMCGetMatchingFileName, _ETLDMCGetMatchingFileNameAndType, 
+                       _ETLDMCGetMatchingKeyword, _ETLDMCKeyword, _ETLDMCLoadEventRangesFromEventsArray, 
+                       _ETLDMCLogFilter, _ETLDMCLogGetDefaultFilters, _ETLDMCLogGetEnabledEquipIDs, 
+                       _ETLDMCLogGetMask, _ETLDMCMerge, _ETLDMCMessageGetNumRanges, 
+                       _ETLDMCMessageGetRangeAndMasks, _ETLDMCParserCountTokens, 
+                       _ETLDMCParserGetToken, _ETLDMCParserInit, _ETLDMCParserReset, 
+                       _ETLDMCUtilCountRangesInMaskArray, _ETLDMCViewCopyMasksToMaskArray, 
+                       _ETLDMCViewFree, _ETLDMCViewGetAsString, _ETLDMCViewLoadMessagesFromMaskArray, 
+                       _ETLDMCViewLoadQTraces, _ETLDMCViewMerge, _ETLDMCViewMergeInto, 
+                       __ETLDMCAllocate, __ETLDMCGetView, __Z20ETLDMCDebugGetEventsP17__ETLDMCHandleTag10ETLDMCView, 
+                       __Z22ETLDMCDebugGetLogCodesP17__ETLDMCHandleTag10ETLDMCViewb, 
+                       __Z24ETLDMCDebugGetEventRangePK13ETLEVENTRange, __Z26ETLDMCDebugGetMessageMasksP17__ETLDMCHandleTag10ETLDMCView, 
+                       __Z26ETLDMCDebugGetMessageRangePK26ETLMESSAGESubsystemIDRange, 
+                       __Z26ETLDMCDebugGetViewAsString10ETLDMCView, _kDMCFilesMap, 
+                       _kETLQtraceClientIDLimit ]
+...

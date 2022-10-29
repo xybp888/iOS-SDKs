@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           28FA9252-2D32-348C-A536-A896E4F1C469
+  - target:          armv7s-ios
+    value:           71B91450-7D48-327F-83F6-078D189D45EC
+  - target:          arm64-ios
+    value:           0A88231A-957C-314F-A166-F534987981C1
+  - target:          arm64e-ios
+    value:           E5786785-0247-38B3-8FFC-3AFDEA5A9DAB
+install-name:    '/usr/lib/libiconv.2.dylib'
+current-version: 7
+compatibility-version: 7
+reexported-libraries:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:       [ '/usr/lib/libcharset.1.dylib' ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ ___iconv_2VersionNumber, ___iconv_2VersionString, _aliases2_lookup, 
+                       _aliases_lookup, _libiconv_relocate, _locale_charset, _utf8_decodestr, 
+                       _utf8_encodestr, _utf_extrabytes ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ __libiconv_version, _iconv, _iconv_canonicalize, _iconv_close, 
+                       _iconv_open, _iconvctl, _iconvlist, _libiconv_set_relocation_prefix ]
+...

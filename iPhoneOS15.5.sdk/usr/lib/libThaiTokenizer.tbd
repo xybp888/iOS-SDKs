@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           EF8C3E66-C210-3BDC-BF50-268855D6F404
+  - target:          armv7s-ios
+    value:           FE58758F-194B-3AEC-84D6-25385A0AF286
+  - target:          arm64-ios
+    value:           2A938BE6-2ABE-3354-9EB4-1750B0DCCF05
+  - target:          arm64e-ios
+    value:           ACCFD582-E069-3921-AA0D-AEABB5D0366A
+install-name:    '/usr/lib/libThaiTokenizer.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _CreateTransitionArrayFromTrie, _GetChunk, _GetTokenizedSegmentedPoints, 
+                       _GetTokenizedStrings, _MAXCHUNKSIZE, _MAXUNKCHOICE, _MAXWORDCHOICE, 
+                       _MAXWORDSIZE, _ReleaseTransitionTable, _SINGLECHARUNKSCORE, 
+                       _Search, _SetChunk, _StackCreate, _StackGetValue, _StackIsEmpty, 
+                       _StackIsFull, _StackPop, _StackPush, _StackRelease, _TOKENIZEDONLYTHAI, 
+                       _UNKSCORE, _getChunkType, _getTokenType, _getUnkProb, _isAcronym, 
+                       _isNumber, _isPunct, _isPunctAll, _isThai, _isThaiBreakChar, 
+                       _isThaiConsonant, _isThaiEndingChar, _isThaiLeadingChar, _isThaiLeadingCharAtIndex, 
+                       _isThaiPunct, _isThaiVowel, _isWhiteSpace, _mergeAcronym ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _ThaiTokenizerAdvanceToNextToken, _ThaiTokenizerCreate, _ThaiTokenizerDestroy, 
+                       _ThaiTokenizerGetCurrentTokenRange, _ThaiTokenizerGoToTokenAtIndex, 
+                       _ThaiTokenizerSetString, _ThaiTokenizerSetStringWithRange ]
+...

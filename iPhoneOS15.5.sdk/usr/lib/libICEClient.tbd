@@ -1,0 +1,61 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           84D2A0A3-4AFD-3A10-B828-6A3F33614F85
+  - target:          armv7s-ios
+    value:           680103A4-3772-31F8-AF86-7E8B61C78553
+  - target:          arm64-ios
+    value:           13F7E4D0-5192-3EE1-B7B0-BBECF7C6FA12
+  - target:          arm64e-ios
+    value:           5C4C40F6-E232-39B8-AC31-115D9020919D
+install-name:    '/usr/lib/libICEClient.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    weak-symbols:    [ __ZTINSt3__113__assoc_stateIiEE, __ZTINSt3__117bad_function_callE, 
+                       __ZTINSt3__123enable_shared_from_thisIN3ice6ClientEEE, __ZTSNSt3__113__assoc_stateIiEE, 
+                       __ZTSNSt3__117bad_function_callE, __ZTSNSt3__123enable_shared_from_thisIN3ice6ClientEEE, 
+                       __ZTSPFvPhE ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __ZN3ice6Client15deregIndicationEj, __ZN3ice6Client4stopEN8dispatch5groupE, 
+                       __ZN3ice6Client6createEN8dispatch5queueEPKc, __ZN3ice6ClientC1ERKN8dispatch5queueEPKc, 
+                       __ZN3ice6ClientC2ERKN8dispatch5queueEPKc, __ZNK3ice6Client12isIndicationEj ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ __ZN3ice10AutoSender12thenInternalEOS0_, __ZN3ice10AutoSenderC1EOS0_, 
+                       __ZN3ice10AutoSenderC2EOS0_, __ZN3ice10AutoSenderD1Ev, __ZN3ice10AutoSenderD2Ev, 
+                       __ZN3ice10AutoSenderaSEOS0_, __ZN3ice13AriMsgWrapperIvE10getMessageEv, 
+                       __ZN3ice15ResponseContextC1EPKhj, __ZN3ice15ResponseContextC2EPKhj, 
+                       __ZN3ice16SendMsgBaseProxy4sendEv, __ZN3ice16SendMsgBaseProxyC1ENSt3__110shared_ptrINS_6ClientEEERN6AriSdk7MsgBaseE, 
+                       __ZN3ice16SendMsgBaseProxyC1EOS0_, __ZN3ice16SendMsgBaseProxyC2ENSt3__110shared_ptrINS_6ClientEEERN6AriSdk7MsgBaseE, 
+                       __ZN3ice16SendMsgBaseProxyC2EOS0_, __ZN3ice16SendMsgBaseProxyD1Ev, 
+                       __ZN3ice16SendMsgBaseProxyD2Ev, __ZN3ice18isARIResponseValidEPKNS_6ClientERK6AriMsgj, 
+                       __ZN3ice18isARIResponseValidERKN6AriSdk7MsgBaseEj, __ZN3ice21registerClientSnifferENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS0_10shared_ptrINS_25ClientSnifferDelegateBaseEEE, 
+                       __ZN3ice23deregisterClientSnifferENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
+                       __ZN3ice29notifySnifferClientRegisteredENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
+                       __ZN3ice30notifySnifferIndicationCanWakeENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEj, 
+                       __ZN3ice31notifySnifferClientDeregisteredENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
+                       __ZN3ice33notifySnifferIndicationRegisteredENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEj, 
+                       __ZN3ice6Client16setIndShouldWakeEjb, __ZN3ice6Client21regIndicationInternalEjN8dispatch5blockIU13block_pointerFiPhjEEE, 
+                       __ZN3ice6Client23regEventHandlerInternalENS0_5EventEN8dispatch5blockIU13block_pointerFiP16dispatch_group_sEEE, 
+                       __ZN3ice6Client5startEv, __ZN3ice6Client6createEN8dispatch5queueERKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEENS3_10shared_ptrIN3ctu9LogServerEEE, 
+                       __ZN3ice6ClientC1ERKN8dispatch5queueERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEENS5_10shared_ptrIN3ctu9LogServerEEE, 
+                       __ZN3ice6ClientC2ERKN8dispatch5queueERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEENS5_10shared_ptrIN3ctu9LogServerEEE, 
+                       __ZN3ice6ClientD0Ev, __ZN3ice6ClientD1Ev, __ZN3ice6ClientD2Ev, 
+                       __ZN3ice8asStringENS_6Client5EventE, __ZN3ice9SendProxy4sendEv, 
+                       __ZN3ice9SendProxyC1ENSt3__110shared_ptrINS_6ClientEEER6AriMsg, 
+                       __ZN3ice9SendProxyC1EOS0_, __ZN3ice9SendProxyC2ENSt3__110shared_ptrINS_6ClientEEER6AriMsg, 
+                       __ZN3ice9SendProxyC2EOS0_, __ZN3ice9SendProxyD1Ev, __ZN3ice9SendProxyD2Ev, 
+                       __ZNK3ice10AutoSendercvbEv, __ZNK3ice13AriMsgWrapperIvE10getMessageEv, 
+                       __ZNK3ice16SendMsgBaseProxy9getLoggerEv, __ZNK3ice6Client11getClientIdENSt3__18functionIFviEEE, 
+                       __ZNK3ice6Client11getClientIdEv, __ZNK3ice6Client24getRegisteredIndicationsENSt3__18functionIFvNS1_3setIjNS1_4lessIjEENS1_9allocatorIjEEEEEEE, 
+                       __ZNK3ice9SendProxy9getLoggerEv, __ZNO3ice10AutoSender4thenEOS0_, 
+                       __ZNO3ice16SendMsgBaseProxy11transactionEi, __ZNO3ice16SendMsgBaseProxy8callbackEN8dispatch5blockIU13block_pointerFiPhjEEE, 
+                       __ZNO3ice9SendProxy11ackRequiredEb, __ZNO3ice9SendProxy11transactionEi, 
+                       __ZNO3ice9SendProxy8callbackEN8dispatch5blockIU13block_pointerFiPhjEEE, 
+                       __ZNR3ice10AutoSender4thenEOS0_, __ZNR3ice16SendMsgBaseProxy11transactionEi, 
+                       __ZNR3ice16SendMsgBaseProxy8callbackEN8dispatch5blockIU13block_pointerFiPhjEEE, 
+                       __ZNR3ice9SendProxy11ackRequiredEb, __ZNR3ice9SendProxy11transactionEi, 
+                       __ZNR3ice9SendProxy8callbackEN8dispatch5blockIU13block_pointerFiPhjEEE, 
+                       __ZTIN3ice6ClientE, __ZTSN3ice6ClientE, __ZTVN3ice6ClientE ]
+...

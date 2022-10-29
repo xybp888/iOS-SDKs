@@ -1,0 +1,32 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Spotlight.framework/Spotlight
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SPAppStoreSearchURLFromQuery,
+                            _SPWebSearchURLFromQuery, _createDedupeDicts,
+                            _sp_analytics_log_timing,
+                            _sp_analytics_log_timing_with_bundle_id ]
+    objc-classes:         [ SPClientSession, SPGeneralQueryTask, SPQueryResponse,
+                            SPQueryTask, SPSafariObserver, SPSuggestionsQueryTask,
+                            SPZKWSearchQueryTask, SPZKWSession ]
+    objc-ivars:           [ SPGeneralQueryTask._didReceiveCompleteCallback,
+                            SPGeneralQueryTask._mutableSections,
+                            SPGeneralQueryTask._mutableSessionEntityString,
+                            SPGeneralQueryTask._newQuery,
+                            SPGeneralQueryTask._query,
+                            SPGeneralQueryTask._session,
+                            SPGeneralQueryTask._started,
+                            SPGeneralQueryTask._token,
+                            SPQueryTask._delayedResponse,
+                            SPQueryTask._dispatchQueue,
+                            SPQueryTask._queryProcessor,
+                            SPQueryTask._showMoreInAppInfo,
+                            SPQueryTask._supportedAppScopes,
+                            SPQueryTask._unsafeState ]
+...

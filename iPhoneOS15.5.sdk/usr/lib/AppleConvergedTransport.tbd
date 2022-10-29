@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           44475B45-756A-30DF-A708-FF7E3D004300
+  - target:          arm64e-ios
+    value:           9F5FFE5E-12A8-3143-9059-34068C5EC91F
+install-name:    '/usr/lib/AppleConvergedTransport.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __ZN3pci5event8Listener4initEv, __ZN3pci5event8Listener6createEN10applesauce8dispatch2v15blockIFvNS0_4typeEONSt3__112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEEjEEEP11__CFRunLoop, 
+                       __ZN3pci5event8Listener6createEN10applesauce8dispatch2v15blockIFvNS0_4typeEONSt3__112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEEjEEEP16dispatch_queue_s, 
+                       __ZN3pci5event8Listener6notifyE14acipcErrorTypePvS3_, __ZN3pci5event8ListenerC1EN10applesauce8dispatch2v15blockIFvNS0_4typeEONSt3__112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEEjEEEP11__CFRunLoopP16dispatch_queue_s, 
+                       __ZN3pci5event8ListenerC2EN10applesauce8dispatch2v15blockIFvNS0_4typeEONSt3__112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEEjEEEP11__CFRunLoopP16dispatch_queue_s, 
+                       __ZN3pci5event8ListenerD1Ev, __ZN3pci5event8ListenerD2Ev ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _AppleConvergedTransportCreate, _AppleConvergedTransportFree, 
+                       _AppleConvergedTransportInitParameters, _AppleConvergedTransportIsValid, 
+                       _AppleConvergedTransportRead, _AppleConvergedTransportReadRegister, 
+                       _AppleConvergedTransportRegisterEventBlock, _AppleConvergedTransportRegisterEventBlockQ, 
+                       _AppleConvergedTransportRegisterTimeSyncEventBlock, _AppleConvergedTransportRegisterTimeSyncEventBlockQ, 
+                       _AppleConvergedTransportSendImage, _AppleConvergedTransportUnregisterEventBlock, 
+                       _AppleConvergedTransportUnregisterTimeSyncEventBlock, _AppleConvergedTransportWrite ]
+...

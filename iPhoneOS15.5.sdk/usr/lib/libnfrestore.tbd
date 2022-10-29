@@ -1,0 +1,45 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           29E0C96A-9928-34FC-919F-B1CF6740D670
+  - target:          armv7s-ios
+    value:           3EA144A3-1303-39C3-BEC2-CF2B7E4BEA93
+  - target:          arm64-ios
+    value:           A7B5AECC-FA5B-3157-80E0-59A60BFAC7B0
+  - target:          arm64e-ios
+    value:           92C91089-CAD0-3CA3-B8ED-2840CC1CF532
+install-name:    '/usr/lib/libnfrestore.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _NFHardwareGPIOClose, _NFHardwareGPIOOpen, _NFHardwareGPIOSetDeviceWake, 
+                       _NFHardwareGPIOSetDownloadRequest, _NFHardwareGPIOSetIcefallDownloadRequest, 
+                       _NFHardwareGPIOSetPMUStandbyPowerEnabled, _NFHardwareGPIOSetPower, 
+                       _NFHardwareGetCalibration, _NFHardwareGetUARTLogEnabled, _NFHardwareLoad, 
+                       _NFHardwareSetLogFunc, _NFHardwareUnload, _NFRestoreDeviceIsDevBoard, 
+                       _NFRestoreJCOPFileCompareVersions, _NFRestoreJCOPFileScanVersion, 
+                       _NFRestoreJcop, _NFRestoreLogv, _NFRestoreNfc, _NFRestoreNfcFirmwareNameForController, 
+                       _NFRestoreNfcForController, _NfContextFree, _NfContextInit, 
+                       _NfSecureElementApplyImage, _NfSecureElementApplyPlan, _NfSecureElementApplyScript, 
+                       _NfSecureElementClose, _NfSecureElementDeleteSeshat, _NfSecureElementGarbageCollect, 
+                       _NfSecureElementIsInValidJSBL, _NfSecureElementOpen, _NfSecureElementRestart, 
+                       _NfSecureElementScriptRun, _NfSecureElementScriptRunLine, 
+                       _NfSecureElementSendNextCommand, _NfSecureElementSwitchBetweenJSBLs, 
+                       _NfSecureElementSwitchFromJCOPToJSBL, _NfSecureElementTerminateApplets, 
+                       _NfSecureElementUpdateJCOP, _NfSecureElementUpdateOSInfo, 
+                       _NfSecureElementValidateConfig, __NFRestore, __NFRestorePushError, 
+                       __NfJcopUpdateFileCalcSHA, __NfJcopUpdateFileReadHeader, __NfJcopUpdateFileReadImage, 
+                       __NfJcopUpdateFileReadPlan, __NfJcopUpdateFileReadSHA, __NfJcopUpdateFileReadScript, 
+                       _gNFHardwareLogv, _gNfContext ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _NfJcopUpdateFileClose, _NfJcopUpdateFileGetPlan, _NfJcopUpdateFileGetRequiredMemoryForPlan, 
+                       _NfJcopUpdateFileGetSequenceForPlan, _NfJcopUpdateFileLogDescription, 
+                       _NfJcopUpdateFileOpenWithData, _NfJcopUpdateFileOpenWithFilePath, 
+                       _NfJcopUpdateFileReadCommand, _NfRestore, _NfRestoreBundleCreate, 
+                       _NfRestoreBundleScan, _NfRestoreCopyUniqueFDRKey, _NfRestoreDumpUART, 
+                       _NfRestoreOpenWithSE, _NfRestoreOpenWithSEAndResult, _NfRestoreReturnError, 
+                       _NfRestoreSEClose, _NfRestoreSEEnumerate, _NfRestoreSEList, 
+                       _NfRestoreSEOpen, _NfRestoreSEOpenWithError, _NfRestoreSETransceive, 
+                       _NfRestoreToggleDwnldReq, _NfRestoreToggleSEPower ]
+...

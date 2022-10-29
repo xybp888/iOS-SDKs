@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           FDAD6CCF-A1DF-34FA-89AF-D71F09040B52
+  - target:          armv7s-ios
+    value:           EF456AEC-05CB-3AC1-82BE-18F2177908F9
+  - target:          arm64-ios
+    value:           63BD38E6-F63B-328F-9050-975094D81F6D
+  - target:          arm64e-ios
+    value:           F3DB8552-7CBD-3295-BBA8-F1D7ED9E6F40
+install-name:    '/usr/lib/libH5Dynamic.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _h5_system_protocol_init ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _h5_init_info_init, _h5_system_protocol_close, _h5_system_protocol_configure_log_size, 
+                       _h5_system_protocol_create, _h5_system_protocol_enable, _h5_system_protocol_enter_low_power, 
+                       _h5_system_protocol_free, _h5_system_protocol_get_fatal_error_string, 
+                       _h5_system_protocol_get_max_payload, _h5_system_protocol_has_fatal_error_occurred, 
+                       _h5_system_protocol_open, _h5_system_protocol_open_info_init, 
+                       _h5_system_protocol_snapshot, _h5_system_protocol_write ]
+...

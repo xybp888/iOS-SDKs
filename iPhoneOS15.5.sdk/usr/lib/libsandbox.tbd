@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           9628591F-F60F-3DBD-A52D-2CA6B7EA653B
+  - target:          armv7s-ios
+    value:           3E5F186A-2024-3091-A71A-71E765FA1BAC
+  - target:          arm64-ios
+    value:           2C459EE6-7DFF-33AC-925D-E95EE2119C9E
+  - target:          arm64e-ios
+    value:           076F6CCB-00B1-3095-AAA6-956A18C50191
+install-name:    '/usr/lib/libsandbox.1.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _sandbox_set_trace_path ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _SANDBOX_BUILD_ID, ___crashreporter_info__, _sandbox_apply, 
+                       _sandbox_apply_container, _sandbox_compile_entitlements, _sandbox_compile_file, 
+                       _sandbox_compile_named, _sandbox_compile_string, _sandbox_container_paths_iterate_items, 
+                       _sandbox_create_params, _sandbox_exempt_from_network_approval_policy, 
+                       _sandbox_free_params, _sandbox_free_profile, _sandbox_inspect_pid, 
+                       _sandbox_inspect_smemory, _sandbox_prepare_user_home_mount, 
+                       _sandbox_register_network_approval_policy_exemption_for_share, 
+                       _sandbox_register_profile, _sandbox_register_sync_root, _sandbox_set_param, 
+                       _sandbox_set_user_state_item, _sandbox_set_user_state_item_with_persona, 
+                       _sandbox_unregister_all_profiles, _sandbox_unregister_profile, 
+                       _sandbox_user_state_item_buffer_create, _sandbox_user_state_item_buffer_destroy, 
+                       _sandbox_user_state_item_buffer_send, _sandbox_user_state_iterate_items ]
+...

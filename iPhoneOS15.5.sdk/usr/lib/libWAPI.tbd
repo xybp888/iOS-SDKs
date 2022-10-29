@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           1700AE78-1600-3AA1-9791-E5DC1927C0DD
+  - target:          armv7s-ios
+    value:           839BE777-1490-3F4E-8313-D036F6866108
+  - target:          arm64-ios
+    value:           AB244EA7-E797-31F0-8AE0-2EAB817F7CF1
+  - target:          arm64e-ios
+    value:           D47914DB-8F90-33ED-8F1E-A92069E9D92D
+install-name:    '/usr/lib/libWAPI.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _WAPIEnabled, _WAPIStart, _WAPIStatus, _WAPIStop, __WCwapic_start, 
+                       __WCwapic_status, __WCwapic_stop, _isChinaRegion ]
+...

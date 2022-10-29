@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           41FB4903-A4BF-3D94-B58D-25E348B1A309
+  - target:          armv7s-ios
+    value:           4A5F23D5-270B-332F-8735-96E7F985EB8F
+  - target:          arm64-ios
+    value:           3283C776-EC78-3E99-8939-753D7137BDF6
+  - target:          arm64e-ios
+    value:           BA1F2370-2A90-3EC8-94A2-9254904821ED
+install-name:    '/usr/lib/libReverseProxyDevice.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _RPCopyProxyDictionary, _RPCopyProxyDictionaryWithOptions, 
+                       _RPRegisterForAvailability, _RPRegistrationInvalidate, _RPRegistrationResume, 
+                       _RPSetLogLevel, __RPCopyProxyDictionaryWithOptions, __RPRegisterForAvailability, 
+                       __RPSetLogLevel ]
+...

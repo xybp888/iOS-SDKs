@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           E0479485-4360-3359-875A-1D8738F9E61A
+  - target:          armv7s-ios
+    value:           B2DDA0C8-CF01-3A95-8572-BAC5782C827B
+  - target:          arm64-ios
+    value:           1EE71146-F15B-3B84-B9F7-4E72FA78BF24
+  - target:          arm64e-ios
+    value:           E03B5A77-66C4-389D-AD0B-AD7DF837AF7B
+install-name:    '/usr/lib/libETLDIAGLoggingDynamic.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    weak-symbols:    [ __ZTINSt3__113basic_filebufIcNS_11char_traitsIcEEEE, __ZTINSt3__114basic_ifstreamIcNS_11char_traitsIcEEEE, 
+                       __ZTSNSt3__113basic_filebufIcNS_11char_traitsIcEEEE, __ZTSNSt3__114basic_ifstreamIcNS_11char_traitsIcEEEE ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __Z14ETLDIAGGetGUIDP26TelephonyUtilTransport_tagR20ETLDIAGGUIDParameterRNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEE, 
+                       __Z20ETLADPLLoggingEnableP26TelephonyUtilTransport_tagb, __Z20ETLQDSSLoggingEnableP26TelephonyUtilTransport_tagb, 
+                       __Z24ETLDIAGCreateQMDL2HeaderR20ETLDIAGGUIDParameter, __Z27ETLDIAGLoggingGetGUIDStringPK11ETLDiagGUID, 
+                       __Z28ETLDIAGLoggingGetDefaultViewv, __Z34ETLDIAGLoggingGetAvailableDMCNamesv ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ __Z23ETLDIAGLoggingConfigureR20ETLDIAGLoggingParamsRNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
+                       __Z24ETLDIAGLoggingCreateHashRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __Z25ETLDIAGLoggingUnconfigureR20ETLDIAGLoggingParamsRNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
+                       __Z29ETLDIAGLoggingGetStringForKeymPPKcPv ]
+...

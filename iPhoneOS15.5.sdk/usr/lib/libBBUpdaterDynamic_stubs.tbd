@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           0D4F17AA-0147-314C-8E0B-D5C28A7B9633
+  - target:          arm64e-ios
+    value:           4B0A1E75-BF5F-38D8-B5D3-FB543EFB645A
+install-name:    '/usr/lib/libBBUpdaterDynamic_stubs.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _BBUpdaterExecCommand, _BBUpdaterExtremeCreate, _BBUpdaterSetOptions ]
+...

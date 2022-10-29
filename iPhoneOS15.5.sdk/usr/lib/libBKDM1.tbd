@@ -1,0 +1,71 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           E6A32699-6E20-377E-BAFC-66D16682744C
+  - target:          arm64e-ios
+    value:           89FE6E04-89C3-386D-BD04-8AD04F383119
+install-name:    '/usr/lib/libBKDM1.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _BKDMInitialize, _BKDMTerminate, _CatacombPathForFile, _ComponentSetInit, 
+                       _ComponentSetRelease, _ComponentSetUpdate, _ConvertTransToNodeArea, 
+                       _ConvertVectorForGUI, _FindRectangleForComponent, _GenerateMatchTemplateTopology, 
+                       _GenerateTemplateTopology, _LoadDataFromCatacomb, _RemoveFileFromCatacomb, 
+                       _SBDisplayEvent, _SBDisplayEventBioLogInfo, _SBFingerTouchEvent, 
+                       _SBFingerTouchEventBioLogInfo, _SBFreeEventList, _SBInitialize, 
+                       _SBInitializeBioLogInfo, _SBLockEvent, _SBLockEventBioLogInfo, 
+                       _SBPowerEvent, _SBPowerEventBioLogInfo, _SBRemoveTemplateEvent, 
+                       _SBRemoveTemplateEventBioLogInfo, _SBSetLogVerbosity, _SBSetLogVerbosityBioLogInfo, 
+                       _SBStartBioOperation, _SBStartBioOperationBioLogInfo, _SBStatus, 
+                       _SBStatusBioLogInfo, _SBStopBioOperation, _SBStopBioOperationBioLogInfo, 
+                       _SBTemplateUpdateEvent, _SBTemplateUpdateEventBioLogInfo, 
+                       _SBTerminate, _SBTerminateBioLogInfo, _SBTimeZoneChangeEvent, 
+                       _SBTimeZoneChangeEventBioLogInfo, _SaveDataToCatacomb, ___BuildFullPath, 
+                       ___DeblockedFileIO, ___FileIsProtectionClassD, ___GetCatacombDirectoryPath, 
+                       ___GetUUIDFileName, ___osLog, ___osLogTrace, _check_finger_touch_structure, 
+                       _check_memory_manager, _check_template_update_structure, _check_timestamp, 
+                       _closeConnection, _crc32ansi, _deviceExists, _diffTimeStamps, 
+                       _getLocalEEPROMCalibrationData, _kCatacombCurrentDateKey, 
+                       _kCatacombEnrollmentCountKey, _kCatacombIdentityListKey, _kCatacombTemplateListKey, 
+                       _kCatacombVersionKey, _kCoreauthdBundleIdentifier, _kMesaAbcDomain, 
+                       _kMesaAbcProcess, _kMesaAbcTypeUnlockAttempt, _kMesaCABoundedFieldLimits, 
+                       _kMesaCADailyEventName, _kMesaCAEnrollEventName, _kMesaCAFingerLiftTimeEventName, 
+                       _kMesaCAFingerTouchTimeEventName, _kMesaCALogPrefix, _kMesaCAMatchEventName, 
+                       _kMesaCATemplateMatchCountsEventName, _kMesaCAUnlockEventName, 
+                       _kMesaCAWeeklyEventName, _kPurpleBuddyBundleIdentifier, _kSpringBoardBundleIdentifier, 
+                       _logQueueLabel, _memdump, _mesaScanningStateNotificationCallback, 
+                       _mobileKeyBagLockStatusNotificationCallback, _openConnection, 
+                       _powerSourceInterestNotificationCallback, _readData, _serialize, 
+                       _writeData ]
+    objc-classes:    [ ADEvent, ADStorage, BLHelper, BLTemplateList, BLTimeBox, BioLog, 
+                       BioLogBase, BiometricKitDStatistics, BiometricKitXPCServerMesa, 
+                       BiometricMatchOperationMesa, MesaAutoBugCapture, MesaCAImageInfo, 
+                       MesaCoreAnalytics, MesaCoreAnalyticsDailyEvent, MesaCoreAnalyticsEnrollEvent, 
+                       MesaCoreAnalyticsEvent, MesaCoreAnalyticsFingerLiftTimeEvent, 
+                       MesaCoreAnalyticsFingerTouchTimeEvent, MesaCoreAnalyticsHelper, 
+                       MesaCoreAnalyticsMatchEvent, MesaCoreAnalyticsTemplateMatchCountsEvent, 
+                       MesaCoreAnalyticsUnlockEvent, MesaCoreAnalyticsWeeklyEvent, 
+                       TemplateInfo ]
+    objc-ivars:      [ BioLogBase._chargerConnected, BioLogBase._compact, BioLogBase._compactOSLogOnly, 
+                       BioLogBase._fileAttributes, BioLogBase._fileAttributesProtected, 
+                       BioLogBase._fileNameFormatter, BioLogBase._fingerStateCaptureCounter, 
+                       BioLogBase._imageCommentString, BioLogBase._lastLogMessage, 
+                       BioLogBase._lastLogMessageRepeated, BioLogBase._lastLogWriteException, 
+                       BioLogBase._lastMatchedIdentity, BioLogBase._lastStatusESDRecovery, 
+                       BioLogBase._logDetails, BioLogBase._logFile, BioLogBase._logFilePath, 
+                       BioLogBase._logPath, BioLogBase._logStartDate, BioLogBase._loggingType, 
+                       BioLogBase._mesaScanningStateNotification, BioLogBase._milisecondsFormatter, 
+                       BioLogBase._mode, BioLogBase._notificationPort, BioLogBase._osLog, 
+                       BioLogBase._powerSourceNotification, BioLogBase._radarPromptLock, 
+                       BioLogBase._rootPath, BioLogBase._server, BioLogBase._templateList, 
+                       BioLogBase._timeBox, BioLogBase._timeZoneFormatter, BioLogBase._timestampFormatter, 
+                       MesaCoreAnalyticsEvent._bioLog, MesaCoreAnalyticsEvent._eventName, 
+                       MesaCoreAnalyticsEvent._fingerOn, MesaCoreAnalyticsEvent._lastBioDevice, 
+                       MesaCoreAnalyticsEvent._previousDeviceType, MesaCoreAnalyticsEvent._privateProperties ]
+...

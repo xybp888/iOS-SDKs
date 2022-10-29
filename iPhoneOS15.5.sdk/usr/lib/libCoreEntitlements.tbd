@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           6C70BE48-5D00-38EB-8DAA-4DC4A7B54597
+  - target:          arm64e-ios
+    value:           54D5984B-94DF-3144-AFCE-E41C59B64656
+install-name:    '/usr/lib/libCoreEntitlements.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _CEAcquireManagedContext, _CEAcquireUnmanagedContext, _CECRuntime, 
+                       _CEConjureContextFromDER, _CEContextIsSubset, _CEContextQuery, 
+                       _CECreateNumericOpInplace, _CECreateStringOpInplace, _CEDeserialize, 
+                       _CEGetErrorString, _CEManagedContextFromCFData, _CEPrepareQuery, 
+                       _CEQueryContextToCFDictionary, _CEReleaseManagedContext, _CESerialize, 
+                       _CESerializeCFDictionary, _CESerializeXML, _CESizeDeserialization, 
+                       _CESizeSerialization, _CESizeXMLSerialization, _CEValidate, 
+                       _der_vm_CEType_from_context, _der_vm_block_trampoline, _der_vm_bool_from_context, 
+                       _der_vm_buffer_from_context, _der_vm_context_create, _der_vm_context_is_valid, 
+                       _der_vm_execute, _der_vm_execute_nocopy, _der_vm_integer_from_context, 
+                       _der_vm_iterate, _der_vm_string_from_context, _kCEAPIMisuse, 
+                       _kCEAllocationFailed, _kCEInvalidArgument, _kCEMalformedEntitlements, 
+                       _kCENoError, _kCEQueryCannotBeSatisfied ]
+...

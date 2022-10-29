@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           9B49DA0D-9DF3-30A5-8E4F-76CF5DE056BD
+  - target:          arm64e-ios
+    value:           6D5FC59F-B281-39C9-B044-72463A141E89
+install-name:    '/usr/lib/libnetworkextension.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _NEHelperTrackerAddIP, _NEHelperTrackerAddIPForAllFlows, _NEHelperTrackerAddIPWithDisposition, 
+                       _NEHelperTrackerAppInfoIsBrowser, _NEHelperTrackerAppInfoSetAuditToken, 
+                       _NEHelperTrackerAppInfoSetIsBrowser, _NEHelperTrackerAppInfoSetPID, 
+                       _NEHelperTrackerAppInfoSetSigningIdentifier, _NEHelperTrackerAppInfoSetUUID, 
+                       _NEHelperTrackerClearCache, _NEHelperTrackerContextGetDomain, 
+                       _NEHelperTrackerContextGetDomainOwner, _NEHelperTrackerDumpIPEntries, 
+                       _NEHelperTrackerFreeAppInfo, _NEHelperTrackerGetAppInfo, _NEHelperTrackerGetAppUUID, 
+                       _NEHelperTrackerGetDisposition, _ne_filter_allocate_globals, 
+                       _ne_filter_copy_connection, _ne_filter_crypto_generate_client_key, 
+                       _ne_filter_crypto_init_client, _ne_filter_crypto_init_master, 
+                       _ne_filter_crypto_sign_data, _ne_filter_crypto_validate_data, 
+                       _ne_filter_deallocate_globals, _ne_filter_get_definition, 
+                       _ne_filter_protocol_handle_message, _ne_filter_protocol_identifier, 
+                       _ne_filter_protocol_release, _ne_filter_protocol_retain, _ne_filter_register_flow, 
+                       _ne_filter_request_connection, _ne_filter_send_message, _ne_filter_set_test_crypto_state, 
+                       _ne_filter_set_test_provider_factory, _ne_filter_sign_data, 
+                       _ne_filter_stats_report_register, _ne_filter_stats_report_unregister, 
+                       _ne_filter_unregister_flow ]
+...

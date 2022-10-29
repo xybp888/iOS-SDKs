@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           E040DE00-F3EE-36BF-85EC-D2E30AFD7013
+  - target:          arm64e-ios
+    value:           A67F236F-732C-3208-992E-4A98112E8987
+install-name:    '/usr/lib/libapp_launch_measurement.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _alm_app_did_activate, _alm_app_did_present, _alm_app_extended_launch_end, 
+                       _alm_app_measurement_ongoing, _alm_app_will_activate_with_details, 
+                       _alm_app_will_activate_with_signpost_id, _alm_app_will_launch, 
+                       _alm_app_will_launch_with_details, _alm_app_will_launch_with_signpost_id, 
+                       _alm_build_launch_info, _alm_build_version_string, _alm_clear_responsive_launch_bailed, 
+                       _alm_execute_when_main_queue_idle, _alm_execute_when_measurement_complete, 
+                       _alm_has_reached_launch_milestone, _alm_legacy_app_regular_or_extended_launch_end, 
+                       _alm_reset_launch_milestone, _alm_set_max_processed_block_count, 
+                       _alm_stop_tracking_responsive_launch ]
+...

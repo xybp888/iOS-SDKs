@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           70DF3225-C19D-306F-A6A3-BA0B67F57590
+  - target:          arm64e-ios
+    value:           45A6192C-05AE-3B20-9180-819197073897
+install-name:    '/usr/lib/libcmark-gfm-extensions.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _cmark_gfm_core_extensions_ensure_registered, _cmark_gfm_extensions_get_table_alignments, 
+                       _cmark_gfm_extensions_get_table_columns, _cmark_gfm_extensions_get_table_row_is_header, 
+                       _cmark_gfm_extensions_get_tasklist_item_checked, _cmark_gfm_extensions_set_table_alignments, 
+                       _cmark_gfm_extensions_set_table_columns, _cmark_gfm_extensions_set_table_row_is_header, 
+                       _cmark_gfm_extensions_set_tasklist_item_checked ]
+...

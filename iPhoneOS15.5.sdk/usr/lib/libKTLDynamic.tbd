@@ -1,0 +1,86 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           774F5CDC-BBFF-3959-95F0-FDD539F04D34
+  - target:          armv7s-ios
+    value:           AB40A532-1090-37E7-80CE-3D2D6F087DDB
+  - target:          arm64-ios
+    value:           06E464B4-A2E0-380C-A452-D73A1A4754B7
+  - target:          arm64e-ios
+    value:           7B966270-935B-3919-AB64-3BC7406D39D1
+install-name:    '/usr/lib/libKTLDynamic.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _KTLBspStartSysmon, _KTLBspStopSysmon, _KTLCpsMsCallCsReleaseCall, 
+                       _KTLCpsMsCallCsSetupVoiceCall, _KTLCpsMsNetAttach, _KTLCpsMsNetDetach, 
+                       __KTLARILogDelegate, __KTLDebugPrint, __KTLDebugPrintBinary, 
+                       __KTLErrorPrint, _kKTLCoreDumpVersion ]
+    weak-symbols:    [ __ZTIN3ktl12KTLARIPacketE, __ZTIN3ktl16KTLReceivePacketE, 
+                       __ZTIN3ktl9KTLPacketE, __ZTSN3ktl12KTLARIPacketE, __ZTSN3ktl16KTLReceivePacketE, 
+                       __ZTSN3ktl9KTLPacketE ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __Z13KTLGetKeywordPKc, __Z16KTLRFFilePushReqP10KTLOptionsjjPi, 
+                       __Z16getRestoreOSModev, __Z17KTLGetETBFilenamePKc, __Z17KTLGetKDMFilenamePKc, 
+                       __Z20KTLGetKDMProductNamev, __Z27KTLGetMaskFileExtensionName11KTLMaskType, 
+                       __ZN3Bsp16BspCommandDriver11GetIMEIInfoEPN6AriSdk27ARI_CsiMsCpsReadImeiReq_SDKEPPNS1_29ARI_CsiMsCpsReadImeiRspCb_SDKE, 
+                       __ZN3Bsp16BspCommandDriverC1EP10KTLOptions, __ZN3Bsp16BspCommandDriverC2EP10KTLOptions, 
+                       __ZN3ktl16KTLReceivePacket16setMessageBoundsEjj, __ZN3ktl16KTLReceivePacket24fetchARIMsgFromTransportEP10KTLOptions, 
+                       __ZN3ktl16KTLReceivePacket6appendEjPh, __ZN5eUICC18VinylCommandDriver10InstallVadEPN6AriSdk29ARI_IBIVinylInstallVadReq_SDKEPPNS1_31ARI_IBIVinylInstallVadRspCb_SDKE, 
+                       __ZN5eUICC18VinylCommandDriver12GetVinylTypeEPN6AriSdk33ARI_IBISimAccessGetSimDataReq_SDKEPPNS1_35ARI_IBISimAccessGetSimDataRspCb_SDKE, 
+                       __ZN5eUICC18VinylCommandDriver13DeleteProfileEPN6AriSdk23ARI_IBIVinylTapeReq_SDKEPPNS1_25ARI_IBIVinylTapeRspCb_SDKE, 
+                       __ZN5eUICC18VinylCommandDriver13FinalizePersoEPN6AriSdk30ARI_IBIVinylFinalizePsoReq_SDKEPPNS1_32ARI_IBIVinylFinalizePsoRspCb_SDKE, 
+                       __ZN5eUICC18VinylCommandDriver13ValidatePersoEPN6AriSdk30ARI_IBIVinylValidatePsoReq_SDKEPPNS1_32ARI_IBIVinylValidatePsoRspCb_SDKE, 
+                       __ZN5eUICC18VinylCommandDriver14SwitchCardModeEPN6AriSdk29ARI_IBIVinylSwitchModeReq_SDKEPPNS1_31ARI_IBIVinylSwitchModeRspCb_SDKE, 
+                       __ZN5eUICC18VinylCommandDriver6GetEidEPN6AriSdk25ARI_IBIVinylGetEidReq_SDKEPPNS1_27ARI_IBIVinylGetEidRspCb_SDKE, 
+                       __ZN5eUICC18VinylCommandDriver7GetDataEPN6AriSdk26ARI_IBIVinylGetDataReq_SDKEPPNS1_28ARI_IBIVinylGetDataRspCb_SDKE, 
+                       __ZN5eUICC18VinylCommandDriver8StreamFWEPN6AriSdk28ARI_IBIVinylInstallFwReq_SDKEPPNS1_30ARI_IBIVinylInstallFwRspCb_SDKE, 
+                       __ZN5eUICC18VinylCommandDriver9AuthPersoEPN6AriSdk26ARI_IBIVinylAuthPsoReq_SDKEPPNS1_28ARI_IBIVinylAuthPsoRspCb_SDKE, 
+                       __ZN5eUICC18VinylCommandDriver9InitPersoEPN6AriSdk26ARI_IBIVinylInitPsoReq_SDKEPPNS1_28ARI_IBIVinylInitPsoRspCb_SDKE, 
+                       __ZN5eUICC18VinylCommandDriverC1EP10KTLOptions, __ZN5eUICC18VinylCommandDriverC2EP10KTLOptions, 
+                       __ZN5eUICC18VinylCommandDriverD1Ev, __ZN5eUICC18VinylCommandDriverD2Ev ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _KTLATCommandNewCRLFSupport, _KTLAudioDisableHWLoopback, _KTLAudioEnableHWLoopback, 
+                       _KTLBmmProvideBootTimeInfo, _KTLBspDebugJtagMode, _KTLBspGetCalibrationStatus, 
+                       _KTLBspIceAtString, _KTLBspIceAtStringWrite, _KTLBspSetApWakeInterval, 
+                       _KTLBspSetNvItemsToState, _KTLBspShutdown, _KTLBspStateGet, 
+                       _KTLBspStateSet, _KTLBspSwTrap, _KTLCDProcessCoredumpEntry, 
+                       _KTLCDSendEndCoredumpCommand, _KTLCDSendStartCoredumpCommand, 
+                       _KTLCalculate8bitXor, _KTLCddGetDebugLog, _KTLCddGetParamDump, 
+                       _KTLCloseChannel, _KTLCpsGetSvn, _KTLCpsPriWrite, _KTLCpsSetSvn, 
+                       _KTLCreateEBLLengthPacket, _KTLDebugRegisterDelegate, _KTLDebugSetFlags, 
+                       _KTLDebugSetOutputFile, _KTLEBLCreateDoneACKPacket, _KTLEBLCreateStartACKPacket, 
+                       _KTLEBLParseDone, _KTLEBLParseReadfile, _KTLEBLParseReadfileExt, 
+                       _KTLEBLParseStartInfo, _KTLEBLReceivePacket, _KTLEBLSendPacket, 
+                       _KTLEBLSendReadfileData, _KTLEFICheckSIMReady, _KTLEFIReceiveData, 
+                       _KTLEFISendData, _KTLFinishProvision, _KTLFlashPluginGetResultString, 
+                       _KTLGetFirmwareVersion, _KTLGetIMEI, _KTLGetIMEIInfo, _KTLGetIMEISV, 
+                       _KTLGetIMEI_V2, _KTLGetMEID, _KTLGetMEIDInfo, _KTLGetManifestStatus, 
+                       _KTLGetPersonalizationInfo, _KTLGetSIMInfo, _KTLGetSIMSummary, 
+                       _KTLGetSimCardPresence, _KTLGetSimSlotInstance, _KTLGetSimSlotMapping, 
+                       _KTLGetSimStackMapping, _KTLInitOptions, _KTLIsBBSimStackMappingEnabled, 
+                       _KTLIsValidIMEIString, _KTLIsValidMEIDString, _KTLMonMemoryStatus, 
+                       _KTLNVMReadGroupBlock, _KTLNVMReadGroupEnumList, _KTLNVMReadGroupStart, 
+                       _KTLNVMReadUpdateHeader, _KTLNVMSendDeregister, _KTLNVMSendGetStatus, 
+                       _KTLNVMSendRegister, _KTLNVMSendSnapshot, _KTLNVMSendUpdateAck, 
+                       _KTLOpenChannel, _KTLPSIFormatEnhancedCommand, _KTLPSIFormatEnhancedCommandMrcData, 
+                       _KTLPSIReadMrcResponse, _KTLPSIReadResponse, _KTLPSISendEnhancedCommand, 
+                       _KTLPSISendMrcTrainingCommand, _KTLParseEBLDownloadResult, 
+                       _KTLParseEBLLengthAck, _KTLParsePSIICEHashResponse, _KTLParsePSIICEHashResponseSha384, 
+                       _KTLParsePSIICEPersonalizionInfo, _KTLParsePSIICEPersonalizionInfoSha384, 
+                       _KTLParsePSIICETestModeResponse, _KTLParsePSIRunning, _KTLPing, 
+                       _KTLRawReceiveData, _KTLRawReceiveDataExact, _KTLRawSendData, 
+                       _KTLSahGetCrashReport, _KTLSecGetChipId, _KTLSecGetFactoryDebugEnabled, 
+                       _KTLSecGetFusingState, _KTLSecGetPkHash, _KTLSecGetRandomNum, 
+                       _KTLSecGetSNUM, _KTLSendEBLImage, _KTLSendEBLImageNoXor, _KTLStartProvision, 
+                       _KTLSysGetInfo, _KTLTriggerDelayedResponse, _KTLUTACopyReceiveData, 
+                       _KTLUTACopyReceiveNextMessage, _KTLUTASendAndReleaseData, 
+                       _PSIModeDescription, __Z12GetBBIPCLogsP10KTLOptionsPKcU13block_pointerFvjjE, 
+                       __Z12GetBBIPCLogsP10KTLOptionsU13block_pointerFvjjE, __Z14ICE_FILER_readP10KTLOptionsP26TelephonyUtilTransport_tagjiPFviPvEU13block_pointerFvjjE, 
+                       __Z14ICE_FILER_readP10KTLOptionsPhjiPFviPvE, __Z15ICE_FILER_writeP10KTLOptionsP26TelephonyUtilTransport_tagjiPFviPvE, 
+                       __Z15ICE_FILER_writeP10KTLOptionsPvjiPFviS1_E, __Z17KTLGetAntennaPortP10KTLOptionsP14KTLAntennaPort, 
+                       __Z17KTLGetRxDiversityP10KTLOptions13KTLAntennaRATP14KTLRxDiversity, 
+                       __Z17KTLSetAntennaPortP10KTLOptions14KTLAntennaPort, __Z17KTLSetRxDiversityP10KTLOptions13KTLAntennaRAT14KTLRxDiversity, 
+                       _asString ]
+...

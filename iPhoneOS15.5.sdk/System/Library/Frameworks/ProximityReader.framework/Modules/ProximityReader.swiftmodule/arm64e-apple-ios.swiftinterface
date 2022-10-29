@@ -1,0 +1,271 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.35 clang-1316.0.20.9)
+// swift-module-flags: -target arm64e-apple-ios15.5 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name ProximityReader
+// swift-module-flags-ignorable: -user-module-version 105.58
+import AVFoundation
+import CryptoKit
+import Foundation
+import LocalAuthentication
+import OSLog
+@_exported import ProximityReader
+import Swift
+import UIKit
+import _Concurrency
+import os.log
+import os
+public struct PaymentCardReadResult : Swift.Identifiable {
+  public let id: Swift.String
+  public let paymentCardData: Swift.String?
+  public let generalCardData: Swift.String?
+  public typealias ID = Swift.String
+}
+public struct PaymentCardVerificationRequest {
+  public let currencyCode: Swift.String
+  public let verificationReason: ProximityReader.PaymentCardVerificationRequest.Reason
+  public enum Reason {
+    case lookUp
+    case saveCard
+    case openTab
+    case other
+    public static func == (a: ProximityReader.PaymentCardVerificationRequest.Reason, b: ProximityReader.PaymentCardVerificationRequest.Reason) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(currencyCode: Swift.String, for reason: ProximityReader.PaymentCardVerificationRequest.Reason = .other)
+}
+public enum PaymentCardReaderError : Swift.Error {
+  case notAllowed
+  case backgroundRequestNotAllowed
+  case unsupported
+  case osVersionNotSupported
+  case modelNotSupported
+  case passcodeDisabled
+  case networkError
+  case networkAuthenticationError
+  case serviceConnectionError
+  case notReady
+  case emptyReaderToken
+  case invalidReaderToken(Swift.String?)
+  case prepareFailed(Swift.String?)
+  case prepareExpired
+  case tokenExpired
+  case deviceBanned(Foundation.Date?)
+  case readerMemoryFull
+  case readerBusy
+  case accountNotLinked
+  case accountAlreadyLinked
+  case accountLinkingFailed
+  case accountLinkingRequiresiCloudSignIn
+  case accountLinkingCancelled
+  case merchantBlocked
+  case invalidMerchant
+  public var errorDescription: Swift.String {
+    get
+  }
+  public var errorName: Swift.String {
+    get
+  }
+}
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
+public class PaymentCardReader {
+  public static let isSupported: Swift.Bool
+  final public let id: Swift.String
+  public enum UpdateEvent {
+    case progress(Swift.Int)
+    case notReady
+  }
+  public struct Options {
+    public var vasMerchants: [ProximityReader.VASRequest.Merchant]
+    public init(vasMerchants: [ProximityReader.VASRequest.Merchant] = [])
+  }
+  public struct Token : Swift.RawRepresentable, Swift.Hashable {
+    public let rawValue: Swift.String
+    public init(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+  }
+  public init(options: ProximityReader.PaymentCardReader.Options = .init())
+  @objc deinit
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  public func linkAccount(using token: ProximityReader.PaymentCardReader.Token) async throws
+  #endif
+
+  
+  #if compiler(>=5.3) && $EffectfulProp
+  public var readerIdentifier: Swift.String {
+    get async throws
+  }
+  #endif
+
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  public func prepare(using token: ProximityReader.PaymentCardReader.Token, updateHandler: ((ProximityReader.PaymentCardReader.UpdateEvent) -> Swift.Void)?) async throws -> ProximityReader.PaymentCardReaderSession
+  #endif
+
+}
+public struct PaymentCardTransactionRequest {
+  public let amount: Foundation.Decimal
+  public let currencyCode: Swift.String
+  public let type: ProximityReader.PaymentCardTransactionRequest.TransactionType
+  public init(amount: Foundation.Decimal, currencyCode: Swift.String, for type: ProximityReader.PaymentCardTransactionRequest.TransactionType = .purchase)
+  public enum TransactionType {
+    case purchase
+    case refund
+    public static func == (a: ProximityReader.PaymentCardTransactionRequest.TransactionType, b: ProximityReader.PaymentCardTransactionRequest.TransactionType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+public class VASRequest {
+  public var vasMerchants: [ProximityReader.VASRequest.Merchant] {
+    get
+  }
+  public var localizedVASType: Swift.String {
+    get
+  }
+  public init(vasMerchants: [ProximityReader.VASRequest.Merchant] = [], localizedVASType: Swift.String = "")
+  public struct Merchant : Swift.Identifiable {
+    public let id: Swift.String
+    public let url: Foundation.URL?
+    public let shouldSendURLOnly: Swift.Bool
+    public var localizedName: Swift.String
+    public init(id: Swift.String, url: Foundation.URL? = nil, shouldSendURLOnly: Swift.Bool = false, localizedName: Swift.String? = nil)
+    public typealias ID = Swift.String
+  }
+  @objc deinit
+}
+public struct VASReadResult : Swift.Identifiable {
+  public let id: Swift.String
+  public let entries: [ProximityReader.VASReadResult.ReadEntry]
+  public init(id: Swift.String, entries: [ProximityReader.VASReadResult.ReadEntry])
+  public struct ReadEntry : Swift.Identifiable {
+    public let id: Swift.String
+    public let customerVASData: Foundation.Data?
+    public let status: ProximityReader.VASReadResult.ReadEntry.Status
+    public enum Status : Swift.Int {
+      case success
+      case vasDataNotFound
+      case vasDataNotActivated
+      case wrongP1P2
+      case wrongCommandLength
+      case userInterventionRequired
+      case incorrectData
+      case unsupportedApplicationVersion
+      public init?(rawValue: Swift.Int)
+      public typealias RawValue = Swift.Int
+      public var rawValue: Swift.Int {
+        get
+      }
+    }
+    public typealias ID = Swift.String
+  }
+  public typealias ID = Swift.String
+}
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
+public class PaymentCardReaderSession {
+  final public let id: Swift.String
+  public enum Event {
+    case readyForTap
+    case cardDetected
+    case removeCard
+    case completed
+    case retry
+    case readCancelled
+    case readNotCompleted
+    public var name: Swift.String {
+      get
+    }
+    public static func == (a: ProximityReader.PaymentCardReaderSession.Event, b: ProximityReader.PaymentCardReaderSession.Event) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum ReadError : Swift.Error {
+    case readNotAllowed
+    case readFromBackgroundError
+    case readerServiceConnectionError
+    case readerServiceError
+    case noReaderSession
+    case readerSessionExpired
+    case readerTokenExpired
+    case readerSessionNetworkError
+    case readerSessionAuthenticationError
+    case readerSessionBusy
+    case readCancelled
+    case invalidAmount
+    case invalidCurrencyCode
+    case nfcDisabled
+    case readNotAllowedDuringCall
+    case passcodeDisabled
+    case cardReadFailed
+    case vasReadFail
+    case paymentReadFailed
+    case paymentCardDeclined
+    case invalidVASMerchants(Swift.String?)
+    case invalidVASRequestParameters(Swift.String?)
+    public var errorDescription: Swift.String {
+      get
+    }
+    public var errorName: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  public func cancelRead() async throws -> Swift.Bool
+  #endif
+
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  public func readPaymentCard(_ request: ProximityReader.PaymentCardTransactionRequest, eventHandler: ((ProximityReader.PaymentCardReaderSession.Event) -> Swift.Void)? = nil) async throws -> ProximityReader.PaymentCardReadResult
+  #endif
+
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  public func readPaymentCard(_ request: ProximityReader.PaymentCardVerificationRequest, eventHandler: ((ProximityReader.PaymentCardReaderSession.Event) -> Swift.Void)? = nil) async throws -> ProximityReader.PaymentCardReadResult
+  #endif
+
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  public func readVAS(_ request: ProximityReader.VASRequest, eventHandler: ((ProximityReader.PaymentCardReaderSession.Event) -> Swift.Void)? = nil) async throws -> ProximityReader.VASReadResult
+  #endif
+
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  public func readPaymentCard(_ request: ProximityReader.PaymentCardTransactionRequest, vasRequest: ProximityReader.VASRequest, stopOnVASResult: Swift.Bool, eventHandler: ((ProximityReader.PaymentCardReaderSession.Event) -> Swift.Void)? = nil) async throws -> (ProximityReader.PaymentCardReadResult?, ProximityReader.VASReadResult?)
+  #endif
+
+}
+extension ProximityReader.PaymentCardVerificationRequest.Reason : Swift.Equatable {}
+extension ProximityReader.PaymentCardVerificationRequest.Reason : Swift.Hashable {}
+extension ProximityReader.PaymentCardTransactionRequest.TransactionType : Swift.Equatable {}
+extension ProximityReader.PaymentCardTransactionRequest.TransactionType : Swift.Hashable {}
+extension ProximityReader.VASReadResult.ReadEntry.Status : Swift.Equatable {}
+extension ProximityReader.VASReadResult.ReadEntry.Status : Swift.Hashable {}
+extension ProximityReader.VASReadResult.ReadEntry.Status : Swift.RawRepresentable {}
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
+extension ProximityReader.PaymentCardReaderSession.Event : Swift.Equatable {}
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
+extension ProximityReader.PaymentCardReaderSession.Event : Swift.Hashable {}

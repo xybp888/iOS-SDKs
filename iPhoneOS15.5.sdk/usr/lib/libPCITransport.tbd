@@ -1,0 +1,38 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           8666FA48-3DFA-33A3-BB31-2A2EDA6F1EC7
+  - target:          armv7s-ios
+    value:           78264755-7585-3BEE-B6B0-F01871AF16E4
+  - target:          arm64-ios
+    value:           3329CC62-B9BE-301C-A33E-80683CC7A101
+  - target:          arm64e-ios
+    value:           7D822446-1971-3982-A98A-3C659FD59D4F
+install-name:    '/usr/lib/libPCITransport.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ __ZN3pci5event8Listener6notifyE12abpErrorTypePvS3_, __ZN3pci5event8Listener9notifyPDPE17abpPDPMessageTypePv ]
+    weak-symbols:    [ __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__114default_deleteIN3pci5event8ListenerEEE, __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __ZN3pci5event8Listener6notifyENSt3__14pairINS_9transport6kernel7variantEjEEPvS8_, 
+                       __ZN3pci5event8Listener9notifyPDPENSt3__14pairINS_9transport6kernel7variantEjEEPv, 
+                       __ZN3pci9transport11kernelTrace6createEv, __ZN3pci9transport13kernelControl6createEv, 
+                       __ZN3pci9transport6kernel12probeVariantEv, __ZN3pci9transport6kernel13errorAsStringENSt3__14pairINS1_7variantEjEE, 
+                       __ZN3pci9transport6kernel15errorAsUnsignedENSt3__14pairINS1_7variantEjEE, 
+                       __ZN3pci9transport6kernel16isServicePresentEPKc, __ZN3pci9transport6kernel6createEv, 
+                       __ZNK3pci9transport6kernel21getTimesyncBufferSizeEj, __ZNK3pci9transport6kernel22marshalTimesyncResultsEPvj ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _TelephonyBasebandPCITransportCreate, _TelephonyBasebandPCITransportDeregisterTimeEvent, 
+                       _TelephonyBasebandPCITransportInitParameters, _TelephonyBasebandPCITransportMapRegion, 
+                       _TelephonyBasebandPCITransportRegisterTimeEvent, _TelephonyBasebandPCITransportTimesync, 
+                       _TelephonyBasebandPCITransportUnmapRegion, __ZN3pci5event8Listener4initEv, 
+                       __ZN3pci5event8Listener6createEN8dispatch5blockIU13block_pointerFvNS0_4typeEONSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEjEEEP11__CFRunLoop, 
+                       __ZN3pci5event8ListenerC1EN8dispatch5blockIU13block_pointerFvNS0_4typeEONSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEjEEEP11__CFRunLoop, 
+                       __ZN3pci5event8ListenerC2EN8dispatch5blockIU13block_pointerFvNS0_4typeEONSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEjEEEP11__CFRunLoop, 
+                       __ZN3pci5event8ListenerD1Ev, __ZN3pci5event8ListenerD2Ev ]
+...

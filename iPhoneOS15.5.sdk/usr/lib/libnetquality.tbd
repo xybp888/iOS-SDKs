@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           0C4385FD-B686-3B22-A2B2-BFAAB5409B57
+  - target:          arm64e-ios
+    value:           218292C1-D2CB-3080-8AAF-20011363EC4F
+install-name:    '/usr/lib/libnetquality.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _NetworkQualityDefaultURL, _NetworkQualityDefaultURLZeroRated, 
+                       _NetworkQualityErrorDomain, _NetworkQualityErrorExecutionsCanceledByUser, 
+                       _NetworkQualityErrorImplementationIssue, _NetworkQualityErrorIncorrectHTTPResponse, 
+                       _NetworkQualityErrorJSONParsing, _NetworkQualityErrorUplinkDownlinkSaturation, 
+                       _dump_testnames, _exec_dns_query_test, _exec_il_dns_query_random, 
+                       _executions, _get_average, _get_execution, _get_test, _get_test_pattern_iterator, 
+                       _get_testnames, _tests ]
+    objc-classes:    [ NetworkQualityConfiguration, NetworkQualityExecutions ]
+...
