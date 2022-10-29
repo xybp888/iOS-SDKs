@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DMCEnrollmentLibrary.framework/DMCEnrollmentLibrary
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DMCEnrollmentLibraryVersionNumber,
+                            _DMCEnrollmentLibraryVersionString,
+                            _kMCBridgeAssignedManagedAppleIDKey,
+                            _kMCBridgeEnrollmentModeKey,
+                            _kMCBridgeFriendlyNameKey,
+                            _kMCBridgeManagedAppleIDKey,
+                            _kMCBridgeOrganizationNameKey,
+                            _kMCBridgeProfileIdentifierKey,
+                            _kWebAuthCallbackURLScheme ]
+    objc-classes:         [ DMCAuthenticationHelper, DMCEnrollmentDirtyState,
+                            DMCEnrollmentFlowController,
+                            DMCEnrollmentFlowControllerBase,
+                            DMCMAIDAuthenticator, DMCServiceDiscoveryHelper,
+                            DMCUnenrollmentFlowController ]
+...

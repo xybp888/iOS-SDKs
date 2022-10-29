@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MLRuntime.framework/MLRuntime
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MLRuntimeVersionNumber, _MLRuntimeVersionString,
+                            _kMLRTrialTaskMinInterval, _kMRLogSubsystem ]
+    objc-classes:         [ MLRExtensionPrincipalClass,
+                            MLRExtensionRemoteContext,
+                            MLRExtensionService_Subsystem, MLRInternalTrialTask,
+                            MLRInternalTrialTaskResult, MLRTask,
+                            MLRTaskAttachments, MLRTaskParameters, MLRTaskResult,
+                            MLRTrialTask, MLRTrialTaskResult,
+                            MLRTrialTaskSchedulingPolicy ]
+...

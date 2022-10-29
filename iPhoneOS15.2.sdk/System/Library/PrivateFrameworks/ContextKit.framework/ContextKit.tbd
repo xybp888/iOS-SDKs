@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ContextKit.framework/ContextKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CKContextKitNotification_ConfigurationUpdate,
+                            _CKContextTagTypeAddress, _CKContextTagTypeDateTime,
+                            _CKContextTagTypePersonReal,
+                            _CKContextTagTypePhoneNumber, _CKContextTagTypeTitle,
+                            _CKContextTagTypeURL, _ContextKitErrorDomain,
+                            _ContextKitVersionNumber, _ContextKitVersionString,
+                            _UIApplicationDidBecomeActiveNotification,
+                            _UIApplicationDidEnterBackgroundNotification,
+                            _UIApplicationWillEnterForegroundNotification ]
+    objc-classes:         [ CKContextClient, CKContextCompleter,
+                            CKContextCountedItem, CKContextFingerprint,
+                            CKContextFingerprintMinHash, CKContextGlobals,
+                            CKContextRequest, CKContextResponse, CKContextResult,
+                            CKContextSemaphore, CKContextXPCClient ]
+...

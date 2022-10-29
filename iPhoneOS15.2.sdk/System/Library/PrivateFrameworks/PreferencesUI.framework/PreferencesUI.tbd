@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PSUILogForCategory,
+                            _PSUI_BundleForPreferencesUIFramework,
+                            _PSUI_LocalizedStringForPasscodeLock ]
+    objc-classes:         [ PSUIPasscodeLockController, PSUIPrefsListController,
+                            PSUIPrefsRootController ]
+    objc-ivars:           [ PSUIPasscodeLockController._policyDictatedMaxFailedAttempts,
+                            PSUIPasscodeLockController._voiceDialGroupSpecifier,
+                            PSUIPasscodeLockController._voiceDialSpecifier,
+                            PSUIPrefsRootController._rootListController ]
+...
