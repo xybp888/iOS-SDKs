@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           B4170E6D-C21D-3A01-94E2-9E7FCB293F8B
+  - target:          arm64e-ios
+    value:           C3C1FB36-014D-3DA0-AD3D-89B1F239EF0B
+install-name:    '/usr/lib/libUSBCfwflasher.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _USBCFlasherCreate, _USBCFlasherExecCmd, _USBCFlasherIsDone, 
+                       _USBCFlasherSupported ]
+    objc-classes:    [ IECSInterface, IOKitUtilities, flashUpdater, iecsUpdater, 
+                       swdUpdater ]
+    objc-ivars:      [ IECSInterface._cfPlugInInterface, IECSInterface._deviceInterface, 
+                       IECSInterface._userClientActive, flashUpdater.currentDevice, 
+                       flashUpdater.fConnection, flashUpdater.fGAIDEnabled, flashUpdater.fRetriesEnabled, 
+                       flashUpdater.fUpcomingFirmwareVersionStash, flashUpdater.locatedDeviceEnumerator, 
+                       flashUpdater.locatedDevices, iecsUpdater.device_id, iecsUpdater.fInterface, 
+                       iecsUpdater.gaidEnabled, iecsUpdater.retriesEnabled, iecsUpdater.upcomingFirmwareVersionStash, 
+                       iecsUpdater.updated, iecsUpdater.uuid, iecsUpdater.verbose, 
+                       swdUpdater.device, swdUpdater.entryID, swdUpdater.name, swdUpdater.retriesEnabled, 
+                       swdUpdater.updated, swdUpdater.verbose ]
+...

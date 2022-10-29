@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ConstantClasses.framework/ConstantClasses
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CFStringHashNSString, __NSConstantDictionaryKeyHash ]
+    objc-classes:         [ _NSConstantArray, _NSConstantArrayEnumerator,
+                            _NSConstantData, _NSConstantDate,
+                            _NSConstantDictionary,
+                            _NSConstantDictionaryEnumerator, _NSConstantNumber,
+                            _NSConstantNumberBool, _NSConstantNumberFloat,
+                            _NSConstantNumberInt ]
+    objc-ivars:           [ _NSConstantArrayEnumerator.capacity,
+                            _NSConstantArrayEnumerator.index,
+                            _NSConstantArrayEnumerator.objects,
+                            _NSConstantDictionaryEnumerator.capacity,
+                            _NSConstantDictionaryEnumerator.currentKey,
+                            _NSConstantDictionaryEnumerator.keyIndex ]
+...

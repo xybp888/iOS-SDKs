@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           D535029D-C516-3FB7-8184-D64783758CB6
+  - target:          arm64e-ios
+    value:           2A6B25EF-8231-3620-9FCD-036663E00B8D
+install-name:    '/usr/lib/libSoftwareUpdateSSO.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _MSUSSOIsAvailable, _SoftwareUpdateSSOlogDebug, _SoftwareUpdateSSOlogError, 
+                       _SoftwareUpdateSSOlogFault, _SoftwareUpdateSSOlogInfo, _copyDawToken, 
+                       _copyPersonalizationSSOToken, _kSUExtensibleSSOAppIdentifierKey, 
+                       _kSUExtensibleSSODAWTokenRequiredKey, _kSUExtensibleSSOEnvIdentifierKey, 
+                       _kSUExtensibleSSOInteractivityKey, _kSUExtensibleSSOOtherParametersKey, 
+                       _kSUExtensibleSSOUsernameKey, _kSoftwareUpdateSSOErrorDomain ]
+    objc-classes:    [ SoftwareUpdateExtensibleSSOAuthenticator, SoftwareUpdateSSO ]
+...

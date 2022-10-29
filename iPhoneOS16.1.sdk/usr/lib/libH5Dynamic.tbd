@@ -1,0 +1,38 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           FDAD6CCF-A1DF-34FA-89AF-D71F09040B52
+  - target:          armv7s-ios
+    value:           EF456AEC-05CB-3AC1-82BE-18F2177908F9
+  - target:          arm64-ios
+    value:           4F484F84-D09B-3AD3-87FC-820EB58B14A7
+  - target:          arm64e-ios
+    value:           BCE1D6BF-15FE-3932-8A11-D730D80D7657
+install-name:    '/usr/lib/libH5Dynamic.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _h5_system_protocol_init ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _h5_file_descriptor_transport_cancel_write, _h5_file_descriptor_transport_close, 
+                       _h5_file_descriptor_transport_good, _h5_file_descriptor_transport_init, 
+                       _h5_file_descriptor_transport_open, _h5_file_descriptor_transport_read_limit, 
+                       _h5_file_descriptor_transport_set_write_paused, _h5_file_descriptor_transport_write, 
+                       _h5_init_info_init, _h5_ios_system_log, _h5_ios_system_log_binary, 
+                       _h5_ios_system_log_configure_size, _h5_ios_system_log_get_os_log, 
+                       _h5_ios_system_log_init, _h5_ios_system_log_snapshot, _h5_storage_create, 
+                       _h5_storage_release, _h5_storage_retain, _h5_system_context_init, 
+                       _h5_system_context_uninit, _h5_system_current_system_time_ms, 
+                       _h5_system_encode_buffer_create, _h5_system_encode_buffer_free, 
+                       _h5_system_encode_buffer_push_tail, _h5_system_encode_release_data_buffer, 
+                       _h5_system_encode_retrieve_data_buffer, _h5_system_protocol_close, 
+                       _h5_system_protocol_configure_log_size, _h5_system_protocol_create, 
+                       _h5_system_protocol_enable, _h5_system_protocol_enter_low_power, 
+                       _h5_system_protocol_free, _h5_system_protocol_get_fatal_error_string, 
+                       _h5_system_protocol_get_max_payload, _h5_system_protocol_has_fatal_error_occurred, 
+                       _h5_system_protocol_open, _h5_system_protocol_open_info_init, 
+                       _h5_system_protocol_snapshot, _h5_system_protocol_write, _h5_system_timer_calculate_delta, 
+                       _h5_system_timer_create, _h5_system_timer_init, _h5_system_timer_start, 
+                       _h5_system_timer_stop, _h5_system_timer_uninit ]
+...

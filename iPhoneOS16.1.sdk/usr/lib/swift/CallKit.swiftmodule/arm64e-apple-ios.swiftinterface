@@ -1,0 +1,17 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64e-apple-ios16.1 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftCallKit -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name CallKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 5
+@_exported import CallKit
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+@available(iOS 10.0, macCatalyst 13.0, macOS 10.12, watchOS 9.0, *)
+@available(macOS, unavailable)
+extension CallKit.CXProviderConfiguration {
+  @nonobjc final public var supportedHandleTypes: Swift.Set<CallKit.CXHandle.HandleType> {
+    get
+    set
+  }
+}

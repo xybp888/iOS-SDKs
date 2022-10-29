@@ -1,0 +1,123 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64e-apple-ios16.1 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftObjectiveC -swift-version 5 -enforce-exclusivity=checked -O -library-level api -disable-objc-attr-requires-foundation-module -module-name ObjectiveC
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 6
+@_exported import ObjectiveC
+import Swift
+import _Concurrency
+import _StringProcessing
+@frozen public struct ObjCBool : Swift.ExpressibleByBooleanLiteral {
+  @usableFromInline
+  internal var _value: Swift.Bool
+  @_transparent public init(_ value: Swift.Bool) {
+    self._value = value
+  }
+  @_transparent public var boolValue: Swift.Bool {
+    @_transparent get {
+    return _value
+  }
+  }
+  @_transparent public init(booleanLiteral value: Swift.Bool) {
+    self.init(value)
+  }
+  public typealias BooleanLiteralType = Swift.Bool
+}
+extension ObjectiveC.ObjCBool : Swift.CustomReflectable {
+  public var customMirror: Swift.Mirror {
+    get
+  }
+}
+extension ObjectiveC.ObjCBool : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+@_transparent public func _convertBoolToObjCBool(_ x: Swift.Bool) -> ObjectiveC.ObjCBool {
+  return ObjCBool(x)
+}
+@_transparent public func _convertObjCBoolToBool(_ x: ObjectiveC.ObjCBool) -> Swift.Bool {
+  return x.boolValue
+}
+@frozen public struct Selector : Swift.ExpressibleByStringLiteral {
+  internal var ptr: Swift.OpaquePointer
+  public init(_ str: Swift.String)
+  public init(stringLiteral value: Swift.String)
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
+  public typealias StringLiteralType = Swift.String
+  public typealias UnicodeScalarLiteralType = Swift.String
+}
+extension ObjectiveC.Selector : Swift.Equatable, Swift.Hashable {
+  public static func == (a: ObjectiveC.Selector, b: ObjectiveC.Selector) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ObjectiveC.Selector : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension Swift.String {
+  public init(_sel: ObjectiveC.Selector)
+}
+extension ObjectiveC.Selector : Swift.CustomReflectable {
+  public var customMirror: Swift.Mirror {
+    get
+  }
+}
+@frozen public struct NSZone {
+  internal var pointer: Swift.OpaquePointer
+}
+@_silgen_name("_objc_autoreleasePoolPush")
+public func _autoreleasePoolPush() -> Swift.UnsafeMutableRawPointer
+@_silgen_name("_objc_autoreleasePoolPop")
+public func _autoreleasePoolPop(_: Swift.UnsafeMutableRawPointer)
+@inlinable @inline(__always) public func autoreleasepool<Result>(invoking body: () throws -> Result) rethrows -> Result {
+  let pool = _autoreleasePoolPush()
+  defer {
+    _autoreleasePoolPop(pool)
+  }
+  return try body()
+}
+@available(*, unavailable, message: "Use 'Bool' value 'true' instead")
+public var YES: ObjectiveC.ObjCBool {
+  get
+}
+@available(*, unavailable, message: "Use 'Bool' value 'false' instead")
+public var NO: ObjectiveC.ObjCBool {
+  get
+}
+extension ObjectiveC.NSObject : Swift.Equatable, Swift.Hashable {
+  public static func == (lhs: ObjectiveC.NSObject, rhs: ObjectiveC.NSObject) -> Swift.Bool
+  @nonobjc public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public func _rawHashValue(seed: Swift.Int) -> Swift.Int
+}
+extension ObjectiveC.NSObject : Swift.CVarArg {
+  public var _cVarArgEncoding: [Swift.Int] {
+    get
+  }
+}
+public enum ObjCEnumerationImage {
+  case dynamicClasses
+  case image(Swift.UnsafeRawPointer)
+  case machHeader(Swift.UnsafeRawPointer)
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, watchOS 9.0, *)
+public struct ObjCClassList : Swift.Sequence {
+  public typealias Element = Swift.AnyClass
+  @_hasMissingDesignatedInitializers public class Iterator : Swift.IteratorProtocol {
+    @objc deinit
+    public func next() -> Swift.AnyClass?
+    public typealias Element = Swift.AnyClass
+  }
+  public func makeIterator() -> ObjectiveC.ObjCClassList.Iterator
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, watchOS 9.0, *)
+public func objc_enumerateClasses(fromImage: ObjectiveC.ObjCEnumerationImage = .machHeader(#dsohandle), matchingNamePrefix: Swift.String? = nil, conformingTo: ObjectiveC.`Protocol`? = nil, subclassing: Swift.AnyClass? = nil) -> ObjectiveC.ObjCClassList
+extension ObjectiveC.ObjCBool : Swift.Sendable {}
+extension ObjectiveC.Selector : Swift.Sendable {}
+extension ObjectiveC.NSZone : Swift.Sendable {}

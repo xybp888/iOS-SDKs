@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           E498F648-CE93-351A-9793-CCBEFF72AEBC
+  - target:          armv7s-ios
+    value:           F064D403-BB68-364A-B960-BCA389FF460E
+  - target:          arm64-ios
+    value:           33FB27A6-F132-3E7A-A599-4B18E7B3D874
+  - target:          arm64e-ios
+    value:           879EAFDC-96CD-303C-954B-DBC3447FC8E2
+install-name:    '/usr/lib/libAXSpeechManager.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _AXAVVoiceQualityFromTTSFootprint, _AXLanguageCanonicalFormToGeneralLanguage, 
+                       _AXRemapLanguageCodeForSpeech, __AXSpeechReplaceEmoticons ]
+    objc-classes:    [ AXSpeechThread ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _AXAVSpeechSynthesisVoiceFromTTSSpeechVoice, _AXAlexVoiceIdentifier, 
+                       _AXNeuralSiriFemaleVoiceIdentifier, _AXNeuralSiriMaleVoiceIdentifier, 
+                       _AXSiriFemaleVoiceIdentifier, _AXSiriMaleVoiceIdentifier, 
+                       _AXSpeechLanguageCanonicalFormToGeneralLanguage, _AXSpeechTransformText, 
+                       _AXSpeechTransformTextWithLanguage, _AXSpeechTransformTextWithLanguageAndVoiceIdentifier, 
+                       _VOTBundle, _isSpeakableEmojiString ]
+    objc-classes:    [ AXEmojiUtilities, AXSpeechAction, AXSpeechManager ]
+...

@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           ACBF544F-7C0A-3D49-A3C8-056200985A06
+  - target:          arm64e-ios
+    value:           6A96CA69-B8C0-3F10-9AB9-36C536E70CAA
+install-name:    '/usr/lib/libpartition2_dynamic.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _LPAPFSContainerMediaTypeUUID, _LPAPFSPhysicalStoreDiagsMediaUUID, 
+                       _LPAPFSPhysicalStoreMediaUUID, _LPAPFSPhysicalStoreRecoveryMediaUUID, 
+                       _LPAPFSSnapshotPropertyKeyMarkedForRevert, _LPAPFSSnapshotPropertyKeyMarkedForRoot, 
+                       _LPAPFSSnapshotPropertyKeyName, _LPAPFSSnapshotPropertyKeyXID, 
+                       _LPAPFSVolumeMediaTypeUUID, _LPAPFSVolumeMountOptionNoBrowse, 
+                       _LPAPFSVolumeMountOptionNoFirmlinks, _LPAPFSVolumeMountOptionReadOnly, 
+                       _LPAPFSVolumeMountOptionSnapshotName, _LPAPFSVolumeRevertOptionSkipRemount, 
+                       _LPAPFSVolumeSnapshotMountPointKeyMountPoint, _LPAPFSVolumeSnapshotMountPointKeyName, 
+                       _LPAPFSVolumeUnmountOptionAll, _LPAPFSVolumeUnmountOptionDoNotLock, 
+                       _LPAPFSVolumeUnmountOptionForce, _LPAPFSVolumeUnmountOptionSnapshotName, 
+                       _LPLogSetOutput, _LPLogSetVerbosity, __LPLogPack, _iterateSafely ]
+    objc-classes:    [ LPAPFSContainer, LPAPFSPhysicalStore, LPAPFSVolume, LPMedia, 
+                       LPPartitionMedia ]
+...

@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           8B8A9CA0-F498-3E43-9D5F-783DD4597CBB
+  - target:          arm64e-ios
+    value:           63B7C00D-1B8F-36C4-8E11-587ABB534C75
+install-name:    '/usr/lib/AppleConvergedTransport.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _AppleConvergedTransportCreate, _AppleConvergedTransportFree, 
+                       _AppleConvergedTransportInitParameters, _AppleConvergedTransportIsValid, 
+                       _AppleConvergedTransportRead, _AppleConvergedTransportReadRegister, 
+                       _AppleConvergedTransportRegisterEventBlock, _AppleConvergedTransportRegisterEventBlockQ, 
+                       _AppleConvergedTransportRegisterTimeSyncEventBlock, _AppleConvergedTransportRegisterTimeSyncEventBlockQ, 
+                       _AppleConvergedTransportSendImage, _AppleConvergedTransportUnregisterEventBlock, 
+                       _AppleConvergedTransportUnregisterTimeSyncEventBlock, _AppleConvergedTransportWrite ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __ZN3pci5event8Listener4initEv, __ZN3pci5event8Listener6createEN10applesauce8dispatch2v15blockIFvNS0_4typeEONSt3__112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEEjEEEP11__CFRunLoop, 
+                       __ZN3pci5event8Listener6createEN10applesauce8dispatch2v15blockIFvNS0_4typeEONSt3__112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEEjEEEP16dispatch_queue_s, 
+                       __ZN3pci5event8Listener6notifyE14acipcErrorTypePvS3_, __ZN3pci5event8ListenerC1EN10applesauce8dispatch2v15blockIFvNS0_4typeEONSt3__112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEEjEEEP11__CFRunLoopP16dispatch_queue_s, 
+                       __ZN3pci5event8ListenerC2EN10applesauce8dispatch2v15blockIFvNS0_4typeEONSt3__112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEEjEEEP11__CFRunLoopP16dispatch_queue_s, 
+                       __ZN3pci5event8ListenerD1Ev, __ZN3pci5event8ListenerD2Ev ]
+...
