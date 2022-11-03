@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           FB6AB608-CD9F-3A6B-B14C-1079E398812F
+  - target:          armv7s-ios
+    value:           11013E6D-9722-3B81-8363-66F264EEA048
+  - target:          arm64-ios
+    value:           FA303D01-025D-3DF9-B415-55F70FF33683
+  - target:          arm64e-ios
+    value:           51599419-77A8-31EB-8B75-5D22E95BC1C7
+install-name:    '/usr/lib/libipconfig.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _ipconfigVersionNumber, _ipconfigVersionString, _my_CFStringAppendBytesAsHex, 
+                       _my_CFStringCreateWithIPAddress, _my_CFStringCreateWithIPv6Address, 
+                       _my_CFStringToCString ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _IPConfigurationForgetNetwork, _IPConfigurationServiceCopyInformation, 
+                       _IPConfigurationServiceCreate, _IPConfigurationServiceGetNotificationKey, 
+                       _IPConfigurationServiceGetTypeID, _IPConfigurationServiceRefreshConfiguration, 
+                       _kIPConfigurationServiceOptionAPNName, _kIPConfigurationServiceOptionEnableCLAT46, 
+                       _kIPConfigurationServiceOptionEnableDAD, _kIPConfigurationServiceOptionIPv4Entity, 
+                       _kIPConfigurationServiceOptionIPv6Entity, _kIPConfigurationServiceOptionIPv6LinkLocalAddress, 
+                       _kIPConfigurationServiceOptionMTU, _kIPConfigurationServiceOptionPerformNUD ]
+...

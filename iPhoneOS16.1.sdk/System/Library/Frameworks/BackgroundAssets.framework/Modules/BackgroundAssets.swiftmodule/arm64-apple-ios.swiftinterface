@@ -1,0 +1,47 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios16.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name BackgroundAssets
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 95.42.1
+@_exported import BackgroundAssets
+import ExtensionFoundation
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+@available(iOS 16.1, macOS 13.0, macCatalyst 16.0, *)
+public protocol BADownloaderExtension : ExtensionFoundation.AppExtension {
+  func downloads(for request: BackgroundAssets.BAContentRequest, manifestURL: Foundation.URL, extensionInfo: BackgroundAssets.BAAppExtensionInfo) -> Swift.Set<BackgroundAssets.BADownload>
+  #if compiler(>=5.3) && $AsyncAwait
+  func backgroundDownload(_ download: BackgroundAssets.BADownload, didReceive challenge: Foundation.URLAuthenticationChallenge) async -> (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?)
+  #endif
+  func backgroundDownload(_ failedDownload: BackgroundAssets.BADownload, failedWithError error: Swift.Error)
+  func backgroundDownload(_ finishedDownload: BackgroundAssets.BADownload, finishedWithFileURL fileURL: Foundation.URL)
+  func extensionWillTerminate()
+}
+@available(iOS 16.1, macOS 13.0, macCatalyst 16.0, *)
+public protocol BADownloaderExtensionConfiguration : ExtensionFoundation.AppExtensionConfiguration {
+}
+@available(iOS 16.1, macOS 13.0, macCatalyst 16.0, *)
+extension BackgroundAssets.BADownloaderExtension {
+  public func downloads(for request: BackgroundAssets.BAContentRequest, manifestURL: Foundation.URL, extensionInfo: BackgroundAssets.BAAppExtensionInfo) -> Swift.Set<BackgroundAssets.BADownload>
+  #if compiler(>=5.3) && $AsyncAwait
+  public func backgroundDownload(_ download: BackgroundAssets.BADownload, didReceive challenge: Foundation.URLAuthenticationChallenge) async -> (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?)
+  #endif
+  public func backgroundDownload(_ failedDownload: BackgroundAssets.BADownload, failedWithError error: Swift.Error)
+  public func backgroundDownload(_ finishedDownload: BackgroundAssets.BADownload, finishedWithFileURL fileURL: Foundation.URL)
+  public func extensionWillTerminate()
+}
+@available(iOS 16.1, macOS 13.0, macCatalyst 16.0, *)
+extension BackgroundAssets.BADownloaderExtension {
+  public var configuration: some BackgroundAssets.BADownloaderExtensionConfiguration {
+    get
+  }
+}
+extension Foundation.URLAuthenticationChallenge : @unchecked Swift.Sendable {
+}
+@available(iOS 16.1, macOS 13.0, macCatalyst 16.0, *)
+extension BackgroundAssets.BAAppExtensionInfo {
+  public var restrictedDownloadSizeRemaining: Swift.Int? {
+    get
+  }
+}

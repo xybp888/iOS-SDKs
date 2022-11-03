@@ -1,0 +1,31 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios16.1 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftMapKit -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name MapKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 3
+import Foundation
+@_exported import MapKit
+import Swift
+import _Concurrency
+import _StringProcessing
+@available(iOS 14.0, tvOS 14.0, macOS 11.0, *)
+extension MapKit.MKGradientPolylineRenderer {
+  public var locations: [CoreFoundation.CGFloat] {
+    get
+  }
+  public func setColors(_ colors: [UIKit.UIColor], locations: [CoreFoundation.CGFloat])
+}
+extension MapKit.MKCoordinateSpan : Swift._ObjectiveCBridgeable {
+  public func _bridgeToObjectiveC() -> Foundation.NSValue
+  public static func _forceBridgeFromObjectiveC(_ source: Foundation.NSValue, result: inout MapKit.MKCoordinateSpan?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: Foundation.NSValue, result: inout MapKit.MKCoordinateSpan?) -> Swift.Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: Foundation.NSValue?) -> MapKit.MKCoordinateSpan
+  public typealias _ObjectiveCType = Foundation.NSValue
+}
+@available(iOS 14.0, tvOS 14.0, macOS 11.0, *)
+extension MapKit.MKMultiPoint {
+  public func locations(at indexes: Foundation.IndexSet) -> [CoreFoundation.CGFloat]
+}
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, *)
+extension MapKit.MKLocalSearch.Request {
+  public typealias ResultType = MapKit.MKLocalSearch.ResultType
+}

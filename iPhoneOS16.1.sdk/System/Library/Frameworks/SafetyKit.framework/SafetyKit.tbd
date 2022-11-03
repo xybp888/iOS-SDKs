@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           507E52E4-B542-3224-AA26-CCF0C463261C
+  - target:          arm64e-ios
+    value:           8B5855E6-EC12-3E54-A724-0EA52D5F02CB
+install-name:    '/System/Library/Frameworks/SafetyKit.framework/SafetyKit'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _SAClientInterface, _SACrashDetectionEntitlement, _SACrashDetectionEventTimeoutDefault, 
+                       _SAEmergencyResponseVoiceCallTimeoutDefault, _SAErrorDomain, 
+                       _SALoggingSubsystem, _SAMachServiceName, _SAServerInterface, 
+                       _sa_default_log ]
+    objc-classes:    [ SAAuthorization, SAAuthorizationInFlight, SABundleManager, 
+                       SABundleManagerApp, SAClient, SACrashDetectionEvent, SACrashDetectionManager, 
+                       SACriticalNotification, SAEmergencyResponseManager, SAEntitlement, 
+                       SAError, SAGestalt, SALocationManager, SAPhoneApplicationLauncher, 
+                       SAServer, SATelephonyManager, SAWatchApplicationLauncher ]
+...

@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           C3BAE804-87D6-3168-8EAA-87298CEB5FCA
+  - target:          armv7s-ios
+    value:           59563F15-B546-332F-A672-B8DB90C1A2B4
+  - target:          arm64-ios
+    value:           001FF6A6-F0EE-3F83-BD73-216F1DC064FA
+  - target:          arm64e-ios
+    value:           24F640E7-9E5E-3220-9E1A-4AA8D5D69855
+install-name:    '/usr/lib/libETLDLOADDynamic.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _ETLDLOADCommandCreateMemoryDebugReadRequestPrivate ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _ETLDLOADCommandCopyDebugDataField, _ETLDLOADCommandCreateChipIDRequest, 
+                       _ETLDLOADCommandCreateGoRequest, _ETLDLOADCommandCreateMemoryDebugFastReadRequest, 
+                       _ETLDLOADCommandCreateMemoryDebugInfoRequest, _ETLDLOADCommandCreateMemoryDebugReadRequest, 
+                       _ETLDLOADCommandCreateParametersRequest, _ETLDLOADCommandCreatePkHashRequest, 
+                       _ETLDLOADCommandCreateSerialNumberRequest, _ETLDLOADCommandCreateVersionRequest, 
+                       _ETLDLOADCommandCreateWriteRequest, _ETLDLOADCommandDumpCommand, 
+                       _ETLDLOADCommandParseACKNAKResponse, _ETLDLOADCommandParseChipIDResponse, 
+                       _ETLDLOADCommandParseMemoryDebugInfoResponse, _ETLDLOADCommandParseMemoryDebugReadResponse, 
+                       _ETLDLOADCommandParseParametersResponse, _ETLDLOADCommandParsePkHashResponse, 
+                       _ETLDLOADCommandParseSerialNumberResponse, _ETLDLOADCommandParseVersionResponse, 
+                       _ETLDLOADCommandPowerCreatePowerDownRequest, _ETLDLOADCommandPowerCreateResetRequest, 
+                       _ETLDLOADCommandReadMemoryDebugFastReadResponse, _ETLDLOADCommandReceiveSmallWithFlags, 
+                       _ETLDLOADCommandReceiveWithBufferAndFlags, _ETLDLOADCommandSend, 
+                       _ETLDLOADCreateCommandForSend, _ETLDLOADDetectProtocolVersion, 
+                       _ETLDLOADExpectCommandType, _ETLDLOADGetNAKReasonAsString, 
+                       _ETLDLOADGetProtocolVersion ]
+...
