@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           0D2713DC-C846-331B-82EF-DD34A26094D8
+  - target:          arm64e-ios
+    value:           3C89E0B8-863F-3751-A3AC-07D77483EB59
+install-name:    '/usr/lib/libIOACIPCICEBB.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __ZN17IOACIPCICEBBClass13timesyncAsyncEjjPvjPFvS0_iS0_ES0_, 
+                       __ZN17IOACIPCICEBBClass17registerTimeEventEjPFvPviPS0_jES0_, 
+                       __ZN17IOACIPCICEBBClass19deregisterTimeEventEjPFvPviES0_ ]
+...

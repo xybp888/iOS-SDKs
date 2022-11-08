@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           6740A2AA-F41B-3C3A-8065-CF127B500502
+  - target:          arm64e-ios
+    value:           A29866C5-E64A-3AA8-BA69-5BBB76B7F509
+install-name:    '/usr/lib/system/libsystem_featureflags.dylib'
+current-version: 28.0.1
+parent-umbrella:
+  - targets:         [ arm64-ios, arm64e-ios ]
+    umbrella:        System
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ __os_feature_enabled_impl, __os_feature_enabled_simple_impl ]
+...

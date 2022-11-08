@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BiomeFoundation.framework/BiomeFoundation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BMAbsoluteTimeFromCFAbsoluteTime,
+                            _BMAbsoluteTimeFromContinuousTime,
+                            _BMAbsoluteTimeGetCurrent, _BMAbsoluteTimeGetOffsets,
+                            _BMAbsoluteTimeInitWithSyntheticStart,
+                            _BMAbsoluteTimeSetSyntheticStartFromRemoteTime,
+                            _BMAbsoluteTimeToCFAbsoluteTime,
+                            _BMArbitraryTimestampToCFAbsoluteTime,
+                            _BiomeFoundationVersionNumber,
+                            _BiomeFoundationVersionString, ___biome_log_create,
+                            ___biome_log_create_for_category ]
+    objc-classes:         [ BMCoreAnalyticsEvents ]
+...

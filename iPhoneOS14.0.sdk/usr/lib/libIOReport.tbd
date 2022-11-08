@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           47776E89-4E7C-3D3C-B063-ED9653F68742
+  - target:          arm64e-ios
+    value:           6149FE3E-A1BB-31A1-88A5-CB4CC6F0FD78
+install-name:    '/usr/lib/libIOReport.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _IOReportAddChannelDescription, _IOReportArrayGetValueAtIndex, 
+                       _IOReportChannelCopyDescription, _IOReportChannelGetCategories, 
+                       _IOReportChannelGetChannelID, _IOReportChannelGetChannelName, 
+                       _IOReportChannelGetDriverID, _IOReportChannelGetDriverName, 
+                       _IOReportChannelGetFormat, _IOReportChannelGetGroup, _IOReportChannelGetSubGroup, 
+                       _IOReportChannelGetUnit, _IOReportChannelGetUnitLabel, _IOReportCopyAllChannels, 
+                       _IOReportCopyChannelsForDriver, _IOReportCopyChannelsForDrivers, 
+                       _IOReportCopyChannelsInCategories, _IOReportCopyChannelsInGroup, 
+                       _IOReportCopyChannelsOfFormat, _IOReportCopyChannelsWithID, 
+                       _IOReportCopyChannelsWithUnit, _IOReportCopyCurrentProcessName, 
+                       _IOReportCopyDriverName, _IOReportCreateAggregate, _IOReportCreateSamples, 
+                       _IOReportCreateSamplesDelta, _IOReportCreateSamplesProcessed, 
+                       _IOReportCreateSamplesRaw, _IOReportCreateSubscription, _IOReportCreateUnitInfo, 
+                       _IOReportGetChannelCount, _IOReportHistogramGetBucketBounds, 
+                       _IOReportHistogramGetBucketCount, _IOReportHistogramGetBucketHits, 
+                       _IOReportHistogramGetBucketMaxValue, _IOReportHistogramGetBucketMinValue, 
+                       _IOReportHistogramGetBucketSum, _IOReportHistogramGetMaxValue, 
+                       _IOReportHistogramGetMinValue, _IOReportIterate, _IOReportMergeChannels, 
+                       _IOReportPrune, _IOReportSampleCopyDescription, _IOReportSampleCreateDelta, 
+                       _IOReportScaleValue, _IOReportSelectChannelsInGroup, _IOReportSimpleGetIntegerValue, 
+                       _IOReportStateGetCount, _IOReportStateGetCurrent, _IOReportStateGetDutyCycle, 
+                       _IOReportStateGetIDForIndex, _IOReportStateGetInTransitions, 
+                       _IOReportStateGetIndexForID, _IOReportStateGetNameForIndex, 
+                       _IOReportStateGetResidency, _IOReportWriteStringUTF8 ]
+...

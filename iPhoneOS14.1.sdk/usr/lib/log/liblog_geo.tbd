@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           A606FE49-7F2A-3B4A-8B2C-FB696DF7CB67
+  - target:          arm64e-ios
+    value:           28B0F1E4-1965-36A7-938D-7493D8608BCD
+install-name:    '/usr/lib/log/liblog_geo.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _OSLogCopyFormattedString, _OSStateCreateStringWithData ]
+...

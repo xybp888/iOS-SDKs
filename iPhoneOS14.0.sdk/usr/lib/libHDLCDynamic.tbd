@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           FA3D7DC2-6544-34C1-BB72-9141EDA26DCA
+  - target:          armv7s-ios
+    value:           0F8C5E36-56C8-3ED8-B57B-6EBD8742F674
+  - target:          arm64-ios
+    value:           FDF37E1E-B4B1-35C3-A65D-B1CAF6133822
+  - target:          arm64e-ios
+    value:           72B4661F-9082-3AB7-8E40-80129B5892B8
+install-name:    '/usr/lib/libHDLCDynamic.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _CRCCCITT, _FCSTable, _HDLCFrameCloneDownlink, _HDLCFrameCreateDownlink, 
+                       _HDLCFrameCreateDownlinkFake, _HDLCFrameCreateUplink, _HDLCFrameEncode, 
+                       _HDLCFrameEncodeAndCache, _HDLCFrameFree, _HDLCFrameGetFreeSpace, 
+                       _HDLCFrameGetMaxEncodedLength, _HDLCFrameInject, _HDLCFrameInjectUnsignedChar, 
+                       _HDLCFrameInjectUnsignedInt, _HDLCFrameInjectUnsignedShort ]
+...

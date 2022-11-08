@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           54FA43EA-E77F-3B89-8C04-844A6C8E2709
+  - target:          arm64e-ios
+    value:           B851F4BF-F052-3DA3-8576-9F5AA29A5873
+install-name:    '/usr/lib/updaters/libSavageUpdater_iOS.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _SavageUpdaterCreate, _SavageUpdaterExecCmd, _SavageUpdaterExecCommand, 
+                       _SavageUpdaterIsDone, _SavageUpdaterSupported ]
+...

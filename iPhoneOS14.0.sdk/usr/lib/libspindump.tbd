@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           B0751083-319E-3619-B4E4-DC8C686DF3E4
+  - target:          armv7s-ios
+    value:           34787988-99C3-3A1B-867C-2E0F077A0B1C
+  - target:          arm64-ios
+    value:           1AA89DA5-1B26-3F19-B4DD-74F49B7A82B9
+  - target:          arm64e-ios
+    value:           C64F370E-F1EE-3716-940A-7A8196EA0704
+install-name:    '/usr/lib/libspindump.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _SPCachePort, _SPExpectedHIDResponseDelayUntil, _SPGenerateSpindump, 
+                       _SPHIDResponseDelayThreshold, _SPReportCPUUsageResource, _SPReportCPUWakeupsResource, 
+                       _SPReportDiskWritesResource, _SPReportHIDResponseDelay ]
+...

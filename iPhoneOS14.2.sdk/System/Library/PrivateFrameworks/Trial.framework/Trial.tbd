@@ -1,0 +1,66 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Trial.framework/Trial
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _TRILogCategory_ClientFramework,
+                            _TRINamespaceUpdateNotificationName,
+                            _TRIPersistedNetworkBehavior_DiscretionaryBehavior_EnumDescriptor,
+                            _TRIPersistedNetworkBehavior_DiscretionaryBehavior_IsValidValue,
+                            _TRISystemFactor_AllowFetchTasks,
+                            _TRISystemFactor_AllowTrialTelemetry,
+                            _TRISystemFactor_CloudKitAssetDownloadTimeoutSeconds,
+                            _TRISystemFactor_CloudKitCacheControlMaxAge,
+                            _TRISystemFactor_CloudKitUseNativeAPI,
+                            _TRISystemFactor_FetchExperimentsJitter,
+                            _TRISystemFactor_FetchRollbacksInterval,
+                            _TRISystemFactor_FetchRollbacksJitter,
+                            _TRISystemFactor_LogUserKeyboardEnabledInputMode,
+                            _TRISystemFactor_LogUserSettingsLanguageCode,
+                            _TRISystemFactor_LogUserSettingsRegionCode,
+                            _TRISystemFactor_TaskQueueScheduledTaskDefaultGracePeriod,
+                            _TRISystemFactor_TelemetryLevel,
+                            _TRISystemNamespaceName, _TrialVersionNumber,
+                            _TrialVersionString,
+                            _kRotationDateSecondsSinceReferenceDate ]
+    objc-classes:         [ TRIAppContainer, TRIClient, TRIClientGuardedData,
+                            TRIDefaultFactorProvider, TRIDevLogger,
+                            TRIDownloadNotification, TRIDownloadOptions,
+                            TRIEntitlement, TRIFactorDownloadValidator,
+                            TRILevelChecked, TRILogTreatmentReader, TRILogger,
+                            TRINaiveFactorLevelCache, TRINamespaceDescriptor,
+                            TRINamespaceFactorProvider,
+                            TRINamespaceFactorProviderChain, TRINamespaceStatus,
+                            TRINamespaceStatusProvider,
+                            TRINamespaceUpdateNotification,
+                            TRINotificationCallback, TRINotificationState,
+                            TRIPersistedNamespaceStatus,
+                            TRIPersistedNetworkBehavior, TRIProcessInfo,
+                            TRIPruningFactorLevelCache,
+                            TRIPruningFactorLevelCacheGuardedData,
+                            TRIStandardPaths, TRIStopwatch, TRISubjectProvider,
+                            TRISubjectProviderGuardedData,
+                            TRISubjectRotationNotification,
+                            TRISystemConfiguration, TRISystemInfo,
+                            TRISystemInfoGuardedData, TRITrackingId,
+                            TRITreatmentInfo, TRITripersistedNamespaceStatusRoot,
+                            TRITripersistedNetworkBehaviorRoot, TRIVersion,
+                            TRIXPCNamespaceManagementClient, TRIXPCUtils ]
+    objc-ivars:           [ TRIClientGuardedData.namespaceCallbacks,
+                            TRIClientGuardedData.namespaceUpdateHandlerTokens,
+                            TRIClientGuardedData.trackingId,
+                            TRIClientGuardedData.updatedNamespaceNames,
+                            TRIPruningFactorLevelCacheGuardedData.loadFactorLevels,
+                            TRIPruningFactorLevelCacheGuardedData.prefetchedLevels,
+                            TRIPruningFactorLevelCacheGuardedData.requiredLevels,
+                            TRISubjectProviderGuardedData.nextRotationDate,
+                            TRISubjectProviderGuardedData.subject,
+                            TRISubjectProviderGuardedData.tempDeviceIds,
+                            TRISystemInfoGuardedData.isStale,
+                            TRISystemInfoGuardedData.systemInfo ]
+...

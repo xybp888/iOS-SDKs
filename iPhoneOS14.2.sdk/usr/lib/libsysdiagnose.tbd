@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           2914A398-CCB7-38D7-BDB7-69E29514925E
+  - target:          armv7s-ios
+    value:           D57D3431-174C-36D6-8145-BB8831131F5F
+  - target:          arm64-ios
+    value:           AAE8F290-CC67-3980-918C-6A5A59872897
+  - target:          arm64e-ios
+    value:           6BF12453-2BE3-3B6C-A62E-95ABE9BABB7F
+install-name:    '/usr/lib/libsysdiagnose.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _metricCompression, _metricGetLogCopying, _metricGetLogGeneration, 
+                       _metricGetOSLogArchive, _metricGetTimeSensitive, _metricLogCopying, 
+                       _metricLogGeneration, _metricOSLogarchiveGeneration, _metricStartToTar, 
+                       _metricTimeSensitive, _metricTotalSize, _sdProgressPercent, 
+                       _sdProgressPhase ]
+    objc-classes:    [ Libsysdiagnose ]
+...

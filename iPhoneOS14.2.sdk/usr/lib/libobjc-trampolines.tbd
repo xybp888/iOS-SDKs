@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           B8C2DB0F-13BB-343D-93D8-E8C6F6CEE07E
+  - target:          arm64e-ios
+    value:           5B114F71-D131-3A50-BD45-B8B8D1C45874
+install-name:    '/usr/lib/libobjc-trampolines.dylib'
+current-version: 228
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ __objc_blockTrampolineImpl, __objc_blockTrampolineLast, __objc_blockTrampolineStart ]
+...

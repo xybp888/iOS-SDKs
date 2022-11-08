@@ -1,0 +1,31 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           8EE0E7E7-B6A8-3057-804F-0439E6149C06
+  - target:          armv7s-ios
+    value:           75307618-3686-320A-9372-FB11B5BE6393
+  - target:          arm64-ios
+    value:           F0D1332D-2D1F-34BA-BC4B-853C878B5076
+  - target:          arm64e-ios
+    value:           3D17F68A-E507-316C-9DD7-EA43FAF628BA
+install-name:    '/usr/lib/libETLSAHDynamic.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _ETLSAHCommandCreateDone, _ETLSAHCommandCreateHelloResponse, 
+                       _ETLSAHCommandCreateHelloResponseExt, _ETLSAHCommandCreateMaverickEraseResponse, 
+                       _ETLSAHCommandCreateMaverickHashResponse, _ETLSAHCommandCreateMaverickRootManifestResponse, 
+                       _ETLSAHCommandCreateMemoryRead, _ETLSAHCommandCreateReset, 
+                       _ETLSAHCommandCreateSwitchMode, _ETLSAHCommandExecute, _ETLSAHCommandExecuteCreate, 
+                       _ETLSAHCommandExecuteDataCreate, _ETLSAHCommandExecuteParseResponse, 
+                       _ETLSAHCommandMaverickParseEnd, _ETLSAHCommandParseChipID, 
+                       _ETLSAHCommandParseCommandReady, _ETLSAHCommandParseDoneResponse, 
+                       _ETLSAHCommandParseEndOfImageTransfer, _ETLSAHCommandParseHello, 
+                       _ETLSAHCommandParseMaverickEraseQuery, _ETLSAHCommandParseMaverickRootManifestQuery, 
+                       _ETLSAHCommandParseMaverickSendHashesQuery, _ETLSAHCommandParseMemoryDebug, 
+                       _ETLSAHCommandParseReadData, _ETLSAHCommandParseResetResponse, 
+                       _ETLSAHCommandReceive, _ETLSAHCommandSend, _ETLSAHExecutionCommandIDAsString, 
+                       _ETLSAHGetDebugRecordCount, _ETLSAHGetDebugTable, _ETLSAHGetRecordEx, 
+                       _ETLSAHModeAsString, _ETLSAHReturnAsString, _ETLSAHSendReadData ]
+...

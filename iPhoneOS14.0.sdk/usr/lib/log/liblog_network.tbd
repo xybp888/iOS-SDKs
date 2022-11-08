@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           078F05A7-2278-375B-A271-E49F5C0CB63B
+  - target:          armv7s-ios
+    value:           4D984C4B-CFE8-32C7-A2F7-31BE898F28EB
+  - target:          arm64-ios
+    value:           2697EFA6-4179-35C2-A9B1-AEB27A969C56
+  - target:          arm64e-ios
+    value:           7C0472C7-691B-37D8-8B95-4D04B4130C48
+install-name:    '/usr/lib/log/liblog_network.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ ___networkVersionNumber, ___networkVersionString ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _OSLogCopyFormattedString ]
+...

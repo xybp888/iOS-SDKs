@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           DAD4FBE1-9DFE-3D79-B556-F934AD075613
+  - target:          armv7s-ios
+    value:           7B21880C-1E3A-3FAB-AB96-CF6ABAA45573
+  - target:          arm64-ios
+    value:           57018591-B8C2-3349-9F96-E4AEAE99AD01
+  - target:          arm64e-ios
+    value:           622532BB-C83B-32D2-A12B-35F773F07BE2
+install-name:    '/usr/lib/libPPM.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _clientNumberAlrt, _clientNumberBsbd, _clientNumberPlat, _clientNumberStck, 
+                       _clientNumberWifi, _kPPMDriver ]
+    objc-classes:    [ IOKitUserClientInterface ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _gNotifyPort ]
+    objc-classes:    [ PPMClient, PPMClientUserClientInterface ]
+...

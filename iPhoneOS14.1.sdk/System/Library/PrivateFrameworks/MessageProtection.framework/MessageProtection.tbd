@@ -1,0 +1,41 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MessageProtection.framework/MessageProtection
+current-version:       224.0.3
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NGMEncryptedAttributeKTGossipData, _SecExposeStream,
+                            _SecMPComputePaddingForStorage,
+                            _SecMPCopyProtectedMsgHash,
+                            _SecMPFIAppendSerialization, _SecMPFIAppendSignature,
+                            _SecMPFICopyProtClass, _SecMPFIPurgeAllFromKeychain,
+                            _SecMPFIPurgeFromKeychain, _SecMPFIUpdateProtClass,
+                            _SecMPFullIdentityCreate,
+                            _SecMPFullIdentityCreateFromData,
+                            _SecMPFullIdentityCreateFromRefs,
+                            _SecMPFullIdentityCreateOTRSessionWith,
+                            _SecMPFullIdentityCreateOTRSessionWithFlags,
+                            _SecMPFullIdentityCreateWithAccess,
+                            _SecMPFullIdentityCreateWithAccessProtClass,
+                            _SecMPFullIdentityCreateWithProtClass,
+                            _SecMPPIAppendSerialization,
+                            _SecMPPublicIdentityCopyFromPrivate,
+                            _SecMPPublicIdentityCreateFromData,
+                            _SecMPSignAndProtectMessage,
+                            _SecMPVerifyAndExposeMessage,
+                            _SecMWCopyUnwrappedSessionSeed,
+                            _SecMWCopyWrappedSessionSeedForIdentities,
+                            _SecMWCreateEphemeralDeviceIdentity,
+                            _SecMWCreateSessionSalt, _SecMWCreateSessionSeed,
+                            _SecProtectStream ]
+    objc-classes:         [ NGMFullDeviceIdentity, NGMKeyRollingTicket,
+                            NGMMessageHasher, NGMProtocolVersion,
+                            NGMPublicDeviceIdentity, NGMReplayManager,
+                            NGMRollingBitmaskBuffer, NGMTimeBasedEvaluations,
+                            SecMessageLegacyFullIdentity,
+                            SecMessageLegacyPublicIdentity ]
+...

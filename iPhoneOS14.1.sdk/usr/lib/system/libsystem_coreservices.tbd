@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           1B3BAC4E-8605-3AB8-8A08-B25EACD070A1
+  - target:          armv7s-ios
+    value:           C173D0E3-586D-31D8-9832-6828B5188A39
+  - target:          arm64-ios
+    value:           FEE3BA6C-B4EA-3559-9BC2-C967E0C028F8
+  - target:          arm64e-ios
+    value:           CE14D6C7-704F-36DC-8B86-490E4A0DC989
+install-name:    '/usr/lib/system/libsystem_coreservices.dylib'
+current-version: 125.2
+parent-umbrella:
+  - targets:         [ arm64-ios, arm64e-ios ]
+    umbrella:        System
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ ___user_local_mkdir_p ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _NSGetNextSearchPathEnumeration, _NSStartSearchPathEnumeration, 
+                       _NSStartSearchPathEnumerationPrivate, ___user_local_dirname, 
+                       __dirhelper, __get_user_dir_suffix, __libcoreservices_fork_child, 
+                       __set_user_dir_suffix, _sysdir_get_next_search_path_enumeration, 
+                       _sysdir_start_search_path_enumeration, _sysdir_start_search_path_enumeration_private ]
+...

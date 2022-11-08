@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           1900BDD2-7EB5-32F7-A6F3-ECF2C7DBD053
+  - target:          armv7s-ios
+    value:           B6B9673C-843E-3D2D-8EAD-DA86DE4A3E5C
+  - target:          arm64-ios
+    value:           4767CC98-3919-3D3E-BA24-20F75EB84708
+  - target:          arm64e-ios
+    value:           1B16CCBA-F915-3107-B264-5D3ADE3960EF
+install-name:    '/usr/lib/system/libsystem_blocks.dylib'
+current-version: 78
+parent-umbrella:
+  - targets:         [ arm64-ios, arm64e-ios ]
+    umbrella:        System
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _system_blocksVersionNumber, _system_blocksVersionString ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _Block_size, __Block_copy, __Block_extended_layout, __Block_has_signature, 
+                       __Block_isDeallocating, __Block_layout, __Block_object_assign, 
+                       __Block_object_dispose, __Block_release, __Block_signature, 
+                       __Block_tryRetain, __Block_use_RR2, __Block_use_stret, __NSConcreteAutoBlock, 
+                       __NSConcreteFinalizingBlock, __NSConcreteGlobalBlock, __NSConcreteMallocBlock, 
+                       __NSConcreteStackBlock, __NSConcreteWeakBlockVariable ]
+...

@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ExtensionKit.framework/ExtensionKit
+current-version:       17.3
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _EXExtensionIsPredicateSafeToExecuteWithObject,
+                            _EXExtensionIsSafeKeyPathForObject, _EXExtensionMain,
+                            _EXGetExtensionClass,
+                            _EXGetExtensionContextInternalClass,
+                            _EXGetExtensionContextVendorClass ]
+    objc-classes:         [ EXSwiftUI_Subsystem ]
+...

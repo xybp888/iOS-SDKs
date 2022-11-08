@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           10808249-0680-3496-A5F8-9F57A7A38913
+  - target:          armv7s-ios
+    value:           DFCF0DF7-2961-3EE9-AD05-8F0ABB90C457
+  - target:          arm64-ios
+    value:           77C7ED7B-6412-3D5B-B768-45F94D5CD241
+  - target:          arm64e-ios
+    value:           EB2E8EE5-3B04-36CC-8E4A-4ACC392FAB14
+install-name:    '/usr/lib/libETLDLOADCoreDumpDynamic.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _ETLDLOADCoreDumpCaptureRecord, _ETLDLOADCoreDumpCaptureRecordFast ]
+...

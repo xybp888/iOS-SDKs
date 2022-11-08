@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           4724AA47-7A1D-32DE-87BC-1CFAE55FEB58
+  - target:          armv7s-ios
+    value:           75606A7C-A0BA-304A-84E6-FCCFCD6CC90D
+  - target:          arm64-ios
+    value:           19D462DA-CD4C-3F8C-B004-C1A95DD2E8D1
+  - target:          arm64e-ios
+    value:           583FB568-F86F-3D6F-A9B9-7147EDF106B3
+install-name:    '/usr/lib/libETLEFSDumpDynamic.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _ETLEFCopyCrashLocationDetailsM20, _ETLEFSDUmpCopyCrashLocationDetails, 
+                       _ETLEFSDumpCopyCrashHeaderDetails, _ETLEFSDumpCopySoftwareVersion, 
+                       _ETLEFSDumpInfoFree, _ETLEFSDumpInterpret, _ETLEFSearchBasebandCrashReasonM20 ]
+...

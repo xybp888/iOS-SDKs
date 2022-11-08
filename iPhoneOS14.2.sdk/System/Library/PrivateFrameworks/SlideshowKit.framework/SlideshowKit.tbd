@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SlideshowKit.framework/SlideshowKit
+current-version:       1702.0.180
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation,
+                            /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusKit.framework/OpusKit ]
+    symbols:              [ _SlideshowKitUmbrellaString,
+                            _SlideshowKitVersionNumber,
+                            _SlideshowKitVersionString ]
+    objc-classes:         [ SlideshowKit ]
+...

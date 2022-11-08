@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SleepHealth.framework/SleepHealth
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HDSleepHealthDaemonPluginServerInterface,
+                            _HKSHHealthDaemonPluginIdentifier,
+                            _HKSHSleepDaySummarySampleTypes,
+                            _HKSHSleepDurationGoalLeeway, _HKSHTestAsleepSample,
+                            _HKSHTestAwakeSample, _HKSHTestDate,
+                            _HKSHTestDateInterval, _HKSHTestDaySummary,
+                            _HKSHTestEmptySchedule, _HKSHTestGoalSample,
+                            _HKSHTestInBedSample, _HKSHTestMorningIndex,
+                            _HKSHTestOverrideSchedule, _HKSHTestPeriod,
+                            _HKSHTestSchedule, _HKSHTestSegment,
+                            _HKSleepHealthStoreInterface,
+                            _NSStringFromHKCategoryValueSleepAnalysis ]
+    objc-classes:         [ HKSHGoalProgress, HKSHGoalProgressEngine,
+                            HKSHSleepDaySummary, HKSHSleepDaySummaryQuery,
+                            HKSHSleepDaySummaryQueryConfiguration,
+                            HKSHSleepPeriod, HKSHSleepPeriodSegment,
+                            HKSleepHealthStore ]
+...

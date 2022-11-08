@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           C7A39BAA-7F66-3F56-90E4-3EC62E6755B6
+  - target:          arm64e-ios
+    value:           7FBA58F3-50FC-3381-A3F3-CED6E4393423
+install-name:    '/usr/lib/updaters/libAppleTCONUpdater.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _AppleTCONUpdaterCreate, _AppleTCONUpdaterExecCommand, _AppleTCONUpdaterIsDone ]
+...

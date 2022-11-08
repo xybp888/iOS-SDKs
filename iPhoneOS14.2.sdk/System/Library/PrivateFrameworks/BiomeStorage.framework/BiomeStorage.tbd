@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BiomeStorage.framework/BiomeStorage
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BMPBStoreBookmarkReadFrom,
+                            _BiomeStorageVersionNumber,
+                            _BiomeStorageVersionString,
+                            _bm_defaultStoreSegmentSize, _bm_defaultStoreVersion,
+                            _bm_frame_bytes, _bm_frame_header_info,
+                            _bm_frame_header_status, _bm_generateChecksum,
+                            _bm_useAdler32, _bm_useCrc32 ]
+    objc-classes:         [ BMFileLock, BMFrame, BMFrameStore, BMMemoryMapping,
+                            BMPBStoreBookmark, BMPublicStreamUtilities,
+                            BMStoreBookmark, BMStoreConfig, BMStoreDirectory,
+                            BMStoreEnumerator, BMStoreEvent, BMStreamDatastore,
+                            BMStreamDatastorePruner, BMStreamDatastoreReader,
+                            BMStreamDatastoreWriter, BMStreamMetadata ]
+    objc-ivars:           [ BMPBStoreBookmark._has,
+                            BMPBStoreBookmark._iterationStartTime,
+                            BMPBStoreBookmark._offset,
+                            BMPBStoreBookmark._segmentName,
+                            BMPBStoreBookmark._streamId ]
+...

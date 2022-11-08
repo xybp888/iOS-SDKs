@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           0F5383C7-398E-367D-A249-CCD28ADA4308
+  - target:          armv7s-ios
+    value:           3015797A-CD33-3DFE-A768-30AD28634889
+  - target:          arm64-ios
+    value:           20332A9F-BF18-357D-AA68-F9D3C38DE5EF
+  - target:          arm64e-ios
+    value:           43AB9DE9-D434-362D-9BCB-3A75CFD4E594
+install-name:    '/usr/lib/system/libremovefile.dylib'
+current-version: 49.0.1
+parent-umbrella:
+  - targets:         [ arm64-ios, arm64e-ios ]
+    umbrella:        System
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ ___removefileVersionNumber, ___removefileVersionString, ___removefile_process_file ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ ___removefile_init_random, ___removefile_random_char, ___removefile_randomize_buffer, 
+                       ___removefile_rename_unlink, ___removefile_sunlink, ___removefile_tree_walker, 
+                       _removefile, _removefile_cancel, _removefile_state_alloc, 
+                       _removefile_state_free, _removefile_state_get, _removefile_state_set, 
+                       _removefileat ]
+...

@@ -1,0 +1,36 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           C2537AB2-C642-3521-8F9B-82D8FB9B4B36
+  - target:          armv7s-ios
+    value:           7D81C3C1-C07E-3B9D-8475-88832EC110A9
+  - target:          arm64-ios
+    value:           7AEAF1D5-8B8C-3916-B207-DFE53F70D36F
+  - target:          arm64e-ios
+    value:           D6A5DA31-1094-3E0C-93B7-E4DF1B9D1C73
+install-name:    '/usr/lib/system/libsystem_configuration.dylib'
+current-version: 1109.0.4
+parent-umbrella:
+  - targets:         [ arm64-ios, arm64e-ios ]
+    umbrella:        System
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _libsystem_configurationVersionNumber, _libsystem_configurationVersionString ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ __dns_configuration_ack, __libSC_info_fork_child, __libSC_info_fork_parent, 
+                       __libSC_info_fork_prepare, __nwi_config_agent_copy_data, __nwi_state_ack, 
+                       __nwi_state_force_refresh, _config_agent_copy_dns_information, 
+                       _config_agent_copy_proxy_information, _config_agent_free_dns_information, 
+                       _config_agent_free_proxy_information, _config_agent_get_dns_nameservers, 
+                       _config_agent_get_dns_searchdomains, _config_agent_update_proxy_information, 
+                       _dns_configuration_copy, _dns_configuration_free, _dns_configuration_notify_key, 
+                       _is_config_agent_type_dns, _is_config_agent_type_proxy, _nwi_ifstate_compare_rank, 
+                       _nwi_ifstate_get_dns_signature, _nwi_ifstate_get_flags, _nwi_ifstate_get_generation, 
+                       _nwi_ifstate_get_ifname, _nwi_ifstate_get_next, _nwi_ifstate_get_reachability_flags, 
+                       _nwi_ifstate_get_signature, _nwi_ifstate_get_vpn_server, _nwi_state_copy, 
+                       _nwi_state_get_first_ifstate, _nwi_state_get_generation, _nwi_state_get_ifstate, 
+                       _nwi_state_get_interface_names, _nwi_state_get_notify_key, 
+                       _nwi_state_get_reachability_flags, _nwi_state_release ]
+...

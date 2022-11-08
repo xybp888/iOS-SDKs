@@ -1,0 +1,75 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           CEC3E3C4-61BD-369E-8C36-607584E28DEF
+  - target:          armv7s-ios
+    value:           2D5C9579-46AF-3FD3-9626-443FF1532869
+  - target:          arm64-ios
+    value:           98C632A1-DEB0-39D3-924F-81FED09A1CD7
+  - target:          arm64e-ios
+    value:           A9421467-5A6C-395C-864F-9E0788DEE8F2
+install-name:    '/usr/lib/system/libsystem_sandbox.dylib'
+current-version: 1441.0.4
+parent-umbrella:
+  - targets:         [ arm64-ios, arm64e-ios ]
+    umbrella:        System
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _IOS_SANDBOX_EXECUTABLE, _IOS_SANDBOX_SYSTEM_CONTAINER, _IOS_SANDBOX_SYSTEM_GROUP, 
+                       ___libsystem_sandboxVersionNumber, ___libsystem_sandboxVersionString, 
+                       _rootless_apply, _rootless_apply_internal, _rootless_apply_relative, 
+                       _rootless_manifest_free, _rootless_manifest_parse, _rootless_preflight, 
+                       _rootless_whitelist_push, _sandbox_extension_issue_file_with_new_type, 
+                       _sandbox_vtrace, _sandbox_vtrace_disable, _sandbox_vtrace_enable, 
+                       _sandbox_vtrace_report ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _APP_SANDBOX_IOKIT_CLIENT, _APP_SANDBOX_MACH, _APP_SANDBOX_READ, 
+                       _APP_SANDBOX_READ_WRITE, _IOS_SANDBOX_APPLICATION_GROUP, _IOS_SANDBOX_CONTAINER, 
+                       _SANDBOX_CHECK_ALLOW_APPROVAL, _SANDBOX_CHECK_CANONICAL, _SANDBOX_CHECK_NOFOLLOW, 
+                       _SANDBOX_CHECK_NO_APPROVAL, _SANDBOX_CHECK_NO_REPORT, _SANDBOX_EXTENSION_CANONICAL, 
+                       _SANDBOX_EXTENSION_DEFAULT, _SANDBOX_EXTENSION_MAGIC, _SANDBOX_EXTENSION_NOFOLLOW, 
+                       _SANDBOX_EXTENSION_NO_REPORT, _SANDBOX_EXTENSION_NO_STORAGE_CLASS, 
+                       _SANDBOX_EXTENSION_PREFIXMATCH, _SANDBOX_EXTENSION_UNRESOLVED, 
+                       __amkrtemp, __sandbox_in_a_container, _kSBXProfileNoInternet, 
+                       _kSBXProfileNoNetwork, _kSBXProfileNoWrite, _kSBXProfileNoWriteExceptTemporary, 
+                       _kSBXProfilePureComputation, _rootless_allows_task_for_pid, 
+                       _rootless_check_datavault_flag, _rootless_check_restricted_flag, 
+                       _rootless_check_trusted, _rootless_check_trusted_class, _rootless_check_trusted_fd, 
+                       _rootless_convert_to_datavault, _rootless_mkdir_datavault, 
+                       _rootless_mkdir_nounlink, _rootless_mkdir_restricted, _rootless_protected_volume, 
+                       _rootless_register_trusted_storage_class, _rootless_restricted_environment, 
+                       _rootless_suspend, _rootless_trusted_by_self_token, _rootless_verify_trusted_by_self_token, 
+                       _sandbox_builtin_query, _sandbox_check, _sandbox_check_bulk, 
+                       _sandbox_check_by_audit_token, _sandbox_check_by_reference, 
+                       _sandbox_check_by_uniqueid, _sandbox_check_message_filter_integer, 
+                       _sandbox_check_message_filter_string, _sandbox_consume_extension, 
+                       _sandbox_consume_fs_extension, _sandbox_consume_mach_extension, 
+                       _sandbox_container_path_for_audit_token, _sandbox_container_path_for_pid, 
+                       _sandbox_enable_root_translation, _sandbox_extension_consume, 
+                       _sandbox_extension_issue_file, _sandbox_extension_issue_file_to_process, 
+                       _sandbox_extension_issue_file_to_process_by_pid, _sandbox_extension_issue_file_to_self, 
+                       _sandbox_extension_issue_generic, _sandbox_extension_issue_generic_to_process, 
+                       _sandbox_extension_issue_generic_to_process_by_pid, _sandbox_extension_issue_iokit_registry_entry_class, 
+                       _sandbox_extension_issue_iokit_registry_entry_class_to_process, 
+                       _sandbox_extension_issue_iokit_registry_entry_class_to_process_by_pid, 
+                       _sandbox_extension_issue_iokit_user_client_class, _sandbox_extension_issue_mach, 
+                       _sandbox_extension_issue_mach_to_process, _sandbox_extension_issue_mach_to_process_by_pid, 
+                       _sandbox_extension_issue_posix_ipc, _sandbox_extension_reap, 
+                       _sandbox_extension_release, _sandbox_extension_release_file, 
+                       _sandbox_extension_update_file, _sandbox_free_error, _sandbox_init, 
+                       _sandbox_init_from_pid, _sandbox_init_with_extensions, _sandbox_init_with_parameters, 
+                       _sandbox_issue_extension, _sandbox_issue_fs_extension, _sandbox_issue_fs_rw_extension, 
+                       _sandbox_issue_mach_extension, _sandbox_message_filter_query, 
+                       _sandbox_message_filter_release, _sandbox_note, _sandbox_passthrough_access, 
+                       _sandbox_proc_getcontainer, _sandbox_proc_getprofilename, 
+                       _sandbox_query_approval_policy_for_path, _sandbox_query_user_intent_for_process_with_audit_token, 
+                       _sandbox_reference_release, _sandbox_reference_retain_by_audit_token, 
+                       _sandbox_release_fs_extension, _sandbox_requests_integrity_protection_for_preference_domain, 
+                       _sandbox_set_container_path_for_application_group, _sandbox_set_container_path_for_application_group_with_persona, 
+                       _sandbox_set_container_path_for_signing_id, _sandbox_set_container_path_for_signing_id_with_persona, 
+                       _sandbox_spawnattrs_getcontainer, _sandbox_spawnattrs_getprofilename, 
+                       _sandbox_spawnattrs_init, _sandbox_spawnattrs_setcontainer, 
+                       _sandbox_spawnattrs_setprofilename, _sandbox_suspend, _sandbox_unsuspend ]
+...

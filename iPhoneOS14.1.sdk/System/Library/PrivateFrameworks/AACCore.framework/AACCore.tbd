@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AACCore.framework/AACCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AECoreError, _AECoreErrorDomain, _AECoreErrorUserInfo,
+                            _AELocalizedStringFromTableInBundle,
+                            _AEPolicySessionFailedToActivateSubsystemsKey,
+                            _AEPolicySessionFailedToDeactivateSubsystemsKey ]
+    objc-classes:         [ AEActivePolicySession, AELocalizedErrorDescriptions,
+                            AEOSGestalt, AEOptionMirror,
+                            AEPerformancePrimitivesProvider, AEPolicyBundle,
+                            AEPreferencesProvider, AERSingleAppModeConfiguration,
+                            AERSingleAppModePrimitivesProvider ]
+...

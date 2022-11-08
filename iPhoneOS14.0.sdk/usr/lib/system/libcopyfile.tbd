@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           1EED72A5-50EA-3D80-A09B-510E4DEBFDF3
+  - target:          armv7s-ios
+    value:           24E8017B-F649-395F-9AFE-530BF82F1504
+  - target:          arm64-ios
+    value:           C44A9CA1-8639-31DE-8B23-9455D58FD5F6
+  - target:          arm64e-ios
+    value:           31A6BE83-0FB3-3743-BEF7-15636D8EE7A2
+install-name:    '/usr/lib/system/libcopyfile.dylib'
+parent-umbrella:
+  - targets:         [ arm64-ios, arm64e-ios ]
+    umbrella:        System
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ ___copyfileVersionNumber, ___copyfileVersionString ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _copyfile, _copyfile_state_alloc, _copyfile_state_free, _copyfile_state_get, 
+                       _copyfile_state_set, _fcopyfile, _xattr_flags_from_name, _xattr_intent_with_flags, 
+                       _xattr_name_with_flags, _xattr_name_without_flags, _xattr_preserve_for_intent ]
+...

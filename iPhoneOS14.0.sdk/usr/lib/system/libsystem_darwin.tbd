@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           2EC6F22C-D932-3DAD-AE5F-69E95EEAD17D
+  - target:          arm64e-ios
+    value:           64E0B8BE-BBC1-35F1-9D36-AC9A7ECB4771
+install-name:    '/usr/lib/system/libsystem_darwin.dylib'
+parent-umbrella:
+  - targets:         [ arm64-ios, arm64e-ios ]
+    umbrella:        System
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ ___libdarwin_init, ___os_temporary_resource_shortage, _claimfd_np, 
+                       _close_drop_np, _close_drop_optional_np, _crfprintf_np, _dirstat_np, 
+                       _dirstatat_np, _dup_np, _err_np, _errc_np, _fcheck_np, _memdup2_np, 
+                       _memdup_np, _os_assert_mach, _os_assert_mach_port_status, 
+                       _os_crash_get_reporter_port_array, _os_crash_port_array_deallocate, 
+                       _os_crash_set_reporter_port, _os_crash_spawnattr_set_reporter_port, 
+                       _os_flagset_copy_string, _os_localtime_file, _os_mach_msg_copy_description, 
+                       _os_mach_msg_get_audit_trailer, _os_mach_msg_get_context_trailer, 
+                       _os_mach_msg_get_trailer, _os_mach_msg_trailer_copy_description, 
+                       _os_mach_port_copy_description, _os_parse_boot_arg_int, _os_parse_boot_arg_string, 
+                       _os_simple_hash, _os_simple_hash_string, _os_simple_hash_string_with_seed, 
+                       _os_simple_hash_with_seed, _os_subcommand_fprintf, _os_subcommand_main, 
+                       _os_subcommand_vfprintf, _os_variant_allows_internal_security_policies, 
+                       _os_variant_check, _os_variant_copy_description, _os_variant_has_factory_content, 
+                       _os_variant_has_internal_content, _os_variant_has_internal_diagnostics, 
+                       _os_variant_has_internal_ui, _os_variant_init_4launchd, _os_variant_is_darwinos, 
+                       _os_variant_is_recovery, _os_variant_uses_ephemeral_storage, 
+                       _realpath_np, _strerror_np, _strexit_np, _symerror_np, _symexit_np, 
+                       _sysctl_get_data_np, _sysctlbyname_get_data_np, _sysexit_np, 
+                       _vcrfprintf_np, _verr_np, _verrc_np, _vwarn_np, _vwfprintf_np, 
+                       _warn_np, _wfprintf_np, _xferfd_np, _zsnprintf_np ]
+...

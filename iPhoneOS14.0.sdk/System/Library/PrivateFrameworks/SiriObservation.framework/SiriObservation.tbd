@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriObservation.framework/SiriObservation
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SOAlarmKey, _SOAlarmRepeatScheduleGetFromNames,
+                            _SOAlarmRepeatScheduleGetNames,
+                            _SOAlarmRepeatScheduleValidate, _SOAlarmsSnapshotKey,
+                            _SOErrorDomain, _SOTimerKey, _SOTimerStateGetFromName,
+                            _SOTimerStateGetIsValid,
+                            _SOTimerStateGetIsValidAndSpecified,
+                            _SOTimerStateGetName, _SOTimerTypeGetFromName,
+                            _SOTimerTypeGetIsValid,
+                            _SOTimerTypeGetIsValidAndSpecified,
+                            _SOTimerTypeGetName, _SOTimersSnapshotKey,
+                            _SiriObservationVersionNumber,
+                            _SiriObservationVersionString ]
+    objc-classes:         [ SOAlarm, SOAlarmsPublisher, SOAlarmsSnapshot,
+                            SOPublisherCache, SOTimer, SOTimersPublisher,
+                            SOTimersSnapshot, _SOAlarmMutation,
+                            _SOAlarmsSnapshotMutation, _SOTimerMutation,
+                            _SOTimersSnapshotMutation ]
+...

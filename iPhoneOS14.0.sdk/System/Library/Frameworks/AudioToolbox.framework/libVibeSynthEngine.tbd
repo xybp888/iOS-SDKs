@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           2D30A709-6228-3401-B57F-07B2C10F8AFF
+  - target:          armv7s-ios
+    value:           257C066E-3E41-36B9-98CC-0EF28DF30234
+  - target:          arm64-ios
+    value:           CC7AF054-69B1-3F7C-8088-6A775D8D8D3A
+  - target:          arm64e-ios
+    value:           4588D760-0BC0-3234-98B7-78AD7C891532
+install-name:    '/System/Library/Frameworks/AudioToolbox.framework/libVibeSynthEngine.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _VibeSynthEngineCancelWithOptions, _VibeSynthEngineHasHardwareSupport, 
+                       _VibeSynthEngineInitialize, _VibeSynthEnginePlay, _VibeSynthEngineStartPrewarm, 
+                       _VibeSynthEngineStopPrewarm ]
+...

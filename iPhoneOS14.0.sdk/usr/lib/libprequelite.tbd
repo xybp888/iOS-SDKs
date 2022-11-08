@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           C91F86D4-408A-3EDA-AAF0-B6CE85EB7FB1
+  - target:          armv7s-ios
+    value:           DAB38FA6-8195-3EA9-8618-78070C148682
+  - target:          arm64-ios
+    value:           6BE5E72E-06F7-33E1-8FA0-3F8477252E2E
+  - target:          arm64e-ios
+    value:           8A648E7D-1429-3623-BA12-91E60BFD320D
+install-name:    '/usr/lib/libprequelite.dylib'
+current-version: 103
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _pql_set_log_handler ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _PQLSqliteErrorDomain, _pql_sqlite3_bind_pointer, _pql_sqlite3_value_object, 
+                       _pql_sqlite3_value_pointer ]
+    objc-classes:    [ PQLConnection, PQLFormatInjection, PQLNameInjection, PQLNameInjectionBase, 
+                       PQLQueryBuilder, PQLRawInjection, PQLResultSet ]
+...

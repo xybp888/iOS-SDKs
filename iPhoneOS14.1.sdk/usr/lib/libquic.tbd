@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           419BBEC2-AB21-3137-8AEE-FC972673F906
+  - target:          arm64e-ios
+    value:           10DACBFD-A2D9-3D0D-89D4-C37F76D0C338
+install-name:    '/usr/lib/libquic.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _quic_enable_nw_verbose_logging, _quic_enable_verbose_logging, 
+                       _quic_fillout_definition_callbacks, _quic_get_test_identity ]
+...

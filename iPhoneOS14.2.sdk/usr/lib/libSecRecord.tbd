@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           53C94142-841C-3F17-B010-4F88F3D43250
+  - target:          arm64e-ios
+    value:           EFE63C37-4DE3-37DF-A063-8FEA551FB9C1
+install-name:    '/usr/lib/libSecRecord.dylib'
+current-version: 0
+compatibility-version: 0
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _sec_record_advance_sequence_number, _sec_record_buffer_access_header, 
+                       _sec_record_buffer_access_payload, _sec_record_buffer_finalize, 
+                       _sec_record_buffer_read_header, _sec_record_buffer_read_payload, 
+                       _sec_record_buffer_read_tag, _sec_record_buffer_wrap_sealed_data, 
+                       _sec_record_create, _sec_record_create_buffer, _sec_record_create_legacy, 
+                       _sec_record_create_legacy_with_framer, _sec_record_create_truncated_buffer, 
+                       _sec_record_create_with_framer, _sec_record_framer_create, 
+                       _sec_record_get_nonce, _sec_record_install_key, _sec_record_install_key_pair, 
+                       _sec_record_nonce_set_add_nonce, _sec_record_nonce_set_create_default, 
+                       _sec_record_nonce_set_get_window_size, _sec_record_nonce_set_should_discard, 
+                       _sec_record_open, _sec_record_open_buffer, _sec_record_seal, 
+                       _sec_record_seal_buffer, _sec_record_wrap_buffer ]
+...

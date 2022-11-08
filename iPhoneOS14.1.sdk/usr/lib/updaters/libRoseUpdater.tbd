@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           91590020-5528-309E-89BC-0BF266033480
+  - target:          arm64e-ios
+    value:           9BB43E12-CB29-38CC-B330-A6BCB1BE526B
+install-name:    '/usr/lib/updaters/libRoseUpdater.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _RoseUpdaterCreate, _RoseUpdaterExecCommand, _RoseUpdaterIsDone ]
+...

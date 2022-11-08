@@ -1,0 +1,35 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ExchangeSync.framework/ExchangeSync
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ESIsRunningInExchangeSyncD,
+                            _kDAAccountDidDiscoverHost,
+                            _kDAAccountDiscoveredHost,
+                            _kDAClientNameForChangeInsertion,
+                            _kDAExchangeOAuthJWKSData,
+                            _kDAExchangeOAuthJWKSDataCachMaxTimeInterval,
+                            _kDAExchangeOAuthJWKSDataCacheDate,
+                            _kDAExchangeOAuthJWKSURI,
+                            _kDAExchangeOAuthTokenIssuer,
+                            _kDAExchangeOAuthVersion,
+                            _kESExchangePasswordPromptDate,
+                            _kGenericDAAccountType,
+                            _kGenericDAAccountWithLoggingType,
+                            _kSubCalCalendarStoreExternalId,
+                            _setESIsRunningInExchangeSyncD ]
+    objc-classes:         [ ESAccount, ESAccountActor, ESAccountClassNames,
+                            ESAccountLoader, ESLocalDBHelper, ESLocalDBWatcher,
+                            ESUserNotificationInfo, ESUserNotificationUtilities ]
+    objc-ivars:           [ ESAccountClassNames._accountClassName,
+                            ESAccountClassNames._agentClassName,
+                            ESAccountClassNames._clientAccountClassName,
+                            ESAccountClassNames._daemonAccountClassName,
+                            ESUserNotificationInfo._groupIdentifier,
+                            ESUserNotificationInfo._handler ]
+...

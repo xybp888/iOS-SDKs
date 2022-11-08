@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           6ECA742C-4C93-374E-94CE-5BA8ABDB367B
+  - target:          arm64e-ios
+    value:           7C30384C-C874-3A07-8048-F889DF0F7EA0
+install-name:    '/usr/lib/log/liblog_coreacc.dylib'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _NSObjectIfNotNull, _OSLogCopyFormattedString, _base64DecodeArray, 
+                       _base64EncodeArray, _classImplementsMethodsInProtocol, _convertNSDataToNSString, 
+                       _convertNSStringToNSData, _isNSObjectEqual, _isNSObjectNull, 
+                       _kACCConnection_Type_Strings, _kACCEndpoint_Protocol_Strings, 
+                       _kACCEndpoint_TransportType_Strings, _readJSONFile, _removeBidirectionalUnicodeCharacters, 
+                       _trimBidirectionalUnicodeCharacters, _writeJSONFile ]
+...

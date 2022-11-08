@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           99D18398-0081-39FE-96DC-6232E7DBA612
+  - target:          armv7s-ios
+    value:           E1CB938D-FFE4-3F65-B241-0F0D001415EA
+  - target:          arm64-ios
+    value:           0A5B697D-C204-3A54-ACCB-DFEEC20777B7
+  - target:          arm64e-ios
+    value:           54818496-771E-3A89-8BBE-0FE8261A816A
+install-name:    '/usr/lib/libMobileGestaltExtensions.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ __MGSSetLazyFuncs ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ __MGSCopyLocalizedString ]
+...
