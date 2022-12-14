@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MobileSystemServices.framework/MobileSystemServices
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MOCreateCFTypeFromSerializedBuffer,
+                            _MOCreateSerializedData, _MOLogClose,
+                            _MOLogEnableDiskLogging, _MOLogGetLogLevel, _MOLogOpen,
+                            _MOLogSetLogLevel, _MOLogWrite, _MOLogWriteV,
+                            _MOXPCTransportClose, _MOXPCTransportOpen,
+                            _MOXPCTransportReceiveMessage, _MOXPCTransportResume,
+                            _MOXPCTransportRunTransactionalTask,
+                            _MOXPCTransportSendMessage,
+                            _MOXPCTransportSendMessageOnConnection,
+                            _MOXPCTransportSetConnectionAuthHandler,
+                            _MOXPCTransportSetMessageHandler ]
+...

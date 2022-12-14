@@ -1,0 +1,59 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BiomeStorage.framework/BiomeStorage
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BMDataProtectionClassFromNSFileProtectionType,
+                            _BMDataProtectionClassFromOSProtectionClass,
+                            _BMFileAccessModeFromBMFrameStorePermission,
+                            _BMFileAccessModeFromOFlags,
+                            _BMPBStoreBookmarkReadFrom,
+                            _BMPBTombstoneEventReadFrom,
+                            _BMPruningPolicyMaxAgeNoLimit,
+                            _BMPruningPolicyMaxEventCountNoLimit,
+                            _BMPruningPolicyMaxStreamSizeNoLimit,
+                            _BMStorageErrorDomain, _BMStorageErrorGetErrno,
+                            _BMStreamHealthErrorDomain,
+                            _BiomeStorageVersionNumber,
+                            _BiomeStorageVersionString,
+                            _NSStringFromBMFrameStorePermission,
+                            _NSStringFromBMFrameWriteStatus,
+                            _bm_defaultStoreSegmentSize, _bm_defaultStoreVersion,
+                            _bm_frame_bytes, _bm_frame_header_info,
+                            _bm_frame_header_status, _bm_generateChecksum,
+                            _bm_new_temporary_file, _bm_openat_dprotected,
+                            _bm_opendirat, _bm_replace_file, _bm_subpath,
+                            _bm_useAdler32, _bm_useCrc32, _bm_validate_pathat ]
+    objc-classes:         [ BMCache, BMDataProtection, BMFileAttributes,
+                            BMFileHandle, BMFileManager, BMFileServer, BMFrame,
+                            BMFrameStore, BMMemoryMapping, BMPBStoreBookmark,
+                            BMPBTombstoneEvent, BMPathEnumerator, BMPruningPolicy,
+                            BMSegmentManager, BMSegmentManagerProtectedState,
+                            BMSharedMemory, BMStoreBookmark, BMStoreConfig,
+                            BMStoreEnumerator, BMStoreEnumeratorBase, BMStoreEvent,
+                            BMStreamDatastore, BMStreamDatastoreBase,
+                            BMStreamDatastorePruner, BMStreamDatastoreReader,
+                            BMStreamDatastoreWriter, BMStreamMetadata,
+                            BMStreamTombstoneEventDatastore, BMTombstoneEvent,
+                            BMTombstoneEventEnumerator, BMXPCConnectionWrapper,
+                            _BMDirectFileManager, _BMXPCFileManager ]
+    objc-ivars:           [ BMFileManager._cachingOptions,
+                            BMFileManager._directory,
+                            BMFileManager._fileHandleCache,
+                            BMFileManager._memoryMappingCache,
+                            BMPBStoreBookmark._has,
+                            BMPBStoreBookmark._iterationStartTime,
+                            BMPBStoreBookmark._offset,
+                            BMPBStoreBookmark._segmentName,
+                            BMPBStoreBookmark._streamId, BMPBTombstoneEvent._has,
+                            BMPBTombstoneEvent._length,
+                            BMPBTombstoneEvent._offset,
+                            BMPBTombstoneEvent._processName,
+                            BMPBTombstoneEvent._reason,
+                            BMPBTombstoneEvent._segmentName ]
+...

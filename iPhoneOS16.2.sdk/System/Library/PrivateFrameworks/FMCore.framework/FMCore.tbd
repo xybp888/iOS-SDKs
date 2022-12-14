@@ -1,0 +1,31 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FMCore.framework/FMCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FMCommandHTTPMethodDelete, _FMCommandHTTPMethodGet,
+                            _FMCommandHTTPMethodPost, _FMCommandHTTPMethodPut,
+                            _FMCommandRedirectedNotification, _FMDataClassFMF,
+                            _FMDataClassFMFAppHostNameKey, _FMDataClassFMIP,
+                            _FMDistanceCalculatorMeasurementSystemChangedNotification,
+                            _FMLocalNetworkStatusChangedNotification,
+                            _FMLocalNetworkStatusKey, _FMOwnerAccountErrorDomain,
+                            _kFMReachabilityChangedNotification,
+                            _nanosecondTimestamp ]
+    objc-classes:         [ FMAPSHandler, FMAlertManager, FMCommandBase, FMDaemon,
+                            FMDispatchTimer, FMDistanceCalculator, FMJSONCommand,
+                            FMKeychainManager, FMLocationShifter,
+                            FMLocationShifterItem, FMNanoIDSManager,
+                            FMNetworkMonitor, FMOwnerAccount,
+                            FMPastDateComponentsFormatter, FMReachability,
+                            FMRelativeDateFormatter,
+                            FMServerInteractionController, FMStateCapture,
+                            FMStopwatch, FMSystemInfo, FMSystemVersionNumber,
+                            FMWeakWrapper, FMXPCNotificationsUtil,
+                            FMXPCTransactionManager ]
+...

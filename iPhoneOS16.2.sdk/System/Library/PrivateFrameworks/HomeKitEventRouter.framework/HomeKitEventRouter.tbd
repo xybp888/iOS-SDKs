@@ -1,0 +1,31 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HomeKitEventRouter.framework/HomeKitEventRouter
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HMEErrorDomain, _HMEProtoEventInfoReadFrom,
+                            _HMEProtoEventMetadataReadFrom,
+                            _HMEProtoEventReadFrom ]
+    objc-classes:         [ HMEDelegatingEventRouter, HMEEvent, HMEEventInfo,
+                            HMEEventMetadata, HMELastEventStore, HMEMemoryEventBus,
+                            HMEMessageDatagramClient, HMEMessageDatagramServer,
+                            HMEPendingEventsCollection, HMEPendingTopicsCombiner,
+                            HMEPersistentConnectionClient,
+                            HMEPersistentConnectionServer, HMEProtoEvent,
+                            HMEProtoEventInfo, HMEProtoEventMetadata,
+                            HMERouterClient, HMERouterServer, HMETopicRouter ]
+    objc-ivars:           [ HMEProtoEvent._eventData,
+                            HMEProtoEvent._eventMetadata,
+                            HMEProtoEventInfo._event, HMEProtoEventInfo._topic,
+                            HMEProtoEventMetadata._cachePolicy,
+                            HMEProtoEventMetadata._combinePolicy,
+                            HMEProtoEventMetadata._has,
+                            HMEProtoEventMetadata._qos,
+                            HMEProtoEventMetadata._source,
+                            HMEProtoEventMetadata._timestamp ]
+...

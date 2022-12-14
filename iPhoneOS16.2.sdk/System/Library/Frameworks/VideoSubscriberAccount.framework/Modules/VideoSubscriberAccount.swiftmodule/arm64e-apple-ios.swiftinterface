@@ -1,0 +1,100 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64e-apple-ios16.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name VideoSubscriberAccount
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 453.20.8
+import Foundation
+import Swift
+@_exported import VideoSubscriberAccount
+import _Concurrency
+import _StringProcessing
+@available(iOS 16.0, tvOS 16.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+public struct VSUserAccount : Swift.Sendable, Swift.Hashable {
+  public var updateURL: Foundation.URL?
+  public var requiresSystemTrust: Swift.Bool
+  public var accountProviderIdentifier: Swift.String?
+  public var identifier: Swift.String?
+  public var accountType: VideoSubscriberAccount.VSUserAccount.AccountType
+  public var isDeleted: Swift.Bool
+  public var subscriptionBillingCycleEndDate: Foundation.Date?
+  public var tierIdentifiers: [Swift.String]?
+  public var billingIdentifier: Swift.String?
+  public var authenticationData: Swift.String?
+  public var isFromCurrentDevice: Swift.Bool {
+    get
+  }
+  public var deviceCategory: VideoSubscriberAccount.VSUserAccount.OriginatingDeviceCategory {
+    get
+  }
+  public init(accountType: VideoSubscriberAccount.VSUserAccount.AccountType = .free, updateURL: Foundation.URL?, requiresSystemTrust: Swift.Bool, deleted: Swift.Bool, fromCurrentDevice: Swift.Bool)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: VideoSubscriberAccount.VSUserAccount, b: VideoSubscriberAccount.VSUserAccount) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 16.0, tvOS 16.0, *)
+@available(macCatalyst, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+extension VideoSubscriberAccount.VSUserAccount {
+  public enum AccountType : Swift.Int, Swift.Sendable {
+    case free
+    case paid
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum OriginatingDeviceCategory : Swift.Int, Swift.Sendable {
+    case mobile
+    case other
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+@available(iOS 16.0, tvOS 16.0, *)
+@available(watchOS, unavailable)
+extension VideoSubscriberAccount.VSUserAccountManager {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func update(_ account: VideoSubscriberAccount.VSUserAccount) async throws
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public func userAccounts(options: VideoSubscriberAccount.VSUserAccountManager.QueryOptions = []) async throws -> [VideoSubscriberAccount.VSUserAccount]
+  #endif
+}
+@available(iOS 16.0, tvOS 16.0, *)
+@available(macCatalyst, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+extension VideoSubscriberAccount.VSUserAccount.AccountType : Swift.Equatable {}
+@available(iOS 16.0, tvOS 16.0, *)
+@available(macCatalyst, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+extension VideoSubscriberAccount.VSUserAccount.AccountType : Swift.Hashable {}
+@available(iOS 16.0, tvOS 16.0, *)
+@available(macCatalyst, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+extension VideoSubscriberAccount.VSUserAccount.AccountType : Swift.RawRepresentable {}
+@available(iOS 16.0, tvOS 16.0, *)
+@available(macCatalyst, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+extension VideoSubscriberAccount.VSUserAccount.OriginatingDeviceCategory : Swift.Equatable {}
+@available(iOS 16.0, tvOS 16.0, *)
+@available(macCatalyst, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+extension VideoSubscriberAccount.VSUserAccount.OriginatingDeviceCategory : Swift.Hashable {}
+@available(iOS 16.0, tvOS 16.0, *)
+@available(macCatalyst, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+extension VideoSubscriberAccount.VSUserAccount.OriginatingDeviceCategory : Swift.RawRepresentable {}

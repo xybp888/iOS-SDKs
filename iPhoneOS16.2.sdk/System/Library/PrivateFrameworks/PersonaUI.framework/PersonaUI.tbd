@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PersonaUI.framework/PersonaUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CGSizeFromPRLikenessCacheSize,
+                            _NSStringFromPRLikenessCacheSize,
+                            _PRImageCreateCircularImageInRect,
+                            _PRImageCreateWithImageInRect,
+                            _PRImageForceDecompress,
+                            _PRLikenessCacheSizeClosestToSize,
+                            _PRLikenessCacheSizeGetCost,
+                            _PRLikenessSnapshotOptionCircular,
+                            _PRLikenessSnapshotOptionForceDecode,
+                            _PRRectGetMaxLength, _PRRectGetMinLength, _PRRectScale,
+                            _PRSizeScale, _PersonaUIVersionNumber,
+                            _PersonaUIVersionString,
+                            __InvalidPRLikenessCacheSize ]
+    objc-classes:         [ PRImageView, PRLikenessCache, PRLikenessCacheContext,
+                            PRLikenessView, PRLocalization, PRMonogram,
+                            PRMonogramColor, PRMonogramView, _PRMonogramFontSpec ]
+...

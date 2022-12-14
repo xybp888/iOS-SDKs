@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriLiminal.framework/SiriLiminal
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SLErrorDomain, _SLLogContextFacilityCoreSpeech,
+                            _SLLogInitIfNeeded, _SLLoggingSubsystem,
+                            _SiriLiminalVersionNumber, _SiriLiminalVersionString,
+                            _kSLAssetVersion, _kSLAudioSourceOption,
+                            _kSLInvocationType, _kSLLanguageCode,
+                            _kSLLoggingContextFramework, _kSLNumAsrRecords,
+                            _kSLNumTokensTopPath, _kSLThresholdUsed,
+                            _kSLTrailingSilenceDuration,
+                            _kSLVoiceTriggerEventInfo ]
+    objc-classes:         [ SLASRFeatureExtractor, SLASRFeatures, SLBertClassifier,
+                            SLBertClassifierResult, SLLRNNFeatures,
+                            SLODLDClassifierV1, SLODLDConfigDecoder,
+                            SLODLDProcessor, SLODLDProcessorResult,
+                            SLProgressiveCheckerAnalyzer,
+                            SLProgressiveCheckerContext,
+                            SLProgressiveCheckerResult, SLRegexMatcher,
+                            SLSentencePieceModule, SLUresMitigator,
+                            SLUresMitigatorIpFeats, SLUresMitigatorResult, SLUtils ]
+...

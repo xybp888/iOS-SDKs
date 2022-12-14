@@ -1,0 +1,32 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AACCore.framework/AACCore
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AACLoggingSubsystem,
+                            _AEAssessmentStateDidChangeNotificationName,
+                            _AEAssessmentStatePublisherRegisteringMachServiceName,
+                            _AECoreError, _AECoreErrorDomain, _AECoreErrorUserInfo,
+                            _AELocalizedStringFromTableInBundle,
+                            _AEPolicySessionFailedToActivateSubsystemsKey,
+                            _AEPolicySessionFailedToDeactivateSubsystemsKey ]
+    objc-classes:         [ AEActivePolicySession,
+                            AEAssessmentApplicationDescriptor,
+                            AEAssessmentIndividualConfiguration,
+                            AEAssessmentModeGestalt, AEAssessmentState,
+                            AEAssessmentStatePublishingProxy,
+                            AEAssessmentStatePublishingXPCInterfaceFactory,
+                            AEAssessmentStateSourceRegisteringProxy,
+                            AEAssessmentStateSourceRegisteringXPCInterfaceFactory,
+                            AEFeatureFlagsProvider, AEFileSystem,
+                            AELifecycleEventHandlingProxy,
+                            AELifecycleEventHandlingXPCInterfaceFactory,
+                            AELocalizedErrorDescriptions, AEOSGestalt,
+                            AEOptionMirror, AEPerformancePrimitivesProvider,
+                            AEPolicyBundle, AEPreferencesProvider ]
+...

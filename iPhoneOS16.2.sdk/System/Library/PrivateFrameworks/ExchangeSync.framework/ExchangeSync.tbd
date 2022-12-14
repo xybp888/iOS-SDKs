@@ -1,0 +1,50 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ExchangeSync.framework/ExchangeSync
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ESIsRunningInExchangeSyncD,
+                            _kDAAccountDidDiscoverHost,
+                            _kDAAccountDidDiscoverOAuthURI,
+                            _kDAAccountDiscoveredHost,
+                            _kDAClientNameForChangeInsertion,
+                            _kDAExchangeDiscoveredOAuthURI,
+                            _kDAExchangeOAuthJWKSData,
+                            _kDAExchangeOAuthJWKSDataCachMaxTimeInterval,
+                            _kDAExchangeOAuthJWKSDataCacheDate,
+                            _kDAExchangeOAuthJWKSURI,
+                            _kDAExchangeOAuthTokenIssuer,
+                            _kDAExchangeOAuthVersion,
+                            _kESExchangeBasicAccountMigrationActivityInterval,
+                            _kESExchangeBasicAccountMigrationActivityInterval_Override,
+                            _kESExchangeBasicAccountMigrationActivityTolerance,
+                            _kESExchangeBasicAccountMigrationActivityTolerance_Override,
+                            _kESExchangeBasicAccountMigrationLastAttemptDate,
+                            _kESExchangeBasicAccountMigrationRetryInterval,
+                            _kESExchangeBasicAccountMigrationRetryInterval_Override,
+                            _kESExchangeBasicAccountMigrationStatus,
+                            _kESExchangePasswordPromptDate,
+                            _kESExchangePendingClaimsChallenge,
+                            _kGenericDAAccountType,
+                            _kGenericDAAccountWithLoggingType,
+                            _kSubCalCalendarStoreExternalId,
+                            _setESIsRunningInExchangeSyncD ]
+    objc-classes:         [ ESAccount, ESAccountActor, ESAccountClassNames,
+                            ESAccountLoader, ESCalDBHelper, ESDataHandler,
+                            ESLocalDBHelper, ESLocalDBWatcher,
+                            ESLocalDBWatcherCalConcernedParty,
+                            ESLocalDBWatcherDBInfo, ESUserNotificationInfo,
+                            ESUserNotificationUtilities ]
+    objc-ivars:           [ ESAccountClassNames._accountClassName,
+                            ESAccountClassNames._agentClassName,
+                            ESAccountClassNames._clientAccountClassName,
+                            ESAccountClassNames._daemonAccountClassName,
+                            ESDataHandler._container,
+                            ESUserNotificationInfo._groupIdentifier,
+                            ESUserNotificationInfo._handler ]
+...

@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PairingProximity.framework/PairingProximity
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PPDeviceWasDiscoveredNotification,
+                            _PPDiscoveredDeviceAdvertisingName,
+                            _PPDiscoveredDeviceRSSIValue,
+                            _PPDiscoveryLimitBridge,
+                            _PairingProximityVersionNumber,
+                            _PairingProximityVersionString, _kBridgeDomain,
+                            _kGizmoPeripheralService, _pbb_accountsignin_log,
+                            _pbb_activation_log, _pbb_bridge_log,
+                            _pbb_discover_log, _pbb_manualunpairing_log,
+                            _pbb_mobileasset_log, _pbb_setup_log,
+                            _pbb_setupflow_log, _pbb_shared_log ]
+    objc-classes:         [ PPDiscoveryManager, PPNearbyWatchNotifier ]
+...

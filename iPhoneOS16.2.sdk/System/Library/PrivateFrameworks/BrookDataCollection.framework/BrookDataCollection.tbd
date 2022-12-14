@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BrookDataCollection.framework/BrookDataCollection
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BRKPreferredAudioFormat,
+                            _BrookDataCollectionVersionNumber,
+                            _BrookDataCollectionVersionString,
+                            _NSStringFromDataCollectionEnabled,
+                            __BRKHandleForUploadNotification, _kDCDeviceIdKey,
+                            _kDCPreferencesDomain ]
+    objc-classes:         [ BRKAccelerationBufferedFileWriter,
+                            BRKAccelerationFileWriter, BRKAudioFileReader,
+                            BRKAudioFileWriter, BRKDataCollectionBundle,
+                            BRKDataCollectionLogger, BRKDataCollectionScheduler,
+                            BRKLogFileWriter, BRKMetricsLogger, BRKWriter,
+                            S3AccessConfig, S3Content, S3ContentConfig ]
+...

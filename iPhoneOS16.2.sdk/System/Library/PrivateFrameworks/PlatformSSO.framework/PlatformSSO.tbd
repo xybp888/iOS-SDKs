@@ -1,0 +1,38 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PlatformSSO.framework/PlatformSSO
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _POAuthenticationMethodInvalid,
+                            _POAuthenticationMethodPassword,
+                            _POAuthenticationMethodUserSecureEnclaveKey,
+                            _kPOAuthenticationResult,
+                            _kPONotificationAuthenticationCompleted,
+                            _kPONotificationCategoryLogin,
+                            _kPONotificationCategoryRegisterDevice,
+                            _kPONotificationCategoryRegisterUser,
+                            _kPOScreenSaverRuleCheckKey,
+                            _kPlatformSSOConfigurationPath ]
+    objc-classes:         [ POAgentAuthenticationProcess, POAgentProcess,
+                            POAlgorithm, POAnalytics, POAuthPluginProcess,
+                            POAuthenticationContext, POAuthenticationProcess,
+                            POConcatKDF, POConfigurationManager,
+                            POConfigurationUtil, POConfigurationVersion,
+                            POConstantUtil, POCredentialUtil, PODaemonConnection,
+                            PODaemonProcess, PODeviceConfiguration,
+                            PODirectoryServices, POES256JWTSigningAlgorithm,
+                            POError, POExtension, POExtensionAgentProcess,
+                            POInternalProtocols, POJWT, POJWTBody, POJWTHeader,
+                            POKerberosEntry, POKerberosHelper, POKerberosMapping,
+                            POKerberosStatus, POKeyBag, POKeyWrap, POKeychainHelper,
+                            POLoginConfiguration, POLoginManager, POMutableJWT,
+                            POMutableJWTBody, POMutableJWTHeader, POPreferences,
+                            PORS256JWTSigningAlgorithm, PORegistrationContext,
+                            POSecKeyHelper, POServiceConnection,
+                            POServiceLoginManagerConnection, POUserConfiguration ]
+...

@@ -1,0 +1,39 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SetupKit.framework/SetupKit
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SKFrameworkBundle, _SKLocalizedString,
+                            _SKOptionTimeoutSeconds ]
+    objc-classes:         [ SKAuthenticationPresentEvent,
+                            SKAuthenticationRequestEvent,
+                            SKAuthenticationResponseEvent, SKDevice, SKEvent,
+                            SKEventBasicConfigUpdated,
+                            SKEventCaptiveNetworkPresent, SKSetupBase,
+                            SKSetupCaptiveNetworkJoinClient,
+                            SKSetupCaptiveNetworkJoinServer, SKSetupClient,
+                            SKSetupFieldDiagnosticsClient,
+                            SKSetupFieldDiagnosticsServer,
+                            SKSetupSIMTransferClient, SKSetupSIMTransferServer,
+                            SKSetupServer, SKStepBasicConfigClient,
+                            SKStepBasicConfigServer, SKStepWiFiPreflight,
+                            SKStepWiFiSetupClient, SKStepWiFiSetupServer ]
+    objc-ivars:           [ SKSetupBase._activateCalled,
+                            SKSetupBase._bluetoothUseCase,
+                            SKSetupBase._controlFlags,
+                            SKSetupBase._dispatchQueue,
+                            SKSetupBase._invalidateCalled,
+                            SKSetupBase._invalidateDone, SKSetupBase._password,
+                            SKSetupBase._passwordType, SKSetupBase._peerDevice,
+                            SKSetupBase._pskData, SKSetupBase._registeredEvents,
+                            SKSetupBase._registeredRequests,
+                            SKSetupBase._runState, SKSetupBase._sendDataHandler,
+                            SKSetupBase._setupType, SKSetupBase._skCnx,
+                            SKSetupBase._stepArray, SKSetupBase._stepCurrent,
+                            SKSetupBase._ucat, SKSetupBase._ucatBase ]
+...

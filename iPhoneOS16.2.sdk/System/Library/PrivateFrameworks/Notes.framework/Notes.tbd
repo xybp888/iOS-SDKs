@@ -1,0 +1,38 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Notes.framework/Notes
+current-version:       2210
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ICHTMLIndexerDataSourceIdentifier,
+                            _LegacyDeviceLocalAccountID,
+                            _NoteContextChangedElsewhereNotification,
+                            _NoteContextDeletedNotesNotification,
+                            _NoteContextIndexPath,
+                            _NoteContextManagedObjectModelPath,
+                            _NoteContextPersistentStorePath,
+                            _NoteContextRootDirectoryPath,
+                            _NoteContextUpdatedIndexNotification,
+                            _NoteContextWillSaveNotification,
+                            _NoteObjectItemProviderUTI,
+                            _NoteObjectMaximumImapSyncableSize,
+                            _NoteObjectTitleMaximumLength,
+                            _NotesAccountUtilitiesDidUpdateAccounts,
+                            _NotesVersionNumber, _NotesVersionString,
+                            _kLocalAccountIdentifier, _kLocalStoreIdentifier,
+                            _kNoteCollectionPrimaryIdentifierKey,
+                            _kNoteCollectionSecondaryIdentifierKey,
+                            _kNoteCollectionTypeAccount, _kNoteCollectionTypeKey,
+                            _kNoteCollectionTypeStore ]
+    objc-classes:         [ AccountUtilities, ICHTMLSearchIndexerDataSource,
+                            MNFNoteProperty, NoteAccountObject,
+                            NoteAttachmentObject, NoteBodyObject, NoteChangeObject,
+                            NoteCollectionObject, NoteContext, NoteObject,
+                            NoteStoreObject ]
+    objc-ivars:           [ NoteAccountObject._constraints,
+                            NoteAccountObject._preventMovingNotesToOtherAccounts ]
+...

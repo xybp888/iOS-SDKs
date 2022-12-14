@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/CoreAudioKit.framework/CoreAudioKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CAUI_createCustomViewForAudioUnit,
+                            _CAUI_createGenericViewForAudioUnit,
+                            _CAUI_retrieveHostIconForAudioUnit ]
+    objc-classes:         [ AUAudioUnitRemoteViewController,
+                            AUAudioUnitViewConfiguration, AUAudioUnitViewService,
+                            AUGenericViewController, AUViewController,
+                            CABTMIDICentralViewController,
+                            CABTMIDILocalPeripheralViewController,
+                            CAInterAppAudioSwitcherView,
+                            CAInterAppAudioTransportView ]
+...

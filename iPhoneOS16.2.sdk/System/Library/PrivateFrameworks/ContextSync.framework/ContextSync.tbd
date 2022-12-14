@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ContextSync.framework/ContextSync
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ContextSyncErrorDomain, _kCurrentVersion,
+                            _kMessageDSL, _kMessageDSLIdentifiers, _kMessageDSLs,
+                            _kMessageType, _kMessageVersion, _kMessageVersionKey,
+                            _kNewContextType, _kNonWakingDevicesKey,
+                            _kSubscriptionType, _kVersionKey, _kWakeKey,
+                            _kWakingDevicesKey ]
+    objc-classes:         [ ContextSyncClient, ContextSyncService,
+                            _ContextSyncDeviceUtilities, _ContextSyncLogger,
+                            _ContextSyncOtherDeviceSubscriptions,
+                            _ContextSyncSubscriptions, _ContextSyncWakeState,
+                            _ContextSyncWakeSubscription, _DASBiomeStream ]
+...

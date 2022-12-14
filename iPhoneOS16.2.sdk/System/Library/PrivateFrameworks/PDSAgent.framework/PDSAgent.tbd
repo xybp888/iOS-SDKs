@@ -1,0 +1,34 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PDSAgent.framework/PDSAgent
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PDSClientVersionNumber,
+                            _PDSCurrentServerEnvironment,
+                            _PDSProtoBatchRegisterReqReadFrom,
+                            _PDSProtoBatchRegisterRespReadFrom,
+                            _PDSProtoGSTokenAuthReadFrom,
+                            _PDSProtoMapEntryReadFrom, _PDSProtoTopicReadFrom,
+                            _PDSProtoUserAuthReadFrom,
+                            _PDSProtoUserPushTokenReadFrom,
+                            _PDSProtoUserPushTokenRegRequestReadFrom,
+                            _PDSProtoUserPushTokenRegResponseReadFrom,
+                            _PDSProtocolVersionNumber,
+                            _PDSStringForServerEnvironment ]
+    objc-classes:         [ PDSBag, PDSCDCacheContainer, PDSConfiguration,
+                            PDSCoordinator, PDSDaemon, PDSDaemonListener,
+                            PDSDaemonRemoteVendor, PDSEntryStore,
+                            PDSHeartbeatTracker, PDSInternalDaemonListener,
+                            PDSProtoBatchRegisterReq, PDSProtoBatchRegisterResp,
+                            PDSProtoGSTokenAuth, PDSProtoMapEntry, PDSProtoTopic,
+                            PDSProtoUserAuth, PDSProtoUserPushToken,
+                            PDSProtoUserPushTokenRegRequest,
+                            PDSProtoUserPushTokenRegResponse, PDSRegisterMessage,
+                            PDSRequest, PDSRequestInfo, PDSRequestQueue, PDSResponse,
+                            PDSUserTracker, PDSXPCClient, PDSXPCServer ]
+...

@@ -1,0 +1,40 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CMImaging.framework/CMImaging
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/PrivateFrameworks/CMCaptureCore.framework/CMCaptureCore ]
+    symbols:              [ _CopyPixelBuffer, _Create420PixelBufferFromPGMFiles,
+                            _CreatePixelBuffer, _CreatePixelBufferExtended,
+                            _CreatePixelBufferExtendedFromFile,
+                            _CreatePixelBufferFromCFData,
+                            _CreatePixelBufferFromFile,
+                            _CreatePixelBufferFromPGMFile,
+                            _CreatePixelBufferPool,
+                            _CreatePixelBufferWithWiringAssertion,
+                            _CreateSampleBuffer,
+                            _DeriveImageWidthHeightFromFilesize,
+                            _DerivePixelFormatTypeFromFilename, _FigMetalDecRef,
+                            _FigMetalIncRef, _FigMetalIsValid,
+                            _FillPixelBufferWithRandomData,
+                            _GetPixelBlockSizeInBytes, _GuessWidth,
+                            _PixelBufferLineIterator,
+                            _Write420PixelBufferChannelToPGMFile,
+                            _WriteFloat16PixelBufferChannelToPGMFile,
+                            _WriteOneComponent8PixelBufferToPGMFile,
+                            _WritePixelBufferToFile ]
+    objc-classes:         [ CMIBareMetalTexture, CMIExternalMemoryConfiguration,
+                            CMIExternalMemoryDescriptor,
+                            CMIExternalMemoryResource, CMISharpnessScore,
+                            FigMetalAllocator, FigMetalAllocatorBackend,
+                            FigMetalAllocatorBackendDescriptor,
+                            FigMetalAllocatorDescriptor,
+                            FigMetalBufferDescriptor, FigMetalContext,
+                            FigMetalExecutionStatus, FigMetalTextureDescriptor,
+                            VISProvider ]
+...

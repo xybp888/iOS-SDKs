@@ -1,0 +1,130 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios16.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name CoreSpotlight
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 2230.5.1
+@_exported import CoreSpotlight
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+@available(macOS 13.0, iOS 16.0, *)
+@available(tvOS, unavailable)
+extension CoreSpotlight.CSSearchQuery {
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public struct Results : _Concurrency.AsyncSequence, Swift.Sendable {
+    public struct Item : Swift.Identifiable, Swift.Hashable, Swift.Equatable, @unchecked Swift.Sendable {
+      public var id: Swift.String {
+        get
+      }
+      public var item: CoreSpotlight.CSSearchableItem
+      public static func < (lhs: CoreSpotlight.CSSearchQuery.Results.Item, rhs: CoreSpotlight.CSSearchQuery.Results.Item) -> Swift.Bool
+      public static func == (lhs: CoreSpotlight.CSSearchQuery.Results.Item, rhs: CoreSpotlight.CSSearchQuery.Results.Item) -> Swift.Bool
+      public func hash(into hasher: inout Swift.Hasher)
+      public typealias ID = Swift.String
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+    public typealias AsyncIterator = CoreSpotlight.CSSearchQuery.Results.Iterator
+    public typealias Element = CoreSpotlight.CSSearchQuery.Results.Item
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public mutating func next() async throws -> CoreSpotlight.CSSearchQuery.Results.Item?
+      #endif
+      public typealias Element = CoreSpotlight.CSSearchQuery.Results.Item
+    }
+    public func makeAsyncIterator() -> CoreSpotlight.CSSearchQuery.Results.Iterator
+  }
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public var results: CoreSpotlight.CSSearchQuery.Results {
+    get
+  }
+  #endif
+}
+@available(macOS 13.0, iOS 16.0, *)
+@available(tvOS, unavailable)
+extension CoreSpotlight.CSUserQuery {
+  public struct Item : Swift.Identifiable, Swift.Hashable, Swift.Equatable, @unchecked Swift.Sendable {
+    public var id: Swift.String {
+      get
+    }
+    public var item: CoreSpotlight.CSSearchableItem
+    public static func < (lhs: CoreSpotlight.CSUserQuery.Item, rhs: CoreSpotlight.CSUserQuery.Item) -> Swift.Bool
+    public static func == (lhs: CoreSpotlight.CSUserQuery.Item, rhs: CoreSpotlight.CSUserQuery.Item) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias ID = Swift.String
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public struct Suggestion : Swift.Identifiable, Swift.Hashable, Swift.Comparable, @unchecked Swift.Sendable {
+    public var id: Swift.String {
+      get
+    }
+    public var suggestion: CoreSpotlight.CSSuggestion
+    public static func < (lhs: CoreSpotlight.CSUserQuery.Suggestion, rhs: CoreSpotlight.CSUserQuery.Suggestion) -> Swift.Bool
+    public static func == (lhs: CoreSpotlight.CSUserQuery.Suggestion, rhs: CoreSpotlight.CSUserQuery.Suggestion) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias ID = Swift.String
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public struct Responses : _Concurrency.AsyncSequence, Swift.Sendable {
+    public enum Response : Swift.Identifiable, Swift.Hashable, Swift.Equatable, @unchecked Swift.Sendable {
+      case item(CoreSpotlight.CSUserQuery.Item)
+      case suggestion(CoreSpotlight.CSUserQuery.Suggestion)
+      public var id: Swift.String {
+        get
+      }
+      public func hash(into hasher: inout Swift.Hasher)
+      public static func == (a: CoreSpotlight.CSUserQuery.Responses.Response, b: CoreSpotlight.CSUserQuery.Responses.Response) -> Swift.Bool
+      public typealias ID = Swift.String
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+    public typealias AsyncIterator = CoreSpotlight.CSUserQuery.Responses.Iterator
+    public typealias Element = CoreSpotlight.CSUserQuery.Responses.Response
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public mutating func next() async throws -> CoreSpotlight.CSUserQuery.Responses.Element?
+      #endif
+      public typealias Element = CoreSpotlight.CSUserQuery.Responses.Element
+    }
+    public func makeAsyncIterator() -> CoreSpotlight.CSUserQuery.Responses.Iterator
+  }
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public struct Suggestions : _Concurrency.AsyncSequence, Swift.Sendable {
+    public typealias AsyncIterator = CoreSpotlight.CSUserQuery.Suggestions.Iterator
+    public typealias Element = CoreSpotlight.CSUserQuery.Suggestion
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public mutating func next() async throws -> CoreSpotlight.CSUserQuery.Suggestions.Element?
+      #endif
+      public typealias Element = CoreSpotlight.CSUserQuery.Suggestions.Element
+    }
+    public func makeAsyncIterator() -> CoreSpotlight.CSUserQuery.Suggestions.Iterator
+  }
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public var responses: CoreSpotlight.CSUserQuery.Responses {
+    get
+  }
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public var suggestions: CoreSpotlight.CSUserQuery.Suggestions {
+    get
+  }
+  #endif
+}
+@available(macOS 13.0, iOS 16.0, *)
+@available(tvOS, unavailable)
+extension CoreSpotlight.CSSuggestion {
+  public var localizedAttributedSuggestion: Foundation.AttributedString {
+    get
+  }
+}

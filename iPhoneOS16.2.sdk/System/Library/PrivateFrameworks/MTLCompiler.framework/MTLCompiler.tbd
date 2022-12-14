@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MTLCompiler.framework/MTLCompiler
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MTLCodeGenServiceBuildRequest,
+                            _MTLCodeGenServiceCreate, _MTLCodeGenServiceDestroy,
+                            _MTLCodeGenServiceSetPluginPath ]
+    weak-def-symbols:     [ __ZTINSt3__117bad_function_callE,
+                            __ZTISt11logic_error, __ZTISt12length_error,
+                            __ZTISt9exception, __ZTSNSt3__117bad_function_callE,
+                            __ZTSSt11logic_error, __ZTSSt12length_error,
+                            __ZTSSt9exception ]
+...

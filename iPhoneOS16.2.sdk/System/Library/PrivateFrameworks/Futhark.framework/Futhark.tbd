@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Futhark.framework/Futhark
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FKCCMatchGetConfidence, _FKComponentPrint,
+                            _FKGetBuildAPIVersion, _FKGetBuildGitHash,
+                            _FKGetBuildTimestamp, _FKGetFrameworkVersion,
+                            _FKPrintLinesegList, _FKPrintRender,
+                            _FKRecognizeConcomp, _FKSeqMatchGetConfidence,
+                            _FutharkVersionNumber, _FutharkVersionString ]
+    objc-classes:         [ FKTextCandidate, FKTextDetector, FKTextFeature ]
+    objc-ivars:           [ FKTextDetector._memoryUsage,
+                            FKTextDetector._recognizer, FKTextDetector._roi,
+                            FKTextDetector._sessions, FKTextDetector._size,
+                            FKTextDetector._timeBinarizer,
+                            FKTextDetector._timeConcomps,
+                            FKTextDetector._timeDownscale,
+                            FKTextDetector._timeRecognizer,
+                            FKTextDetector._timeSequences,
+                            FKTextFeature._backingIndex, FKTextFeature._scale,
+                            FKTextFeature._session ]
+...

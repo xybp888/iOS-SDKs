@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           36940982-C895-3D2D-A2F1-97C9A347F7C8
+  - target:          armv7s-ios
+    value:           888036B0-11CB-3CC1-B95C-FA4ADD1A9D14
+  - target:          arm64-ios
+    value:           F71404CD-FF82-3885-80C0-58D237D1C890
+  - target:          arm64e-ios
+    value:           3C1AAD60-9CBB-3822-835B-F8A6D1176531
+install-name:    '/usr/lib/libChineseTokenizer.dylib'
+current-version: 40
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    weak-symbols:    [ __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _ChineseTokenizerAdvanceToNextToken, _ChineseTokenizerCreate, 
+                       _ChineseTokenizerGetCurrentTokenRange, _ChineseTokenizerGoToTokenAtIndex, 
+                       _ChineseTokenizerRelease, _ChineseTokenizerSetCustomWordCheckBlock, 
+                       _ChineseTokenizerSetDynamicLexicon, _ChineseTokenizerSetString ]
+...

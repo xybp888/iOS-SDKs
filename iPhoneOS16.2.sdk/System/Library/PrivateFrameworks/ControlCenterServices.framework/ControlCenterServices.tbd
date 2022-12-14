@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ControlCenterServices.framework/ControlCenterServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CCSControlCenterServicesErrorDomain,
+                            _CCSIsInternalInstall, _CCSLogModuleSettings,
+                            _CCSLogRemoteService,
+                            _CCSModuleVisibilityPreferenceDescription,
+                            _CCSRegisterControlCenterLogging,
+                            _CCSRemoteServiceName,
+                            _CCSRemoteServiceServerInterface,
+                            _CCSResolveModuleVisibility,
+                            _CCSVisibilityPreferenceForBundleInfoDictionary,
+                            _CCSVisibilityPreferenceForBundleRecord,
+                            _ControlCenterServicesVersionNumber,
+                            _ControlCenterServicesVersionString, _kVersionNumber ]
+    objc-classes:         [ CCSControlCenterDefaults, CCSControlCenterService,
+                            CCSModuleMetadata, CCSModulePresentationOptions,
+                            CCSModuleRepository, CCSModuleSettingsProvider,
+                            CCSRemoteServiceConnection, CCSRemoteServiceProvider,
+                            CCSUsageMetrics ]
+...

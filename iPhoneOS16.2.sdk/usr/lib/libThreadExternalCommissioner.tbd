@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           0A1E3144-91AC-35A7-9A9E-96580E1F68F6
+  - target:          arm64e-ios
+    value:           90D9D6FE-68B9-3D15-8FEF-2C7D1241A2D4
+install-name:    '/usr/lib/libThreadExternalCommissioner.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _kBorderAgentNotificationExistingCommissioner ]
+    objc-classes:    [ BorderAgentConnector, BorderAgentFinder ]
+...

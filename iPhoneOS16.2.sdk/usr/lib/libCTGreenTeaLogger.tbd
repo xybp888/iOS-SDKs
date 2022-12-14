@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           4E30CB6E-43FD-3402-996F-F098111E38A7
+  - target:          arm64e-ios
+    value:           75DE24B4-BBEE-3410-B10D-6091A2DDB824
+install-name:    '/usr/lib/libCTGreenTeaLogger.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _ct_green_tea_logger_create, _ct_green_tea_logger_create_static, 
+                       _ct_green_tea_logger_destroy, _ct_green_tea_logging_enabled, 
+                       _getCTGreenTeaOsLogHandle, _kCTGreenTeaMessageDeleteLoggingFormat, 
+                       _kCTGreenTeaMessageReadLoggingFormat, _kCTGreenTeaMessageTransmitLoggingFormat, 
+                       _kCTGreenTeaPhoneNumberTransmitLoggingFormat ]
+...

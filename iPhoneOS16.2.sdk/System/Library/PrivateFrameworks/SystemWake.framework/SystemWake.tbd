@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SystemWake.framework/SystemWake
+current-version:       0
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SWLogPower, _SWLogTimer, _SWSystemWakeVersionNumber,
+                            _SWSystemWakeVersionString,
+                            _sw_kernel_wake_mach_absolute_time,
+                            _sw_kernel_wake_mach_continuous_time ]
+    objc-classes:         [ SWDeclareSystemActivityResult,
+                            SWPreventSystemSleepAssertion, SWScheduledSystemWake,
+                            SWSystemActivityAcquisitionDetails,
+                            SWSystemActivityAssertion, SWSystemActivityProvider,
+                            SWSystemSleepAssertionProvider, SWSystemSleepMonitor,
+                            SWSystemSleepMonitorProvider, SWWakingTimer ]
+...

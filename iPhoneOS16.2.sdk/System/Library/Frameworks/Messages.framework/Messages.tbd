@@ -1,0 +1,31 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/Messages.framework/Messages
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MSMessagesErrorDomain, _MSStickersErrorDomain,
+                            _MSStickersErrorStickerInfoKey,
+                            __MSExtensionContextIsPrimary,
+                            __MSExtensionItemConversationStateKey,
+                            __MSExtensionItemHostViewBoundsKey,
+                            __MSExtensionItemWantsLiveViewKey, _ms_defaultLog,
+                            _ms_traceLog ]
+    objc-classes:         [ MSConversation, MSMessage, MSMessageLayout,
+                            MSMessageLiveLayout, MSMessageRichLinkLayout,
+                            MSMessageTemplateLayout, MSMessagesAppViewController,
+                            MSRichLink, MSSession, MSSticker, MSStickerBrowserView,
+                            MSStickerBrowserViewController, MSStickerView,
+                            _MSConversationState, _MSMessageAppBundleContext,
+                            _MSMessageAppBundleHostContext, _MSMessageAppContext,
+                            _MSMessageAppExtensionContext,
+                            _MSMessageAppExtensionHostContext,
+                            _MSMessageExtensionRemoteViewController,
+                            _MSMessageMediaPayload, _MSPresentationState,
+                            _MSStickerPackCollectionViewDataSource,
+                            _MSStickerSendManager, _MSTempFileManager, _MSTempURL ]
+...

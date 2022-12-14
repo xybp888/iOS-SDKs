@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           DC8BE34F-DE67-367C-9B13-126E5218DD62
+  - target:          armv7s-ios
+    value:           EA865481-64B4-366E-BAB5-DA2FC3B9D2E7
+  - target:          arm64-ios
+    value:           75FC964B-D47B-3463-87D8-669ADC7AB610
+  - target:          arm64e-ios
+    value:           5F38AB69-C9CC-378A-A556-92D1740ACE71
+install-name:    '/usr/lib/libTelephonyDebugDynamic.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    weak-symbols:    [ __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _TelephonyBasebandWatchdogStart, _TelephonyBasebandWatchdogStartWithStackshot, 
+                       _TelephonyBasebandWatchdogStop ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __ZN20TelephonySystemTrace12watchdogStopEbN8dispatch5blockIU13block_pointerFvvEEE, 
+                       __ZN20TelephonySystemTrace13watchdogStartEjNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEN8dispatch5blockIU13block_pointerFvvEEESB_, 
+                       __ZN20TelephonySystemTrace14stopTrace_syncEv, __ZN20TelephonySystemTrace15startTrace_syncEv, 
+                       __ZN20TelephonySystemTrace21watchdogStartInternalEjN8dispatch5blockIU13block_pointerFvvEEE, 
+                       __ZN20TelephonySystemTraceC1ERKNS_10parametersE, __ZN20TelephonySystemTraceC2ERKNS_10parametersE, 
+                       __ZN20TelephonySystemTraceD1Ev, __ZN20TelephonySystemTraceD2Ev, 
+                       __ZNK20TelephonySystemTrace11enableTraceEv, __ZNK20TelephonySystemTrace12disableTraceEv, 
+                       __ZNK20TelephonySystemTrace14setTraceBufferEv, __ZNK20TelephonySystemTrace16generateFileNameEPKc, 
+                       __ZNK20TelephonySystemTrace16writeTraceBufferEv ]
+...

@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SoftwareUpdateSettings.framework/SoftwareUpdateSettings
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SUSettingsErrorDomain, __SUSLoggingFacility ]
+    objc-classes:         [ SUSSoftwareUpdateAnimatedIcon,
+                            SUSSoftwareUpdateComingSoonTipCell,
+                            SUSSoftwareUpdateLicenseViewController,
+                            SUSSoftwareUpdateReleaseNotesDetail,
+                            SUSSoftwareUpdateScanCell,
+                            SUSSoftwareUpdateTableView,
+                            SUSSoftwareUpdateTermsManager,
+                            SUSSoftwareUpdateTitleCell ]
+    objc-ivars:           [ SUSSoftwareUpdateReleaseNotesDetail._releaseNotes ]
+...

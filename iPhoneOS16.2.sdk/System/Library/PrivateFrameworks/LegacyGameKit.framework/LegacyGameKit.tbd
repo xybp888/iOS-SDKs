@@ -1,0 +1,54 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/LegacyGameKit.framework/LegacyGameKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _GKAlertViewDidFinishAnimatingNotification,
+                            _GKAlertViewNewContentViewUserInfoKey,
+                            _GKAlertViewOldContentViewUserInfoKey,
+                            _GKPeerPickerConnectionNearbyKey,
+                            _GKPeerPickerFrameworkBundle,
+                            __localizedCaseInsensitivePeerCompare,
+                            _tailTruncateStringToFit ]
+    objc-classes:         [ GKAlertView, GKContentView, GKPeerPickerController,
+                            GKPeerPickerControllerInternal,
+                            GKPeerPickerTableViewCell,
+                            GKPeerPickerViewController ]
+    objc-ivars:           [ GKAlertView._clipView, GKAlertView._contentView,
+                            GKContentView._activityIndicator,
+                            GKContentView._cancelButton,
+                            GKContentView._connectionButtons,
+                            GKContentView._iconView, GKContentView._messageLabel,
+                            GKContentView._needsLayout,
+                            GKContentView._otherButton, GKContentView._table,
+                            GKContentView._tableWellView,
+                            GKContentView._titleLabel,
+                            GKPeerPickerTableViewCell._topSeparator,
+                            GKPeerPickerViewController._alertPresented,
+                            GKPeerPickerViewController._animating,
+                            GKPeerPickerViewController._bluetoothStatus,
+                            GKPeerPickerViewController._btView,
+                            GKPeerPickerViewController._connectTypeView,
+                            GKPeerPickerViewController._connectionTypesMask,
+                            GKPeerPickerViewController._currentConnectionTypeKey,
+                            GKPeerPickerViewController._currentView,
+                            GKPeerPickerViewController._invitationWaitTimer,
+                            GKPeerPickerViewController._inviteView,
+                            GKPeerPickerViewController._listView,
+                            GKPeerPickerViewController._menuQueue,
+                            GKPeerPickerViewController._noPeersView,
+                            GKPeerPickerViewController._peerTableView,
+                            GKPeerPickerViewController._peers,
+                            GKPeerPickerViewController._pendingPeer,
+                            GKPeerPickerViewController._pendingState,
+                            GKPeerPickerViewController._searchingForServicesString,
+                            GKPeerPickerViewController._sessionMap,
+                            GKPeerPickerViewController._state,
+                            GKPeerPickerViewController._statusView,
+                            GKPeerPickerViewController._updating ]
+...

@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ScreenTimeUI.framework/ScreenTimeUI
+current-version:       502.2.2
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _STBlockingViewDidHideNotification,
+                            _STIconCacheDidUpdateNotificationName,
+                            _STIconCacheDidUpdatePersonImageNotificationName,
+                            _STNotificationKeyBundleIdentifier,
+                            _STNotificationKeyDSID, _STNotificationKeyImage,
+                            _STNotificationKeyPINSuccess,
+                            _STRestrictionsPINControllerDidFinishNotification ]
+    objc-classes:         [ STBlockingViewController, STIconCache,
+                            STLockoutRestrictionsPINController,
+                            STLockoutViewController, STRemotePasscodeController ]
+...

@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FMAlertCategoryNone, _FMEmptyResult, _FMErrorDomain,
+                            _FMFutureCallbackStack, __FMBlockDescriptor,
+                            __FMDictionaryOfMetrics,
+                            __FMFutureDidPerformCallback,
+                            __FMFutureWillPerformCallback,
+                            __FMPopScopedDescriptor, __FMPushScopedDescriptor,
+                            __FMScopedDescriptor, _kFMDataArchiverErrorDomain,
+                            _kFMSynchronizerTimeoutNever ]
+    objc-classes:         [ FMAlert, FMCancelationToken, FMConcurrentMutableArray,
+                            FMConcurrentMutableDictionary, FMDataArchiver,
+                            FMFuture, FMInternalFileContainer, FMPair,
+                            FMPreferencesUtil, FMPromise, FMQueue,
+                            FMQueueSynchronizer, FMReadWriteLock, FMScheduler,
+                            FMSharedFileContainer, FMSynchronizer, FMTokenBucket,
+                            FMValueThrottler, FMWeakForwardingContainer,
+                            FMXPCActivity, FMXPCActivityCriteria,
+                            FMXPCServiceDescription, FMXPCSession, FMXPCTimer,
+                            _FMLazyFuture ]
+...

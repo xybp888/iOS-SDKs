@@ -1,0 +1,44 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AssertionServices.framework/AssertionServices
+current-version:       800.60.5
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AssertionServicesVersionNumber,
+                            _AssertionServicesVersionString,
+                            _BKSApplicationStateAll,
+                            _BKSApplicationStateAppIsFrontmostKey,
+                            _BKSApplicationStateDisplayIDKey,
+                            _BKSApplicationStateExitReasonKey,
+                            _BKSApplicationStateExtensionKey,
+                            _BKSApplicationStateHostPIDKey,
+                            _BKSApplicationStateKey,
+                            _BKSApplicationStateMostElevatedStateForProcessIDKey,
+                            _BKSApplicationStateProcessIDKey,
+                            _BKSApplicationStateRunningReasonAssertionIdentifierKey,
+                            _BKSApplicationStateRunningReasonAssertionReasonKey,
+                            _BKSApplicationStateRunningReasonsKey,
+                            _BKSAssertionErrorDomain,
+                            _BKSProcessAssertionBackgroundTimeRemaining,
+                            _BKSProcessAssertionSetExpirationHandler,
+                            _BKSProcessErrorDomain,
+                            _BKSProcessExtensionPropertyBundleID,
+                            _BKSTerminationAssertionActiveEfficacyForBundleIdentifier,
+                            _BKSTerminationAssertionHeldForBundleIdentifier,
+                            _BKSTerminationAssertionRegisterObserver,
+                            _BKSTerminationAssertionUnregisterObserver,
+                            _BKSWatchdogAssertionCreateForPID,
+                            _NSStringFromBKSProcessErrorCode,
+                            _NSStringFromBKSProcessExitReason,
+                            _RBSProcessLegacyStateDescriptor,
+                            __BKSWatchdogAssertionGetTypeID ]
+    objc-classes:         [ BKSApplicationStateMonitor, BKSAssertion, BKSProcess,
+                            BKSProcessAssertion, BKSProcessExitContext,
+                            BKSTerminationAssertion,
+                            BKSTerminationAssertionObserverManager,
+                            BKSTerminationContext, BKSWorkspace ]
+...

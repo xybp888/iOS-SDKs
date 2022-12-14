@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           AD9A7694-D13D-3E2D-8C77-09C57A9270A4
+  - target:          armv7s-ios
+    value:           700C76F2-983F-30D8-8C98-72234AAAD598
+  - target:          arm64-ios
+    value:           B0CFFC12-023D-3AD5-B526-EDABD0A1FE02
+  - target:          arm64e-ios
+    value:           00E2AB8B-91F0-38C2-97AA-E839E84DF41C
+install-name:    '/usr/lib/libMatch.1.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _nfaFree, _nodeModPtrRefs, _printGraphNode, _printRunNode ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _matchCombine, _matchCompile, _matchDiagram, _matchDup, _matchExec, 
+                       _matchFree, _matchInit, _matchOptimize, _matchPack, _matchPrintNodes, 
+                       _matchSetOption, _matchUnpack, _matchValidate ]
+...

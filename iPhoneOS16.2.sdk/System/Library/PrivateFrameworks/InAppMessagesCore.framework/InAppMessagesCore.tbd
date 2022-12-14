@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/InAppMessagesCore.framework/InAppMessagesCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _IAMApplicationDidBecomeActiveEventName,
+                            _IAMLogCategoryDefault,
+                            _IAMLogCategoryDefault_Oversize,
+                            _IAMWebProcessShouldDismissPresentationBeforeOpen,
+                            _IAMWebProcessShouldDismissPresentationBeforePerformingAction,
+                            _InAppMessagesCoreVersionNumber,
+                            _InAppMessagesCoreVersionString ]
+    objc-classes:         [ IAMAction, IAMApplicationDidBecomeActiveEvent,
+                            IAMContent, IAMCountableEvent, IAMEvent, IAMFigaroEvent,
+                            IAMImage, IAMImpression, IAMMessage,
+                            IAMPresentationPolicy, IAMTempTestMessages,
+                            IAMValueEvent ]
+...

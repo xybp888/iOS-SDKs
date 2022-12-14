@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/StorageSettings.framework/StorageSettings
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/PrivateFrameworks/StorageData.framework/StorageData ]
+    symbols:              [ _STColorForCategory, _STColorForCategoryKey,
+                            _STFrameworkImage, _STFrameworkLocStr,
+                            _STLoadHeaderIconForApp, _STLoadHeaderIconForAppID,
+                            _STLoadTableIconForApp, _STLoadTableIconForAppID,
+                            _STStorageAppKey, _STStorageCloudIconHiddenKey,
+                            _STStorageDeviceKey, _STStorageFPItemKey,
+                            _STStorageIconKey, _STStorageInfoKey,
+                            _STStorageItemPercentViewedKey, _STStorageItemURLKey,
+                            _STStorageLastUsedDateKey,
+                            _STStoragePluginReloadSpecifiersNotification,
+                            _STStoragePluginReloadTipsNotification,
+                            _STStorageSizeKey, _STStorageTipActivatingStringKey,
+                            _STStorageTipEnableButtonTitleKey,
+                            _STStorageTipEventualGainKey,
+                            _STStorageTipImmediateGainKey,
+                            _STStorageTipKindActionKey, _STStorageTipKindKey,
+                            _STStorageTipKindOptionKey, _STStorageTipPercentKey,
+                            _STStorageTipReloadNotification,
+                            _STStorageTipRepresentedAppKey, _STStorageTitleKey,
+                            _STStorageVersionTitleDisabledKey ]
+    objc-classes:         [ STStorageActionTip, STStorageActionTipItem,
+                            STStorageAppCell, STStorageAppHeaderCell,
+                            STStorageItemCell, STStorageOptionTip, STStoragePlugin,
+                            STStorageProgressView, STStorageTableCell,
+                            STStorageTip, STStorageTipCell, STStorageTipInfoCell ]
+...

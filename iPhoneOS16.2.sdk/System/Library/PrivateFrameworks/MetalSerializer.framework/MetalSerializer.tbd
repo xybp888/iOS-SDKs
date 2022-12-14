@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MetalSerializer.framework/MetalSerializer
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MTLCreateDeserializerForDevice,
+                            _MTLCreateDeserializerForDeviceWithDelegate,
+                            _MTLCreateDeserializerForDeviceWithDelegateNoQueue,
+                            _MTLDeserializerForDevice, _MTLDeserializerVersion ]
+    objc-classes:         [ MTLSerializer, MTLSerializerBlitCommandEncoder,
+                            MTLSerializerCommandEncoder,
+                            MTLSerializerComputeCommandEncoder,
+                            MTLSerializerParallelRenderCommandEncoder,
+                            MTLSerializerRenderCommandEncoder ]
+    objc-ivars:           [ MTLSerializerCommandEncoder.stream,
+                            MTLSerializerParallelRenderCommandEncoder._encoders,
+                            MTLSerializerParallelRenderCommandEncoder._encodersCount,
+                            MTLSerializerParallelRenderCommandEncoder._encodersSize ]
+...

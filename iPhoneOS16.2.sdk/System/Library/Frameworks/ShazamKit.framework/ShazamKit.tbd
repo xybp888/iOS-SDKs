@@ -1,0 +1,65 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/ShazamKit.framework/ShazamKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/PrivateFrameworks/ShazamCore.framework/ShazamCore ]
+    symbols:              [ _SHErrorDeviceToDeviceEncryptionKey,
+                            _SHErrorDiscardedAudioDurationKey, _SHErrorDomain,
+                            _SHEventSignalIdentifierMusicRecognitionHistoryActivated,
+                            _SHEventSignalIdentifierMusicRecognitionRecognitionActivated,
+                            _SHMaximumSignatureDuration, _SHMediaItemAlbumName,
+                            _SHMediaItemAppleMusicID, _SHMediaItemAppleMusicURL,
+                            _SHMediaItemArtist, _SHMediaItemArtworkURL,
+                            _SHMediaItemAudioStartDate,
+                            _SHMediaItemExplicitContent,
+                            _SHMediaItemFrequencySkew,
+                            _SHMediaItemFrequencySkewRanges,
+                            _SHMediaItemFrequencySkewRangesSwift,
+                            _SHMediaItemGenres, _SHMediaItemISRC,
+                            _SHMediaItemLyricsSnippet, _SHMediaItemMatchOffset,
+                            _SHMediaItemReleaseDate, _SHMediaItemShazamID,
+                            _SHMediaItemSpeedSkew, _SHMediaItemStaticLyricLines,
+                            _SHMediaItemSubtitle,
+                            _SHMediaItemSyncedLyricsSnippet,
+                            _SHMediaItemTimeRanges, _SHMediaItemTimeRangesSwift,
+                            _SHMediaItemTitle, _SHMediaItemVideoURL,
+                            _SHMediaItemWebURL, _SHMediaLibraryErrorDomain,
+                            _SHMediaLibrarySyncStartConditionInitialFetch,
+                            _SHMediaLibrarySyncStartConditionInitialUpload,
+                            _SHMediaLibrarySyncStartConditionMigration,
+                            _SHMediaLibrarySyncStartConditionRemotePush,
+                            _SHMediaLibrarySyncStartConditionUserAction,
+                            _SHNotificationKeySessionError,
+                            _SHNotificationKeySessionMatch,
+                            _SHNotificationKeySessionSignature,
+                            _SHNotificationNameSessionResult,
+                            _SHShazamKitClientInterface,
+                            _SHShazamKitServiceInterface,
+                            _SHShazamKitServiceName,
+                            _SHShazamKitUIClientInterface,
+                            _SHShazamKitUIServiceInterface,
+                            _SHShazamKitUIServiceName ]
+    objc-classes:         [ SHAttribution, SHCatalog, SHCustomCatalog, SHError,
+                            SHEventSignaller, SHLyricLine, SHManagedSession, SHMatch,
+                            SHMatchedMediaItem, SHMatcherResponse, SHMediaItem,
+                            SHMediaItemPropertyUtilities, SHMediaLibrary,
+                            SHMediaLibraryChange, SHMediaLibraryGroup,
+                            SHMediaLibraryInfo, SHMediaLibraryItemMetadata,
+                            SHMediaLibraryLabel, SHMediaLibraryQueryParameters,
+                            SHMediaLibrarySnapshot, SHMediaLibraryTrack,
+                            SHMediaLibraryTrackBuilder,
+                            SHMediaLibraryTrackUpdate, SHMutableSignature, SHRange,
+                            SHSession, SHShazamKey, SHShazamKitServiceInterfaces,
+                            SHShazamKitUIServiceInterfaces, SHSignature,
+                            SHSignatureGenerator, SHSyncedLyrics ]
+    weak-def-symbols:     [ __ZTINSt3__113basic_fstreamIcNS_11char_traitsIcEEEE,
+                            __ZTINSt3__117bad_function_callE,
+                            __ZTSNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE,
+                            __ZTSNSt3__117bad_function_callE ]
+...

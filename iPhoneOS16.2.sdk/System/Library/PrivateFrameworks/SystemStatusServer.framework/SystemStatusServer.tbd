@@ -1,0 +1,74 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SystemStatusServer.framework/SystemStatusServer
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _STEntitledDomainsForEntitlementValue,
+                            _STStatusDomainNameForEntitlementValue,
+                            _STSystemStatusLogEntityResolving,
+                            _STSystemStatusLogServer,
+                            _STSystemStatusLogTelephonyState,
+                            _STTelephonyCallForwardingIndicatorDebugName,
+                            _STTelephonyDataConnectionTypeDebugName,
+                            _STTelephonyRegistrationStatusDebugName,
+                            _SystemStatusServerVersionNumber,
+                            _SystemStatusServerVersionString ]
+    objc-classes:         [ STAttributedEntityResolutionSession,
+                            STAttributedEntityResolver,
+                            STExecutableIdentityResolutionSession,
+                            STExecutableIdentityResolver,
+                            STLocationStatusDomainDisplayNameTransformer,
+                            STMediaStatusDomainDisplayNameTransformer,
+                            STMutableTelephonyCarrierBundleInfo,
+                            STMutableTelephonyMobileEquipmentInfo,
+                            STMutableTelephonySubscriptionInfo,
+                            STReferenceCountedCache, STStatusDomainDataChangeLog,
+                            STStatusDomainDataChangeRecord,
+                            STStatusDomainDataChangeRecordDataEntry,
+                            STStatusDomainDataChangeRecordDiffEntry,
+                            STStatusDomainPublisherXPCClientHandle,
+                            STStatusDomainPublisherXPCClientListener,
+                            STStatusDomainXPCClientHandle,
+                            STStatusDomainXPCClientListener, STStatusServer,
+                            STTelephonyCarrierBundleInfo,
+                            STTelephonyMobileEquipmentInfo,
+                            STTelephonyStateProvider,
+                            STTelephonyStatusDomainDataProvider,
+                            STTelephonySubscriptionContext,
+                            STTelephonySubscriptionInfo ]
+    objc-ivars:           [ STTelephonyCarrierBundleInfo._LTEConnectionShows4G,
+                            STTelephonyCarrierBundleInfo._carrierName,
+                            STTelephonyCarrierBundleInfo._customerServicePhoneNumber,
+                            STTelephonyCarrierBundleInfo._disabledApplicationIDs,
+                            STTelephonyCarrierBundleInfo._homeCountryCode,
+                            STTelephonyCarrierBundleInfo._reinitiatingActivationDisabled,
+                            STTelephonyCarrierBundleInfo._suppressSOSOnlyWithLimitedService,
+                            STTelephonyMobileEquipmentInfo._CSN,
+                            STTelephonyMobileEquipmentInfo._ICCID,
+                            STTelephonyMobileEquipmentInfo._IMEI,
+                            STTelephonyMobileEquipmentInfo._MEID,
+                            STTelephonyMobileEquipmentInfo._bootstrapICCID,
+                            STTelephonySubscriptionInfo._SIMLabel,
+                            STTelephonySubscriptionInfo._SIMStatus,
+                            STTelephonySubscriptionInfo._bootstrap,
+                            STTelephonySubscriptionInfo._callForwardingIndicator,
+                            STTelephonySubscriptionInfo._cellularRegistrationStatus,
+                            STTelephonySubscriptionInfo._dataConnectionType,
+                            STTelephonySubscriptionInfo._identifier,
+                            STTelephonySubscriptionInfo._lastKnownNetworkCountryCode,
+                            STTelephonySubscriptionInfo._maxSignalStrengthBars,
+                            STTelephonySubscriptionInfo._networkReselectionNeeded,
+                            STTelephonySubscriptionInfo._operatorName,
+                            STTelephonySubscriptionInfo._preferredForDataConnections,
+                            STTelephonySubscriptionInfo._providingDataConnection,
+                            STTelephonySubscriptionInfo._registeredWithoutCellular,
+                            STTelephonySubscriptionInfo._registrationRejectionCauseCode,
+                            STTelephonySubscriptionInfo._registrationStatus,
+                            STTelephonySubscriptionInfo._shortSIMLabel,
+                            STTelephonySubscriptionInfo._signalStrengthBars ]
+...

@@ -1,0 +1,83 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64e-apple-ios16.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name _StoreKit_SwiftUI
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 811.2.8
+import Foundation
+@_exported import StoreKit
+import Swift
+import SwiftUI
+import _Concurrency
+import _StringProcessing
+import os.log
+import os
+@available(iOS 15.0, macCatalyst 15.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUI.View {
+  @preconcurrency public func refundRequestSheet(for transactionID: Swift.UInt64, isPresented: SwiftUI.Binding<Swift.Bool>, onDismiss: (@_Concurrency.MainActor (Swift.Result<StoreKit.Transaction.RefundRequestStatus, StoreKit.Transaction.RefundRequestError>) -> ())? = nil) -> some SwiftUI.View
+  
+}
+@available(iOS 15.0, macCatalyst 15.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUI.View {
+  public func manageSubscriptionsSheet(isPresented: SwiftUI.Binding<Swift.Bool>) -> some SwiftUI.View
+  
+}
+@available(iOS 14.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUI.View {
+  public func appStoreOverlay(isPresented: SwiftUI.Binding<Swift.Bool>, configuration: @escaping () -> StoreKit.SKOverlay.Configuration) -> some SwiftUI.View
+  
+}
+extension SwiftUI.View {
+  @available(iOS 16.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public func offerCodeRedemption(isPresented: SwiftUI.Binding<Swift.Bool>, onCompletion: @escaping @_Concurrency.MainActor (Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void = { _ in }) -> some SwiftUI.View
+  
+}
+@available(iOS 16.0, macCatalyst 16.0, macOS 13.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@_Concurrency.MainActor public struct RequestReviewAction {
+  @_Concurrency.MainActor public func callAsFunction()
+}
+extension SwiftUI.EnvironmentValues {
+  @available(iOS 16.0, macCatalyst 16.0, macOS 13.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @_Concurrency.MainActor public var requestReview: _StoreKit_SwiftUI.RequestReviewAction {
+    get
+  }
+}
+@available(iOS 16.0, macCatalyst 16.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@_Concurrency.MainActor public struct DisplayMessageAction {
+  @_Concurrency.MainActor public func callAsFunction(_ message: StoreKit.Message) throws
+}
+@available(iOS 16.0, macCatalyst 16.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUI.EnvironmentValues {
+  @_Concurrency.MainActor public var displayStoreKitMessage: _StoreKit_SwiftUI.DisplayMessageAction {
+    get
+  }
+}
+@available(iOS 16.0, macCatalyst 16.0, macOS 13.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _StoreKit_SwiftUI.RequestReviewAction : Swift.Sendable {}
+@available(iOS 16.0, macCatalyst 16.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _StoreKit_SwiftUI.DisplayMessageAction : Swift.Sendable {}

@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/LocalAuthenticationPrivateUI.framework/LocalAuthenticationPrivateUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LAUIPhysicalButtonNormalizedFrame ]
+    objc-classes:         [ LAUIAuthenticationView, LAUICheckmarkLayer,
+                            LAUIHorizontalArrowView, LAUIPKGlyphWrapper,
+                            LAUIPasscodeView, LAUIPearlGlyphLabel,
+                            LAUIPearlGlyphStaticConfiguration,
+                            LAUIPearlGlyphView,
+                            LAUIPearlGlyphViewAutoLayoutWrapper,
+                            LAUIPhysicalButtonView, LAUIRadialPingView,
+                            LAUITouchIDGlyph ]
+    weak-def-symbols:     [ __ZTISt11logic_error, __ZTISt12length_error,
+                            __ZTISt9exception, __ZTSSt11logic_error,
+                            __ZTSSt12length_error, __ZTSSt9exception ]
+...
