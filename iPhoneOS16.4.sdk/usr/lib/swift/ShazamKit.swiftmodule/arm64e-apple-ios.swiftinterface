@@ -1,0 +1,107 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.59 clang-1403.0.22.8.50)
+// swift-module-flags: -target arm64e-apple-ios16.4 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftShazamKit -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name ShazamKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 207.5
+import Foundation
+import MusicKit
+@_exported import ShazamKit
+import Swift
+import _Concurrency
+import _StringProcessing
+import os
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, watchOS 9.0, *)
+extension ShazamKit.SHSession {
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public var results: ShazamKit.SHSession.Results {
+    get
+  }
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public func result(from signature: ShazamKit.SHSignature) async -> ShazamKit.SHSession.Result
+  #endif
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, watchOS 9.0, *)
+extension ShazamKit.SHSession {
+  @frozen public enum Result : Swift.Sendable {
+    case match(ShazamKit.SHMatch)
+    case noMatch(ShazamKit.SHSignature)
+    case error(any Swift.Error, ShazamKit.SHSignature)
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public struct Results : _Concurrency.AsyncSequence {
+    public typealias Element = ShazamKit.SHSession.Result
+    public func makeAsyncIterator() -> ShazamKit.SHSession.Results.Iterator
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public mutating func next() async -> ShazamKit.SHSession.Results.Element?
+      #endif
+      public typealias Element = ShazamKit.SHSession.Results.Element
+    }
+    public typealias AsyncIterator = ShazamKit.SHSession.Results.Iterator
+  }
+  #endif
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, watchOS 9.0, *)
+extension ShazamKit.SHMediaItemProperty {
+  public static let timeRanges: ShazamKit.SHMediaItemProperty
+  public static let frequencySkewRanges: ShazamKit.SHMediaItemProperty
+}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension ShazamKit.SHMediaItem {
+  public var songs: [MusicKit.Song] {
+    get
+  }
+  @_alwaysEmitIntoClient convenience public init(properties: [ShazamKit.SHMediaItemProperty : Any]) {
+        
+        if #available(macOS 13.0, iOS 16.0, tvOS 16.0, watchOS 9.0, *) {
+            
+            var updatedProperties = properties
+            
+            let rangeMappingsToUpdate: [SHMediaItemProperty : SHMediaItemProperty] = [.timeRanges: .__timeRanges, .frequencySkewRanges : .__frequencySkewRanges]
+            
+            for (key, targetKey) in rangeMappingsToUpdate {
+                
+                if let ranges = updatedProperties[key] {
+                    
+                    if let ranges = ranges as? [Range<TimeInterval>] {
+                        
+                        updatedProperties[targetKey] = ranges.map { __SHRange(lowerBound: $0.lowerBound, upperBound: $0.upperBound) }
+                        
+                    } else if let ranges = ranges as? [Range<Float>] {
+                        
+                        updatedProperties[targetKey] = ranges.map { __SHRange(lowerBound: Double($0.lowerBound), upperBound: Double($0.upperBound)) }
+                        
+                    } else {
+                        
+                        updatedProperties[targetKey] = ranges
+                    }
+                    
+                    updatedProperties.removeValue(forKey: key)
+                }
+            }
+            
+            self.init(__properties: updatedProperties)
+        } else {
+            
+            self.init(__properties: properties)
+        }
+    }
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, watchOS 9.0, *)
+extension ShazamKit.SHMediaItem {
+  public var frequencySkewRanges: [Swift.Range<Swift.Float>] {
+    get
+  }
+  public var timeRanges: [Swift.Range<Foundation.TimeInterval>] {
+    get
+  }
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, watchOS 9.0, *)
+extension UniformTypeIdentifiers.UTType {
+  public static var shazamSignature: UniformTypeIdentifiers.UTType {
+    get
+  }
+  public static var shazamCustomCatalog: UniformTypeIdentifiers.UTType {
+    get
+  }
+}

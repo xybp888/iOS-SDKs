@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HealthMenstrualCyclesDaemon.framework/HealthMenstrualCyclesDaemon
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HDMCHeartRateInputLocalFeatureAttributes,
+                            _HDMCKeyValueDomain, _HDMCLocalFeatureAttributes,
+                            _HDMCWristTemperatureInputLocalFeatureAttributes,
+                            _NSStringFromHDMCOvulationConfirmationNotificationState ]
+    objc-classes:         [ HDMCAnalysisManager, HDMCDailyAnalytics,
+                            HDMCDailyMetric, HDMCDaySummaryBuilder,
+                            HDMCDaySummaryEnumerator, HDMCDeviationInputManager,
+                            HDMCHeartStatisticsEnumerator, HDMCNotification,
+                            HDMCOvulationConfirmationNotificationFeatureOffState,
+                            HDMCOvulationConfirmationNotificationFiredState,
+                            HDMCOvulationConfirmationNotificationScheduledState,
+                            HDMCOvulationConfirmationNotificationStateMachineState,
+                            HDMCOvulationConfirmationNotificationWaitingState,
+                            HDMCOvulationConfirmationStateManager,
+                            HDMCRecentBasalBodyTemperatureRange,
+                            HDMCRecentBasalBodyTemperatureRangeQuery,
+                            HDMCSymptomHistoryBuilder,
+                            HDMCUnconfirmedDeviationNotificationScheduledState,
+                            HDMCUnconfirmedDeviationNotificationStateMachineState,
+                            HDMCUnconfirmedDeviationNotificationWaitingState,
+                            HDMCWristTemperatureDailyAnalyticsEvent,
+                            HDMenstrualCyclesPlugin ]
+...

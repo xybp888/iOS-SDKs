@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/LighthouseCoreMLModelStore.framework/LighthouseCoreMLModelStore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LCFLogModelStore, _LCFLogModelStoreModelMetadata,
+                            _LCFModelStoreLoggingUtilsInit,
+                            _LRRLoggingCategoryModelStore,
+                            _LRRLoggingCategoryModelStoreModelMetadata,
+                            _LRRLoggingSubsystem,
+                            _LighthouseCoreMLModelStoreVersionNumber,
+                            _LighthouseCoreMLModelStoreVersionString,
+                            _kLastTrained, _kUserDefaultsModelStoreSuiteName ]
+    objc-classes:         [ LCFModelMetadata, LCFModelStore,
+                            LCFModelStoreModelMetadataProvider,
+                            LCFModelStoreUserDefaults, LCFModelStoreUtils ]
+...

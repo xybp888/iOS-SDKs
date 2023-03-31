@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/VisualLocalization.framework/VisualLocalization
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _VLAltitudeDataProviderErrorDomain,
+                            _VLConfig_AlgorithmVersion,
+                            _VLConfig_AvailabilityPrecisionFallbackAllowed,
+                            _VLConfig_TraceRecordingEnabled,
+                            _VLCoordinateFromECEF, _VLECEFFromCoordinate,
+                            _VLHeadingForTransform,
+                            _VLLocalizationDataProviderErrorDomain,
+                            _VLLocalizerDebugInfoKey, _VLLocalizerErrorDomain ]
+    objc-classes:         [ VLFilesystemDataProvider, VLLocalizationDebugInfo,
+                            VLLocalizationResult, VLLocalizer, VLTraceRecorder ]
+...

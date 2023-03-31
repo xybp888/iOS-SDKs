@@ -1,0 +1,31 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.59 clang-1403.0.22.8.50)
+// swift-module-flags: -target arm64e-apple-ios16.4 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftGameplayKit -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name GameplayKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 2
+import CoreGraphics
+@_exported import GameplayKit
+import Swift
+import _Concurrency
+import _StringProcessing
+import simd
+@available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
+extension GameplayKit.GKPath {
+  convenience public init(points: [Swift.SIMD2<Swift.Float>], radius: Swift.Float, cyclical: Swift.Bool)
+}
+@available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
+extension GameplayKit.GKPath {
+  convenience public init(points: [Swift.SIMD3<Swift.Float>], radius: Swift.Float, cyclical: Swift.Bool)
+}
+@available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
+extension GameplayKit.GKPolygonObstacle {
+  convenience public init(points: [Swift.SIMD2<Swift.Float>])
+}
+@available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
+extension GameplayKit.GKEntity {
+  public func component<ComponentType>(ofType componentClass: ComponentType.Type) -> ComponentType? where ComponentType : GameplayKit.GKComponent
+  public func removeComponent<ComponentType>(ofType componentClass: ComponentType.Type) where ComponentType : GameplayKit.GKComponent
+}
+@available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
+extension GameplayKit.GKStateMachine {
+  public func state<StateType>(forClass stateClass: StateType.Type) -> StateType? where StateType : GameplayKit.GKState
+}

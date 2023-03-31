@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ScreenReaderBrailleDriver.framework/ScreenReaderBrailleDriver
+current-version:       390
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SCRDAlva6SeriesAppendKeyEvent,
+                            _SCRDHandyTechCreateExtendedProtocolRequestPacket,
+                            _SCRDHandyTechDisplaySizeForDeviceID,
+                            _SCRDHandyTechDisplayUsesExtendedProtocol,
+                            _SCRDHandyTechExtractEventsFromBuffer,
+                            _kSCRDHandyTechBluetoothConfigServiceName,
+                            _kSCRDHandyTechBluetoothHardwareServiceName ]
+    objc-classes:         [ SCRDFileReader ]
+    objc-ivars:           [ SCRDFileReader._delegate, SCRDFileReader._fileHandle,
+                            SCRDFileReader._readerThread,
+                            SCRDFileReader._threadStartCount ]
+...

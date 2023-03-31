@@ -1,0 +1,16 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.59 clang-1403.0.22.8.50)
+// swift-module-flags: -target arm64-apple-ios16.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name MediaPlayer
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 4022.510.8
+import Foundation
+@_exported import MediaPlayer
+import Swift
+import _Concurrency
+import _StringProcessing
+@available(iOS 11.0, tvOS 16.4, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+extension MediaPlayer.MPMusicPlayerPlayParameters : Swift.Codable {
+  required convenience public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}

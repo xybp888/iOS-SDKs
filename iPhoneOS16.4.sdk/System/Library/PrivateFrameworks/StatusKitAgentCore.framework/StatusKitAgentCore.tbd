@@ -1,0 +1,35 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/StatusKitAgentCore.framework/StatusKitAgentCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SKAAccountProviderErrorDomain,
+                            _SKAChannelManagerErrorDomain,
+                            _SKAChannelManagerErrorRetryIntervalKey,
+                            _SKPushManagerErrorDomain ]
+    objc-classes:         [ SKAAccountProvider, SKAChannelManager,
+                            SKADatabaseChannel, SKADatabaseInvitedUser,
+                            SKADatabaseManager, SKADatabasePendingPublishRequest,
+                            SKADatabaseProvider, SKADatabaseReceivedInvitation,
+                            SKADatabaseRemovedUser, SKADatabaseStatus,
+                            SKADatabaseSubscriptionAssertion,
+                            SKADatabaseTransientSubscriptionHistory,
+                            SKAGeneratedEncryptionKey, SKAInvitationManager,
+                            SKAMessagingProvider, SKAOutgoingInvitationState,
+                            SKAPresenceClient, SKAPresenceClientConnection,
+                            SKAPresenceManager, SKAPushManager,
+                            SKAStatusEncryptionManager,
+                            SKAStatusPublishingManager,
+                            SKAStatusPublishingServiceClient,
+                            SKAStatusPublishingServiceClientConnection,
+                            SKAStatusReceivingManager, SKAStatusServer,
+                            SKAStatusSubscriptionManager,
+                            SKAStatusSubscriptionServiceClient,
+                            SKAStatusSubscriptionServiceClientConnection,
+                            SKAStatusUnencryptedEnvelope, SKASystemMonitor ]
+...

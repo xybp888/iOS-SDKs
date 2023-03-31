@@ -1,0 +1,30 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+current-version:       298
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HTMLError, _HTMLHeight, _HTMLMainContent,
+                            _HTMLPageCount, _HTMLResources, _HTMLWidth,
+                            _OICopyHTMLForOfficeData, _OICopyHTMLFromFileAtURL,
+                            _OICopyHTMLThumbnailForOfficeData,
+                            _OICopyHTMLThumbnailFromFileAtURL,
+                            _OICopyPrecomputedThumbnailDataFromFileAtURLIfPresent,
+                            _OIErrorDomain, _OIPreviewProcessWithData,
+                            _OIPreviewProcessWithDataAndOptions,
+                            _OIPreviewProcessWithURL,
+                            _OIPreviewProcessWithURLAndOptions,
+                            _kOIPreviewOptionsNoDecorations,
+                            _kOIPreviewOptionsPassphrase ]
+    objc-classes:         [ OISpotlightImporter ]
+    weak-def-symbols:     [ __ZTISt11logic_error, __ZTISt12length_error,
+                            __ZTISt12out_of_range, __ZTISt20bad_array_new_length,
+                            __ZTISt9bad_alloc, __ZTISt9exception,
+                            __ZTSSt11logic_error, __ZTSSt12length_error,
+                            __ZTSSt12out_of_range, __ZTSSt20bad_array_new_length,
+                            __ZTSSt9bad_alloc, __ZTSSt9exception ]
+...

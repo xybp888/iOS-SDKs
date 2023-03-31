@@ -1,0 +1,38 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AXSoundDetectionUI.framework/AXSoundDetectionUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXSDKShotGatherFilesAndGenerateRadarForDetector,
+                            _AXSDSoundDetectionGenerateUserNotificationForCustomDetector,
+                            _AXSDSoundDetectionGenerateUserNotificationForDetectionType,
+                            _AXSDSoundDetectionRequestNotificationAuthorization,
+                            _AXSDSoundDetectionSendKShotModelFailedNotification,
+                            _AXSDSoundDetectionSendKShotModelReadyNotification,
+                            _AXSoundDetectionUIVersionNumber,
+                            _AXSoundDetectionUIVersionString,
+                            __SoundDetectionSendNotificationForCustomDetector,
+                            __accessibilitySDUISupportBundle,
+                            _kShotGeneralApplianceName, _kShotHallucinatorName,
+                            _kShotModelWeightsName, _modelBasePath,
+                            _modelExtension, _soundDetectionTypesForCategory ]
+    objc-classes:         [ AXHARingBuffer, AXSDAudioLevelsHelper,
+                            AXSDCustomDetectionController, AXSDDetectionResult,
+                            AXSDDetector, AXSDDetectorManager,
+                            AXSDDetectorQueueManager, AXSDDetectorStore,
+                            AXSDKShotController, AXSDKShotDetector,
+                            AXSDKShotDetectorQueueManager, AXSDKShotModelManager,
+                            AXSDKShotRecordingManager, AXSDListenEngine,
+                            AXSDResultsCollector, AXSDSoundDetectionController,
+                            AXSDTimeStamp, AXSDTimedAudioBuffer,
+                            AXSDUltronInternalRecordingManager,
+                            AXSDVoiceTriggerAssetManager,
+                            AXSDVoiceTriggerController,
+                            AXSDVoiceTriggerModelManager,
+                            AXUltronModelAssetManager ]
+...

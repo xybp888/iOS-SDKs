@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/LocalAuthentication.framework/Support/DaemonUtils.framework/DaemonUtils
+current-version:       1132.100.131
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LANVRAMNamespaceStartupManager,
+                            _NSStringFromBKDevice, _NSStringFromBKLockoutState,
+                            _NSStringFromBKMatchFailReason,
+                            _NSStringFromBKOperationEndReason,
+                            _NSStringFromBKOperationState ]
+    objc-classes:         [ BiometryHelper, Caller, CredentialRequest, DaemonUtils,
+                            EvaluationRequest, InstalledAppsCache, LANVRAM,
+                            PushButtonMonitor, Request, StorageRequest ]
+...

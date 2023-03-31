@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FileProviderDaemon.framework/FileProviderDaemon
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FPDAppStoreServiceName,
+                            _FPDAppStoreServiceXPCInterface,
+                            _defaultsKeyForErrorInjectionCategory,
+                            _errorInjectionCategoryByName ]
+    objc-classes:         [ FPDAccessControlStore, FPDActionOperation,
+                            FPDActionOperationQueue, FPDAppMonitor,
+                            FPDConfigurationStore, FPDDomain,
+                            FPDDomainCleanupResult, FPDDomainExtensionBackend,
+                            FPDDomainIndexer, FPDDomainIndexerSchedulerAssertion,
+                            FPDDownloadOperation, FPDDownloader, FPDExtension,
+                            FPDFetchAppLibraryIconOperation, FPDMoveAtom,
+                            FPDMoveOperation, FPDMoveReader, FPDMoveWriter,
+                            FPDProcessMonitor, FPDProvider, FPDProviderDescriptor,
+                            FPDRTCReportingSession,
+                            FPDRTCReportingSessionManager, FPDRequest, FPDServer,
+                            FPDSharedScheduler, FPDVolume, FPDVolumeManager ]
+...

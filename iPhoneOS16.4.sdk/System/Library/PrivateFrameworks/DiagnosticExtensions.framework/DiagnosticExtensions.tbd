@@ -1,0 +1,30 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DiagnosticExtensions.framework/DiagnosticExtensions
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DEExtensionTrackerEarliestExpirationDateKey,
+                            _DEExtensionTrackerExpirationDateKey,
+                            _DEExtensionTrackerSessionsKey,
+                            _DEExtensionTrackerUserDefaultsKey,
+                            _DEExtensionTrackerXPCActivityDateKey,
+                            _DEExtensionTrackerXPCActivityKey,
+                            _DEUtilsValidateConnection,
+                            _DEUtilsValidateDestination,
+                            _DiagnosticExtensionsVersionNumber,
+                            _DiagnosticExtensionsVersionString, _pgrep,
+                            _signal_USR2 ]
+    objc-classes:         [ DEArchive, DEArchiveReader, DEArchiver,
+                            DEAttachmentGroup, DEAttachmentItem,
+                            DEAttachmentItemSandboxExtensionHandle,
+                            DECollectionProgress, DEExtension, DEExtensionContext,
+                            DEExtensionHostContext, DEExtensionManager,
+                            DEExtensionProvider, DEExtensionTracker, DELogMover,
+                            DELogging, DELoggingPreferences, DEUtils,
+                            DiagnosticExtensions_Subsystem ]
+...

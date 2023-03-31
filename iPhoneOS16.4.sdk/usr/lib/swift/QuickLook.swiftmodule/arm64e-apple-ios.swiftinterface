@@ -1,0 +1,19 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.59 clang-1403.0.22.8.50)
+// swift-module-flags: -target arm64e-apple-ios16.4 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftQuickLook -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name QuickLook
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 925.5.3
+import PDFKit
+@_exported import QuickLook
+import Swift
+import _Concurrency
+import _StringProcessing
+@available(iOS 15.0, *)
+extension QuickLook.QLPreviewReply {
+  public var stringEncoding: Swift.String.Encoding {
+    get
+    set(newEncoding)
+  }
+  convenience public init(contextSize: CoreFoundation.CGSize, isBitmap: Swift.Bool, drawUsing closure: @escaping (CoreGraphics.CGContext, QuickLook.QLPreviewReply) throws -> Swift.Void)
+  convenience public init(forPDFWithPageSize defaultPageSize: CoreFoundation.CGSize, createDocumentUsing closure: @escaping (QuickLook.QLPreviewReply) throws -> PDFKit.PDFDocument)
+  convenience public init(dataOfContentType contentType: UniformTypeIdentifiers.UTType, contentSize: CoreFoundation.CGSize, createDataUsing closure: @escaping (QuickLook.QLPreviewReply) throws -> Foundation.Data)
+}

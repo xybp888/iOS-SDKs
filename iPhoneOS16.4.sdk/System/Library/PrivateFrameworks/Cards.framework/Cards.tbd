@@ -1,0 +1,32 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Cards.framework/Cards
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CRContextCards, _CRErrorCodeGetName, _CRErrorDomain,
+                            _CRJSContextErrorDomain,
+                            _CRJSObjectBackingObjectPropertyName,
+                            _CRLogContextCards, _CRLogInitIfNeeded,
+                            _CRLoggingSubsystem, _CardsVersionNumber,
+                            _CardsVersionString, __CRSystemRootDirectory ]
+    objc-classes:         [ CRBasicAsyncCardReceiptFeedback,
+                            CRBasicAsyncCardRequestFeedback, CRBasicCard,
+                            CRBasicCardSection,
+                            CRBasicCardSectionViewAppearanceFeedback,
+                            CRBasicCardSectionViewDisappearanceFeedback,
+                            CRBasicPayloadCommand, CRBeganEditingCommand,
+                            CRBundleManager, CRCardMocks, CRError,
+                            CRFinishedEditingCommand, CRHandleIntentCommand,
+                            CRInvocationChain, CRInvocationPayloadCommand,
+                            CRJSContext, CRJSObject, CRMockAsyncCard,
+                            CRNextCardCommand, CRPBSerialization,
+                            CRProtocolRestrictedInvocationChain,
+                            CRPunchoutCommand, CRRequestUserConfirmationCommand,
+                            CRSFCardLoader, CRSFCardSectionUtilities,
+                            CRUpdateProgressCommand ]
+...

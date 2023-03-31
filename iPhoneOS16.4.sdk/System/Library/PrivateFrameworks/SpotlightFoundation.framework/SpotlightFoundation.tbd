@@ -1,0 +1,31 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SpotlightFoundation.framework/SpotlightFoundation
+current-version:       2230.19.2
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SPSpotlightRecentsCacheDidChange,
+                            _SPSpotlightRecentsCacheOptionMaxCountKey,
+                            _SpotlightFoundationVersionNumber,
+                            _SpotlightFoundationVersionString,
+                            _attributesForTopicIdentifier,
+                            _logForSPLogCategoryCaching,
+                            _logForSPLogCategoryDefault,
+                            _logForSPLogCategoryRecents, _resultIsLocalType,
+                            _resultIsSuggestionType,
+                            _searchResultWithTopicIdentifier,
+                            _topicIdentifierWithContactIdentifierAndDetail,
+                            _topicIdentifierWithContactInfoAndDetail,
+                            _topicIdentifierWithIdentifierAndDetail,
+                            _topicIdentifierWithPersonQueryIdentifierAndDetail,
+                            _topicIdentifierWithTitleAndType,
+                            _topicIsCoreSuggestion, _truncatedSearchString,
+                            _truncatedTitle ]
+    objc-classes:         [ SPCacheManager, SPCachedResult, SPLocalTopic,
+                            SPProactiveTopic, SPRecentTopic,
+                            SPSpotlightRecentsCache ]
+...

@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PassKitUIFoundation.framework/PassKitUIFoundation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PKGlyphViewSize,
+                            _PKPeerPaymentCashChiseledFontFileName,
+                            _PKPeerPaymentCashPlainFontFileName,
+                            _PKSFCashTextCondensedFontFileName,
+                            _PKSFCashTextCondensedSemiboldFontFileName,
+                            _PKTextureLoaderResultCreateDefaultPrivate2DTexture,
+                            _PKTextureLoaderResultGetSRGBMatchedFormat,
+                            _PKUserInterface ]
+    objc-classes:         [ PKAppleBalanceCardView, PKAppleCashCardView,
+                            PKAppleHomeKeyCardView, PKAuthenticator,
+                            PKAuthenticatorEvaluationRequest,
+                            PKCategoryVisualizationCardView,
+                            PKDisplayLinkTargetProxy, PKFingerprintGlyphView,
+                            PKGlyphView, PKMotionManager,
+                            PKPassFaceViewCategoryVisualizationRendererState,
+                            PKPassFaceViewRendererState, PKPayLaterCardView,
+                            PKPaymentRemoteInstrumentThumbnailView,
+                            PKPaymentSetupAssistantCredential,
+                            PKPaymentSetupAssistantProvisioningContext,
+                            PKPeerPayment3DCharacter, PKPeerPayment3DScene,
+                            PKPeerPayment3DStore, PKPeerPayment3DTextView,
+                            PKPeerPaymentFontHelper, PKPhoneGlyphLayer,
+                            PKRenderLoop, PKTextureLoadDescriptor, PKTextureLoader,
+                            PKTexturedCardView, PKUISpringAnimationFactory ]
+    objc-ivars:           [ PKRenderLoop._delegate, PKRenderLoop._drawing,
+                            PKRenderLoop._invalidated ]
+...

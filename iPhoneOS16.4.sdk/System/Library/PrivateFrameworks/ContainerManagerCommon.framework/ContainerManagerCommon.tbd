@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ContainerManagerCommon.framework/ContainerManagerCommon
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MCMMigrationLastBuildInfoKey,
+                            _MCMMigrationTypeACLMigration,
+                            _MCMMigrationTypeBundleMigration,
+                            _MCMMigrationTypeCodeSigningMigration,
+                            _MCMMigrationTypeDaemonContainerCleaning,
+                            _MCMMigrationTypeGroupIdMigration,
+                            _MCMUserMigrationTypeSubdirectoryMigration,
+                            __containermanagerd_main,
+                            _containermanager_copy_global_configuration,
+                            _containermanager_set_global_configuration ]
+    objc-classes:         [ MCMGlobalConfiguration, MCMMigrationStatus,
+                            MCMPOSIXUser ]
+...

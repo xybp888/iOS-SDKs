@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HealthDaemonFoundation.framework/HealthDaemonFoundation
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HDAnalyticsWriterBugTypeClinicalData,
+                            _HDAnalyticsWriterBugTypeReportAProblem,
+                            _HDAssertionManagerAssertionKey,
+                            _HDAssertionManagerAssertionReturnedNotification,
+                            _HDAssertionManagerAssertionTakenNotification,
+                            _HDDiagnosticStringFromDate,
+                            _HDDiagnosticStringFromDuration,
+                            _HDStringFromGatedActivityResult,
+                            _HDUserNotificationResponseButtonToString ]
+    objc-classes:         [ HDAnalyticsWriter, HDAssertion, HDAssertionManager,
+                            HDDiagnosticManager, HDUserNotification, HDXPCAlarm,
+                            HDXPCAlarmEvent, HDXPCAlarmScheduler, HDXPCClient,
+                            HDXPCEventPublisher, HDXPCGatedActivity, HDXPCListener,
+                            HDXPCPeriodicActivity, HDXPCProcess ]
+...

@@ -1,0 +1,651 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.59 clang-1403.0.22.8.50)
+// swift-module-flags: -target arm64-apple-ios16.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name WeatherKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 348
+import CoreLocation
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import os
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public struct WeatherAvailability {
+  public var minuteAvailability: WeatherKit.WeatherAvailability.AvailabilityKind
+  public var alertAvailability: WeatherKit.WeatherAvailability.AvailabilityKind
+  public enum AvailabilityKind : Swift.String, Swift.Codable {
+    case available
+    case temporarilyUnavailable
+    case unsupported
+    case unknown
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+}
+extension WeatherKit.WeatherAvailability : Swift.Equatable {
+  public static func == (a: WeatherKit.WeatherAvailability, b: WeatherKit.WeatherAvailability) -> Swift.Bool
+}
+extension WeatherKit.WeatherAvailability : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public struct MinuteWeather {
+  public var date: Foundation.Date
+  public var precipitation: WeatherKit.Precipitation
+  public var precipitationChance: Swift.Double
+  public var precipitationIntensity: Foundation.Measurement<Foundation.UnitSpeed>
+}
+extension WeatherKit.MinuteWeather : Swift.Equatable {
+  public static func == (a: WeatherKit.MinuteWeather, b: WeatherKit.MinuteWeather) -> Swift.Bool
+}
+extension WeatherKit.MinuteWeather : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public struct DayWeather {
+  public var date: Foundation.Date
+  public var condition: WeatherKit.WeatherCondition
+  public var symbolName: Swift.String
+  public var highTemperature: Foundation.Measurement<Foundation.UnitTemperature>
+  public var lowTemperature: Foundation.Measurement<Foundation.UnitTemperature>
+  public var precipitation: WeatherKit.Precipitation
+  public var precipitationChance: Swift.Double
+  @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+  @_backDeploy(before: iOS 16.4)
+  @_backDeploy(before: macOS 13.3)
+  @_backDeploy(before: tvOS 16.4)
+  @_backDeploy(before: watchOS 9.4)
+  public var precipitationAmount: Foundation.Measurement<Foundation.UnitLength> {
+    get {
+        return rainfallAmount
+    }
+  }
+  @available(iOS, introduced: 16.0, deprecated: 16.4, renamed: "precipitationAmount")
+  @available(macOS, introduced: 13.0, deprecated: 13.3, renamed: "precipitationAmount")
+  @available(tvOS, introduced: 16.0, deprecated: 16.4, renamed: "precipitationAmount")
+  @available(watchOS, introduced: 9.0, deprecated: 9.4, renamed: "precipitationAmount")
+  public var rainfallAmount: Foundation.Measurement<Foundation.UnitLength>
+  public var snowfallAmount: Foundation.Measurement<Foundation.UnitLength>
+  public var sun: WeatherKit.SunEvents
+  public var moon: WeatherKit.MoonEvents
+  public var uvIndex: WeatherKit.UVIndex
+  public var wind: WeatherKit.Wind
+}
+extension WeatherKit.DayWeather : Swift.Equatable {
+  public static func == (a: WeatherKit.DayWeather, b: WeatherKit.DayWeather) -> Swift.Bool
+}
+extension WeatherKit.DayWeather : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public struct UVIndex {
+  public var value: Swift.Int
+  public var category: WeatherKit.UVIndex.ExposureCategory
+  @frozen public enum ExposureCategory : Swift.String, Swift.Codable, Swift.Comparable, Swift.CustomStringConvertible, Swift.CaseIterable {
+    case low
+    case moderate
+    case high
+    case veryHigh
+    case extreme
+    public var rangeValue: Swift.ClosedRange<Swift.Int> {
+      get
+    }
+    public var description: Swift.String {
+      get
+    }
+    public var accessibilityDescription: Swift.String {
+      get
+    }
+    public static func < (lhs: WeatherKit.UVIndex.ExposureCategory, rhs: WeatherKit.UVIndex.ExposureCategory) -> Swift.Bool
+    public init?(rawValue: Swift.String)
+    public typealias AllCases = [WeatherKit.UVIndex.ExposureCategory]
+    public typealias RawValue = Swift.String
+    public static var allCases: [WeatherKit.UVIndex.ExposureCategory] {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+}
+extension WeatherKit.UVIndex : Swift.Equatable {
+  public static func == (a: WeatherKit.UVIndex, b: WeatherKit.UVIndex) -> Swift.Bool
+}
+extension WeatherKit.UVIndex : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public struct HourWeather {
+  public var date: Foundation.Date
+  public var cloudCover: Swift.Double
+  public var condition: WeatherKit.WeatherCondition
+  public var symbolName: Swift.String
+  public var dewPoint: Foundation.Measurement<Foundation.UnitTemperature>
+  public var humidity: Swift.Double
+  public var isDaylight: Swift.Bool
+  public var precipitation: WeatherKit.Precipitation
+  public var precipitationChance: Swift.Double
+  public var precipitationAmount: Foundation.Measurement<Foundation.UnitLength>
+  public var pressure: Foundation.Measurement<Foundation.UnitPressure>
+  public var pressureTrend: WeatherKit.PressureTrend
+  public var temperature: Foundation.Measurement<Foundation.UnitTemperature>
+  public var apparentTemperature: Foundation.Measurement<Foundation.UnitTemperature>
+  public var uvIndex: WeatherKit.UVIndex
+  public var visibility: Foundation.Measurement<Foundation.UnitLength>
+  public var wind: WeatherKit.Wind
+}
+extension WeatherKit.HourWeather : Swift.Equatable {
+  public static func == (a: WeatherKit.HourWeather, b: WeatherKit.HourWeather) -> Swift.Bool
+}
+extension WeatherKit.HourWeather : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public enum WeatherError : Foundation.LocalizedError {
+  case permissionDenied
+  case unknown
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public var failureReason: Swift.String? {
+    get
+  }
+  public var helpAnchor: Swift.String? {
+    get
+  }
+  public var recoverySuggestion: Swift.String? {
+    get
+  }
+  public static func == (a: WeatherKit.WeatherError, b: WeatherKit.WeatherError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public struct SunEvents {
+  public var astronomicalDawn: Foundation.Date?
+  public var nauticalDawn: Foundation.Date?
+  public var civilDawn: Foundation.Date?
+  public var sunrise: Foundation.Date?
+  public var solarNoon: Foundation.Date?
+  public var sunset: Foundation.Date?
+  public var civilDusk: Foundation.Date?
+  public var nauticalDusk: Foundation.Date?
+  public var astronomicalDusk: Foundation.Date?
+  public var solarMidnight: Foundation.Date?
+}
+extension WeatherKit.SunEvents : Swift.Equatable {
+  public static func == (a: WeatherKit.SunEvents, b: WeatherKit.SunEvents) -> Swift.Bool
+}
+extension WeatherKit.SunEvents : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public enum WeatherCondition : Swift.String, Swift.CaseIterable, Swift.CustomStringConvertible, Swift.Hashable {
+  case blizzard
+  case blowingDust
+  case blowingSnow
+  case breezy
+  case clear
+  case cloudy
+  case drizzle
+  case flurries
+  case foggy
+  case freezingDrizzle
+  case freezingRain
+  case frigid
+  case hail
+  case haze
+  case heavyRain
+  case heavySnow
+  case hot
+  case hurricane
+  case isolatedThunderstorms
+  case mostlyClear
+  case mostlyCloudy
+  case partlyCloudy
+  case rain
+  case scatteredThunderstorms
+  case sleet
+  case smoky
+  case snow
+  case strongStorms
+  case sunFlurries
+  case sunShowers
+  case thunderstorms
+  case tropicalStorm
+  case windy
+  case wintryMix
+  public var description: Swift.String {
+    get
+  }
+  public var accessibilityDescription: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [WeatherKit.WeatherCondition]
+  public typealias RawValue = Swift.String
+  public static var allCases: [WeatherKit.WeatherCondition] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension WeatherKit.WeatherCondition : Swift.Equatable {
+}
+extension WeatherKit.WeatherCondition : Swift.Codable {
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public struct WeatherAttribution {
+  public var serviceName: Swift.String
+  public var legalPageURL: Foundation.URL
+  public var squareMarkURL: Foundation.URL
+  public var combinedMarkDarkURL: Foundation.URL
+  public var combinedMarkLightURL: Foundation.URL
+  @available(iOS 16.4, macOS 13.3, tvOS 16.4, watchOS 9.4, *)
+  public var legalAttributionText: Swift.String {
+    get
+  }
+}
+extension WeatherKit.WeatherAttribution : Swift.Equatable {
+  public static func == (a: WeatherKit.WeatherAttribution, b: WeatherKit.WeatherAttribution) -> Swift.Bool
+}
+extension WeatherKit.WeatherAttribution : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public struct WeatherQuery<T> {
+  public static var current: WeatherKit.WeatherQuery<WeatherKit.CurrentWeather> {
+    get
+  }
+  public static var minute: WeatherKit.WeatherQuery<WeatherKit.Forecast<WeatherKit.MinuteWeather>?> {
+    get
+  }
+  public static var hourly: WeatherKit.WeatherQuery<WeatherKit.Forecast<WeatherKit.HourWeather>> {
+    get
+  }
+  public static var daily: WeatherKit.WeatherQuery<WeatherKit.Forecast<WeatherKit.DayWeather>> {
+    get
+  }
+  public static var alerts: WeatherKit.WeatherQuery<[WeatherKit.WeatherAlert]?> {
+    get
+  }
+  public static var availability: WeatherKit.WeatherQuery<WeatherKit.WeatherAvailability> {
+    get
+  }
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.WeatherQuery where T == WeatherKit.Forecast<WeatherKit.DayWeather> {
+  public static func daily(startDate: Foundation.Date, endDate: Foundation.Date) -> WeatherKit.WeatherQuery<T>
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.WeatherQuery where T == WeatherKit.Forecast<WeatherKit.HourWeather> {
+  public static func hourly(startDate: Foundation.Date, endDate: Foundation.Date) -> WeatherKit.WeatherQuery<T>
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public struct MoonEvents {
+  public var phase: WeatherKit.MoonPhase
+  public var moonrise: Foundation.Date?
+  public var moonset: Foundation.Date?
+}
+extension WeatherKit.MoonEvents : Swift.Equatable {
+  public static func == (a: WeatherKit.MoonEvents, b: WeatherKit.MoonEvents) -> Swift.Bool
+}
+extension WeatherKit.MoonEvents : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public struct WeatherMetadata {
+  public var date: Foundation.Date
+  public var expirationDate: Foundation.Date
+  public var location: CoreLocation.CLLocation {
+    get
+  }
+}
+extension WeatherKit.WeatherMetadata : Swift.Equatable {
+  public static func == (a: WeatherKit.WeatherMetadata, b: WeatherKit.WeatherMetadata) -> Swift.Bool
+}
+extension WeatherKit.WeatherMetadata : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public struct Weather {
+  public var currentWeather: WeatherKit.CurrentWeather
+  public var minuteForecast: WeatherKit.Forecast<WeatherKit.MinuteWeather>?
+  public var hourlyForecast: WeatherKit.Forecast<WeatherKit.HourWeather>
+  public var dailyForecast: WeatherKit.Forecast<WeatherKit.DayWeather>
+  public var weatherAlerts: [WeatherKit.WeatherAlert]?
+  public var availability: WeatherKit.WeatherAvailability
+}
+extension WeatherKit.Weather : Swift.Equatable {
+  public static func == (a: WeatherKit.Weather, b: WeatherKit.Weather) -> Swift.Bool
+}
+extension WeatherKit.Weather : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public struct Forecast<Element> : Swift.RandomAccessCollection, Swift.Codable, Swift.Equatable where Element : Swift.Decodable, Element : Swift.Encodable, Element : Swift.Equatable {
+  public typealias Index = Swift.Int
+  public var forecast: [Element]
+  public var metadata: WeatherKit.WeatherMetadata
+  public var startIndex: WeatherKit.Forecast<Element>.Index {
+    get
+  }
+  public var endIndex: WeatherKit.Forecast<Element>.Index {
+    get
+  }
+  public subscript(position: WeatherKit.Forecast<Element>.Index) -> Element {
+    get
+  }
+  public static func == (a: WeatherKit.Forecast<Element>, b: WeatherKit.Forecast<Element>) -> Swift.Bool
+  public typealias Indices = Swift.Range<WeatherKit.Forecast<Element>.Index>
+  public typealias Iterator = Swift.IndexingIterator<WeatherKit.Forecast<Element>>
+  public typealias SubSequence = Swift.Slice<WeatherKit.Forecast<Element>>
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.Forecast where Element == WeatherKit.MinuteWeather {
+  public var summary: Swift.String {
+    get
+  }
+}
+extension WeatherKit.Forecast {
+  public static func == (lhs: WeatherKit.Forecast<WeatherKit.MinuteWeather>, rhs: WeatherKit.Forecast<WeatherKit.MinuteWeather>) -> Swift.Bool
+}
+extension WeatherKit.Forecast where Element == WeatherKit.HourWeather {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension WeatherKit.Forecast where Element == WeatherKit.DayWeather {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public enum Precipitation : Swift.String, Swift.CaseIterable, Swift.CustomStringConvertible, Swift.Hashable {
+  case none
+  case hail
+  case mixed
+  case rain
+  case sleet
+  case snow
+  public var description: Swift.String {
+    get
+  }
+  public var accessibilityDescription: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [WeatherKit.Precipitation]
+  public typealias RawValue = Swift.String
+  public static var allCases: [WeatherKit.Precipitation] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension WeatherKit.Precipitation : Swift.Equatable {
+}
+extension WeatherKit.Precipitation : Swift.Codable {
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public enum PressureTrend : Swift.String, Swift.CaseIterable, Swift.CustomStringConvertible, Swift.Hashable {
+  case rising
+  case falling
+  case steady
+  public var description: Swift.String {
+    get
+  }
+  public var accessibilityDescription: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [WeatherKit.PressureTrend]
+  public typealias RawValue = Swift.String
+  public static var allCases: [WeatherKit.PressureTrend] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension WeatherKit.PressureTrend : Swift.Equatable {
+}
+extension WeatherKit.PressureTrend : Swift.Codable {
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public struct Wind {
+  public var compassDirection: WeatherKit.Wind.CompassDirection
+  public var direction: Foundation.Measurement<Foundation.UnitAngle>
+  public var speed: Foundation.Measurement<Foundation.UnitSpeed>
+  public var gust: Foundation.Measurement<Foundation.UnitSpeed>?
+  @frozen public enum CompassDirection : Swift.String, Swift.Codable, Swift.CaseIterable, Swift.CustomStringConvertible {
+    case north
+    case northNortheast
+    case northeast
+    case eastNortheast
+    case east
+    case eastSoutheast
+    case southeast
+    case southSoutheast
+    case south
+    case southSouthwest
+    case southwest
+    case westSouthwest
+    case west
+    case westNorthwest
+    case northwest
+    case northNorthwest
+    public var abbreviation: Swift.String {
+      get
+    }
+    public var description: Swift.String {
+      get
+    }
+    public var accessibilityDescription: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias AllCases = [WeatherKit.Wind.CompassDirection]
+    public typealias RawValue = Swift.String
+    public static var allCases: [WeatherKit.Wind.CompassDirection] {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+}
+extension WeatherKit.Wind : Swift.Equatable {
+  public static func == (a: WeatherKit.Wind, b: WeatherKit.Wind) -> Swift.Bool
+}
+extension WeatherKit.Wind : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+final public class WeatherService : @unchecked Swift.Sendable {
+  public static let shared: WeatherKit.WeatherService
+  #if compiler(>=5.3) && $EffectfulProp
+  final public var attribution: WeatherKit.WeatherAttribution {
+    get async throws
+  }
+  #endif
+  convenience public init()
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func weather(for location: CoreLocation.CLLocation) async throws -> WeatherKit.Weather
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func weather<T>(for location: CoreLocation.CLLocation, including dataSet: WeatherKit.WeatherQuery<T>) async throws -> T
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func weather<T1, T2>(for location: CoreLocation.CLLocation, including dataSet1: WeatherKit.WeatherQuery<T1>, _ dataSet2: WeatherKit.WeatherQuery<T2>) async throws -> (T1, T2)
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func weather<T1, T2, T3>(for location: CoreLocation.CLLocation, including dataSet1: WeatherKit.WeatherQuery<T1>, _ dataSet2: WeatherKit.WeatherQuery<T2>, _ dataSet3: WeatherKit.WeatherQuery<T3>) async throws -> (T1, T2, T3)
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func weather<T1, T2, T3, T4>(for location: CoreLocation.CLLocation, including dataSet1: WeatherKit.WeatherQuery<T1>, _ dataSet2: WeatherKit.WeatherQuery<T2>, _ dataSet3: WeatherKit.WeatherQuery<T3>, _ dataSet4: WeatherKit.WeatherQuery<T4>) async throws -> (T1, T2, T3, T4)
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func weather<T1, T2, T3, T4, T5>(for location: CoreLocation.CLLocation, including dataSet1: WeatherKit.WeatherQuery<T1>, _ dataSet2: WeatherKit.WeatherQuery<T2>, _ dataSet3: WeatherKit.WeatherQuery<T3>, _ dataSet4: WeatherKit.WeatherQuery<T4>, _ dataSet5: WeatherKit.WeatherQuery<T5>) async throws -> (T1, T2, T3, T4, T5)
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func weather<T1, T2, T3, T4, T5, T6>(for location: CoreLocation.CLLocation, including dataSet1: WeatherKit.WeatherQuery<T1>, _ dataSet2: WeatherKit.WeatherQuery<T2>, _ dataSet3: WeatherKit.WeatherQuery<T3>, _ dataSet4: WeatherKit.WeatherQuery<T4>, _ dataSet5: WeatherKit.WeatherQuery<T5>, _ dataSet6: WeatherKit.WeatherQuery<T6>) async throws -> (T1, T2, T3, T4, T5, T6)
+  #endif
+  @objc deinit
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public enum WeatherSeverity : Swift.String, Swift.CaseIterable, Swift.CustomStringConvertible, Swift.Hashable {
+  case minor
+  case moderate
+  case severe
+  case extreme
+  case unknown
+  public var description: Swift.String {
+    get
+  }
+  public var accessibilityDescription: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [WeatherKit.WeatherSeverity]
+  public typealias RawValue = Swift.String
+  public static var allCases: [WeatherKit.WeatherSeverity] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension WeatherKit.WeatherSeverity : Swift.Equatable {
+}
+extension WeatherKit.WeatherSeverity : Swift.Codable {
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+@frozen public enum MoonPhase : Swift.String, Swift.CustomStringConvertible, Swift.CaseIterable {
+  case new
+  case waxingCrescent
+  case firstQuarter
+  case waxingGibbous
+  case full
+  case waningGibbous
+  case lastQuarter
+  case waningCrescent
+  public var description: Swift.String {
+    get
+  }
+  public var accessibilityDescription: Swift.String {
+    get
+  }
+  public var symbolName: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [WeatherKit.MoonPhase]
+  public typealias RawValue = Swift.String
+  public static var allCases: [WeatherKit.MoonPhase] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension WeatherKit.MoonPhase : Swift.Equatable {
+}
+extension WeatherKit.MoonPhase : Swift.Codable {
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public struct CurrentWeather {
+  public var date: Foundation.Date
+  public var cloudCover: Swift.Double
+  public var condition: WeatherKit.WeatherCondition
+  public var symbolName: Swift.String
+  public var dewPoint: Foundation.Measurement<Foundation.UnitTemperature>
+  public var humidity: Swift.Double
+  public var pressure: Foundation.Measurement<Foundation.UnitPressure>
+  public var pressureTrend: WeatherKit.PressureTrend
+  public var isDaylight: Swift.Bool
+  public var temperature: Foundation.Measurement<Foundation.UnitTemperature>
+  public var apparentTemperature: Foundation.Measurement<Foundation.UnitTemperature>
+  public var uvIndex: WeatherKit.UVIndex
+  public var visibility: Foundation.Measurement<Foundation.UnitLength>
+  public var wind: WeatherKit.Wind
+  public var metadata: WeatherKit.WeatherMetadata
+}
+extension WeatherKit.CurrentWeather : Swift.Equatable {
+  public static func == (a: WeatherKit.CurrentWeather, b: WeatherKit.CurrentWeather) -> Swift.Bool
+}
+extension WeatherKit.CurrentWeather : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public struct WeatherAlert {
+  public var detailsURL: Foundation.URL
+  public var source: Swift.String
+  public var summary: Swift.String
+  public var region: Swift.String?
+  public var severity: WeatherKit.WeatherSeverity
+  public var metadata: WeatherKit.WeatherMetadata
+}
+extension WeatherKit.WeatherAlert : Swift.Equatable {
+  public static func == (a: WeatherKit.WeatherAlert, b: WeatherKit.WeatherAlert) -> Swift.Bool
+}
+extension WeatherKit.WeatherAlert : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.WeatherAvailability.AvailabilityKind : Swift.Equatable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.WeatherAvailability.AvailabilityKind : Swift.Hashable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.WeatherAvailability.AvailabilityKind : Swift.RawRepresentable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.UVIndex.ExposureCategory : Swift.Hashable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.UVIndex.ExposureCategory : Swift.RawRepresentable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.UVIndex.ExposureCategory : Swift.Sendable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.WeatherError : Swift.Equatable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.WeatherError : Swift.Hashable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.WeatherCondition : Swift.RawRepresentable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.Precipitation : Swift.RawRepresentable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.PressureTrend : Swift.RawRepresentable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.Wind.CompassDirection : Swift.Equatable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.Wind.CompassDirection : Swift.Hashable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.Wind.CompassDirection : Swift.RawRepresentable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.Wind.CompassDirection : Swift.Sendable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.WeatherSeverity : Swift.RawRepresentable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.MoonPhase : Swift.Hashable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.MoonPhase : Swift.RawRepresentable {}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+extension WeatherKit.MoonPhase : Swift.Sendable {}

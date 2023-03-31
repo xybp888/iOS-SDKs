@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BehaviorMiner.framework/BehaviorMiner
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BMCreateShortcutFilter, _BMErrorDomain,
+                            _BMEventInterval, _BMHourSlotForHourOfDay,
+                            _BMIsNotAppExtension,
+                            _BMItemNormalizedValueFromValue,
+                            _BMItemValueFromNormalizedValue, _BMLog,
+                            _BMMaxPhotoPeople, _BMMaxPhotoScenes,
+                            _BMStorageURLForDomain, _BMTemporalItemsForDate,
+                            _BehaviorMinerVersionNumber,
+                            _BehaviorMinerVersionString, _hourOfDaySlotDuration ]
+    objc-classes:         [ BMAprioriPatternMiner, BMBasketExtractor,
+                            BMBehaviorDatabaseMetadata, BMBehaviorRetriever,
+                            BMBehaviorStorage, BMCoreRoutineProvider,
+                            BMDatedBasket, BMEvent, BMEventExtractor,
+                            BMInteractionProvider, BMItem, BMItemMO, BMItemType,
+                            BMManagedObjectConverter, BMMiningTask,
+                            BMMiningTaskConfig, BMRetrievalFilter, BMRule,
+                            BMRuleExtractor, BMRuleMO ]
+...

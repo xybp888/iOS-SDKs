@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NewsAnalyticsUpload.framework/NewsAnalyticsUpload
+current-version:       3290.2
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NAUAnalyticsEnvelopeTrackerContentTypeIsSupported,
+                            _NDAnalyticsEntryCanBeUploaded,
+                            _NDAnalyticsEntryDeliveryWindow,
+                            _NDAnalyticsEntryDeliveryWindowEarlierDate,
+                            _NDAnalyticsEnvelopeContentTypesFromEntries,
+                            _NDAnalyticsEnvelopeStoreEntriesFromStringRepresentations,
+                            _NDAnalyticsEnvelopeStoreStringRepresentationsOfEntries,
+                            _NDAnalyticsEnvelopeSubmissionDatesByContentType,
+                            _NDSharedClientLog, _NDSharedServiceLog,
+                            _NewsAnalyticsUploadVersionNumber,
+                            _NewsAnalyticsUploadVersionString ]
+    objc-classes:         [ NAUAnalyticsEnvelopeTracker,
+                            NDAnalyticsEnvelopeManager, NDAnalyticsEnvelopeStore,
+                            NDAnalyticsEnvelopeStoreEntry,
+                            NDAnalyticsPayloadAssembler, NDAnalyticsPayloadInfo,
+                            NDAnalyticsPayloadUploader,
+                            NDAnalyticsUploadScheduler,
+                            NDAppConfigAnalyticsPayloadAssemblerConfigProvider ]
+...

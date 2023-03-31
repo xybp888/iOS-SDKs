@@ -1,0 +1,42 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DiagnosticRequest.framework/DiagnosticRequest
+current-version:       0
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DRCheckRapidLogSize, _DRConfigStringForState,
+                            _DRGetAllLogFileURLs, _DRShouldEnableLogGathering,
+                            _DRShouldGatherLog, _DRSubmitLog,
+                            _DRSubmitLogToCKContainer, _DRSubmitRapidLog,
+                            _DRTailspinRequest,
+                            __DPCCancelPermissiveExpeditedUploadActivity,
+                            __DPCEnableLogGatheringQueryMessage,
+                            __DPCGetCKConfig, __DPCGetCloudChannelConfig,
+                            __DPCGetConfigStateForUUID,
+                            __DPCInjectEnableLogGatheringQueryResult,
+                            __DPCMarkConfigUUIDCompletedOrRejected,
+                            __DPCRefreshDampeningConfiguration,
+                            __DPCRequestTeamIDBroadcast, __DPCResetCKConfig,
+                            __DPCResetToDefaultCloudChannelConfig,
+                            __DPCSchedulePermissiveExpeditedUploadActivity,
+                            __DPCSendClearTaskingStateMessage,
+                            __DPCSendTaskingSystemJSONDataMessage,
+                            __DPCSetCKConfig, __DPCSetCloudChannelConfig,
+                            __DPCSubmitLogRequestMessage,
+                            __DPCSubmitLogToCKContainerRequestMessage,
+                            __DPCSubmitRapidLogRequestMessage,
+                            __DPCTailspinRequestMessage,
+                            __DPCTriggerRequestClean, __DPClientXPCSendMessage,
+                            __DPClientXPCSendMessageWithReplySync,
+                            __DRCResetDampeningConfigurationToDefault,
+                            __DRCSetDampeningConfigurationDefaults,
+                            __DRCSetDampeningIsEnabled, __DRCTriggerCloudKitWork,
+                            __DRRequestPassesTailspinHysteresis,
+                            _kDRRequestClientError,
+                            _kDRRequestOversizedContextDictErrorString ]
+    objc-classes:         [ DRConfig, DRConfigMonitor, DRSubscriptionManager ]
+...

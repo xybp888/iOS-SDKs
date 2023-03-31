@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppAttestInternal.framework/AppAttestInternal
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AppAttestErrorDomain,
+                            _AppAttestFunctionNameErrorKey,
+                            _AppAttestSourceFileLineErrorKey,
+                            _AppAttest_AppAttestation_Assert,
+                            _AppAttest_AppAttestation_AttestKey,
+                            _AppAttest_AppAttestation_CreateKey,
+                            _AppAttest_AppAttestation_IsEligibleApplication,
+                            _AppAttest_AppAttestation_IsSupported,
+                            _AppAttest_Common_AttestKey,
+                            _AppAttest_Common_AttestKeyRequest,
+                            _AppAttest_WebAuthentication_AttestKey,
+                            _AppAttest_WebAuthentication_IsSupported,
+                            _createAppAttestError,
+                            _createGenericAuthenticatorDataFull,
+                            _createGenericAuthenticatorDataShort ]
+    objc-classes:         [ AppAttestKeychainCleanupController ]
+...

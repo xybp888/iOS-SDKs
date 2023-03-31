@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FitnessCoachingHealthServices.framework/FitnessCoachingHealthServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FCEventCoalescedWithRules,
+                            _FCFireDateForPercentOfDayRule,
+                            _FCFireDateForTimeOfDayRule,
+                            _FCFitnessInstallStateChangedNotification ]
+    objc-classes:         [ FCAlmostThereEvent, FCAppInstallationObserver,
+                            FCAtypicalDayEvent, FCCompletionOffTrackEvent,
+                            FCGoalCompletionActivitySummaryObserver,
+                            FCGoalCompletionCoordinator, FCGoalCompletionStore,
+                            FCGoalProgressCoordinator, FCGoalProgressDebouncer,
+                            FCGoalProgressEvaluator, FCGoalProgressStore,
+                            FCHealthServer, FCHealthService, FCMoveModeCoordinator,
+                            FCTypicalDayProvider ]
+...

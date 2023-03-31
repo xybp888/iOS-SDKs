@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared,
+                            /System/Library/PrivateFrameworks/SafariSharedUI.framework/SafariSharedUI ]
+    symbols:              [ _WBUABAddressKey, _WBUABStreetKey,
+                            _WBUAutoFillClearDataClasses,
+                            _WBUAutoFillDisableDataClasses,
+                            _WBUAutoFillGetEnabledDataClasses,
+                            _WBUFeatureManagerCloudTabsAvailabilityDidChangeNotification,
+                            _WBUFormAutoFillPasswordGenerationAssistanceBecameAvailableNotification,
+                            _WBUHistoryDefaultItemAgeLimit,
+                            _WBUHistoryDefaultItemCountLimit,
+                            _WBUPasswordGenerationExistingPasswordOverwrittenOnAppSuspendAggdKey,
+                            _WBUPasswordGenerationExistingPasswordOverwrittenOnViewCloseAggdKey,
+                            _WBUPasswordGenerationPasswordAcceptedAggdKey,
+                            _WBUPasswordGenerationPasswordSavedAggdKey,
+                            _WBUPasswordGenerationPromptShownAggdKey,
+                            _incrementAggdKey, _setAggdKey,
+                            _webuiCookieAcceptPolicyPreferencesKey ]
+    objc-classes:         [ WBUAlertController, WBUAutoFillDisplayData,
+                            WBUCreditCardDataController, WBUFeatureManager,
+                            WBUFormAutoFillPrompt, WBUFormAutoFillWhiteList,
+                            WBUFormDataController,
+                            WBUGeneratedPasswordCredentialUpdateRequest,
+                            WBUGeneratedPasswordCredentialUpdater, WBUHistory,
+                            WBUSheetController, WebUIAlert, WebUICertificateError,
+                            _WBUDynamicMeCard ]
+...

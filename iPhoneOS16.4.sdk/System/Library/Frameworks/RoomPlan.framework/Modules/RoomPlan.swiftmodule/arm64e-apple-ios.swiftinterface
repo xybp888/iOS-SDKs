@@ -1,0 +1,353 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.59 clang-1403.0.22.8.50)
+// swift-module-flags: -target arm64e-apple-ios16.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name RoomPlan
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1.12.1
+import ARKit
+import CoreVideo.CVPixelBuffer
+import Combine
+import CoreGraphics
+import CoreVideo
+import CryptoKit
+import Darwin
+import Foundation
+import GLKit
+import Metal
+import MetalKit
+import MetalPerformanceShaders
+import ObjectiveC
+import QuartzCore
+import RealityKit
+@_exported import RoomPlan
+import SceneKit
+import SpriteKit
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import simd.matrix
+import simd.matrix_types
+import os
+import simd
+@available(iOS 16.0, *)
+public struct CapturedRoomData : Swift.Codable, Swift.Sendable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@available(iOS 16.0, *)
+public struct CapturedRoom : Swift.Codable, Swift.Sendable {
+  public var walls: [RoomPlan.CapturedRoom.Surface] {
+    get
+  }
+  public var doors: [RoomPlan.CapturedRoom.Surface] {
+    get
+  }
+  public var windows: [RoomPlan.CapturedRoom.Surface] {
+    get
+  }
+  public var openings: [RoomPlan.CapturedRoom.Surface] {
+    get
+  }
+  public var objects: [RoomPlan.CapturedRoom.Object] {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public enum Error : Foundation.LocalizedError {
+    case urlInvalidScheme
+    case urlInvalidFilePath
+    case urlMissingFileExtension
+    case urlInvalidFileExtension
+    case deviceNotSupported
+    public var errorDescription: Swift.String? {
+      get
+    }
+    public static func == (a: RoomPlan.CapturedRoom.Error, b: RoomPlan.CapturedRoom.Error) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Confidence : Swift.Codable, Swift.Sendable {
+    case high
+    case medium
+    case low
+    public static func == (a: RoomPlan.CapturedRoom.Confidence, b: RoomPlan.CapturedRoom.Confidence) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct Surface : Swift.Codable, Swift.Sendable {
+    public var category: RoomPlan.CapturedRoom.Surface.Category {
+      get
+    }
+    public var confidence: RoomPlan.CapturedRoom.Confidence {
+      get
+    }
+    public var completedEdges: Swift.Set<RoomPlan.CapturedRoom.Surface.Edge> {
+      get
+    }
+    public var dimensions: simd.simd_float3 {
+      get
+    }
+    public var transform: simd.simd_float4x4 {
+      get
+    }
+    public var identifier: Foundation.UUID {
+      get
+    }
+    public var curve: RoomPlan.CapturedRoom.Surface.Curve? {
+      get
+    }
+    public init(from decoder: any Swift.Decoder) throws
+    public func encode(to encoder: any Swift.Encoder) throws
+    public enum Category : Swift.Codable, Swift.Sendable, Swift.Equatable {
+      case wall
+      case opening
+      case window
+      case door(isOpen: Swift.Bool)
+      public static func == (a: RoomPlan.CapturedRoom.Surface.Category, b: RoomPlan.CapturedRoom.Surface.Category) -> Swift.Bool
+      public func encode(to encoder: any Swift.Encoder) throws
+      public init(from decoder: any Swift.Decoder) throws
+    }
+    public struct Curve : Swift.Codable, Swift.Sendable {
+      public var radius: Swift.Float {
+        get
+      }
+      public var startAngle: Foundation.Measurement<Foundation.UnitAngle> {
+        get
+      }
+      public var endAngle: Foundation.Measurement<Foundation.UnitAngle> {
+        get
+      }
+      public func encode(to encoder: any Swift.Encoder) throws
+      public init(from decoder: any Swift.Decoder) throws
+    }
+    public enum Edge : Swift.CaseIterable, Swift.Codable, Swift.Sendable {
+      case top
+      case right
+      case bottom
+      case left
+      public static func == (a: RoomPlan.CapturedRoom.Surface.Edge, b: RoomPlan.CapturedRoom.Surface.Edge) -> Swift.Bool
+      public func hash(into hasher: inout Swift.Hasher)
+      public typealias AllCases = [RoomPlan.CapturedRoom.Surface.Edge]
+      public static var allCases: [RoomPlan.CapturedRoom.Surface.Edge] {
+        get
+      }
+      public func encode(to encoder: any Swift.Encoder) throws
+      public var hashValue: Swift.Int {
+        get
+      }
+      public init(from decoder: any Swift.Decoder) throws
+    }
+  }
+  public struct Object : Swift.Codable, Swift.Sendable {
+    public var category: RoomPlan.CapturedRoom.Object.Category {
+      get
+    }
+    public var confidence: RoomPlan.CapturedRoom.Confidence {
+      get
+    }
+    public var dimensions: simd.simd_float3 {
+      get
+    }
+    public var transform: simd.simd_float4x4 {
+      get
+    }
+    public var identifier: Foundation.UUID {
+      get
+    }
+    public init(from decoder: any Swift.Decoder) throws
+    public func encode(to encoder: any Swift.Encoder) throws
+    public enum Category : Swift.Codable, Swift.Sendable {
+      case storage
+      case refrigerator
+      case stove
+      case bed
+      case sink
+      case washerDryer
+      case toilet
+      case bathtub
+      case oven
+      case dishwasher
+      case table
+      case sofa
+      case chair
+      case fireplace
+      case television
+      case stairs
+      public static func == (a: RoomPlan.CapturedRoom.Object.Category, b: RoomPlan.CapturedRoom.Object.Category) -> Swift.Bool
+      public func hash(into hasher: inout Swift.Hasher)
+      public func encode(to encoder: any Swift.Encoder) throws
+      public var hashValue: Swift.Int {
+        get
+      }
+      public init(from decoder: any Swift.Decoder) throws
+    }
+  }
+  public struct USDExportOptions : Swift.OptionSet {
+    public let rawValue: Swift.Int32
+    public init(rawValue: Swift.Int32)
+    public static let parametric: RoomPlan.CapturedRoom.USDExportOptions
+    public static let mesh: RoomPlan.CapturedRoom.USDExportOptions
+    public typealias ArrayLiteralElement = RoomPlan.CapturedRoom.USDExportOptions
+    public typealias Element = RoomPlan.CapturedRoom.USDExportOptions
+    public typealias RawValue = Swift.Int32
+  }
+  public func export(to url: Foundation.URL, exportOptions: RoomPlan.CapturedRoom.USDExportOptions = [.mesh]) throws
+}
+@available(iOS 16.0, *)
+public class RoomBuilder {
+  public init(options: RoomPlan.RoomBuilder.ConfigurationOptions)
+  #if compiler(>=5.3) && $AsyncAwait
+  public func capturedRoom(from capturedRoomData: RoomPlan.CapturedRoomData) async throws -> RoomPlan.CapturedRoom
+  #endif
+  public struct ConfigurationOptions : Swift.OptionSet {
+    public let rawValue: Swift.Int
+    public static let beautifyObjects: RoomPlan.RoomBuilder.ConfigurationOptions
+    public init(rawValue: Swift.Int)
+    public typealias ArrayLiteralElement = RoomPlan.RoomBuilder.ConfigurationOptions
+    public typealias Element = RoomPlan.RoomBuilder.ConfigurationOptions
+    public typealias RawValue = Swift.Int
+  }
+  public enum BuildError : Foundation.LocalizedError {
+    case insufficientInput
+    case invalidInput
+    case exceedSceneSizeLimit
+    case deviceNotSupported
+    case internalError
+    public var errorDescription: Swift.String? {
+      get
+    }
+    public static func == (a: RoomPlan.RoomBuilder.BuildError, b: RoomPlan.RoomBuilder.BuildError) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @objc deinit
+}
+@available(iOS 16.0, *)
+public protocol RoomCaptureViewDelegate : Foundation.NSCoding {
+  func captureView(shouldPresent roomDataForProcessing: RoomPlan.CapturedRoomData, error: (any Swift.Error)?) -> Swift.Bool
+  func captureView(didPresent processedResult: RoomPlan.CapturedRoom, error: (any Swift.Error)?)
+}
+@available(iOS 16.0, *)
+extension RoomPlan.RoomCaptureViewDelegate {
+  public func captureView(shouldPresent roomDataForProcessing: RoomPlan.CapturedRoomData, error: (any Swift.Error)?) -> Swift.Bool
+  public func captureView(didPresent processedResult: RoomPlan.CapturedRoom, error: (any Swift.Error)?)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 16.0, *)
+@_Concurrency.MainActor(unsafe) public class RoomCaptureView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var captureSession: RoomPlan.RoomCaptureSession! {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) weak public var delegate: (any RoomPlan.RoomCaptureViewDelegate)?
+  @_Concurrency.MainActor(unsafe) public var isModelEnabled: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var subviews: [UIKit.UIView] {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func encode(with coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+@available(iOS 16.0, *)
+public class RoomCaptureSession {
+  public init()
+  public func run(configuration: RoomPlan.RoomCaptureSession.Configuration)
+  public func stop()
+  public struct Configuration {
+    public var isCoachingEnabled: Swift.Bool
+    public init()
+  }
+  public enum CaptureError : Foundation.LocalizedError {
+    case exceedSceneSizeLimit
+    case worldTrackingFailure
+    case invalidARConfiguration
+    case deviceTooHot
+    case deviceNotSupported
+    case internalError
+    public var errorDescription: Swift.String? {
+      get
+    }
+    public static func == (a: RoomPlan.RoomCaptureSession.CaptureError, b: RoomPlan.RoomCaptureSession.CaptureError) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Instruction {
+    case moveCloseToWall
+    case moveAwayFromWall
+    case slowDown
+    case turnOnLight
+    case normal
+    case lowTexture
+    public static func == (a: RoomPlan.RoomCaptureSession.Instruction, b: RoomPlan.RoomCaptureSession.Instruction) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  weak public var delegate: (any RoomPlan.RoomCaptureSessionDelegate)?
+  public var arSession: ARKit.ARSession
+  public static var isSupported: Swift.Bool {
+    get
+  }
+  @objc deinit
+}
+@available(iOS 16.0, *)
+public protocol RoomCaptureSessionDelegate : AnyObject {
+  func captureSession(_ session: RoomPlan.RoomCaptureSession, didUpdate room: RoomPlan.CapturedRoom)
+  func captureSession(_ session: RoomPlan.RoomCaptureSession, didAdd room: RoomPlan.CapturedRoom)
+  func captureSession(_ session: RoomPlan.RoomCaptureSession, didChange room: RoomPlan.CapturedRoom)
+  func captureSession(_ session: RoomPlan.RoomCaptureSession, didRemove room: RoomPlan.CapturedRoom)
+  func captureSession(_ session: RoomPlan.RoomCaptureSession, didProvide instruction: RoomPlan.RoomCaptureSession.Instruction)
+  func captureSession(_ session: RoomPlan.RoomCaptureSession, didStartWith configuration: RoomPlan.RoomCaptureSession.Configuration)
+  func captureSession(_ session: RoomPlan.RoomCaptureSession, didEndWith data: RoomPlan.CapturedRoomData, error: (any Swift.Error)?)
+}
+@available(iOS 16.0, *)
+extension RoomPlan.RoomCaptureSessionDelegate {
+  public func captureSession(_ session: RoomPlan.RoomCaptureSession, didUpdate room: RoomPlan.CapturedRoom)
+  public func captureSession(_ session: RoomPlan.RoomCaptureSession, didAdd room: RoomPlan.CapturedRoom)
+  public func captureSession(_ session: RoomPlan.RoomCaptureSession, didChange room: RoomPlan.CapturedRoom)
+  public func captureSession(_ session: RoomPlan.RoomCaptureSession, didRemove room: RoomPlan.CapturedRoom)
+  public func captureSession(_ session: RoomPlan.RoomCaptureSession, didProvide instruction: RoomPlan.RoomCaptureSession.Instruction)
+  public func captureSession(_ session: RoomPlan.RoomCaptureSession, didStartWith configuration: RoomPlan.RoomCaptureSession.Configuration)
+  public func captureSession(_ session: RoomPlan.RoomCaptureSession, didEndWith data: RoomPlan.CapturedRoomData, error: (any Swift.Error)?)
+}
+@available(iOS 16.0, *)
+extension RoomPlan.CapturedRoom.Error : Swift.Equatable {}
+@available(iOS 16.0, *)
+extension RoomPlan.CapturedRoom.Error : Swift.Hashable {}
+@available(iOS 16.0, *)
+extension RoomPlan.CapturedRoom.Confidence : Swift.Equatable {}
+@available(iOS 16.0, *)
+extension RoomPlan.CapturedRoom.Confidence : Swift.Hashable {}
+@available(iOS 16.0, *)
+extension RoomPlan.CapturedRoom.Surface.Edge : Swift.Equatable {}
+@available(iOS 16.0, *)
+extension RoomPlan.CapturedRoom.Surface.Edge : Swift.Hashable {}
+@available(iOS 16.0, *)
+extension RoomPlan.CapturedRoom.Object.Category : Swift.Equatable {}
+@available(iOS 16.0, *)
+extension RoomPlan.CapturedRoom.Object.Category : Swift.Hashable {}
+@available(iOS 16.0, *)
+extension RoomPlan.RoomBuilder.BuildError : Swift.Equatable {}
+@available(iOS 16.0, *)
+extension RoomPlan.RoomBuilder.BuildError : Swift.Hashable {}
+@available(iOS 16.0, *)
+extension RoomPlan.RoomCaptureSession.Instruction : Swift.Equatable {}
+@available(iOS 16.0, *)
+extension RoomPlan.RoomCaptureSession.Instruction : Swift.Hashable {}
+@available(iOS 16.0, *)
+extension RoomPlan.RoomCaptureSession.CaptureError : Swift.Equatable {}
+@available(iOS 16.0, *)
+extension RoomPlan.RoomCaptureSession.CaptureError : Swift.Hashable {}

@@ -1,0 +1,39 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSStringFromPSYDeviceSyncState,
+                            _NSStringFromPSYSyncSessionActivityState,
+                            _NSStringFromPSYSyncSessionState,
+                            _NSStringfromPSYSyncSessionType,
+                            _PSYActivityProgressXPCInterface,
+                            _PSYActivityXPCInterface, _PSYConnectionXPCInterface,
+                            _PSYDaemonDidLaunchDarwinNotification,
+                            _PSYDeviceSyncDidCompleteDarwinNotification,
+                            _PSYErrorDomain, _PSYErrorForCode,
+                            _PSYGetClientListDirectory,
+                            _PSYGetPreferredActivityOrdering,
+                            _PSYInitialSyncStateMachServiceName,
+                            _PSYLastSyncSwitchIDNotification,
+                            _PSYPairedSyncDomainName,
+                            _PSYPairingIDMigrationCountDictionaryKey,
+                            _PSYProgressClientXPCInterface,
+                            _PSYProgressServerXPCInterface,
+                            _PSYSyncSessionObserverXPCInterface,
+                            _PSYSyncSessionProviderXPCInterface,
+                            _PSYSyncStateObserverXPCInterface,
+                            _PSYSyncStateProviderXPCInterface,
+                            _PSYToolInterfaceXPCInterface, _psd_log, _psy_log ]
+    objc-classes:         [ PSYActivityInfo, PSYConnection,
+                            PSYDeviceSyncStateEntry, PSYInitialSyncStateObserver,
+                            PSYOptions, PSYProgressObserver, PSYServiceSyncSession,
+                            PSYSyncCoordinator, PSYSyncOptions, PSYSyncSession,
+                            PSYSyncSessionActivity, PSYSyncSessionObserver,
+                            PSYSyncSessionUpdate, PSYTestInput ]
+...

@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/GPUToolsTransport.framework/GPUToolsTransport
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _GTTransportServiceDaemonConnectAndConfirm,
+                            _GTTransportServiceDaemonConnectionNew,
+                            _allServicesForDevice, _filteredArrayByPort,
+                            _filteredArrayByService, _newConnectionForService,
+                            _registerService, _xpc_dictionary_get_nsarray,
+                            _xpc_dictionary_set_nsobject ]
+    objc-classes:         [ DYGTCAMetalLayerInfo, DYGTDeviceInfo,
+                            DYGTGPUToolsVersionInfo, DYGTMTLCaptureScopeInfo,
+                            DYGTMTLCommandQueueInfo, DYMTLDeviceProfile,
+                            GTBulkDataService, GTBulkDataServiceXPCDispatcher,
+                            GTBulkDataServiceXPCProxy, GTCallstackFrame,
+                            GTCapturableObject, GTCaptureCompletionState,
+                            GTCaptureDescriptor, GTCaptureObjects,
+                            GTCaptureProgress, GTCommandBufferIssue,
+                            GTDiagnosticsIssue, GTFaultingEncoder,
+                            GTLaunchServiceXPCProxy, GTLocalXPCConnection,
+                            GTLoopbackService, GTLoopbackServiceXPCDispatcher,
+                            GTLoopbackServiceXPCProxy,
+                            GTMTLCaptureServiceXPCDispatcher,
+                            GTMTLDiagnosticsService,
+                            GTMTLDiagnosticsServiceXPCDispatcher,
+                            GTMTLReplayServiceXPCDispatcher,
+                            GTMTLReplayServiceXPCProxy, GTProcessInfo,
+                            GTProcessService, GTServiceProperties,
+                            GTServiceProviderXPCProxy, GTTransportClient,
+                            GTURLAccessProviderXPCProxy, GTUnsupportedFenumInfo ]
+...

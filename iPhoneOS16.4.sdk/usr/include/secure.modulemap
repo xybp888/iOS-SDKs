@@ -1,0 +1,23 @@
+module Darwin.secure {
+  module _common {
+    header "secure/_common.h"
+    export *
+  }
+
+  // secure/_stdio.h, secure/_string.h, and secure/_strings.h
+  // are part of other modules.
+  module _stdio {
+	export Darwin.C.stdio
+  }
+
+  module _string {
+    export Darwin.C.string
+  }
+
+  module _strings {
+	// secure/_strings.h is part of Darwin.POSIX.strings
+    export Darwin.C.strings
+  }
+
+  export *
+}

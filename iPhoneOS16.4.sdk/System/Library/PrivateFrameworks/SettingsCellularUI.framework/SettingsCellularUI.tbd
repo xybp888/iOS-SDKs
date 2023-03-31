@@ -1,0 +1,40 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SettingsCellularUI.framework/SettingsCellularUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PSCDMARoamingSpecifiers, _PSDataRoamingSpecifiers,
+                            _PSIsCDMARoamingOptionAvailable,
+                            _PSIsDataRoamingEnabled,
+                            _PSIsDataRoamingEnabledForService,
+                            _PSIsDataRoamingOptionAvailable,
+                            _PSIsVoiceRoamingEnabled,
+                            _PSIsVoiceRoamingOptionAvailable,
+                            _PSMaxDataRateChangedNotification,
+                            _PSRoamingSubMenuSpecifiers,
+                            _PSSetCDMARoamingEnabled, _PSSetDataRoamingEnabled,
+                            _PSSetDataRoamingEnabledForService,
+                            _PSSetVoiceRoamingEnabled,
+                            _PSShouldIncludeMMSFooterNote,
+                            _PSUICellularPlanChanged,
+                            _PSUICellularPlanSetUpNeeded, _PSUIFormatDataUsage,
+                            _PSUIFormatPlanStatusForPlan,
+                            _PSUIGetPlanSubscriptionStatus,
+                            _PSUIPRLVersionChanged ]
+    objc-classes:         [ CTUIWirelessUsageAndAppPolicyController,
+                            PSUIAppDataUsageGroup, PSUICellularController,
+                            PSUICellularPlanManagerCache,
+                            PSUICellularPlanUniversalReference,
+                            PSUICellularRoamingController,
+                            PSUICoreTelephonyCarrierBundleCache,
+                            PSUICoreTelephonyRegistrationCache,
+                            PSUICoreTelephonySubscriberCache ]
+    objc-ivars:           [ PSUICellularRoamingController._cdmaRoamingSpecifier,
+                            PSUICellularRoamingController._dataRoamingSpecifier,
+                            PSUICellularRoamingController._voiceRoamingSpecifier ]
+...

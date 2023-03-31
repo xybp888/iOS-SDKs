@@ -1,0 +1,44 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/KeychainCircle.framework/KeychainCircle
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CoreCryptoError, _KCInitialMessageDataReadFrom,
+                            _KCJoiningErrorCreate, _KCPairingIntent_Type_None,
+                            _KCPairingIntent_Type_SilentRepair,
+                            _KCPairingIntent_Type_UserDriven,
+                            _KeychainCircleVersionNumber,
+                            _KeychainCircleVersionString, _OSStatusError,
+                            _RequirementError, _decode_initialmessage,
+                            _decode_seq_data_data, _decode_seq_string_data,
+                            _decode_version1, _decode_version2,
+                            _encode_initialmessage,
+                            _encode_initialmessage_version1,
+                            _encode_initialmessage_version2,
+                            _encode_seq_data_data, _encode_seq_string_data,
+                            _extractStartFromInitialMessage,
+                            _kKCPairingChannelErrorDomain, _kcder_decode_data,
+                            _kcder_decode_data_nocopy, _kcder_decode_string,
+                            _kcder_encode_data, _kcder_encode_data_optional,
+                            _kcder_encode_raw_octet_space, _kcder_encode_string,
+                            _kcder_sizeof_data, _kcder_sizeof_string,
+                            _pairingCompression, _pairingScope,
+                            _sizeof_initialmessage,
+                            _sizeof_initialmessage_version1,
+                            _sizeof_initialmessage_version2,
+                            _sizeof_seq_data_data, _sizeof_seq_string_data ]
+    objc-classes:         [ KCAESGCMDuplexSession, KCInitialMessageData,
+                            KCJoiningAcceptAccountCircleDelegate,
+                            KCJoiningAcceptSession, KCJoiningMessage,
+                            KCJoiningRequestAccountCircleDelegate,
+                            KCJoiningRequestCircleSession,
+                            KCJoiningRequestSecretSession, KCPairingChannel,
+                            KCPairingChannelContext, KCSRPClientContext,
+                            KCSRPContext, KCSRPServerContext ]
+    objc-ivars:           [ KCInitialMessageData._prepareMessage ]
+...

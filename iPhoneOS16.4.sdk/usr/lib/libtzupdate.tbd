@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/usr/lib/libtzupdate.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _TZDAssetError, _TZDErrorDomain, _kTZXPCConnectionEntitlement, 
+                       _kTZXPCConnectionName, _libtzupdateVersionNumber, _libtzupdateVersionString ]
+    objc-classes:    [ TZDLogging, TZDeviceInfoHelper, TZFileSystemInterface, TZPreferencesController, 
+                       TZUtilities, TZVersionInfo, TZXPCConstants ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:    [ TZUpdate ]
+...

@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/usr/lib/libnetquality.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _NetworkQualityErrorDataLimitExceeded, _NetworkQualityErrorDomain, 
+                       _NetworkQualityErrorExecutionsCanceledByUser, _NetworkQualityErrorImplementationIssue, 
+                       _NetworkQualityErrorIncorrectHTTPResponse, _NetworkQualityErrorJSONParsing ]
+    objc-classes:    [ NetworkQualityAssessment, NetworkQualityConfiguration, NetworkQualityExecutions, 
+                       NetworkQualityResult, NetworkQualityValue ]
+...

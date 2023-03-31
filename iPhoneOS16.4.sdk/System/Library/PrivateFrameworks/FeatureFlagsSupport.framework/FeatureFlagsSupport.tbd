@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FeatureFlagsSupport.framework/FeatureFlagsSupport
+current-version:       74
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FFConfigurationValidateProfilePayload,
+                            _FFParseErrorContextFilenameKey,
+                            _FFParseErrorContextKeyKey,
+                            _FFParseErrorContextOtherKey,
+                            _FFParseErrorContextSeverityError,
+                            _FFParseErrorContextSeverityKey,
+                            _FFParseErrorContextSeverityNotice,
+                            _FFParseErrorContextSeverityWarning,
+                            _FFParseErrorMessageKey ]
+    objc-classes:         [ FFConfiguration, FFFeatureAttribute, FFFeatureState,
+                            FFMinimumPhaseInReleaseSubscription, FFSubscription ]
+...

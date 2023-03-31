@@ -1,0 +1,32 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/InternalPreferences.framework/InternalPreferences
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ClearLogFileContents, _IPLogForCategory,
+                            _IPPurgeKeyboardCache ]
+    objc-classes:         [ BandwidthTestController, CPUActivityPane,
+                            GeneralLocationController, LocationDefaults,
+                            LocationInternalListController,
+                            LoggingDetailController, LoggingPane, PropertyListPane ]
+    objc-ivars:           [ BandwidthTestController._downloadTestFile,
+                            BandwidthTestController._resultsSpecifier,
+                            BandwidthTestController._statusSpecifier,
+                            BandwidthTestController._testName,
+                            CPUActivityPane._buf1, CPUActivityPane._buf2,
+                            CPUActivityPane._readBuffer,
+                            CPUActivityPane._textView, CPUActivityPane._worker,
+                            CPUActivityPane._writeBuffer,
+                            LoggingPane._dontScroll, LoggingPane._fileError,
+                            LoggingPane._lock,
+                            LoggingPane._mailComposeController,
+                            LoggingPane._output, LoggingPane._rootController,
+                            LoggingPane._sendingEmailCount,
+                            LoggingPane._textView, LoggingPane._threadRunning,
+                            LoggingPane._timeout, LoggingPane._timer ]
+...
