@@ -1,0 +1,51 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.123.203 clang-1500.0.37.1)
+// swift-module-flags: -target arm64e-apple-ios17.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name CoreAudioKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 257
+import AVFoundation
+import AudioToolbox
+import AudioUnit
+@_exported import CoreAudioKit
+import CoreFoundation
+import DeveloperToolsSupport
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+public typealias AUGenericViewInternalBase = UIKit.UIView
+@_inheritsConvenienceInitializers @available(iOS 14.0, macOS 13.0, *)
+@objc @_Concurrency.MainActor(unsafe) public class AUGenericViewInternal : CoreAudioKit.AUGenericViewInternalBase {
+  @objc @_Concurrency.MainActor(unsafe) public var auAudioUnit: AudioToolbox.AUAudioUnit? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var owningController: UIKit.UIViewController?
+  @objc @_Concurrency.MainActor(unsafe) public var paramObserverToken: AudioToolbox.AUParameterObserverToken?
+  @_Concurrency.MainActor(unsafe) public var showSingleClumpIndex: Swift.Int? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func removeFromSuperview()
+  @objc @_Concurrency.MainActor(unsafe) public func removeScheduledUpdatesTimer()
+  @objc deinit
+}
+@available(iOS 14.0, macOS 13.0, *)
+extension CoreAudioKit.AUGenericViewInternal {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, willDisplaySupplementaryView view: UIKit.UICollectionReusableView, forElementKind elementKind: Swift.StringLiteralType, at indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, willDisplay item: UIKit.UICollectionViewCell, forItemAt indexPath: Foundation.IndexPath)
+}
+@_inheritsConvenienceInitializers @available(iOS 17, *)
+@objc public class AUAppleCustomViewLoader : ObjectiveC.NSObject {
+  @objc public func customViewController(for componentDescription: AudioToolbox.AudioComponentDescription, audioUnit: AudioToolbox.AudioUnit, v3AU: AudioToolbox.AUAudioUnit? = nil) -> UIKit.UIViewController?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@available(iOS 14.0, macOS 13.0, *)
+extension CoreAudioKit.AUGenericViewInternal : UIKit.UICollectionViewDelegate {}

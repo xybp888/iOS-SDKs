@@ -1,0 +1,71 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HIDDisplay.framework/HIDDisplay
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _HIDDisplayCopyPreset, _HIDDisplayCopyPresetUniqueID,
+                            _HIDDisplayCreateDeviceManagementInterfaceWithContainerID,
+                            _HIDDisplayCreateDeviceManagementInterfaceWithService,
+                            _HIDDisplayCreateDeviceWithContainerID,
+                            _HIDDisplayCreateIOReportingInterfaceWithContainerID,
+                            _HIDDisplayCreatePresetInterfaceWithContainerID,
+                            _HIDDisplayCreatePresetInterfaceWithService,
+                            _HIDDisplayCreateUserAdjustmentInterfaceWithContainerID,
+                            _HIDDisplayCreateUserAdjustmentInterfaceWithService,
+                            _HIDDisplayDeviceManagementFactoryReset,
+                            _HIDDisplayDeviceManagementGetSecurityToken,
+                            _HIDDisplayDeviceManagementSetFactoryResetData,
+                            _HIDDisplayGetActivePresetIndex,
+                            _HIDDisplayGetContainerID,
+                            _HIDDisplayGetFactoryDefaultPresetIndex,
+                            _HIDDisplayGetPresetCapabilities,
+                            _HIDDisplayGetPresetCount,
+                            _HIDDisplayIOReportingActivate,
+                            _HIDDisplayIOReportingCancel,
+                            _HIDDisplayIOReportingSetCancelHandler,
+                            _HIDDisplayIOReportingSetDispatchQueue,
+                            _HIDDisplayIOReportingSetInputDataHandler,
+                            _HIDDisplayIOReportingSetOutputData,
+                            _HIDDisplayIsPresetValid,
+                            _HIDDisplayIsPresetWritable, _HIDDisplayLog,
+                            _HIDDisplaySetActivePresetIndex,
+                            _HIDDisplaySetPreset,
+                            _HIDDisplayUserAdjustmentCopyData,
+                            _HIDDisplayUserAdjustmentInvalidate,
+                            _HIDDisplayUserAdjustmentIsValid,
+                            _HIDDisplayUserAdjustmentSetData,
+                            _HIDDisplayVersionNumber, _HIDDisplayVersionString,
+                            _getUnicharStringFromData,
+                            _kHIDDisplayPresetFieldDataBlockOneKey,
+                            _kHIDDisplayPresetFieldDataBlockOneLengthKey,
+                            _kHIDDisplayPresetFieldDataBlockTwoKey,
+                            _kHIDDisplayPresetFieldDataBlockTwoLengthKey,
+                            _kHIDDisplayPresetFieldDescriptionKey,
+                            _kHIDDisplayPresetFieldNameKey,
+                            _kHIDDisplayPresetFieldValidKey,
+                            _kHIDDisplayPresetFieldWritableKey,
+                            _kHIDDisplayPresetUniqueIDKey,
+                            _kHIDDisplayUserAdjustmentDescriptionKey,
+                            _kHIDDisplayUserAdjustmentInformationKey ]
+    objc-classes:         [ HIDDisplayDeviceManagementInterface,
+                            HIDDisplayIOReportingInterface, HIDDisplayInterface,
+                            HIDDisplayPresetData, HIDDisplayPresetInterface,
+                            HIDDisplayUserAdjustmentInterface ]
+    objc-ivars:           [ HIDDisplayDeviceManagementInterface._usageElementMap,
+                            HIDDisplayIOReportingInterface._dataHandler,
+                            HIDDisplayIOReportingInterface._queue,
+                            HIDDisplayIOReportingInterface._usageElementMap,
+                            HIDDisplayInterface._containerID,
+                            HIDDisplayInterface._deviceRef,
+                            HIDDisplayInterface._manager,
+                            HIDDisplayInterface._registryID,
+                            HIDDisplayPresetData._deviceRef,
+                            HIDDisplayPresetData._index,
+                            HIDDisplayPresetInterface._presets,
+                            HIDDisplayPresetInterface._usageElementMap,
+                            HIDDisplayUserAdjustmentInterface._usageElementMap ]
+...

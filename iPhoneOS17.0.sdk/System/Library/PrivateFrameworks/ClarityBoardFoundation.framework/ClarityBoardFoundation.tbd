@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ClarityBoardFoundation.framework/ClarityBoardFoundation
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CLBApplicationLaunchedNotification,
+                            _CLBHomeButtonPressedNotification,
+                            _CLBLockBackoffBlockNotification,
+                            _CLBLockBackoffUnblockNotification,
+                            _CLBLockScreenDidAnimateOutNotification,
+                            _CLBLockScreenDidCompleteNotification,
+                            _CLBLockScreenDidUnlockNotification,
+                            _CLBMKBErrorDomain, _CLBVolumeUpdateNotification,
+                            _CLBWillEnableSecureModeNotification,
+                            _ClarityBoardFoundationVersionNumber,
+                            _ClarityBoardFoundationVersionString ]
+    objc-classes:         [ CLBMobileKeybagManager ]
+    objc-ivars:           [ CLBMobileKeybagManager._callOutQueue,
+                            CLBMobileKeybagManager._firstUnlockCallbackBlocks,
+                            CLBMobileKeybagManager._firstUnlockToken,
+                            CLBMobileKeybagManager._keybagStatusChangedToken,
+                            CLBMobileKeybagManager._lockedState,
+                            CLBMobileKeybagManager._queue,
+                            CLBMobileKeybagManager._stateChangedCallbackBlocks ]
+...

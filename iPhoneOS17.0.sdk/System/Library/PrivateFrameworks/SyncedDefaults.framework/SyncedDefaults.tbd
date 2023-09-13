@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SyncedDefaults.framework/SyncedDefaults
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SYDGetAccessorSignpostsLog, _SYDGetAccountsLog,
+                            _SYDGetAnalyticsLog, _SYDGetCloudKitLog,
+                            _SYDGetConnectionLog, _SYDGetCoreDataLog,
+                            _SYDGetMigrationLog, _SYDGetMiscLog,
+                            _SYDGetSyncSignpostsLog, _SYDGetTCCLog,
+                            _SYDRemotePreferencesSourceConfigurationDidChangeNotification,
+                            _SYDRemotePreferencesSourceDidChangeNotification,
+                            _SYDUbiquitousKeyValueStoreDidChangeExternallyNotification,
+                            _SyncedDefaultsVersionNumber,
+                            _SyncedDefaultsVersionString ]
+    objc-classes:         [ SYDClientProtocolProxy, SYDClientToDaemonConnection,
+                            SYDRemotePreferencesSource, SYDStoreConfiguration,
+                            SYDStoreID ]
+    objc-ivars:           [ SYDClientProtocolProxy._target,
+                            SYDClientToDaemonConnection._analyticsQueue,
+                            SYDClientToDaemonConnection._cacheLock,
+                            SYDClientToDaemonConnection._cachedObjects,
+                            SYDClientToDaemonConnection._callbackQueue,
+                            SYDClientToDaemonConnection._daemonWakeNotifyToken,
+                            SYDClientToDaemonConnection._didLogFaultForEntitlements,
+                            SYDClientToDaemonConnection._hasFullCachedDictionary,
+                            SYDClientToDaemonConnection._needsChangeDictionaryFromDaemon,
+                            SYDClientToDaemonConnection._queue,
+                            SYDClientToDaemonConnection._storeConfiguration,
+                            SYDClientToDaemonConnection._syncingWithCloudCounter,
+                            SYDClientToDaemonConnection._xpcConnection,
+                            SYDStoreConfiguration._processName,
+                            SYDStoreConfiguration._storeID,
+                            SYDStoreID._identifier,
+                            SYDStoreID._personaUniqueString, SYDStoreID._type ]
+...

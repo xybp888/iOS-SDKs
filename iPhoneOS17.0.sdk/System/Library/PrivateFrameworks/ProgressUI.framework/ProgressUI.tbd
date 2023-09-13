@@ -1,0 +1,45 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ProgressUI.framework/ProgressUI
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ __IOSurfacePropertyDictionaryForRect,
+                            _kPUIDefaultContextLevel ]
+    objc-classes:         [ PUIEnvironment, PUIFramebufferSizeChangeNotifier,
+                            PUIProgressWindow ]
+    objc-ivars:           [ PUIFramebufferSizeChangeNotifier._displayMonitor,
+                            PUIFramebufferSizeChangeNotifier._listeners,
+                            PUIProgressWindow._appleLogo,
+                            PUIProgressWindow._context,
+                            PUIProgressWindow._currentProgress,
+                            PUIProgressWindow._deviceClass,
+                            PUIProgressWindow._displayOrientation,
+                            PUIProgressWindow._displayScale,
+                            PUIProgressWindow._displaySize,
+                            PUIProgressWindow._environment,
+                            PUIProgressWindow._errorDescription,
+                            PUIProgressWindow._forceInverted,
+                            PUIProgressWindow._framebufferListenerToken,
+                            PUIProgressWindow._framebufferSize,
+                            PUIProgressWindow._ioSurface,
+                            PUIProgressWindow._ioSurfaceLayer,
+                            PUIProgressWindow._isSecurityResearchDevice,
+                            PUIProgressWindow._layer,
+                            PUIProgressWindow._layerPositioningSize,
+                            PUIProgressWindow._progressHeight,
+                            PUIProgressWindow._progressLayer,
+                            PUIProgressWindow._progressWidth,
+                            PUIProgressWindow._progressXDelta,
+                            PUIProgressWindow._progressYDelta,
+                            PUIProgressWindow._renderWithIOSurface,
+                            PUIProgressWindow._screenClass,
+                            PUIProgressWindow._showsProgressBar,
+                            PUIProgressWindow._sideways,
+                            PUIProgressWindow._statusTextLayer,
+                            PUIProgressWindow._weCreatedTheContext,
+                            PUIProgressWindow._white ]
+...

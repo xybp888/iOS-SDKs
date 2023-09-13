@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/STSXPCHelperClient.framework/STSXPCHelperClient
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _NFCD_XPCHELPER_ERROR_DOMAIN,
+                            _STSUAStepupEventKeyEndpointData,
+                            _STSUAStepupEventKeySharedSecretData,
+                            _STSXPCHelperErrorDescriptions,
+                            _STS_XCPHELPER_ERROR_BT_SUBDOMAIN,
+                            _STS_XCPHELPER_ERROR_DOMAIN,
+                            _STS_XCPHELPER_ERROR_WIFI_SUBDOMAIN ]
+    objc-classes:         [ STSCHAlternativeCarrier,
+                            STSCHBluetoothAlternativeCarrier,
+                            STSCHNdefRecordBundle, STSCHNfcAlternativeCarrier,
+                            STSCHWiFiAwareAlternativeCarrier,
+                            STSCHWiFiAwareDiscoveryChannelInfo,
+                            STSCHWiFiAwareSecurityInfo, STSConnectionHandover,
+                            STSDiffieHellmanParameter, STSHelperLibrary,
+                            STSNDEFRecord, STSRemoteTransceiverProxy ]
+...

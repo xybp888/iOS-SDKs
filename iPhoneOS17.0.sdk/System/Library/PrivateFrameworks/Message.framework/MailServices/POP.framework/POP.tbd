@@ -1,0 +1,50 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Message.framework/MailServices/POP.framework/POP
+current-version:       3774.100.2
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _MFDeletePOPMessagesCompleted,
+                            _MFDeletePOPMessagesStarted,
+                            _MF_POPAccountDeleteMessagesAfterIntervalKey,
+                            _MF_POPAccountDeleteMessagesOnServerInterval,
+                            _MF_POPAccountDeleteMessagesRightAwayKey,
+                            _MF_POPAccountDeleteMessagesWhenTransferredOutOfInboxKey,
+                            _MF_POPAccountDeletionPolicy,
+                            _MF_POPAccountNeverDeleteMessagesKey ]
+    objc-classes:         [ MFAPOPAuthScheme, MFAPOPConnection, MFLibraryPOPStore,
+                            MFPOP3Connection, MFPOP3Fetcher, MFPOPDownloadQueue,
+                            MFPOPMessage, POPAccount ]
+    objc-ivars:           [ MFLibraryPOPStore._connection,
+                            MFLibraryPOPStore._serverMessageCount,
+                            MFPOP3Connection._accountURL,
+                            MFPOP3Connection._apopTimeStamp,
+                            MFPOP3Connection._hidingPassword,
+                            MFPOP3Connection._listResults,
+                            MFPOP3Connection._messageIdsByNumber,
+                            MFPOP3Connection._numberOfMessagesAvailable,
+                            MFPOP3Connection._numbersByMessageId,
+                            MFPOP3Connection._sendBuffer,
+                            MFPOP3Connection._state, MFPOPDownloadQueue._library,
+                            MFPOPDownloadQueue._mailbox,
+                            MFPOPDownloadQueue._uidStore,
+                            MFPOPDownloadQueue.startDate,
+                            MFPOPMessage._accountURL, MFPOPMessage._messageData,
+                            MFPOPMessage._messageDataIsComplete,
+                            MFPOPMessage._messageID, MFPOPMessage._messageNumber,
+                            MFPOPMessage._size, POPAccount._connection,
+                            POPAccount._connectionActivityLock,
+                            POPAccount._connectionTimeout,
+                            POPAccount._connectionsInUse,
+                            POPAccount._currentUIDs, POPAccount._fetchMonitor,
+                            POPAccount._fetcherNeedsReset,
+                            POPAccount._hasDoneBackgroundSynchronization,
+                            POPAccount._newestMessageUID,
+                            POPAccount._numberOfKnownUIDs,
+                            POPAccount._oldestMessageUID,
+                            POPAccount._sharedConnectionCondition,
+                            POPAccount._shouldAttemptAPOP ]
+...

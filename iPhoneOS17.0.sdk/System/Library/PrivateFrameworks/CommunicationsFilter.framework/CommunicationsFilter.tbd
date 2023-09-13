@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CommunicationsFilter.framework/CommunicationsFilter
+current-version:       800
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CMFAgentName, _CMFBlockListAddItemForAllServices,
+                            _CMFBlockListCopyItemsForAllServicesService,
+                            _CMFBlockListIsItemBlocked,
+                            _CMFBlockListRemoveItemFromAllServices,
+                            _CMFBlockListUpdatedNotification,
+                            _CMFDictionaryResultKey, _CMFItemCopyBusinessID,
+                            _CMFItemCopyEmailAddress, _CMFItemCopyPhoneNumber,
+                            _CMFItemCreateWithBusinessID,
+                            _CMFItemCreateWithEmailAddress,
+                            _CMFItemCreateWithPhoneNumber, _CMFItemGetType,
+                            _CMFSyncAgentBlockListUpdated, _CMFXPCEventCode,
+                            _CMFXPCParameterKeyItem, _CMFXPCResponseKey,
+                            _CreateCMFItemFromString ]
+    objc-classes:         [ CommunicationFilterItem,
+                            CommunicationFilterItemCache,
+                            CommunicationsFilterBlockList,
+                            CommunicationsFilterBlockListCache ]
+    objc-ivars:           [ CommunicationFilterItem._emailAddress,
+                            CommunicationFilterItem._phoneNumber,
+                            CommunicationFilterItemCache._filterItem,
+                            CommunicationFilterItemCache._isInList,
+                            CommunicationsFilterBlockList._cache,
+                            CommunicationsFilterBlockList._connection,
+                            CommunicationsFilterBlockList._queue,
+                            CommunicationsFilterBlockList._recentObjectsTested,
+                            CommunicationsFilterBlockList._retries,
+                            CommunicationsFilterBlockList._xpcQueue,
+                            CommunicationsFilterBlockListCache._listIsEmpty,
+                            CommunicationsFilterBlockListCache._notifyEmptyListToken,
+                            CommunicationsFilterBlockListCache._recentItems ]
+...

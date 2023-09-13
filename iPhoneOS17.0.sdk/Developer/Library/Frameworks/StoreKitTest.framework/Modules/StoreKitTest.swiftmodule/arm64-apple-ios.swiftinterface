@@ -1,0 +1,253 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.123.203 clang-1500.0.37.1)
+// swift-module-flags: -target arm64-apple-ios17.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name StoreKitTest
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 813.0.63.2.2
+import Foundation
+import StoreKit
+@_exported import StoreKitTest
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+public struct _SKTestFailureCode : Swift.Equatable {
+  public static func == (a: StoreKitTest._SKTestFailureCode, b: StoreKitTest._SKTestFailureCode) -> Swift.Bool
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+public protocol SKTestFailure : Swift.Equatable, Swift.Sendable {
+  init?(_fromErrorCode code: StoreKitTest._SKTestFailureCode)
+  var _errorCode: StoreKitTest._SKTestFailureCode { get }
+}
+#if compiler(>=5.3) && $PrimaryAssociatedTypes2
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+public protocol FailableStoreKitAPI<Failure> : Swift.Sendable {
+  associatedtype Failure : StoreKitTest.SKTestFailure
+}
+#else
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+public protocol FailableStoreKitAPI : Swift.Sendable {
+  associatedtype Failure : StoreKitTest.SKTestFailure
+}
+#endif
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+public enum SKTestFailures {
+  public enum LoadProducts : StoreKitTest.SKTestFailure {
+    case generic(StoreKit.StoreKitError)
+    public init?(_fromErrorCode code: StoreKitTest._SKTestFailureCode)
+    public var _errorCode: StoreKitTest._SKTestFailureCode {
+      get
+    }
+    public static func == (lhs: StoreKitTest.SKTestFailures.LoadProducts, rhs: StoreKitTest.SKTestFailures.LoadProducts) -> Swift.Bool
+  }
+  public enum Purchase : StoreKitTest.SKTestFailure {
+    case generic(StoreKit.StoreKitError)
+    case purchase(StoreKit.Product.PurchaseError)
+    public init?(_fromErrorCode code: StoreKitTest._SKTestFailureCode)
+    public var _errorCode: StoreKitTest._SKTestFailureCode {
+      get
+    }
+    public static func == (lhs: StoreKitTest.SKTestFailures.Purchase, rhs: StoreKitTest.SKTestFailures.Purchase) -> Swift.Bool
+  }
+  public enum Verification : StoreKitTest.SKTestFailure {
+    case verification(StoreKit.VerificationResult<Any>.VerificationError)
+    public init?(_fromErrorCode code: StoreKitTest._SKTestFailureCode)
+    public var _errorCode: StoreKitTest._SKTestFailureCode {
+      get
+    }
+    public static func == (lhs: StoreKitTest.SKTestFailures.Verification, rhs: StoreKitTest.SKTestFailures.Verification) -> Swift.Bool
+  }
+  public enum AppStoreSync : StoreKitTest.SKTestFailure {
+    case generic(StoreKit.StoreKitError)
+    public init?(_fromErrorCode code: StoreKitTest._SKTestFailureCode)
+    public var _errorCode: StoreKitTest._SKTestFailureCode {
+      get
+    }
+    public static func == (lhs: StoreKitTest.SKTestFailures.AppStoreSync, rhs: StoreKitTest.SKTestFailures.AppStoreSync) -> Swift.Bool
+  }
+  public enum SubscriptionStatus : StoreKitTest.SKTestFailure {
+    case generic(StoreKit.StoreKitError)
+    public init?(_fromErrorCode code: StoreKitTest._SKTestFailureCode)
+    public var _errorCode: StoreKitTest._SKTestFailureCode {
+      get
+    }
+    public static func == (lhs: StoreKitTest.SKTestFailures.SubscriptionStatus, rhs: StoreKitTest.SKTestFailures.SubscriptionStatus) -> Swift.Bool
+  }
+  public enum AppTransaction : StoreKitTest.SKTestFailure {
+    case generic(StoreKit.StoreKitError)
+    public init?(_fromErrorCode code: StoreKitTest._SKTestFailureCode)
+    public var _errorCode: StoreKitTest._SKTestFailureCode {
+      get
+    }
+    public static func == (lhs: StoreKitTest.SKTestFailures.AppTransaction, rhs: StoreKitTest.SKTestFailures.AppTransaction) -> Swift.Bool
+  }
+  public enum ManageSubscriptions : StoreKitTest.SKTestFailure {
+    case generic(StoreKit.StoreKitError)
+    public init?(_fromErrorCode code: StoreKitTest._SKTestFailureCode)
+    public var _errorCode: StoreKitTest._SKTestFailureCode {
+      get
+    }
+    public static func == (lhs: StoreKitTest.SKTestFailures.ManageSubscriptions, rhs: StoreKitTest.SKTestFailures.ManageSubscriptions) -> Swift.Bool
+  }
+  @available(iOS 17.0, macCatalyst 17.0, macOS 14.0, xrOS 1.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public enum RefundRequest : StoreKitTest.SKTestFailure {
+    case generic(StoreKit.StoreKitError)
+    case refundRequest(StoreKit.Transaction.RefundRequestError)
+    public init?(_fromErrorCode code: StoreKitTest._SKTestFailureCode)
+    public var _errorCode: StoreKitTest._SKTestFailureCode {
+      get
+    }
+    public static func == (lhs: StoreKitTest.SKTestFailures.RefundRequest, rhs: StoreKitTest.SKTestFailures.RefundRequest) -> Swift.Bool
+  }
+  public enum OfferCodeRedeem : StoreKitTest.SKTestFailure {
+    case generic(StoreKit.StoreKitError)
+    public init?(_fromErrorCode code: StoreKitTest._SKTestFailureCode)
+    public var _errorCode: StoreKitTest._SKTestFailureCode {
+      get
+    }
+    public static func == (lhs: StoreKitTest.SKTestFailures.OfferCodeRedeem, rhs: StoreKitTest.SKTestFailures.OfferCodeRedeem) -> Swift.Bool
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+public struct StoreKitLoadProductsAPI : StoreKitTest.FailableStoreKitAPI {
+  public typealias Failure = StoreKitTest.SKTestFailures.LoadProducts
+  public init()
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+public struct StoreKitPurchaseAPI : StoreKitTest.FailableStoreKitAPI {
+  public typealias Failure = StoreKitTest.SKTestFailures.Purchase
+  public init()
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+public struct StoreKitVerificationAPI : StoreKitTest.FailableStoreKitAPI {
+  public typealias Failure = StoreKitTest.SKTestFailures.Verification
+  public init()
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+public struct StoreKitAppStoreSyncAPI : StoreKitTest.FailableStoreKitAPI {
+  public typealias Failure = StoreKitTest.SKTestFailures.AppStoreSync
+  public init()
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+public struct StoreKitSubscriptionStatusAPI : StoreKitTest.FailableStoreKitAPI {
+  public typealias Failure = StoreKitTest.SKTestFailures.SubscriptionStatus
+  public init()
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+public struct StoreKitAppTransactionAPI : StoreKitTest.FailableStoreKitAPI {
+  public typealias Failure = StoreKitTest.SKTestFailures.AppTransaction
+  public init()
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+public struct StoreKitManageSubscriptionsAPI : StoreKitTest.FailableStoreKitAPI {
+  public typealias Failure = StoreKitTest.SKTestFailures.ManageSubscriptions
+  public init()
+}
+@available(iOS 17.0, macOS 14.0, xrOS 1.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct StoreKitRefundRequestAPI : StoreKitTest.FailableStoreKitAPI {
+  @available(iOS 17.0, macOS 14.0, xrOS 1.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public typealias Failure = StoreKitTest.SKTestFailures.RefundRequest
+  @available(iOS 17.0, macOS 14.0, xrOS 1.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public init()
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+public struct StoreKitOfferCodeRedeemAPI : StoreKitTest.FailableStoreKitAPI {
+  public typealias Failure = StoreKitTest.SKTestFailures.OfferCodeRedeem
+  public init()
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+extension StoreKitTest.FailableStoreKitAPI where Self == StoreKitTest.StoreKitLoadProductsAPI {
+  public static var loadProducts: StoreKitTest.StoreKitLoadProductsAPI {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+extension StoreKitTest.FailableStoreKitAPI where Self == StoreKitTest.StoreKitPurchaseAPI {
+  public static var purchase: StoreKitTest.StoreKitPurchaseAPI {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+extension StoreKitTest.FailableStoreKitAPI where Self == StoreKitTest.StoreKitVerificationAPI {
+  public static var verification: StoreKitTest.StoreKitVerificationAPI {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+extension StoreKitTest.FailableStoreKitAPI where Self == StoreKitTest.StoreKitAppStoreSyncAPI {
+  public static var appStoreSync: StoreKitTest.StoreKitAppStoreSyncAPI {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+extension StoreKitTest.FailableStoreKitAPI where Self == StoreKitTest.StoreKitSubscriptionStatusAPI {
+  public static var subscriptionStatus: StoreKitTest.StoreKitSubscriptionStatusAPI {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+extension StoreKitTest.FailableStoreKitAPI where Self == StoreKitTest.StoreKitAppTransactionAPI {
+  public static var appTransaction: StoreKitTest.StoreKitAppTransactionAPI {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+extension StoreKitTest.FailableStoreKitAPI where Self == StoreKitTest.StoreKitManageSubscriptionsAPI {
+  public static var manageSubscriptions: StoreKitTest.StoreKitManageSubscriptionsAPI {
+    get
+  }
+}
+@available(iOS 17.0, macCatalyst 17.0, macOS 14.0, xrOS 1.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension StoreKitTest.FailableStoreKitAPI where Self == StoreKitTest.StoreKitRefundRequestAPI {
+  public static var refundRequest: StoreKitTest.StoreKitRefundRequestAPI {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+extension StoreKitTest.FailableStoreKitAPI where Self == StoreKitTest.StoreKitOfferCodeRedeemAPI {
+  public static var offerCodeRedeem: StoreKitTest.StoreKitOfferCodeRedeemAPI {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+extension StoreKitTest.SKTestSession {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func simulatedError<API>(forAPI api: API) async -> API.Failure? where API : StoreKitTest.FailableStoreKitAPI
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public func setSimulatedError<API>(_ error: API.Failure?, forAPI api: API) async throws where API : StoreKitTest.FailableStoreKitAPI
+  #endif
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+extension StoreKit.Product.PurchaseOption {
+  public enum SubscriptionRenewalBehavior : Swift.Codable, Swift.Hashable, Swift.Sendable {
+    case renewUntilNow
+    case cancelImmediately
+    public static func == (a: StoreKit.Product.PurchaseOption.SubscriptionRenewalBehavior, b: StoreKit.Product.PurchaseOption.SubscriptionRenewalBehavior) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public static func promotionalOffer(id identifier: Swift.String) -> StoreKit.Product.PurchaseOption
+  public static func codeOffer(referenceName: Swift.String) -> StoreKit.Product.PurchaseOption
+  public static func purchaseDate(_ date: Foundation.Date, renewalBehavior: StoreKit.Product.PurchaseOption.SubscriptionRenewalBehavior = .renewUntilNow) -> StoreKit.Product.PurchaseOption
+}
+extension StoreKitTest.SKTestSession {
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, xrOS 1.0, *)
+  @discardableResult
+  public func buyProduct(identifier: StoreKit.Product.ID, options: Swift.Set<StoreKit.Product.PurchaseOption> = []) async throws -> StoreKit.Transaction
+  #endif
+}

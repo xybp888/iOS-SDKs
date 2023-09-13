@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/XOJIT.framework/XOJIT
+current-version:       17
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _xojit_create_from_xpc_connection,
+                            _xojit_create_from_xpc_connection_and_oopjit_linkage_type,
+                            _xojit_destroy, _xojit_load_object,
+                            _xojit_lookup_symbols ]
+    objc-classes:         [ _TtC5XOJIT9XOJITShim ]
+...

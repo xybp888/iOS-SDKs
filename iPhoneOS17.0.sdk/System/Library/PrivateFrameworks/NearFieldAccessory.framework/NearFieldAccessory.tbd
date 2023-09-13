@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NearFieldAccessory.framework/NearFieldAccessory
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ NFACTag, NFAccessoryHardwareManager,
+                            NFAccessoryReaderSession, NFAccessorySession,
+                            NFHardwareManagerAccessoryCallbacks,
+                            NFHardwareManagerAccessoryInterface,
+                            NFReaderSessionAccessoryCallbacks,
+                            NFReaderSessionAccessoryInterface ]
+    objc-ivars:           [ NFACTag._allSystemCodes, NFACTag._appData,
+                            NFACTag._atqa, NFACTag._description,
+                            NFACTag._historicalBytes, NFACTag._ndefAvailability,
+                            NFACTag._ndefContainerSize, NFACTag._ndefMessageSize,
+                            NFACTag._pmm, NFACTag._sak, NFACTag._silentType,
+                            NFACTag._tagID, NFACTag._technology, NFACTag._type,
+                            NFACTag._uid, NFAccessoryHardwareManager._connection,
+                            NFAccessoryHardwareManager._hwSupport,
+                            NFAccessoryHardwareManager._refCount,
+                            NFAccessoryHardwareManager._sessions,
+                            NFAccessoryReaderSession._delegate,
+                            NFAccessorySession._callbackQueue,
+                            NFAccessorySession._didEndCallback,
+                            NFAccessorySession._didStartCallback,
+                            NFAccessorySession._isCallbackQueueSuspended,
+                            NFAccessorySession._isFirstInQueue,
+                            NFAccessorySession._proxy, NFAccessorySession._state ]
+...
