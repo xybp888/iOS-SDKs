@@ -1,1 +1,0 @@
-#define SK_VERSION 50000006
