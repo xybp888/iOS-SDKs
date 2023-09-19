@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CloudSubscriptionFeatures.framework/CloudSubscriptionFeatures
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CSFGeoClassificationStatusDescription,
+                            _CloudSubscriptionFeaturesVersionNumber,
+                            _CloudSubscriptionFeaturesVersionString,
+                            _kCloudSubscriptionFeatureChangedNotificationName ]
+    objc-classes:         [ CSFFeatureManager, CloudFeature, CloudFeatureObject,
+                            DaemonController, FeatureChangeObserver,
+                            FeaturesDaemon,
+                            _TtC25CloudSubscriptionFeatures21FeatureRequestHandler,
+                            _TtC25CloudSubscriptionFeatures21GeoClassificationInfo,
+                            _TtC25CloudSubscriptionFeatures9XPCCaller ]
+    objc-ivars:           [ CloudFeatureObject._accessToken,
+                            CloudFeatureObject._canUse,
+                            CloudFeatureObject._featureID,
+                            CloudFeatureObject._limit,
+                            CloudFeatureObject._status,
+                            FeaturesDaemon._controller ]
+...

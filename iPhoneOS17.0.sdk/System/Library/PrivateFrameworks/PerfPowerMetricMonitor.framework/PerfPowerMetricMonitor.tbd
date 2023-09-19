@@ -1,0 +1,38 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PerfPowerMetricMonitor.framework/PerfPowerMetricMonitor
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PPSMetricMonitorLogHandleForCategory,
+                            _PerfPowerMetricMonitorVersionNumber,
+                            _PerfPowerMetricMonitorVersionString,
+                            _kPPSMMConfigModeKey, _kPPSMMConfigUpdateDelegateKey,
+                            _kPPSMMConfigUpdateIntervalKey,
+                            _kPPSMetricMonitorServiceName,
+                            _kPerfPowerMetricMonitorErrorDomain ]
+    objc-classes:         [ PPSClient, PPSMetricMonitor,
+                            PPSMetricMonitorConfiguration,
+                            PPSMetricMonitorService ]
+    objc-ivars:           [ PPSClient._config, PPSClient._connection,
+                            PPSClient._monitoredPID, PPSClient._remoteProxy,
+                            PPSMetricMonitor._config,
+                            PPSMetricMonitor._connection,
+                            PPSMetricMonitor._currentProcessName,
+                            PPSMetricMonitor._currentProcessPID,
+                            PPSMetricMonitor._delegate,
+                            PPSMetricMonitor._delegateQueue,
+                            PPSMetricMonitor._isInterrupted,
+                            PPSMetricMonitor._monitoringState,
+                            PPSMetricMonitor._remoteProxy,
+                            PPSMetricMonitor._xpcMessagingQueue,
+                            PPSMetricMonitorConfiguration._emitSignposts,
+                            PPSMetricMonitorConfiguration._mode,
+                            PPSMetricMonitorConfiguration._updateDelegate,
+                            PPSMetricMonitorConfiguration._updateInterval,
+                            PPSMetricMonitorService._clients,
+                            PPSMetricMonitorService._delegate ]
+...

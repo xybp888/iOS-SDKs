@@ -1,0 +1,403 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.123.203 clang-1500.0.37.1)
+// swift-module-flags: -target arm64e-apple-ios17.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name ActivityKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 127.1.100
+@_exported import ActivityKit
+import Combine
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+final public class ActivityAuthorizationInfo {
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public struct ActivityEnablementUpdates : _Concurrency.AsyncSequence {
+    public typealias Element = Swift.Bool
+    public func makeAsyncIterator() -> ActivityKit.ActivityAuthorizationInfo.ActivityEnablementUpdates.Iterator
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public mutating func next() async -> Swift.Bool?
+      #endif
+      public typealias Element = Swift.Bool
+    }
+    public typealias AsyncIterator = ActivityKit.ActivityAuthorizationInfo.ActivityEnablementUpdates.Iterator
+  }
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @available(iOS 16.2, *)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public struct FrequentPushEnablementUpdates : _Concurrency.AsyncSequence {
+    public typealias Element = Swift.Bool
+    public func makeAsyncIterator() -> ActivityKit.ActivityAuthorizationInfo.FrequentPushEnablementUpdates.Iterator
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public mutating func next() async -> Swift.Bool?
+      #endif
+      public typealias Element = Swift.Bool
+    }
+    public typealias AsyncIterator = ActivityKit.ActivityAuthorizationInfo.FrequentPushEnablementUpdates.Iterator
+  }
+  #endif
+  @available(iOS 16.2, *)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  final public var frequentPushesEnabled: Swift.Bool {
+    get
+  }
+  final public var areActivitiesEnabled: Swift.Bool {
+    get
+  }
+  final public let activityEnablementUpdates: ActivityKit.ActivityAuthorizationInfo.ActivityEnablementUpdates
+  @available(iOS 16.2, *)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  final public let frequentPushEnablementUpdates: ActivityKit.ActivityAuthorizationInfo.FrequentPushEnablementUpdates
+  public init()
+  @objc deinit
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public protocol ActivityAttributes : Swift.Decodable, Swift.Encodable {
+  associatedtype ContentState : Swift.Decodable, Swift.Encodable, Swift.Hashable
+}
+@available(iOS 16.2, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct ActivityContent<State> where State : Swift.Decodable, State : Swift.Encodable, State : Swift.Hashable {
+  public let state: State
+  public let staleDate: Foundation.Date?
+  public let relevanceScore: Swift.Double
+  public init(state: State, staleDate: Foundation.Date?, relevanceScore: Swift.Double = 0.0)
+}
+@available(iOS 16.2, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension ActivityKit.ActivityContent : Swift.Sendable where State : Swift.Sendable {
+}
+@available(iOS 16.2, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension ActivityKit.ActivityContent : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public class Activity<Attributes> : Swift.Identifiable where Attributes : ActivityKit.ActivityAttributes {
+  public typealias ContentState = Attributes.ContentState
+  @available(iOS, deprecated: 16.2, message: "Use request(attributes:content:pushType:) instead")
+  public static func request(attributes: Attributes, contentState: ActivityKit.Activity<Attributes>.ContentState, pushType: ActivityKit.PushType? = nil) throws -> ActivityKit.Activity<Attributes>
+  @available(iOS 16.2, *)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public static func request(attributes: Attributes, content: ActivityKit.ActivityContent<ActivityKit.Activity<Attributes>.ContentState>, pushType: ActivityKit.PushType? = nil) throws -> ActivityKit.Activity<Attributes>
+  public static var activities: [ActivityKit.Activity<Attributes>] {
+    get
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public static var activityUpdates: ActivityKit.Activity<Attributes>.ActivityUpdates {
+    get
+  }
+  #endif
+  final public let id: Swift.String
+  public var activityState: ActivityKit.ActivityState {
+    get
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public var activityStateUpdates: ActivityKit.Activity<Attributes>.ActivityStateUpdates {
+    get
+  }
+  #endif
+  @available(iOS, deprecated: 16.2, message: "Use `content` instead")
+  public var contentState: ActivityKit.Activity<Attributes>.ContentState {
+    get
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @available(iOS, deprecated: 16.2, message: "Use contentUpdates instead")
+  public var contentStateUpdates: ActivityKit.Activity<Attributes>.ContentStateUpdates {
+    get
+  }
+  #endif
+  @available(iOS 16.2, *)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public var content: ActivityKit.ActivityContent<ActivityKit.Activity<Attributes>.ContentState> {
+    get
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @available(iOS 16.2, *)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public var contentUpdates: ActivityKit.Activity<Attributes>.ContentUpdates {
+    get
+  }
+  #endif
+  public var pushToken: Foundation.Data? {
+    get
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public var pushTokenUpdates: ActivityKit.Activity<Attributes>.PushTokenUpdates {
+    get
+  }
+  #endif
+  final public let attributes: Attributes
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS, deprecated: 16.2, message: "Use update(_:) instead")
+  public func update(using contentState: ActivityKit.Activity<Attributes>.ContentState) async
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 16.2, *)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public func update(_ content: ActivityKit.ActivityContent<ActivityKit.Activity<Attributes>.ContentState>) async
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS, deprecated: 16.2, message: "Use update(_:alertConfiguration:) instead")
+  public func update(using contentState: ActivityKit.Activity<Attributes>.ContentState, alertConfiguration: ActivityKit.AlertConfiguration? = nil) async
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 16.2, *)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public func update(_ content: ActivityKit.ActivityContent<ActivityKit.Activity<Attributes>.ContentState>, alertConfiguration: ActivityKit.AlertConfiguration? = nil) async
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS, deprecated: 16.2, message: "Use end(content:dismissalPolicy:) instead")
+  public func end(using contentState: ActivityKit.Activity<Attributes>.ContentState? = nil, dismissalPolicy: ActivityKit.ActivityUIDismissalPolicy = .default) async
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 16.2, *)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public func end(_ content: ActivityKit.ActivityContent<ActivityKit.Activity<Attributes>.ContentState>?, dismissalPolicy: ActivityKit.ActivityUIDismissalPolicy = .default) async
+  #endif
+  public typealias ID = Swift.String
+  @objc deinit
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension ActivityKit.Activity {
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public struct ActivityUpdates : _Concurrency.AsyncSequence {
+    public typealias Element = ActivityKit.Activity<Attributes>
+    public func makeAsyncIterator() -> ActivityKit.Activity<Attributes>.ActivityUpdates.Iterator
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public func next() async -> ActivityKit.Activity<Attributes>.ActivityUpdates.Element?
+      #endif
+      public typealias Element = ActivityKit.Activity<Attributes>.ActivityUpdates.Element
+    }
+    public typealias AsyncIterator = ActivityKit.Activity<Attributes>.ActivityUpdates.Iterator
+  }
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public struct ActivityStateUpdates : _Concurrency.AsyncSequence {
+    public typealias Element = ActivityKit.ActivityState
+    public func makeAsyncIterator() -> ActivityKit.Activity<Attributes>.ActivityStateUpdates.Iterator
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public func next() async -> ActivityKit.Activity<Attributes>.ActivityStateUpdates.Element?
+      #endif
+      public typealias Element = ActivityKit.Activity<Attributes>.ActivityStateUpdates.Element
+    }
+    public typealias AsyncIterator = ActivityKit.Activity<Attributes>.ActivityStateUpdates.Iterator
+  }
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @available(iOS, deprecated: 16.2, message: "Use `ContentUpdates` instead")
+  public struct ContentStateUpdates : _Concurrency.AsyncSequence {
+    public typealias Element = ActivityKit.Activity<Attributes>.ContentState
+    public func makeAsyncIterator() -> ActivityKit.Activity<Attributes>.ContentStateUpdates.Iterator
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public func next() async -> ActivityKit.Activity<Attributes>.ContentStateUpdates.Element?
+      #endif
+      public typealias Element = ActivityKit.Activity<Attributes>.ContentStateUpdates.Element
+    }
+    public typealias AsyncIterator = ActivityKit.Activity<Attributes>.ContentStateUpdates.Iterator
+  }
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @available(iOS 16.2, *)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public struct ContentUpdates : _Concurrency.AsyncSequence {
+    public typealias Element = ActivityKit.ActivityContent<ActivityKit.Activity<Attributes>.ContentState>
+    public func makeAsyncIterator() -> ActivityKit.Activity<Attributes>.ContentUpdates.Iterator
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public func next() async -> ActivityKit.Activity<Attributes>.ContentUpdates.Element?
+      #endif
+      public typealias Element = ActivityKit.Activity<Attributes>.ContentUpdates.Element
+    }
+    public typealias AsyncIterator = ActivityKit.Activity<Attributes>.ContentUpdates.Iterator
+  }
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public struct PushTokenUpdates : _Concurrency.AsyncSequence {
+    public typealias Element = Foundation.Data
+    public func makeAsyncIterator() -> ActivityKit.Activity<Attributes>.PushTokenUpdates.Iterator
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public func next() async -> ActivityKit.Activity<Attributes>.PushTokenUpdates.Element?
+      #endif
+      public typealias Element = ActivityKit.Activity<Attributes>.PushTokenUpdates.Element
+    }
+    public typealias AsyncIterator = ActivityKit.Activity<Attributes>.PushTokenUpdates.Iterator
+  }
+  #endif
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public enum ActivityState : Swift.Sendable, Swift.Codable, Swift.Hashable {
+  case active
+  case ended
+  case dismissed
+  @available(iOS 16.2, *)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  case stale
+  public static func == (a: ActivityKit.ActivityState, b: ActivityKit.ActivityState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct AlertConfiguration : Swift.Equatable {
+  public var title: Foundation.LocalizedStringResource
+  public var body: Foundation.LocalizedStringResource
+  public var sound: ActivityKit.AlertConfiguration.AlertSound
+  public init(title: Foundation.LocalizedStringResource, body: Foundation.LocalizedStringResource, sound: ActivityKit.AlertConfiguration.AlertSound)
+  public struct AlertSound : Swift.Equatable {
+    public static var `default`: ActivityKit.AlertConfiguration.AlertSound {
+      get
+    }
+    public static func named(_ name: Swift.String) -> ActivityKit.AlertConfiguration.AlertSound
+    public static func == (a: ActivityKit.AlertConfiguration.AlertSound, b: ActivityKit.AlertConfiguration.AlertSound) -> Swift.Bool
+  }
+  public static func == (a: ActivityKit.AlertConfiguration, b: ActivityKit.AlertConfiguration) -> Swift.Bool
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct ActivityUIDismissalPolicy : Swift.Equatable {
+  public static let `default`: ActivityKit.ActivityUIDismissalPolicy
+  public static let immediate: ActivityKit.ActivityUIDismissalPolicy
+  public static func after(_ date: Foundation.Date) -> ActivityKit.ActivityUIDismissalPolicy
+  public static func == (a: ActivityKit.ActivityUIDismissalPolicy, b: ActivityKit.ActivityUIDismissalPolicy) -> Swift.Bool
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public enum ActivityAuthorizationError : Foundation.CustomNSError, Foundation.LocalizedError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+  case attributesTooLarge
+  case unsupported
+  case denied
+  case globalMaximumExceeded
+  case targetMaximumExceeded
+  case unsupportedTarget
+  case visibility
+  case persistenceFailure
+  case missingProcessIdentifier
+  case unentitled
+  case malformedActivityIdentifier
+  case reconnectNotPermitted
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var failureReason: Swift.String? {
+    get
+  }
+  public var recoverySuggestion: Swift.String? {
+    get
+  }
+  public static func == (a: ActivityKit.ActivityAuthorizationError, b: ActivityKit.ActivityAuthorizationError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct PushType : Swift.Equatable {
+  public static var token: ActivityKit.PushType {
+    get
+  }
+  public static func == (a: ActivityKit.PushType, b: ActivityKit.PushType) -> Swift.Bool
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension ActivityKit.ActivityAuthorizationError : Swift.Equatable {}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension ActivityKit.ActivityAuthorizationError : Swift.Hashable {}

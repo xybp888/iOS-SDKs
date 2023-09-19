@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/LocalAuthentication'
+current-version: 1391.0.4
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _LAContextCreate, _LAContextGetTypeID, _LACopyACMContext, 
+                       _LACreateNewContextWithACMContext, _LAEvaluateACL, _LAEvaluateAndUpdateACL, 
+                       _LAEvaluatePolicy, _LAFingerDatabaseHash, _LAIsCredentialSet, 
+                       _LASetCredential, _LAUpdateAccessControlAfterEvaluation, _LocalAuthenticationVersionNumber, 
+                       _LocalAuthenticationVersionString, _cStringFromCFString, _coreauthd_create_message, 
+                       _coreauthd_message_no_error, _coreauthd_message_with_reply_sync, 
+                       _coreauthd_send_sync_and_do, _makeCFError, _makeCFErrorWithUserInfo ]
+    objc-classes:    [ LAClient ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _LAAvailableMechanisms, _LABiometryDatabaseHash, _LACopyExternalizedContext, 
+                       _LAErrorDomain, _LAErrorInfoBiometryType, _LAErrorInfoTCCServerPrompt, 
+                       _LAErrorInfoTCCService, _LAErrorSubcodeKey, _LAPasswordRetryTime, 
+                       _LAStorageErrorDomain, _LATouchIDAuthenticationMaximumAllowableReuseDuration ]
+    objc-classes:    [ LAAuthenticationBiometricMethod, LAAuthenticationBiometricMethodConfiguration, 
+                       LAAuthenticationBiometricMethodState, LAAuthenticationMethod, 
+                       LAAuthenticationMethodConfiguration, LAAuthenticationMethodResult, 
+                       LAAuthenticationMethodState, LAAuthenticationRequirement, 
+                       LABiometryFallbackRequirement, LAContext, LANotification, 
+                       LANotificationOfBooleanState, LANotificationUIAppearance, 
+                       LANotificationUIBannerAppearance, LAPersistedRight, LAPrivateKey, 
+                       LAPublicKey, LARight, LARightStore, LASecret, LAStorage ]
+...

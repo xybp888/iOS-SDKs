@@ -1,0 +1,73 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _NFMFindGizmoIdentifier,
+                            _NFMFindLocalDeviceEntitlementName,
+                            _NFMFindLocalDeviceServerName,
+                            _NFMHotterColderIdentifier, _NFMLeashIdentifier,
+                            _NFMLeashManagerLeashWarningCloseValue,
+                            _NFMLeashManagerLeashWarningFarValue,
+                            _NFMLeashManagerLeashWarningImmediateValue,
+                            _NFMLeashManagerLeashWarningInsaneDistanceValue,
+                            _NFMPEPLog,
+                            _NFMProtoDidPlaySoundAndFlashLEDResponseReadFrom,
+                            _NFMProtoDidPlaySoundResponseReadFrom,
+                            _NFMProtoPlaySoundAndFlashLEDRequestReadFrom,
+                            _NFMProtoPlaySoundRequestReadFrom, _NFMProtoSend,
+                            _NFMProtoSendSharedConfigurationReadFrom,
+                            _NFMProtoSendWatchTokenReadFrom,
+                            _NFMProtoStopRangingOnPhoneReadFrom,
+                            _NFMUnlockIdentifier, _count, _nfm_log ]
+    objc-classes:         [ NFMIDSMessageInstance, NFMIDSServiceDelegate,
+                            NFMLeashManager, NFMPlayCommands,
+                            NFMProtoDidPlaySoundAndFlashLEDResponse,
+                            NFMProtoDidPlaySoundResponse,
+                            NFMProtoPlaySoundAndFlashLEDRequest,
+                            NFMProtoPlaySoundRequest,
+                            NFMProtoSendSharedConfiguration,
+                            NFMProtoSendWatchToken, NFMProtoStopRangingOnPhone,
+                            NFMWhereIsMyCompanionConnection, NFMWiFiManager ]
+    objc-ivars:           [ NFMIDSMessageInstance._retryAction,
+                            NFMIDSMessageInstance._retryCount,
+                            NFMIDSMessageInstance._retryInterval,
+                            NFMIDSServiceDelegate._inflightMessages,
+                            NFMIDSServiceDelegate._pendingMessages,
+                            NFMLeashManager._centralManager,
+                            NFMLeashManager._centralPhase,
+                            NFMLeashManager._centralQueue,
+                            NFMLeashManager._connected,
+                            NFMLeashManager._discoveredPeripheral,
+                            NFMLeashManager._externalQueue,
+                            NFMLeashManager._leashDelegate,
+                            NFMLeashManager._leashDispatchSourceTimer,
+                            NFMLeashManager._leashIdentifier,
+                            NFMLeashManager._leashMode,
+                            NFMLeashManager._needsToScanForPeripheral,
+                            NFMLeashManager._peripheral, NFMLeashManager._pipe,
+                            NFMLeashManager._pipeManager,
+                            NFMLeashManager._proximityChangeHandler,
+                            NFMLeashManager._serviceUUID,
+                            NFMLeashManager._testMode,
+                            NFMPlayCommands._avQueuePlayer,
+                            NFMPlayCommands._flashCount,
+                            NFMPlayCommands._flashEnabled,
+                            NFMPlayCommands._flashScheduler,
+                            NFMProtoDidPlaySoundAndFlashLEDResponse._didPlay,
+                            NFMProtoDidPlaySoundResponse._didPlay,
+                            NFMProtoPlaySoundAndFlashLEDRequest._has,
+                            NFMProtoPlaySoundAndFlashLEDRequest._timeStamp,
+                            NFMProtoPlaySoundRequest._behaviorOverride,
+                            NFMProtoPlaySoundRequest._has,
+                            NFMProtoPlaySoundRequest._timeStamp,
+                            NFMProtoSendSharedConfiguration._sharedConfiguration,
+                            NFMProtoSendWatchToken._discoveryToken,
+                            NFMWhereIsMyCompanionConnection._playSoundAndLEDCompletion,
+                            NFMWhereIsMyCompanionConnection._playSoundCompletion,
+                            NFMWhereIsMyCompanionConnection._serverConnection ]
+...

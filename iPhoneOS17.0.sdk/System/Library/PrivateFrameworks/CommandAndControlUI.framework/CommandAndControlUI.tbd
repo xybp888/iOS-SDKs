@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CommandAndControlUI.framework/CommandAndControlUI
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CommandAndControlUIVersionNumber,
+                            _CommandAndControlUIVersionString ]
+    objc-classes:         [ CACUILanguageViewBridgeController,
+                            _TtC19CommandAndControlUI21CACLanguageViewBridge ]
+    objc-ivars:           [ CACUILanguageViewBridgeController._delegate,
+                            CACUILanguageViewBridgeController._installationStatus,
+                            CACUILanguageViewBridgeController._trueViewController,
+                            CACUILanguageViewBridgeController._viewBridge ]
+...

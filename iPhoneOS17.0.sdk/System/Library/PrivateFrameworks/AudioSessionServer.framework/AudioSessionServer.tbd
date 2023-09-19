@@ -1,0 +1,46 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AudioSessionServer.framework/AudioSessionServer
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ AVAudioApplicationSpecification,
+                            AVAudioMicrophoneMonitor,
+                            AVAudioSessionRemoteXPCClient,
+                            AVAudioSessionServerFactory,
+                            AVAudioSessionServerPriv,
+                            AVAudioSessionXPCClientRelay,
+                            AVAudioSessionXPCServer ]
+    objc-ivars:           [ AVAudioApplicationSpecification._appAuditToken,
+                            AVAudioApplicationSpecification.attributionBundleID,
+                            AVAudioApplicationSpecification.audioAppType,
+                            AVAudioApplicationSpecification.processName,
+                            AVAudioMicrophoneMonitor._clientsWithMicEnabled,
+                            AVAudioMicrophoneMonitor._monitorMutex,
+                            AVAudioSessionRemoteXPCClient._clientProcess,
+                            AVAudioSessionRemoteXPCClient._clientRelay,
+                            AVAudioSessionRemoteXPCClient._defaultReplyWatchdogFactory,
+                            AVAudioSessionRemoteXPCClient._invalidated,
+                            AVAudioSessionRemoteXPCClient._longReplyWatchdogFactory,
+                            AVAudioSessionRemoteXPCClient._replyWatchdogFunctionName,
+                            AVAudioSessionRemoteXPCClient._replyWatchdogMinTimestamp,
+                            AVAudioSessionRemoteXPCClient._server,
+                            AVAudioSessionRemoteXPCClient._serverDelegate,
+                            AVAudioSessionServerPriv._serverDelegate,
+                            AVAudioSessionServerPriv._xpcServer,
+                            AVAudioSessionXPCClientRelay.connection,
+                            AVAudioSessionXPCClientRelay.guarded_impl,
+                            AVAudioSessionXPCClientRelay.token,
+                            AVAudioSessionXPCServer._callbackInterface,
+                            AVAudioSessionXPCServer._clientDeathPromise,
+                            AVAudioSessionXPCServer._connections,
+                            AVAudioSessionXPCServer._deallocPromise,
+                            AVAudioSessionXPCServer._exportedInterface,
+                            AVAudioSessionXPCServer._listener,
+                            AVAudioSessionXPCServer._needsDefaultWorldInit,
+                            AVAudioSessionXPCServer._serverDelegate,
+                            AVAudioSessionXPCServer._world ]
+...

@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DarwinDirectory.framework/DarwinDirectory
+current-version:       86.0.2
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _DDInitializeLocalUsersAndGroups,
+                            _DDUpdateLocalUsersAndGroups ]
+    objc-classes:         [ DDGroup, DDObjcCompatibility, DDUser ]
+    objc-ivars:           [ DDGroup._fullName, DDGroup._gid, DDGroup._name,
+                            DDGroup._uuid, DDUser._fullName, DDUser._homeDirectory,
+                            DDUser._memberships, DDUser._name,
+                            DDUser._primaryGroupID, DDUser._shell, DDUser._uid,
+                            DDUser._uuid ]
+...

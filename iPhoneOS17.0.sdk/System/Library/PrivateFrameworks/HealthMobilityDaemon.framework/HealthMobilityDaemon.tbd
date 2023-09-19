@@ -1,0 +1,52 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HealthMobilityDaemon.framework/HealthMobilityDaemon
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ HDMobilityAnalyticsUtilities,
+                            HDMobilityDefaultIsAgePresentProvider,
+                            HDMobilityDefaultIsHeightPresentProvider,
+                            HDMobilityNotificationManager, HDMobilityPlugin,
+                            HDMobilityProfileExtension,
+                            HDMobilityWalkingSteadinessAnalyticsDailyEventDataSource,
+                            HDMobilityWalkingSteadinessAnalyticsNotificationEventDataSource,
+                            HDMobilityWalkingSteadinessFeatureAvailabilityManager,
+                            HDMobilityWalkingSteadinessFeatureStatusManagerServer ]
+    objc-ivars:           [ HDMobilityDefaultIsAgePresentProvider._profile,
+                            HDMobilityDefaultIsHeightPresentProvider._profile,
+                            HDMobilityNotificationManager._analyticsManager,
+                            HDMobilityNotificationManager._profile,
+                            HDMobilityNotificationManager._queue,
+                            HDMobilityProfileExtension._notificationManager,
+                            HDMobilityProfileExtension._walkingSteadinessClassificationsAvailabilityManager,
+                            HDMobilityProfileExtension._walkingSteadinessClassificationsBackgroundFeatureDeliveryManager,
+                            HDMobilityProfileExtension._walkingSteadinessDailyAnalyticsEventManager,
+                            HDMobilityProfileExtension._walkingSteadinessNotificationsAvailabilityManager,
+                            HDMobilityWalkingSteadinessAnalyticsDailyEventDataSource._mobilitySettingsDefaults,
+                            HDMobilityWalkingSteadinessAnalyticsDailyEventDataSource._profile,
+                            HDMobilityWalkingSteadinessAnalyticsNotificationEventDataSource._category,
+                            HDMobilityWalkingSteadinessAnalyticsNotificationEventDataSource._date,
+                            HDMobilityWalkingSteadinessAnalyticsNotificationEventDataSource._profile,
+                            HDMobilityWalkingSteadinessAnalyticsNotificationEventDataSource._value,
+                            HDMobilityWalkingSteadinessFeatureAvailabilityManager.__unitTest_currentOnboardingVersionOverride,
+                            HDMobilityWalkingSteadinessFeatureAvailabilityManager._currentOnboardingVersion,
+                            HDMobilityWalkingSteadinessFeatureAvailabilityManager._manager,
+                            HDMobilityWalkingSteadinessFeatureAvailabilityManager._profile,
+                            HDMobilityWalkingSteadinessFeatureAvailabilityManager._supportedRegionProvider,
+                            HDMobilityWalkingSteadinessFeatureStatusManagerServer._ageGatingDefaults,
+                            HDMobilityWalkingSteadinessFeatureStatusManagerServer._classificationsFeatureAvailabilityExtension,
+                            HDMobilityWalkingSteadinessFeatureStatusManagerServer._dataCollectionManager,
+                            HDMobilityWalkingSteadinessFeatureStatusManagerServer._healthAppNotificationAuthorizationStatusProvider,
+                            HDMobilityWalkingSteadinessFeatureStatusManagerServer._isAgePresentProvider,
+                            HDMobilityWalkingSteadinessFeatureStatusManagerServer._isHeightPresentProvider,
+                            HDMobilityWalkingSteadinessFeatureStatusManagerServer._mobilitySettingsDefaults,
+                            HDMobilityWalkingSteadinessFeatureStatusManagerServer._notificationsFeatureAvailabilityExtension,
+                            HDMobilityWalkingSteadinessFeatureStatusManagerServer._observing,
+                            HDMobilityWalkingSteadinessFeatureStatusManagerServer._queue,
+                            HDMobilityWalkingSteadinessFeatureStatusManagerServer._regionSupportedDeterminer,
+                            HDMobilityWalkingSteadinessFeatureStatusManagerServer._userCharacteristicsNotificationToken ]
+...

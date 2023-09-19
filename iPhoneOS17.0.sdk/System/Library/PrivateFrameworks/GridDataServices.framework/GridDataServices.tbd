@@ -1,0 +1,47 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/GridDataServices.framework/GridDataServices
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _GridDataServicesVersionNumber,
+                            _GridDataServicesVersionString, _kAverageKey,
+                            _kGDSFakeConfigURLKey, _kGDSFakeDataDomain,
+                            _kGDSFakeForecastKey, _kGDSFakeSecretKey,
+                            _kGDSFakeSecretVersionKey, _kGDSFakeServerURLKey,
+                            _kHMAC_DEV_SECRET, _kHMAC_PROD_SECRET, _kHMAC_SECRET,
+                            _kHMAC_SECRET_VERSION, _kHMAC_TEST_SECRET,
+                            _kMarginalKey ]
+    objc-classes:         [ _GDSBalancingAuthority, _GDSBalancingAuthorityOutput,
+                            _GDSEmissionForecast, _GDSEmissionHistory,
+                            _GDSHMACGenerator, _GDSManager, _GDSServerConnection ]
+    objc-ivars:           [ _GDSBalancingAuthority._log,
+                            _GDSBalancingAuthority._queue,
+                            _GDSBalancingAuthorityOutput._ID,
+                            _GDSBalancingAuthorityOutput._identifier,
+                            _GDSBalancingAuthorityOutput._lastUpdatedDate,
+                            _GDSBalancingAuthorityOutput._latEnd,
+                            _GDSBalancingAuthorityOutput._latStart,
+                            _GDSBalancingAuthorityOutput._longEnd,
+                            _GDSBalancingAuthorityOutput._longStart,
+                            _GDSBalancingAuthorityOutput._name,
+                            _GDSEmissionForecast._fetchDate,
+                            _GDSEmissionForecast._forecastMap,
+                            _GDSEmissionForecast._generationDate,
+                            _GDSEmissionForecast._refetchInterval,
+                            _GDSEmissionHistory._fetchDate,
+                            _GDSEmissionHistory._historicalMap,
+                            _GDSManager._clientID, _GDSManager._connection,
+                            _GDSManager._currentMarginalForecast,
+                            _GDSManager._locBundlePath, _GDSManager._log,
+                            _GDSServerConnection._configFetchDate,
+                            _GDSServerConnection._configVersion,
+                            _GDSServerConnection._defaults,
+                            _GDSServerConnection._isCASupported,
+                            _GDSServerConnection._isCECSupported,
+                            _GDSServerConnection._log,
+                            _GDSServerConnection._serverURL ]
+...

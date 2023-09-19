@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriModes.framework/SiriModes
+current-version:       0
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AFPresentationModeForMDMode, _MDModeGetName,
+                            _MDModeGetNameForAnalytics, _kDialogIdentifierKey,
+                            _kSnippetAceViewIDKey ]
+    objc-classes:         [ MDAudioAccessoryHeuristic, MDDeviceIsMutedHeuristic,
+                            MDDialogTransformer, MDFixedModeProvider,
+                            MDModeDecision, MDUserOverrideHeuristic ]
+    objc-ivars:           [ MDAudioAccessoryHeuristic._connectedOutputDevicesObserver,
+                            MDAudioAccessoryHeuristic._connectedToAudioAccessory,
+                            MDAudioAccessoryHeuristic._modeDecisionBasedOnAudioAccessory,
+                            MDAudioAccessoryHeuristic._sharedSystemAudioContext,
+                            MDDeviceIsMutedHeuristic._displayOnlyModeDecision,
+                            MDDeviceIsMutedHeuristic._ringerStateObserver,
+                            MDFixedModeProvider._fixedMode,
+                            MDModeDecision._currentMode,
+                            MDUserOverrideHeuristic._internalDefaults ]
+...

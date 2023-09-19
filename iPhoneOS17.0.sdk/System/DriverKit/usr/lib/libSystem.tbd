@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/DriverKit/usr/lib/libSystem.dylib
+current-version:       1336
+compatibility-version: 1
+reexported-libraries:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:            [ /System/DriverKit/usr/lib/system/libcompiler_rt.dylib,
+                            /System/DriverKit/usr/lib/system/libcorecrypto.dylib,
+                            /System/DriverKit/usr/lib/system/libdispatch.dylib,
+                            /System/DriverKit/usr/lib/system/libdyld.dylib,
+                            /System/DriverKit/usr/lib/system/libmacho.dylib,
+                            /System/DriverKit/usr/lib/system/libsystem_blocks.dylib,
+                            /System/DriverKit/usr/lib/system/libsystem_c.dylib,
+                            /System/DriverKit/usr/lib/system/libsystem_kernel.dylib,
+                            /System/DriverKit/usr/lib/system/libsystem_m.dylib,
+                            /System/DriverKit/usr/lib/system/libsystem_malloc.dylib,
+                            /System/DriverKit/usr/lib/system/libsystem_platform.dylib,
+                            /System/DriverKit/usr/lib/system/libsystem_pthread.dylib,
+                            /System/DriverKit/usr/lib/system/libsystem_trace.dylib ]
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ ___crashreporter_info__,
+                            _libSystem_init_after_boot_tasks_4launchd,
+                            _mach_init_routine ]
+...

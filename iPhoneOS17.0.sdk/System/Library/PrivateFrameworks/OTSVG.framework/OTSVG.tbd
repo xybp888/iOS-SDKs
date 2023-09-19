@@ -1,0 +1,31 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/OTSVG.framework/OTSVG
+current-version:       0
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _OTSVGDocumentCreate, _OTSVGDocumentCreateWithData,
+                            _OTSVGDocumentEnumerateIDs,
+                            _OTSVGDocumentGetIntrinsicRect,
+                            _OTSVGDocumentRelease, _OTSVGGlyphRecordingCreate,
+                            _OTSVGGlyphRecordingCreateFromDocument,
+                            _OTSVGGlyphRecordingCreateFromID,
+                            _OTSVGGlyphRecordingGetBoundingRect,
+                            _OTSVGGlyphRecordingPlayback,
+                            _OTSVGGlyphRecordingPlaybackRecordingsAtPositions,
+                            _OTSVGGlyphRecordingRelease,
+                            _OTSVGTableCreateFromData,
+                            _OTSVGTableEnumerateGlyphs,
+                            _OTSVGTableGetDocumentIndexForGlyph,
+                            _OTSVGTableRelease ]
+    objc-classes:         [ _OTSVGParserDelegate ]
+    objc-ivars:           [ _OTSVGParserDelegate.errorOccurred,
+                            _OTSVGParserDelegate.namespaces,
+                            _OTSVGParserDelegate.root,
+                            _OTSVGParserDelegate.skipDepth,
+                            _OTSVGParserDelegate.stack,
+                            _OTSVGParserDelegate.unitsPerEm ]
+...

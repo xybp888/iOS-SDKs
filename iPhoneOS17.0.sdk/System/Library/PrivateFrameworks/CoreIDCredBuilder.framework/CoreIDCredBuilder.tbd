@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreIDCredBuilder.framework/CoreIDCredBuilder
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CIDCBuilderErrorDomain,
+                            _CIDCSessionCryptarchErrorDomain ]
+    objc-classes:         [ CIDCBuilderSignatureDetails, CIDCElement,
+                            CIDCPayloadBuilder, CIDCPayloadBuilderDetails,
+                            CIDCSessionCryptarch,
+                            _TtC17CoreIDCredBuilder26CIDCInternalPayloadBuilder,
+                            _TtC17CoreIDCredBuilder28CIDCInternalSessionCryptarch ]
+    objc-ivars:           [ CIDCBuilderSignatureDetails._issuerCertificate,
+                            CIDCBuilderSignatureDetails._issuerKey,
+                            CIDCBuilderSignatureDetails._signature,
+                            CIDCBuilderSignatureDetails._signingAlgorithm,
+                            CIDCElement._arrayValue, CIDCElement._dataValue,
+                            CIDCElement._dateValue, CIDCElement._dictionaryValue,
+                            CIDCElement._elementIdentifier,
+                            CIDCElement._numberValue, CIDCElement._stringValue,
+                            CIDCPayloadBuilder._payloadBuilder,
+                            CIDCPayloadBuilderDetails._deviceKey,
+                            CIDCPayloadBuilderDetails._docType,
+                            CIDCPayloadBuilderDetails._elements,
+                            CIDCPayloadBuilderDetails._format,
+                            CIDCPayloadBuilderDetails._signingAlgorithm,
+                            CIDCPayloadBuilderDetails._validFrom,
+                            CIDCPayloadBuilderDetails._validUntil,
+                            CIDCSessionCryptarch._internalCryptarch ]
+...

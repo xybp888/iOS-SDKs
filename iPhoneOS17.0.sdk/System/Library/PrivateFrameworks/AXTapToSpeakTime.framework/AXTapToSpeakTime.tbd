@@ -1,0 +1,39 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AXTapToSpeakTime.framework/AXTapToSpeakTime
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AXStringFromTapToSpeakTimeGesture,
+                            _AXStringFromTapToSpeakTimeVoice,
+                            _AXTapToSpeakTimeVersionNumber,
+                            _AXTapToSpeakTimeVersionString ]
+    objc-classes:         [ AXTapToSpeakTimeManager, AXTapticChimeAsset,
+                            AXTapticChimesScheduler, AXTimeOutputPreferences ]
+    objc-ivars:           [ AXTapToSpeakTimeManager._avSpeechSynthesizer,
+                            AXTapToSpeakTimeManager._cachedRingerIsMuted,
+                            AXTapToSpeakTimeManager._dateFormatter,
+                            AXTapToSpeakTimeManager._lastMediaVolume,
+                            AXTapToSpeakTimeManager._queue,
+                            AXTapToSpeakTimeManager._ringerStateNotifyToken,
+                            AXTapToSpeakTimeManager._tapticTimeManager,
+                            AXTapticChimeAsset._audioFilePath,
+                            AXTapticChimeAsset._hapticDictionary,
+                            AXTapticChimeAsset._prePlayTimeInterval,
+                            AXTapticChimeAsset._volume,
+                            AXTapticChimesScheduler._audioPlaybackPowerAssertionID,
+                            AXTapticChimesScheduler._audioPlayer,
+                            AXTapticChimesScheduler._chimeTimer,
+                            AXTapticChimesScheduler._currentChimeAsset,
+                            AXTapticChimesScheduler._lastActualChimeTime,
+                            AXTapticChimesScheduler._lastActualWakeTime,
+                            AXTapticChimesScheduler._lastExpectedChimeTime,
+                            AXTapticChimesScheduler._lastExpectedWakeTime,
+                            AXTapticChimesScheduler._lastMediaVolume,
+                            AXTapticChimesScheduler._mediaQueue,
+                            AXTapticChimesScheduler._pcServiceIdentifier,
+                            AXTapticChimesScheduler._previousAudioSessionCategory ]
+...

@@ -1,0 +1,44 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/UserNotificationsSettings.framework/UserNotificationsSettings
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _UNUserNotificationSettingsServiceName,
+                            _UserNotificationsSettingsVersionNumber,
+                            _UserNotificationsSettingsVersionString ]
+    objc-classes:         [ UNMutableNotificationSystemSettings,
+                            UNNotificationSettingsCenter, UNNotificationSource,
+                            UNNotificationSourceSettings,
+                            UNNotificationSystemSettings,
+                            UNNotificationTopicSettings,
+                            UNUserNotificationSettingsService,
+                            UNUserNotificationSettingsServiceConnection ]
+    objc-ivars:           [ UNNotificationSettingsCenter._delegate,
+                            UNNotificationSource._displayName,
+                            UNNotificationSource._icon,
+                            UNNotificationSource._isHiddenFromSettings,
+                            UNNotificationSource._sourceIdentifier,
+                            UNNotificationSource._sourceSettings,
+                            UNNotificationSourceSettings._isRestricted,
+                            UNNotificationSourceSettings._notificationSettings,
+                            UNNotificationSourceSettings._topicSettings,
+                            UNNotificationSystemSettings._announcementCarPlaySetting,
+                            UNNotificationSystemSettings._announcementHeadphonesSetting,
+                            UNNotificationSystemSettings._announcementSetting,
+                            UNNotificationSystemSettings._modifiedSettings,
+                            UNNotificationSystemSettings._notificationListDisplayStyleSetting,
+                            UNNotificationSystemSettings._scheduledDeliverySetting,
+                            UNNotificationSystemSettings._scheduledDeliveryShowNextSummarySetting,
+                            UNNotificationSystemSettings._scheduledDeliveryTimes,
+                            UNNotificationSystemSettings._showPreviewsSetting,
+                            UNNotificationTopicSettings._topic,
+                            UNNotificationTopicSettings._topicSettings,
+                            UNUserNotificationSettingsServiceConnection._callOutQueue,
+                            UNUserNotificationSettingsServiceConnection._connection,
+                            UNUserNotificationSettingsServiceConnection._observers,
+                            UNUserNotificationSettingsServiceConnection._queue ]
+...

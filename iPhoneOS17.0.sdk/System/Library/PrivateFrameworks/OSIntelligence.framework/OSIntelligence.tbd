@@ -1,0 +1,54 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/OSIntelligence.framework/OSIntelligence
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _OSIntelligenceVersionNumber,
+                            _OSIntelligenceVersionString,
+                            _kInvalidPredictedDuration ]
+    objc-classes:         [ OSIUtilities, _OSBatteryDrainPredictor,
+                            _OSBatteryLowSOCPredictorOutput, _OSBatteryPredictor,
+                            _OSChargingPredictor, _OSChargingPredictorOutput,
+                            _OSInactivityPredictionClient,
+                            _OSInactivityPredictorBackupHourEntry,
+                            _OSInactivityPredictorBackupHourEntry_v1,
+                            _OSInactivityPredictorBackupHourEntry_v2,
+                            _OSInactivityPredictorMetadata,
+                            _OSInactivityPredictorOutput, _dayDrainInfo ]
+    objc-ivars:           [ _OSBatteryDrainPredictor._log,
+                            _OSBatteryLowSOCPredictorOutput._confidence,
+                            _OSBatteryLowSOCPredictorOutput._confidenceThreshold,
+                            _OSBatteryLowSOCPredictorOutput._lowSOCPredicted,
+                            _OSBatteryLowSOCPredictorOutput._modelName,
+                            _OSBatteryLowSOCPredictorOutput._modelVersion,
+                            _OSBatteryPredictor._connection,
+                            _OSBatteryPredictor._log,
+                            _OSChargingPredictor._connection,
+                            _OSChargingPredictor._log,
+                            _OSChargingPredictorOutput._chargingDuration,
+                            _OSChargingPredictorOutput._confidence,
+                            _OSChargingPredictorOutput._meetsSystemConfidenceThreshold,
+                            _OSInactivityPredictionClient._connection,
+                            _OSInactivityPredictorBackupHourEntry._averageDuration,
+                            _OSInactivityPredictorBackupHourEntry._stdDev,
+                            _OSInactivityPredictorBackupHourEntry_v1._count,
+                            _OSInactivityPredictorBackupHourEntry_v2._pctLong,
+                            _OSInactivityPredictorMetadata.confidenceThresholdRelaxed,
+                            _OSInactivityPredictorMetadata.confidenceThresholdStrict,
+                            _OSInactivityPredictorMetadata.longThreshold,
+                            _OSInactivityPredictorMetadata.modelVersion,
+                            _OSInactivityPredictorMetadata.predictorType,
+                            _OSInactivityPredictorMetadata.queryingMechanism,
+                            _OSInactivityPredictorMetadata.recommendedWaitTime,
+                            _OSInactivityPredictorMetadata.requireEnoughHistory,
+                            _OSInactivityPredictorOutput._confidenceLevel,
+                            _OSInactivityPredictorOutput._confidenceValue,
+                            _OSInactivityPredictorOutput._outputReason,
+                            _OSInactivityPredictorOutput._predictedDuration,
+                            _dayDrainInfo._drainSoFar,
+                            _dayDrainInfo._lastBatterySoC ]
+...

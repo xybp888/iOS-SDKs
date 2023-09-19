@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ARKitFoundation.framework/ARKitFoundation
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ARDepthCameraCalibrationCopy,
+                            _ARDepthCameraCalibrationCreate,
+                            _ARDepthCameraCalibrationGetDeviceTransform,
+                            _ARDepthCameraCalibrationGetExtrinsics,
+                            _ARDepthCameraCalibrationGetIntrinsics,
+                            _ARDepthCameraCalibrationGetTimestamp,
+                            _ARDepthCameraCalibrationRelease,
+                            _ARDepthCameraCalibrationSetDeviceTransform,
+                            _ARDepthCameraCalibrationSetExtrinsics,
+                            _ARDepthCameraCalibrationSetIntrinsics,
+                            _ARDepthCameraCalibrationSetTimestamp,
+                            _ARDepthCameraCalibrationSize,
+                            _ARKitFoundationBuildVersionString,
+                            _ARKitFoundationVersionNumber,
+                            _ARKitFoundationVersionString ]
+    objc-classes:         [ ARDepthData ]
+    objc-ivars:           [ ARDepthData._adCameraCalibration,
+                            ARDepthData._cameraIntrinsics,
+                            ARDepthData._confidenceBuffer,
+                            ARDepthData._confidenceMap, ARDepthData._depthMap,
+                            ARDepthData._deviceTransform,
+                            ARDepthData._extrinsicsToAppNode,
+                            ARDepthData._isValid, ARDepthData._normalsBuffer,
+                            ARDepthData._timestamp ]
+...

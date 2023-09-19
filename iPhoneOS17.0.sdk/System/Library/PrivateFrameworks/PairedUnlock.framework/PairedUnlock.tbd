@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PairedUnlock.framework/PairedUnlock
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PURemoteActionToString,
+                            _kPUDidRemoveLockoutNotification, _pu_log ]
+    objc-classes:         [ PUConnection, PUConnectionUnlockClient, PUError,
+                            PURemoteDeviceState, PURemotePasscodePolicy ]
+    objc-ivars:           [ PUConnection._delegate, PUConnection._delegateQueue,
+                            PUConnection._remoteDeviceRemoveLockoutHandler,
+                            PUConnection._serverConnection,
+                            PUConnection._serverConnectionQueue,
+                            PUConnection._unlockClient,
+                            PUConnectionUnlockClient._connection,
+                            PURemoteDeviceState._passcodeLocked,
+                            PURemoteDeviceState._passcodePolicy,
+                            PURemoteDeviceState._passcodeSet,
+                            PURemoteDeviceState._unlockOnly,
+                            PURemoteDeviceState._version,
+                            PURemoteDeviceState._wristDetectEnabled,
+                            PURemotePasscodePolicy._modificationAllowed,
+                            PURemotePasscodePolicy._passcodeMinimumLength ]
+...
