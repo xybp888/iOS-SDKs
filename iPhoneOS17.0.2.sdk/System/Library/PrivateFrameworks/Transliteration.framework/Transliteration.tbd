@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Transliteration.framework/Transliteration
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _TLTransliterationCandidateTypeAsString ]
+    objc-classes:         [ TLBundle, TLMutableTransliteratorInitParameters,
+                            TLTransliterator, TLTransliteratorCandidate,
+                            TLTransliteratorCandidateContext,
+                            TLTransliteratorInitParameters ]
+    objc-ivars:           [ TLTransliterator._compositeTransliterator,
+                            TLTransliteratorCandidate._inputWord,
+                            TLTransliteratorCandidate._isExtensionCandidate,
+                            TLTransliteratorCandidate._lmScore,
+                            TLTransliteratorCandidate._seq2seqScore,
+                            TLTransliteratorCandidate._totalScore,
+                            TLTransliteratorCandidate._transliteratedWord,
+                            TLTransliteratorCandidate._type,
+                            TLTransliteratorCandidateContext._candidates,
+                            TLTransliteratorInitParameters._locale,
+                            TLTransliteratorInitParameters._modelURL ]
+...

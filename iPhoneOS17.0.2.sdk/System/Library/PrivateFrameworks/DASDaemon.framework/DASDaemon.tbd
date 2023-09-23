@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DASDaemon.framework/DASDaemon
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _DASDaemonVersionNumber, _DASDaemonVersionString ]
+    objc-classes:         [ _DASLogCondition, _DASLogConditionHistory,
+                            _DASLogEntry, _DASLogExtractor, _DASLogValueInterval ]
+    objc-ivars:           [ _DASLogCondition._condition,
+                            _DASLogCondition._isIdeal,
+                            _DASLogConditionHistory._conditions,
+                            _DASLogConditionHistory._intervals,
+                            _DASLogEntry._category, _DASLogEntry._date,
+                            _DASLogEntry._message, _DASLogExtractor._category,
+                            _DASLogExtractor._dateFormatter,
+                            _DASLogExtractor._eventStream,
+                            _DASLogExtractor._logStore,
+                            _DASLogExtractor._subsystem,
+                            _DASLogValueInterval._endDate,
+                            _DASLogValueInterval._startDate,
+                            _DASLogValueInterval._value ]
+...

@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/DaemonUtils.framework/DaemonUtils'
+current-version: 1391.0.4
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _DaemonUtilsVersionNumber, _DaemonUtilsVersionString ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _LAAnalyticsAuthenticationTypeFromEvent, _LAEventFromBKDevice, 
+                       _LANVRAMNamespaceStartupManager, _NSStringFromBKDevice, _NSStringFromBKLockoutState, 
+                       _NSStringFromBKMatchFailReason, _NSStringFromBKOperationEndReason, 
+                       _NSStringFromBKOperationState ]
+    objc-classes:    [ BiometryHelper, BiometryLockoutInvalidationSource, Caller, 
+                       CredentialRequest, DaemonUtils, DarwinNotificationInvalidationSource, 
+                       EvaluationRequest, InstalledAppsCache, LAAnalytics, LAAnalyticsEvaluation, 
+                       LAAnalyticsPasscodeFallbackPeriod, LANVRAM, NotificationCenterInvalidationSource, 
+                       PasscodeInvalidationSource, PreflightCache, PreflightCacheAssertion, 
+                       PreflightCacheBypassAssertion, PreflightCacheInvalidationSource, 
+                       PushButtonMonitor, Request, StorageRequest ]
+...

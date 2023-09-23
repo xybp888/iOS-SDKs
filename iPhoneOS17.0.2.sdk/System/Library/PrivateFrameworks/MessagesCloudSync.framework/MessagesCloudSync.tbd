@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MessagesCloudSync.framework/MessagesCloudSync
+current-version:       800
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _MessagesCloudSyncVersionNumber,
+                            _MessagesCloudSyncVersionString ]
+    objc-classes:         [ IMDCKCloudSyncSummary, IMDMessagesSyncCoordinator,
+                            IMDMessagesSyncCoordinatorInternal,
+                            IMDSyncTelemetryReporter,
+                            IMDSyncTelemetryReporterInternal, IMSyncResumer,
+                            MCSSyncResumer, NoOpBackupController,
+                            NoOpErrorAnalyzer,
+                            _TtC17MessagesCloudSync25ChatRecordKeyedDataSource ]
+...

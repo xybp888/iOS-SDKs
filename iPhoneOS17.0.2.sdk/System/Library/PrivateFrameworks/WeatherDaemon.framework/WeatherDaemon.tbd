@@ -1,0 +1,37 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WeatherDaemon.framework/WeatherDaemon
+current-version:       469.4
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _WDDeviceUnlockedSinceBoot, _WDLogForCategory,
+                            _WDOSPlatform, _WDSystemDirectoryDirectoryPath,
+                            _WDUserAccountHomeDirectoryPath,
+                            _WDWeatherAppIsInstalled, _WDWeatherLibraryDirectory,
+                            _WeatherDaemonVersionNumber,
+                            _WeatherDaemonVersionString,
+                            _wd_hasAuthorizationToMachLookupWeatherKitAuthService,
+                            _wd_sandbox_in_a_container,
+                            _wd_xpc_dictionary_set_requires_network_connectivity,
+                            _wd_xpc_transaction_exit_clean ]
+    objc-classes:         [ WDTransaction,
+                            _TtC13WeatherDaemon23WeatherDataProxyRequest,
+                            _TtC13WeatherDaemon23WeatherDataServiceProxy,
+                            _TtC13WeatherDaemon24AvailabilityProxyRequest,
+                            _TtC13WeatherDaemon24WeatherDataProxyResponse,
+                            _TtC13WeatherDaemon25AvailabilityProxyResponse,
+                            _TtC13WeatherDaemon25WDSURLSessionTaskDelegate,
+                            _TtC13WeatherDaemon27AirQualityScaleProxyRequest,
+                            _TtC13WeatherDaemon28AirQualityScaleProxyResponse,
+                            _TtC13WeatherDaemon29WeatherStatisticsProxyRequest,
+                            _TtC13WeatherDaemon30WeatherStatisticsProxyResponse,
+                            _TtC13WeatherDaemon33HistoricalWeatherDataProxyRequest,
+                            _TtC13WeatherDaemon34HistoricalWeatherDataProxyResponse,
+                            _TtC13WeatherDaemon34WDSJWTAuthenticatorServiceListener ]
+    objc-ivars:           [ WDTransaction._identifier,
+                            WDTransaction._transaction,
+                            WDTransaction._transactionDescription ]
+...

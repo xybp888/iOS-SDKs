@@ -1,0 +1,149 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.123.203 clang-1500.0.37.1)
+// swift-module-flags: -target arm64e-apple-ios17.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -library-level api -module-name _AppIntents_SwiftUI
+// swift-module-flags-ignorable: -target-min-inlining-version min -enable-bare-slash-regex -user-module-version 174.20.3.1.100
+@_exported import AppIntents
+import CoreSpotlight
+import DeveloperToolsSupport
+import Foundation
+import Swift
+import SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+extension AppIntents.IntentParameter {
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func requestConfirmation<ViewType>(for itemToConfirm: Value.ValueType, dialog: AppIntents.IntentDialog? = nil, @SwiftUI.ViewBuilder view: () -> ViewType) async throws -> Swift.Bool where ViewType : SwiftUI.View
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func requestConfirmation<ViewType>(for itemToConfirm: Value.ValueType, dialog: AppIntents.IntentDialog? = nil, view: ViewType) async throws -> Swift.Bool where ViewType : SwiftUI.View
+  #endif
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+extension AppIntents.IntentParameterContext {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func requestConfirmation<ViewType>(for itemToConfirm: Value.ValueType, dialog: AppIntents.IntentDialog? = nil, @SwiftUI.ViewBuilder view: () -> ViewType) async throws -> Swift.Bool where ViewType : SwiftUI.View
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public func requestConfirmation<ViewType>(for itemToConfirm: Value.ValueType, dialog: AppIntents.IntentDialog? = nil, view: ViewType) async throws -> Swift.Bool where ViewType : SwiftUI.View
+  #endif
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+extension AppIntents.IntentResult {
+  public static func result<Content>(view: Content = EmptyView()) -> Self where Self == AppIntents.IntentResultContainer<Swift.Never, Swift.Never, AppIntents._SnippetViewContainer, Swift.Never>, Content : SwiftUI.View
+  public static func result<Content>(@SwiftUI.ViewBuilder content: () -> Content) -> Self where Self == AppIntents.IntentResultContainer<Swift.Never, Swift.Never, AppIntents._SnippetViewContainer, Swift.Never>, Content : SwiftUI.View
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+extension AppIntents.IntentResult {
+  public static func result<Value, Content>(value: Value, view: Content = EmptyView()) -> Self where Self == AppIntents.IntentResultContainer<Value, Swift.Never, AppIntents._SnippetViewContainer, Swift.Never>, Value : AppIntents._IntentValue, Content : SwiftUI.View
+  public static func result<Value, Content>(value: Value, @SwiftUI.ViewBuilder content: () -> Content) -> Self where Self == AppIntents.IntentResultContainer<Value, Swift.Never, AppIntents._SnippetViewContainer, Swift.Never>, Value : AppIntents._IntentValue, Content : SwiftUI.View
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+extension AppIntents.IntentResult {
+  public static func result<Value, OpensAppIntent, Content>(value: Value, opensIntent: OpensAppIntent, view: Content = EmptyView()) -> Self where Self == AppIntents.IntentResultContainer<Value, OpensAppIntent, AppIntents._SnippetViewContainer, Swift.Never>, Value : AppIntents._IntentValue, OpensAppIntent : AppIntents.AppIntent, Content : SwiftUI.View
+  public static func result<Value, OpensAppIntent, Content>(value: Value, opensIntent: OpensAppIntent, @SwiftUI.ViewBuilder content: () -> Content) -> Self where Self == AppIntents.IntentResultContainer<Value, OpensAppIntent, AppIntents._SnippetViewContainer, Swift.Never>, Value : AppIntents._IntentValue, OpensAppIntent : AppIntents.AppIntent, Content : SwiftUI.View
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+extension AppIntents.IntentResult {
+  public static func result<Value, OpensAppIntent, Content>(value: Value, opensIntent: OpensAppIntent, dialog: AppIntents.IntentDialog, view: Content = EmptyView()) -> Self where Self == AppIntents.IntentResultContainer<Value, OpensAppIntent, AppIntents._SnippetViewContainer, AppIntents.IntentDialog>, Value : AppIntents._IntentValue, OpensAppIntent : AppIntents.AppIntent, Content : SwiftUI.View
+  public static func result<Value, OpensAppIntent, Content>(value: Value, opensIntent: OpensAppIntent, dialog: AppIntents.IntentDialog, @SwiftUI.ViewBuilder content: () -> Content) -> Self where Self == AppIntents.IntentResultContainer<Value, OpensAppIntent, AppIntents._SnippetViewContainer, AppIntents.IntentDialog>, Value : AppIntents._IntentValue, OpensAppIntent : AppIntents.AppIntent, Content : SwiftUI.View
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+extension AppIntents.IntentResult {
+  public static func result<Value, Content>(value: Value, dialog: AppIntents.IntentDialog, view: Content = EmptyView()) -> Self where Self == AppIntents.IntentResultContainer<Value, Swift.Never, AppIntents._SnippetViewContainer, AppIntents.IntentDialog>, Value : AppIntents._IntentValue, Content : SwiftUI.View
+  public static func result<Value, Content>(value: Value, dialog: AppIntents.IntentDialog, @SwiftUI.ViewBuilder content: () -> Content) -> Self where Self == AppIntents.IntentResultContainer<Value, Swift.Never, AppIntents._SnippetViewContainer, AppIntents.IntentDialog>, Value : AppIntents._IntentValue, Content : SwiftUI.View
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+extension AppIntents.IntentResult {
+  public static func result<OpensAppIntent, Content>(opensIntent: OpensAppIntent, view: Content = EmptyView()) -> Self where Self == AppIntents.IntentResultContainer<Swift.Never, OpensAppIntent, AppIntents._SnippetViewContainer, Swift.Never>, OpensAppIntent : AppIntents.AppIntent, Content : SwiftUI.View
+  public static func result<OpensAppIntent, Content>(opensIntent: OpensAppIntent, @SwiftUI.ViewBuilder content: () -> Content) -> Self where Self == AppIntents.IntentResultContainer<Swift.Never, OpensAppIntent, AppIntents._SnippetViewContainer, Swift.Never>, OpensAppIntent : AppIntents.AppIntent, Content : SwiftUI.View
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+extension AppIntents.IntentResult {
+  public static func result<OpensAppIntent, Content>(opensIntent: OpensAppIntent, dialog: AppIntents.IntentDialog, view: Content = EmptyView()) -> Self where Self == AppIntents.IntentResultContainer<Swift.Never, OpensAppIntent, AppIntents._SnippetViewContainer, AppIntents.IntentDialog>, OpensAppIntent : AppIntents.AppIntent, Content : SwiftUI.View
+  public static func result<OpensAppIntent, Content>(opensIntent: OpensAppIntent, dialog: AppIntents.IntentDialog, @SwiftUI.ViewBuilder content: () -> Content) -> Self where Self == AppIntents.IntentResultContainer<Swift.Never, OpensAppIntent, AppIntents._SnippetViewContainer, AppIntents.IntentDialog>, OpensAppIntent : AppIntents.AppIntent, Content : SwiftUI.View
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+extension AppIntents.IntentResult {
+  public static func result<Content>(dialog: AppIntents.IntentDialog, view: Content = EmptyView()) -> Self where Self == AppIntents.IntentResultContainer<Swift.Never, Swift.Never, AppIntents._SnippetViewContainer, AppIntents.IntentDialog>, Content : SwiftUI.View
+  public static func result<Content>(dialog: AppIntents.IntentDialog, @SwiftUI.ViewBuilder content: () -> Content) -> Self where Self == AppIntents.IntentResultContainer<Swift.Never, Swift.Never, AppIntents._SnippetViewContainer, AppIntents.IntentDialog>, Content : SwiftUI.View
+}
+@available(iOS 17.0, macOS 13.0, tvOS 17.0, watchOS 10.0, *)
+extension SwiftUI.Toggle {
+  public init<I>(isOn: Swift.Bool, intent: I, @SwiftUI.ViewBuilder label: () -> Label) where I : AppIntents.AppIntent
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
+extension SwiftUI.Toggle where Label == SwiftUI.Text {
+  public init(_ titleKey: SwiftUI.LocalizedStringKey, isOn: Swift.Bool, intent: some AppIntent)
+  @_disfavoredOverload public init<S>(_ title: S, isOn: Swift.Bool, intent: some AppIntent) where S : Swift.StringProtocol
+}
+@available(iOS 17.0, macOS 13.0, tvOS 17.0, watchOS 10.0, *)
+extension SwiftUI.Button {
+  public init<I>(intent: I, @SwiftUI.ViewBuilder label: () -> Label) where I : AppIntents.AppIntent
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
+extension SwiftUI.Button where Label == SwiftUI.Text {
+  public init(_ titleKey: SwiftUI.LocalizedStringKey, intent: some AppIntent)
+  @_disfavoredOverload public init<S>(_ title: S, intent: some AppIntent) where S : Swift.StringProtocol
+}
+@available(iOS 17.0, macOS 13.0, tvOS 17.0, watchOS 10.0, *)
+extension SwiftUI.Button {
+  public init(role: SwiftUI.ButtonRole?, intent: some AppIntent, @SwiftUI.ViewBuilder label: () -> Label)
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
+extension SwiftUI.Button where Label == SwiftUI.Text {
+  public init(_ titleKey: SwiftUI.LocalizedStringKey, role: SwiftUI.ButtonRole?, intent: some AppIntent)
+  @_disfavoredOverload public init(_ title: some StringProtocol, role: SwiftUI.ButtonRole?, intent: some AppIntent)
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
+extension SwiftUI.Button where Label == SwiftUI.Label<SwiftUI.Text, SwiftUI.Image> {
+  public init(_ titleKey: SwiftUI.LocalizedStringKey, systemImage: Swift.String, role: SwiftUI.ButtonRole? = nil, intent: some AppIntent)
+  @_disfavoredOverload public init(_ title: some StringProtocol, systemImage: Swift.String, role: SwiftUI.ButtonRole? = nil, intent: some AppIntent)
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
+extension SwiftUI.Button where Label == SwiftUI.Label<SwiftUI.Text, SwiftUI.Image> {
+  public init(_ titleKey: SwiftUI.LocalizedStringKey, image: DeveloperToolsSupport.ImageResource, role: SwiftUI.ButtonRole? = nil, intent: some AppIntent)
+  @_disfavoredOverload public init(_ title: some StringProtocol, image: DeveloperToolsSupport.ImageResource, role: SwiftUI.ButtonRole? = nil, intent: some AppIntent)
+}
+@available(iOS 16.0, *)
+public struct ShortcutsLinkStyle {
+  public static let automatic: _AppIntents_SwiftUI.ShortcutsLinkStyle
+  public static let automaticOutline: _AppIntents_SwiftUI.ShortcutsLinkStyle
+  public static let light: _AppIntents_SwiftUI.ShortcutsLinkStyle
+  public static let lightOutline: _AppIntents_SwiftUI.ShortcutsLinkStyle
+  public static let dark: _AppIntents_SwiftUI.ShortcutsLinkStyle
+  public static let darkOutline: _AppIntents_SwiftUI.ShortcutsLinkStyle
+}
+@available(iOS 16.0, *)
+public struct ShortcutsLink : SwiftUI.View {
+  public init(action: @escaping () -> Swift.Void = {})
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s19_AppIntents_SwiftUI13ShortcutsLinkV4bodyQrvp", 0) __
+}
+@available(iOS 16.0, *)
+extension SwiftUI.View {
+  public func shortcutsLinkStyle(_ style: _AppIntents_SwiftUI.ShortcutsLinkStyle) -> some SwiftUI.View
+  
+}
+@available(iOS 16.0, *)
+public struct SiriTipViewStyle {
+  public static let automatic: _AppIntents_SwiftUI.SiriTipViewStyle
+  public static let light: _AppIntents_SwiftUI.SiriTipViewStyle
+  public static let dark: _AppIntents_SwiftUI.SiriTipViewStyle
+}
+@available(iOS 16.0, *)
+public struct SiriTipView : SwiftUI.View {
+  public init<Intent>(intent: Intent, isVisible: SwiftUI.Binding<Swift.Bool>? = nil) where Intent : AppIntents.AppIntent
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s19_AppIntents_SwiftUI11SiriTipViewV4bodyQrvp", 0) __
+}
+@available(iOS 16.0, *)
+extension SwiftUI.View {
+  public func siriTipViewStyle(_ style: _AppIntents_SwiftUI.SiriTipViewStyle) -> some SwiftUI.View
+  
+}

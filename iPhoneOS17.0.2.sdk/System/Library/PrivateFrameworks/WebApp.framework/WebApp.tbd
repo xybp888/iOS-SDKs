@@ -1,0 +1,36 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WebApp.framework/WebApp
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _WebAppMainEntry ]
+    objc-classes:         [ AppDelegate, LoadingViewController,
+                            WebAppCanvasDelegate,
+                            WebAppNotificationCenterDelegate,
+                            WebAppSceneDelegate, WebAppViewController ]
+    objc-ivars:           [ LoadingViewController._image,
+                            LoadingViewController._imageIsFullScreen,
+                            LoadingViewController._imageView,
+                            LoadingViewController._orientation,
+                            LoadingViewController._preferredStatusBarStyle,
+                            LoadingViewController._statusBarView,
+                            WebAppNotificationCenterDelegate._webAppViewControllers,
+                            WebAppSceneDelegate._sceneHasEverEnteredForeground,
+                            WebAppSceneDelegate._wasSuspendedUnderLock,
+                            WebAppSceneDelegate._webApp,
+                            WebAppSceneDelegate._window,
+                            WebAppViewController._cancelViewServiceRequest,
+                            WebAppViewController._connectionPromiseForPush,
+                            WebAppViewController._contentViewController,
+                            WebAppViewController._hasCustomScheme,
+                            WebAppViewController._hasShownLoadingViewController,
+                            WebAppViewController._hideSnapshotTimer,
+                            WebAppViewController._loadingViewController,
+                            WebAppViewController._orientation,
+                            WebAppViewController._wasLaunchedForWebPush,
+                            WebAppViewController._webClip ]
+...

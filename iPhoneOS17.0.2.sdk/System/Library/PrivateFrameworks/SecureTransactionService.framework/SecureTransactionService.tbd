@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SecureTransactionService.framework/SecureTransactionService
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _NFCD_XPCHELPER_ERROR_DOMAIN,
+                            _STSXPCHelperErrorDescriptions,
+                            _STS_XCPHELPER_ERROR_BT_SUBDOMAIN,
+                            _STS_XCPHELPER_ERROR_DOMAIN,
+                            _STS_XCPHELPER_ERROR_WIFI_SUBDOMAIN ]
+    objc-classes:         [ STS18013ReaderAuthInfo, STS18013RequestElement,
+                            STSAuxiliaryCredential, STSAuxiliaryTransaction,
+                            STSCredential, STSDCKAssertion,
+                            STSEngagementConfiguration, STSExpressEventInfo,
+                            STSExpressEventInfoWithDetail,
+                            STSExpressEventInfoWithIdentifiers, STSField,
+                            STSFieldNFC, STSInAppPaymentRequest,
+                            STSInAppPaymentResponse, STSListener,
+                            STSMerchantPaymentRequest,
+                            STSMerchantPaymentResponse, STSPaymentRequestBase,
+                            STSPaymentResponseBase, STSPeerPaymentRequest,
+                            STSPeerPaymentResponse,
+                            STSPeerPaymentTransferRequest, STSReader, STSSession,
+                            STSSessionBase, STSSigningSession, STSTestReader,
+                            STSTransaction18013Request, STSTransactionEndEvent,
+                            STSTransactionStartEvent, STSVASCredential,
+                            STSVASTransaction, STSVehicleReport ]
+...
