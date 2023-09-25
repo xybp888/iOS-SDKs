@@ -11,7 +11,7 @@
 
 NS_HEADER_AUDIT_BEGIN(nullability, sendability)
 
-UIKIT_EXTERN API_AVAILABLE(ios(16.0))
+UIKIT_EXTERN API_AVAILABLE(ios(15.0))
 @interface UIWindowSceneGeometryPreferences : NSObject
 
 /// UIWindowSceneGeometryPreferences is an empty base class and should not be initialized on its own.

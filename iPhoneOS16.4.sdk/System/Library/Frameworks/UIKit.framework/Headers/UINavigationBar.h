@@ -158,7 +158,7 @@ NS_SWIFT_UI_ACTOR
 
 #if !TARGET_OS_TV && !TARGET_OS_WATCH
 /// Which section of the NSToolbar this navigation bar should use when attempting to host in an NSToolbar. Returning 'None' will disable NSToolbar hosting as if preferredBehavioralStyle were set to 'Pad' The specific section returned will also affect how the navigation bar presents in that section.
-- (UINavigationBarNSToolbarSection)navigationBarNSToolbarSection:(UINavigationBar *)navigationBar;
+- (UINavigationBarNSToolbarSection)navigationBarNSToolbarSection:(UINavigationBar *)navigationBar API_AVAILABLE(ios(16.0));
 #endif
 
 @end
