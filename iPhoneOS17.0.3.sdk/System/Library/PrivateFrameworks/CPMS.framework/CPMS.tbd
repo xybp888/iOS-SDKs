@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CPMS.framework/CPMS
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CPMSErrorDomain, _CPMSVersionNumber,
+                            _CPMSVersionString, _kCPMSPowerTimeScale100ms,
+                            _kCPMSPowerTimeScale1s,
+                            _kCPMSPowerTimeScaleInstantaneous,
+                            _kCPMSPowerTimeScaleThermal,
+                            _kPPMBatteryModelStepBaseDurationStr,
+                            _kPPMBatteryModelStepBaseStr,
+                            _kPPMBatteryModelStepPulseDurationStr,
+                            _kPPMBatteryModelStepPulseStr,
+                            _kPPMBatteryModelStepSpikeDurationStr,
+                            _kPPMBatteryModelStepSpikeStr,
+                            _kPPMBatteryModelStepUVLODurationStr,
+                            _kPPMBatteryModelStepUVLOStr, _suppressAssert ]
+    objc-classes:         [ CPMSAgent, CPMSClientDescription, CPMSStateReader ]
+    objc-ivars:           [ CPMSAgent._clientSet, CPMSAgent._connect,
+                            CPMSAgent._notificationPort,
+                            CPMSAgent._notificationQueue, CPMSAgent._ppmService,
+                            CPMSAgent._timeScalesSet,
+                            CPMSClientDescription._clientId,
+                            CPMSClientDescription._getCurrentPower,
+                            CPMSClientDescription._isContinuous,
+                            CPMSClientDescription._notificationCallback,
+                            CPMSClientDescription._powerBudgetUpdateMinimumPeriod,
+                            CPMSClientDescription._powerLevels ]
+...

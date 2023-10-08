@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HealthExperience.framework/HealthExperience
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _HAFeatureFlagAlwaysRunGenerationOnSharingSetUp,
+                            _HAFeatureFlagBridgeHealthFeaturesOnboardingEnabled,
+                            _HAFeatureFlagFetchHKDatabaseIdentifier,
+                            _HAFeatureFlagHaasEnabled,
+                            _HAFeatureFlagPreloadSummaryCells,
+                            _HAFeatureFlagShowTrendsInSummary,
+                            _HAFeatureFlagStewieEnabled,
+                            _HAFeatureFlagVO2MaxRetrocomputeEnabled,
+                            _HAFeatureFlagViewLoggingEnabled,
+                            _health_dispatch_get_current_workloop,
+                            _health_dispatch_workloop_create ]
+    objc-classes:         [ HK_TPSDiscoverabilitySignal, MedicalIDChangeObserver,
+                            OrganDonationObserver, _HKMobileGestaltBridge,
+                            _TtC16HealthExperience14MedicalIDCache,
+                            _TtC16HealthExperience17FavoritesMigrator,
+                            _TtC16HealthExperience20UserDefaultsObserver,
+                            _TtC16HealthExperience21AsynchronousOperation,
+                            _TtC16HealthExperience23MedicalIDFetchOperation,
+                            _TtC16HealthExperience25ThreadsafeHKCalendarCache,
+                            _TtC16HealthExperience26AsynchronousBlockOperation,
+                            _TtC16HealthExperience31CloudSyncEventPublisherObserver,
+                            _TtC16HealthExperience33SaveManagedObjectContextOperation,
+                            _TtC16HealthExperience37FirstRestoreNotInProgressPrecondition ]
+    objc-ivars:           [ HK_TPSDiscoverabilitySignal._bundleIdentifier,
+                            HK_TPSDiscoverabilitySignal._context,
+                            HK_TPSDiscoverabilitySignal._identifier,
+                            MedicalIDChangeObserver._delegate,
+                            MedicalIDChangeObserver._medicalIDChangedToken,
+                            OrganDonationObserver._delegate,
+                            OrganDonationObserver._organDonationChangedToken ]
+...

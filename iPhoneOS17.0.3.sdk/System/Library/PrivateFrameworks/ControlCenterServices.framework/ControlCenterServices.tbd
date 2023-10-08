@@ -1,0 +1,65 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ControlCenterServices.framework/ControlCenterServices
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CCSControlCenterServicesErrorDomain,
+                            _CCSIsInternalInstall, _CCSLogModuleSettings,
+                            _CCSLogRemoteService,
+                            _CCSModuleVisibilityPreferenceDescription,
+                            _CCSRegisterControlCenterLogging,
+                            _CCSRemoteServiceName,
+                            _CCSRemoteServiceServerInterface,
+                            _CCSResolveModuleVisibility,
+                            _CCSVisibilityPreferenceForBundleInfoDictionary,
+                            _CCSVisibilityPreferenceForBundleRecord,
+                            _ControlCenterServicesVersionNumber,
+                            _ControlCenterServicesVersionString ]
+    objc-classes:         [ CCSControlCenterDefaults, CCSControlCenterService,
+                            CCSModuleMetadata, CCSModulePresentationOptions,
+                            CCSModuleRepository, CCSModuleSettingsProvider,
+                            CCSRemoteServiceConnection, CCSRemoteServiceProvider,
+                            CCSUsageMetrics ]
+    objc-ivars:           [ CCSControlCenterService._connection,
+                            CCSModuleMetadata._associatedBundleIdentifier,
+                            CCSModuleMetadata._associatedBundleMinimumVersion,
+                            CCSModuleMetadata._moduleBundleURL,
+                            CCSModuleMetadata._moduleIdentifier,
+                            CCSModuleMetadata._requiredDeviceCapabilities,
+                            CCSModuleMetadata._supportedDeviceFamilies,
+                            CCSModuleMetadata._visibilityPreference,
+                            CCSModulePresentationOptions._animateDismissal,
+                            CCSModulePresentationOptions._animatePresentation,
+                            CCSModulePresentationOptions._blurBackground,
+                            CCSModuleRepository._allModuleMetadataByIdentifier,
+                            CCSModuleRepository._allowedModuleIdentifiers,
+                            CCSModuleRepository._availableModuleIdentifiers,
+                            CCSModuleRepository._callOutQueue,
+                            CCSModuleRepository._directoryURLs,
+                            CCSModuleRepository._ignoreAllowedList,
+                            CCSModuleRepository._interestingBundleIdentifiers,
+                            CCSModuleRepository._internalDefaultsObserver,
+                            CCSModuleRepository._loadableModuleIdentifiers,
+                            CCSModuleRepository._mobileGestaltNotificationToken,
+                            CCSModuleRepository._observers,
+                            CCSModuleRepository._queue,
+                            CCSModuleSettingsProvider._callOutQueue,
+                            CCSModuleSettingsProvider._configurationChangedSource,
+                            CCSModuleSettingsProvider._observers,
+                            CCSModuleSettingsProvider._orderedFixedModuleIdentifiers,
+                            CCSModuleSettingsProvider._orderedUserEnabledFixedModuleIdentifiers,
+                            CCSModuleSettingsProvider._orderedUserEnabledModuleIdentifiers,
+                            CCSModuleSettingsProvider._queue,
+                            CCSModuleSettingsProvider._userDisabledModuleIdentifiers,
+                            CCSRemoteServiceConnection._callOutQueue,
+                            CCSRemoteServiceConnection._connection,
+                            CCSRemoteServiceConnection._queue,
+                            CCSRemoteServiceProvider._listener,
+                            CCSRemoteServiceProvider._moduleRepository,
+                            CCSRemoteServiceProvider._presentationEndpoints,
+                            CCSRemoteServiceProvider._settingsProvider ]
+...

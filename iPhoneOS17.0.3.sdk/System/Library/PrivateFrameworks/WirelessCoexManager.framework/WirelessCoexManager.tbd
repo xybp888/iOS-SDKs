@@ -1,0 +1,70 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WirelessCoexManager.framework/WirelessCoexManager
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _WCMEnabled, _WirelessRadioManagerDumpLog,
+                            _WirelessRadioManagerSetLogToFile ]
+    objc-classes:         [ WCMClientProxy, WCMSetting,
+                            WRMBasebandMetricsInterface, WRMClientInterface,
+                            WRM_UCMInterface, WRM_iRATInterface,
+                            WRM_iRATProximityRecommendation,
+                            WRM_iRATProximityRecommendationLogging ]
+    objc-ivars:           [ WCMClientProxy.mConnection, WCMClientProxy.mDelegate,
+                            WCMClientProxy.mIsRegistered,
+                            WCMClientProxy.mProcessId, WCMClientProxy.mQueue,
+                            WRMBasebandMetricsInterface.dataMetricsHandler,
+                            WRMBasebandMetricsInterface.metricsHandler,
+                            WRMBasebandMetricsInterface.wifiMetricsHandler,
+                            WRMClientInterface.mConnection,
+                            WRMClientInterface.mNotificationBlock,
+                            WRMClientInterface.mProcessId,
+                            WRMClientInterface.mQueue,
+                            WRM_UCMInterface.mBtConnectedLinksObserver,
+                            WRM_UCMInterface.mConnection,
+                            WRM_UCMInterface.mIsAwdlEnabled,
+                            WRM_UCMInterface.mIsNanEnabled,
+                            WRM_UCMInterface.mNotificationBlock,
+                            WRM_UCMInterface.mProcessId, WRM_UCMInterface.mQueue,
+                            WRM_iRATInterface.mAppLists,
+                            WRM_iRATInterface.mBBAssertionBGAppActive,
+                            WRM_iRATInterface.mClientSupportsMultipleAppTypes,
+                            WRM_iRATInterface.mGetLinkRecommendationMetricsHandler,
+                            WRM_iRATInterface.mGetLinkRecommendationMetricsHandlerEnabled,
+                            WRM_iRATInterface.mLinkPreferenceSubscriptionEnabled,
+                            WRM_iRATInterface.mLocationAssertionEnabled,
+                            WRM_iRATInterface.mLocationState,
+                            WRM_iRATInterface.mLowPowerModePeriodicWakeUpCb,
+                            WRM_iRATInterface.mObserver,
+                            WRM_iRATInterface.mOppBtLQMObserver,
+                            WRM_iRATInterface.mOppModeObserver,
+                            WRM_iRATInterface.mProximityGetLinkRecommendationEnabled,
+                            WRM_iRATInterface.mProximityGetLinkRecommendationHandler,
+                            WRM_iRATInterface.mProximityLinkRecommendationList,
+                            WRM_iRATInterface.mProximitySubscribeLinkRecommendationEnabled,
+                            WRM_iRATInterface.mProximitySubscribeLinkRecommendationHandler,
+                            WRM_iRATInterface.mTelephoneAssertionEnabled,
+                            WRM_iRATInterface.mTelephonyStateEnabled,
+                            WRM_iRATProximityRecommendation._RecommendationType,
+                            WRM_iRATProximityRecommendation._linkIsRecommended,
+                            WRM_iRATProximityRecommendation._linkRecommendationIsValid,
+                            WRM_iRATProximityRecommendation._metrics,
+                            WRM_iRATProximityRecommendationLogging._Uuid,
+                            WRM_iRATProximityRecommendationLogging._beaconPER,
+                            WRM_iRATProximityRecommendationLogging._btRSSI,
+                            WRM_iRATProximityRecommendationLogging._btRetransmissionRateRx,
+                            WRM_iRATProximityRecommendationLogging._btRetransmissionRateTx,
+                            WRM_iRATProximityRecommendationLogging._btTech,
+                            WRM_iRATProximityRecommendationLogging._expectedThroughputVIBE,
+                            WRM_iRATProximityRecommendationLogging._lsmRecommendationBe,
+                            WRM_iRATProximityRecommendationLogging._nwType,
+                            WRM_iRATProximityRecommendationLogging._packetLifetimeVIBE,
+                            WRM_iRATProximityRecommendationLogging._packetLossRateVIBE,
+                            WRM_iRATProximityRecommendationLogging._wifiCCA,
+                            WRM_iRATProximityRecommendationLogging._wifiRSSI,
+                            WRM_iRATProximityRecommendationLogging._wifiSNR ]
+...

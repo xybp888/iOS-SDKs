@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PhoneNumberResolver.framework/PhoneNumberResolver
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PNRErrorDomain, _PNRLogSubsystem,
+                            _PNRResourceManagerErrorDomain,
+                            _PhoneNumberResolverVersionNumber,
+                            _PhoneNumberResolverVersionString,
+                            _kPNRPhoneNumberCountryKey, _kPNRPhoneNumberKey ]
+    objc-classes:         [ PNRPhoneNumberResolutionResult,
+                            PNRPhoneNumberResolutionResultSet,
+                            PNRPhoneNumberResolver, PNRResourceManager,
+                            PNRStringsFileReaderResult, PNRUtils ]
+    objc-ivars:           [ PNRPhoneNumberResolutionResult._dataSource,
+                            PNRPhoneNumberResolutionResult._locationName,
+                            PNRPhoneNumberResolutionResultSet._results,
+                            PNRPhoneNumberResolutionResultSet._resultsLock,
+                            PNRPhoneNumberResolver._resolveQueue,
+                            PNRResourceManager._catalogLoadRetryMultiplier,
+                            PNRResourceManager._downloadsInflight,
+                            PNRResourceManager._downloadsInflightLock,
+                            PNRResourceManager._fileDataCache,
+                            PNRResourceManager._lastCatalogLoadTime,
+                            PNRResourceManager._log,
+                            PNRResourceManager._maURLCache,
+                            PNRResourceManager._stateCaptureHandle,
+                            PNRStringsFileReaderResult._city,
+                            PNRStringsFileReaderResult._country,
+                            PNRStringsFileReaderResult._region ]
+...

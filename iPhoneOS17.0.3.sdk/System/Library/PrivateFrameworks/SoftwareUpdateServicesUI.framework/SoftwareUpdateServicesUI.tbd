@@ -1,0 +1,71 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SoftwareUpdateServicesUI.framework/SoftwareUpdateServicesUI
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SUSUICLIToolConnectionName,
+                            _SUSUIControllerConnectionName,
+                            _SUSUICreateInstallationKeybagWithSecret,
+                            _SUSUICreateInstallationKeybagWithSecretAndHandler,
+                            _SUSUIGetPasscodePolicy, _SUSUILog,
+                            _SUSUILogAuthenticationUI, _SUSUILogEmergencyCallUI,
+                            _SUSUILogExtension, _SUSUILogKeybagInterface,
+                            _SUSUILogLaggardsUI, _SUSUILogPostUpdateAlert,
+                            _SUSUIPasscodePolicyTypeChangedNotification,
+                            _SUSUIPreferencesChangedNotification,
+                            _SUSUIRequiresAlertPresentationAfterUpdate,
+                            _SUSUISettingsBundleIdentifier,
+                            _SUSUISetupAssistantNeedsToRun,
+                            _SoftwareUpdateServicesUIVersionNumber,
+                            _SoftwareUpdateServicesUIVersionString,
+                            _kSUSUIPreferencesID ]
+    objc-classes:         [ SUSUIAuthenticationAlertAction,
+                            SUSUIAuthenticationInterface,
+                            SUSUICommandLineToolClient, SUSUIControllerClient,
+                            SUSUIExternalSettingsAppDefaults,
+                            SUSUIFakeDocumentation,
+                            SUSUIFakeSUAutoInstallForecast,
+                            SUSUIFakeSUAutoInstallOperation,
+                            SUSUIFakeSUDescriptor, SUSUIFakeSUDownload,
+                            SUSUIFakeSUDownloadMetadata,
+                            SUSUIFakeSUOperationProgress,
+                            SUSUIFakeSURollbackDescriptor,
+                            SUSUILaggardsUIAlertAction, SUSUIPreferences,
+                            SUSUIRemoteEmergencyCallAlertAction,
+                            SUSUISoftwareUpdateDefaults ]
+    objc-ivars:           [ SUSUIAuthenticationAlertAction._alertType,
+                            SUSUIAuthenticationAlertAction._autoInstallOperation,
+                            SUSUIAuthenticationAlertAction._baseAction,
+                            SUSUIAuthenticationAlertAction._canDeferInstallation,
+                            SUSUIAuthenticationAlertAction._descriptor,
+                            SUSUIAuthenticationAlertAction._forInstallTonight,
+                            SUSUIAuthenticationAlertAction._loaded,
+                            SUSUIAuthenticationAlertAction._rollbackDescriptor,
+                            SUSUIAuthenticationInterface._defaults,
+                            SUSUIAuthenticationInterface._isController,
+                            SUSUIAuthenticationInterface._isPasscodeLocked,
+                            SUSUIAuthenticationInterface._keybag,
+                            SUSUICommandLineToolClient._connected,
+                            SUSUICommandLineToolClient._delegate,
+                            SUSUICommandLineToolClient._serverConnection,
+                            SUSUICommandLineToolClient._serverIsExiting,
+                            SUSUIControllerClient._connected,
+                            SUSUIControllerClient._serverConnection,
+                            SUSUIControllerClient._serverIsExiting,
+                            SUSUIFakeSUAutoInstallForecast._now,
+                            SUSUIFakeSUAutoInstallOperation._cancelled,
+                            SUSUIFakeSUAutoInstallOperation._uuid,
+                            SUSUILaggardsUIAlertAction._descriptor,
+                            SUSUILaggardsUIAlertAction._loaded,
+                            SUSUIPreferences._alertAfterDownload,
+                            SUSUIPreferences._installAlertIntervalMinutes,
+                            SUSUIPreferences._needsAlertPresentationAfterOTAUpdate,
+                            SUSUIPreferences._passcodeRequiredDays,
+                            SUSUIPreferences._preventCountdownAlert,
+                            SUSUIPreferences._preventRollbackPrompt,
+                            SUSUISoftwareUpdateDefaults._sbLegacyDefaults ]
+...

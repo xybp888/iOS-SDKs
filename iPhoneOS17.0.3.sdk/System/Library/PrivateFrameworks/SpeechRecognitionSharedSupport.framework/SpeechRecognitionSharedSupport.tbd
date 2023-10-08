@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SpeechRecognitionSharedSupport.framework/SpeechRecognitionSharedSupport
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SRSSPhoneticCheckerCopyGuesses,
+                            _SRSSPhoneticCheckerCreate,
+                            _SRSSPhoneticCheckerResultCopyText,
+                            _SRSSPhoneticCheckerResultGetScore,
+                            _SpeechRecognitionSharedSupportVersionNumber,
+                            _SpeechRecognitionSharedSupportVersionString ]
+    objc-classes:         [ SRSSPhoneticChecker, SRSSPhoneticCheckerResult ]
+    objc-ivars:           [ SRSSPhoneticChecker._builder,
+                            SRSSPhoneticChecker._confusionMatrix,
+                            SRSSPhoneticChecker._lexiconEntries,
+                            SRSSPhoneticChecker._lexiconLoaded,
+                            SRSSPhoneticChecker._lexiconWords,
+                            SRSSPhoneticChecker._localeIdentifier,
+                            SRSSPhoneticChecker._phoneCount,
+                            SRSSPhoneticChecker._phoneIds,
+                            SRSSPhoneticChecker._regionsToFree,
+                            SRSSPhoneticCheckerResult._phoneticSimilarity,
+                            SRSSPhoneticCheckerResult._prior,
+                            SRSSPhoneticCheckerResult._score,
+                            SRSSPhoneticCheckerResult._text ]
+...

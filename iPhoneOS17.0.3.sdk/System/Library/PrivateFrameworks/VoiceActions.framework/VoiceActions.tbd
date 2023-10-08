@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/VoiceActions.framework/VoiceActions
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ConvertMachTimeToSeconds,
+                            _VoiceActionsVersionNumber,
+                            _VoiceActionsVersionString, __VATLoggingFacility,
+                            __ZN12voiceactions10StringJoinERKNSt3__16vectorINS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS5_IS7_EEEEPKc,
+                            __ZN12voiceactions10StringJoinERKNSt3__16vectorINS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS5_IS7_EEEERKS7_,
+                            __ZN12voiceactions10StringJoinERKNSt3__16vectorINS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS5_IS7_EEEEc,
+                            __ZN12voiceactions11StringSplitERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEPKc,
+                            __ZN12voiceactions11StringSplitERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEES8_,
+                            __ZN12voiceactions11StringSplitERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEc,
+                            __ZN12voiceactions13GetResultSizeERKNSt3__16vectorINS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS5_IS7_EEEEm,
+                            _kVATLogCategoryCli, _kVATLogCategoryFramework ]
+    objc-classes:         [ AudioCaptureConfig, DecoderConfig,
+                            DuringKeywordSilenceConfig, FeatureExtractObjc,
+                            FeatureExtractorConfig, G2PObjc, NeuralNetworkConfig,
+                            PostKeywordSilenceConfig, PreKeywordSilenceConfig,
+                            RuntimeConfig, SecondPassConfig, VATConfiguration,
+                            VATKeywordSpotter, VATKeywordSpotterResult,
+                            VATSpeechRecognitionResult, VATSpeechRecognizer,
+                            VATSpeechTranscription, VATUtils ]
+    weak-def-symbols:     [ __ZN12voiceactions7kNoTimeE,
+                            __ZN12voiceactions8kLogZeroE,
+                            __ZN12voiceactions8kNolabelE ]
+...

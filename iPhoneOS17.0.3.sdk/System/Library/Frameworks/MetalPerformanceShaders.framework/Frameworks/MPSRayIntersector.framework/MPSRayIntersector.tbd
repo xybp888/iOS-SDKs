@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSRayIntersector.framework/MPSRayIntersector'
+current-version: 127.0.19
+allowable-clients:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    clients:         [ MPSImage, MetalPerformanceShaders ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _MPSAccelerationStructureBuilderCPU, _MPSAccelerationStructureBuilderGPU, 
+                       _MPSAccelerationStructureGPUBuilderTypeDefault, _MPSAccelerationStructureGPUBuilderTypeFast, 
+                       _MPSAccelerationStructureNodeLayoutAOS, _MPSAccelerationStructureNodeLayoutSOA, 
+                       _MPSAccelerationStructureOptionBatchSize, _MPSAccelerationStructureOptionBins, 
+                       _MPSAccelerationStructureOptionBranchingFactor, _MPSAccelerationStructureOptionBuilder, 
+                       _MPSAccelerationStructureOptionComputeStatistics, _MPSAccelerationStructureOptionFragmentCost, 
+                       _MPSAccelerationStructureOptionGPUBuilderType, _MPSAccelerationStructureOptionMaxDepth, 
+                       _MPSAccelerationStructureOptionMaxFragmentsPerLeaf, _MPSAccelerationStructureOptionMaximumConcurrentNodeSize, 
+                       _MPSAccelerationStructureOptionMinFragmentsPerLeaf, _MPSAccelerationStructureOptionMinimumOverlap, 
+                       _MPSAccelerationStructureOptionNodeLayout, _MPSAccelerationStructureOptionSplitHeuristic, 
+                       _MPSAccelerationStructureSplitHeuristicBinnedSAH, _MPSAccelerationStructureSplitHeuristicBinnedSpatialSAH, 
+                       _MPSAccelerationStructureSplitHeuristicObjectMedian, _MPSAccelerationStructureSplitHeuristicSAH ]
+    objc-classes:    [ MPSAccelerationStructure, MPSAccelerationStructureGroup, MPSCPUAccelerationStructure, 
+                       MPSCPUAccelerationStructureDescriptor, MPSCPUAccelerationStructureGeometryDescriptor, 
+                       MPSCPUAccelerationStructureTriangleGeometryDescriptor, MPSCPUInstanceAccelerationStructureDescriptor, 
+                       MPSCPUPrimitiveAccelerationStructureDescriptor, MPSCPURayIntersector, 
+                       MPSInstanceAccelerationStructure, MPSPolygonAccelerationStructure, 
+                       MPSPolygonBuffer, MPSQuadrilateralAccelerationStructure, MPSRayIntersector, 
+                       MPSSVGF, MPSSVGFDefaultTextureAllocator, MPSSVGFDenoiser, 
+                       MPSTemporalAA, MPSTriangleAccelerationStructure ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __Z20MPSRayDataTypeStride14MPSRayDataType, __Z29MPSIntersectionDataTypeStride23MPSIntersectionDataType ]
+...

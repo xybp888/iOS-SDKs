@@ -1,0 +1,27 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.123.204 clang-1500.0.37.1)
+// swift-module-flags: -target arm64e-apple-ios17.0 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftVideoToolbox -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name VideoToolbox
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 3045.79.1.1.14
+import CoreFoundation
+import CoreMedia
+import Foundation
+import Swift
+@_exported import VideoToolbox
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+@available(watchOS, unavailable)
+public func VTDecompressionSessionCreate(allocator: CoreFoundation.CFAllocator?, formatDescription videoFormatDescription: CoreMedia.CMVideoFormatDescription, decoderSpecification videoDecoderSpecification: CoreFoundation.CFDictionary?, imageBufferAttributes destinationImageBufferAttributes: CoreFoundation.CFDictionary?, decompressionSessionOut: Swift.UnsafeMutablePointer<VideoToolbox.VTDecompressionSession?>) -> Darwin.OSStatus
+#if compiler(>=5.3) && $Sendable
+@available(macOS 14.0, iOS 17.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public func VTDecompressionSessionDecodeFrame(_ session: VideoToolbox.VTDecompressionSession, sampleBuffer: CoreMedia.CMSampleBuffer, flags decodeFlags: VideoToolbox.VTDecodeFrameFlags, infoFlagsOut: Swift.UnsafeMutablePointer<VideoToolbox.VTDecodeInfoFlags>?, completionHandler: @escaping @Sendable (_ status: Darwin.OSStatus, _ infoFlags: VideoToolbox.VTDecodeInfoFlags, _ imageBuffer: CoreVideo.CVImageBuffer?, _ taggedBuffers: [CoreMedia.CMTaggedBuffer]?, _ presentationTimeStamp: CoreMedia.CMTime, _ presentationDuration: CoreMedia.CMTime) -> Swift.Void) -> Darwin.OSStatus
+#endif
+#if compiler(>=5.3) && $Sendable
+@available(macOS 14.0, iOS 17.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public func VTCompressionSessionEncodeMultiImageFrame(_ session: VideoToolbox.VTCompressionSession, taggedBuffers: [CoreMedia.CMTaggedBuffer], presentationTimeStamp: CoreMedia.CMTime, duration: CoreMedia.CMTime, frameProperties: CoreFoundation.CFDictionary?, infoFlagsOut: Swift.UnsafeMutablePointer<VideoToolbox.VTEncodeInfoFlags>?, outputHandler: @escaping VideoToolbox.VTCompressionOutputHandler) -> Darwin.OSStatus
+#endif

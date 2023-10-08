@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CBORLibrary.framework/CBORLibrary
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CBORLibraryVersionNumber, _CBORLibraryVersionString,
+                            _COSEHeaderX509Bag, _COSEHeaderX509Chain,
+                            _COSEHeaderX509Hash, _COSEHeaderX509HashSender,
+                            _COSEHeaderX509Uri, _COSEHeaderX509UriSender,
+                            _COSEHeaderx509ChainSender ]
+    objc-classes:         [ CBOR, COSE, COSEKey, COSE_Mac0, COSE_Sign1 ]
+    objc-ivars:           [ CBOR._orderedKeys, CBOR._tag, CBOR._type, CBOR._value,
+                            CBOR._valueSize, COSE._algorithmIdentifier,
+                            COSE._cborObj, COSE._content, COSE._contentType,
+                            COSE._criticalHeaderParameters,
+                            COSE._initializationVector, COSE._keyIdentifier,
+                            COSE._partialInitializationVector,
+                            COSE._protectedHeadererDictionary, COSE._type,
+                            COSEKey._algorithm,
+                            COSEKey._baseInitializationVector, COSEKey._cborObj,
+                            COSEKey._curveID, COSEKey._identifier,
+                            COSEKey._operations, COSEKey._paramD, COSEKey._paramX,
+                            COSEKey._paramY, COSEKey._symmetricKey, COSEKey._type,
+                            COSE_Mac0._mac ]
+...

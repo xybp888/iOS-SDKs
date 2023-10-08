@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CarKitNavigation.framework/CarKitNavigation
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CRNavigationClientInterface,
+                            _CRNavigationServiceInterface, _CarNavLogging ]
+    objc-classes:         [ CRAccNavComponent, CRAccNavController, CRAccNavInfo,
+                            CRAccNavInfoCache, CRAccNavLaneGuidance,
+                            CRAccNavLaneInfo, CRAccNavManeuver, CRAccNavProvider,
+                            CRAccNavRouteGuidance ]
+    objc-ivars:           [ CRAccNavComponent._accessoryUID,
+                            CRAccNavComponent._component,
+                            CRAccNavComponent._componentIdentifier,
+                            CRAccNavComponent._uuid,
+                            CRAccNavController._component,
+                            CRAccNavController._delegate,
+                            CRAccNavController._routeGuidance,
+                            CRAccNavController._sentLaneGuidances,
+                            CRAccNavController._sentManeuvers,
+                            CRAccNavInfo._component, CRAccNavInfo._parameters,
+                            CRAccNavInfoCache._accNavInfo,
+                            CRAccNavInfoCache._countLimit,
+                            CRAccNavProvider._accessoriesIndexed,
+                            CRAccNavProvider._accessoryLock,
+                            CRAccNavProvider._activeAccessoryComponentsIndexed,
+                            CRAccNavProvider._activeComponentsIndexed,
+                            CRAccNavProvider._delegate,
+                            CRAccNavProvider._iapNavigation,
+                            CRAccNavProvider._workQueue ]
+...

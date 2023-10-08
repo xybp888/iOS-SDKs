@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/TDGSharing.framework/TDGSharing
+current-version:       23
+compatibility-version: 17
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _TDGSharingVersionNumber, _TDGSharingVersionString ]
+    objc-classes:         [ WFAnisetteRequest, WFAnisetteResponse,
+                            WFPrescriptionRecord, WFSetupClient,
+                            WFSetupClientInternal, WFSetupData,
+                            WFSetupDataInternal, WFSetupServer,
+                            WFSetupServerInternal,
+                            _TtC10TDGSharing33WFSetupServerAnisetteDataProvider ]
+    objc-ivars:           [ WFSetupClient._progressEventHandler,
+                            WFSetupClient._underlyingSwiftObject,
+                            WFSetupData._deviceClass, WFSetupData._deviceModel,
+                            WFSetupData._hasHomeButton, WFSetupData._isRestoring,
+                            WFSetupData._underlyingSwiftObject,
+                            WFSetupServer._underlyingSwiftObject ]
+...
