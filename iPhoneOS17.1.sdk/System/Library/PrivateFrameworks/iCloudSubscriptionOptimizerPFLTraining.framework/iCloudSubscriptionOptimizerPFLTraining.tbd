@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/iCloudSubscriptionOptimizerPFLTraining.framework/iCloudSubscriptionOptimizerPFLTraining
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _iCloudSubscriptionOptimizerPFLTrainingVersionNumber,
+                            _iCloudSubscriptionOptimizerPFLTrainingVersionString ]
+    objc-classes:         [ CoreMLTrainer, EspressoEvaluator, EvaluationDataSource,
+                            EvaluationDataSourceEspressoWrapper,
+                            InMemoryRecordSet, PFLTraining ]
+    objc-ivars:           [ CoreMLTrainer._modelURL, EspressoEvaluator._modelURL,
+                            EvaluationDataSource._recipe,
+                            EvaluationDataSource._recordDatas,
+                            EvaluationDataSource._recordInfos,
+                            EvaluationDataSource._records,
+                            EvaluationDataSourceEspressoWrapper._dataSource,
+                            InMemoryRecordSet._count, InMemoryRecordSet._datas,
+                            InMemoryRecordSet._infos ]
+...

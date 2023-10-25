@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MorphunAssets.framework/MorphunAssets
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _MorphunAssetOSLog, _MorphunAssetsError,
+                            _MorphunAssetsVersionNumber,
+                            _MorphunAssetsVersionString, _MorphunLogInitIfNeeded,
+                            __EmbeddedPath, __MorphunDomain, __MorphunNamespace,
+                            __NoDataLanguages, __NonSiriSupportedLanguages,
+                            __legacyFactorsLanguageToLocaleMap,
+                            _embeddedFilepath, _embeddedLanguagesKey,
+                            _kMorphunLogContextAsset, _libmorphunVersionKey ]
+    objc-classes:         [ MorphunAssets, MorphunAssetsUtilities,
+                            NSSafeMutableDictionary ]
+    objc-ivars:           [ MorphunAssets._subscriptionAssetSetObserver,
+                            MorphunAssets.readyLanguages,
+                            MorphunAssets.subscriptionCache,
+                            MorphunAssets.subscriptionProcessKey,
+                            MorphunAssets.subscriptionView,
+                            MorphunAssets.subscriptionViewLock,
+                            NSSafeMutableDictionary._lock,
+                            NSSafeMutableDictionary._storage ]
+...

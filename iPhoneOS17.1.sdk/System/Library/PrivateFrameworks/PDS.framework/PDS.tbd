@@ -1,0 +1,38 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PDS.framework/PDS
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PDSCDCacheErrorDomain,
+                            _PDSHeartbeatMaintenanceXPCActivityIdentifier,
+                            _PDSInternalClientIDEntitlementKey,
+                            _PDSInternalDaemonMachServiceName,
+                            _PDSInternalToolEntitlementKey,
+                            _PDSInternalWildcardClientID,
+                            _PDSRegistrarErrorDomain, _PDSStringForEntryState,
+                            _PDSUserErrorDomain, _PDSXPCErrorDomain,
+                            _pds_defaultLog, _pds_oversizedLog, _pds_serverBagLog ]
+    objc-classes:         [ PDSEntry, PDSRegistrar, PDSRegistration,
+                            PDSRemoteRegistry, PDSUser, PDSXPCAdapter,
+                            PDSXPCConnector, PDSXPCInterface ]
+    objc-ivars:           [ PDSEntry._clientID, PDSEntry._registration,
+                            PDSEntry._state, PDSEntry._user,
+                            PDSRegistrar._clientID, PDSRegistrar._remoteVendor,
+                            PDSRegistration._pushEnvironment,
+                            PDSRegistration._qualifierString,
+                            PDSRegistration._topicString, PDSUser._userID,
+                            PDSUser._userType, PDSXPCConnector._XPCConnection,
+                            PDSXPCConnector._clientID,
+                            PDSXPCConnector._connectionError,
+                            PDSXPCConnector._connectionVendor,
+                            PDSXPCConnector._handshakeProxy,
+                            PDSXPCConnector._interfaceVendor,
+                            PDSXPCConnector._internalRemoteObject,
+                            PDSXPCConnector._lock, PDSXPCConnector._remoteObject,
+                            PDSXPCConnector._syncInternalRemoteObject,
+                            PDSXPCConnector._syncRemoteObject ]
+...

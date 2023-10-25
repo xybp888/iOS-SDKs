@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ParavirtualizedANE.framework/ParavirtualizedANE
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ParavirtualizedANEVersionNumber,
+                            _ParavirtualizedANEVersionString ]
+    objc-classes:         [ _ANEVirtualPlatformClient ]
+    objc-ivars:           [ _ANEVirtualPlatformClient._aneClient,
+                            _ANEVirtualPlatformClient._aneModelDict,
+                            _ANEVirtualPlatformClient._anebaseDirectory,
+                            _ANEVirtualPlatformClient._guestBuildVersion,
+                            _ANEVirtualPlatformClient._guestCapabilityMask,
+                            _ANEVirtualPlatformClient._guestDataInterfaceVersion,
+                            _ANEVirtualPlatformClient._queue ]
+...

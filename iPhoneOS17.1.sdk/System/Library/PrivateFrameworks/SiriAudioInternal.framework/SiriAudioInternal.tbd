@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriAudioInternal.framework/SiriAudioInternal
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SiriAudioInternalVersionNumber,
+                            _SiriAudioInternalVersionString,
+                            __Z23SAHWorkaroundInitializev ]
+    objc-classes:         [ _TtC17SiriAudioInternal23INAddMediaIntentHandler,
+                            _TtC17SiriAudioInternal24INPlayMediaIntentHandler,
+                            _TtC17SiriAudioInternal29INSearchForMediaIntentHandler,
+                            _TtC17SiriAudioInternal34INUpdateMediaAffinityIntentHandler ]
+...

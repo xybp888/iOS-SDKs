@@ -1,0 +1,45 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SleepHealth.framework/SleepHealth
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _HDSleepHealthDaemonPluginServerInterface,
+                            _HKSHHealthDaemonPluginIdentifier,
+                            _HKSHSleepDurationGoalLeeway,
+                            _HKSleepHealthStoreInterface ]
+    objc-classes:         [ HKSHGoalProgress, HKSHGoalProgressEngine,
+                            HKSleepHealthStore ]
+    objc-ivars:           [ HKSHGoalProgress._averageAwakeDuration,
+                            HKSHGoalProgress._averageBedtime,
+                            HKSHGoalProgress._averageBedtimeMiss,
+                            HKSHGoalProgress._averageCoreSleepDuration,
+                            HKSHGoalProgress._averageDeepSleepDuration,
+                            HKSHGoalProgress._averageInBedDuration,
+                            HKSHGoalProgress._averageInBedEndTime,
+                            HKSHGoalProgress._averageInBedStartTime,
+                            HKSHGoalProgress._averageREMSleepDuration,
+                            HKSHGoalProgress._averageSleepDuration,
+                            HKSHGoalProgress._averageSleepDurationGoalMiss,
+                            HKSHGoalProgress._averageSleepEndTime,
+                            HKSHGoalProgress._averageSleepStartTime,
+                            HKSHGoalProgress._averageUnspecifiedSleepDuration,
+                            HKSHGoalProgress._averageWakeTime,
+                            HKSHGoalProgress._bedtimeAchievedCount,
+                            HKSHGoalProgress._morningIndexRange,
+                            HKSHGoalProgress._sleepAnalysisAsleepCount,
+                            HKSHGoalProgress._sleepAnalysisCount,
+                            HKSHGoalProgress._sleepAnalysisInBedCount,
+                            HKSHGoalProgress._sleepDurationGoalAchievedCount,
+                            HKSHGoalProgress._sleepDurationGoalStreakCount,
+                            HKSHGoalProgress._standardDeviationActualTimeAsleep,
+                            HKSHGoalProgress._standardDeviationActualVsScheduledTimeAsleep,
+                            HKSHGoalProgress._standardDeviationScheduledTimeAsleep,
+                            HKSHGoalProgressEngine._healthStore,
+                            HKSleepHealthStore._healthStore,
+                            HKSleepHealthStore._proxyProvider,
+                            HKSleepHealthStore._scheduler ]
+...

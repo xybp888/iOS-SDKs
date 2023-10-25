@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ProactiveExperimentsInternals.framework/ProactiveExperimentsInternals
+current-version:       1226.2.2
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PREServerSideErrorDomain,
+                            _PREServerSideErrorInfoKey,
+                            _ProactiveExperimentsInternalsVersionNumber,
+                            _ProactiveExperimentsInternalsVersionString,
+                            _pre_sv_responses_handle, _pre_sv_xpc_handle ]
+    objc-classes:         [ PREResponsesServerDelegate,
+                            PREResponsesServerRequestHandler, PREXPCServer,
+                            PREXPCServerHelper ]
+    objc-ivars:           [ PREResponsesServerRequestHandler._bundleIdResolver,
+                            PREResponsesServerRequestHandler._clientProcessName,
+                            PREResponsesServerRequestHandler._clientProxy ]
+...

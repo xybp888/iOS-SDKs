@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WidgetRenderer.framework/WidgetRenderer
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _NSStringFromWRWidgetReloadReason,
+                            _WRRegisterForChronodStartup,
+                            _WRSerializeNSUserActivity,
+                            _WidgetRendererVersionNumber,
+                            _WidgetRendererVersionString ]
+    objc-classes:         [ WRWidgetRendererInitializationPayload,
+                            WRWidgetRendererSessionKey,
+                            _TtC14WidgetRenderer11AppDelegate,
+                            _TtC14WidgetRenderer11Application,
+                            _TtC14WidgetRenderer12WidgetWindow,
+                            _TtC14WidgetRenderer19WidgetSceneDelegate,
+                            _TtC14WidgetRenderer20TouchPassThroughView,
+                            _TtC14WidgetRenderer20WidgetRendererClient,
+                            _TtC14WidgetRenderer21WidgetSceneConnection,
+                            _TtC14WidgetRenderer26DebugOverlayViewController,
+                            _TtC14WidgetRenderer29ZStackContainerViewController,
+                            _TtC14WidgetRenderer32WidgetSceneContentViewController,
+                            _TtC14WidgetRenderer41_UserInterfaceStyleSceneComponentProvider ]
+    objc-ivars:           [ WRWidgetRendererInitializationPayload._configurations,
+                            WRWidgetRendererInitializationPayload._extensions,
+                            WRWidgetRendererInitializationPayload._systemEnvironment,
+                            WRWidgetRendererSessionKey._identifier,
+                            WRWidgetRendererSessionKey._metrics,
+                            WRWidgetRendererSessionKey._widget ]
+...

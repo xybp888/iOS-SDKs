@@ -1,0 +1,58 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/SafariSafeBrowsing
+current-version:       0
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SSBLookupContextDatabasesDidUpdateNotification,
+                            _SSBLookupContextDatabasesDidUpdateNotificationUserInfoProviderKey,
+                            _SSBProviderApple, _SSBProviderGoogle,
+                            _SSBProviderTencent,
+                            _SSBSafeBrowsingEnabledDefaultsKey,
+                            _SSBSafeBrowsingEnabledStateDidChangeNotification,
+                            _SSBSafeBrowsingEnabledStateDidChangeNotificationUserInfoEnabledStateKey,
+                            __ZN12SafeBrowsing7Service4mainEv ]
+    objc-classes:         [ ProviderConfiguration, ProxyConfiguration,
+                            RemoteConfigurationController, SSBAvailability,
+                            SSBDatabaseUpdateSupport, SSBDatabaseUpdaterStatus,
+                            SSBLookupContext, SSBLookupResult,
+                            SSBManagedConfigurationManager,
+                            SSBServiceLookupResult, _SSBDatabaseStatus,
+                            _SSBDatabaseUpdateFetchDataSessionHandler,
+                            _SSBServiceStatus ]
+    objc-ivars:           [ ProviderConfiguration._configuration,
+                            ProviderConfiguration._malwareThreatTypeOff,
+                            ProviderConfiguration._providerOff,
+                            ProviderConfiguration._proxyOff,
+                            ProviderConfiguration._socialEngineeringThreatTypeOff,
+                            ProviderConfiguration._unwantedSoftwareThreatTypeOff,
+                            ProxyConfiguration._deviceIdentificationToken,
+                            ProxyConfiguration._proxy,
+                            RemoteConfigurationController._appleConfigurationDidChange,
+                            RemoteConfigurationController._appleProviderConfiguration,
+                            RemoteConfigurationController._currentConfiguration,
+                            RemoteConfigurationController._googleConfigurationDidChange,
+                            RemoteConfigurationController._googleProviderConfiguration,
+                            RemoteConfigurationController._internalQueue,
+                            RemoteConfigurationController._tencentConfigurationDidChange,
+                            RemoteConfigurationController._tencentProviderConfiguration,
+                            RemoteConfigurationController._updateTimer,
+                            SSBDatabaseUpdateSupport._carrierSpaceClient,
+                            SSBDatabaseUpdateSupport._onHighCellularDataPlan,
+                            SSBDatabaseUpdaterStatus._databaseUpdaterStatus,
+                            SSBLookupContext._lookupContext,
+                            SSBLookupContext._observerToken,
+                            SSBLookupResult._URLContainsUserInfo,
+                            SSBLookupResult._serviceLookupResults,
+                            SSBServiceLookupResult._lookupResult,
+                            _SSBDatabaseStatus._databaseStatus,
+                            _SSBDatabaseUpdateFetchDataSessionHandler._byteProvider,
+                            _SSBDatabaseUpdateFetchDataSessionHandler._error,
+                            _SSBDatabaseUpdateFetchDataSessionHandler._parser,
+                            _SSBDatabaseUpdateFetchDataSessionHandler._provider,
+                            _SSBDatabaseUpdateFetchDataSessionHandler._receivedBytes,
+                            _SSBServiceStatus._serviceStatus ]
+...

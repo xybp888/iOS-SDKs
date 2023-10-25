@@ -1,0 +1,123 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.123.203 clang-1500.0.37.1)
+// swift-module-flags: -target arm64-apple-ios17.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name FinanceKitUI
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 127
+import Combine
+import Contacts
+import CoreData
+import CoreGraphics
+import CoreImage
+import CoreLocation
+import CoreSpotlight
+import CoreTransferable
+import CryptoKit
+import DeveloperToolsSupport
+import ExtensionKit
+import FinanceKit
+@_exported import FinanceKitUI
+import Foundation
+import Observation
+import Swift
+import SwiftUI
+import UIKit
+import WidgetKit
+import _Concurrency
+import _MapKit_SwiftUI
+import _QuickLook_SwiftUI
+import _StringProcessing
+import _SwiftConcurrencyShims
+import _System_Foundation
+import os.log
+import os
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+public protocol FinancialConnectionUIExtension : ExtensionFoundation.AppExtension, FinanceKitUI.FinancialConnectionUIExtensionProviding {
+  associatedtype Body : FinanceKitUI.FinancialConnectionUIExtensionScene
+  var body: Self.Body { get }
+}
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+extension FinanceKitUI.FinancialConnectionUIExtension {
+  public var configuration: ExtensionKit.AppExtensionSceneConfiguration {
+    get
+  }
+}
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+public protocol FinancialConnectionUIExtensionScene : ExtensionKit.AppExtensionScene {
+}
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+public struct FinancialConnectionUIExtensionAuthorizationScene<Content> : FinanceKitUI.FinancialConnectionUIExtensionScene where Content : SwiftUI.View {
+  public init(content: @escaping () -> Content)
+  public var body: some ExtensionKit.AppExtensionScene {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12FinanceKitUI48FinancialConnectionUIExtensionAuthorizationSceneV4bodyQrvp", 0) __<Content>
+}
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+public protocol FinancialConnectionUIExtensionProviding {
+  func authorize(_ request: FinanceKitUI.FinancialConnectionExtensionAuthorizationRequest)
+}
+@available(iOS 17, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct AddOrderToWalletButton : SwiftUI.View {
+  public init(signedArchive: Foundation.Data, onCompletion: @escaping (Swift.Result<FinanceKit.FinanceStore.SaveOrderResult, any Swift.Error>) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12FinanceKitUI22AddOrderToWalletButtonV4bodyQrvp", 0) __
+}
+@available(iOS 17, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct AddOrderToWalletButtonStyle {
+  public static let black: FinanceKitUI.AddOrderToWalletButtonStyle
+  public static let blackOutline: FinanceKitUI.AddOrderToWalletButtonStyle
+}
+@available(iOS 17.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUI.View {
+  public func addOrderToWalletButtonStyle(_ style: FinanceKitUI.AddOrderToWalletButtonStyle) -> some SwiftUI.View
+  
+}
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+public typealias FinancialConnectionExtensionAuthorizationParams = [Swift.String : Swift.String]
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+public struct FinancialConnectionExtensionAuthorizationRequest {
+  public var params: FinanceKitUI.FinancialConnectionExtensionAuthorizationParams
+  public func complete(authorizationResult: FinanceKitUI.FinancialConnectionExtensionAuthorizationResult)
+  public func complete(error: any Swift.Error)
+}
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+public struct FinancialConnectionExtensionAuthorizationResult : Swift.Codable, Swift.Sendable {
+  public let params: FinanceKitUI.FinancialConnectionExtensionAuthorizationParams
+  public init(params: FinanceKitUI.FinancialConnectionExtensionAuthorizationParams)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
