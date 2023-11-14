@@ -1,0 +1,70 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DiagnosticExtensions.framework/DiagnosticExtensions
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _DEExtensionTrackerEarliestExpirationDateKey,
+                            _DEExtensionTrackerExpirationDateKey,
+                            _DEExtensionTrackerSessionsKey,
+                            _DEExtensionTrackerUserDefaultsKey,
+                            _DEExtensionTrackerXPCActivityDateKey,
+                            _DEExtensionTrackerXPCActivityKey,
+                            _DEUtilsValidateConnection,
+                            _DEUtilsValidateDestination,
+                            _DiagnosticExtensionsVersionNumber,
+                            _DiagnosticExtensionsVersionString, _pgrep,
+                            _signal_USR2 ]
+    objc-classes:         [ DEArchive, DEArchiveReader, DEArchiver,
+                            DEAttachmentGroup, DEAttachmentItem,
+                            DEAttachmentItemSandboxExtensionHandle,
+                            DECollectionProgress, DEDaemonHelper, DEExtension,
+                            DEExtensionContext, DEExtensionHostContext,
+                            DEExtensionManager, DEExtensionProvider,
+                            DEExtensionTracker, DELogMover, DELogging,
+                            DELoggingPreferences, DEUtils,
+                            DiagnosticExtensions_Subsystem ]
+    objc-ivars:           [ DEArchive._archive, DEArchive._hasClosedArchive,
+                            DEArchive._sourceDir, DEArchive._tarGzUrl,
+                            DEArchiveReader._archive,
+                            DEAttachmentGroup._attachmentItems,
+                            DEAttachmentGroup._rootURL,
+                            DEAttachmentItem.__sandboxExtensionToken,
+                            DEAttachmentItem._attachedPath,
+                            DEAttachmentItem._attachmentType,
+                            DEAttachmentItem._deleteOnAttach,
+                            DEAttachmentItem._displayName,
+                            DEAttachmentItem._filesize,
+                            DEAttachmentItem._modificationDate,
+                            DEAttachmentItem._path,
+                            DEAttachmentItem._shouldCompress,
+                            DEAttachmentItemSandboxExtensionHandle.__handle,
+                            DEAttachmentItemSandboxExtensionHandle._didInit,
+                            DEAttachmentItemSandboxExtensionHandle._itemURL,
+                            DECollectionProgress._estimatedTimeRemaining,
+                            DECollectionProgress._percentComplete,
+                            DECollectionProgress._statusString,
+                            DEExtension._adoptsExtensionTrackerFlow,
+                            DEExtension._allowUserAttachmentSelection,
+                            DEExtension._attachmentsName,
+                            DEExtension._cachedRequiresDataClassBAccessToRun,
+                            DEExtension._callCount, DEExtension._context,
+                            DEExtension._contextFetchHandlers,
+                            DEExtension._extension, DEExtension._identifier,
+                            DEExtension._isFetchingExtensionHostContext,
+                            DEExtension._loggingConsent,
+                            DEExtension._serialQueue,
+                            DEExtensionHostContext._progressHandler,
+                            DEExtensionManager._afterExtendedBlock,
+                            DEExtensionManager._extendedLoaded,
+                            DEExtensionManager._extensions,
+                            DEExtensionManager._initialLoadQueue,
+                            DEExtensionProvider._allowUserAttachmentSelection,
+                            DEExtensionProvider._canGenerateNewAttachment,
+                            DEExtensionProvider._isEnhancedLoggingStateOn,
+                            DEExtensionProvider._loggingConsent,
+                            DELogMover._conn, DELogMover._serviceName ]
+...

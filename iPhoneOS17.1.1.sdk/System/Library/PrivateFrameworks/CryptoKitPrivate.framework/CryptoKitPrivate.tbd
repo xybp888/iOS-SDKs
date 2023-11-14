@@ -1,0 +1,45 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CryptoKitPrivate.framework/CryptoKitPrivate
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CryptoKitPrivateVersionNumber,
+                            _CryptoKitPrivateVersionString,
+                            _ciphersuiteForKeyByteCount, _cryptokit_scrypt ]
+    objc-classes:         [ CKPATKeyBlinding, RSABSSATokenBlinder,
+                            RSABSSATokenIssuer, RSABSSATokenReady,
+                            RSABSSATokenWaitingActivation, TDMEvaluation,
+                            TDMTestServer, TDMToken,
+                            _TtC16CryptoKitPrivate18AlishaSPAKE2Prover,
+                            _TtC16CryptoKitPrivate18CKPIETFKeyBlinding,
+                            _TtC16CryptoKitPrivate19RSAPSSSPKI_Bridging,
+                            _TtC16CryptoKitPrivate19TDMServerEvaluation,
+                            _TtC16CryptoKitPrivate27AlishaSPAKE2ProverConfirmed,
+                            _TtC16CryptoKitPrivate6Scrypt,
+                            _TtC16CryptoKitPrivate9TDMClient,
+                            _TtC16CryptoKitPrivate9TDMServer ]
+    objc-ivars:           [ RSABSSATokenBlinder._ciphersuite,
+                            RSABSSATokenBlinder._ciphersuiteModulusByteCount,
+                            RSABSSATokenBlinder._keyId,
+                            RSABSSATokenBlinder._publicKey,
+                            RSABSSATokenIssuer._ciphersuite,
+                            RSABSSATokenIssuer._ciphersuiteModulusByteCount,
+                            RSABSSATokenIssuer._keyId,
+                            RSABSSATokenIssuer._publicKey,
+                            RSABSSATokenIssuer._rsaPrivateKey,
+                            RSABSSATokenReady._keyId,
+                            RSABSSATokenReady._signature,
+                            RSABSSATokenReady._tokenContent,
+                            RSABSSATokenWaitingActivation._blindedMessage,
+                            RSABSSATokenWaitingActivation._blindingInverse,
+                            RSABSSATokenWaitingActivation._ciphersuite,
+                            RSABSSATokenWaitingActivation._tokenBlinder,
+                            RSABSSATokenWaitingActivation._tokenContent,
+                            TDMEvaluation._evaluatedElement,
+                            TDMEvaluation._proof, TDMTestServer._tdmServer,
+                            TDMToken._tdmClient ]
+...

@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AccessoryAudio.framework/AccessoryAudio
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ACCAudioCopyDeviceStates,
+                            _ACCAudioTransportLineinStateKey,
+                            _ACCAudioTransportLineoutStateKey,
+                            _ACCAudioTransportNameKey,
+                            _ACCAudioTransportUSBAudioStateKey,
+                            _ACCDigitalAudioAllowBackgroundAudioForClient,
+                            _ACCDigitalAudioCopySupportSampleRates,
+                            _ACCDigitalAudioSetSampleRate,
+                            _ACCDigitalAudioSupportedSampleRate,
+                            _AccessoryAudioVersionNumber,
+                            _AccessoryAudioVersionString,
+                            _AccessoryDigitalAudioNotificationCallBack,
+                            _init_logging_signposts ]
+    objc-classes:         [ ACCAudioClient, ACCAudioManager ]
+    objc-ivars:           [ ACCAudioClient._delegate,
+                            ACCAudioClient._remoteObject,
+                            ACCAudioClient._serverConnection,
+                            ACCAudioManager._audioClient ]
+...

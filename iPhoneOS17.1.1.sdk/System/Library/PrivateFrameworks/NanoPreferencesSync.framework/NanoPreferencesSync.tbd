@@ -1,0 +1,46 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NanoPreferencesSync.framework/NanoPreferencesSync
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _NPSHasCompletedInitialSync,
+                            _NPSLoggingDaemonObjectInit,
+                            _NPSLoggingDomainAccessorObjectInit,
+                            _NPSLoggingFrameworkObjectInit,
+                            _NPSManagedConfigurationClientID, _NPSShouldRun,
+                            _kNPSInitialSyncCompletionDarwinNotification,
+                            _kNPSInitialSyncKey,
+                            _kNPSPathComponentsToBackupFolderWithinPairingDataStore,
+                            _kNanoPreferencesSyncDomain, _nps_daemon_log,
+                            _nps_domain_accessor_log, _nps_framework_log ]
+    objc-classes:         [ NPSDomainAccessor, NPSDomainAccessorFilePresenter,
+                            NPSDomainAccessorInternal, NPSDomainAccessorUtils,
+                            NPSManager, NPSPrefPlistProtectedUtil,
+                            NPSPrefPlistSizeUtil ]
+    objc-ivars:           [ NPSDomainAccessor._externalQueue,
+                            NPSDomainAccessor._initializedWithActiveDevice,
+                            NPSDomainAccessor._internalAccessor,
+                            NPSDomainAccessor._invalidationQueue,
+                            NPSDomainAccessorFilePresenter._current,
+                            NPSDomainAccessorFilePresenter._delegate,
+                            NPSDomainAccessorFilePresenter._domainURL,
+                            NPSDomainAccessorFilePresenter._presenterOperationQueue,
+                            NPSDomainAccessorFilePresenter._presenterUnderlyingQueue,
+                            NPSDomainAccessorInternal._dirtyKeysForWriting,
+                            NPSDomainAccessorInternal._domain,
+                            NPSDomainAccessorInternal._domainURL,
+                            NPSDomainAccessorInternal._externalQueue,
+                            NPSDomainAccessorInternal._filePresenter,
+                            NPSDomainAccessorInternal._hasReadFromDisk,
+                            NPSDomainAccessorInternal._internalQueue,
+                            NPSDomainAccessorInternal._map,
+                            NPSDomainAccessorInternal._nanoSettingsDirectoryExists,
+                            NPSDomainAccessorInternal._pairingID,
+                            NPSDomainAccessorInternal._pairingStorePath,
+                            NPSDomainAccessorInternal._referenceCounter,
+                            NPSManager._internalQueue, NPSManager._xpcConnection ]
+...

@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/icloudMCCKit.framework/icloudMCCKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _MCCSecretAgentEncryptionCertIdKey,
+                            _MCCSecretAgentMachService,
+                            _MCCSecretAgentSigningCertIdKey, __MCCLogSystem,
+                            _icloudMCCKitVersionNumber,
+                            _icloudMCCKitVersionString ]
+    objc-classes:         [ MCCSecretAgentConnection, MCCSecretAgentContext,
+                            MCCSecretAgentController, MCCSecretAgentInterface,
+                            MCCSigningAndEncryptionMessagesStatus ]
+    objc-ivars:           [ MCCSecretAgentConnection._connection,
+                            MCCSecretAgentConnection._listenerEndpoint,
+                            MCCSecretAgentConnection._unfairLock,
+                            MCCSecretAgentContext._certType,
+                            MCCSecretAgentContext._commonName,
+                            MCCSecretAgentContext._country,
+                            MCCSecretAgentContext._csrAltName,
+                            MCCSecretAgentContext._keyType,
+                            MCCSecretAgentContext._keyValue,
+                            MCCSecretAgentContext._organization,
+                            MCCSecretAgentContext._organizationUnit,
+                            MCCSecretAgentContext._state,
+                            MCCSecretAgentController._agentConnection,
+                            MCCSigningAndEncryptionMessagesStatus._encryptMessagesIsEnabled,
+                            MCCSigningAndEncryptionMessagesStatus._signMessagesIsEnabled ]
+...

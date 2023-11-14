@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreRepairKit.framework/CoreRepairKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CoreRepairKitVersionNumber,
+                            _CoreRepairKitVersionString, _getDeviceChemID,
+                            _hasHadBatteryRepair, _hasHadBatteryRepairUsingCBCC,
+                            _kCRComponentAudio, _kCRComponentAudioCodec,
+                            _kCRComponentBackGlassRepaired,
+                            _kCRComponentBaseband, _kCRComponentBattery,
+                            _kCRComponentBatteryRepaired,
+                            _kCRComponentBatteryService, _kCRComponentBluetooth,
+                            _kCRComponentCamera, _kCRComponentCameraRepaired,
+                            _kCRComponentDisplay, _kCRComponentDisplayRepaired,
+                            _kCRComponentFaceID, _kCRComponentFaceIDRepaired,
+                            _kCRComponentMTUBRepaired, _kCRComponentNFC,
+                            _kCRComponentRCameraFailed, _kCRComponentSystem,
+                            _kCRComponentTouchID, _kCRComponentTouchIDRepaired,
+                            _kCRComponentUWB, _kCRComponentUnknownPartRepaired,
+                            _kCRComponentWLAN, _kCRComponentWifi,
+                            _kMRDataCollectionQueryTimeout ]
+    objc-classes:         [ CRAudioCodecStatus, CRAudioStatus, CRBasebandStatus,
+                            CRBatteryStatus, CRBluetoothStatus, CRCameraAuth,
+                            CRComponentAuth, CRDisplayStatus, CRFaceIDStatus,
+                            CRNFCStatus, CRPluginsController, CRRCamStatus,
+                            CRRepairStatus, CRSystemHealthStatus, CRTouchIDStatus,
+                            CRURLSessionDelegate, CRUWBStatus, CRWifiStatus,
+                            MRDataCollectionNotice ]
+...

@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/System/Library/Frameworks/MetricKit.framework/MetricKit'
+reexported-libraries:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:       [ '/System/Library/PrivateFrameworks/SignpostMetrics.framework/SignpostMetrics' ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _MXErrorDomain, _MetricKitVersionNumber, _MetricKitVersionString ]
+    objc-classes:    [ MXAnimationMetric, MXAppExitMetric, MXAppLaunchDiagnostic, 
+                       MXAppLaunchMetric, MXAppResponsivenessMetric, MXAppRunTimeMetric, 
+                       MXAverage, MXBackgroundExitData, MXCPUExceptionDiagnostic, 
+                       MXCPUMetric, MXCallStackFrame, MXCallStackThread, MXCallStackTree, 
+                       MXCellularConditionMetric, MXCrashDiagnostic, MXCrashDiagnosticObjectiveCExceptionReason, 
+                       MXDiagnostic, MXDiagnosticPayload, MXDiskIOMetric, MXDiskWriteExceptionDiagnostic, 
+                       MXDisplayMetric, MXForegroundExitData, MXGPUMetric, MXHangDiagnostic, 
+                       MXHistogram, MXHistogramBucket, MXLocationActivityMetric, 
+                       MXMemoryMetric, MXMetaData, MXMetric, MXMetricManager, MXMetricPayload, 
+                       MXNetworkTransferMetric, MXSignpostIntervalData, MXSignpostMetric, 
+                       MXSignpostRecord, MXUnitAveragePixelLuminance, MXUnitSignalBars ]
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/System/Library/PrivateFrameworks/SignpostMetrics.framework/SignpostMetrics'
+current-version: 119
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ __MXSignpostMetricsSnapshot ]
+...

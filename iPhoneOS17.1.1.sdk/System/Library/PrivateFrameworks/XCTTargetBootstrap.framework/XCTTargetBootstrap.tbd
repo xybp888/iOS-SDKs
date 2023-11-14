@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/XCTTargetBootstrap.framework/XCTTargetBootstrap
+current-version:       22189.1
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _XCTSetSharedDaemonConnectionProvider,
+                            _XCTSharedDaemonConnectionProvider, _XCTTBDefaultLog,
+                            _XCTTargetBootstrap ]
+    objc-classes:         [ XCTDaemonConnectionProvider, XCTTargetSession ]
+    objc-ivars:           [ XCTTargetSession._clientListener,
+                            XCTTargetSession._connectionHandler,
+                            XCTTargetSession._daemonConnection,
+                            XCTTargetSession._queue,
+                            XCTTargetSession._registrationHandler,
+                            XCTTargetSession._targetIsRegistering ]
+...

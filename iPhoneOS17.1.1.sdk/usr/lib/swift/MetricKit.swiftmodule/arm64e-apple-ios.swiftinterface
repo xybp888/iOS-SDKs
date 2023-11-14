@@ -1,0 +1,17 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.123.203 clang-1500.0.37.1)
+// swift-module-flags: -target arm64e-apple-ios17.0 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftMetricKit -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name MetricKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 6
+@_exported import MetricKit
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+@available(iOS 13.0, macOS 10.15, *)
+@available(macOS, unavailable)
+public func mxSignpost(_ type: os.OSSignpostType, dso: Swift.UnsafeRawPointer = #dsohandle, log: os.OSLog, name: Swift.StaticString, signpostID: os.OSSignpostID = .exclusive, _ format: Swift.StaticString = "%{public, signpost:metrics}@", _ arguments: [any Swift.CVarArg] = [Unmanaged<NSObject>.fromOpaque(_MXSignpostMetricsSnapshot()).takeUnretainedValue()])
+@available(iOS 15.0, macOS 12.0, *)
+@available(macOS, unavailable)
+public func mxSignpostAnimationIntervalBegin(dso: Swift.UnsafeRawPointer = #dsohandle, log: os.OSLog, name: Swift.StaticString, signpostID: os.OSSignpostID = .exclusive, _ format: Swift.StaticString = "isAnimation=YES \n%{public, signpost:metrics}@", _ arguments: [any Swift.CVarArg] = [Unmanaged<NSObject>.fromOpaque(_MXSignpostMetricsSnapshot()).takeUnretainedValue()])

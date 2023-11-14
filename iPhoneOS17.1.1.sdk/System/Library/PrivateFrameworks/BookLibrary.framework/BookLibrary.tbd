@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BookLibrary.framework/BookLibrary
+current-version:       1019
+compatibility-version: 0
+reexported-libraries:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:            [ /System/Library/PrivateFrameworks/BookLibraryCore.framework/BookLibraryCore ]
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _BookLibraryVersionNumber, _BookLibraryVersionString ]
+    objc-classes:         [ BLDownloadQueue, BLHLSKeyFetcher, BLMediaItemUtils,
+                            BLMediaQuery, BLOfflineKeyRequest,
+                            BLSecureOfflineKeyDeliveryRequest,
+                            BLStoreItemMetadataRequest, BLStreamingKeyRequest,
+                            BLUIHostServiceProxy, _BLAcquireSlotRequest ]
+...

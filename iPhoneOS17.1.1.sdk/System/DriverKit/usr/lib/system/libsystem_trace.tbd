@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/DriverKit/usr/lib/system/libsystem_trace.dylib
+current-version:       1481.40.16
+compatibility-version: 1
+parent-umbrella:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    umbrella:               System
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ __libtrace_fork_child, __libtrace_init,
+                            __os_log_default, __os_log_impl, __os_trace_malloc,
+                            __os_trace_memdup, __os_trace_realloc,
+                            _os_log_fmt_compose, _os_log_fmt_convert_trace,
+                            _os_log_fmt_extract_pubdata, _os_log_type_enabled ]
+...

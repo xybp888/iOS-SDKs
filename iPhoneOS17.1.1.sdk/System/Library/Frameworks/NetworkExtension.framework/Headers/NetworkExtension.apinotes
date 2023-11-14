@@ -1,0 +1,70 @@
+---
+Name: NetworkExtension
+Tags:
+- Name: NEAppProxyFlowError
+  NSErrorDomain: NEAppProxyErrorDomain
+- Name: NEFilterError
+  NSErrorDomain: NEFilterErrorDomain
+- Name: NETunnelProviderError
+  NSErrorDomain: NETunnelProviderErrorDomain
+- Name: NEVPNError
+  NSErrorDomain: NEVPNErrorDomain
+- Name: NEAppPushManagerError
+  NSErrorDomain: NEAppPushErrorDomain
+Classes:
+- Name: NEPacketTunnelNetworkSettings
+  Properties:
+    - Name: IPv4Settings
+      PropertyKind: Instance
+      SwiftName: ipv4Settings
+    - Name: IPv6Settings
+      PropertyKind: Instance
+      SwiftName: ipv6Settings
+- Name: NEIPv4Settings
+  Methods:
+    - Selector: "settingsWithAutomaticAddressing"
+      MethodKind: Class
+      SwiftName: "automaticAddressing()"
+- Name: NEIPv6Settings
+  Methods:
+    - Selector: "settingsWithAutomaticAddressing"
+      MethodKind: Class
+      SwiftName: "automaticAddressing()"
+    - Selector: "settingsWithLinkLocalAddressing"
+      MethodKind: Class
+      SwiftName: "linkLocalAddressing()"
+Enumerators:
+- Name: NEVPNIKEv2EncryptionAlgorithmDES
+  SwiftName: algorithmDES
+- Name: NEVPNIKEv2EncryptionAlgorithm3DES
+  SwiftName: algorithm3DES
+- Name: NEVPNIKEv2EncryptionAlgorithmAES128
+  SwiftName: algorithmAES128
+- Name: NEVPNIKEv2EncryptionAlgorithmAES256
+  SwiftName: algorithmAES256
+- Name: NEVPNIKEv2EncryptionAlgorithmAES128GCM
+  SwiftName: algorithmAES128GCM
+- Name: NEVPNIKEv2EncryptionAlgorithmAES256GCM
+  SwiftName: algorithmAES256GCM
+- Name: NEVPNIKEv2EncryptionAlgorithmChaCha20Poly1305
+  SwiftName: algorithmChaCha20Poly1305
+SwiftVersions:
+- Version: 3.0
+  Classes:
+    - Name: NEPacketTunnelNetworkSettings
+      Properties:
+      - Name: IPv4Settings
+        PropertyKind: Instance
+        SwiftName: iPv4Settings
+      - Name: IPv6Settings
+        PropertyKind: Instance
+        SwiftName: iPv6Settings
+    - Name: NEFilterBrowserFlow
+      Properties:
+      - Name: request
+        Nullability: N
+    - Name: NEHotspotHelper
+      Methods:
+      - Selector: supportedNetworkInterfaces
+        MethodKind: Class
+        NullabilityOfRet: N
