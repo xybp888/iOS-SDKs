@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SafetyAlerts.framework/SafetyAlerts
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SALogObjectGeneral, _SALogObjectWarning,
+                            _SafetyAlertsVersionNumber,
+                            _SafetyAlertsVersionString, __Z9SALogInitv,
+                            __ZN14SAPlatformInfo18fetchIsTinkerWatchEv,
+                            __ZN14SAPlatformInfo8instanceEv,
+                            __ZN14SAPlatformInfoC1Ev, __ZN14SAPlatformInfoC2Ev ]
+    objc-classes:         [ SAEDFollowUpManager, SafetyAlerts ]
+    objc-ivars:           [ SAEDFollowUpManager._currentLocationInCoveredRegion,
+                            SAEDFollowUpManager._currentLocationInCoveredRegion_Valid,
+                            SAEDFollowUpManager._evaluationQueue,
+                            SAEDFollowUpManager._locationServicesEnabled,
+                            SAEDFollowUpManager._locationServicesEnabled_Valid,
+                            SAEDFollowUpManager._uptakeCoefficient,
+                            SAEDFollowUpManager._uptakeCoefficient_Valid,
+                            SafetyAlerts._connection, SafetyAlerts._queue ]
+...

@@ -1,0 +1,65 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IntelligentRouting.framework/IntelligentRouting
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _IRAppleTVControlEventSubTypeToString,
+                            _IRAppleTVControlEventTypeToString,
+                            _IRCandidateClassificationToString,
+                            _IRContextAppleTVControlKey,
+                            _IRContextMediaControlKey, _IRContextMediaRouteKey,
+                            _IRErrorDomain, _IRLogObject, _IRLogObjectLongTerm,
+                            _IRLogObjectQE, _IRMakeXPCClientInterface,
+                            _IRMakeXPCServerInterface,
+                            _IRMediaEventSubTypeToString,
+                            _IRMediaEventTypeToString, _IRServicePackageString,
+                            _IRSetupLogging, _kIREventNameAppleTVControl,
+                            _kIREventNameMedia, _kIRServiceLogPrefixKey ]
+    objc-classes:         [ IRAppleTVControlEvent, IRCandidate, IRCandidateResult,
+                            IRConfiguration, IRContext, IREvent,
+                            IRExportedObjectForwarder, IRMediaEvent, IRNode,
+                            IRServerConnection, IRServiceParameters,
+                            IRServiceToken, IRSession,
+                            IRSessionSpotOnLocationParameters ]
+    objc-ivars:           [ IRAppleTVControlEvent._bundleID,
+                            IRAppleTVControlEvent._contextIdentifier,
+                            IRAppleTVControlEvent._eventSubType,
+                            IRAppleTVControlEvent._eventType,
+                            IRCandidate._avOutpuDeviceIdentifier,
+                            IRCandidate._candidateIdentifier,
+                            IRCandidate._idsIdentifier, IRCandidate._nodes,
+                            IRCandidate._rapportIdentifier,
+                            IRCandidateResult._candidate,
+                            IRCandidateResult._classification,
+                            IRCandidateResult._classificationDescription,
+                            IRCandidateResult._isCallToAction,
+                            IRCandidateResult._sortingHint,
+                            IRConfiguration._mode, IRConfiguration._serviceToken,
+                            IRContext._contextIdentifier,
+                            IRContext._internalCandidateResults, IREvent._name,
+                            IRExportedObjectForwarder._exportedObject,
+                            IRExportedObjectForwarder._exportedObjectClass,
+                            IRMediaEvent._bundleID,
+                            IRMediaEvent._contextIdentifier,
+                            IRMediaEvent._eventSubType, IRMediaEvent._eventType,
+                            IRNode._avOutpuDeviceIdentifier,
+                            IRNode._idsIdentifier, IRNode._name,
+                            IRNode._rapportIdentifier,
+                            IRServerConnection._connection,
+                            IRServerConnection._exportedObject,
+                            IRServerConnection._queue,
+                            IRServerConnection._sessionID,
+                            IRServiceParameters._servicePackage,
+                            IRServiceToken._serviceIdentifier,
+                            IRServiceToken._servicePackage,
+                            IRSession._configuration, IRSession._connection,
+                            IRSession._delegate,
+                            IRSession._exportedObjectForwarder,
+                            IRSession._internalID,
+                            IRSession._isSessionInvalidated, IRSession._queue,
+                            IRSessionSpotOnLocationParameters._resetAllBrokerDiscoveredCandidates ]
+...

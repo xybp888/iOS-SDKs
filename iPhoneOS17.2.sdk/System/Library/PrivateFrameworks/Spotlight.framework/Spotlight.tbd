@@ -1,0 +1,63 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Spotlight.framework/Spotlight
+current-version:       2274.8.2
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SPAppStoreSearchURLFromQuery,
+                            _SPWebSearchURLFromQuery,
+                            _SectionMergingBlendedMusic,
+                            _SectionMergingBlendedWeb, _SpotlightVersionNumber,
+                            _SpotlightVersionString,
+                            _sectionMergingDefaultInitiallyVisible,
+                            _sectionMergingMaxVisibleAfterMerge,
+                            _sp_analytics_log_timing,
+                            _sp_analytics_log_timing_with_bundle_id ]
+    objc-classes:         [ SPClientSession, SPGeneralQueryTask, SPPARSession,
+                            SPPhotoUtilities, SPQueryResponse, SPQueryTask,
+                            SPSafariObserver, SPZKWQueryTask, SPZKWSession ]
+    objc-ivars:           [ SPClientSession._contentFilter,
+                            SPClientSession._currentQueryContext,
+                            SPClientSession._infinitePatience,
+                            SPClientSession._lastQuery,
+                            SPClientSession._lastSections,
+                            SPClientSession._maxUISuggestions,
+                            SPClientSession._observersAdded,
+                            SPClientSession._prefsToken,
+                            SPClientSession._searchDomains,
+                            SPClientSession._sectionsLock,
+                            SPGeneralQueryTask._didReceiveCompleteCallback,
+                            SPGeneralQueryTask._mutableSessionEntityString,
+                            SPGeneralQueryTask._newQuery,
+                            SPGeneralQueryTask._session,
+                            SPGeneralQueryTask._showMoreInAppInfo,
+                            SPGeneralQueryTask._staleResultsFired,
+                            SPGeneralQueryTask._staleResultsTimer,
+                            SPGeneralQueryTask._started,
+                            SPGeneralQueryTask._supportedAppScopes,
+                            SPQueryResponse._kind,
+                            SPQueryResponse._resultSections,
+                            SPQueryResponse._sessionEntityString,
+                            SPQueryResponse._state, SPQueryResponse._task,
+                            SPQueryTask._deferredUpdate, SPQueryTask._delegate,
+                            SPQueryTask._dispatchQueue,
+                            SPQueryTask._forceStableResults, SPQueryTask._live,
+                            SPQueryTask._maxTopHitAppResults,
+                            SPQueryTask._maxUISuggestions,
+                            SPQueryTask._mutableSections,
+                            SPQueryTask._previousQueryContext,
+                            SPQueryTask._query, SPQueryTask._queryKind,
+                            SPQueryTask._queryProcessor,
+                            SPQueryTask._rankingDebugLog, SPQueryTask._sections,
+                            SPQueryTask._sessionEntityString, SPQueryTask._state,
+                            SPQueryTask._token,
+                            SPQueryTask._unsafeCombinedSuggestions,
+                            SPQueryTask._unsafeParsecSuggestions,
+                            SPQueryTask._unsafeSections,
+                            SPQueryTask._unsafeSessionEntityString,
+                            SPQueryTask._unsafeState,
+                            SPQueryTask._updatesDisabled, SPQueryTask._whyQuery ]
+...

@@ -1,0 +1,43 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MessagesSettingsUI.framework/MessagesSettingsUI
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _MessagesSettingsUIVersionNumber,
+                            _MessagesSettingsUIVersionString ]
+    objc-classes:         [ CKCloudSettingsCell, CKCloudSettingsViewController,
+                            CKKeepMessagesPreferenceManager,
+                            CKiCloudSettingsSyncController,
+                            CKiCloudSettingsUtils, CKiCloudSettingsViewModel,
+                            CKiCloudSyncStateBuilder, CKiCloudSyncStateModel ]
+    objc-ivars:           [ CKCloudSettingsViewController._accountManager,
+                            CKCloudSettingsViewController._appCloudStorage,
+                            CKCloudSettingsViewController._storageUsedRequestInProgress,
+                            CKCloudSettingsViewController._viewModel,
+                            CKiCloudSettingsSyncController._messagesToUploadCount,
+                            CKiCloudSettingsSyncController._syncStatusHandler,
+                            CKiCloudSettingsSyncController._syncSummary,
+                            CKiCloudSettingsSyncController._syncing,
+                            CKiCloudSettingsViewModel._delegate,
+                            CKiCloudSettingsViewModel._iCloudMessagingObserverToken,
+                            CKiCloudSettingsViewModel._keepMessagesPreferenceManager,
+                            CKiCloudSettingsViewModel._lastEngineSyncState,
+                            CKiCloudSettingsViewModel._lastInAppMessage,
+                            CKiCloudSettingsViewModel._resolvedSyncState,
+                            CKiCloudSettingsViewModel._syncController,
+                            CKiCloudSettingsViewModel._syncStateModel,
+                            CKiCloudSettingsViewModel._upgradeICloudAction,
+                            CKiCloudSyncStateModel._lastSyncedDateString,
+                            CKiCloudSyncStateModel._messagesInCloudCount,
+                            CKiCloudSyncStateModel._syncAvailable,
+                            CKiCloudSyncStateModel._syncState,
+                            CKiCloudSyncStateModel._syncStatus,
+                            CKiCloudSyncStateModel._syncStatusFooterSubstringForHyperlink,
+                            CKiCloudSyncStateModel._syncStatusFooterText,
+                            CKiCloudSyncStateModel._syncStatusMacButtonType,
+                            CKiCloudSyncStateModel._syncStatusMacToolTipText ]
+...

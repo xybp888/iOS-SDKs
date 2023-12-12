@@ -1,0 +1,57 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NewsAnalyticsUpload.framework/NewsAnalyticsUpload
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _NAUAnalyticsEnvelopeTrackerContentTypeIsSupported,
+                            _NDAnalyticsEntryCanBeUploaded,
+                            _NDAnalyticsEntryDeliveryWindow,
+                            _NDAnalyticsEntryDeliveryWindowEarlierDate,
+                            _NDAnalyticsEnvelopeContentTypesFromEntries,
+                            _NDAnalyticsEnvelopeStoreEntriesFromStringRepresentations,
+                            _NDAnalyticsEnvelopeStoreStringRepresentationsOfEntries,
+                            _NDAnalyticsEnvelopeSubmissionDatesByContentType,
+                            _NDSharedClientLog, _NDSharedServiceLog,
+                            _NewsAnalyticsUploadVersionNumber,
+                            _NewsAnalyticsUploadVersionString ]
+    objc-classes:         [ NAUAnalyticsEnvelopeTracker,
+                            NDAnalyticsEnvelopeManager, NDAnalyticsEnvelopeStore,
+                            NDAnalyticsEnvelopeStoreEntry,
+                            NDAnalyticsPayloadAssembler, NDAnalyticsPayloadInfo,
+                            NDAnalyticsPayloadUploader,
+                            NDAnalyticsUploadScheduler,
+                            NDAppConfigAnalyticsPayloadAssemblerConfigProvider ]
+    objc-ivars:           [ NDAnalyticsEnvelopeManager._envelopeStore,
+                            NDAnalyticsEnvelopeManager._keyValueStoreLock,
+                            NDAnalyticsEnvelopeManager._lastUploadDatesByContentType,
+                            NDAnalyticsEnvelopeManager._payloadAssembler,
+                            NDAnalyticsEnvelopeManager._payloadUploader,
+                            NDAnalyticsEnvelopeManager._uploadScheduler,
+                            NDAnalyticsEnvelopeStore._assetStore,
+                            NDAnalyticsEnvelopeStore._cacheCoordinator,
+                            NDAnalyticsEnvelopeStore._observer,
+                            NDAnalyticsEnvelopeStoreEntry._envelopeContentType,
+                            NDAnalyticsEnvelopeStoreEntry._envelopeIdentifier,
+                            NDAnalyticsEnvelopeStoreEntry._submissionDateMillisecondsSince1970,
+                            NDAnalyticsPayloadAssembler._configProvider,
+                            NDAnalyticsPayloadAssembler._maxPayloadSize,
+                            NDAnalyticsPayloadInfo._droppedEntriesByReason,
+                            NDAnalyticsPayloadInfo._endpointURL,
+                            NDAnalyticsPayloadInfo._entriesToUpload,
+                            NDAnalyticsPayloadInfo._valuesByHTTPHeaderField,
+                            NDAnalyticsPayloadUploader._endpointConnection,
+                            NDAnalyticsPayloadUploader._uploadQueue,
+                            NDAnalyticsUploadScheduler._backgroundSession,
+                            NDAnalyticsUploadScheduler._backgroundSessionLaunchEventCounter,
+                            NDAnalyticsUploadScheduler._backgroundSessionQueue,
+                            NDAnalyticsUploadScheduler._delegate,
+                            NDAnalyticsUploadScheduler._deliveryWindow,
+                            NDAnalyticsUploadScheduler._lock,
+                            NDAnalyticsUploadScheduler._schedulingAndForegroundUploadThrottler,
+                            NDAnalyticsUploadScheduler._uploadQueue,
+                            NDAppConfigAnalyticsPayloadAssemblerConfigProvider._appConfigurationManager ]
+...

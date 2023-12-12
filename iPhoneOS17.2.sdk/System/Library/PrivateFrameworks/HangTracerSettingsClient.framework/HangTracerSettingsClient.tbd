@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HangTracerSettingsClient.framework/HangTracerSettingsClient
+current-version:       281
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _HTLevelForHangDuration,
+                            _HangTracerSettingsClientVersionNumber,
+                            _HangTracerSettingsClientVersionString,
+                            _applyTailspinConfig, _arrayOfCFPrefsWithPrefix,
+                            _configureTailspinForEPL,
+                            _configureTailspinForSelfEnableConfig,
+                            _configureTailspinForThirdPartyDevelopment,
+                            _getPrefWithOverrideProfile,
+                            _kHTDidSaveTailspinNotification,
+                            _kHTExtendedAttributeBundleId,
+                            _kHTExtendedAttributeCreatedAt,
+                            _kHTExtendedAttributeDuration,
+                            _kHTExtendedAttributeHangId,
+                            _kHTExtendedAttributeProcessPath, _keyWithPrefix,
+                            _shared_ht_log_handle,
+                            _shared_ht_settings_log_handle ]
+    objc-classes:         [ HTDeveloperSettings, HTHang, HTHangReporterService ]
+    objc-ivars:           [ HTDeveloperSettings._defaults,
+                            HTDeveloperSettings._savedSettingsDefaults,
+                            HTHang._bundleId, HTHang._createdAt, HTHang._duration,
+                            HTHang._durationLevel, HTHang._hangId,
+                            HTHang._processPath,
+                            HTHangReporterService._hangReporterConnection ]
+...

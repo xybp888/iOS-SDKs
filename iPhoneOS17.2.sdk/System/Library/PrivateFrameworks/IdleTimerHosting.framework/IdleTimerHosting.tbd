@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IdleTimerHosting.framework/IdleTimerHosting
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ITLogIdleTimer, _ITLoggingSubsystem,
+                            _IdleTimerHostingVersionNumber,
+                            _IdleTimerHostingVersionString ]
+    objc-classes:         [ ITAttentionAwareIdleTimer,
+                            ITAttentionAwarenessClient,
+                            ITAttentionAwarenessContext, ITIdleTimeout,
+                            ITIdleTimerDescriptor ]
+    objc-ivars:           [ ITAttentionAwareIdleTimer._accessLock,
+                            ITAttentionAwareIdleTimer._access_client,
+                            ITAttentionAwareIdleTimer._access_context,
+                            ITAttentionAwareIdleTimer._access_descriptor,
+                            ITAttentionAwareIdleTimer._configurationIdentifier,
+                            ITAttentionAwareIdleTimer._delegate,
+                            ITAttentionAwarenessClient._accessLock,
+                            ITAttentionAwarenessClient._access_attentionAwarenessClient,
+                            ITAttentionAwarenessClient._access_enabled,
+                            ITAttentionAwarenessClient._delegate,
+                            ITAttentionAwarenessContext._identifier,
+                            ITIdleTimeout._duration, ITIdleTimeout._identifier,
+                            ITIdleTimerDescriptor._attentionMaintenanceEventMask,
+                            ITIdleTimerDescriptor._attentionRecoveryEventMask,
+                            ITIdleTimerDescriptor._attentionSamplingPeriod,
+                            ITIdleTimerDescriptor._attentionSamplingStartDelay,
+                            ITIdleTimerDescriptor._timeouts ]
+...

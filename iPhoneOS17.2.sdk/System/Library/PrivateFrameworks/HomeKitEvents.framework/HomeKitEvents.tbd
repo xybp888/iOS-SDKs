@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HomeKitEvents.framework/HomeKitEvents
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _HMVConfigurationCloudKitContainerID,
+                            _HMVConfigurationResetWithCompletion,
+                            _HMVConfigurationZoneNameForZoneUUID,
+                            _HMVConfigurationZoneUUIDForHomeIdentifier ]
+    objc-classes:         [ HMVEventWriter, HMVEventWriterImplementation,
+                            _TtC13HomeKitEvents13Configuration,
+                            _TtC13HomeKitEvents13QueryLogEvent,
+                            _TtC13HomeKitEvents20QueryMetricsObserver,
+                            _TtC13HomeKitEvents21CloudKitQueryLogEvent,
+                            _TtC13HomeKitEvents27EventsAsyncSequenceLogEvent ]
+...

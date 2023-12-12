@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AlgosScoreFramework.framework/AlgosScoreFramework
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ AlgosConnectionScore, AlgosScoreCSVReader,
+                            AlgosScoreCombiner, AlgosScoreDataCSV,
+                            AlgosScoreFaceTimeDataCSV, AlgosScoreStreamDataCSV,
+                            AlgosStreamScore ]
+    objc-ivars:           [ AlgosConnectionScore._debug,
+                            AlgosConnectionScore.connectionData,
+                            AlgosScoreCSVReader._error,
+                            AlgosScoreCSVReader._headings,
+                            AlgosScoreCSVReader._rows, AlgosScoreCombiner._debug,
+                            AlgosScoreCombiner.combinerData,
+                            AlgosScoreDataCSV._debug,
+                            AlgosScoreDataCSV._rawStreamData,
+                            AlgosScoreDataCSV._statsDict,
+                            AlgosScoreDataCSV.csvData,
+                            AlgosScoreFaceTimeDataCSV._methods,
+                            AlgosScoreStreamDataCSV._isMusic,
+                            AlgosScoreStreamDataCSV._methods,
+                            AlgosStreamScore._debug,
+                            AlgosStreamScore._enforceStreamEnd,
+                            AlgosStreamScore._music,
+                            AlgosStreamScore.logisticScale,
+                            AlgosStreamScore.streamData ]
+...

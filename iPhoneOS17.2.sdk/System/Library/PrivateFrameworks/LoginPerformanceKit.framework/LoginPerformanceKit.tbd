@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/LoginPerformanceKit.framework/LoginPerformanceKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _LPKIsRestrictionlessLoginEnabled,
+                            _LoginPerformanceKitVersionNumber,
+                            _LoginPerformanceKitVersionString,
+                            _kLocalUserSwitchDestination,
+                            _kLocalUserSwitchTestCycleCountKey,
+                            _kLocalUserSwitchTestHasBeenPrewarmed,
+                            _kLocalUserSwitchTestHasFinishedSuccessfullyKey,
+                            _kLocalUserSwitchTestIsPerformanceTestKey,
+                            _kLocalUserSwitchTestOngoingKey,
+                            _kLocalUserSwitchTestPasswordKey,
+                            _kLocalUserSwitchTestRetryCountKey,
+                            _kLocalUserSwitchTestTypeKey,
+                            _kLocalUserSwitchTestUsernameKey ]
+    objc-classes:         [ LPKLoginEvent, LPKLogoutEvent, LPKPerfResultAnalyzer,
+                            LPKPerfResultEntry, LPKPerformanceTestIntermediary,
+                            LPKSignpostEvent, LPKUserSwitchCycleController,
+                            LPKUserSwitchEvent ]
+    objc-ivars:           [ LPKPerfResultEntry._entryName,
+                            LPKPerfResultEntry._entryValues,
+                            LPKPerfResultEntry._meanValue,
+                            LPKPerfResultEntry._medianValue,
+                            LPKPerfResultEntry._needsReCalculation,
+                            LPKSignpostEvent._duration,
+                            LPKSignpostEvent._endDate, LPKSignpostEvent._name,
+                            LPKSignpostEvent._processName,
+                            LPKSignpostEvent._startDate,
+                            LPKUserSwitchCycleController._delegate,
+                            LPKUserSwitchEvent._endDate,
+                            LPKUserSwitchEvent._signposts,
+                            LPKUserSwitchEvent._startDate ]
+...

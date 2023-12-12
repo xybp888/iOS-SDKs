@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RemotePairingDevice.framework/RemotePairingDevice
+current-version:       110.60.5
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _RPTrustedHostInfoKeyHostModel,
+                            _RPTrustedHostInfoKeyHostName,
+                            _RPTrustedHostInfoKeyHostSerialNumber,
+                            _RPTrustedHostInfoKeyIdentifier,
+                            _RPTrustedHostInfoKeyLastUsedDate,
+                            _RemotePairingCopyRemoteUnlockDeviceKeyForTunnel,
+                            _RemotePairingDeviceVersionNumber,
+                            _RemotePairingDeviceVersionString,
+                            _RemotePairingGetCurrentWireProtocolVersion,
+                            _RemotePairingGetTrustedHostInfoAndReturnError,
+                            _RemotePairingGetUSBConnectedHostTrustState,
+                            __RPIsAppleInternal, __RPIsDarwinOS,
+                            __RPTextToMACAddress, _createWirelessPairingSession,
+                            _createWirelessPairingSessionWithPinHandler,
+                            _kRemotePairingTrustedHostsUpdatedNotificationName,
+                            _remotePairingIsEnabled,
+                            _remotepairingAllowPromptlessPairing,
+                            _remotepairing_delete_pair_records ]
+    objc-classes:         [ RPDeviceKeyValueStore_Internal,
+                            RPRSDDeviceInfo_Internal, RPWirelessPairingSession,
+                            RPWirelessPairingSession_Internal,
+                            _TtC19RemotePairingDevice42RemotePairingDeviceTunnelServiceConnection,
+                            _TtC19RemotePairingDevice43ControlChannelConnectionWireProtocolVersion,
+                            _TtC19RemotePairingDevice43RemotePairingDevicePairingServiceConnection ]
+    objc-ivars:           [ RPWirelessPairingSession._underlyingObject ]
+...

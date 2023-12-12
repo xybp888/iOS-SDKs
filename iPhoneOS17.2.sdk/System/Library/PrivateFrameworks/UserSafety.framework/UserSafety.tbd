@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/UserSafety.framework/UserSafety
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _USError, _USErrorCausedBy, _USErrorDomain,
+                            _UserSafetyVersionNumber, _UserSafetyVersionString,
+                            _kUSLogSubsystem, _kUserSafetyServiceEntitlement ]
+    objc-classes:         [ USAnalysisEnablementSubscription, USEntitlements,
+                            USLog, USManagedSettingsReader, USMediaAnalysisService,
+                            USSensitivityAnalyzer ]
+    objc-ivars:           [ USAnalysisEnablementSubscription._analysisAvailabilityObserver,
+                            USMediaAnalysisService._service,
+                            USSensitivityAnalyzer._dispatchQueue,
+                            USSensitivityAnalyzer._madService,
+                            USSensitivityAnalyzer._scsAnalyzer ]
+...

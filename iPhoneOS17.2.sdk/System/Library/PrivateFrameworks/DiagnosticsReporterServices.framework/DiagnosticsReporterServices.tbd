@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DiagnosticsReporterServices.framework/DiagnosticsReporterServices
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _DiagnosticsReporterServicesVersionNumber,
+                            _DiagnosticsReporterServicesVersionString,
+                            _isInternal, _seedFeedbackPromptingEnabled ]
+    objc-classes:         [ DiagnosticsReporterLaunchOptions,
+                            OSADiagnosticsReporter,
+                            ObjCDiagnosticsReporterLaunchOptions,
+                            ObjcDiagnosticsReporter,
+                            _TtC27DiagnosticsReporterServices30RemoteAlertDeactivationHandler ]
+    objc-ivars:           [ DiagnosticsReporterLaunchOptions._files_to_attach,
+                            DiagnosticsReporterLaunchOptions._log_path,
+                            DiagnosticsReporterLaunchOptions._panic_string ]
+...

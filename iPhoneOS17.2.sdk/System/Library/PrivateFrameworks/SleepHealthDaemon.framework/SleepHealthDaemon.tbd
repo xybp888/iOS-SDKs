@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SleepHealthDaemon.framework/SleepHealthDaemon
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ HDSHAccessibilityAssertionManager, HDSHPluginServer,
+                            HDSHProfileExtension, HDSHSleepHealthDaemonPlugin,
+                            HDSHWidgetSchedulingManager ]
+    objc-ivars:           [ HDSHAccessibilityAssertionManager._accessibilityAssertion,
+                            HDSHAccessibilityAssertionManager._profile,
+                            HDSHAccessibilityAssertionManager._queue,
+                            HDSHProfileExtension._accessibilityAssertionManager,
+                            HDSHProfileExtension._profile,
+                            HDSHProfileExtension._widgetSchedulingManager,
+                            HDSHWidgetSchedulingManager._profile,
+                            HDSHWidgetSchedulingManager._queue,
+                            HDSHWidgetSchedulingManager._reloadThrottler,
+                            HDSHWidgetSchedulingManager._shortcutStore,
+                            HDSHWidgetSchedulingManager._sleepStore ]
+...

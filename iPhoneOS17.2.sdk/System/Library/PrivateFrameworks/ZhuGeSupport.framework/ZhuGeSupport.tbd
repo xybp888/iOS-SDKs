@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ZhuGeSupport.framework/ZhuGeSupport
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ZhuGeCopyPrivilegeWithCFError,
+                            _ZhuGeCopyPrivilegeWithError, _ZhuGeCopyValue,
+                            _ZhuGeCopyValueWithCFError, _ZhuGeCopyValueWithError,
+                            _ZhuGeIsKeyValid, _ZhuGeSetLogHandler ]
+    objc-classes:         [ ZhuGeCache, ZhuGeInternalSupportAssistant, ZhuGeLocker,
+                            ZhuGeRestoreLog, ZhuGeSingleton, ZhuGeSupportAssistant ]
+    objc-ivars:           [ ZhuGeCache._cacheDict, ZhuGeCache._cacheList,
+                            ZhuGeCache._cacheType, ZhuGeCache._capacity,
+                            ZhuGeCache._name, ZhuGeCache.aRecursiveMutex,
+                            ZhuGeLocker._logHandler ]
+...

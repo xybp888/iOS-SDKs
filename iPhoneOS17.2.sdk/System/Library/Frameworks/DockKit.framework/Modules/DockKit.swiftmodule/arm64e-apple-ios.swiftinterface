@@ -1,0 +1,259 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.11 clang-1500.1.0.2.2)
+// swift-module-flags: -target arm64e-apple-ios17.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name DockKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 81
+import AVFoundation
+@_exported import DockKit
+import Foundation
+import Spatial
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+@available(iOS 17, macOS 14, *)
+public enum DockKitError : Swift.Error {
+  case notSupported
+  case notConnected
+  case notSupportedByDevice
+  case invalidParameter
+  case noSubjectFound
+  case frameRateTooLow
+  case cameraTCCMissing
+  case frameRateTooHigh
+  public static func == (a: DockKit.DockKitError, b: DockKit.DockKitError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 17, macOS 14, visionOS 1.0, *)
+public class DockAccessoryManager : @unchecked Swift.Sendable {
+  public var isSystemTrackingEnabled: Swift.Bool {
+    get
+  }
+  #if compiler(>=5.3) && $EffectfulProp && $RethrowsProtocol
+  public var accessoryStateChanges: DockKit.DockAccessory.StateChanges {
+    get throws
+  }
+  #endif
+  public static let shared: DockKit.DockAccessoryManager
+  #if compiler(>=5.3) && $AsyncAwait
+  public func setSystemTrackingEnabled(_ isEnabled: Swift.Bool) async throws
+  #endif
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 17, macOS 14, *)
+final public class DockAccessory : @unchecked Swift.Sendable, Swift.CustomDebugStringConvertible, Swift.Equatable, Swift.Hashable {
+  final public let identifier: DockKit.DockAccessory.Identifier
+  final public var debugDescription: Swift.String {
+    get
+  }
+  final public var firmwareVersion: Swift.String? {
+    get
+  }
+  final public var hardwareModel: Swift.String? {
+    get
+  }
+  public struct Identifier : Swift.Sendable, Swift.CustomDebugStringConvertible, Swift.Equatable, Swift.Hashable {
+    public let category: DockKit.DockAccessory.Category
+    public let name: Swift.String
+    public let uuid: Foundation.UUID
+    public var debugDescription: Swift.String {
+      get
+    }
+    public static func == (lhs: DockKit.DockAccessory.Identifier, rhs: DockKit.DockAccessory.Identifier) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum CameraOrientation : Swift.Sendable, Swift.Equatable, Swift.Hashable {
+    case unknown
+    case portrait
+    case portraitUpsideDown
+    case landscapeRight
+    case landscapeLeft
+    case faceUp
+    case faceDown
+    case corrected
+    public static func == (a: DockKit.DockAccessory.CameraOrientation, b: DockKit.DockAccessory.CameraOrientation) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public struct CameraInformation : Swift.Sendable {
+    public let captureDevice: AVFoundation.AVCaptureDevice.DeviceType
+    public let cameraPosition: AVFoundation.AVCaptureDevice.Position
+    public let orientation: DockKit.DockAccessory.CameraOrientation
+    public let cameraIntrinsics: simd.matrix_float3x3?
+    public let referenceDimensions: CoreFoundation.CGSize?
+    public init(captureDevice: AVFoundation.AVCaptureDevice.DeviceType, cameraPosition: AVFoundation.AVCaptureDevice.Position, orientation: DockKit.DockAccessory.CameraOrientation, cameraIntrinsics: simd.matrix_float3x3?, referenceDimensions: CoreFoundation.CGSize?)
+  }
+  public enum State : Swift.Sendable, Swift.Equatable, Swift.Hashable, Swift.CustomDebugStringConvertible {
+    case undocked
+    case docked
+    public var debugDescription: Swift.String {
+      get
+    }
+    public static func == (a: DockKit.DockAccessory.State, b: DockKit.DockAccessory.State) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Category : Swift.Codable, Swift.Sendable, Swift.Equatable, Swift.Hashable, Swift.CustomDebugStringConvertible {
+    case trackingStand
+    public var debugDescription: Swift.String {
+      get
+    }
+    public static func == (a: DockKit.DockAccessory.Category, b: DockKit.DockAccessory.Category) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct Observation : Swift.Sendable {
+    public enum ObservationType : Swift.Sendable, Swift.Equatable, Swift.Hashable {
+      case humanFace
+      case humanBody
+      case object
+      public static func == (a: DockKit.DockAccessory.Observation.ObservationType, b: DockKit.DockAccessory.Observation.ObservationType) -> Swift.Bool
+      public func hash(into hasher: inout Swift.Hasher)
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+    public let type: DockKit.DockAccessory.Observation.ObservationType
+    public let identifier: Swift.Int
+    public let rect: CoreFoundation.CGRect
+    public let faceYawAngle: Foundation.Measurement<Foundation.UnitAngle>?
+    public init(identifier: Swift.Int, type: DockKit.DockAccessory.Observation.ObservationType, rect: CoreFoundation.CGRect, faceYawAngle: Foundation.Measurement<Foundation.UnitAngle>? = nil)
+  }
+  public struct StateChange : Swift.Sendable {
+    public let accessory: DockKit.DockAccessory?
+    public let state: DockKit.DockAccessory.State
+    public let trackingButtonEnabled: Swift.Bool
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public struct StateChanges : _Concurrency.AsyncSequence {
+    public typealias Element = DockKit.DockAccessory.StateChange
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public mutating func next() async -> DockKit.DockAccessory.StateChange?
+      #endif
+      public typealias Element = DockKit.DockAccessory.StateChange
+    }
+    public func makeAsyncIterator() -> DockKit.DockAccessory.StateChanges.Iterator
+    public typealias AsyncIterator = DockKit.DockAccessory.StateChanges.Iterator
+  }
+  #endif
+  public struct MotionState : Swift.Sendable {
+    public let angularVelocities: Spatial.Vector3D
+    public let angularPositions: Spatial.Vector3D
+    public let timestamp: Foundation.TimeInterval
+    public let error: (any Swift.Error)?
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public struct MotionStates : _Concurrency.AsyncSequence {
+    public typealias Element = DockKit.DockAccessory.MotionState
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public mutating func next() async -> DockKit.DockAccessory.MotionState?
+      #endif
+      public typealias Element = DockKit.DockAccessory.MotionState
+    }
+    public func makeAsyncIterator() -> DockKit.DockAccessory.MotionStates.Iterator
+    public typealias AsyncIterator = DockKit.DockAccessory.MotionStates.Iterator
+  }
+  #endif
+  public enum FramingMode : Swift.Codable, Swift.Sendable, Swift.Hashable, Swift.Equatable {
+    case automatic
+    case center
+    case left
+    case right
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: DockKit.DockAccessory.FramingMode, b: DockKit.DockAccessory.FramingMode) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public enum Animation : Swift.Sendable, Swift.Equatable, Swift.Hashable {
+    case wakeup
+    case yes
+    case no
+    case kapow
+    public static func == (a: DockKit.DockAccessory.Animation, b: DockKit.DockAccessory.Animation) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public struct Limits : Swift.Sendable {
+    public struct Limit : Swift.Sendable {
+      public let positionRange: Swift.Range<Swift.Double>
+      public let maximumSpeed: Swift.Double
+      public init(positionRange: Swift.Range<Swift.Double>, maximumSpeed: Swift.Double) throws
+    }
+    public let yaw: DockKit.DockAccessory.Limits.Limit?
+    public let pitch: DockKit.DockAccessory.Limits.Limit?
+    public let roll: DockKit.DockAccessory.Limits.Limit?
+    public init(yaw: DockKit.DockAccessory.Limits.Limit?, pitch: DockKit.DockAccessory.Limits.Limit?, roll: DockKit.DockAccessory.Limits.Limit?)
+  }
+  final public var framingMode: DockKit.DockAccessory.FramingMode {
+    get
+  }
+  final public var regionOfInterest: CoreFoundation.CGRect {
+    get
+  }
+  #if compiler(>=5.3) && $EffectfulProp && $RethrowsProtocol
+  final public var motionStates: DockKit.DockAccessory.MotionStates {
+    get throws
+  }
+  #endif
+  #if compiler(>=5.3) && $EffectfulProp
+  final public var limits: DockKit.DockAccessory.Limits {
+    get throws
+  }
+  #endif
+  @objc deinit
+  public static func == (lhs: DockKit.DockAccessory, rhs: DockKit.DockAccessory) -> Swift.Bool
+  final public func hash(into hasher: inout Swift.Hasher)
+  final public func setOrientation(_ rotation: Spatial.Vector3D, duration: Swift.Duration = .seconds(0), relative: Swift.Bool = false) throws -> Foundation.Progress
+  final public func setOrientation(_ rotation: Spatial.Rotation3D, duration: Swift.Duration = .seconds(0), relative: Swift.Bool = false) throws -> Foundation.Progress
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func setAngularVelocity(_ angularVelocity: Spatial.Vector3D) async throws
+  #endif
+  final public func setLimits(_ limits: DockKit.DockAccessory.Limits) throws
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func track(_ data: [DockKit.DockAccessory.Observation], cameraInformation: DockKit.DockAccessory.CameraInformation) async throws
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func track(_ metadata: [AVFoundation.AVMetadataObject], cameraInformation: DockKit.DockAccessory.CameraInformation) async throws
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func selectSubject(at unitPoint: CoreFoundation.CGPoint) async throws
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func setFramingMode(_ mode: DockKit.DockAccessory.FramingMode) async throws
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func setRegionOfInterest(_ region: CoreFoundation.CGRect) async throws
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  final public func animate(motion: DockKit.DockAccessory.Animation) async throws -> Foundation.Progress
+  #endif
+  final public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 17, macOS 14, *)
+extension DockKit.DockKitError : Swift.Equatable {}
+@available(iOS 17, macOS 14, *)
+extension DockKit.DockKitError : Swift.Hashable {}

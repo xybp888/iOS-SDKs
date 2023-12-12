@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SoundScapesUtility.framework/SoundScapesUtility
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SoundScapesUtilityVersionNumber,
+                            _SoundScapesUtilityVersionString ]
+    objc-classes:         [ SSUSoundScapesPickerManager,
+                            _SSUSoundScapesDelegateForwarder ]
+    objc-ivars:           [ SSUSoundScapesPickerManager._delegates,
+                            SSUSoundScapesPickerManager._targetMediaProfile,
+                            _SSUSoundScapesDelegateForwarder._connection,
+                            _SSUSoundScapesDelegateForwarder._delegate,
+                            _SSUSoundScapesDelegateForwarder._doneButton,
+                            _SSUSoundScapesDelegateForwarder._exiting,
+                            _SSUSoundScapesDelegateForwarder._lastPickedArchive,
+                            _SSUSoundScapesDelegateForwarder._lastPickedError,
+                            _SSUSoundScapesDelegateForwarder._viewController ]
+...

@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SymptomReporter.framework/SymptomReporter
+current-version:       1848.60.8
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _set_symptom_verbosity, _symptom_create,
+                            _symptom_framework_init,
+                            _symptom_framework_set_version,
+                            _symptom_framework_stats, _symptom_new, _symptom_send,
+                            _symptom_send_immediate,
+                            _symptom_set_additional_digest,
+                            _symptom_set_additional_qualifier,
+                            _symptom_set_qualifier ]
+...

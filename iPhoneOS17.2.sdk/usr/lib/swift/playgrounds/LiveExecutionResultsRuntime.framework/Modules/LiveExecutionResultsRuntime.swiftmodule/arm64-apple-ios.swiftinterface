@@ -1,0 +1,18 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.11 clang-1500.1.0.2.2)
+// swift-module-flags: -target arm64-apple-ios17.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level spi -module-name LiveExecutionResultsRuntime
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 15
+@_exported import LiveExecutionResultsRuntime
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_silgen_name("playground_log_hidden")
+public func __builtin_log_with_id<T>(_ object: T, _ name: Swift.String, _ id: Swift.Int, _ sl: Swift.Int, _ el: Swift.Int, _ sc: Swift.Int, _ ec: Swift.Int, _ moduleId: Swift.Int, _ fileId: Swift.Int) -> Swift.AnyObject
+@_silgen_name("playground_log_scope_entry")
+public func __builtin_log_scope_entry(_ sl: Swift.Int, _ el: Swift.Int, _ sc: Swift.Int, _ ec: Swift.Int, _ moduleId: Swift.Int, _ fileId: Swift.Int) -> Swift.AnyObject
+@_silgen_name("playground_log_scope_exit")
+public func __builtin_log_scope_exit(_ sl: Swift.Int, _ el: Swift.Int, _ sc: Swift.Int, _ ec: Swift.Int, _ moduleId: Swift.Int, _ fileId: Swift.Int) -> Swift.AnyObject
+@_silgen_name("playground_log_postprint")
+public func __builtin_postPrint(_ sl: Swift.Int, _ el: Swift.Int, _ sc: Swift.Int, _ ec: Swift.Int, _ moduleId: Swift.Int, _ fileId: Swift.Int) -> Swift.AnyObject
+public func __builtin_send_data(_ data: Swift.AnyObject)

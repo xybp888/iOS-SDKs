@@ -1,0 +1,50 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.11 clang-1500.1.0.2.2)
+// swift-module-flags: -target arm64-apple-ios17.2 -enable-objc-interop -enable-library-evolution -module-link-name swiftObservation -swift-version 5 -O -library-level api -enforce-exclusivity=unchecked -module-name Observation
+// swift-module-flags-ignorable: -enable-lexical-lifetimes=false -target-min-inlining-version min -enable-experimental-feature Macros -enable-experimental-feature ExtensionMacros -user-module-version 5.9.2.2.11
+import Swift
+@available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+public protocol Observable {
+}
+#if compiler(>=5.3) && $Macros && $AttachedMacros && $ExtensionMacros
+#if $ExtensionMacroAttr
+@available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+@attached(member, names: named(_$observationRegistrar), named(access), named(withMutation)) @attached(memberAttribute) @attached(extension, conformances: Observation.Observable) public macro Observable() = #externalMacro(module: "ObservationMacros", type: "ObservableMacro")
+#else
+@available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+@attached(member, names: named(_$observationRegistrar), named(access), named(withMutation)) @attached(memberAttribute)  public macro Observable() = #externalMacro(module: "ObservationMacros", type: "ObservableMacro")
+#endif
+#endif
+#if compiler(>=5.3) && $Macros && $AttachedMacros
+@available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+@attached(accessor, names: named(init), named(get), named(set)) @attached(peer, names: prefixed(`_`)) public macro ObservationTracked() = #externalMacro(module: "ObservationMacros", type: "ObservationTrackedMacro")
+#endif
+#if compiler(>=5.3) && $Macros && $AttachedMacros
+@available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+@attached(accessor, names: named(willSet)) public macro ObservationIgnored() = #externalMacro(module: "ObservationMacros", type: "ObservationIgnoredMacro")
+#endif
+@available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+public struct ObservationRegistrar : Swift.Sendable {
+  public init()
+  public func access<Subject, Member>(_ subject: Subject, keyPath: Swift.KeyPath<Subject, Member>) where Subject : Observation.Observable
+  public func willSet<Subject, Member>(_ subject: Subject, keyPath: Swift.KeyPath<Subject, Member>) where Subject : Observation.Observable
+  public func didSet<Subject, Member>(_ subject: Subject, keyPath: Swift.KeyPath<Subject, Member>) where Subject : Observation.Observable
+  public func withMutation<Subject, Member, T>(of subject: Subject, keyPath: Swift.KeyPath<Subject, Member>, _ mutation: () throws -> T) rethrows -> T where Subject : Observation.Observable
+}
+@available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+extension Observation.ObservationRegistrar : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder)
+}
+@available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+extension Observation.ObservationRegistrar : Swift.Hashable {
+  public static func == (lhs: Observation.ObservationRegistrar, rhs: Observation.ObservationRegistrar) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+#if compiler(>=5.3) && $Sendable
+@available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+public func withObservationTracking<T>(_ apply: () -> T, onChange: @autoclosure () -> @Sendable () -> Swift.Void) -> T
+#endif

@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ODCurareAnalysis.framework/ODCurareAnalysis
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ODCurareAnalysisVersionNumber,
+                            _ODCurareAnalysisVersionString, _smallSampleSize,
+                            _testError ]
+    objc-classes:         [ TestResult, Timeseries, TimeseriesInternal,
+                            TwoSampleTestResult ]
+    objc-ivars:           [ TestResult._maxTimestamp, TestResult._minTimestamp,
+                            TestResult._numSuccesses, TestResult._pValue,
+                            TestResult._rejectNullHypothesis,
+                            TestResult._sampleSize, TestResult._testRan,
+                            TestResult._testSkippedReason,
+                            Timeseries._underlyingObject,
+                            TwoSampleTestResult._maxTimestamp1,
+                            TwoSampleTestResult._maxTimestamp2,
+                            TwoSampleTestResult._minTimestamp1,
+                            TwoSampleTestResult._minTimestamp2,
+                            TwoSampleTestResult._numSuccesses1,
+                            TwoSampleTestResult._numSuccesses2,
+                            TwoSampleTestResult._rejectNullHypothesis,
+                            TwoSampleTestResult._sampleSize1,
+                            TwoSampleTestResult._sampleSize2,
+                            TwoSampleTestResult._testRan,
+                            TwoSampleTestResult._testSkippedReason,
+                            TwoSampleTestResult._testStatistic ]
+...

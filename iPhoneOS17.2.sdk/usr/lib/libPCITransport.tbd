@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/usr/lib/libPCITransport.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ __ZN3pci5event8Listener6notifyE12abpErrorTypePvS3_, __ZN3pci5event8Listener9notifyPDPE17abpPDPMessageTypePv ]
+    weak-symbols:    [ __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__114default_deleteIN3pci5event8ListenerEEE, __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _TelephonyBasebandPCITransportCreate, _TelephonyBasebandPCITransportDeregisterTimeEvent, 
+                       _TelephonyBasebandPCITransportInitParameters, _TelephonyBasebandPCITransportMapRegion, 
+                       _TelephonyBasebandPCITransportMapRegionwithClientData, _TelephonyBasebandPCITransportRegisterTimeEvent, 
+                       _TelephonyBasebandPCITransportTimesync, _TelephonyBasebandPCITransportUnmapRegion, 
+                       __ZN3pci5event8Listener4initEv, __ZN3pci5event8Listener6createEN8dispatch5blockIU13block_pointerFvNS0_4typeEONSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEjEEEP11__CFRunLoop, 
+                       __ZN3pci5event8ListenerC1EN8dispatch5blockIU13block_pointerFvNS0_4typeEONSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEjEEEP11__CFRunLoop, 
+                       __ZN3pci5event8ListenerC2EN8dispatch5blockIU13block_pointerFvNS0_4typeEONSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEjEEEP11__CFRunLoop, 
+                       __ZN3pci5event8ListenerD1Ev, __ZN3pci5event8ListenerD2Ev ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __ZN3pci5event11PDPListener12shouldNotifyEj, __ZN3pci5event11PDPListener23generalInterestCallbackEPvjjS2_, 
+                       __ZN3pci5event11PDPListener23generalInterestFunctionEjPv, 
+                       __ZN3pci5event11PDPListener24setEventNotificationPortEv, __ZN3pci5event11PDPListener25registerEventNotificationEP11__CFRunLoopU13block_pointerFvNSt3__14pairINS_9transport6kernel7variantEjEEPvE, 
+                       __ZN3pci5event11PDPListener26clearEventNotificationPortEv, 
+                       __ZN3pci5event11PDPListener27deregisterEventNotificationEv, 
+                       __ZN3pci5event11PDPListener30deregisterEventNotification_nlEv, 
+                       __ZN3pci5event11PDPListener4stopEv, __ZN3pci5event11PDPListener5startEv, 
+                       __ZN3pci5event11PDPListenerC1Ev, __ZN3pci5event11PDPListenerC2Ev, 
+                       __ZN3pci5event11PDPListenerD1Ev, __ZN3pci5event11PDPListenerD2Ev, 
+                       __ZN3pci5event22getPDPMessageTypeValueENSt3__14pairINS_9transport6kernel7variantEjEE, 
+                       __ZN3pci5event23getPDPMessageTypeStringENSt3__14pairINS_9transport6kernel7variantEjEE, 
+                       __ZN3pci5event8Listener6notifyENSt3__14pairINS_9transport6kernel7variantEjEEPvS8_, 
+                       __ZN3pci5event8Listener9notifyPDPENSt3__14pairINS_9transport6kernel7variantEjEEPv, 
+                       __ZN3pci9transport11kernelTrace6createEv, __ZN3pci9transport13kernelControl6createEv, 
+                       __ZN3pci9transport6kernel12probeVariantEv, __ZN3pci9transport6kernel13errorAsStringENSt3__14pairINS1_7variantEjEE, 
+                       __ZN3pci9transport6kernel15errorAsUnsignedENSt3__14pairINS1_7variantEjEE, 
+                       __ZN3pci9transport6kernel16isServicePresentEPKc, __ZN3pci9transport6kernel6createEv, 
+                       __ZNK3pci9transport6kernel21getTimesyncBufferSizeEj, __ZNK3pci9transport6kernel22marshalTimesyncResultsEPvj ]
+...
