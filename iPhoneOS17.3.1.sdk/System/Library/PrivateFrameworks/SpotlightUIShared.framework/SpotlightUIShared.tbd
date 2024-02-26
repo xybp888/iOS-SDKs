@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SpotlightUIShared.framework/SpotlightUIShared
+current-version:       42.2.1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SpotlightUISharedVersionNumber,
+                            _SpotlightUISharedVersionString ]
+    objc-classes:         [ SUISRadarUtilities, SUISpotlightController ]
+    objc-ivars:           [ SUISpotlightController._appDelegate,
+                            SUISpotlightController._clientSession,
+                            SUISpotlightController._currentSearchString,
+                            SUISpotlightController._feedbackDelegate,
+                            SUISpotlightController._resultsViewDelegate,
+                            SUISpotlightController._searchFieldDelegate ]
+...

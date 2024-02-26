@@ -1,0 +1,53 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriInCall.framework/SiriInCall
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SICSchemaProvisionalSICClientEventMetadataReadFrom,
+                            _SICSchemaProvisionalSICClientEventReadFrom,
+                            _SICSchemaProvisionalSICErrorReadFrom,
+                            _SICSchemaProvisionalSICInvocationCancelledReadFrom,
+                            _SICSchemaProvisionalSICInvocationContextReadFrom,
+                            _SICSchemaProvisionalSICInvocationEndedReadFrom,
+                            _SICSchemaProvisionalSICInvocationStartedReadFrom,
+                            _SiriInCallVersionNumber, _SiriInCallVersionString,
+                            _qname_SICSchemaProvisionalSICClientEvent_WhichEvent_Type_None,
+                            _qname_SICSchemaProvisionalSICClientEvent_WhichEvent_Type_siriInCallInvocationContext ]
+    objc-classes:         [ SICSchemaProvisionalSICClientEvent,
+                            SICSchemaProvisionalSICClientEventMetadata,
+                            SICSchemaProvisionalSICError,
+                            SICSchemaProvisionalSICInvocationCancelled,
+                            SICSchemaProvisionalSICInvocationContext,
+                            SICSchemaProvisionalSICInvocationEnded,
+                            SICSchemaProvisionalSICInvocationStarted ]
+    objc-ivars:           [ SICSchemaProvisionalSICClientEvent._eventMetadata,
+                            SICSchemaProvisionalSICClientEvent._hasEventMetadata,
+                            SICSchemaProvisionalSICClientEvent._hasSiriInCallInvocationContext,
+                            SICSchemaProvisionalSICClientEvent._siriInCallInvocationContext,
+                            SICSchemaProvisionalSICClientEvent._whichEvent_Type,
+                            SICSchemaProvisionalSICClientEventMetadata._hasSicId,
+                            SICSchemaProvisionalSICClientEventMetadata._sicId,
+                            SICSchemaProvisionalSICError._description,
+                            SICSchemaProvisionalSICError._domain,
+                            SICSchemaProvisionalSICError._errorCode,
+                            SICSchemaProvisionalSICError._has,
+                            SICSchemaProvisionalSICError._hasDescription,
+                            SICSchemaProvisionalSICError._hasDomain,
+                            SICSchemaProvisionalSICInvocationCancelled._exists,
+                            SICSchemaProvisionalSICInvocationCancelled._has,
+                            SICSchemaProvisionalSICInvocationContext._cancelled,
+                            SICSchemaProvisionalSICInvocationContext._ended,
+                            SICSchemaProvisionalSICInvocationContext._hasCancelled,
+                            SICSchemaProvisionalSICInvocationContext._hasEnded,
+                            SICSchemaProvisionalSICInvocationContext._hasStartedOrChanged,
+                            SICSchemaProvisionalSICInvocationContext._startedOrChanged,
+                            SICSchemaProvisionalSICInvocationContext._whichContextevent,
+                            SICSchemaProvisionalSICInvocationEnded._exists,
+                            SICSchemaProvisionalSICInvocationEnded._has,
+                            SICSchemaProvisionalSICInvocationStarted._has,
+                            SICSchemaProvisionalSICInvocationStarted._isMuted ]
+...

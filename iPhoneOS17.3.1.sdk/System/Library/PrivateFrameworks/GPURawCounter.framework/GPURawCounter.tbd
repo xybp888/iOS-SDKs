@@ -1,0 +1,41 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/GPURawCounter.framework/GPURawCounter
+current-version:       26
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CTRCopyAllCounterSourceGroup,
+                            _CTRReleaseAllCounterSourceGroup,
+                            _GPURawCounterVersionNumber,
+                            _GPURawCounterVersionString,
+                            _GRCCopyAllCounterSourceGroup,
+                            _GRCReleaseAllCounterSourceGroup ]
+    objc-classes:         [ GPURawCounterSelect,
+                            GPURawCounterSourceTriggerSelect, _GPURawCounter,
+                            _GPURawCounterSource, _GPURawCounterSourceGroup,
+                            _GPURawCounterSourceTrigger ]
+    objc-ivars:           [ GPURawCounterSelect._name,
+                            GPURawCounterSelect._options,
+                            GPURawCounterSelect._width,
+                            GPURawCounterSourceTriggerSelect._name,
+                            GPURawCounterSourceTriggerSelect._options,
+                            _GPURawCounter._counterValueType,
+                            _GPURawCounter._description, _GPURawCounter._name,
+                            _GPURawCounterSource._features,
+                            _GPURawCounterSource._name,
+                            _GPURawCounterSource._options,
+                            _GPURawCounterSource._sourceGroup,
+                            _GPURawCounterSourceGroup._acceleratorPort,
+                            _GPURawCounterSourceGroup._features,
+                            _GPURawCounterSourceGroup._name,
+                            _GPURawCounterSourceGroup._options,
+                            _GPURawCounterSourceGroup._samplingPeriodInMicroseconds,
+                            _GPURawCounterSourceGroup._samplingTriggers,
+                            _GPURawCounterSourceGroup._sourceList,
+                            _GPURawCounterSourceTrigger._description,
+                            _GPURawCounterSourceTrigger._name,
+                            _GPURawCounterSourceTrigger._options ]
+...

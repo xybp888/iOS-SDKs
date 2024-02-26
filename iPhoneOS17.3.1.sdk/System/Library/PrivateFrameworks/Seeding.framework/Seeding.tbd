@@ -1,0 +1,54 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Seeding.framework/Seeding
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SDBrainAssetType, _SDErrorForBetaManagerErrorType,
+                            _SDIsInternalInstall, _SDMachServiceName,
+                            _SDPlatformAll, _SDPlatformFromString, _SDPlatformNone,
+                            _SDPreferenceAppID, _SDPreferenceMemberEnrolled,
+                            _SDPreferenceOriginalBrain,
+                            _SDPreferenceOriginalUpdate,
+                            _SDPreferenceSeedProgram, _SDPreferenceServerURL,
+                            _SDSeedProfileIdentifier,
+                            _SDSeedProgramIsValidSeedProgram,
+                            _SDSeedProgramMetadataKeyAssetAudience,
+                            _SDSeedProgramMetadataKeyProgram,
+                            _SDSeedProgramStringCustomerSeed,
+                            _SDSeedProgramStringDeveloperSeed,
+                            _SDSeedProgramStringPublicSeed,
+                            _SDStringArrayFromPlatforms, _SDUpdateAssetType,
+                            _SeedingVersionNumber, _SeedingVersionString,
+                            _kSeedEnrollmentCookiePath ]
+    objc-classes:         [ SDAnalytics, SDBetaManager, SDBetaProgram, SDBuildInfo,
+                            SDCatalogUtilities, SDConstants, SDDaemon,
+                            SDDaemonClient, SDDaemonCommon, SDDevice, SDHTTPClient,
+                            SDKeyValueStore, SDLegalDoc, SDProfileUtilities,
+                            SDSeedProgramManager, SDSeedProgramMigrator,
+                            SDSeedingConfiguration, SDSeedingLogging ]
+    objc-ivars:           [ SDBetaManager._cachedPlatform,
+                            SDBetaManager._cachedPrograms,
+                            SDBetaManager._lastCached,
+                            SDBetaProgram._assetAudience,
+                            SDBetaProgram._assetBrain,
+                            SDBetaProgram._assetUpdate, SDBetaProgram._catalog,
+                            SDBetaProgram._legalDocs, SDBetaProgram._platform,
+                            SDBetaProgram._program, SDBetaProgram._programID,
+                            SDBetaProgram._title, SDDaemon._appConnections,
+                            SDDaemon._listener, SDDaemonClient._daemonConnection,
+                            SDDevice._build, SDDevice._currentConfiguration,
+                            SDDevice._deviceClass,
+                            SDDevice._expectedConfiguration,
+                            SDDevice._identifier, SDDevice._name,
+                            SDDevice._platform, SDDevice._updatedAt,
+                            SDHTTPClient._log, SDHTTPClient._urlSession,
+                            SDLegalDoc._content, SDLegalDoc._legal_id,
+                            SDLegalDoc._title,
+                            SDSeedingConfiguration._assetAudience,
+                            SDSeedingConfiguration._catalog,
+                            SDSeedingConfiguration._seedProgram ]
+...

@@ -1,0 +1,42 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ContextSync.framework/ContextSync
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ContextSyncErrorDomain, _kCurrentVersion,
+                            _kMessageDSL, _kMessageDSLIdentifiers, _kMessageDSLs,
+                            _kMessageType, _kMessageVersion, _kMessageVersionKey,
+                            _kNewContextType, _kNonWakingDevicesKey,
+                            _kSubscriptionType, _kVersionKey, _kWakeKey,
+                            _kWakingDevicesKey ]
+    objc-classes:         [ ContextSyncClient, ContextSyncService,
+                            _ContextSyncDeviceUtilities, _ContextSyncLogger,
+                            _ContextSyncOtherDeviceSubscriptions,
+                            _ContextSyncSubscriptions, _ContextSyncWakeState,
+                            _ContextSyncWakeSubscription, _DASBiomeStream ]
+    objc-ivars:           [ ContextSyncClient._clientName,
+                            ContextSyncClient._connection,
+                            ContextSyncClient._log,
+                            ContextSyncService._biomeQueue,
+                            ContextSyncService._deviceUUID,
+                            ContextSyncService._idsQueue,
+                            ContextSyncService._listener,
+                            ContextSyncService._localDSLIdentifiers,
+                            ContextSyncService._lockedUpdates,
+                            ContextSyncService._queue,
+                            ContextSyncService._rebootNotificationDelivered,
+                            ContextSyncService._remoteDSLIdentifiers,
+                            ContextSyncService._service,
+                            ContextSyncService._subscriptionDefaults,
+                            ContextSyncService._subscriptions,
+                            _ContextSyncOtherDeviceSubscriptions._deviceToDSLSubscriptions,
+                            _ContextSyncSubscriptions._deviceToDevicesSubscriptions,
+                            _ContextSyncSubscriptions._dictionaryRepresentation,
+                            _ContextSyncWakeState._lastChangedDate,
+                            _ContextSyncWakeState._wakeState,
+                            _ContextSyncWakeSubscription._DSLtoWakeSubscription ]
+...

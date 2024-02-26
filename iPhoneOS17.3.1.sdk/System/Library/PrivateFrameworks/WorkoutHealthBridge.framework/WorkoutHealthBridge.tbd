@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WorkoutHealthBridge.framework/WorkoutHealthBridge
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _WOColumnConfigurationTypeKey, _WOColumnGoalTypeKey,
+                            _WOPersistenceKeyData, _WOPersistenceKeyNumbers,
+                            _WOPersistenceKeyObjectModificationDate,
+                            _WOPersistenceKeyObjectState,
+                            _WOPersistenceKeyStrings, _WOPersistenceKeyType,
+                            _WOPersistenceKeyUUID, _WOPersistenceKeyVersion,
+                            _WOWorkoutServerInterface,
+                            _WorkoutHealthBridgeVersionNumber,
+                            _WorkoutHealthBridgeVersionString,
+                            _kNLWorkoutPluginIdentifier ]
+    objc-classes:         [ WOPersistence ]
+    objc-ivars:           [ WOPersistence._keyedNumbers,
+                            WOPersistence._keyedStrings,
+                            WOPersistence._objectModificationDate,
+                            WOPersistence._objectState,
+                            WOPersistence._persistedData, WOPersistence._type,
+                            WOPersistence._uuid, WOPersistence._version ]
+...

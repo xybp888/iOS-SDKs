@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppAttestInternal.framework/AppAttestInternal
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AppAttestErrorDomain,
+                            _AppAttestFunctionNameErrorKey,
+                            _AppAttestSourceFileLineErrorKey,
+                            _AppAttest_AppAttestation_Assert,
+                            _AppAttest_AppAttestation_AttestKey,
+                            _AppAttest_AppAttestation_CreateKey,
+                            _AppAttest_AppAttestation_IsEligibleApplication,
+                            _AppAttest_AppAttestation_IsSupported,
+                            _AppAttest_Common_AttestKey,
+                            _AppAttest_Common_AttestKeyRequest,
+                            _AppAttest_DeviceAttestation_AttestKey,
+                            _AppAttest_DeviceAttestation_IsSupported,
+                            _AppAttest_WebAuthentication_AttestKey,
+                            _AppAttest_WebAuthentication_IsSupported,
+                            _createAppAttestError ]
+    objc-classes:         [ AppAttestKeychainCleanupController, CBORArray,
+                            CBORData, CBORMap, CBORNegative, CBORString, CBORUnsigned,
+                            CBORValue, PinnedUrlDelegate ]
+    objc-ivars:           [ AppAttestKeychainCleanupController._workspace,
+                            CBORArray.m_data, CBORData.m_data, CBORMap.m_data,
+                            CBORNegative.m_data, CBORString.m_data,
+                            CBORUnsigned.m_data, PinnedUrlDelegate.m_host ]
+...

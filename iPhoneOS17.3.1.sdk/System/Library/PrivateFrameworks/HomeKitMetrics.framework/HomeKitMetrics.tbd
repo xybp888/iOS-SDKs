@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HomeKitMetrics.framework/HomeKitMetrics
+current-version:       946.3.9
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _HMMSafeHomeUUIDFromLogEvent ]
+    objc-classes:         [ HMMClosedClosedInterval, HMMClosedOpenInterval,
+                            HMMHomeLogEvent, HMMInterval, HMMIntervalMapper,
+                            HMMLogEvent, HMMOpenClosedInterval,
+                            HMMOpenOpenInterval, UnsignedFixedIntervalMapper ]
+    objc-ivars:           [ HMMHomeLogEvent._homeUUID, HMMInterval._end,
+                            HMMInterval._start, HMMLogEvent._endDate,
+                            HMMLogEvent._endTimeMilliseconds, HMMLogEvent._error,
+                            HMMLogEvent._lock, HMMLogEvent._startDate,
+                            HMMLogEvent._startTimeMilliseconds,
+                            HMMLogEvent._submitted,
+                            UnsignedFixedIntervalMapper._comparisonBlock,
+                            UnsignedFixedIntervalMapper._creationBlock,
+                            UnsignedFixedIntervalMapper._intervals ]
+...

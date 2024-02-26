@@ -1,0 +1,56 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/TextToSpeechKonaSupport.framework/TextToSpeechKonaSupport
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _TextToSpeechKonaSupportVersionNumber,
+                            _TextToSpeechKonaSupportVersionString ]
+    objc-classes:         [ AXKonaBuffer, AXKonaConfiguration, AXKonaMarker,
+                            AXKonaParameters, AXKonaSpeechEngine,
+                            AXKonaSpeechSegment, AXKonaVoice ]
+    objc-ivars:           [ AXKonaBuffer._buffer, AXKonaBuffer._markers,
+                            AXKonaConfiguration._dialectCode,
+                            AXKonaConfiguration._dylib,
+                            AXKonaConfiguration._eciDialect,
+                            AXKonaMarker._framePosition,
+                            AXKonaMarker._originalStringRange,
+                            AXKonaMarker._text, AXKonaParameters._breathiness,
+                            AXKonaParameters._headSize,
+                            AXKonaParameters._pitchBase,
+                            AXKonaParameters._pitchFluctuation,
+                            AXKonaParameters._roughness, AXKonaParameters._speed,
+                            AXKonaParameters._vocalTract,
+                            AXKonaParameters._volume,
+                            AXKonaSpeechEngine._bufferConverter,
+                            AXKonaSpeechEngine._bufferLock,
+                            AXKonaSpeechEngine._commandRegex,
+                            AXKonaSpeechEngine._configurationMap,
+                            AXKonaSpeechEngine._consumedBuffers,
+                            AXKonaSpeechEngine._currentDictionary,
+                            AXKonaSpeechEngine._currentFrameCount,
+                            AXKonaSpeechEngine._currentMarker,
+                            AXKonaSpeechEngine._currentParameters,
+                            AXKonaSpeechEngine._currentSpeechSegments,
+                            AXKonaSpeechEngine._currentVoice,
+                            AXKonaSpeechEngine._engineFormat,
+                            AXKonaSpeechEngine._lastSampVal,
+                            AXKonaSpeechEngine._outputFormat,
+                            AXKonaSpeechEngine._pSampleBuffer,
+                            AXKonaSpeechEngine._producedBuffers,
+                            AXKonaSpeechEngine._queuedBuffers,
+                            AXKonaSpeechEngine._synthState,
+                            AXKonaSpeechEngine._synthesizerSyncQueue,
+                            AXKonaSpeechEngine._tokenizer,
+                            AXKonaSpeechEngine._wrappedInstance,
+                            AXKonaSpeechSegment._latin1String,
+                            AXKonaSpeechSegment._marker,
+                            AXKonaSpeechSegment._range,
+                            AXKonaSpeechSegment._text,
+                            AXKonaVoice._eciVoiceNumber,
+                            AXKonaVoice._konaLanguage, AXKonaVoice._languageCode,
+                            AXKonaVoice._name, AXKonaVoice._parameters ]
+...

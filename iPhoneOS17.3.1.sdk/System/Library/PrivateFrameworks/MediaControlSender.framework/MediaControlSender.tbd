@@ -1,0 +1,62 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MediaControlSender.framework/MediaControlSender
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AirPlayControlNowPlaying,
+                            _AirPlayCreateModesDictionary, _AirPlayGetEventQueue,
+                            _AirPlayGlobalRoute_CopyDestination,
+                            _AirPlayGlobalRoute_CopyInfo,
+                            _AirPlayGlobalRoute_CopyPassword,
+                            _AirPlayGlobalRoute_SetDestination,
+                            _AirPlayGlobalRoute_SetInfo,
+                            _AirPlayGlobalRoute_SetPassword, _AirPlaySetProperty,
+                            _MediaControlClient_Cancel,
+                            _MediaControlClient_CopyPlaybackInfo,
+                            _MediaControlClient_CopyProperty,
+                            _MediaControlClient_Create,
+                            _MediaControlClient_DoAction,
+                            _MediaControlClient_DoAuthorize,
+                            _MediaControlClient_DoInsertPlaylistItem,
+                            _MediaControlClient_DoPlayLocal,
+                            _MediaControlClient_DoPlayRemote,
+                            _MediaControlClient_DoRate,
+                            _MediaControlClient_DoRemovePlaylistItem,
+                            _MediaControlClient_DoScrubGet,
+                            _MediaControlClient_DoScrubSet,
+                            _MediaControlClient_DoStop,
+                            _MediaControlClient_EnsureConnected,
+                            _MediaControlClient_EnsureDisconnected,
+                            _MediaControlClient_Invalidate,
+                            _MediaControlClient_IsConnected,
+                            _MediaControlClient_IsConnectedOnP2PInterface,
+                            _MediaControlClient_SetConnectionInterfaceManager,
+                            _MediaControlClient_SetDispatchQueue,
+                            _MediaControlClient_SetEventHandler,
+                            _MediaControlClient_SetHost,
+                            _MediaControlClient_SetInfo,
+                            _MediaControlClient_SetPassword,
+                            _MediaControlClient_SetProperty,
+                            _MediaControlPlayParamsToStreamType,
+                            _MediaControlSenderLogControl,
+                            _MediaControlSenderLogControlCF,
+                            _MediaControlSenderLogShow ]
+    objc-classes:         [ AirPlayController, AirPlayRemoteSlideshow,
+                            MediaControlClient ]
+    objc-ivars:           [ AirPlayController._cnx, AirPlayController._queue,
+                            AirPlayController._xpcName,
+                            AirPlayRemoteSlideshow._client,
+                            AirPlayRemoteSlideshow._delegate,
+                            AirPlayRemoteSlideshow._internalQueue,
+                            AirPlayRemoteSlideshow._startTime,
+                            AirPlayRemoteSlideshow._started,
+                            AirPlayRemoteSlideshow._userQueue,
+                            MediaControlClient._client,
+                            MediaControlClient._eventHandlerBlock,
+                            MediaControlClient._eventHandlerQueue,
+                            MediaControlClient._queue ]
+...

@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PerformanceTrace.framework/PerformanceTrace
+current-version:       139.3
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PerformanceTraceVersionNumber,
+                            _PerformanceTraceVersionString,
+                            _traceConfigTemplateForString, _traceGroupForString,
+                            _traceTypeForString ]
+    objc-classes:         [ PTTraceConfig, PTTraceSession ]
+    objc-ivars:           [ PTTraceConfig._callstackSamplingRateMS,
+                            PTTraceConfig._compressWhenFinished,
+                            PTTraceConfig._connection,
+                            PTTraceConfig._includeKernelStacks,
+                            PTTraceConfig._includeOSLogs,
+                            PTTraceConfig._includeOSSignposts,
+                            PTTraceConfig._kernelBufferDrainQoS,
+                            PTTraceConfig._kernelBufferDrainRateMS,
+                            PTTraceConfig._kernelBufferSizeMB,
+                            PTTraceConfig._ownerName, PTTraceConfig._ownerPID,
+                            PTTraceConfig._skipNotification,
+                            PTTraceConfig._source, PTTraceConfig._symbolicate,
+                            PTTraceConfig._traceDirectoryURL,
+                            PTTraceConfig._traceDurationSecs,
+                            PTTraceConfig._traceGroups, PTTraceConfig._traceName,
+                            PTTraceConfig._traceTimeoutS,
+                            PTTraceConfig._traceType,
+                            PTTraceConfig._useTraceRecord,
+                            PTTraceSession._config, PTTraceSession._connection,
+                            PTTraceSession._delegate, PTTraceSession._isValid ]
+...

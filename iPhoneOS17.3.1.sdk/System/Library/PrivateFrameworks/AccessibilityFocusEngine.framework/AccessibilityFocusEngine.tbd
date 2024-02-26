@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AccessibilityFocusEngine.framework/AccessibilityFocusEngine
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AccessibilityFocusEngineVersionNumber,
+                            _AccessibilityFocusEngineVersionString ]
+    objc-classes:         [ AXFocusManager ]
+    objc-ivars:           [ AXFocusManager._movementQueue,
+                            AXFocusManager._observers,
+                            AXFocusManager._observersLock,
+                            AXFocusManager._observersQueue,
+                            AXFocusManager._sceneForSuccessfulTypeaheadMovement,
+                            AXFocusManager._typeaheadString ]
+...

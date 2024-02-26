@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/DriverKit/usr/lib/system/libsystem_blocks.dylib
+current-version:       84
+compatibility-version: 1
+parent-umbrella:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    umbrella:               System
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _Block_size, __Block_copy, __Block_extended_layout,
+                            __Block_has_signature, __Block_isDeallocating,
+                            __Block_layout, __Block_object_assign,
+                            __Block_object_dispose, __Block_release,
+                            __Block_signature, __Block_tryRetain, __Block_use_RR2,
+                            __Block_use_stret, __NSConcreteAutoBlock,
+                            __NSConcreteFinalizingBlock, __NSConcreteGlobalBlock,
+                            __NSConcreteMallocBlock, __NSConcreteStackBlock,
+                            __NSConcreteWeakBlockVariable,
+                            _system_blocksVersionNumber,
+                            _system_blocksVersionString ]
+...

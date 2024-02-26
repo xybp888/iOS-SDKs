@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/iOSDiagnostics.framework/iOSDiagnostics
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ DADiagnosticResponder,
+                            DADiagnosticsRemoteHostViewController,
+                            DADiagnosticsRemoteRunner,
+                            DADiagnosticsRemoteViewController ]
+    objc-ivars:           [ DADiagnosticsRemoteHostViewController._delegate,
+                            DADiagnosticsRemoteHostViewController._originalScreenBrightness,
+                            DADiagnosticsRemoteHostViewController._responder,
+                            DADiagnosticsRemoteRunner._delegate,
+                            DADiagnosticsRemoteRunner._remoteRunnerServer,
+                            DADiagnosticsRemoteRunner._xpcConnection,
+                            DADiagnosticsRemoteViewController._delegate,
+                            DADiagnosticsRemoteViewController._originalScreenBrightness,
+                            DADiagnosticsRemoteViewController._responder ]
+...

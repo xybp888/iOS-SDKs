@@ -1,0 +1,73 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/DriverKit/usr/lib/system/libdyld.dylib
+current-version:       1
+compatibility-version: 1
+parent-umbrella:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    umbrella:               System
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _NSVersionOfLinkTimeLibrary,
+                            _NSVersionOfRunTimeLibrary, _NXArgc, _NXArgv,
+                            __NSGetExecutablePath, ___progname,
+                            __dyld_atfork_parent, __dyld_atfork_prepare,
+                            __dyld_dlopen_atfork_child,
+                            __dyld_dlopen_atfork_parent,
+                            __dyld_dlopen_atfork_prepare,
+                            __dyld_find_foreign_type_protocol_conformance,
+                            __dyld_find_foreign_type_protocol_conformance_on_disk,
+                            __dyld_find_protocol_conformance,
+                            __dyld_find_protocol_conformance_on_disk,
+                            __dyld_find_unwind_sections,
+                            __dyld_for_each_objc_class,
+                            __dyld_for_each_objc_protocol, __dyld_fork_child,
+                            __dyld_get_dlopen_image_header,
+                            __dyld_get_image_header, __dyld_get_image_name,
+                            __dyld_get_image_slide, __dyld_get_image_uuid,
+                            __dyld_get_image_vmaddr_slide,
+                            __dyld_get_objc_selector,
+                            __dyld_get_prog_image_header,
+                            __dyld_get_shared_cache_range,
+                            __dyld_get_shared_cache_uuid,
+                            __dyld_has_fix_for_radar,
+                            __dyld_has_preoptimized_swift_protocol_conformances,
+                            __dyld_image_count, __dyld_images_for_addresses,
+                            __dyld_initializer, __dyld_is_memory_immutable,
+                            __dyld_is_objc_constant, __dyld_launch_mode,
+                            __dyld_missing_symbol_abort, __dyld_objc_class_count,
+                            __dyld_objc_notify_register,
+                            __dyld_objc_register_callbacks,
+                            __dyld_objc_uses_large_shared_cache,
+                            __dyld_register_driverkit_main,
+                            __dyld_register_for_bulk_image_loads,
+                            __dyld_register_for_image_loads,
+                            __dyld_register_func_for_add_image,
+                            __dyld_register_func_for_remove_image,
+                            __dyld_shared_cache_is_locally_built,
+                            __dyld_shared_cache_optimized,
+                            __dyld_shared_cache_real_path,
+                            __dyld_swift_optimizations_version,
+                            __dyld_visit_objc_classes, __tlv_atexit, __tlv_exit,
+                            _dladdr, _dlsym, _dyldVersionNumber, _dyldVersionString,
+                            _dyld_dynamic_interpose, _dyld_get_active_platform,
+                            _dyld_get_base_platform, _dyld_get_image_versions,
+                            _dyld_get_min_os_version,
+                            _dyld_get_program_min_os_version,
+                            _dyld_get_program_sdk_version, _dyld_get_sdk_version,
+                            _dyld_has_inserted_or_interposing_libraries,
+                            _dyld_image_header_containing_address,
+                            _dyld_image_path_containing_address,
+                            _dyld_is_simulator_platform, _dyld_minos_at_least,
+                            _dyld_need_closure, _dyld_process_has_objc_patches,
+                            _dyld_process_is_restricted,
+                            _dyld_program_minos_at_least,
+                            _dyld_program_sdk_at_least, _dyld_sdk_at_least,
+                            _dyld_shared_cache_file_path,
+                            _dyld_shared_cache_find_iterate_text,
+                            _dyld_shared_cache_iterate_text,
+                            _dyld_shared_cache_some_image_overridden, _environ,
+                            dyld_stub_binder ]
+...

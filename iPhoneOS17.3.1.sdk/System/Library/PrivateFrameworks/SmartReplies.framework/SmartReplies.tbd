@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SmartReplies.framework/SmartReplies
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SmartRepliesVersionNumber,
+                            _SmartRepliesVersionString ]
+    objc-classes:         [ SROSmartRepliesChatInfo, SROSmartRepliesManager,
+                            SROSmartRepliesSuggestion,
+                            _TtC12SmartReplies21SRSmartRepliesManager,
+                            _TtC12SmartReplies22SRSmartRepliesChatInfo,
+                            _TtC12SmartReplies24SRSmartRepliesSuggestion ]
+    objc-ivars:           [ SROSmartRepliesChatInfo._info,
+                            SROSmartRepliesManager._backingManager,
+                            SROSmartRepliesSuggestion._underlyingSuggestion ]
+...

@@ -1,0 +1,55 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FeatureStore.framework/FeatureStore
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _FSFCurareInteractionStreamErrorDomain,
+                            _FSFCurareInteractionStreamErrorDomainInvalidInput,
+                            _FSFSwitchToMobile, _FeatureStoreVersionNumber,
+                            _FeatureStoreVersionString, _maxStreamAgeInSec ]
+    objc-classes:         [ FSFBMStringData, FSFBiomeFeatureStore,
+                            FSFBiomeFeatureStoreStream, FSFCallKitUtil,
+                            FSFCurareEvaluationFeature,
+                            FSFCurareInteractionAsDict,
+                            FSFCurareInteractionAsJsonStr,
+                            FSFCurareInteractionAsProto,
+                            FSFCurareInteractionStream, FSFDeviceInfo,
+                            FSFErrorHandler, FSFNLUFeature, FSFNluRequestFeature,
+                            FSFNluResponseFeature, FSFNluUserParseFeature,
+                            FSFSchema, FSFSiriPreferenceUtil, FSFStreamRegistry,
+                            FSFUtils, _CurareInternalBiomeFeature ]
+    objc-ivars:           [ FSFBMStringData._content,
+                            FSFBMStringData._dataVersion,
+                            FSFBiomeFeatureStore._config,
+                            FSFBiomeFeatureStoreStream._pruneStore,
+                            FSFBiomeFeatureStoreStream._readStore,
+                            FSFBiomeFeatureStoreStream._writeStore,
+                            FSFCallKitUtil._callCenter,
+                            FSFCurareEvaluationFeature._content,
+                            FSFCurareEvaluationFeature._dataVersion,
+                            FSFCurareInteractionAsDict._content,
+                            FSFCurareInteractionAsDict._dataVersion,
+                            FSFCurareInteractionAsDict._interactionId,
+                            FSFCurareInteractionAsJsonStr._content,
+                            FSFCurareInteractionAsJsonStr._dataVersion,
+                            FSFCurareInteractionAsJsonStr._interactionId,
+                            FSFCurareInteractionAsProto._content,
+                            FSFCurareInteractionAsProto._dataVersion,
+                            FSFCurareInteractionAsProto._interactionId,
+                            FSFCurareInteractionAsProto._jsonStr,
+                            FSFCurareInteractionStream._biomeStream,
+                            FSFNLUFeature._content, FSFNLUFeature._dataVersion,
+                            FSFNluRequestFeature._content,
+                            FSFNluRequestFeature._dataVersion,
+                            FSFNluResponseFeature._content,
+                            FSFNluResponseFeature._dataVersion,
+                            FSFNluUserParseFeature._content,
+                            FSFNluUserParseFeature._dataVersion,
+                            FSFSchema._schemaData,
+                            _CurareInternalBiomeFeature._content,
+                            _CurareInternalBiomeFeature.dataVersion ]
+...

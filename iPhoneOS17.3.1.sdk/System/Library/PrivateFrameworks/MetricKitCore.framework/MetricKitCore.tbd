@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MetricKitCore.framework/MetricKitCore
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _MetricKitCoreVersionNumber,
+                            _MetricKitCoreVersionString ]
+    objc-classes:         [ MXCore, MXCorePayloadConstructor, MXSource ]
+    objc-ivars:           [ MXCore._MXCoreLogHandle,
+                            MXCore._MXCoreXcodeSupportLogHandle,
+                            MXCore._clientDictionary, MXCore._clientTeamIDs,
+                            MXCore._currentDataActivityDate, MXCore._iVarQueue,
+                            MXCore._requestQueue, MXCore._services, MXCore._source,
+                            MXCore._xpcListener, MXSource._MXSourceLogHandle,
+                            MXSource._fileManager, MXSource._iVarQueue,
+                            MXSource._requestQueue, MXSource._services,
+                            MXSource._xpcListener ]
+...

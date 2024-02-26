@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SFSymbols.framework/SFSymbols
+current-version:       99.2
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SFSymbolsVersionNumber, _SFSymbolsVersionString,
+                            _kCoreGlyphsNameAliases,
+                            _kCoreGlyphsNameToBundleType,
+                            _kCoreGlyphsNoFillToFill,
+                            _kCoreGlyphsPrivateNameAliases,
+                            _kCoreGlyphsPrivateNoFillToFill,
+                            _kCoreGlyphsPrivateSymbolOrder,
+                            _kCoreGlyphsSymbolOrder ]
+    objc-classes:         [ SFSCoreGlyphsBundle, SFSSymbolAssetInfo ]
+    objc-ivars:           [ SFSSymbolAssetInfo.bundle,
+                            SFSSymbolAssetInfo.bundleType,
+                            SFSSymbolAssetInfo.name ]
+...

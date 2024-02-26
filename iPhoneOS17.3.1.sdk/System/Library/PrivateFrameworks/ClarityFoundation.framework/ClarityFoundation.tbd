@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ClarityFoundation.framework/ClarityFoundation
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CLFCameraSettingsBundleName,
+                            _CLFCommunicationLimitContacts,
+                            _CLFCommunicationLimitEveryone, _CLFListLayoutGrid,
+                            _CLFListLayoutStack, _CLFMessagesSettingsBundleName,
+                            _CLFMusicSettingsBundleName,
+                            _CLFPhoneSettingsBundleName,
+                            _CLFPhotosSettingsBundleName,
+                            _CLFSupportsClarityUIKey,
+                            _ClarityFoundationVersionNumber,
+                            _ClarityFoundationVersionString ]
+    objc-classes:         [ CLFBaseSettings, CLFCameraSettings, CLFLog,
+                            CLFMessagesSettings, CLFMusicSettings,
+                            CLFPhoneFaceTimeSettings, CLFSettings,
+                            CLFSystemShellSwitcher, _CLFSettingsObserver ]
+    objc-ivars:           [ CLFBaseSettings._preferenceKeysBySelectorName,
+                            CLFSystemShellSwitcher._clarityBoardEnabled,
+                            _CLFSettingsObserver._settings,
+                            _CLFSettingsObserver._settingsSelector ]
+...

@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NewsDaemon.framework/NewsDaemon
+current-version:       3257.2
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _NDAnalyticsMachServiceName,
+                            _NDDownloadMachServiceName,
+                            _NDDownloadServiceHasUnfinishedWorkKey,
+                            _NDDownloadServiceXPCConnection,
+                            _NDDownloadServiceXPCInterface,
+                            _NDNewsdDataContainerClass,
+                            _NDNewsdDataContainerIdentifier, _NDNewsdProcessName,
+                            _NDSharedClientLog, _NDSharedServiceLog,
+                            _NDTodayMachServiceName,
+                            _NDURLResolutionMachServiceName,
+                            _NewsDaemonVersionNumber, _NewsDaemonVersionString ]
+    objc-classes:         [ NDANFParsingService, NDDownloadRequest,
+                            NDNewsDaemonContext, NDNewsServiceConnection,
+                            NDNewsServiceConnectionClientProxy ]
+    objc-ivars:           [ NDDownloadRequest._contentID,
+                            NDDownloadRequest._contentType,
+                            NDDownloadRequest._options,
+                            NDNewsDaemonContext._daemon,
+                            NDNewsDaemonContext._updateResultsHandler,
+                            NDNewsServiceConnection._accessQueue,
+                            NDNewsServiceConnection._client,
+                            NDNewsServiceConnection._connection,
+                            NDNewsServiceConnection._daemon,
+                            NDNewsServiceConnectionClientProxy._client ]
+...

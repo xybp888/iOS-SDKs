@@ -1,0 +1,19 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.11 clang-1500.1.0.2.2)
+// swift-module-flags: -target arm64-apple-ios17.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name _QuickLook_SwiftUI
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 946.3.2
+@_exported import QuickLook
+import Swift
+import SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 14.0, macOS 11.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUI.View {
+  public func quickLookPreview<Items>(_ selection: SwiftUI.Binding<Items.Element?>, in items: Items) -> some SwiftUI.View where Items : Swift.RandomAccessCollection, Items.Element == Foundation.URL
+  
+  public func quickLookPreview(_ item: SwiftUI.Binding<Foundation.URL?>) -> some SwiftUI.View
+  
+}

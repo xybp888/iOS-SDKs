@@ -1,0 +1,116 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.11 clang-1500.1.0.2.2)
+// swift-module-flags: -target arm64-apple-ios17.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name ExtensionFoundation
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 141.1.1
+@_exported import ExtensionFoundation
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+public protocol AppExtension {
+  associatedtype Configuration : ExtensionFoundation.AppExtensionConfiguration
+  var configuration: Self.Configuration { get }
+  init()
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+extension ExtensionFoundation.AppExtension {
+  public static func main() throws
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+public protocol AppExtensionConfiguration {
+  func accept(connection: Foundation.NSXPCConnection) -> Swift.Bool
+}
+@available(macOS 13.0, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension ExtensionFoundation.AppExtensionIdentity {
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public static func matching(appExtensionPointIDs: Swift.String...) throws -> ExtensionFoundation.AppExtensionIdentity.Identities
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public struct Identities : _Concurrency.AsyncSequence {
+    public typealias Element = [ExtensionFoundation.AppExtensionIdentity]
+    public struct AsyncIterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public mutating func next() async -> [ExtensionFoundation.AppExtensionIdentity]?
+      #endif
+      public typealias Element = [ExtensionFoundation.AppExtensionIdentity]
+    }
+    public func makeAsyncIterator() -> ExtensionFoundation.AppExtensionIdentity.Identities.AsyncIterator
+  }
+  #endif
+}
+@available(macOS 13.0, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension ExtensionFoundation.AppExtensionIdentity {
+  public struct Availability : Swift.CustomStringConvertible, Swift.Sendable {
+    public init()
+    public let enabledCount: Swift.Int
+    public let disabledCount: Swift.Int
+    public let unapprovedCount: Swift.Int
+    public var totalCount: Swift.Int {
+      get
+    }
+    public var description: Swift.String {
+      get
+    }
+  }
+  public static var availabilityUpdates: _Concurrency.AsyncStream<ExtensionFoundation.AppExtensionIdentity.Availability> {
+    get
+  }
+}
+@available(macOS 13.0, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct AppExtensionIdentity : Swift.Hashable, Swift.Sendable {
+  public var extensionPointIdentifier: Swift.String {
+    get
+  }
+  public var bundleIdentifier: Swift.String {
+    get
+  }
+  public var localizedName: Swift.String {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (lhs: ExtensionFoundation.AppExtensionIdentity, rhs: ExtensionFoundation.AppExtensionIdentity) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(macOS 13.0, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct AppExtensionProcess {
+  #if compiler(>=5.3) && $AsyncAwait
+  public init(configuration: ExtensionFoundation.AppExtensionProcess.Configuration) async throws
+  #endif
+  public init(configuration: ExtensionFoundation.AppExtensionProcess.Configuration) throws
+  public func makeXPCConnection() throws -> Foundation.NSXPCConnection
+  public func invalidate()
+}
+@available(macOS 13.0, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension ExtensionFoundation.AppExtensionProcess {
+  public struct Configuration {
+    public var appExtensionIdentity: ExtensionFoundation.AppExtensionIdentity
+    public var onInterruption: () -> Swift.Void
+    public init(appExtensionIdentity: ExtensionFoundation.AppExtensionIdentity, onInterruption: @escaping () -> Swift.Void = {})
+  }
+}

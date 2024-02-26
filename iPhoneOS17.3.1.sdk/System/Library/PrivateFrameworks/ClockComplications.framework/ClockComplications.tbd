@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ClockComplications.framework/ClockComplications
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ClockComplicationsVersionNumber,
+                            _ClockComplicationsVersionString ]
+    objc-classes:         [ CLKCBundleComplication, CLKCComplication,
+                            CLKCComplicationBundleDataSource,
+                            CLKCComplicationBundleDataSourceContainer,
+                            CLKCComplicationDataSource ]
+    objc-ivars:           [ CLKCBundleComplication._appBundleIdentifier,
+                            CLKCBundleComplication._bundleIdentifier,
+                            CLKCBundleComplication._complicationDescriptor,
+                            CLKCComplicationDataSource._complication,
+                            CLKCComplicationDataSource._delegate,
+                            CLKCComplicationDataSource._device,
+                            CLKCComplicationDataSource._family ]
+...

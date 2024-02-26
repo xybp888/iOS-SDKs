@@ -1,0 +1,64 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BiomeFoundation.framework/BiomeFoundation
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _BMAbsoluteTimeFromCFAbsoluteTime,
+                            _BMAbsoluteTimeFromContinuousTime,
+                            _BMAbsoluteTimeGetCurrent, _BMAbsoluteTimeGetOffsets,
+                            _BMAbsoluteTimeInitWithSyntheticStart,
+                            _BMAbsoluteTimeSetSyntheticStartFromRemoteTime,
+                            _BMAbsoluteTimeToCFAbsoluteTime,
+                            _BMAccessModePrintableDescription,
+                            _BMAppleInternalReadEntitlement,
+                            _BMAppleInternalReadWriteEntitlement,
+                            _BMArbitraryTimestampToCFAbsoluteTime,
+                            _BMClientIdentifierEntitlement,
+                            _BMDevicePlatformFromModelString,
+                            _BMDevicePlatformGetDescription,
+                            _BMMachServiceNameLegacyAccessService,
+                            _BMMachServiceNameSystemAccessService,
+                            _BMMachServiceNameUserAccessService,
+                            _BMReadEntitlement, _BMReadWriteEntitlement,
+                            _BMSandboxReadOperation, _BMSandboxWriteOperation,
+                            _BMServiceDomainForStream,
+                            _BMStreamIdentifierIsPathSafe, _BMValidatePath,
+                            _BMValidatedPathKeyClientIdentifier,
+                            _BMValidatedPathKeyDevice,
+                            _BMValidatedPathKeyDeviceType,
+                            _BMValidatedPathKeyLock, _BMValidatedPathKeyMetadata,
+                            _BMValidatedPathKeyPath, _BMValidatedPathKeyPathType,
+                            _BMValidatedPathKeyPersistent,
+                            _BMValidatedPathKeySegment,
+                            _BMValidatedPathKeySessionIdentifier,
+                            _BMValidatedPathKeySessions,
+                            _BMValidatedPathKeyStream,
+                            _BMValidatedPathKeyStreamType,
+                            _BMValidatedPathKeySubscriptionIdentifier,
+                            _BMValidatedPathKeyTombstone,
+                            _BMValidatedPathTypeCompute,
+                            _BMValidatedPathTypeStreams,
+                            _BiomeFoundationVersionNumber,
+                            _BiomeFoundationVersionString, ___biome_log_create,
+                            ___biome_log_create_for_category ]
+    objc-classes:         [ BMAccessControlPolicy, BMCoreAnalyticsEvents,
+                            BMDeviceMetadataUtils, BMPaths, BMProcess,
+                            BMProcessCurrent, BMPublicStreamUtilities,
+                            BMStoreDirectory ]
+    objc-ivars:           [ BMAccessControlPolicy._process,
+                            BMProcess._auditToken, BMProcess._entitlementCache,
+                            BMProcess._entitlementCacheLock,
+                            BMProcess._executablePath, BMProcess._identifier,
+                            BMProcess._machLookupCache,
+                            BMProcess._machLookupCacheLock, BMProcess._pid,
+                            BMProcess._processType,
+                            BMProcess._reliesOnCoreDuetAccess,
+                            BMProcess._reliesOnCoreDuetAccessLock,
+                            BMProcess._uid,
+                            BMProcessCurrent._reliesOnLegacyDirectAccess,
+                            BMProcessCurrent._reliesOnLegacyDirectAccessLock ]
+...

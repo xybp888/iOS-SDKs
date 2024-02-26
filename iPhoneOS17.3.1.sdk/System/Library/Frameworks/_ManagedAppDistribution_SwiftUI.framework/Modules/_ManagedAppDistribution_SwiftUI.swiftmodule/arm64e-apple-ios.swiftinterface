@@ -1,0 +1,100 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.11 clang-1500.1.0.2.2)
+// swift-module-flags: -target arm64e-apple-ios17.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name _ManagedAppDistribution_SwiftUI
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1.2.22
+import Combine
+import ExtensionKit
+import Foundation
+@_exported import ManagedAppDistribution
+import Swift
+import SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 17.2, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension ManagedAppDistribution.ManagedAppLibrary : @unchecked Swift.Sendable {
+}
+@available(iOS 17.2, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct ManagedContentStyle {
+  public static var automatic: _ManagedAppDistribution_SwiftUI.ManagedContentStyle {
+    get
+  }
+  public static var compact: _ManagedAppDistribution_SwiftUI.ManagedContentStyle {
+    get
+  }
+  public static var header: _ManagedAppDistribution_SwiftUI.ManagedContentStyle {
+    get
+  }
+}
+@available(iOS 17.2, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct ManagedContentOfferState : Swift.Hashable {
+  public static var neverInstalled: _ManagedAppDistribution_SwiftUI.ManagedContentOfferState {
+    get
+  }
+  public static var notInstalled: _ManagedAppDistribution_SwiftUI.ManagedContentOfferState {
+    get
+  }
+  public static var installed: _ManagedAppDistribution_SwiftUI.ManagedContentOfferState {
+    get
+  }
+  public static var noninteractive: _ManagedAppDistribution_SwiftUI.ManagedContentOfferState {
+    get
+  }
+  public static func installing(progress: Swift.Double?) -> _ManagedAppDistribution_SwiftUI.ManagedContentOfferState
+  public static func custom(title: Swift.String) -> _ManagedAppDistribution_SwiftUI.ManagedContentOfferState
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: _ManagedAppDistribution_SwiftUI.ManagedContentOfferState, b: _ManagedAppDistribution_SwiftUI.ManagedContentOfferState) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 17.2, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct ManagedAppView : SwiftUI.View {
+  public init(app: ManagedAppDistribution.ManagedApp)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s31_ManagedAppDistribution_SwiftUI0aB4ViewV4bodyQrvp", 0) __
+}
+@available(iOS 17.2, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct ManagedContentView<Icon> : SwiftUI.View where Icon : SwiftUI.View {
+  public init(primaryLabel: SwiftUI.LocalizedStringKey, secondaryLabel: SwiftUI.LocalizedStringKey = "", tertiaryLabel: SwiftUI.LocalizedStringKey = "", quaternaryLabel: SwiftUI.LocalizedStringKey = "", offerState: _ManagedAppDistribution_SwiftUI.ManagedContentOfferState, offerAction: @escaping (_ManagedAppDistribution_SwiftUI.ManagedContentOfferState) -> Swift.Void, @SwiftUI.ViewBuilder icon: () -> Icon)
+  @_disfavoredOverload public init(primaryLabel: any Swift.StringProtocol, secondaryLabel: any Swift.StringProtocol = "", tertiaryLabel: any Swift.StringProtocol = "", quaternaryLabel: any Swift.StringProtocol = "", offerState: _ManagedAppDistribution_SwiftUI.ManagedContentOfferState, offerAction: @escaping (_ManagedAppDistribution_SwiftUI.ManagedContentOfferState) -> Swift.Void, @SwiftUI.ViewBuilder icon: () -> Icon)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s31_ManagedAppDistribution_SwiftUI0A11ContentViewV4bodyQrvp", 0) __<Icon>
+}
+@available(iOS 17.2, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SwiftUI.View {
+  public func managedContentStyle(_ style: _ManagedAppDistribution_SwiftUI.ManagedContentStyle) -> some SwiftUI.View
+  
+}

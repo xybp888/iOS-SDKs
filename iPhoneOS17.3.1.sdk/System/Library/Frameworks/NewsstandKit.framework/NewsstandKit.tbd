@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/NewsstandKit.framework/NewsstandKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _NKIssueDownloadCompletedNotification ]
+    objc-classes:         [ NKAssetDownload, NKIssue, NKLibrary ]
+    objc-ivars:           [ NKAssetDownload._attemptedConnection,
+                            NKAssetDownload._connection,
+                            NKAssetDownload._identifier,
+                            NKAssetDownload._isDecodingValid,
+                            NKAssetDownload._issue, NKAssetDownload._request,
+                            NKAssetDownload._userInfoData, NKIssue._assets,
+                            NKIssue._assetsByRequest, NKIssue._date,
+                            NKIssue._directory, NKIssue._foundContent,
+                            NKIssue._isDecodingValid, NKIssue._library,
+                            NKIssue._name, NKIssue._resolvedAssets,
+                            NKLibrary._appSupportURL,
+                            NKLibrary._assetsFromLaunch, NKLibrary._contentURL,
+                            NKLibrary._currentlyReadingIssue,
+                            NKLibrary._fileManager, NKLibrary._inited,
+                            NKLibrary._issues, NKLibrary._issuesByDirectory,
+                            NKLibrary._issuesByName, NKLibrary._libraryURL,
+                            NKLibrary._needsSaving, NKLibrary._savePending ]
+...

@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/ModuleBase.framework/ModuleBase'
+current-version: 1394.62.1
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _ModuleBaseVersionNumber, _ModuleBaseVersionString ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _AuthenticationPriorityForPolicy ]
+    objc-classes:    [ AuthenticationInProgress, AuthenticationManager, ContextPlugin, 
+                       MechanismManager, Module, RemoteContext ]
+...

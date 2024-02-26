@@ -1,0 +1,22 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.11 clang-1500.1.0.2.2)
+// swift-module-flags: -target arm64-apple-ios17.2 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftFileProvider -swift-version 5 -enforce-exclusivity=checked -O -library-level other -module-name FileProvider
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1703.62.4
+@_exported import FileProvider
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 11.3, iOS 16.0, *)
+@available(macCatalyst, unavailable)
+extension FileProvider.NSFileProviderDomainVersion : Swift.Comparable {
+  public static func < (lhs: FileProvider.NSFileProviderDomainVersion, rhs: FileProvider.NSFileProviderDomainVersion) -> Swift.Bool
+}
+@available(macOS 13.0, iOS 16.0, *)
+@available(macCatalyst, unavailable)
+extension FileProvider.NSFileProviderManager {
+  public func requestDownloadForItem(withIdentifier itemIdentifier: FileProvider.NSFileProviderItemIdentifier, requestedRange: Foundation.NSRange? = nil, completionHandler: @escaping ((any Swift.Error)?) -> Swift.Void)
+  #if compiler(>=5.3) && $AsyncAwait
+  public func requestDownloadForItem(withIdentifier itemIdentifier: FileProvider.NSFileProviderItemIdentifier, requestedRange: Foundation.NSRange? = nil) async throws
+  #endif
+}

@@ -1,0 +1,63 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CPMS.framework/CPMS
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CPMSErrorDomain, _CPMSVersionNumber,
+                            _CPMSVersionString, __Z15getClientCpmsIdPKc,
+                            __Z20getClientPpmIdStringPKc,
+                            __Z21getClientCpmsIdStringPKc,
+                            __Z27getClientThermalMonitorNamePKc,
+                            __Z37getClientThermalMonitorMitigationTypePKc,
+                            _budgetDictionaryForClient,
+                            _buildDetailedThermalBudgetDetailsDescription,
+                            _buildDetailedThermalBudgetItemDescription,
+                            _clientDecoderRing, _copyApplePPMArrayProperty,
+                            _getAndPrintClientState, _getApplePPMFloatProperty,
+                            _getClientCpmsId, _getClientCpmsIdString,
+                            _getClientName,
+                            _getClientPowerConsumptionWithCallback,
+                            _getClientPpmId, _getClientPpmIdString,
+                            _getClientState,
+                            _getClientThermalMonitorMitigationType,
+                            _getClientThermalMonitorName, _getPowerForTimescale,
+                            _isClientNameValid, _kCPMSPowerTimeScale100ms,
+                            _kCPMSPowerTimeScale1s,
+                            _kCPMSPowerTimeScaleInstantaneous,
+                            _kCPMSPowerTimeScaleThermal,
+                            _kPPMBatteryModelStepBaseStr,
+                            _kPPMBatteryModelStepPulseStr,
+                            _kPPMBatteryModelStepSpikeStr,
+                            _kPPMBatteryModelStepUVLOStr, _laneInputDisplayName,
+                            _openIOConnectionToPPM, _operationModeNames,
+                            _outputForEffort, _printBudget, _printBudgetArray,
+                            _printBudgetItem, _printCPMSBatteryPmaxState,
+                            _printCPMSControlState,
+                            _printCPMSControlStateSnapshotDict,
+                            _printCPMSControlStateSnapshotDictCSV,
+                            _printClientState, _printClientStateCSV,
+                            _printDecisionTreeCurve, _printGenericStructElement,
+                            _removeAllOverrides, _removeThermalOverrides, _runCmd,
+                            _sendPowerBudgetToCPMSClient,
+                            _setApplePPMArrayProperty, _setApplePPMFloatProperty,
+                            _setClientDemandScaleFactor,
+                            _setDetailedThermalBudgetsToKext,
+                            _setOverrideClientPowerBudget,
+                            _shouldPreferSmcifToThermtune, _suppressAssert,
+                            _timescaleDisplayName, _timescaleIntDisplayName ]
+    objc-classes:         [ CPMSAgent, CPMSClientDescription, CPMSStateReader ]
+    objc-ivars:           [ CPMSAgent._clientSet, CPMSAgent._connect,
+                            CPMSAgent._notificationPort,
+                            CPMSAgent._notificationQueue, CPMSAgent._ppmService,
+                            CPMSAgent._timeScalesSet,
+                            CPMSClientDescription._clientId,
+                            CPMSClientDescription._getCurrentPower,
+                            CPMSClientDescription._isContinuous,
+                            CPMSClientDescription._notificationCallback,
+                            CPMSClientDescription._powerBudgetUpdateMinimumPeriod,
+                            CPMSClientDescription._powerLevels ]
+...

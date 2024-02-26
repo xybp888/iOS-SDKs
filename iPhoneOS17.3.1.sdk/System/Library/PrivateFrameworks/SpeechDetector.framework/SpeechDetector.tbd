@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SpeechDetector.framework/SpeechDetector
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SDLogContextFacilityLocalSRBridge,
+                            _SDLogInitIfNeeded, _SDLoggingSubsystem,
+                            _kSDLoggingContextFramework ]
+    objc-classes:         [ OSDAnalyzer, OSDFeatures ]
+    objc-ivars:           [ OSDAnalyzer._caesuraSPG, OSDAnalyzer._delegate,
+                            OSDAnalyzer._endOfSpeechDetected,
+                            OSDAnalyzer._numConsecutiveNonSilenceFrames,
+                            OSDAnalyzer._osdContext, OSDAnalyzer._osdFeatures,
+                            OSDAnalyzer._queue,
+                            OSDAnalyzer._startOfSpeechDetected,
+                            OSDFeatures._processedAudioMs,
+                            OSDFeatures._silenceDurationMs,
+                            OSDFeatures._silenceFramesCountMs,
+                            OSDFeatures._silenceProbability ]
+...

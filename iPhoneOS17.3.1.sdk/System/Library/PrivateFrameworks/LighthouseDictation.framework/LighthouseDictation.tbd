@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/LighthouseDictation.framework/LighthouseDictation
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AddRecordsForType, _AddRecordsForTypeWithUUIDs,
+                            _DESAmendedRecordInfo, _FindRecordTypeForRecordUUID,
+                            _GarbageCollectOldRecords,
+                            _LighthouseDictationVersionNumber,
+                            _LighthouseDictationVersionString,
+                            _RecordDataForUUID, _RecordDirPathForRecordType,
+                            _RecordDirURLForRecordType, _RecordInfoForUUID ]
+    objc-classes:         [ LoggingHelper, RecordSet, RecordStoreManager ]
+    objc-ivars:           [ LoggingHelper._datapackVersion,
+                            LoggingHelper._dodmlId, LoggingHelper._experimentId,
+                            RecordSet._dataFetcher, RecordSet._nativeRecordInfo,
+                            RecordSet._nativeRecords, RecordStoreManager._queue ]
+...

@@ -1,0 +1,72 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CompanionHealthDaemon.framework/CompanionHealthDaemon
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CHIsFitnessInstalled, _CHProfileExtensionForProfile,
+                            _CompanionHealthDaemonVersionNumber,
+                            _CompanionHealthDaemonVersionString,
+                            _kHDCompanionFitnessAppBundleID ]
+    objc-classes:         [ CHActivityApplicationInstallationManager,
+                            CHCoachingDiagnosticData,
+                            CHCoachingDiagnosticDataItem,
+                            CHCoachingDiagnosticManager,
+                            CHCoachingDiagnosticSubmittableMetrics,
+                            CHCompanionWidgetSchedulingManager,
+                            CHCompanionWorkoutCreditManager,
+                            CHCompanionWorkoutCreditManagerInterval,
+                            CHFitnessAppBadgeManager,
+                            CHTrendsNotificationManager ]
+    objc-ivars:           [ CHActivityApplicationInstallationManager._installationRequestInProgress,
+                            CHActivityApplicationInstallationManager._profile,
+                            CHActivityApplicationInstallationManager._queue,
+                            CHActivityApplicationInstallationManager._systemAppRequest,
+                            CHCoachingDiagnosticData._coachingEventSample,
+                            CHCoachingDiagnosticData._items,
+                            CHCoachingDiagnosticDataItem._activeCalories,
+                            CHCoachingDiagnosticDataItem._automotive,
+                            CHCoachingDiagnosticDataItem._briskMinutes,
+                            CHCoachingDiagnosticDataItem._cycling,
+                            CHCoachingDiagnosticDataItem._heartRate,
+                            CHCoachingDiagnosticDataItem._other,
+                            CHCoachingDiagnosticDataItem._running,
+                            CHCoachingDiagnosticDataItem._unknown,
+                            CHCoachingDiagnosticDataItem._walking,
+                            CHCoachingDiagnosticDataItem._workout,
+                            CHCoachingDiagnosticManager._activityManager,
+                            CHCoachingDiagnosticManager._activityQueue,
+                            CHCoachingDiagnosticManager._cachedLastSubmittedDate,
+                            CHCoachingDiagnosticManager._lastRingCompletionSubmittedIndex,
+                            CHCoachingDiagnosticManager._motionActivityManagerClass,
+                            CHCoachingDiagnosticManager._profile,
+                            CHCoachingDiagnosticManager._queue,
+                            CHCoachingDiagnosticManager._scheduler,
+                            CHCoachingDiagnosticManager._serverConnection,
+                            CHCoachingDiagnosticSubmittableMetrics._activitySummary,
+                            CHCoachingDiagnosticSubmittableMetrics._biologicalSex,
+                            CHCoachingDiagnosticSubmittableMetrics._dateOfBirth,
+                            CHCoachingDiagnosticSubmittableMetrics._diagnosticData,
+                            CHCoachingDiagnosticSubmittableMetrics._heightSample,
+                            CHCoachingDiagnosticSubmittableMetrics._startOfDay,
+                            CHCoachingDiagnosticSubmittableMetrics._weightSample,
+                            CHCompanionWidgetSchedulingManager._profile,
+                            CHCompanionWidgetSchedulingManager._standalonePhoneFitnessModeChangeToken,
+                            CHCompanionWidgetSchedulingManager._wheelchairUse,
+                            CHCompanionWorkoutCreditManager._anchor,
+                            CHCompanionWorkoutCreditManager._calendar,
+                            CHCompanionWorkoutCreditManager._hasPairedWatches,
+                            CHCompanionWorkoutCreditManager._profile,
+                            CHCompanionWorkoutCreditManager._queue,
+                            CHCompanionWorkoutCreditManagerInterval._activityMoveMode,
+                            CHCompanionWorkoutCreditManagerInterval._dateInterval,
+                            CHFitnessAppBadgeManager._providers,
+                            CHFitnessAppBadgeManager._serialQueue,
+                            CHTrendsNotificationManager._keyValueDomain,
+                            CHTrendsNotificationManager._profile,
+                            CHTrendsNotificationManager._summaryBuilder,
+                            CHTrendsNotificationManager._userNotificationCenter ]
+...

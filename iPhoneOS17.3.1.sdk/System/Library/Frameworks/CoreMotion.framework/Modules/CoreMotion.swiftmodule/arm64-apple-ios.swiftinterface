@@ -1,0 +1,60 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.11 clang-1500.1.0.2.2)
+// swift-module-flags: -target arm64-apple-ios17.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name CoreMotion
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 2890.4.12.1.1
+@_exported import CoreMotion
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+extension CoreMotion.CMOdometerData {
+  @available(iOS 15.4, watchOS 8.4, *)
+  public var slope: Swift.Double? {
+    get
+  }
+  @available(iOS 15.4, watchOS 8.4, *)
+  public var maxAbsSlope: Swift.Double? {
+    get
+  }
+}
+@available(watchOS 10.0, *)
+@available(iOS, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+extension CoreMotion.CMBatchedSensorManager {
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public struct AccelerometerUpdates : _Concurrency.AsyncSequence {
+    public typealias Element = [CoreMotion.CMAccelerometerData]
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public mutating func next() async throws -> (CoreMotion.CMBatchedSensorManager.AccelerometerUpdates.Element)?
+      #endif
+      public typealias Element = (CoreMotion.CMBatchedSensorManager.AccelerometerUpdates.Element)
+    }
+    public func makeAsyncIterator() -> CoreMotion.CMBatchedSensorManager.AccelerometerUpdates.Iterator
+    public typealias AsyncIterator = CoreMotion.CMBatchedSensorManager.AccelerometerUpdates.Iterator
+  }
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public func accelerometerUpdates() -> CoreMotion.CMBatchedSensorManager.AccelerometerUpdates
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public struct DeviceMotionUpdates : _Concurrency.AsyncSequence {
+    public typealias Element = [CoreMotion.CMDeviceMotion]
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public mutating func next() async throws -> (CoreMotion.CMBatchedSensorManager.DeviceMotionUpdates.Element)?
+      #endif
+      public typealias Element = (CoreMotion.CMBatchedSensorManager.DeviceMotionUpdates.Element)
+    }
+    public func makeAsyncIterator() -> CoreMotion.CMBatchedSensorManager.DeviceMotionUpdates.Iterator
+    public typealias AsyncIterator = CoreMotion.CMBatchedSensorManager.DeviceMotionUpdates.Iterator
+  }
+  #endif
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public func deviceMotionUpdates() -> CoreMotion.CMBatchedSensorManager.DeviceMotionUpdates
+  #endif
+}

@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AccessoryHID.framework/AccessoryHID
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AccessoryHIDVersionNumber,
+                            _AccessoryHIDVersionString, _init_logging_signposts,
+                            _kCFAccessoryHID_ComponentEnabled,
+                            _kCFAccessoryHID_ComponentID,
+                            _kCFAccessoryHID_HIDComponentIDKey,
+                            _kCFAccessoryHID_HIDComponentTypeKey,
+                            _kCFAccessoryHID_HIDFunctionTypeKey,
+                            _kCFAccessoryHID_Report, _kCFAccessoryHID_ReportID,
+                            _kCFAccessoryHID_ReportType ]
+    objc-classes:         [ AccessoryHIDClient ]
+    objc-ivars:           [ AccessoryHIDClient._delegate,
+                            AccessoryHIDClient._registeredHIDDescriptors,
+                            AccessoryHIDClient._remoteObject,
+                            AccessoryHIDClient._serverConnection ]
+...

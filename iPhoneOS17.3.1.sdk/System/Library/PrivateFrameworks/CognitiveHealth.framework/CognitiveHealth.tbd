@@ -1,0 +1,38 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CognitiveHealth.framework/CognitiveHealth
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CognitiveHealthVersionNumber,
+                            _CognitiveHealthVersionString,
+                            _ch_sensor_data_handle, _ch_test_handle,
+                            _ch_xpc_handle ]
+    objc-classes:         [ CHAppLaunchSensorData, CHCoreDataController,
+                            CHCustomCategories, CHCustomCategory,
+                            CHIntegrationTest, CHIntegrationTestClient,
+                            CHSensorData, CHSensorDataClient, CHVersion,
+                            CHXPCClientHelper, CustomCategory ]
+    objc-ivars:           [ CHAppLaunchSensorData._algorithmType,
+                            CHAppLaunchSensorData._bundleId,
+                            CHAppLaunchSensorData._embeddingVector,
+                            CHAppLaunchSensorData._modelVersion,
+                            CHAppLaunchSensorData._trainingDate,
+                            CHCoreDataController._persistentContainer,
+                            CHCustomCategories._coreDataController,
+                            CHCustomCategories._fetchError,
+                            CHCustomCategories._persistentContainer,
+                            CHIntegrationTest._xpcClient,
+                            CHIntegrationTestClient._clientHelper,
+                            CHSensorData._xpcClient,
+                            CHSensorDataClient._clientHelper,
+                            CHXPCClientHelper._clientExportedObject,
+                            CHXPCClientHelper._conn, CHXPCClientHelper._connLock,
+                            CHXPCClientHelper._interruptionHandler,
+                            CHXPCClientHelper._invalidationHandler,
+                            CHXPCClientHelper._serviceName,
+                            CHXPCClientHelper._whitelistedServerInterface ]
+...

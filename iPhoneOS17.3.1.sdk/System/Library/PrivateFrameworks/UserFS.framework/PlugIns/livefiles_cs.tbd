@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/UserFS.framework/PlugIns/livefiles_cs.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _check_dk_metadata_header_size,
+                            _check_dk_vol_header_size, _cksum, _cksum_init,
+                            _cs_fsops, _livefiles_csVersionNumber,
+                            _livefiles_csVersionString, _livefiles_plugin_init ]
+...

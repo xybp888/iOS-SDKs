@@ -1,0 +1,44 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriReferenceResolution.framework/SiriReferenceResolution
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _RRSchemaProvisionalPullerContextEventReadFrom,
+                            _RRSchemaProvisionalPullerContextReadFrom,
+                            _RRSchemaProvisionalPullerEndedReadFrom,
+                            _RRSchemaProvisionalPullerFailedReadFrom,
+                            _RRSchemaProvisionalPullerStartedReadFrom,
+                            _SiriReferenceResolutionVersionNumber,
+                            _SiriReferenceResolutionVersionString,
+                            _qname_RRSchemaProvisionalPullerContextEvent_WhichEvent_Type_None,
+                            _qname_RRSchemaProvisionalPullerContextEvent_WhichEvent_Type_pullerContext ]
+    objc-classes:         [ RRSchemaProvisionalPullerContext,
+                            RRSchemaProvisionalPullerContextEvent,
+                            RRSchemaProvisionalPullerEnded,
+                            RRSchemaProvisionalPullerFailed,
+                            RRSchemaProvisionalPullerStarted ]
+    objc-ivars:           [ RRSchemaProvisionalPullerContext._ended,
+                            RRSchemaProvisionalPullerContext._failed,
+                            RRSchemaProvisionalPullerContext._hasEnded,
+                            RRSchemaProvisionalPullerContext._hasFailed,
+                            RRSchemaProvisionalPullerContext._hasStarted,
+                            RRSchemaProvisionalPullerContext._started,
+                            RRSchemaProvisionalPullerContext._whichContextevent,
+                            RRSchemaProvisionalPullerContextEvent._hasPullerContext,
+                            RRSchemaProvisionalPullerContextEvent._pullerContext,
+                            RRSchemaProvisionalPullerContextEvent._whichEvent_Type,
+                            RRSchemaProvisionalPullerEnded._entityCount,
+                            RRSchemaProvisionalPullerEnded._has,
+                            RRSchemaProvisionalPullerEnded._hasName,
+                            RRSchemaProvisionalPullerEnded._name,
+                            RRSchemaProvisionalPullerFailed._has,
+                            RRSchemaProvisionalPullerFailed._hasName,
+                            RRSchemaProvisionalPullerFailed._name,
+                            RRSchemaProvisionalPullerFailed._timeout,
+                            RRSchemaProvisionalPullerStarted._hasName,
+                            RRSchemaProvisionalPullerStarted._name ]
+...

@@ -1,0 +1,31 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HealthDiagnosticExtensionCore.framework/HealthDiagnosticExtensionCore
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ __HKCloudSyncObserverStatusToString ]
+    objc-classes:         [ HDCloudSyncDiagnosticOperation,
+                            HDDaemonDiagnosticOperation,
+                            HDDatabaseDiagnosticOperation, HDDiagnosticExtension,
+                            HDDiagnosticOperation,
+                            HDFeatureStatusDiagnosticOperation,
+                            HDNanoSyncDiagnosticOperation,
+                            HDOntologyDiagnosticOperation,
+                            HDSummarySharingDiagnosticOperation,
+                            HDWorkoutCondenserDiagnosticOperation ]
+    objc-ivars:           [ HDDiagnosticExtension._allowsSensitiveAttachments,
+                            HDDiagnosticExtension._captureStartTime,
+                            HDDiagnosticExtension._collectionLog,
+                            HDDiagnosticExtension._contentProtectionNotifyToken,
+                            HDDiagnosticExtension._logLock,
+                            HDDiagnosticExtension._temporaryDirectoryURL,
+                            HDDiagnosticOperation._attachmentDirectoryURL,
+                            HDDiagnosticOperation._attachments,
+                            HDDiagnosticOperation._delegate,
+                            HDDiagnosticOperation._queue,
+                            HDDiagnosticOperation._reportContents ]
+...

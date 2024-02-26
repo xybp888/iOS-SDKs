@@ -1,0 +1,61 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FeatureFlagsSupport.framework/FeatureFlagsSupport
+current-version:       71
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _FFConfigurationValidateProfilePayload,
+                            _FFParseErrorContextFilenameKey,
+                            _FFParseErrorContextKeyKey,
+                            _FFParseErrorContextOtherKey,
+                            _FFParseErrorContextSeverityError,
+                            _FFParseErrorContextSeverityKey,
+                            _FFParseErrorContextSeverityNotice,
+                            _FFParseErrorContextSeverityWarning,
+                            _FFParseErrorMessageKey ]
+    objc-classes:         [ FFConfiguration, FFDefaultFileReader,
+                            FFDefaultFileWriter, FFDefaultParseErrorReporter,
+                            FFFeatureAttribute, FFFeatureGroup,
+                            FFFeatureIdentifier, FFFeatureSet,
+                            FFFeatureSetIdentifier, FFFeatureState,
+                            FFMinimumPhaseInReleaseSubscription, FFPlistParser,
+                            FFSubscription ]
+    objc-ivars:           [ FFConfiguration._domains,
+                            FFConfiguration._filereader,
+                            FFConfiguration._filewriter,
+                            FFConfiguration._parseerrorreporter,
+                            FFConfiguration._plistparser,
+                            FFConfiguration._profilePayloads,
+                            FFConfiguration.configByLevelIndex,
+                            FFConfiguration.definedFeatureGroups,
+                            FFConfiguration.definedFeatureSets,
+                            FFConfiguration.disclosuresByLevelIndex,
+                            FFConfiguration.enabledFeatureSetsAtLevelIndexByGroup,
+                            FFConfiguration.enabledFeatureSetsByLevelIndex,
+                            FFConfiguration.featureSetsMetaByLevelIndex,
+                            FFConfiguration.lock,
+                            FFConfiguration.metaByLevelIndex,
+                            FFConfiguration.searchPaths,
+                            FFConfiguration.subscriptionsByLevelIndex,
+                            FFConfiguration.subscriptionsMetaByLevelIndex,
+                            FFDefaultFileWriter._dirAttributes,
+                            FFDefaultFileWriter._fileAttributes,
+                            FFFeatureAttribute._name, FFFeatureAttribute._value,
+                            FFFeatureGroup._attributes,
+                            FFFeatureGroup._disclosure,
+                            FFFeatureGroup._featureSets, FFFeatureGroup._name,
+                            FFFeatureIdentifier._domainName,
+                            FFFeatureIdentifier._featureName,
+                            FFFeatureSet._features, FFFeatureSet._identifier,
+                            FFFeatureSetIdentifier._featureGroupName,
+                            FFFeatureSetIdentifier._featureSetName,
+                            FFFeatureState._attributes,
+                            FFFeatureState._disclosurerequired,
+                            FFFeatureState._domain, FFFeatureState._feature,
+                            FFFeatureState._phase, FFFeatureState._value,
+                            FFMinimumPhaseInReleaseSubscription._minimumPhase,
+                            FFMinimumPhaseInReleaseSubscription._targetRelease ]
+...

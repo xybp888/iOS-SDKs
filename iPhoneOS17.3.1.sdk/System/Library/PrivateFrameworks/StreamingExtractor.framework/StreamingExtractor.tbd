@@ -1,0 +1,41 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/StreamingExtractor.framework/StreamingExtractor
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _STAEAExtractorOptionsArchiveID,
+                            _STAEAExtractorOptionsAsymmetricDecryptionKey,
+                            _STAEAExtractorOptionsSigningPublicKey,
+                            _STAEAExtractorOptionsSourceDirectory,
+                            _STAEAExtractorOptionsSourceDirectorySandboxExtension,
+                            _STAEAExtractorOptionsSymmetricDecryptionKey,
+                            _STExtractorErrorDomain,
+                            _STRemoteExtractorOptionsDoesConsumeExtractedData,
+                            _STRemoteExtractorOptionsPluginBundleName,
+                            _STRemoteExtractorOptionsPluginBundlePath,
+                            _STRemoteExtractorOptionsPluginDirectory,
+                            _STRemoteExtractorOptionsSessionID,
+                            _STRemoteExtractorOptionsSuppressCompletionsDuringShutdown,
+                            _StreamingExtractorVersionNumber,
+                            _StreamingExtractorVersionString ]
+    objc-classes:         [ STExtractionOriginator, STRemoteExtractor ]
+    objc-ivars:           [ STExtractionOriginator._originator,
+                            STRemoteExtractor._dataStreamStarted,
+                            STRemoteExtractor._error,
+                            STRemoteExtractor._extractionServiceConnection,
+                            STRemoteExtractor._extractorDelegate,
+                            STRemoteExtractor._finalBytesSent,
+                            STRemoteExtractor._internalExtractionOriginator,
+                            STRemoteExtractor._ioQueue,
+                            STRemoteExtractor._isInvalid,
+                            STRemoteExtractor._isPrepared,
+                            STRemoteExtractor._lastResumptionOffset,
+                            STRemoteExtractor._options,
+                            STRemoteExtractor._requiredExtractionMemory,
+                            STRemoteExtractor._reservationQueue,
+                            STRemoteExtractor._reservedExtractionMemory ]
+...

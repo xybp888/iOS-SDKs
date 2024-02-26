@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ProactiveInsights.framework/ProactiveInsights
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PIPBFeatureFeedbackEventReadFrom,
+                            _ProactiveInsightsVersionNumber,
+                            _ProactiveInsightsVersionString ]
+    objc-classes:         [ PIFeatureFeedback, PIFeatureFeedbackEvent,
+                            PIFeatureFeedbackStream, PIPBFeatureFeedbackEvent ]
+    objc-ivars:           [ PIFeatureFeedback._stream,
+                            PIFeatureFeedbackEvent._date,
+                            PIFeatureFeedbackEvent._feature,
+                            PIFeatureFeedbackEvent._type,
+                            PIFeatureFeedbackStream._storeStream,
+                            PIFeatureFeedbackStream._streamIdentifier,
+                            PIPBFeatureFeedbackEvent._date,
+                            PIPBFeatureFeedbackEvent._feature,
+                            PIPBFeatureFeedbackEvent._has,
+                            PIPBFeatureFeedbackEvent._type ]
+...

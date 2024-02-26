@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FusionPluginKit.framework/FusionPluginKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _FusionPluginKitVersionNumber,
+                            _FusionPluginKitVersionString, _getLogHandle ]
+    objc-classes:         [ FNPluginManager, FusionPluginClient, HSMessage,
+                            HSMessageRequest, HSMessageResponse ]
+    objc-ivars:           [ FNPluginManager._pluginBundlePaths,
+                            FNPluginManager._pluginBundles,
+                            FNPluginManager._pluginInstances,
+                            FNPluginManager._pluginMessage,
+                            FusionPluginClient._xpcConnection,
+                            HSMessage._deviceEnvironment,
+                            HSMessage._hostEnvironment, HSMessage._uuid,
+                            HSMessageRequest._messageDict,
+                            HSMessageRequest._messageStr,
+                            HSMessageResponse._error,
+                            HSMessageResponse._errorDescription,
+                            HSMessageResponse._messageStr,
+                            HSMessageResponse._responseDict,
+                            HSMessageResponse._statusCode ]
+...

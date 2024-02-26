@@ -1,0 +1,27 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AccessibilityUI.framework/AccessibilityUI
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ AXUIClient, AXUIClientConnection ]
+    objc-ivars:           [ AXUIClient._clientConnection,
+                            AXUIClient._clientIdentifier, AXUIClient._delegate,
+                            AXUIClient._initializationMessage,
+                            AXUIClient._messageSender,
+                            AXUIClient._registeredWithServer,
+                            AXUIClient._serviceBundleName,
+                            AXUIClientConnection._connected,
+                            AXUIClientConnection._connectionAccessQueue,
+                            AXUIClientConnection._registeredClients,
+                            AXUIClientConnection._registeredClientsAccessQueue,
+                            AXUIClientConnection._serviceConnection,
+                            AXUIClientConnection._serviceConnectionQueue,
+                            AXUIClientConnection._serviceRequests,
+                            AXUIClientConnection._stateObserverQueue,
+                            AXUIClientConnection._stateObservers,
+                            AXUIClientConnection._xpcConnection ]
+...

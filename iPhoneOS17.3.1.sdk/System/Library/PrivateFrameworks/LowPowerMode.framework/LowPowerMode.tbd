@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/LowPowerMode.framework/LowPowerMode
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _kPMLPMSourceControlCenter, _kPMLPMSourceLostMode,
+                            _kPMLPMSourceReenableBulletin, _kPMLPMSourceSettings,
+                            _kPMLPMSourceSiri, _kPMLPMSourceSpringBoardAlert,
+                            _kPMLPMSourceSystemDisable,
+                            _kPMLowPowerModeServiceName,
+                            _kPMSmartPowerNapServiceName ]
+    objc-classes:         [ _PMLowPowerMode, _PMSmartPowerNap ]
+    objc-ivars:           [ _PMLowPowerMode._connection,
+                            _PMSmartPowerNap._callback,
+                            _PMSmartPowerNap._callback_queue,
+                            _PMSmartPowerNap._connection,
+                            _PMSmartPowerNap._connection_interrupted,
+                            _PMSmartPowerNap._current_state,
+                            _PMSmartPowerNap._identifier ]
+...

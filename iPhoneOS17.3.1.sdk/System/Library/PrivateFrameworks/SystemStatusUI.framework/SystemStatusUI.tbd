@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SystemStatusUI.framework/SystemStatusUI
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SystemStatusUIVersionNumber,
+                            _SystemStatusUIVersionString ]
+    objc-classes:         [ STUIDataAccessAttribution,
+                            STUIDataAccessStatusDomain,
+                            STUIDataAccessStatusDomainData,
+                            STUIMutableDataAccessStatusDomainData, STUIStatusBar ]
+    objc-ivars:           [ STUIDataAccessAttribution._accessEndDate,
+                            STUIDataAccessAttribution._accessStartDate,
+                            STUIDataAccessAttribution._audioRecordingActivityAttribution,
+                            STUIDataAccessAttribution._cameraCaptureAttribution,
+                            STUIDataAccessAttribution._dataAccessType,
+                            STUIDataAccessAttribution._locationAttribution,
+                            STUIDataAccessAttribution._recent,
+                            STUIDataAccessStatusDomainData._attributionListData,
+                            STUIDataAccessStatusDomainData._userIdentities ]
+...

@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NanoResourceGrabber.framework/NanoResourceGrabber
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _NRGGetActivePairedDevice,
+                            _NRGGetActivePairedDeviceStorePath,
+                            _NRGResourcePropertyFilePathSuffix,
+                            _NRGResourcePropertyIconVariant,
+                            _NRGWaitForActivePairedDeviceStorePath,
+                            _NrgErrorDomain, _kNRGResourceType,
+                            _mapLIIconVariantToNRG, _mapNRGIconVariantToLI,
+                            _nrg_daemon_log, _nrg_framework_log ]
+    objc-classes:         [ NRGError, NRGResourceCache, NanoResourceGrabber ]
+    objc-ivars:           [ NanoResourceGrabber._connectionMayBeValid,
+                            NanoResourceGrabber._iconCacheQueue,
+                            NanoResourceGrabber._nrgdConnection,
+                            NanoResourceGrabber._queue ]
+...

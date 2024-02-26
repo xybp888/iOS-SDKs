@@ -1,0 +1,437 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.11 clang-1500.1.0.2.2)
+// swift-module-flags: -target arm64e-apple-ios17.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-experimental-concurrency -module-name _RealityKit_SwiftUI
+// swift-module-flags-ignorable: -enable-experimental-feature ModuleInterfaceExportAs -enable-bare-slash-regex -user-module-version 225.613.1
+import ARKit
+import AVFAudio
+import AVFoundation
+import AudioToolbox
+import Combine
+import CoreGraphics
+import Darwin
+import Foundation
+import ImageIO
+import Metal
+import Observation
+import RealityFoundation
+@_exported import RealityKit
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+import simd
+@available(iOS 17.0, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct ObjectCaptureView<Overlay> : SwiftUI.View where Overlay : SwiftUI.View {
+  public init(session: _RealityKit_SwiftUI.ObjectCaptureSession) where Overlay == SwiftUI.EmptyView
+  public init(session: _RealityKit_SwiftUI.ObjectCaptureSession, @SwiftUI.ViewBuilder cameraFeedOverlay: () -> Overlay)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s19_RealityKit_SwiftUI17ObjectCaptureViewV4bodyQrvp", 0) __<Overlay>
+}
+@available(iOS 17.0, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency.MainActor public class ObjectCaptureSession : Swift.Identifiable {
+  #if compiler(>=5.3) && $RethrowsProtocol
+  public struct Updates<Element> : _Concurrency.AsyncSequence, Swift.Sendable where Element : Swift.Sendable {
+    public struct Iterator : _Concurrency.AsyncIteratorProtocol {
+      #if compiler(>=5.3) && $AsyncAwait
+      public mutating func next() async -> Element?
+      #endif
+    }
+    public func makeAsyncIterator() -> _RealityKit_SwiftUI.ObjectCaptureSession.Updates<Element>.Iterator
+    public typealias AsyncIterator = _RealityKit_SwiftUI.ObjectCaptureSession.Updates<Element>.Iterator
+  }
+  #endif
+  public enum Error : Swift.Error, Foundation.LocalizedError {
+    case directoryNotEmpty(Foundation.URL)
+    case insufficientStorage(requiredBytes: Swift.Int64)
+    case cancelled
+    case sensorFailed
+    case trackingFailed
+    public var localizedDescription: Swift.String {
+      get
+    }
+  }
+  @_Concurrency.MainActor public static var isSupported: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor public init()
+  public enum CaptureState : Swift.Equatable {
+    case initializing
+    case ready
+    case detecting
+    case capturing
+    case finishing
+    case completed
+    case failed(any Swift.Error)
+    public static func == (lhs: _RealityKit_SwiftUI.ObjectCaptureSession.CaptureState, rhs: _RealityKit_SwiftUI.ObjectCaptureSession.CaptureState) -> Swift.Bool
+  }
+  @_Concurrency.MainActor public var state: _RealityKit_SwiftUI.ObjectCaptureSession.CaptureState {
+    get
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @_Concurrency.MainActor public var stateUpdates: _RealityKit_SwiftUI.ObjectCaptureSession.Updates<_RealityKit_SwiftUI.ObjectCaptureSession.CaptureState> {
+    get
+  }
+  #endif
+  public enum Feedback : Swift.Equatable {
+    case objectTooClose
+    case objectTooFar
+    case movingTooFast
+    case environmentLowLight
+    case environmentTooDark
+    case outOfFieldOfView
+    case objectNotFlippable
+    case overCapturing
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: _RealityKit_SwiftUI.ObjectCaptureSession.Feedback, b: _RealityKit_SwiftUI.ObjectCaptureSession.Feedback) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_Concurrency.MainActor public var feedback: Swift.Set<_RealityKit_SwiftUI.ObjectCaptureSession.Feedback> {
+    get
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @_Concurrency.MainActor public var feedbackUpdates: _RealityKit_SwiftUI.ObjectCaptureSession.Updates<Swift.Set<_RealityKit_SwiftUI.ObjectCaptureSession.Feedback>> {
+    get
+  }
+  #endif
+  public enum Tracking : Swift.Equatable {
+    public enum Reason {
+      case initializing
+      case relocalizing
+      case excessiveMotion
+      case insufficientFeatures
+      public static func == (a: _RealityKit_SwiftUI.ObjectCaptureSession.Tracking.Reason, b: _RealityKit_SwiftUI.ObjectCaptureSession.Tracking.Reason) -> Swift.Bool
+      public func hash(into hasher: inout Swift.Hasher)
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+    case notAvailable
+    case limited(reason: _RealityKit_SwiftUI.ObjectCaptureSession.Tracking.Reason)
+    case normal
+    public static func == (a: _RealityKit_SwiftUI.ObjectCaptureSession.Tracking, b: _RealityKit_SwiftUI.ObjectCaptureSession.Tracking) -> Swift.Bool
+  }
+  @_Concurrency.MainActor public var cameraTracking: _RealityKit_SwiftUI.ObjectCaptureSession.Tracking {
+    get
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @_Concurrency.MainActor public var cameraTrackingUpdates: _RealityKit_SwiftUI.ObjectCaptureSession.Updates<_RealityKit_SwiftUI.ObjectCaptureSession.Tracking> {
+    get
+  }
+  #endif
+  @_Concurrency.MainActor public var isPaused: Swift.Bool {
+    get
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @_Concurrency.MainActor public var isPausedUpdates: _RealityKit_SwiftUI.ObjectCaptureSession.Updates<Swift.Bool> {
+    get
+  }
+  #endif
+  @_Concurrency.MainActor public var userCompletedScanPass: Swift.Bool {
+    get
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @_Concurrency.MainActor public var userCompletedScanPassUpdates: _RealityKit_SwiftUI.ObjectCaptureSession.Updates<Swift.Bool> {
+    get
+  }
+  #endif
+  @_Concurrency.MainActor public var canRequestImageCapture: Swift.Bool {
+    get
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @_Concurrency.MainActor public var canRequestImageCaptureUpdates: _RealityKit_SwiftUI.ObjectCaptureSession.Updates<Swift.Bool> {
+    get
+  }
+  #endif
+  @_Concurrency.MainActor public var numberOfShotsTaken: Swift.Int {
+    get
+  }
+  #if compiler(>=5.3) && $RethrowsProtocol
+  @_Concurrency.MainActor public var numberOfShotsTakenUpdates: _RealityKit_SwiftUI.ObjectCaptureSession.Updates<Swift.Int> {
+    get
+  }
+  #endif
+  @_Concurrency.MainActor public var maximumNumberOfInputImages: Swift.Int {
+    get
+  }
+  public struct Configuration {
+    public init()
+    public var checkpointDirectory: Foundation.URL?
+    public var isOverCaptureEnabled: Swift.Bool
+  }
+  @_Concurrency.MainActor public var configuration: _RealityKit_SwiftUI.ObjectCaptureSession.Configuration {
+    get
+  }
+  @_Concurrency.MainActor public func start(imagesDirectory: Foundation.URL, configuration: _RealityKit_SwiftUI.ObjectCaptureSession.Configuration = Configuration())
+  @_Concurrency.MainActor public func resume()
+  @_Concurrency.MainActor public func pause()
+  @_Concurrency.MainActor public func startDetecting() -> Swift.Bool
+  @discardableResult
+  @_Concurrency.MainActor public func resetDetection() -> Swift.Bool
+  @_Concurrency.MainActor public func startCapturing()
+  @_Concurrency.MainActor public func beginNewScanPassAfterFlip()
+  @_Concurrency.MainActor public func beginNewScanPass()
+  @_Concurrency.MainActor public func finish()
+  @_Concurrency.MainActor public func cancel()
+  @_Concurrency.MainActor public func requestImageCapture()
+  @objc deinit
+  public typealias ID = Swift.ObjectIdentifier
+}
+@available(iOS 17.0, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension _RealityKit_SwiftUI.ObjectCaptureSession : Observation.Observable {
+}
+@available(iOS 17.0, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency.MainActor public struct ObjectCapturePointCloudView : SwiftUI.View {
+  @_Concurrency.MainActor public init(session: _RealityKit_SwiftUI.ObjectCaptureSession)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s19_RealityKit_SwiftUI27ObjectCapturePointCloudViewV4bodyQrvp", 0) __
+}
+@available(macOS 10.15, iOS 13.0, macCatalyst 13.0, *)
+@usableFromInline
+@_originallyDefinedIn(module: "RealityKit", macOS 12.0)
+@_originallyDefinedIn(module: "RealityKit", iOS 15.0)
+@_originallyDefinedIn(module: "RealityKit", macCatalyst 15.0)
+internal struct REAngleF {
+  public init(radians: Swift.Float)
+  public init(degrees: Swift.Float)
+  public var radians: Swift.Float
+  @inlinable public var degrees: Swift.Float {
+    get {
+            return radians * 180 / .pi
+        }
+    set {
+            radians = newValue * .pi / 180
+        }
+  }
+}
+@available(macOS 10.15, iOS 13.0, macCatalyst 13.0, *)
+@usableFromInline
+@_originallyDefinedIn(module: "RealityKit", macOS 12.0)
+@_originallyDefinedIn(module: "RealityKit", iOS 15.0)
+@_originallyDefinedIn(module: "RealityKit", macCatalyst 15.0)
+internal enum RotationOrder : Swift.UInt8 {
+  public static let `default`: _RealityKit_SwiftUI.RotationOrder
+  public static let sceneKit: _RealityKit_SwiftUI.RotationOrder
+  case xyz
+  case yzx
+  case zxy
+  case xzy
+  case yxz
+  case zyx
+  @usableFromInline
+  internal init?(rawValue: Swift.UInt8)
+  @usableFromInline
+  internal typealias RawValue = Swift.UInt8
+  @usableFromInline
+  internal var rawValue: Swift.UInt8 {
+    @usableFromInline
+    get
+  }
+}
+@available(macOS 10.15, iOS 13.0, macCatalyst 13.0, *)
+@_originallyDefinedIn(module: "RealityKit", macOS 12.0)
+@_originallyDefinedIn(module: "RealityKit", iOS 15.0)
+@_originallyDefinedIn(module: "RealityKit", macCatalyst 15.0)
+extension simd.simd_quatf {
+  @usableFromInline
+  internal init(eulerAngles: Swift.SIMD3<Swift.Float>, order: _RealityKit_SwiftUI.RotationOrder = .default)
+}
+@usableFromInline
+internal typealias REMatrix2x2F = simd.simd_float2x2
+@usableFromInline
+internal typealias REMatrix3x3F = simd.simd_float3x3
+@usableFromInline
+internal typealias REMatrix4x4F = simd.simd_float4x4
+@available(macOS 10.15, iOS 13.0, macCatalyst 13.0, *)
+extension simd.simd_float3x3 {
+  @inlinable internal init(_ matrix: _RealityKit_SwiftUI.REMatrix4x4F) {
+        self = REMatrix3x3F(columns: (matrix[0]._xyz, matrix[1]._xyz, matrix[2]._xyz))
+    }
+}
+@available(macOS 10.15, iOS 13.0, macCatalyst 13.0, *)
+@_originallyDefinedIn(module: "RealityKit", macOS 12.0)
+@_originallyDefinedIn(module: "RealityKit", iOS 15.0)
+@_originallyDefinedIn(module: "RealityKit", macCatalyst 15.0)
+extension simd.simd_float4x4 {
+  @inlinable internal static var identity: _RealityKit_SwiftUI.REMatrix4x4F {
+    get { return REMatrix4x4F( diagonal: SIMD4<Float>(repeating: 1.0)) }
+  }
+  @inlinable internal init(rows: (Swift.SIMD4<Swift.Float>, Swift.SIMD4<Swift.Float>, Swift.SIMD4<Swift.Float>, Swift.SIMD4<Swift.Float>)) {
+        self = simd_matrix_from_rows(rows.0, rows.1, rows.2, rows.3)
+    }
+  @inlinable internal init(rows r: ((Swift.Float, Swift.Float, Swift.Float, Swift.Float), (Swift.Float, Swift.Float, Swift.Float, Swift.Float), (Swift.Float, Swift.Float, Swift.Float, Swift.Float), (Swift.Float, Swift.Float, Swift.Float, Swift.Float))) {
+        self = simd_matrix_from_rows(SIMD4<Float>(r.0.0, r.0.1, r.0.2, r.0.3),
+                                     SIMD4<Float>(r.1.0, r.1.1, r.1.2, r.1.3),
+                                     SIMD4<Float>(r.2.0, r.2.1, r.2.2, r.2.3),
+                                     SIMD4<Float>(r.3.0, r.3.1, r.3.2, r.3.3))
+    }
+  @inlinable internal init(translation t: Swift.SIMD3<Swift.Float>) {
+        self.init(columns: (SIMD4<Float>(1, 0, 0, 0),
+                            SIMD4<Float>(0, 1, 0, 0),
+                            SIMD4<Float>(0, 0, 1, 0),
+                            SIMD4<Float>(t.x, t.y, t.z, 1)))
+    }
+  @inlinable internal init(scale s: Swift.SIMD3<Swift.Float>) {
+        self.init(diagonal: SIMD4<Float>(s.x, s.y, s.z, 1))
+    }
+  @inlinable internal init(rotation: simd.simd_quatf) {
+        self = simd_matrix4x4(rotation)
+    }
+  @inlinable internal init(translation: Swift.SIMD3<Swift.Float>, rotation: simd.simd_quatf, scale: Swift.SIMD3<Swift.Float>) {
+        self = simd_matrix4x4(rotation)
+        self.scale(scale)
+        self.translate(translation)
+    }
+  @inlinable internal func scaled(_ scale: Swift.SIMD3<Swift.Float>) -> _RealityKit_SwiftUI.REMatrix4x4F {
+        var m = self
+        m.columns.0 *= scale.x
+        m.columns.1 *= scale.y
+        m.columns.2 *= scale.z
+        return m
+    }
+  @inlinable internal func translated(_ trans: Swift.SIMD3<Swift.Float>) -> _RealityKit_SwiftUI.REMatrix4x4F {
+        var m = self
+        m.columns.3._xyz += trans
+        return m
+    }
+  @inlinable internal mutating func scale(_ scale: Swift.SIMD3<Swift.Float>) {
+        self.columns.0 *= scale.x
+        self.columns.1 *= scale.y
+        self.columns.2 *= scale.z
+    }
+  @inlinable internal mutating func translate(_ trans: Swift.SIMD3<Swift.Float>) {
+        self.columns.3._xyz += trans
+    }
+  @inlinable internal var scale: Swift.SIMD3<Swift.Float> {
+    get {
+            // See `Matrix4x4.extractScale()` for additional comments.
+            let minor = matrix_float3x3(self)
+            let sign = minor.determinant > Float(0) ? Float(1) : Float(-1)
+            return sign * SIMD3<Float>(simd.length(minor.columns.0),
+                                       simd.length(minor.columns.1),
+                                       simd.length(minor.columns.2))
+        }
+    set {
+            self.columns.0._xyz = simd.normalize(self.columns.0._xyz)
+            self.columns.1._xyz = simd.normalize(self.columns.1._xyz)
+            self.columns.2._xyz = simd.normalize(self.columns.2._xyz)
+            scale(newValue)
+        }
+  }
+  @usableFromInline
+  internal var rotation: simd.simd_quatf {
+    get
+    set
+  }
+  @inlinable internal var translation: Swift.SIMD3<Swift.Float> {
+    get {
+            return columns.3._xyz
+        }
+    set {
+            columns.3._xyz = newValue
+        }
+  }
+  @inlinable internal func decompose() -> (translation: Swift.SIMD3<Swift.Float>, rotation: simd.simd_quatf, scale: Swift.SIMD3<Swift.Float>) {
+        return (translation, rotation, scale)
+    }
+}
+@available(macOS 10.15, iOS 13.0, macCatalyst 13.0, *)
+@_originallyDefinedIn(module: "RealityKit", macOS 12.0)
+@_originallyDefinedIn(module: "RealityKit", iOS 15.0)
+@_originallyDefinedIn(module: "RealityKit", macCatalyst 15.0)
+extension Swift.SIMD3 where Scalar == Swift.Float {
+  @usableFromInline
+  internal var _xy: Swift.SIMD2<Swift.Float> {
+    get
+    set
+  }
+}
+@available(macOS 10.15, iOS 13.0, macCatalyst 13.0, *)
+@_originallyDefinedIn(module: "RealityKit", macOS 12.0)
+@_originallyDefinedIn(module: "RealityKit", iOS 15.0)
+@_originallyDefinedIn(module: "RealityKit", macCatalyst 15.0)
+extension Swift.SIMD4 where Scalar == Swift.Float {
+  @usableFromInline
+  internal var _xyz: Swift.SIMD3<Swift.Float> {
+    get
+    set
+  }
+}
+@available(iOS 17.0, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension _RealityKit_SwiftUI.ObjectCaptureSession : Swift.Sendable {}
+@available(iOS 17.0, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension _RealityKit_SwiftUI.ObjectCaptureSession.Feedback : Swift.Hashable {}
+@available(iOS 17.0, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension _RealityKit_SwiftUI.ObjectCaptureSession.Tracking.Reason : Swift.Equatable {}
+@available(iOS 17.0, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension _RealityKit_SwiftUI.ObjectCaptureSession.Tracking.Reason : Swift.Hashable {}
+@available(iOS 17.0, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension _RealityKit_SwiftUI.ObjectCapturePointCloudView : Swift.Sendable {}
+@available(macOS 10.15, iOS 13.0, macCatalyst 13.0, *)
+@_originallyDefinedIn(module: "RealityKit", macOS 12.0)
+@_originallyDefinedIn(module: "RealityKit", iOS 15.0)
+@_originallyDefinedIn(module: "RealityKit", macCatalyst 15.0)
+extension _RealityKit_SwiftUI.RotationOrder : Swift.Equatable {}
+@available(macOS 10.15, iOS 13.0, macCatalyst 13.0, *)
+@_originallyDefinedIn(module: "RealityKit", macOS 12.0)
+@_originallyDefinedIn(module: "RealityKit", iOS 15.0)
+@_originallyDefinedIn(module: "RealityKit", macCatalyst 15.0)
+extension _RealityKit_SwiftUI.RotationOrder : Swift.Hashable {}
+@available(macOS 10.15, iOS 13.0, macCatalyst 13.0, *)
+@_originallyDefinedIn(module: "RealityKit", macOS 12.0)
+@_originallyDefinedIn(module: "RealityKit", iOS 15.0)
+@_originallyDefinedIn(module: "RealityKit", macCatalyst 15.0)
+extension _RealityKit_SwiftUI.RotationOrder : Swift.RawRepresentable {}

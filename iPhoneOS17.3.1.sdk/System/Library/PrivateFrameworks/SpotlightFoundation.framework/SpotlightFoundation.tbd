@@ -1,0 +1,38 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SpotlightFoundation.framework/SpotlightFoundation
+current-version:       2230.7.3
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SPSpotlightRecentsCacheDidChange,
+                            _SPSpotlightRecentsCacheOptionMaxCountKey,
+                            _SpotlightFoundationVersionNumber,
+                            _SpotlightFoundationVersionString,
+                            _attributesForTopicIdentifier,
+                            _logForSPLogCategoryCaching,
+                            _logForSPLogCategoryDefault,
+                            _logForSPLogCategoryRecents, _resultIsLocalType,
+                            _resultIsSuggestionType,
+                            _searchResultWithTopicIdentifier,
+                            _topicIdentifierWithContactIdentifierAndDetail,
+                            _topicIdentifierWithContactInfoAndDetail,
+                            _topicIdentifierWithIdentifierAndDetail,
+                            _topicIdentifierWithPersonQueryIdentifierAndDetail,
+                            _topicIdentifierWithTitleAndType,
+                            _topicIsCoreSuggestion, _truncatedSearchString,
+                            _truncatedTitle ]
+    objc-classes:         [ SPCacheManager, SPCachedResult, SPLocalTopic,
+                            SPProactiveTopic, SPRecentTopic,
+                            SPSpotlightRecentsCache ]
+    objc-ivars:           [ SPCacheManager._session,
+                            SPCachedResult._encodedNormalizedTopic,
+                            SPCachedResult._engagementTime,
+                            SPCachedResult._freshnessScore,
+                            SPCachedResult._score, SPCachedResult._searchString,
+                            SPCachedResult._title, SPCachedResult._type,
+                            SPRecentTopic._engagementDate, SPRecentTopic._score,
+                            SPRecentTopic._topic ]
+...

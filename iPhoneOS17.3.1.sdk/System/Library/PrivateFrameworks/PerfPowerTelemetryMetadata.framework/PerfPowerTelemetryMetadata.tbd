@@ -1,0 +1,53 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PerfPowerTelemetryMetadata.framework/PerfPowerTelemetryMetadata
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PPTClientInterfaceLog, _PPTMetricLog,
+                            _PPTPBCadenceReadFrom, _PPTPBCadenceTupleReadFrom,
+                            _PPTPBMetricHistoryReadFrom, _PPTPBMetricReadFrom,
+                            _PPTPBMetricStreamReadFrom, _PPTPBRoundingReadFrom,
+                            _PPTPBSourceReadFrom, _PPTPBUnitReadFrom,
+                            _PPTStorageLog, _PPTStoreLog, _logHandle, _metricDeclMap ]
+    objc-classes:         [ PPTBatteryMetrics, PPTCadence, PPTCadenceTuple,
+                            PPTClientInterface, PPTFileUtilities, PPTMetadataStore,
+                            PPTMetric, PPTMetricManager, PPTPBCadence,
+                            PPTPBCadenceTuple, PPTPBMetric, PPTPBMetricHistory,
+                            PPTPBMetricStream, PPTPBRounding, PPTPBSource, PPTPBUnit,
+                            PPTRounding, PPTStorageMetrics, PPTUnit, PPTUtilities ]
+    objc-ivars:           [ PPTCadence._cadenceTuples, PPTCadenceTuple._type,
+                            PPTCadenceTuple._value,
+                            PPTMetadataStore._metricsByID, PPTMetric._cadence,
+                            PPTMetric._category, PPTMetric._datatype,
+                            PPTMetric._deviceCapability,
+                            PPTMetric._directionality,
+                            PPTMetric._enabledPopulation, PPTMetric._mode,
+                            PPTMetric._name, PPTMetric._obfuscation,
+                            PPTMetric._rounding, PPTMetric._source,
+                            PPTMetric._storage, PPTMetric._subsystem,
+                            PPTMetric._timeToLive, PPTMetric._unit,
+                            PPTMetric._version, PPTPBCadence._cadences,
+                            PPTPBCadenceTuple._has, PPTPBCadenceTuple._type,
+                            PPTPBCadenceTuple._value, PPTPBMetric._build,
+                            PPTPBMetric._cadence, PPTPBMetric._category,
+                            PPTPBMetric._datatype, PPTPBMetric._deviceCapability,
+                            PPTPBMetric._directionality,
+                            PPTPBMetric._enabledPopulation,
+                            PPTPBMetric._exampleValue, PPTPBMetric._has,
+                            PPTPBMetric._metricDescription, PPTPBMetric._mode,
+                            PPTPBMetric._name, PPTPBMetric._obfuscation,
+                            PPTPBMetric._rounding, PPTPBMetric._source,
+                            PPTPBMetric._storage, PPTPBMetric._subsystem,
+                            PPTPBMetric._timeToLive, PPTPBMetric._unit,
+                            PPTPBMetric._version, PPTPBMetricHistory._metrics,
+                            PPTPBMetricStream._has,
+                            PPTPBMetricStream._metricHistorys,
+                            PPTPBMetricStream._protoVersion, PPTPBRounding._has,
+                            PPTPBRounding._type, PPTPBRounding._value,
+                            PPTPBSource._source, PPTPBUnit._symbol,
+                            PPTRounding._type, PPTRounding._value, PPTUnit._unit ]
+...

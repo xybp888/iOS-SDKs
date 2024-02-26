@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SeymourClient.framework/SeymourClient
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SMCTVUserProfileManagerDidChangeSelectedUserProfileNotification,
+                            _SeymourClientVersionNumber,
+                            _SeymourClientVersionString ]
+    objc-classes:         [ MobileGestaltConstants, SMCAirplaneModeObserver,
+                            SMCCoreTelephonyClient, SMCNotify, SMCOSVariant,
+                            SMCTVUserProfileManager,
+                            _TtC13SeymourClient11XPCListener,
+                            _TtC13SeymourClient12WiFiObserver,
+                            _TtC13SeymourClient14NetworkMonitor,
+                            _TtC13SeymourClient17AppRecordObserver,
+                            _TtC13SeymourClient20AchievementConstants,
+                            _TtC13SeymourClient20HealthWorkoutSession,
+                            _TtC13SeymourClient21CoreTelephonyObserver,
+                            _TtC13SeymourClient25SessionDarwinNotification ]
+    objc-ivars:           [ SMCAirplaneModeObserver._delegate,
+                            SMCAirplaneModeObserver._queue,
+                            SMCAirplaneModeObserver._radiosPreferences,
+                            SMCCoreTelephonyClient._cellularDataEnabled,
+                            SMCCoreTelephonyClient._ctClient,
+                            SMCCoreTelephonyClient._ctServerConnection,
+                            SMCCoreTelephonyClient._delegate,
+                            SMCCoreTelephonyClient._preferredDataSubscriptionContext,
+                            SMCCoreTelephonyClient._queue,
+                            SMCCoreTelephonyClient._roaming ]
+...

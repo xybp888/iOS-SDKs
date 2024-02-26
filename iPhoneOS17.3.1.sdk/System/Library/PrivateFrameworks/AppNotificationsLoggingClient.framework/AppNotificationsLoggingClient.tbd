@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppNotificationsLoggingClient.framework/AppNotificationsLoggingClient
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ATXNEventTypeFromString, _ATXNEventTypeToString,
+                            _ATXNRTOutcomeToSettingResponse,
+                            _ATXNSettingResponseToNEvent,
+                            _ATXNSettingResponseToString,
+                            _ATXNotificationDeliveryUIFromString,
+                            _ATXNotificationDeliveryUIToString,
+                            _ATXNotificationsLoggingClientErrorDomain,
+                            _ATXNotificationsLoggingInterface,
+                            _ATXUserNotificationDeliveryReasonFromString,
+                            _ATXUserNotificationDeliveryReasonToString,
+                            _AppNotificationsLoggingClientVersionNumber,
+                            _AppNotificationsLoggingClientVersionString ]
+    objc-classes:         [ ATXNotificationsAggregateLogger,
+                            ATXNotificationsInterface,
+                            ATXNotificationsLoggingClient ]
+    objc-ivars:           [ ATXNotificationsAggregateLogger._rttFromTracker,
+                            ATXNotificationsAggregateLogger._rttSelectionTracker,
+                            ATXNotificationsInterface._feed,
+                            ATXNotificationsInterface._message,
+                            ATXNotificationsInterface._numSuppActions,
+                            ATXNotificationsInterface._publicationDate,
+                            ATXNotificationsInterface._sectionID,
+                            ATXNotificationsInterface._subtitle,
+                            ATXNotificationsInterface._title,
+                            ATXNotificationsInterface._topic,
+                            ATXNotificationsLoggingClient._activeSuggestionsRequests,
+                            ATXNotificationsLoggingClient._coalescingTimer,
+                            ATXNotificationsLoggingClient._logger,
+                            ATXNotificationsLoggingClient._queue,
+                            ATXNotificationsLoggingClient._xpcConnection ]
+...
