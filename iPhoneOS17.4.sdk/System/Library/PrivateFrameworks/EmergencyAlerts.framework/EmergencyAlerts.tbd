@@ -1,0 +1,45 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/EmergencyAlerts.framework/EmergencyAlerts
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _EACategoryIdentifierAlert,
+                            _EACategoryIdentifierAlertDetailed,
+                            _EACategoryIdentifierAlertSpinner,
+                            _EACategoryIdentifierConfigurableAlert,
+                            _EACategoryIdentifierConfigurableAlertDetailed,
+                            _EACategoryIdentifierConfigurableAlertSpinner,
+                            _EACmasBundlePath, _EALogDefault, _EALogSubsystem,
+                            _EANotificationAppleSafetyAlertCmamLongTextKey,
+                            _EANotificationAppleSafetyAlertCmamTextKey,
+                            _EANotificationAppleSafetyAlertDataKey,
+                            _EANotificationAppleSafetyAlertEffectiveKey,
+                            _EANotificationAppleSafetyAlertExpiresKey,
+                            _EANotificationAppleSafetyAlertInstructionKey,
+                            _EANotificationAppleSafetyAlertMissingHashKey,
+                            _EANotificationAppleSafetyAlertReplaceAlertBodyWithCmamLongTextKey,
+                            _EANotificationAppleSafetyAlertSupportKey,
+                            _EANotificationAppleSafetyAlertToneExpiryTimestampKey,
+                            _EANotificationCarrierBundleIdentifierKey,
+                            _EANotificationExternalToneFilePathKey,
+                            _EANotificationExternalVibrationPatternFilePathKey,
+                            _EANotificationFromPhoneKey,
+                            _EANotificationSoundIsMutableInRelayModeKey,
+                            _EAPreventScreenCaptureKey,
+                            _EARegisterUserNotificationsLogging,
+                            _EASafetyAlertMetricUserInteractionTypeKey,
+                            _EmergencyAlertsVersionNumber,
+                            _EmergencyAlertsVersionString, _ea_getEpochTimestamp,
+                            _ea_getFormattedDatePrint, _ea_getHashForString,
+                            _ea_isValidString, _ea_sendSafetyAlertTapIndication,
+                            _kEADefaultMaxDuration, _kEADefaultTextSound,
+                            _kEADefaultVibration ]
+    objc-classes:         [ EACellBroadcastMessageListener,
+                            EAEmergencyAlertCenter ]
+    objc-ivars:           [ EACellBroadcastMessageListener._emergencyAlertCenter,
+                            EAEmergencyAlertCenter._userNotificationCenter ]
+...

@@ -1,0 +1,49 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ZoomServices.framework/ZoomServices
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AXZoomHandGestureEventFirst,
+                            _AXZoomHandGestureEventLast,
+                            _AXZoomHandGestureEventUsageNone, _ZOTDeviceRotation,
+                            _ZOTDisplayMainScreenSize, _ZOTMainScreenRect,
+                            _ZOTMainScreenSize, _ZOTRotateFromScreen,
+                            _ZOTRotateToScreen, _ZOTTimeUnset,
+                            _ZOTWindowServerDisplay,
+                            _ZWAttributeKeyActiveZoomMode,
+                            _ZWAttributeKeyAppActivationAnimationStartDelay,
+                            _ZWAttributeKeyAppDeactivationAnimationStartDelay,
+                            _ZWAttributeKeyAppSwitcherRevealAnimationStartDelay,
+                            _ZWAttributeKeyDisplayID,
+                            _ZWAttributeKeyInStandbyMode,
+                            _ZWAttributeKeyIsAnimating,
+                            _ZWAttributeKeyIsMainDisplay,
+                            _ZWAttributeKeyReachabilityScaleFactor,
+                            _ZWAttributeKeyShouldSuppressKeyCommandHUD,
+                            _ZWAttributeKeyZoomFrame, _ZWAttributeKeyZoomLevel,
+                            _ZWCommandOptionControlModifiers,
+                            _ZWCommandOptionModifiers,
+                            _ZWCommandOptionShiftModifiers, _ZWControlModifier,
+                            _ZWControlOptionModifiers,
+                            _ZoomServicesPrimaryZoomWindowClientIdentifier,
+                            _kZoomGreyPanValue ]
+    objc-classes:         [ AXZoomListenerContainer, ZoomServices,
+                            ZoomServicesGreyCommandInfo,
+                            ZoomServicesKeyboardManager ]
+    objc-ivars:           [ AXZoomListenerContainer.handler,
+                            AXZoomListenerContainer.identifier,
+                            ZoomServices._registeredForZoomAttributeListeners,
+                            ZoomServices._registeredForZoomListener,
+                            ZoomServices._shouldRegisterForZoomListeners,
+                            ZoomServices._showingZoomLens,
+                            ZoomServices._springBoardReady,
+                            ZoomServices._triedToShowLensBeofreSBReady,
+                            ZoomServices._zoomAttributeListeners,
+                            ZoomServices._zoomListeners,
+                            ZoomServices._zoomWindowClient,
+                            ZoomServicesKeyboardManager._inUnitTestMode ]
+...

@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreSpeechGazeTracking.framework/CoreSpeechGazeTracking
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CSLogContextFacilityCoreSpeech, _CSLogInitIfNeeded,
+                            _CSLogInsightsContext, _CSLoggingSubsystem,
+                            _CoreSpeechGazeTrackingVersionNumber,
+                            _CoreSpeechGazeTrackingVersionString,
+                            _SSRLogContextFacilityCoreSpeech,
+                            _SSRLogInitIfNeeded, _SSRLoggingSubsystem,
+                            _kCSLoggingContextFramework,
+                            _kCSLoggingContextInsights,
+                            _kSSRLoggingContextFramework ]
+    objc-classes:         [ CSAttSiriFaceTrackingCapture,
+                            CSAttSiriGazeAreaOfInterest, CSAttSiriGazeEvent,
+                            CSAttSiriGazeTracker ]
+    objc-ivars:           [ CSAttSiriFaceTrackingCapture._delegate,
+                            CSAttSiriGazeAreaOfInterest._activeRegion,
+                            CSAttSiriGazeAreaOfInterest._activeRegionWithPadding,
+                            CSAttSiriGazeEvent._aoi,
+                            CSAttSiriGazeEvent._eventTimestamp,
+                            CSAttSiriGazeEvent._gazePoint,
+                            CSAttSiriGazeEvent._gazeState,
+                            CSAttSiriGazeTracker._gazePoint,
+                            CSAttSiriGazeTracker._hasFace,
+                            CSAttSiriGazeTracker._mouthOpen ]
+...

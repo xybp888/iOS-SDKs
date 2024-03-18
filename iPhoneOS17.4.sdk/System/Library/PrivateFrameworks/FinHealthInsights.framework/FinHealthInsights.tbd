@@ -1,0 +1,44 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FinHealthInsights.framework/FinHealthInsights
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _FHCategorySpendInsightMerchantKey,
+                            _FHCurrencyCodeKey, _FHInsightAverageAmountKey,
+                            _FHInsightDetectionTypeKey, _FHInsightDirectionKey,
+                            _FHInsightEndDateKey,
+                            _FHInsightOverallSpendFeatureName,
+                            _FHInsightSpendAmountKey, _FHInsightStartDateKey,
+                            _FHInsightTypeAggregateTag,
+                            _FHInsightTypeCategorySpend,
+                            _FHInsightTypeCompoundTag, _FHInsightTypeKey,
+                            _FHInsightTypeMerchantSpend, _FHInsightTypeNone,
+                            _FHInsightTypeOverallSpend, _FHInsightWindowKey,
+                            _FHInsightWindowReferenceKey,
+                            _FHMerchantSpendInsightMerchantNameKey,
+                            _FinHealthInsightsVersionNumber,
+                            _FinHealthInsightsVersionString ]
+    objc-classes:         [ FHCategorySpendInsight, FHFeatureInsight,
+                            FHInsightsFetcher, FHInsightsSpendingTrends,
+                            FHMerchantSpendInsight, FHOverallSpendInsight ]
+    objc-ivars:           [ FHCategorySpendInsight.merchantCategory,
+                            FHFeatureInsight.averageAmount,
+                            FHFeatureInsight.currencyCode,
+                            FHFeatureInsight.detectionType,
+                            FHFeatureInsight.direction, FHFeatureInsight.endDate,
+                            FHFeatureInsight.spendAmount,
+                            FHFeatureInsight.startDate, FHFeatureInsight.type,
+                            FHFeatureInsight.window,
+                            FHFeatureInsight.windowReference,
+                            FHInsightsSpendingTrends._insightsDestinationEntity,
+                            FHInsightsSpendingTrends._insightsProcessingQueue,
+                            FHInsightsSpendingTrends._merchantCounts,
+                            FHInsightsSpendingTrends._monthlyThreshold,
+                            FHInsightsSpendingTrends._transactionEntity,
+                            FHInsightsSpendingTrends._weeklyThreshold,
+                            FHMerchantSpendInsight.merchantName ]
+...

@@ -1,0 +1,38 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.12.5 clang-1500.3.9.1.1)
+// swift-module-flags: -target arm64-apple-ios17.4 -enable-objc-interop -enable-library-evolution -module-link-name swiftSystem_Foundation -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 33 -module-name _System_Foundation
+import Foundation
+import Swift
+@_exported import System
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *)
+extension Foundation.URL {
+  @available(macOS, introduced: 11.0, deprecated: 13.0, renamed: "init(filePath:)")
+  @available(iOS, introduced: 14.0, deprecated: 16.0, renamed: "init(filePath:)")
+  @available(watchOS, introduced: 7.0, deprecated: 9.0, renamed: "init(filePath:)")
+  @available(tvOS, introduced: 14.0, deprecated: 16.0, renamed: "init(filePath:)")
+  @available(visionOS, unavailable, renamed: "init(filePath:)")
+  public init?(_ path: System.FilePath)
+  @available(macOS, introduced: 11.0, deprecated: 13.0, message: "Use init?(filePath:directoryHint:) instead")
+  @available(iOS, introduced: 14.0, deprecated: 16.0, message: "Use init?(filePath:directoryHint:) instead")
+  @available(watchOS, introduced: 7.0, deprecated: 9.0, message: "Use init?(filePath:directoryHint:) instead")
+  @available(tvOS, introduced: 14.0, deprecated: 16.0, message: "Use init?(filePath:directoryHint:) instead")
+  @available(visionOS, unavailable, message: "Use init?(filePath:directoryHint:) instead")
+  public init?(_ path: System.FilePath, isDirectory: Swift.Bool)
+}
+extension Foundation.URL {
+  @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+  @_alwaysEmitIntoClient public init?(filePath path: System.FilePath, directoryHint: Foundation.URL.DirectoryHint = .inferFromPath) {
+    guard let p = String(validating: path) else {
+      return nil
+    }
+    self.init(filePath: p, directoryHint: directoryHint, relativeTo: nil)
+  }
+}
+@available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *)
+extension System.FilePath {
+  @available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *)
+  public init?(_ url: Foundation.URL)
+}

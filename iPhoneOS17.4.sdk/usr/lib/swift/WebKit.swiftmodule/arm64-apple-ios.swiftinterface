@@ -1,0 +1,46 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.12.5 clang-1500.3.9.1.1)
+// swift-module-flags: -target arm64-apple-ios17.4 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftWebKit -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-experimental-concurrency -enable-bare-slash-regex -user-module-version 7618.1.15.10.6 -module-name WebKit
+import Network
+import Swift
+@_exported import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 14.0, macOS 11.0, *)
+extension WebKit.WKPDFConfiguration {
+  public var rect: CoreFoundation.CGRect? {
+    get
+    set
+  }
+}
+@available(iOS 14.0, macOS 11.0, *)
+extension WebKit.WKWebView {
+  @_Concurrency.MainActor(unsafe) public func callAsyncJavaScript(_ functionBody: Swift.String, arguments: [Swift.String : Any] = [:], in frame: WebKit.WKFrameInfo? = nil, in contentWorld: WebKit.WKContentWorld, completionHandler: ((Swift.Result<Any, any Swift.Error>) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func createPDF(configuration: WebKit.WKPDFConfiguration = .init(), completionHandler: @escaping (Swift.Result<Foundation.Data, any Swift.Error>) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func createWebArchiveData(completionHandler: @escaping (Swift.Result<Foundation.Data, any Swift.Error>) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func evaluateJavaScript(_ javaScript: Swift.String, in frame: WebKit.WKFrameInfo? = nil, in contentWorld: WebKit.WKContentWorld, completionHandler: ((Swift.Result<Any, any Swift.Error>) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func find(_ string: Swift.String, configuration: WebKit.WKFindConfiguration = .init(), completionHandler: @escaping (WebKit.WKFindResult) -> Swift.Void)
+}
+@available(iOS 15.0, macOS 12.0, *)
+extension WebKit.WKWebView {
+  #if compiler(>=5.3) && $AsyncAwait
+  @_Concurrency.MainActor(unsafe) public func callAsyncJavaScript(_ functionBody: Swift.String, arguments: [Swift.String : Any] = [:], in frame: WebKit.WKFrameInfo? = nil, contentWorld: WebKit.WKContentWorld) async throws -> Any?
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  @_Concurrency.MainActor(unsafe) public func pdf(configuration: WebKit.WKPDFConfiguration = .init()) async throws -> Foundation.Data
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  @_Concurrency.MainActor(unsafe) public func evaluateJavaScript(_ javaScript: Swift.String, in frame: WebKit.WKFrameInfo? = nil, contentWorld: WebKit.WKContentWorld) async throws -> Any?
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  @_Concurrency.MainActor(unsafe) public func find(_ string: Swift.String, configuration: WebKit.WKFindConfiguration = .init()) async throws -> WebKit.WKFindResult
+  #endif
+}
+@available(iOS 17.0, macOS 14.0, *)
+extension WebKit.WKWebsiteDataStore {
+  public var proxyConfigurations: [Network.ProxyConfiguration] {
+    get
+    set
+  }
+}

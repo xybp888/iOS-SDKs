@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SignpostCollection.framework/SignpostCollection
+current-version:       125
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SCWriteLoggingAppleTrace,
+                            _SCWriteLoggingAppleTraceWithPredicate,
+                            _SignpostPlatformForDevice,
+                            _SignpostPlatformForString,
+                            _SignpostSystemTimebaseRatio,
+                            _StringForSignpostPlatform,
+                            __signpostcollection_debug_log,
+                            _kSCAppleTraceFileExtension,
+                            _kSignpostNotification_NoTimeout ]
+    objc-classes:         [ SignpostSerializationFilterConfiguration,
+                            SignpostSupportObjectSerializer ]
+    objc-ivars:           [ SignpostSerializationFilterConfiguration._pidFilter,
+                            SignpostSerializationFilterConfiguration._processNameFilter,
+                            SignpostSerializationFilterConfiguration._subsystemCategoryFilter,
+                            SignpostSerializationFilterConfiguration._uniquePidFilter,
+                            SignpostSupportObjectSerializer._extractor,
+                            SignpostSupportObjectSerializer._filterConfiguration,
+                            SignpostSupportObjectSerializer._maxBatchSize,
+                            SignpostSupportObjectSerializer._maxBytesSize,
+                            SignpostSupportObjectSerializer._outstandingLogMessage,
+                            SignpostSupportObjectSerializer._outstandingSignpostObjects,
+                            SignpostSupportObjectSerializer._redactPrivacySensitiveData,
+                            SignpostSupportObjectSerializer._serializedLogMessageBlock,
+                            SignpostSupportObjectSerializer._serializedSignpostEventBlock ]
+...

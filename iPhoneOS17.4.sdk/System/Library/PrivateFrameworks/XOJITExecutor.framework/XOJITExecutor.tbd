@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/XOJITExecutor.framework/XOJITExecutor
+current-version:       22
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ ___jit_debug_descriptor, ___jit_debug_register_code,
+                            ___xojit_executor_run_program_on_main_thread,
+                            ___xojit_executor_write_mem, ___xojit_run_wrapper,
+                            _llvm_orc_registerJITLoaderGDBAllocAction ]
+...

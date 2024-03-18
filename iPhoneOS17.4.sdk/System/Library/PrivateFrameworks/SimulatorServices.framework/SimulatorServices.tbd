@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SimulatorServices.framework/SimulatorServices
+current-version:       943
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SimScreenCaptureTargetDefaultDisplay,
+                            _SimScreenCaptureTargetExternalDisplay,
+                            _SimScreenCaptureTargetInternalDisplay ]
+    objc-classes:         [ SimIdentityPrivateKey, SimIdentityService,
+                            SimScreenCaptureService, SimScreenCaptureSession ]
+    objc-ivars:           [ SimIdentityPrivateKey._persistentRef,
+                            SimIdentityService._connection,
+                            SimScreenCaptureService._connection,
+                            SimScreenCaptureSession._connection,
+                            SimScreenCaptureSession._didStopSession,
+                            SimScreenCaptureSession._sessionID ]
+...

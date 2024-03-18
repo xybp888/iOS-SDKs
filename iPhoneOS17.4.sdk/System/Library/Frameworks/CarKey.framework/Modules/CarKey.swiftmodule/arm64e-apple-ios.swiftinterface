@@ -1,0 +1,137 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.12.5 clang-1500.3.9.1.1)
+// swift-module-flags: -target arm64e-apple-ios17.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 44.24 -module-name CarKey
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+@_hasMissingDesignatedInitializers @available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+open class CarKeyRemoteControl {
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+  open class func start(delegate: any CarKey.CarKeyRemoteControlSessionDelegate, subscriptionRange subscriptionFunctionIDRange: Swift.ClosedRange<Swift.Int>? = nil, with delegateCallbackQueue: Dispatch.DispatchQueue? = nil) async throws -> CarKey.CarKeyRemoteControlSession
+  #endif
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+open class CarKeyRemoteControlSession {
+  #if compiler(>=5.3) && $EffectfulProp
+  public var vehicleReports: [CarKey.VehicleReport] {
+    get throws
+  }
+  #endif
+  @available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+  open func end() throws
+  @available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+  open func perform(_ action: CarKey.RemoteKeylessEntryAction) throws -> CarKey.RemoteKeylessEntryAction.ExecutionRequest
+  @available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+  open func perform(_ enduringAction: CarKey.RemoteKeylessEntryEnduringAction) throws -> CarKey.RemoteKeylessEntryEnduringAction.EnduringExecutionRequest
+  @available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+  open func sendPassthroughData(_ passthroughData: Foundation.Data, toVehicle vehicleID: Swift.String) throws
+  @available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+  open func isPassiveEntryAvailable(forVehicle vehicleID: Swift.String) throws -> Swift.Bool
+  @objc deinit
+}
+@available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+public protocol CarKeyRemoteControlSessionDelegate {
+  @available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+  func remoteControlSession(_ session: CarKey.CarKeyRemoteControlSession, didInvalidateWithError: CarKey.CarKeyErrorCode)
+  @available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+  func remoteControlSession(_ session: CarKey.CarKeyRemoteControlSession, vehicleDidUpdateReport: CarKey.VehicleReport)
+  @available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+  func remoteControlSession(_ session: CarKey.CarKeyRemoteControlSession, didReceivePassthroughData: Foundation.Data, fromVehicle vehicleID: Swift.String)
+}
+@available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+public struct VehicleReport {
+  public let identifier: Swift.String
+  public var isConnected: Swift.Bool {
+    get
+  }
+  public var supportedFunctions: [CarKey.FunctionIdentifier] {
+    get
+  }
+  public func status(for function: CarKey.FunctionIdentifier) throws -> CarKey.FunctionStatus?
+  public func proprietaryData(for function: CarKey.FunctionIdentifier) throws -> Foundation.Data?
+}
+@available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+public struct RemoteKeylessEntryAction {
+  public let functionID: CarKey.FunctionIdentifier
+  public let actionID: CarKey.ActionIdentifier
+  public let recipientVehicleID: Swift.String
+  public init(functionID: CarKey.FunctionIdentifier, actionID: CarKey.ActionIdentifier, vehicleID: Swift.String)
+  @_hasMissingDesignatedInitializers final public class ExecutionRequest : Swift.Sendable {
+    #if compiler(>=5.3) && $AsyncAwait
+    final public func results() async throws -> CarKey.ExecutionStatus
+    #endif
+    @objc deinit
+  }
+}
+@available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+public struct RemoteKeylessEntryEnduringAction {
+  public let functionID: CarKey.FunctionIdentifier
+  public let actionID: CarKey.ActionIdentifier
+  public let recipientVehicleID: Swift.String
+  public init(functionID: CarKey.FunctionIdentifier, actionID: CarKey.ActionIdentifier, vehicleID: Swift.String)
+  @_hasMissingDesignatedInitializers final public class EnduringExecutionRequest {
+    #if compiler(>=5.3) && $AsyncAwait
+    final public func results() async throws -> CarKey.ExecutionStatus
+    #endif
+    final public func stop() throws
+    @objc deinit
+  }
+}
+@available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+public struct FunctionIdentifier : Swift.RawRepresentable, Swift.Hashable {
+  public let rawValue: Swift.Int
+  public init(_ rawValue: Swift.Int)
+  public init(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+}
+@available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+public struct ActionIdentifier : Swift.RawRepresentable, Swift.Hashable {
+  public let rawValue: Swift.Int
+  public init(_ rawValue: Swift.Int)
+  public init(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+}
+@available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+public struct ExecutionStatus : Swift.RawRepresentable, Swift.Sendable {
+  public let rawValue: Swift.Int
+  public init(_ rawValue: Swift.Int)
+  public init(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+}
+@available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+public struct FunctionStatus : Swift.RawRepresentable, Swift.Hashable {
+  public let rawValue: Swift.Int
+  public init(_ rawValue: Swift.Int)
+  public init(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+}
+@available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+public enum CarKeyErrorCode : Swift.Error {
+  case Internal
+  case VehicleNotConnected
+  case AnotherRequestInProgress
+  case SessionNotActive
+  case FunctionUnknown
+  case SecurityViolation
+  case VehicleNotFound
+  case MessageTooLong
+  case RequestTimedOut
+  case EnduringRequestUsingEventMethod
+  case RequestNotInProgress
+  case ClientInBackground
+  case FeatureNotSupported
+  public static func == (a: CarKey.CarKeyErrorCode, b: CarKey.CarKeyErrorCode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+extension CarKey.CarKeyErrorCode : Swift.Equatable {}
+@available(iOS 16.0, watchOS 9.0, macOS 13.3, *)
+extension CarKey.CarKeyErrorCode : Swift.Hashable {}

@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PreviewsInjection.framework/PreviewsInjection
+current-version:       21.30.32
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PreviewsInjectionVersionNumber,
+                            _PreviewsInjectionVersionString,
+                            _UVConnectToRenderServerPort, _UVMakeAppActive,
+                            _UVRenderServerDisplayClientList,
+                            ___SERVICEHUB_ATTACH_POINT__,
+                            ___previews_injection_blank_executor_main,
+                            ___previews_injection_jit_link_entrypoint,
+                            ___previews_injection_run_user_entrypoint,
+                            _allSubclassesOf ]
+    objc-classes:         [ UVIOSurface, UVPreviewsInjectionEntryPoint,
+                            UVRenderServerWindow,
+                            _TtC17PreviewsInjection19UVBSEndpointMonitor ]
+    objc-ivars:           [ UVIOSurface._surface ]
+...

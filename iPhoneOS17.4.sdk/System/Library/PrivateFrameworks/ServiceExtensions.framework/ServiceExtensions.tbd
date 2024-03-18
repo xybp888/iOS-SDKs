@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ServiceExtensions.framework/ServiceExtensions
+current-version:       1
+compatibility-version: 1
+reexported-libraries:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:            [ /System/Library/Frameworks/BrowserEngineKit.framework/BrowserEngineKit,
+                            /System/Library/PrivateFrameworks/ServiceExtensionsCore.framework/ServiceExtensionsCore ]
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ _SEBrowserProcess, _SECapabilities, _SECapability,
+                            _SEContentProcess, _SEExtensionProcess, _SEGPUProcess,
+                            _SEHostable, _SEHostingHandle,
+                            _SEHostingUpdateCoordinator, _SEHostingView,
+                            _SENetworkProcess, _SEServiceConfiguration,
+                            _SEServiceManager ]
+...

@@ -1,0 +1,823 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.12.5 clang-1500.3.9.1.1)
+// swift-module-flags: -target arm64-apple-ios17.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-experimental-feature FreestandingMacros -enable-bare-slash-regex -user-module-version 402.116.100 -module-name WidgetKit
+import ActivityKit
+import AppIntents
+import Combine
+@_exported import DeveloperToolsSupport
+import Foundation
+import Intents
+import Swift
+import SwiftUI
+@_exported import WidgetKit
+import _AppIntents_SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+public struct TimelineEntryRelevance : Swift.Codable, Swift.Hashable {
+  public var score: Swift.Float
+  public var duration: Foundation.TimeInterval
+  public init(score: Swift.Float, duration: Foundation.TimeInterval = 0.0)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: WidgetKit.TimelineEntryRelevance, b: WidgetKit.TimelineEntryRelevance) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+public protocol TimelineEntry {
+  var date: Foundation.Date { get }
+  var relevance: WidgetKit.TimelineEntryRelevance? { get }
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+extension WidgetKit.TimelineEntry {
+  public var relevance: WidgetKit.TimelineEntryRelevance? {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+@available(tvOS, unavailable)
+public struct AppIntentConfiguration<Intent, Content> : SwiftUI.WidgetConfiguration where Intent : AppIntents.WidgetConfigurationIntent, Content : SwiftUI.View {
+  public var body: some SwiftUI.WidgetConfiguration {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s9WidgetKit22AppIntentConfigurationV4bodyQrvp", 0) __<Intent, Content>
+}
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+@available(tvOS, unavailable)
+public struct AppIntentRecommendation<Intent> where Intent : AppIntents.WidgetConfigurationIntent {
+  public init(intent: Intent, description: SwiftUI.Text)
+  public init(intent: Intent, description: SwiftUI.LocalizedStringKey)
+  @_disfavoredOverload public init(intent: Intent, description: some StringProtocol)
+}
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+@available(tvOS, unavailable)
+extension WidgetKit.AppIntentConfiguration {
+  public init<Provider>(kind: Swift.String, intent: Intent.Type = Intent.self, provider: Provider, @SwiftUI.ViewBuilder content: @escaping (Provider.Entry) -> Content) where Intent == Provider.Intent, Provider : WidgetKit.AppIntentTimelineProvider
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+public struct WidgetInfo {
+  public let configuration: Intents.INIntent?
+  @available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+  @available(tvOS, unavailable)
+  public func widgetConfigurationIntent<Intent>(of intentType: Intent.Type = Intent.self) -> Intent? where Intent : AppIntents.WidgetConfigurationIntent
+  public let family: WidgetKit.WidgetFamily
+  public let kind: Swift.String
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+extension WidgetKit.WidgetInfo : Swift.Identifiable, Swift.Hashable, Swift.Equatable {
+  public var id: WidgetKit.WidgetInfo {
+    get
+  }
+  public static func == (a: WidgetKit.WidgetInfo, b: WidgetKit.WidgetInfo) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias ID = WidgetKit.WidgetInfo
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+extension WidgetKit.WidgetInfo : Swift.CustomDebugStringConvertible {
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+public struct StaticConfiguration<Content> : SwiftUI.WidgetConfiguration where Content : SwiftUI.View {
+  public var body: some SwiftUI.WidgetConfiguration {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s9WidgetKit19StaticConfigurationV4bodyQrvp", 0) __<Content>
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+extension WidgetKit.StaticConfiguration {
+  public init<Provider>(kind: Swift.String, provider: Provider, @SwiftUI.ViewBuilder content: @escaping (Provider.Entry) -> Content) where Provider : WidgetKit.TimelineProvider
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+extension SwiftUI.EnvironmentValues {
+  public var widgetFamily: WidgetKit.WidgetFamily {
+    get
+  }
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct ActivityViewContext<Attributes> where Attributes : ActivityKit.ActivityAttributes {
+  public let activityID: Swift.String
+  public let attributes: Attributes
+  public let state: Attributes.ContentState
+  @available(iOS 16.2, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public let isStale: Swift.Bool
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct DynamicIslandMode : Swift.Equatable {
+  public static let expanded: WidgetKit.DynamicIslandMode
+  public static let compactLeading: WidgetKit.DynamicIslandMode
+  public static let compactTrailing: WidgetKit.DynamicIslandMode
+  public static let minimal: WidgetKit.DynamicIslandMode
+  public static func == (a: WidgetKit.DynamicIslandMode, b: WidgetKit.DynamicIslandMode) -> Swift.Bool
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct DynamicIsland {
+  public init<Expanded, CompactLeading, CompactTrailing, Minimal>(@WidgetKit.DynamicIslandExpandedContentBuilder expanded: @escaping () -> WidgetKit.DynamicIslandExpandedContent<Expanded>, @SwiftUI.ViewBuilder compactLeading: @escaping () -> CompactLeading, @SwiftUI.ViewBuilder compactTrailing: @escaping () -> CompactTrailing, @SwiftUI.ViewBuilder minimal: @escaping () -> Minimal) where Expanded : SwiftUI.View, CompactLeading : SwiftUI.View, CompactTrailing : SwiftUI.View, Minimal : SwiftUI.View
+  public func widgetURL(_ url: Foundation.URL?) -> WidgetKit.DynamicIsland
+  public func keylineTint(_ color: SwiftUI.Color?) -> WidgetKit.DynamicIsland
+}
+extension WidgetKit.DynamicIsland {
+  @available(iOS 16.1, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public func contentMargins(_ edges: SwiftUI.Edge.Set = .all, _ length: Swift.Double, for mode: WidgetKit.DynamicIslandMode) -> WidgetKit.DynamicIsland
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct ActivityConfiguration<Attributes> : SwiftUI.WidgetConfiguration where Attributes : ActivityKit.ActivityAttributes {
+  public init<Content>(for attributesType: Attributes.Type, @SwiftUI.ViewBuilder content: @escaping (WidgetKit.ActivityViewContext<Attributes>) -> Content, dynamicIsland: @escaping (WidgetKit.ActivityViewContext<Attributes>) -> WidgetKit.DynamicIsland) where Content : SwiftUI.View
+  public var body: some SwiftUI.WidgetConfiguration {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s9WidgetKit21ActivityConfigurationV4bodyQrvp", 0) __<Attributes>
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension SwiftUI.EnvironmentValues {
+  @available(iOS 17.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @usableFromInline
+  internal struct ActivityFullScreenKey : SwiftUI.EnvironmentKey {
+    @usableFromInline
+    internal static var defaultValue: Swift.Bool
+    @usableFromInline
+    internal typealias Value = Swift.Bool
+  }
+  @available(iOS 16.1, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @_alwaysEmitIntoClient public var isActivityFullscreen: Swift.Bool {
+    get {
+            if #available(iOS 17.0, *) {
+                return self[ActivityFullScreenKey.self]
+            } else {
+                return false
+            }
+        }
+  }
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct DynamicIslandExpandedContent<Content> where Content : SwiftUI.View {
+  @usableFromInline
+  internal var content: Content
+  @usableFromInline
+  internal init(@SwiftUI.ViewBuilder content: () -> Content)
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@_functionBuilder public struct DynamicIslandExpandedContentBuilder {
+  @_alwaysEmitIntoClient public static func buildPartialBlock<C>(first: WidgetKit.DynamicIslandExpandedRegion<C>) -> WidgetKit.DynamicIslandExpandedContent<some SwiftUI.View> where C : SwiftUI.View {
+        DynamicIslandExpandedContent {
+            first._viewRepresentation
+        }
+    }
+  
+  @_alwaysEmitIntoClient public static func buildPartialBlock<C>(first: WidgetKit.DynamicIslandExpandedContent<C>) -> WidgetKit.DynamicIslandExpandedContent<some SwiftUI.View> where C : SwiftUI.View {
+        first
+    }
+  
+  @_alwaysEmitIntoClient public static func buildPartialBlock<C0, C1>(accumulated: WidgetKit.DynamicIslandExpandedContent<C0>, next: WidgetKit.DynamicIslandExpandedRegion<C1>) -> WidgetKit.DynamicIslandExpandedContent<some SwiftUI.View> where C0 : SwiftUI.View, C1 : SwiftUI.View {
+        DynamicIslandExpandedContent {
+            accumulated.content
+            next._viewRepresentation
+        }
+    }
+  
+  @_alwaysEmitIntoClient public static func buildPartialBlock<C0, C1>(accumulated: WidgetKit.DynamicIslandExpandedContent<C0>, next: WidgetKit.DynamicIslandExpandedContent<C1>) -> WidgetKit.DynamicIslandExpandedContent<some SwiftUI.View> where C0 : SwiftUI.View, C1 : SwiftUI.View {
+        DynamicIslandExpandedContent {
+            accumulated.content
+            next.content
+        }
+    }
+  
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+public struct WidgetPreviewContext : SwiftUI.PreviewContext {
+  public subscript<Key>(key: Key.Type) -> Key.Value where Key : SwiftUI.PreviewContextKey {
+    get
+  }
+  public init(family: WidgetKit.WidgetFamily)
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+public protocol TimelineProvider {
+  associatedtype Entry : WidgetKit.TimelineEntry
+  typealias Context = WidgetKit.TimelineProviderContext
+  func placeholder(in context: Self.Context) -> Self.Entry
+  func getSnapshot(in context: Self.Context, completion: @escaping (Self.Entry) -> Swift.Void)
+  func getTimeline(in context: Self.Context, completion: @escaping (WidgetKit.Timeline<Self.Entry>) -> Swift.Void)
+}
+@_hasMissingDesignatedInitializers @available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+public class WidgetCenter {
+  public static let shared: WidgetKit.WidgetCenter
+  public struct UserInfoKey {
+    public static let kind: Swift.String
+    public static let family: Swift.String
+    public static let activityID: Swift.String
+  }
+  @available(iOS 16.0, macOS 13.0, watchOS 9.0, *)
+  @available(tvOS, unavailable)
+  public func invalidateConfigurationRecommendations()
+  public func getCurrentConfigurations(_ completion: @escaping (Swift.Result<[WidgetKit.WidgetInfo], any Swift.Error>) -> Swift.Void)
+  public func reloadTimelines(ofKind kind: Swift.String)
+  public func reloadAllTimelines()
+  @objc deinit
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+extension SwiftUI.View {
+  public func widgetURL(_ url: Foundation.URL?) -> some SwiftUI.View
+  
+}
+@available(iOS 16.0, watchOS 9.0, macOS 13.0, *)
+@available(tvOS, unavailable)
+public struct AccessoryWidgetBackground : SwiftUI.View {
+  public init()
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s9WidgetKit09AccessoryA10BackgroundV4bodyQrvp", 0) __
+}
+extension SwiftUI.EnvironmentValues {
+  @available(iOS 17.0, watchOS 10.0, macOS 14.0, *)
+  @available(tvOS, unavailable)
+  public var widgetContentMargins: SwiftUI.EdgeInsets {
+    get
+  }
+  @available(iOS 17.0, watchOS 10.0, macOS 14.0, *)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal struct WidgetContentMarginsKey : SwiftUI.EnvironmentKey {
+    @usableFromInline
+    internal static var defaultValue: SwiftUI.EdgeInsets {
+      get
+    }
+    @usableFromInline
+    internal typealias Value = SwiftUI.EdgeInsets
+  }
+}
+@available(iOS 15.0, macOS 12.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+extension SwiftUI.WidgetConfiguration {
+  @_alwaysEmitIntoClient public func contentMarginsDisabled() -> some SwiftUI.WidgetConfiguration {
+        if #available(iOS 17.0, watchOS 10.0, macOS 14.0, *) {
+            return _contentMarginsDisabled()
+        } else {
+            return self
+        }
+    }
+  
+  @available(iOS 17.0, watchOS 10.0, macOS 14.0, *)
+  @available(tvOS, unavailable)
+  public func _contentMarginsDisabled() -> some SwiftUI.WidgetConfiguration
+  
+}
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+@available(tvOS, unavailable)
+extension DeveloperToolsSupport.Preview {
+  #if compiler(>=5.3) && $AsyncAwait
+  public init(_ name: Swift.String? = nil, as family: WidgetKit.WidgetFamily, widget: @escaping () -> some Widget, @WidgetKit.PreviewTimelineBuilder timeline: @escaping @_Concurrency.MainActor () async -> [any WidgetKit.TimelineEntry])
+  #endif
+  public init(_ name: Swift.String? = nil, as family: WidgetKit.WidgetFamily, widget: @escaping () -> some Widget, timelineProvider: @escaping () -> some TimelineProvider)
+  @available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+  @available(tvOS, unavailable)
+  public init<Provider>(_ name: Swift.String? = nil, as family: WidgetKit.WidgetFamily, using intent: Provider.Intent, widget: @escaping () -> some Widget, timelineProvider: @escaping () -> Provider) where Provider : WidgetKit.IntentTimelineProvider
+  public init<Provider>(_ name: Swift.String? = nil, as family: WidgetKit.WidgetFamily, using intent: Provider.Intent, widget: @escaping () -> some Widget, timelineProvider: @escaping () -> Provider) where Provider : WidgetKit.AppIntentTimelineProvider
+}
+#if compiler(>=5.3) && $AsyncAwait && $Macros && $FreestandingMacros
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+@available(tvOS, unavailable)
+@freestanding(declaration) public macro Preview<Widget>(_ name: Swift.String? = nil, as family: WidgetKit.WidgetFamily, widget: @escaping () -> Widget, @WidgetKit.PreviewTimelineBuilder timeline: @escaping @_Concurrency.MainActor () async -> [any WidgetKit.TimelineEntry]) = #externalMacro(module: "PreviewsMacros", type: "Common") where Widget : SwiftUI.Widget
+#endif
+#if compiler(>=5.3) && $Macros && $FreestandingMacros
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+@available(tvOS, unavailable)
+@freestanding(declaration) public macro Preview<Widget, Provider>(_ name: Swift.String? = nil, as family: WidgetKit.WidgetFamily, widget: @escaping () -> Widget, timelineProvider: @escaping () -> Provider) = #externalMacro(module: "PreviewsMacros", type: "Common") where Widget : SwiftUI.Widget, Provider : WidgetKit.TimelineProvider
+#endif
+#if compiler(>=5.3) && $Macros && $FreestandingMacros
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+@available(tvOS, unavailable)
+@freestanding(declaration) public macro Preview<Widget, Provider>(_ name: Swift.String? = nil, as family: WidgetKit.WidgetFamily, using intent: Provider.Intent, widget: @escaping () -> Widget, timelineProvider: @escaping () -> Provider) = #externalMacro(module: "PreviewsMacros", type: "Common") where Widget : SwiftUI.Widget, Provider : WidgetKit.IntentTimelineProvider
+#endif
+#if compiler(>=5.3) && $Macros && $FreestandingMacros
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+@available(tvOS, unavailable)
+@freestanding(declaration) public macro Preview<Widget, Provider>(_ name: Swift.String? = nil, as family: WidgetKit.WidgetFamily, using intent: Provider.Intent, widget: @escaping () -> Widget, timelineProvider: @escaping () -> Provider) = #externalMacro(module: "PreviewsMacros", type: "Common") where Widget : SwiftUI.Widget, Provider : WidgetKit.AppIntentTimelineProvider
+#endif
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+@available(tvOS, unavailable)
+@_functionBuilder public struct PreviewTimelineBuilder {
+  @available(*, unavailable, message: "Please provide at lease one timeline entry to preview your widget.")
+  @_alwaysEmitIntoClient public static func buildBlock() -> [any WidgetKit.TimelineEntry] {
+        fatalError("Unreachable")
+    }
+  public static func buildExpression(_ entry: some TimelineEntry) -> [any WidgetKit.TimelineEntry]
+  public static func buildPartialBlock(first: [any WidgetKit.TimelineEntry]) -> [any WidgetKit.TimelineEntry]
+  public static func buildPartialBlock(accumulated: [any WidgetKit.TimelineEntry], next: [any WidgetKit.TimelineEntry]) -> [any WidgetKit.TimelineEntry]
+  public static func buildArray(_ components: [[any WidgetKit.TimelineEntry]]) -> [any WidgetKit.TimelineEntry]
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct DynamicIslandExpandedRegionVerticalPlacement : Swift.Equatable {
+  public static let `default`: WidgetKit.DynamicIslandExpandedRegionVerticalPlacement
+  public static let belowIfTooWide: WidgetKit.DynamicIslandExpandedRegionVerticalPlacement
+  public static func == (a: WidgetKit.DynamicIslandExpandedRegionVerticalPlacement, b: WidgetKit.DynamicIslandExpandedRegionVerticalPlacement) -> Swift.Bool
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct DynamicIslandExpandedRegionPosition {
+}
+extension WidgetKit.DynamicIslandExpandedRegionPosition {
+  @available(iOS 16.1, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public static let leading: WidgetKit.DynamicIslandExpandedRegionPosition
+  @available(iOS 16.1, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public static let trailing: WidgetKit.DynamicIslandExpandedRegionPosition
+  @available(iOS 16.1, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public static let center: WidgetKit.DynamicIslandExpandedRegionPosition
+  @available(iOS 16.1, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public static let bottom: WidgetKit.DynamicIslandExpandedRegionPosition
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct DynamicIslandExpandedRegion<Content> where Content : SwiftUI.View {
+  public init(_ position: WidgetKit.DynamicIslandExpandedRegionPosition, priority: Swift.Double = 0, @SwiftUI.ViewBuilder content: () -> Content)
+  public var _viewRepresentation: some SwiftUI.View {
+    get
+  }
+}
+extension WidgetKit.DynamicIslandExpandedRegion {
+  @available(iOS 16.1, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public func contentMargins(_ edges: SwiftUI.Edge.Set = .all, _ length: Swift.Double) -> WidgetKit.DynamicIslandExpandedRegion<Content>
+}
+extension SwiftUI.View {
+  @available(iOS 16.1, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public func dynamicIsland(verticalPlacement: WidgetKit.DynamicIslandExpandedRegionVerticalPlacement) -> some SwiftUI.View
+  
+}
+@available(iOS 17.0, watchOS 10.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+extension SwiftUI.View {
+  public func widgetCurvesContent(_ curvesContent: Swift.Bool = true) -> some SwiftUI.View
+  
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+extension SwiftUI.Widget {
+  public static func main()
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+extension SwiftUI.WidgetBundle {
+  public static func main()
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+public enum WidgetFamily : Swift.Int, Swift.RawRepresentable, Swift.CustomDebugStringConvertible, Swift.CustomStringConvertible {
+  @available(iOS 14.0, macOS 11.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  case systemSmall
+  @available(iOS 14.0, macOS 11.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  case systemMedium
+  @available(iOS 14.0, macOS 11.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  case systemLarge
+  @available(iOS 15.0, macOS 14.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  case systemExtraLarge
+  @available(watchOS 9.0, *)
+  @available(iOS, unavailable)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  case accessoryCorner
+  @available(iOS 16.0, watchOS 9.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  case accessoryCircular
+  @available(iOS 16.0, watchOS 9.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  case accessoryRectangular
+  @available(iOS 16.0, watchOS 9.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  case accessoryInline
+  public var debugDescription: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 15.0, watchOS 9.0, macOS 12.0, *)
+@available(tvOS, unavailable)
+extension SwiftUI.WidgetConfiguration {
+  @_alwaysEmitIntoClient public func containerBackgroundRemovable(_ isRemovable: Swift.Bool = true) -> some SwiftUI.WidgetConfiguration {
+        if #available(iOS 17.0, watchOS 10.0, macOS 14.0, *) {
+            return _containerBackgroundRemovable(isRemovable)
+        } else {
+            return self
+        }
+    }
+  
+}
+@available(iOS 17.0, watchOS 10.0, macOS 14.0, *)
+@available(tvOS, unavailable)
+extension SwiftUI.WidgetConfiguration {
+  public func _containerBackgroundRemovable(_ isRemovable: Swift.Bool) -> some SwiftUI.WidgetConfiguration
+  
+}
+extension SwiftUI.ContainerBackgroundPlacement {
+  @available(iOS 17.0, watchOS 10.0, macOS 14.0, *)
+  @available(tvOS, unavailable)
+  public static let widget: SwiftUI.ContainerBackgroundPlacement
+}
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+@available(tvOS, unavailable)
+extension SwiftUI.EnvironmentValues {
+  @usableFromInline
+  internal struct ShowsWidgetBackgroundKey : SwiftUI.EnvironmentKey {
+    @usableFromInline
+    internal static var defaultValue: Swift.Bool
+    @usableFromInline
+    internal typealias Value = Swift.Bool
+  }
+}
+extension SwiftUI.EnvironmentValues {
+  @available(iOS 15.0, macOS 12.0, watchOS 8.0, *)
+  @available(tvOS, unavailable)
+  @_alwaysEmitIntoClient public var showsWidgetContainerBackground: Swift.Bool {
+    get {
+            if #available(iOS 17, watchOS 10.0, macOS 14.0, *) {
+                return self[ShowsWidgetBackgroundKey.self]
+            } else {
+                return true
+            }
+        }
+  }
+}
+@available(iOS 16.0, watchOS 9.0, macOS 13.0, *)
+@available(tvOS, unavailable)
+public struct WidgetRenderingMode : Swift.Equatable, Swift.CustomStringConvertible {
+  public static let fullColor: WidgetKit.WidgetRenderingMode
+  public static let accented: WidgetKit.WidgetRenderingMode
+  public static let vibrant: WidgetKit.WidgetRenderingMode
+  public var description: Swift.String {
+    get
+  }
+  public static func == (a: WidgetKit.WidgetRenderingMode, b: WidgetKit.WidgetRenderingMode) -> Swift.Bool
+}
+@available(iOS 16.0, watchOS 9.0, macOS 13.0, *)
+@available(tvOS, unavailable)
+extension SwiftUI.EnvironmentValues {
+  public var widgetRenderingMode: WidgetKit.WidgetRenderingMode {
+    get
+    set
+  }
+}
+@available(iOS 16.0, watchOS 9.0, macOS 13.0, *)
+@available(tvOS, unavailable)
+extension SwiftUI.View {
+  public func widgetAccentable(_ accentable: Swift.Bool = true) -> some SwiftUI.View
+  
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+public protocol IntentTimelineProvider {
+  associatedtype Entry : WidgetKit.TimelineEntry
+  associatedtype Intent : Intents.INIntent
+  typealias Context = WidgetKit.TimelineProviderContext
+  @available(iOS 16.0, macOS 13.0, watchOS 9.0, *)
+  @available(tvOS, unavailable)
+  func recommendations() -> [WidgetKit.IntentRecommendation<Self.Intent>]
+  func placeholder(in context: Self.Context) -> Self.Entry
+  func getSnapshot(for configuration: Self.Intent, in context: Self.Context, completion: @escaping (Self.Entry) -> Swift.Void)
+  func getTimeline(for configuration: Self.Intent, in context: Self.Context, completion: @escaping (WidgetKit.Timeline<Self.Entry>) -> Swift.Void)
+}
+@available(iOS 16.0, macOS 13.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension WidgetKit.IntentTimelineProvider {
+  public func recommendations() -> [WidgetKit.IntentRecommendation<Self.Intent>]
+}
+@available(iOS 16.0, watchOS 9.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+extension SwiftUI.View {
+  public func widgetLabel<Label>(@SwiftUI.ViewBuilder label: () -> Label) -> some SwiftUI.View where Label : SwiftUI.View
+  
+  public func widgetLabel(_ labelKey: SwiftUI.LocalizedStringKey) -> some SwiftUI.View
+  
+  @_disfavoredOverload public func widgetLabel<S>(_ label: S) -> some SwiftUI.View where S : Swift.StringProtocol
+  
+}
+@available(iOS 16.0, watchOS 9.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+extension SwiftUI.EnvironmentValues {
+  public var showsWidgetLabel: Swift.Bool {
+    get
+    set
+  }
+}
+@available(iOS 16.2, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public enum ActivityPreviewViewKind {
+  case content
+  case dynamicIsland(WidgetKit.ActivityPreviewViewKind.DynamicIslandPreviewViewState)
+  public enum DynamicIslandPreviewViewState {
+    case compact
+    case minimal
+    case expanded
+    public static func == (a: WidgetKit.ActivityPreviewViewKind.DynamicIslandPreviewViewState, b: WidgetKit.ActivityPreviewViewKind.DynamicIslandPreviewViewState) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+@available(iOS 16.2, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension ActivityKit.ActivityAttributes {
+  public func previewContext(_ contentState: Self.ContentState, isStale: Swift.Bool = false, viewKind: WidgetKit.ActivityPreviewViewKind) -> some SwiftUI.View
+  
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+public struct IntentConfiguration<Intent, Content> : SwiftUI.WidgetConfiguration where Intent : Intents.INIntent, Content : SwiftUI.View {
+  public var body: some SwiftUI.WidgetConfiguration {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s9WidgetKit19IntentConfigurationV4bodyQrvp", 0) __<Intent, Content>
+}
+@available(iOS 16.0, macOS 13.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+public struct IntentRecommendation<T> where T : Intents.INIntent {
+  public init(intent: T, description: SwiftUI.Text)
+  public init(intent: T, description: SwiftUI.LocalizedStringKey)
+  @_disfavoredOverload public init<S>(intent: T, description: S) where S : Swift.StringProtocol
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+extension WidgetKit.IntentConfiguration {
+  public init<Provider>(kind: Swift.String, intent: Intent.Type, provider: Provider, @SwiftUI.ViewBuilder content: @escaping (Provider.Entry) -> Content) where Intent == Provider.Intent, Provider : WidgetKit.IntentTimelineProvider
+}
+@available(iOS 16.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUI.View {
+  public func activityBackgroundTint(_ color: SwiftUI.Color?) -> some SwiftUI.View
+  
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+public struct Timeline<EntryType> where EntryType : WidgetKit.TimelineEntry {
+  public let entries: [EntryType]
+  public let policy: WidgetKit.TimelineReloadPolicy
+  public init(entries: [EntryType], policy: WidgetKit.TimelineReloadPolicy)
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUI.View {
+  public func activitySystemActionForegroundColor(_ color: SwiftUI.Color?) -> some SwiftUI.View
+  
+}
+@available(iOS 17.0, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension DeveloperToolsSupport.Preview {
+  #if compiler(>=5.3) && $AsyncAwait
+  public init<Attributes>(_ name: Swift.String? = nil, as viewKind: WidgetKit.ActivityPreviewViewKind, using attributes: Attributes, widget: @escaping () -> some Widget, @WidgetKit.PreviewActivityBuilder<Attributes> contentStates: @escaping @_Concurrency.MainActor () async -> [Attributes.ContentState]) where Attributes : ActivityKit.ActivityAttributes
+  #endif
+}
+#if compiler(>=5.3) && $AsyncAwait && $Macros && $FreestandingMacros
+@available(iOS 17.0, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@freestanding(declaration) public macro Preview<Widget, Attributes>(_ name: Swift.String? = nil, as viewKind: WidgetKit.ActivityPreviewViewKind, using attributes: Attributes, widget: @escaping () -> Widget, @WidgetKit.PreviewActivityBuilder<Attributes> contentStates: @escaping @_Concurrency.MainActor () async -> [Attributes.ContentState]) = #externalMacro(module: "PreviewsMacros", type: "Common") where Widget : SwiftUI.Widget, Attributes : ActivityKit.ActivityAttributes
+#endif
+@available(iOS 17.0, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@_functionBuilder public struct PreviewActivityBuilder<A> where A : ActivityKit.ActivityAttributes {
+  public static func buildExpression(_ contentState: A.ContentState) -> [A.ContentState]
+  public static func buildPartialBlock(first: [A.ContentState]) -> [A.ContentState]
+  public static func buildPartialBlock(accumulated: [A.ContentState], next: [A.ContentState]) -> [A.ContentState]
+  public static func buildArray(_ components: [[A.ContentState]]) -> [A.ContentState]
+}
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+@available(tvOS, unavailable)
+public protocol AppIntentTimelineProvider {
+  associatedtype Entry : WidgetKit.TimelineEntry
+  associatedtype Intent : AppIntents.WidgetConfigurationIntent
+  typealias Context = WidgetKit.TimelineProviderContext
+  func recommendations() -> [WidgetKit.AppIntentRecommendation<Self.Intent>]
+  func placeholder(in context: Self.Context) -> Self.Entry
+  #if compiler(>=5.3) && $AsyncAwait
+  func snapshot(for configuration: Self.Intent, in context: Self.Context) async -> Self.Entry
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func timeline(for configuration: Self.Intent, in context: Self.Context) async -> WidgetKit.Timeline<Self.Entry>
+  #endif
+}
+extension WidgetKit.AppIntentTimelineProvider {
+  @available(iOS 17.0, macOS 14.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public func recommendations() -> [WidgetKit.AppIntentRecommendation<Self.Intent>]
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+extension SwiftUI.WidgetConfiguration {
+  public func configurationDisplayName(_ displayName: SwiftUI.Text) -> some SwiftUI.WidgetConfiguration
+  
+  public func configurationDisplayName(_ displayNameKey: SwiftUI.LocalizedStringKey) -> some SwiftUI.WidgetConfiguration
+  
+  @_disfavoredOverload public func configurationDisplayName<S>(_ displayName: S) -> some SwiftUI.WidgetConfiguration where S : Swift.StringProtocol
+  
+  public func description(_ description: SwiftUI.Text) -> some SwiftUI.WidgetConfiguration
+  
+  public func description(_ descriptionKey: SwiftUI.LocalizedStringKey) -> some SwiftUI.WidgetConfiguration
+  
+  @_disfavoredOverload public func description<S>(_ description: S) -> some SwiftUI.WidgetConfiguration where S : Swift.StringProtocol
+  
+  public func supportedFamilies(_ families: [WidgetKit.WidgetFamily]) -> some SwiftUI.WidgetConfiguration
+  
+  public func onBackgroundURLSessionEvents(matching matchingString: Swift.String, _ urlSessionEvent: @escaping (_ identifier: Swift.String, _ completion: @escaping () -> Swift.Void) -> Swift.Void) -> some SwiftUI.WidgetConfiguration
+  
+  public func onBackgroundURLSessionEvents(matching matchingBlock: ((_ identifier: Swift.String) -> Swift.Bool)? = nil, _ urlSessionEvent: @escaping (_ identifier: Swift.String, _ completion: @escaping () -> Swift.Void) -> Swift.Void) -> some SwiftUI.WidgetConfiguration
+  
+}
+@available(iOS 17.0, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+public struct WidgetLocation : Swift.Sendable, Swift.Hashable {
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: WidgetKit.WidgetLocation, b: WidgetKit.WidgetLocation) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 17.0, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+extension WidgetKit.WidgetLocation {
+  @available(iOS 17.0, *)
+  @available(watchOS, unavailable)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  public static let homeScreen: WidgetKit.WidgetLocation
+  @available(iOS 17.0, *)
+  @available(watchOS, unavailable)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  public static let lockScreen: WidgetKit.WidgetLocation
+  @available(iOS 17.0, *)
+  @available(watchOS, unavailable)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  public static let standBy: WidgetKit.WidgetLocation
+  @available(iOS 17.0, *)
+  @available(watchOS, unavailable)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  public static let iPhoneWidgetsOnMac: WidgetKit.WidgetLocation
+}
+@available(iOS 17.0, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+extension SwiftUI.WidgetConfiguration {
+  public func disfavoredLocations(_ locations: [WidgetKit.WidgetLocation], for families: [WidgetKit.WidgetFamily]) -> some SwiftUI.WidgetConfiguration
+  
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+public struct TimelineReloadPolicy : Swift.Equatable {
+  public static let atEnd: WidgetKit.TimelineReloadPolicy
+  public static let never: WidgetKit.TimelineReloadPolicy
+  public static func after(_ date: Foundation.Date) -> WidgetKit.TimelineReloadPolicy
+  public static func == (a: WidgetKit.TimelineReloadPolicy, b: WidgetKit.TimelineReloadPolicy) -> Swift.Bool
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+public struct TimelineProviderContext {
+  @dynamicMemberLookup public struct EnvironmentVariants {
+    public subscript<T>(dynamicMember keyPath: Swift.WritableKeyPath<SwiftUI.EnvironmentValues, T>) -> [T]? {
+      get
+    }
+    public subscript<T>(keyPath: Swift.WritableKeyPath<SwiftUI.EnvironmentValues, T>) -> [T]? {
+      get
+    }
+  }
+  public let environmentVariants: WidgetKit.TimelineProviderContext.EnvironmentVariants
+  public let family: WidgetKit.WidgetFamily
+  public let isPreview: Swift.Bool
+  public let displaySize: CoreFoundation.CGSize
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+extension WidgetKit.WidgetFamily : Swift.Hashable {}
+@available(iOS 16.2, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension WidgetKit.ActivityPreviewViewKind.DynamicIslandPreviewViewState : Swift.Equatable {}
+@available(iOS 16.2, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension WidgetKit.ActivityPreviewViewKind.DynamicIslandPreviewViewState : Swift.Hashable {}

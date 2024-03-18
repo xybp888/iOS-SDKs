@@ -1,0 +1,59 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SpaceAttribution.framework/SpaceAttribution
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SALog ]
+    objc-classes:         [ SAActivity, SAAppSize, SAAppSizer, SAAppSizerResults,
+                            SADaemonXPC, SADispatchGroup, SAInternalAPI, SAPathInfo,
+                            SAPathManager, SAReplyController, SAReporter, SASupport,
+                            SAURLSize, SAURLSizer, SAURLSizerResults, SAUtilities,
+                            SAVolumeSizeInfo, SAVolumeSizer ]
+    objc-ivars:           [ SAActivity._activity, SAActivity._completionHandler,
+                            SAActivity._deferActivity,
+                            SAAppSize._FSPurgeableSize, SAAppSize._appCacheSize,
+                            SAAppSize._cacheDeletePluginSize,
+                            SAAppSize._cloneSize, SAAppSize._dataSize,
+                            SAAppSize._fixedSize, SAAppSize._physicalSize,
+                            SAAppSize._purgeableSize, SAAppSize._vendorName,
+                            SAAppSizer._alreadyReportedXPCError,
+                            SAAppSizer._handlerAlreadyRegistered,
+                            SAAppSizer._sarc, SAAppSizer._xpcOut,
+                            SAAppSizerResults._FSPurgeableData,
+                            SAAppSizerResults._appData,
+                            SAAppSizerResults._appsList,
+                            SAAppSizerResults._attributionTags,
+                            SAAppSizerResults._clonesInfo,
+                            SAAppSizerResults._diskCapacity,
+                            SAAppSizerResults._diskUsed,
+                            SAAppSizerResults._hiddenAppsData,
+                            SAAppSizerResults._pathsList,
+                            SAAppSizerResults._reportedTelemetry,
+                            SAAppSizerResults._status,
+                            SAAppSizerResults._systemDataDetails,
+                            SAAppSizerResults._time,
+                            SAAppSizerResults._totalCDAvailable,
+                            SAAppSizerResults._totalPurgeableClones,
+                            SAAppSizerResults._zeroSizeApps,
+                            SADaemonXPC.remoteInterface,
+                            SADaemonXPC.xpcConnection, SADispatchGroup._entries,
+                            SADispatchGroup._group, SAPathInfo._exclusive,
+                            SAPathInfo._url,
+                            SAReplyController._appSizerUpdateHandler,
+                            SAReplyController._controllerID,
+                            SAReplyController._urlSizerUpdateHandler,
+                            SAURLSize._mayBePartOfCloneChain, SAURLSize._size,
+                            SAURLSizer._alreadyObservingURLs,
+                            SAURLSizer._alreadyReportedXPCError,
+                            SAURLSizer._sarc, SAURLSizer._sizerID,
+                            SAURLSizer._xpcOut, SAURLSizerResults._timeNow,
+                            SAURLSizerResults._urlInfo,
+                            SAVolumeSizeInfo._capacity,
+                            SAVolumeSizeInfo._mountedOn,
+                            SAVolumeSizeInfo._purgeableSize,
+                            SAVolumeSizeInfo._rawUsed, SAVolumeSizeInfo._used ]
+...
