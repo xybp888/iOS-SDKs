@@ -1,0 +1,30 @@
+module os_availability [system] {
+  // General purpose API.
+  header "os/availability.h"
+  export *
+
+  // Alternative API where os/availability.h can't
+  // be used, such as in POSIX headers.
+  explicit module Availability {
+    header "Availability.h"
+    export *
+  }
+
+  explicit module AvailabilityVersions {
+    header "AvailabilityVersions.h"
+    export *
+  }
+
+  // Shared implementation.
+  module AvailabilityInternal {
+    header "AvailabilityInternal.h"
+    header "AvailabilityInternalLegacy.h"
+    export *
+  }
+}
+
+// Deprecated, use Availability.
+module AvailabilityMacros [system] {
+  header "AvailabilityMacros.h"
+  export *
+}

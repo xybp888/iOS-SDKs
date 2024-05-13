@@ -1,0 +1,710 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.12.7 clang-1500.3.9.3)
+// swift-module-flags: -target arm64e-apple-ios17.5 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 813.4.41 -module-name _StoreKit_SwiftUI
+import Combine
+import CryptoKit/*.Insecure*/
+import Foundation
+import SafariServices
+@_exported import StoreKit
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+extension SwiftUI.View {
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 17.4, macOS 14.4, tvOS 17.4, watchOS 10.4, visionOS 1.1, *)
+  public func subscriptionPromotionalOffer(offer: @escaping (_ product: StoreKit.Product, _ subscriptionInfo: StoreKit.Product.SubscriptionInfo) -> StoreKit.Product.SubscriptionOffer?, signature: @escaping (_ product: StoreKit.Product, _ subscriptionInfo: StoreKit.Product.SubscriptionInfo, _ promotionalOffer: StoreKit.Product.SubscriptionOffer) async throws -> StoreKit.Product.SubscriptionOffer.Signature) -> some SwiftUI.View
+  
+  #endif
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public struct AutomaticProductViewStyle : _StoreKit_SwiftUI.ProductViewStyle {
+  public init()
+  public func makeBody(configuration: _StoreKit_SwiftUI.AutomaticProductViewStyle.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI25AutomaticProductViewStyleV8makeBody13configurationQrAA0fgH13ConfigurationV_tF", 0) __
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension _StoreKit_SwiftUI.ProductViewStyle where Self == _StoreKit_SwiftUI.AutomaticProductViewStyle {
+  public static var automatic: _StoreKit_SwiftUI.AutomaticProductViewStyle {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public struct AutomaticSubscriptionStoreControlStyle : _StoreKit_SwiftUI.SubscriptionStoreControlStyle {
+  public init()
+  public func makeBody(configuration: _StoreKit_SwiftUI.AutomaticSubscriptionStoreControlStyle.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI021AutomaticSubscriptionA12ControlStyleV8makeBody13configurationQrAA0fagH13ConfigurationV_tF", 0) __
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension _StoreKit_SwiftUI.SubscriptionStoreControlStyle where Self == _StoreKit_SwiftUI.AutomaticSubscriptionStoreControlStyle {
+  public static var automatic: _StoreKit_SwiftUI.AutomaticSubscriptionStoreControlStyle {
+    get
+  }
+}
+@available(iOS 15.0, macCatalyst 15.0, macOS 14.0, visionOS 1.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUI.View {
+  @preconcurrency public func refundRequestSheet(for transactionID: StoreKit.Transaction.ID, isPresented: SwiftUI.Binding<Swift.Bool>, onDismiss: (@_Concurrency.MainActor (Swift.Result<StoreKit.Transaction.RefundRequestStatus, StoreKit.Transaction.RefundRequestError>) -> ())? = nil) -> some SwiftUI.View
+  
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public enum EntitlementTaskState<Value> {
+  case loading
+  case failure(any Swift.Error)
+  case success(Value)
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension _StoreKit_SwiftUI.EntitlementTaskState : Swift.Sendable where Value : Swift.Sendable {
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension _StoreKit_SwiftUI.EntitlementTaskState {
+  public var value: Value? {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension _StoreKit_SwiftUI.EntitlementTaskState where Value == StoreKit.VerificationResult<StoreKit.Transaction>? {
+  public var transaction: StoreKit.VerificationResult<StoreKit.Transaction>? {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension _StoreKit_SwiftUI.EntitlementTaskState {
+  public func map<NewValue>(_ transform: (Value) throws -> NewValue) rethrows -> _StoreKit_SwiftUI.EntitlementTaskState<NewValue>
+  #if compiler(>=5.3) && $AsyncAwait
+  public func map<NewValue>(_ transform: (Value) async throws -> NewValue) async rethrows -> _StoreKit_SwiftUI.EntitlementTaskState<NewValue>
+  #endif
+  public func flatMap<NewValue>(_ transform: (Value) throws -> _StoreKit_SwiftUI.EntitlementTaskState<NewValue>) rethrows -> _StoreKit_SwiftUI.EntitlementTaskState<NewValue>
+  #if compiler(>=5.3) && $AsyncAwait
+  public func flatMap<NewValue>(_ transform: (Value) async throws -> _StoreKit_SwiftUI.EntitlementTaskState<NewValue>) async rethrows -> _StoreKit_SwiftUI.EntitlementTaskState<NewValue>
+  #endif
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension SwiftUI.View {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func currentEntitlementTask(for productID: Swift.String, priority: _Concurrency.TaskPriority = .medium, action: @escaping (_StoreKit_SwiftUI.EntitlementTaskState<StoreKit.VerificationResult<StoreKit.Transaction>?>) async -> ()) -> some SwiftUI.View
+  
+  #endif
+}
+@available(iOS 15.0, macCatalyst 15.0, visionOS 1.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUI.View {
+  public func manageSubscriptionsSheet(isPresented: SwiftUI.Binding<Swift.Bool>) -> some SwiftUI.View
+  
+  @available(iOS 17.0, macCatalyst 17.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public func manageSubscriptionsSheet(isPresented: SwiftUI.Binding<Swift.Bool>, subscriptionGroupID: Swift.String) -> some SwiftUI.View
+  
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public struct RegularProductViewStyle : _StoreKit_SwiftUI.ProductViewStyle {
+  public init()
+  public func makeBody(configuration: _StoreKit_SwiftUI.RegularProductViewStyle.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI23RegularProductViewStyleV8makeBody13configurationQrAA0fgH13ConfigurationV_tF", 0) __
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension _StoreKit_SwiftUI.ProductViewStyle where Self == _StoreKit_SwiftUI.RegularProductViewStyle {
+  public static var regular: _StoreKit_SwiftUI.RegularProductViewStyle {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension SwiftUI.View {
+  public func storeButton(_ visibility: SwiftUI.Visibility, for buttonKinds: _StoreKit_SwiftUI.StoreButtonKind...) -> some SwiftUI.View
+  
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public struct StoreButtonKind {
+  public static var restorePurchases: _StoreKit_SwiftUI.StoreButtonKind {
+    get
+  }
+  @available(tvOS, unavailable)
+  public static var cancellation: _StoreKit_SwiftUI.StoreButtonKind {
+    get
+  }
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public static var redeemCode: _StoreKit_SwiftUI.StoreButtonKind {
+    get
+  }
+  public static var signIn: _StoreKit_SwiftUI.StoreButtonKind {
+    get
+  }
+  public static var policies: _StoreKit_SwiftUI.StoreButtonKind {
+    get
+  }
+}
+@available(iOS 14.0, visionOS 1.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUI.View {
+  public func appStoreOverlay(isPresented: SwiftUI.Binding<Swift.Bool>, configuration: @escaping () -> StoreKit.SKOverlay.Configuration) -> some SwiftUI.View
+  
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension StoreKit.Product {
+  public enum TaskState : Swift.Sendable {
+    case loading
+    case unavailable
+    case failure(any Swift.Error)
+    case success(StoreKit.Product)
+  }
+  public enum CollectionTaskState : Swift.Sendable {
+    case loading
+    case failure(any Swift.Error)
+    case success([StoreKit.Product], unavailable: [StoreKit.Product.ID])
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension StoreKit.Product.TaskState {
+  public var product: StoreKit.Product? {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension StoreKit.Product.CollectionTaskState {
+  public var products: [StoreKit.Product]? {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension SwiftUI.View {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func storeProductTask(for id: StoreKit.Product.ID, priority: _Concurrency.TaskPriority = .medium, action: @escaping (StoreKit.Product.TaskState) async -> ()) -> some SwiftUI.View
+  
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public func storeProductsTask(for ids: some Collection<Product.ID> & Sendable & Equatable, priority: _Concurrency.TaskPriority = .medium, action: @escaping (StoreKit.Product.CollectionTaskState) async -> ()) -> some SwiftUI.View
+  
+  #endif
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public struct SubscriptionStoreView<Content> : SwiftUI.View where Content : SwiftUI.View {
+  public init(groupID: Swift.String, visibleRelationships: StoreKit.Product.SubscriptionRelationship = .all, @SwiftUI.ViewBuilder marketingContent: () -> (Content))
+  public init(productIDs: some Collection<Product.ID>, @SwiftUI.ViewBuilder marketingContent: () -> (Content))
+  public init(subscriptions: some Collection<Product>, @SwiftUI.ViewBuilder marketingContent: () -> (Content))
+  public init(groupID: Swift.String, visibleRelationships: StoreKit.Product.SubscriptionRelationship = .all) where Content == _StoreKit_SwiftUI.AutomaticSubscriptionStoreMarketingContent
+  public init(productIDs: some Collection<Product.ID>) where Content == _StoreKit_SwiftUI.AutomaticSubscriptionStoreMarketingContent
+  public init(subscriptions: some Collection<Product>) where Content == _StoreKit_SwiftUI.AutomaticSubscriptionStoreMarketingContent
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI012SubscriptionA4ViewV4bodyQrvp", 0) __<Content>
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public struct AutomaticSubscriptionStoreMarketingContent : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI021AutomaticSubscriptionA16MarketingContentV4bodyQrvp", 0) __
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension StoreKit.Product {
+  public struct SubscriptionRelationship : Swift.OptionSet, Swift.Hashable {
+    public var rawValue: Swift.Int
+    public init(rawValue: Swift.Int)
+    public static let current: StoreKit.Product.SubscriptionRelationship
+    public static let downgrade: StoreKit.Product.SubscriptionRelationship
+    public static let crossgrade: StoreKit.Product.SubscriptionRelationship
+    public static let upgrade: StoreKit.Product.SubscriptionRelationship
+    public static let all: StoreKit.Product.SubscriptionRelationship
+    public typealias ArrayLiteralElement = StoreKit.Product.SubscriptionRelationship
+    public typealias Element = StoreKit.Product.SubscriptionRelationship
+    public typealias RawValue = Swift.Int
+  }
+}
+extension SwiftUI.View {
+  @available(iOS 16.0, macCatalyst 16.0, visionOS 1.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public func offerCodeRedemption(isPresented: SwiftUI.Binding<Swift.Bool>, onCompletion: @escaping @_Concurrency.MainActor (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void = { _ in }) -> some SwiftUI.View
+  
+}
+@available(iOS 16.0, macCatalyst 16.0, visionOS 1.0, macOS 13.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@_Concurrency.MainActor public struct RequestReviewAction {
+  @_Concurrency.MainActor public func callAsFunction()
+}
+extension SwiftUI.EnvironmentValues {
+  @available(iOS 16.0, macCatalyst 16.0, macOS 13.0, visionOS 1.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @_Concurrency.MainActor public var requestReview: _StoreKit_SwiftUI.RequestReviewAction {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension SwiftUI.View {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func onInAppPurchaseStart(perform action: ((StoreKit.Product) async -> ())?) -> some SwiftUI.View
+  
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public func inAppPurchaseOptions(_ options: ((StoreKit.Product) async -> Swift.Set<StoreKit.Product.PurchaseOption>)?) -> some SwiftUI.View
+  
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public func onInAppPurchaseCompletion(perform action: ((StoreKit.Product, Swift.Result<StoreKit.Product.PurchaseResult, any Swift.Error>) async -> ())?) -> some SwiftUI.View
+  
+  #endif
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public protocol SubscriptionStoreControlStyle {
+  associatedtype Body : SwiftUI.View
+  typealias Configuration = _StoreKit_SwiftUI.SubscriptionStoreControlStyleConfiguration
+  @SwiftUI.ViewBuilder func makeBody(configuration: Self.Configuration) -> Self.Body
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public struct SubscriptionStoreControlStyleConfiguration {
+  @usableFromInline
+  internal struct MarketingContent : SwiftUI.View {
+    @usableFromInline
+    internal var content: SwiftUI.AnyView
+    @usableFromInline
+    @_Concurrency.MainActor(unsafe) internal var body: some SwiftUI.View {
+      get
+    }
+    @usableFromInline
+    internal typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI012SubscriptionA25ControlStyleConfigurationV16MarketingContentV4bodyQrvp", 0) __
+  }
+  @usableFromInline
+  internal struct Icon : SwiftUI.View {
+    @usableFromInline
+    internal var icon: SwiftUI.AnyView
+    @usableFromInline
+    @_Concurrency.MainActor(unsafe) internal var body: some SwiftUI.View {
+      get
+    }
+    @usableFromInline
+    internal typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI012SubscriptionA25ControlStyleConfigurationV4IconV4bodyQrvp", 0) __
+  }
+  @usableFromInline
+  internal var marketingContentInternal: _StoreKit_SwiftUI.SubscriptionStoreControlStyleConfiguration.MarketingContent {
+    get
+  }
+  @usableFromInline
+  internal var visibleSubscriptionPlansInternal: [StoreKit.Product] {
+    get
+  }
+  @usableFromInline
+  internal var isEligibleForIntroOfferInternal: Swift.Bool {
+    get
+  }
+  @usableFromInline
+  internal var currentPlanIDInternal: StoreKit.Product.ID? {
+    get
+  }
+  @usableFromInline
+  internal var hiddenCurrentPlanInternal: StoreKit.Product? {
+    get
+  }
+  @usableFromInline
+  internal func actionInternal(productID: StoreKit.Product.ID)
+  @usableFromInline
+  internal func iconInternal(productID: StoreKit.Product.ID) -> _StoreKit_SwiftUI.SubscriptionStoreControlStyleConfiguration.Icon?
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension SwiftUI.View {
+  public func subscriptionStoreControlStyle(_ style: some SubscriptionStoreControlStyle) -> some SwiftUI.View
+  
+}
+@available(iOS 17.0, macOS 14.0, visionOS 1.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+public struct LargeProductViewStyle : _StoreKit_SwiftUI.ProductViewStyle {
+  public init()
+  public func makeBody(configuration: _StoreKit_SwiftUI.LargeProductViewStyle.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI21LargeProductViewStyleV8makeBody13configurationQrAA0fgH13ConfigurationV_tF", 0) __
+}
+@available(iOS 17.0, macOS 14.0, visionOS 1.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension _StoreKit_SwiftUI.ProductViewStyle where Self == _StoreKit_SwiftUI.LargeProductViewStyle {
+  public static var large: _StoreKit_SwiftUI.LargeProductViewStyle {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct ProminentPickerSubscriptionStoreControlStyle : _StoreKit_SwiftUI.SubscriptionStoreControlStyle {
+  public init()
+  public func makeBody(configuration: _StoreKit_SwiftUI.ProminentPickerSubscriptionStoreControlStyle.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI027ProminentPickerSubscriptionA12ControlStyleV8makeBody13configurationQrAA0gahI13ConfigurationV_tF", 0) __
+}
+@available(iOS 17.0, macOS 14.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension _StoreKit_SwiftUI.SubscriptionStoreControlStyle where Self == _StoreKit_SwiftUI.ProminentPickerSubscriptionStoreControlStyle {
+  public static var prominentPicker: _StoreKit_SwiftUI.ProminentPickerSubscriptionStoreControlStyle {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct SubscriptionStoreControlBackground {
+  public static var automatic: _StoreKit_SwiftUI.SubscriptionStoreControlBackground {
+    get
+  }
+  public static var gradientMaterial: _StoreKit_SwiftUI.SubscriptionStoreControlBackground {
+    get
+  }
+  @available(macOS, unavailable)
+  public static var gradientMaterialOnScroll: _StoreKit_SwiftUI.SubscriptionStoreControlBackground {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension SwiftUI.View {
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(visionOS, unavailable)
+  public func subscriptionStoreControlBackground(_ backgroundStyle: some ShapeStyle) -> some SwiftUI.View
+  
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(visionOS, unavailable)
+  public func subscriptionStoreControlBackground(_ backgroundStyle: _StoreKit_SwiftUI.SubscriptionStoreControlBackground) -> some SwiftUI.View
+  
+  @available(tvOS, unavailable)
+  public func subscriptionStorePickerItemBackground(_ backgroundStyle: some ShapeStyle) -> some SwiftUI.View
+  
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension SwiftUI.View {
+  public func subscriptionStoreSignInAction(_ action: (() -> ())?) -> some SwiftUI.View
+  
+}
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, visionOS 1.0, *)
+@available(tvOS, unavailable)
+public struct PickerSubscriptionStoreControlStyle : _StoreKit_SwiftUI.SubscriptionStoreControlStyle {
+  public init()
+  public func makeBody(configuration: _StoreKit_SwiftUI.PickerSubscriptionStoreControlStyle.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI018PickerSubscriptionA12ControlStyleV8makeBody13configurationQrAA0fagH13ConfigurationV_tF", 0) __
+}
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, visionOS 1.0, *)
+@available(tvOS, unavailable)
+extension _StoreKit_SwiftUI.SubscriptionStoreControlStyle where Self == _StoreKit_SwiftUI.PickerSubscriptionStoreControlStyle {
+  public static var picker: _StoreKit_SwiftUI.PickerSubscriptionStoreControlStyle {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
+@usableFromInline
+internal struct SubscriptionItemBaseConfiguration<Icon> where Icon : SwiftUI.View {
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
+@usableFromInline
+internal enum SubscriptionItemBaseConfigurationCurrentOption : Swift.Hashable {
+  case notSubscribed
+  case isCurrent
+  case currentIndex(Swift.Int)
+  case hiddenCurrent(StoreKit.Product, StoreKit.Product.SubscriptionInfo)
+  @usableFromInline
+  internal static func == (a: _StoreKit_SwiftUI.SubscriptionItemBaseConfigurationCurrentOption, b: _StoreKit_SwiftUI.SubscriptionItemBaseConfigurationCurrentOption) -> Swift.Bool
+  @usableFromInline
+  internal func hash(into hasher: inout Swift.Hasher)
+  @usableFromInline
+  internal var hashValue: Swift.Int {
+    @usableFromInline
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SwiftUI.ContainerBackgroundPlacement {
+  public static var subscriptionStore: SwiftUI.ContainerBackgroundPlacement {
+    get
+  }
+  @available(tvOS, unavailable)
+  public static var subscriptionStoreHeader: SwiftUI.ContainerBackgroundPlacement {
+    get
+  }
+  public static var subscriptionStoreFullHeight: SwiftUI.ContainerBackgroundPlacement {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension SwiftUI.View {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func subscriptionStatusTask(for groupID: Swift.String, priority: _Concurrency.TaskPriority = .medium, action: @escaping (_StoreKit_SwiftUI.EntitlementTaskState<[StoreKit.Product.SubscriptionInfo.Status]>) async -> ()) -> some SwiftUI.View
+  
+  #endif
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public struct ButtonsSubscriptionStoreControlStyle : _StoreKit_SwiftUI.SubscriptionStoreControlStyle {
+  public init()
+  public func makeBody(configuration: _StoreKit_SwiftUI.ButtonsSubscriptionStoreControlStyle.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI019ButtonsSubscriptionA12ControlStyleV8makeBody13configurationQrAA0fagH13ConfigurationV_tF", 0) __
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension _StoreKit_SwiftUI.SubscriptionStoreControlStyle where Self == _StoreKit_SwiftUI.ButtonsSubscriptionStoreControlStyle {
+  public static var buttons: _StoreKit_SwiftUI.ButtonsSubscriptionStoreControlStyle {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public struct ProductView<Icon, PlaceholderIcon> : SwiftUI.View where Icon : SwiftUI.View, PlaceholderIcon : SwiftUI.View {
+  public init(id productID: StoreKit.Product.ID, @SwiftUI.ViewBuilder icon: @escaping (_StoreKit_SwiftUI.ProductIconPhase) -> Icon, @SwiftUI.ViewBuilder placeholderIcon: () -> PlaceholderIcon)
+  public init(id productID: StoreKit.Product.ID, prefersPromotionalIcon: Swift.Bool = false, @SwiftUI.ViewBuilder icon: () -> Icon, @SwiftUI.ViewBuilder placeholderIcon: () -> PlaceholderIcon)
+  public init(id productID: StoreKit.Product.ID, prefersPromotionalIcon: Swift.Bool = false, @SwiftUI.ViewBuilder icon: () -> Icon) where PlaceholderIcon == _StoreKit_SwiftUI.AutomaticProductPlaceholderIcon
+  public init(id productID: StoreKit.Product.ID, prefersPromotionalIcon: Swift.Bool = false) where Icon == SwiftUI.EmptyView, PlaceholderIcon == SwiftUI.EmptyView
+  public init(_ product: StoreKit.Product, @SwiftUI.ViewBuilder icon: @escaping (_StoreKit_SwiftUI.ProductIconPhase) -> Icon) where PlaceholderIcon == SwiftUI.EmptyView
+  public init(_ product: StoreKit.Product, prefersPromotionalIcon: Swift.Bool = false, @SwiftUI.ViewBuilder icon: () -> Icon) where PlaceholderIcon == SwiftUI.EmptyView
+  public init(_ product: StoreKit.Product, prefersPromotionalIcon: Swift.Bool = true) where Icon == SwiftUI.EmptyView, PlaceholderIcon == SwiftUI.EmptyView
+  public init(_ configuration: _StoreKit_SwiftUI.ProductViewStyleConfiguration) where Icon == _StoreKit_SwiftUI.ProductViewStyleConfiguration.Icon, PlaceholderIcon == _StoreKit_SwiftUI.ProductViewStyleConfiguration.Icon
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI11ProductViewV4bodyQrvp", 0) __<Icon, PlaceholderIcon>
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
+public struct AutomaticProductPlaceholderIcon : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI31AutomaticProductPlaceholderIconV4bodyQrvp", 0) __
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public enum ProductIconPhase {
+  case success(SwiftUI.Image)
+  case failure(any Swift.Error)
+  case unavailable
+  case loading
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension _StoreKit_SwiftUI.ProductIconPhase {
+  public var promotionalIcon: SwiftUI.Image? {
+    get
+  }
+  public var error: (any Swift.Error)? {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public struct StoreView<Icon, PlaceholderIcon> : SwiftUI.View where Icon : SwiftUI.View, PlaceholderIcon : SwiftUI.View {
+  public init(ids productIDs: some Collection<Product.ID>, @SwiftUI.ViewBuilder icon: @escaping (StoreKit.Product, _StoreKit_SwiftUI.ProductIconPhase) -> Icon, @SwiftUI.ViewBuilder placeholderIcon: () -> PlaceholderIcon)
+  public init(ids productIDs: some Collection<Product.ID>, prefersPromotionalIcon: Swift.Bool = false, @SwiftUI.ViewBuilder icon: @escaping (StoreKit.Product) -> Icon, @SwiftUI.ViewBuilder placeholderIcon: () -> PlaceholderIcon)
+  public init(ids productIDs: some Collection<Product.ID>, prefersPromotionalIcon: Swift.Bool = false, @SwiftUI.ViewBuilder icon: @escaping (StoreKit.Product) -> Icon) where PlaceholderIcon == _StoreKit_SwiftUI.AutomaticProductPlaceholderIcon
+  public init(products: some Collection<Product>, @SwiftUI.ViewBuilder icon: @escaping (StoreKit.Product, _StoreKit_SwiftUI.ProductIconPhase) -> Icon) where PlaceholderIcon == SwiftUI.EmptyView
+  public init(products: some Collection<Product>, prefersPromotionalIcon: Swift.Bool = false, @SwiftUI.ViewBuilder icon: @escaping (StoreKit.Product) -> Icon) where PlaceholderIcon == SwiftUI.EmptyView
+  public init(ids productIDs: some Collection<Product.ID>, prefersPromotionalIcon: Swift.Bool = false) where Icon == SwiftUI.EmptyView, PlaceholderIcon == SwiftUI.EmptyView
+  public init(products: some Collection<Product>, prefersPromotionalIcon: Swift.Bool = false) where Icon == SwiftUI.EmptyView, PlaceholderIcon == SwiftUI.EmptyView
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI0A4ViewV4bodyQrvp", 0) __<Icon, PlaceholderIcon>
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct CompactProductViewStyle : _StoreKit_SwiftUI.ProductViewStyle {
+  public init()
+  public func makeBody(configuration: _StoreKit_SwiftUI.CompactProductViewStyle.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI23CompactProductViewStyleV8makeBody13configurationQrAA0fgH13ConfigurationV_tF", 0) __
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension _StoreKit_SwiftUI.ProductViewStyle where Self == _StoreKit_SwiftUI.CompactProductViewStyle {
+  public static var compact: _StoreKit_SwiftUI.CompactProductViewStyle {
+    get
+  }
+}
+@available(iOS 16.0, macCatalyst 16.0, visionOS 1.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@_Concurrency.MainActor public struct DisplayMessageAction {
+  @_Concurrency.MainActor public func callAsFunction(_ message: StoreKit.Message) throws
+}
+@available(iOS 16.0, macCatalyst 16.0, visionOS 1.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUI.EnvironmentValues {
+  @_Concurrency.MainActor public var displayStoreKitMessage: _StoreKit_SwiftUI.DisplayMessageAction {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension SwiftUI.View {
+  public func subscriptionStoreControlIcon(@SwiftUI.ViewBuilder icon: @escaping (StoreKit.Product, StoreKit.Product.SubscriptionInfo) -> some View) -> some SwiftUI.View
+  
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension SwiftUI.View {
+  @available(tvOS, unavailable)
+  public func subscriptionStorePolicyDestination(url: Foundation.URL, for button: _StoreKit_SwiftUI.SubscriptionStorePolicyKind) -> some SwiftUI.View
+  
+  public func subscriptionStorePolicyDestination(for button: _StoreKit_SwiftUI.SubscriptionStorePolicyKind, @SwiftUI.ViewBuilder destination: () -> some View) -> some SwiftUI.View
+  
+  public func subscriptionStorePolicyForegroundStyle(_ style: some ShapeStyle) -> some SwiftUI.View
+  
+  public func subscriptionStorePolicyForegroundStyle(_ primary: some ShapeStyle, _ secondary: some ShapeStyle) -> some SwiftUI.View
+  
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public struct SubscriptionStorePolicyKind : Swift.Hashable {
+  public static var termsOfService: _StoreKit_SwiftUI.SubscriptionStorePolicyKind {
+    get
+  }
+  public static var privacyPolicy: _StoreKit_SwiftUI.SubscriptionStorePolicyKind {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: _StoreKit_SwiftUI.SubscriptionStorePolicyKind, b: _StoreKit_SwiftUI.SubscriptionStorePolicyKind) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 17.0, macCatalyst 17.0, tvOS 17.0, macOS 14.0, watchOS 10.0, visionOS 1.0, *)
+public struct PurchaseAction {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func callAsFunction(_ product: StoreKit.Product, options: Swift.Set<StoreKit.Product.PurchaseOption> = []) async throws -> StoreKit.Product.PurchaseResult
+  #endif
+}
+@available(iOS 17.0, macCatalyst 17.0, tvOS 17.0, macOS 14.0, watchOS 10.0, visionOS 1.0, *)
+extension SwiftUI.EnvironmentValues {
+  public var purchase: _StoreKit_SwiftUI.PurchaseAction {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, visionOS 1.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension SwiftUI.View {
+  public func productIconBorder() -> some SwiftUI.View
+  
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension SwiftUI.View {
+  @usableFromInline
+  internal func _productDescriptionHidden(_ hidden: Swift.Bool = true) -> some SwiftUI.View
+  
+  @available(iOS 17.4, macOS 14.4, tvOS 17.4, watchOS 10.4, visionOS 1.1, *)
+  @usableFromInline
+  internal func _productDescription(_ visibility: SwiftUI.Visibility) -> some SwiftUI.View
+  
+  @_alwaysEmitIntoClient public func productDescription(_ visibility: SwiftUI.Visibility) -> some SwiftUI.View {
+        if #available(iOS 17.4, macOS 14.4, tvOS 17.4, watchOS 10.4, visionOS 1.1, *) {
+            return _productDescription(visibility)
+        }
+        return _productDescriptionHidden(visibility == .hidden)
+    }
+  
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public protocol ProductViewStyle {
+  typealias Configuration = _StoreKit_SwiftUI.ProductViewStyleConfiguration
+  associatedtype Body : SwiftUI.View
+  @SwiftUI.ViewBuilder func makeBody(configuration: Self.Configuration) -> Self.Body
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+public struct ProductViewStyleConfiguration {
+  public struct Icon : SwiftUI.View {
+    @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+      get
+    }
+    public typealias Body = @_opaqueReturnTypeOf("$s17_StoreKit_SwiftUI29ProductViewStyleConfigurationV4IconV4bodyQrvp", 0) __
+  }
+  public let state: StoreKit.Product.TaskState
+  public let icon: _StoreKit_SwiftUI.ProductViewStyleConfiguration.Icon
+  public let hasCurrentEntitlement: Swift.Bool
+  @available(iOS 17.4, macOS 14.4, tvOS 17.4, watchOS 10.4, visionOS 1.1, *)
+  public let descriptionVisibility: SwiftUI.Visibility
+  public var product: StoreKit.Product? {
+    get
+  }
+  public func purchase()
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
+extension SwiftUI.View {
+  public func productViewStyle(_ style: some ProductViewStyle) -> some SwiftUI.View
+  
+}
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, visionOS 1.0, *)
+@available(tvOS, unavailable)
+extension SwiftUI.View {
+  public func subscriptionStoreButtonLabel(_ label: _StoreKit_SwiftUI.SubscriptionStoreButtonLabel) -> some SwiftUI.View
+  
+}
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, visionOS 1.0, *)
+@available(tvOS, unavailable)
+public struct SubscriptionStoreButtonLabel : Swift.Hashable {
+  public static var automatic: _StoreKit_SwiftUI.SubscriptionStoreButtonLabel {
+    get
+  }
+  public static var singleLine: _StoreKit_SwiftUI.SubscriptionStoreButtonLabel {
+    get
+  }
+  @available(watchOS, unavailable)
+  public static var multiline: _StoreKit_SwiftUI.SubscriptionStoreButtonLabel {
+    get
+  }
+  public static var action: _StoreKit_SwiftUI.SubscriptionStoreButtonLabel {
+    get
+  }
+  public static var displayName: _StoreKit_SwiftUI.SubscriptionStoreButtonLabel {
+    get
+  }
+  public static var price: _StoreKit_SwiftUI.SubscriptionStoreButtonLabel {
+    get
+  }
+  public var singleLine: _StoreKit_SwiftUI.SubscriptionStoreButtonLabel {
+    get
+  }
+  @available(watchOS, unavailable)
+  public var multiline: _StoreKit_SwiftUI.SubscriptionStoreButtonLabel {
+    get
+  }
+  public var action: _StoreKit_SwiftUI.SubscriptionStoreButtonLabel {
+    get
+  }
+  public var displayName: _StoreKit_SwiftUI.SubscriptionStoreButtonLabel {
+    get
+  }
+  public var price: _StoreKit_SwiftUI.SubscriptionStoreButtonLabel {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: _StoreKit_SwiftUI.SubscriptionStoreButtonLabel, b: _StoreKit_SwiftUI.SubscriptionStoreButtonLabel) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 16.0, macCatalyst 16.0, visionOS 1.0, macOS 13.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _StoreKit_SwiftUI.RequestReviewAction : Swift.Sendable {}
+@available(iOS 16.0, macCatalyst 16.0, visionOS 1.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _StoreKit_SwiftUI.DisplayMessageAction : Swift.Sendable {}

@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ChronoKit.framework/ChronoKit
+current-version:       402.200
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CHDMonotonicTimeEqual, _CHDMonotonicTimeForever,
+                            _CHDMonotonicTimeFromNow, _CHDMonotonicTimeLessThan,
+                            _CHDMonotonicTimePlusInterval,
+                            _ChronoKitVersionNumber, _ChronoKitVersionString ]
+    objc-classes:         [ CHDMonotonicTimer, CHKObjcUtilities,
+                            CHK_WFLinkActionWorkflowRunnerClient,
+                            _TtC9ChronoKit12WidgetReaper,
+                            _TtC9ChronoKit16ExtensionManager,
+                            _TtC9ChronoKit23SecureHostingController,
+                            _TtC9ChronoKit28PreviewHostingViewController,
+                            _TtC9ChronoKit31BaseWidgetContentViewController,
+                            _TtC9ChronoKit31LiveWidgetContentViewController,
+                            _TtC9ChronoKit34WidgetPreviewHostingViewController,
+                            _TtC9ChronoKit36ActivityPreviewHostingViewController ]
+    objc-ivars:           [ CHDMonotonicTimer._timer ]
+...

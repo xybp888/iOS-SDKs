@@ -1,0 +1,45 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MobileTimerSupport.framework/MobileTimerSupport
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ClockAngelClientEntitlement, _ClockAngelMachService,
+                            _ClockAngelMachServiceDomain,
+                            _MobileTimerSupportVersionNumber,
+                            _MobileTimerSupportVersionString,
+                            _kMTAStopwatchIndexKey, _kMTAStopwatchLapsKey,
+                            _kMTAStopwatchLastTimeKey, _kMTAStopwatchOffsetKey,
+                            _kMTAStopwatchStartTimeKey,
+                            _kMTAStopwatchTimerRunningKey, _kMTStopwatches,
+                            _kMaxNumberOfSessions ]
+    objc-classes:         [ DefaultDateProvider, MTAppIntentsProvider,
+                            MTLegacyStopwatchMigrator, MTSessionUtilities,
+                            MTSessionsManager, MTSleepObjCWrapper,
+                            MTStopwatchStorage, MTStopwatchUtilities,
+                            MTStopwatchViewModel, MockDateProvider,
+                            _TtC18MobileTimerSupport12AlarmContext,
+                            _TtC18MobileTimerSupport12TimerContext,
+                            _TtC18MobileTimerSupport14MTSessionError,
+                            _TtC18MobileTimerSupport18StopwatchViewModel,
+                            _TtC18MobileTimerSupport19MTAppIntentsManager,
+                            _TtC18MobileTimerSupport22MTBaseSessionsProvider,
+                            _TtC18MobileTimerSupport23MTAlarmSessionsProvider,
+                            _TtC18MobileTimerSupport23MTStopwatchStorageProxy,
+                            _TtC18MobileTimerSupport23MTTimerSessionsProvider ]
+    objc-ivars:           [ MTAppIntentsProvider._delegate,
+                            MTAppIntentsProvider._manager,
+                            MTLegacyStopwatchMigrator._currentInterval,
+                            MTLegacyStopwatchMigrator._defaults,
+                            MTLegacyStopwatchMigrator._isTimerRunning,
+                            MTLegacyStopwatchMigrator._manager,
+                            MTSessionsManager._activityCenter,
+                            MTSessionsManager._alarmProvider,
+                            MTSessionsManager._timerProvider,
+                            MTStopwatchStorage._storageProxy,
+                            MTStopwatchViewModel._viewModel,
+                            MockDateProvider._overrideDate ]
+...

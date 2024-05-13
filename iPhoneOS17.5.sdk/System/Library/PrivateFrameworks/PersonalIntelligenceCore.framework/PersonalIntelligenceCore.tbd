@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PersonalIntelligenceCore.framework/PersonalIntelligenceCore
+current-version:       1226.5.2
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _IIErrorDomain, _IIErrorInfoKey, _IIExit,
+                            _PersonalIntelligenceCoreVersionNumber,
+                            _PersonalIntelligenceCoreVersionString,
+                            _ii_default_log_handle, _ii_private_log_handle,
+                            _kIIAssetVersionFieldName, _kIIEngagedCountFieldName,
+                            _kIIFeatureEngagementMetricName,
+                            _kIIFeatureNameFieldName,
+                            _kIIFrustrationCountFieldName, _kIILogSubsystem,
+                            _kIIOfferedCountFieldName, _kIISignpostSubsystem,
+                            _kIITrialTreatmentsFieldName ]
+    objc-classes:         [ IILanguageDetection,
+                            IILanguageDetectionNLLanguageIdentifierWrapper,
+                            IIMetricsDispatcher, IIPaths, IISMetricStore,
+                            IIStartupManager,
+                            _TtC24PersonalIntelligenceCore13MetricMessage,
+                            _TtC24PersonalIntelligenceCore13MetricStorage ]
+    objc-ivars:           [ IILanguageDetectionNLLanguageIdentifierWrapper._languageIdentifier,
+                            IIMetricsDispatcher._store ]
+...

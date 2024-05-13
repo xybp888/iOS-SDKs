@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PreviewsOSSupport.framework/PreviewsOSSupport
+current-version:       21.40.1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PreviewsOSSupportVersionNumber,
+                            _PreviewsOSSupportVersionString,
+                            _UVShellConnectionInterface ]
+    objc-classes:         [ UVServiceHubMessage, UVServiceHubServiceFactory,
+                            UVShellConnectionInterfaceTarget,
+                            _TtC17PreviewsOSSupport19CrashReportListener,
+                            _TtC17PreviewsOSSupport24ServiceHubPreviewService,
+                            _TtC17PreviewsOSSupport27_UVServiceHubServiceFactory,
+                            _TtCC17PreviewsOSSupport19CrashReportListener13ObserverProxy ]
+    objc-ivars:           [ UVServiceHubMessage._messageType,
+                            UVServiceHubMessage._payload,
+                            UVServiceHubMessage._replyHandler,
+                            UVShellConnectionInterfaceTarget._bsEndpointHandler,
+                            UVShellConnectionInterfaceTarget._messageHandler,
+                            UVShellConnectionInterfaceTarget._xpcEndpointHandler ]
+...

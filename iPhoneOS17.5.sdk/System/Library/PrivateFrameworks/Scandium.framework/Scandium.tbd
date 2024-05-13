@@ -1,0 +1,74 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Scandium.framework/Scandium
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ScandiumVersionNumber, _ScandiumVersionString,
+                            __ZN8scandium18PacketDropDetector13handle_packetEhtm,
+                            __ZN8scandium9Processor22convert_algs_analyticsERKN8Scandium11ScandiumPPG16core_analytics_tERKNS0_12SessionStatsE,
+                            __ZN8scandium9Processor7processERKNS_11InputPacketE,
+                            __ZN8scandium9ProcessorC1ERKNS_18SessionStartPacketENSt3__18functionIFvNS_6ResultERKNS_9AnalyticsEEEENS5_IFvNS_11AbortReasonES9_EEENS5_IFvbEEESG_bRKNS4_12basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE,
+                            __ZN8scandium9ProcessorC2ERKNS_18SessionStartPacketENSt3__18functionIFvNS_6ResultERKNS_9AnalyticsEEEENS5_IFvNS_11AbortReasonES9_EEENS5_IFvbEEESG_bRKNS4_12basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE,
+                            __ZN8scandium9ProcessorD1Ev,
+                            __ZN8scandium9ProcessorD2Ev,
+                            __ZNK8scandium9Processor10backgroundEv,
+                            __ZNK8scandium9Processor16max_packet_countEv,
+                            _sc_get_log ]
+    objc-classes:         [ SCDevice, SCHealthLiteConnection, SCPacketDropDetector,
+                            SCPlugin, SCPowerAssertion, SCPreferences, SCProcessor,
+                            SCService, SCTimeReference, ScandiumQualityMetricModel,
+                            ScandiumQualityMetricModelInput,
+                            ScandiumQualityMetricModelOutput ]
+    objc-ivars:           [ SCDevice._delegate, SCDevice._delegateQueue,
+                            SCDevice._device, SCDevice._featureReportQueue,
+                            SCDevice._inputReportBuffer,
+                            SCDevice._inputReportQueue,
+                            SCHealthLiteConnection._connection,
+                            SCHealthLiteConnection._delegate,
+                            SCHealthLiteConnection._healthlite,
+                            SCHealthLiteConnection._queue,
+                            SCPacketDropDetector._detector, SCPlugin._cfPlugIn,
+                            SCPlugin._cfPlugInPtr, SCPlugin._cfPlugInRefCount,
+                            SCPlugin._circularReferenceToSelf,
+                            SCPlugin._hidService, SCPlugin._hidServicePtr,
+                            SCPlugin._hidServiceRefCount,
+                            SCPlugin._iUnknownRefCount, SCPlugin._properties,
+                            SCPlugin._service, SCPowerAssertion._name,
+                            SCPowerAssertion._powerAssertion,
+                            SCPreferences._bypassAlgorithms,
+                            SCPreferences._queue,
+                            SCPreferences._scandiumDefaults,
+                            SCPreferences._signalQualityMetricsDisabled,
+                            SCProcessor._bypassAlgorithms, SCProcessor._delegate,
+                            SCProcessor._expectedDuration,
+                            SCProcessor._expectedNumberOfPackets,
+                            SCProcessor._expended, SCProcessor._forBackground,
+                            SCProcessor._frameCount, SCProcessor._processor,
+                            SCProcessor._startTimestamp,
+                            SCService._backgroundIsAllowed,
+                            SCService._connection, SCService._device,
+                            SCService._firmwareState, SCService._ledState,
+                            SCService._operatingMode,
+                            SCService._packetDropDetector,
+                            SCService._powerAssertion, SCService._preferences,
+                            SCService._previousBackgroundReadingExists,
+                            SCService._previousBackgroundReadingWallclock,
+                            SCService._previousBackgroundReadingWasSuccessful,
+                            SCService._processor, SCService._serviceQueue,
+                            SCService._started, SCService._systemInstance,
+                            SCService._timeReference,
+                            SCService._timestampReference,
+                            SCTimeReference._queue,
+                            SCTimeReference._rtpTicksPerSecond,
+                            SCTimeReference._significantTimeChangeNotificationToken,
+                            SCTimeReference._timeReference,
+                            SCTimeReference._timer,
+                            ScandiumQualityMetricModel._model,
+                            ScandiumQualityMetricModelInput._input1,
+                            ScandiumQualityMetricModelOutput._output1 ]
+    weak-def-symbols:     [ __ZNSt3__119piecewise_constructE ]
+...

@@ -1,0 +1,45 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AccessibilityUIShared.framework/AccessibilityUIShared
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AXUIErrorDomainCommunication,
+                            _AXUIErrorDomainProtocol,
+                            _AXUIErrorDomainServiceEntitlementMismatch,
+                            _AXUIErrorDomainServiceInitialization,
+                            _AXUIErrorDomainServiceMessageHandling,
+                            _AXUIErrorDomainServiceNeedsToRequireEntitlements,
+                            _AXUIErrorDomainValidation,
+                            _AXUIServiceManagerLaunchAngelInterface,
+                            __AXUIMessageIdentifierCleanup,
+                            __AXUIMessageReplyKeyClientRegistrationWithServerDidSucceed,
+                            __AXUIMessageReplyKeyDidSucceed,
+                            __AXUIMessageReplyKeyErrorDescription,
+                            __AXUIMessageReplyKeyErrorDomain,
+                            __AXUIServiceDescription,
+                            __AXUIServiceMessageKeyClientIdentifier,
+                            __AXUIServiceMessageKeyInitializationMessage,
+                            __AXUIServiceMessageKeyMessageIdentifier,
+                            __AXUIServiceMessageKeyMessageWasEmpty,
+                            __AXUIServiceMessageKeyServiceBundleName,
+                            __AXUIServiceName ]
+    objc-classes:         [ AXMultiplexConnectionHandler, AXUIMessageContext,
+                            AXUIMessageReplyHandler, AXUIMessageSender ]
+    objc-ivars:           [ AXMultiplexConnectionHandler._connection,
+                            AXMultiplexConnectionHandler._processHandle,
+                            AXMultiplexConnectionHandler._serviceConnection,
+                            AXMultiplexConnectionHandler._xpc_handler,
+                            AXUIMessageContext._completion,
+                            AXUIMessageContext._completionRequiresWritingBlock,
+                            AXUIMessageContext._context,
+                            AXUIMessageContext._targetAccessQueue,
+                            AXUIMessageContext._xpcMessage,
+                            AXUIMessageSender._delegate,
+                            AXUIMessageSender._messageQueue,
+                            AXUIMessageSender._messageSchedulingSerializationQueue,
+                            AXUIMessageSender._sendingMessage ]
+...

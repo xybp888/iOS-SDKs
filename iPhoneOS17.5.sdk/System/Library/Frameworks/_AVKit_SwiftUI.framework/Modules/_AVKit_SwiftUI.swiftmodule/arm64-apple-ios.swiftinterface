@@ -1,0 +1,24 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.12.7 clang-1500.3.9.3)
+// swift-module-flags: -target arm64-apple-ios17.5 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 1166.4 -module-name _AVKit_SwiftUI
+import AVFoundation
+@_exported import AVKit
+import Combine
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 14.0, macOS 11.0, watchOS 7.0, tvOS 14.0, *)
+public struct VideoPlayer<VideoOverlay> : SwiftUI.View where VideoOverlay : SwiftUI.View {
+  public init(player: AVFoundation.AVPlayer?, @SwiftUI.ViewBuilder videoOverlay: () -> VideoOverlay)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s14_AVKit_SwiftUI11VideoPlayerV4bodyQrvp", 0) __<VideoOverlay>
+}
+@available(iOS 14.0, macOS 11.0, watchOS 7.0, tvOS 14.0, *)
+extension _AVKit_SwiftUI.VideoPlayer where VideoOverlay == SwiftUI.EmptyView {
+  public init(player: AVFoundation.AVPlayer?)
+}

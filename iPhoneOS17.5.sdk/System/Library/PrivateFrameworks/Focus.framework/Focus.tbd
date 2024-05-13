@@ -1,0 +1,37 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Focus.framework/Focus
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _FCLogActivities, _FCRegisterLogging,
+                            _FocusVersionNumber, _FocusVersionString,
+                            __FocusUserDefaults ]
+    objc-classes:         [ FCActivityManager, _FCActivity, _FCActivityLifetime ]
+    objc-ivars:           [ FCActivityManager._activeActivity,
+                            FCActivityManager._activeLifetimeDetailsCollection,
+                            FCActivityManager._activeModeAssertion,
+                            FCActivityManager._activeModeAssertionIsValid,
+                            FCActivityManager._activeStateUpdate,
+                            FCActivityManager._activitySuggestionClient,
+                            FCActivityManager._allActivitiesByIdentifier,
+                            FCActivityManager._availableActivities,
+                            FCActivityManager._carDNDStatus,
+                            FCActivityManager._defaultActivity,
+                            FCActivityManager._identifier,
+                            FCActivityManager._lifetimeDescriptionsUpdatingEnabled,
+                            FCActivityManager._lifetimeDetailsProvider,
+                            FCActivityManager._lifetimeOfActiveActivity,
+                            FCActivityManager._locationsToSuggestedActivitiesOrNull,
+                            FCActivityManager._modeSelectionService,
+                            FCActivityManager._observers,
+                            FCActivityManager._stateService,
+                            _FCActivity._activityCreationDate,
+                            _FCActivity._activityLifetimeDescriptions,
+                            _FCActivity._activityLifetimesAlternativeDescription,
+                            _FCActivity._dndMode,
+                            _FCActivityLifetime._dndLifetimeDetails ]
+...

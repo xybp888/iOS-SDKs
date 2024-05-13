@@ -1,0 +1,164 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.12.7 clang-1500.3.9.3)
+// swift-module-flags: -target arm64e-apple-ios17.5 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 130.0.19 -module-name JournalingSuggestions
+import CoreLocation
+import Foundation
+import HealthKit
+import Photos
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+@available(iOS 17.2, *)
+extension UIKit.UIImage : JournalingSuggestions.JournalingSuggestionAsset {
+  public typealias JournalingSuggestionContent = UIKit.UIImage
+}
+@available(iOS 17.2, *)
+extension SwiftUI.Image : JournalingSuggestions.JournalingSuggestionAsset {
+  public typealias JournalingSuggestionContent = SwiftUI.Image
+}
+@available(iOS 17.2, *)
+public protocol JournalingSuggestionAsset {
+  associatedtype JournalingSuggestionContent : JournalingSuggestions.JournalingSuggestionAsset = Self
+}
+@available(iOS 17.2, *)
+public struct JournalingSuggestion : Swift.Equatable, Swift.Hashable {
+  @available(iOS 17.2, *)
+  public struct Workout : JournalingSuggestions.JournalingSuggestionAsset {
+    public struct Details : JournalingSuggestions.JournalingSuggestionAsset {
+      public var activityType: HealthKit.HKWorkoutActivityType
+      public var activeEnergyBurned: HealthKit.HKQuantity?
+      public var distance: HealthKit.HKQuantity?
+      public var averageHeartRate: HealthKit.HKQuantity?
+      public var date: Foundation.DateInterval?
+      public typealias JournalingSuggestionContent = JournalingSuggestions.JournalingSuggestion.Workout.Details
+    }
+    public var details: JournalingSuggestions.JournalingSuggestion.Workout.Details?
+    public var icon: Foundation.URL?
+    public var route: [CoreLocation.CLLocation]?
+    public typealias JournalingSuggestionContent = JournalingSuggestions.JournalingSuggestion.Workout
+  }
+  @available(iOS 17.2, *)
+  public struct WorkoutGroup : JournalingSuggestions.JournalingSuggestionAsset {
+    public var workouts: [JournalingSuggestions.JournalingSuggestion.Workout]
+    public var icon: Foundation.URL?
+    public var activeEnergyBurned: HealthKit.HKQuantity?
+    public var averageHeartRate: HealthKit.HKQuantity?
+    public var duration: Foundation.TimeInterval?
+    public typealias JournalingSuggestionContent = JournalingSuggestions.JournalingSuggestion.WorkoutGroup
+  }
+  @available(iOS 17.2, *)
+  public struct Contact : JournalingSuggestions.JournalingSuggestionAsset {
+    public var name: Swift.String
+    public let photo: Foundation.URL?
+    public typealias JournalingSuggestionContent = JournalingSuggestions.JournalingSuggestion.Contact
+  }
+  @available(iOS 17.2, *)
+  public struct Location : JournalingSuggestions.JournalingSuggestionAsset {
+    public var place: Swift.String?
+    public var city: Swift.String?
+    public var location: CoreLocation.CLLocation?
+    public var date: Foundation.Date?
+    public typealias JournalingSuggestionContent = JournalingSuggestions.JournalingSuggestion.Location
+  }
+  @available(iOS 17.2, *)
+  public struct LocationGroup : JournalingSuggestions.JournalingSuggestionAsset {
+    public var locations: [JournalingSuggestions.JournalingSuggestion.Location]
+    public typealias JournalingSuggestionContent = JournalingSuggestions.JournalingSuggestion.LocationGroup
+  }
+  @available(iOS 17.2, *)
+  public struct Song : JournalingSuggestions.JournalingSuggestionAsset {
+    public var song: Swift.String?
+    public var artist: Swift.String?
+    public var album: Swift.String?
+    public var artwork: Foundation.URL?
+    public var date: Foundation.Date?
+    public typealias JournalingSuggestionContent = JournalingSuggestions.JournalingSuggestion.Song
+  }
+  @available(iOS 17.2, *)
+  public struct Podcast : JournalingSuggestions.JournalingSuggestionAsset {
+    public var episode: Swift.String?
+    public var show: Swift.String?
+    public var artwork: Foundation.URL?
+    public var date: Foundation.Date?
+    public typealias JournalingSuggestionContent = JournalingSuggestions.JournalingSuggestion.Podcast
+  }
+  @available(iOS 17.2, *)
+  public struct Photo : JournalingSuggestions.JournalingSuggestionAsset {
+    public var photo: Foundation.URL
+    public var date: Foundation.Date?
+    public typealias JournalingSuggestionContent = JournalingSuggestions.JournalingSuggestion.Photo
+  }
+  @available(iOS 17.2, *)
+  public struct Video : JournalingSuggestions.JournalingSuggestionAsset {
+    public var url: Foundation.URL
+    public var date: Foundation.Date?
+    public typealias JournalingSuggestionContent = JournalingSuggestions.JournalingSuggestion.Video
+  }
+  @available(iOS 17.2, *)
+  public struct LivePhoto : JournalingSuggestions.JournalingSuggestionAsset {
+    public var image: Foundation.URL
+    public var video: Foundation.URL
+    public var date: Foundation.Date?
+    public typealias JournalingSuggestionContent = JournalingSuggestions.JournalingSuggestion.LivePhoto
+  }
+  @available(iOS 17.2, *)
+  public struct MotionActivity : JournalingSuggestions.JournalingSuggestionAsset {
+    public var icon: Foundation.URL?
+    public var steps: Swift.Int
+    public var date: Foundation.DateInterval?
+    public typealias JournalingSuggestionContent = JournalingSuggestions.JournalingSuggestion.MotionActivity
+  }
+  public struct ItemContent : Swift.Identifiable {
+    public var id: Foundation.UUID
+    public var representations: [any JournalingSuggestions.JournalingSuggestionAsset.Type]
+    public func hasContent<Content>(ofType content: Content.Type) -> Swift.Bool where Content : JournalingSuggestions.JournalingSuggestionAsset
+    #if compiler(>=5.3) && $AsyncAwait
+    public func content<Content>(forType content: Content.Type) async throws -> Content? where Content : JournalingSuggestions.JournalingSuggestionAsset
+    #endif
+    public typealias ID = Foundation.UUID
+  }
+  #if compiler(>=5.3) && $AsyncAwait
+  public func content<Content>(forType content: Content.Type) async -> [Content] where Content : JournalingSuggestions.JournalingSuggestionAsset
+  #endif
+  public let items: [JournalingSuggestions.JournalingSuggestion.ItemContent]
+  public let title: Swift.String
+  public let date: Foundation.DateInterval?
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 17.2, *)
+extension JournalingSuggestions.JournalingSuggestion {
+  public static func == (lhs: JournalingSuggestions.JournalingSuggestion, rhs: JournalingSuggestions.JournalingSuggestion) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@available(iOS 17.2, *)
+public struct JournalingSuggestionsPicker<Label> : SwiftUI.View where Label : SwiftUI.View {
+  #if compiler(>=5.3) && $AsyncAwait
+  public init(@SwiftUI.ViewBuilder label: () -> Label, onCompletion: @escaping (JournalingSuggestions.JournalingSuggestion) async -> Swift.Void)
+  #endif
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s21JournalingSuggestions0aB6PickerV4bodyQrvp", 0) __<Label>
+}
+@available(iOS 17.2, *)
+extension JournalingSuggestions.JournalingSuggestionsPicker where Label == SwiftUI.Text {
+  #if compiler(>=5.3) && $AsyncAwait
+  public init(_ title: SwiftUI.LocalizedStringKey, onCompletion: @escaping (JournalingSuggestions.JournalingSuggestion) async -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  @_disfavoredOverload public init<S>(_ title: S, onCompletion: @escaping (JournalingSuggestions.JournalingSuggestion) async -> Swift.Void) where S : Swift.StringProtocol
+  #endif
+}
+@available(iOS 17.2, *)
+extension SwiftUI.View {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func journalingSuggestionsPicker(isPresented: SwiftUI.Binding<Swift.Bool>, onCompletion: @escaping (JournalingSuggestions.JournalingSuggestion) async -> Swift.Void) -> some SwiftUI.View
+  
+  #endif
+}

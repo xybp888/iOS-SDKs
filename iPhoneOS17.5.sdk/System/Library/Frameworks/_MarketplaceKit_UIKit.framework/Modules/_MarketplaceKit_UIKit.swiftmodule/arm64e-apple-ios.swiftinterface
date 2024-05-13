@@ -1,0 +1,143 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.12.7 clang-1500.3.9.3)
+// swift-module-flags: -target arm64e-apple-ios17.5 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-upcoming-feature ConciseMagicFile -enable-upcoming-feature ForwardTrailingClosures -enable-bare-slash-regex -user-module-version 1.5.10.2.6 -module-name _MarketplaceKit_UIKit
+import Foundation
+import LocalAuthentication
+import MarketplaceKit
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+@objc @_hasMissingDesignatedInitializers @available(iOS 17.4, *)
+@_Concurrency.MainActor(unsafe) public class ActionButton : UIKit.UIControl {
+  public enum Action {
+    case batchInstall(_MarketplaceKit_UIKit.BatchInstallConfiguration)
+    case delete(MarketplaceKit.AppleItemID)
+    case install(_MarketplaceKit_UIKit.InstallConfiguration)
+    case launch(MarketplaceKit.AppleItemID)
+  }
+  public enum ButtonImagePlacement : Swift.Int {
+    case top
+    case leading
+    case bottom
+    case trailing
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @_Concurrency.MainActor(unsafe) final public let action: _MarketplaceKit_UIKit.ActionButton.Action
+  @_Concurrency.MainActor(unsafe) public init(action: _MarketplaceKit_UIKit.ActionButton.Action)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var isHighlighted: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var isEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var backgroundColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var tintColor: UIKit.UIColor! {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) public var label: Swift.String {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var imageName: Swift.String? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var imagePlacement: _MarketplaceKit_UIKit.ActionButton.ButtonImagePlacement {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var size: CoreFoundation.CGSize {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var fontSize: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var cornerRadius: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var borderWidth: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var borderColor: UIKit.UIColor {
+    get
+    set
+  }
+  @objc deinit
+}
+@available(iOS 17.4, *)
+public enum MarketplaceDisplayOption : Swift.Codable {
+  case productPage(appleItemID: MarketplaceKit.AppleItemID, appleVersionID: MarketplaceKit.AppleVersionID?)
+  case searchResults(query: Swift.String)
+  case authentication(account: Swift.String)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 17.4, *)
+public protocol MarketplaceSceneDelegate {
+  func scene(_ scene: UIKit.UIWindowScene, askedToDisplay option: _MarketplaceKit_UIKit.MarketplaceDisplayOption)
+}
+@available(iOS 17.4, *)
+extension UIKit.UIScene.ConnectionOptions {
+  @_Concurrency.MainActor(unsafe) public var marketplaceDisplayOption: _MarketplaceKit_UIKit.MarketplaceDisplayOption? {
+    get
+  }
+}
+@available(iOS 17.4, *)
+public enum InstallConfirmationResult : @unchecked Swift.Sendable {
+  case cancel
+  case confirmed(installVerificationToken: Swift.String, authenticationContext: LocalAuthentication.LAContext?)
+}
+@available(iOS 17.4, *)
+public struct InstallConfiguration {
+  public let install: _MarketplaceKit_UIKit.InstallMetadata
+  public let confirmInstall: @Sendable () async -> _MarketplaceKit_UIKit.InstallConfirmationResult
+  #if compiler(>=5.3) && $AsyncAwait && $Sendable
+  public init(install: _MarketplaceKit_UIKit.InstallMetadata, confirmInstall: @escaping @Sendable () async -> _MarketplaceKit_UIKit.InstallConfirmationResult)
+  #endif
+}
+@available(iOS 17.4, *)
+public struct InstallMetadata : Swift.Sendable {
+  public let account: Swift.String
+  public let appleItemID: MarketplaceKit.AppleItemID
+  public let alternativeDistributionPackage: Foundation.URL
+  public let isUpdate: Swift.Bool
+  public init(account: Swift.String, appleItemID: MarketplaceKit.AppleItemID, alternativeDistributionPackage: Foundation.URL, isUpdate: Swift.Bool)
+}
+@available(iOS 17.4, *)
+public enum BatchInstallConfirmationResult : Swift.Equatable, @unchecked Swift.Sendable {
+  case cancel
+  case confirmed(installVerificationTokens: [MarketplaceKit.AppleItemID : Swift.String], authenticationContext: LocalAuthentication.LAContext?)
+  public static func == (a: _MarketplaceKit_UIKit.BatchInstallConfirmationResult, b: _MarketplaceKit_UIKit.BatchInstallConfirmationResult) -> Swift.Bool
+}
+@available(iOS 17.4, *)
+public struct BatchInstallConfiguration {
+  public let installs: [_MarketplaceKit_UIKit.InstallMetadata]
+  public let confirmInstall: @Sendable () async -> _MarketplaceKit_UIKit.BatchInstallConfirmationResult
+  #if compiler(>=5.3) && $AsyncAwait && $Sendable
+  public init(installs: [_MarketplaceKit_UIKit.InstallMetadata], confirmInstall: @escaping @Sendable () async -> _MarketplaceKit_UIKit.BatchInstallConfirmationResult)
+  #endif
+}
+@available(iOS 17.4, *)
+extension _MarketplaceKit_UIKit.ActionButton.ButtonImagePlacement : Swift.Equatable {}
+@available(iOS 17.4, *)
+extension _MarketplaceKit_UIKit.ActionButton.ButtonImagePlacement : Swift.Hashable {}
+@available(iOS 17.4, *)
+extension _MarketplaceKit_UIKit.ActionButton.ButtonImagePlacement : Swift.RawRepresentable {}

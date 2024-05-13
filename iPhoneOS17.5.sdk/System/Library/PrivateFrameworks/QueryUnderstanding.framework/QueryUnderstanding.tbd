@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/QueryUnderstanding.framework/QueryUnderstanding
+current-version:       0
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _QueryUnderstandingVersionNumber,
+                            _QueryUnderstandingVersionString, _intentArgLabel,
+                            _intentArgShortLabel, _intentLabel,
+                            _kQUModelErrorDomain,
+                            _kQUModelErrorLocaleNotSupported,
+                            _kQUModelErrorVersionMismatch ]
+    objc-classes:         [ QUModelFactory, U2Head, U2HeadInput, U2HeadOutput,
+                            U2HeadWrapper, U2Output, U2OwlModel ]
+    objc-ivars:           [ QUModelFactory._condition, QUModelFactory._loadError,
+                            QUModelFactory._quModel,
+                            QUModelFactory._releaseBlock, QUModelFactory._state,
+                            QUModelFactory._transaction,
+                            QUModelFactory._unsupportedLocaleIdentifiers,
+                            U2Head._model, U2HeadInput._input_mask,
+                            U2HeadInput._sequence_output,
+                            U2HeadOutput._arg_conf_scores,
+                            U2HeadOutput._intent_scores,
+                            U2HeadOutput._top_arg_ids, U2HeadWrapper._locale,
+                            U2HeadWrapper._u2Head, U2Output._argIdsForTokens,
+                            U2Output._argScoresForTokens,
+                            U2Output._confidenceScore, U2Output._embeddingsTime,
+                            U2Output._intentId, U2Output._predictionTime,
+                            U2Output._tokenRanges, U2Output._tokens,
+                            U2OwlModel._embeddingService, U2OwlModel._locale,
+                            U2OwlModel._u2headWrapper ]
+...

@@ -1,0 +1,73 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WebPrivacy.framework/WebPrivacy
+current-version:       0
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _WPNotificationUserInfoResourceTypeKey,
+                            _WPResourceDataChangedNotificationName,
+                            _WPTrackerBlockerRuleListIdentifier,
+                            __Z10WPOSLogAPIv, __Z10WPOSLogXPCv,
+                            __Z13WPOSLogServerv, __Z14WPOSLogNetworkv,
+                            __Z14WPOSLogSandboxv, __Z15WPOSLogDatabasev,
+                            __Z19WPOSLogSharedMemoryv,
+                            __ZN10WebPrivacy18enumerateListRulesERKN8Platform9ArrayViewIhEEONSt3__18functionIFvOS2_EEE,
+                            __ZN10WebPrivacy23createLinkFilteringDataERKN8Platform9ArrayViewIhEE,
+                            __ZN10WebPrivacy28createTrackerDomainNamesDataERKN8Platform9ArrayViewIhEE,
+                            __ZN10WebPrivacy32createTrackerDomainNamesJSONDataERKN8Platform9ArrayViewIhEE,
+                            __ZN10WebPrivacy33createTrackerNetworkAddressesListERKN8Platform9ArrayViewIhEE,
+                            __ZN10WebPrivacy35createStorageAccessPromptQuirksDataERKN8Platform9ArrayViewIhEE,
+                            __ZN10WebPrivacy44createStorageAccessUserAgentStringQuirksDataERKN8Platform9ArrayViewIhEE,
+                            __ZN10WebPrivacy51createTrackingResourceRequestContentExtensionSourceERKN8Platform9ArrayViewIhEE,
+                            __ZN10WebPrivacy9getHeaderERKN8Platform9ArrayViewIhEE,
+                            __ZN8Platform11descriptionERKNSt3__15arrayIhLm32EEE,
+                            __ZN8Platform12SharedMemory3mapENS_14FileDescriptorE,
+                            __ZN8Platform12SharedMemory3mapEPU24objcproto13OS_xpc_object8NSObject,
+                            __ZN8Platform12SharedMemoryC1EOS0_,
+                            __ZN8Platform12SharedMemoryC1EPvm,
+                            __ZN8Platform12SharedMemoryC2EOS0_,
+                            __ZN8Platform12SharedMemoryC2EPvm,
+                            __ZN8Platform12SharedMemoryD1Ev,
+                            __ZN8Platform12SharedMemoryD2Ev,
+                            __ZN8Platform13computeSHA256ERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE,
+                            __ZN8Platform18base64StringToDataEP8NSString,
+                            __ZN8Platform18base64StringToDataERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE,
+                            __ZN8Platform18dataToBase64StringEP6NSData,
+                            __ZN8Platform18dataToBase64StringERKNS_9ArrayViewIhEE,
+                            __ZN8Platform21getUserCacheDirectoryEv,
+                            __ZN8Platform30stringByAppendingPathComponentERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEES8_,
+                            __ZN8Platform42createDirectoryWithIntermediateDirectoriesERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE,
+                            __ZNK8Platform12SharedMemory4viewEv ]
+    objc-classes:         [ WPLinkFilteringConditionals, WPLinkFilteringData,
+                            WPLinkFilteringRule, WPNetworkAddressRange,
+                            WPResourceRequestOptions, WPResources,
+                            WPStorageAccessPromptQuirk,
+                            WPStorageAccessPromptQuirksData,
+                            WPStorageAccessUserAgentStringQuirk,
+                            WPStorageAccessUserAgentStringQuirksData,
+                            WPTrackingDomain ]
+    objc-ivars:           [ WPLinkFilteringConditionals._domains,
+                            WPLinkFilteringConditionals._paths,
+                            WPLinkFilteringData._rules,
+                            WPLinkFilteringRule._domain,
+                            WPLinkFilteringRule._path,
+                            WPLinkFilteringRule._queryParameter,
+                            WPNetworkAddressRange._address,
+                            WPNetworkAddressRange._host,
+                            WPNetworkAddressRange._netMaskLength,
+                            WPNetworkAddressRange._owner,
+                            WPResourceRequestOptions._afterUpdates,
+                            WPResources._cachedLinkFilteringData,
+                            WPResources._cachedLinkFilteringDataMutex,
+                            WPStorageAccessPromptQuirk._domainPairings,
+                            WPStorageAccessPromptQuirk._name,
+                            WPStorageAccessPromptQuirksData._quirks,
+                            WPStorageAccessUserAgentStringQuirk._domain,
+                            WPStorageAccessUserAgentStringQuirk._userAgentString,
+                            WPStorageAccessUserAgentStringQuirksData._quirks,
+                            WPTrackingDomain._canBlock, WPTrackingDomain._host,
+                            WPTrackingDomain._owner ]
+...

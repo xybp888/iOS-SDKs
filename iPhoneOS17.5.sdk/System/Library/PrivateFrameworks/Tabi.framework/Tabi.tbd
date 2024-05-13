@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Tabi.framework/Tabi
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _APDefaultLog, _GTPackageUnarchiverErrorDomain,
+                            _TabiVersionNumber, _TabiVersionString ]
+    objc-classes:         [ GTPackageUnarchiver, GTUnarchivablePackage ]
+    objc-ivars:           [ GTUnarchivablePackage._fileURL,
+                            GTUnarchivablePackage._identifier ]
+...

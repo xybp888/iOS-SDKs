@@ -1,0 +1,82 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+current-version:       1
+compatibility-version: 1
+reexported-libraries:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:            [ /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared,
+                            /System/Library/PrivateFrameworks/SafariSharedUI.framework/SafariSharedUI ]
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _WBUABAddressKey, _WBUABStreetKey,
+                            _WBUAutoFillClearDataClasses,
+                            _WBUAutoFillDisableDataClasses,
+                            _WBUAutoFillGetEnabledDataClasses,
+                            _WBUFeatureManagerCloudTabsAvailabilityDidChangeNotification,
+                            _WBUFormAutoFillPasswordGenerationAssistanceBecameAvailableNotification,
+                            _WBUHistoryDefaultItemAgeLimit,
+                            _WBUHistoryDefaultItemCountLimit,
+                            _webuiCookieAcceptPolicyPreferencesKey ]
+    objc-classes:         [ WBUAlertController, WBUAutoFillDisplayData,
+                            WBUCreditCardDataController, WBUFeatureManager,
+                            WBUFormAutoFillPrompt, WBUFormAutoFillWhiteList,
+                            WBUFormDataController,
+                            WBUGeneratedPasswordCredentialUpdateRequest,
+                            WBUGeneratedPasswordCredentialUpdater, WBUHistory,
+                            WBUSheetController, WebUIAlert, WebUICertificateError,
+                            _WBUDynamicMeCard ]
+    objc-ivars:           [ WBUAlertController._alert,
+                            WBUAlertController._automaticallyDismiss,
+                            WBUAlertController._handler,
+                            WBUAlertController._tableView,
+                            WBUAutoFillDisplayData._fillMatches,
+                            WBUAutoFillDisplayData._label,
+                            WBUFeatureManager._autoFillAvailable,
+                            WBUFeatureManager._bookmarksAvailable,
+                            WBUFeatureManager._cachedLocallyRestricted,
+                            WBUFeatureManager._cachedShouldRequestMoreTime,
+                            WBUFeatureManager._cloudSyncAvailable,
+                            WBUFeatureManager._inMemoryBookmarkChangeTrackingAvailable,
+                            WBUFeatureManager._internalQueue,
+                            WBUFeatureManager._lastRestrictedSettingRequestedTime,
+                            WBUFeatureManager._managementState,
+                            WBUFeatureManager._offlineReadingListAvailable,
+                            WBUFeatureManager._primaryAppleAccount,
+                            WBUFeatureManager._readingListAvailable,
+                            WBUFormAutoFillPrompt._alertController,
+                            WBUFormAutoFillWhiteList._cache,
+                            WBUFormDataController._autoFillCorrectionManager,
+                            WBUFormDataController._autoFillFeedbackProcessor,
+                            WBUFormDataController._cachedAutoFillRestrictionValue,
+                            WBUFormDataController._generatedPassword,
+                            WBUFormDataController._lastFilledCreditCardData,
+                            WBUFormDataController._previouslyFilledVirtualCardNumbers,
+                            WBUFormDataController._savePending,
+                            WBUGeneratedPasswordCredentialUpdateRequest._generatedPassword,
+                            WBUGeneratedPasswordCredentialUpdateRequest._lastGeneratedPassword,
+                            WBUGeneratedPasswordCredentialUpdateRequest._protectionSpace,
+                            WBUGeneratedPasswordCredentialUpdateRequest._shouldSaveNewCredential,
+                            WBUGeneratedPasswordCredentialUpdateRequest._urlForCredential,
+                            WBUGeneratedPasswordCredentialUpdateRequest._username,
+                            WBUGeneratedPasswordCredentialUpdater._queue,
+                            WBUGeneratedPasswordCredentialUpdater._urlsScheduledForUpdating,
+                            WBUGeneratedPasswordCredentialUpdater._urlsToUpdateRequests,
+                            WBUHistory._shouldScheduleMaintenance,
+                            WBUSheetController._alert,
+                            WBUSheetController._alertController,
+                            WBUSheetController._alertInvocationQueue,
+                            WBUSheetController._delegate,
+                            WebUIAlert._actionHandler, WebUIAlert._bodyText,
+                            WebUIAlert._context, WebUIAlert._defaultAction,
+                            WebUIAlert._hideAction, WebUIAlert._identities,
+                            WebUIAlert._indexOfSelectedIdentity,
+                            WebUIAlert._otherAction, WebUIAlert._tableAction,
+                            WebUIAlert._title, WebUIAlert._titles,
+                            WebUIAlert._type,
+                            _WBUDynamicMeCard._blocksPendingMeCard,
+                            _WBUDynamicMeCard._me,
+                            _WBUDynamicMeCard._meCardExists ]
+...

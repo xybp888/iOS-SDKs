@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SoftwareUpdateSettingsUI.framework/SoftwareUpdateSettingsUI
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ __SUSUILoggingFacility ]
+    objc-classes:         [ SUSUIBatteryInfo, SUSUIServiceManager,
+                            SUSUISoftwareUpdateClientManager,
+                            SUSUIUpdateAgreementManager ]
+    objc-ivars:           [ SUSUIServiceManager._initialized,
+                            SUSUIServiceManager._registeredServices,
+                            SUSUISoftwareUpdateClientManager._autoInstallOperation,
+                            SUSUISoftwareUpdateClientManager._autoUpdateScheduled,
+                            SUSUISoftwareUpdateClientManager._completionQueue,
+                            SUSUISoftwareUpdateClientManager._delegate,
+                            SUSUISoftwareUpdateClientManager._rollbackDescriptor,
+                            SUSUISoftwareUpdateClientManager._rollingBack,
+                            SUSUISoftwareUpdateClientManager._suClient,
+                            SUSUISoftwareUpdateClientManager._workQueue,
+                            SUSUIUpdateAgreementManager._stateQueue,
+                            SUSUIUpdateAgreementManager._updateAgreementDict ]
+...

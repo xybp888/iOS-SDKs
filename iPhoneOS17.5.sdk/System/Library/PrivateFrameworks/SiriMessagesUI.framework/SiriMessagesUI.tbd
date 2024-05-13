@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriMessagesUI.framework/SiriMessagesUI
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CKSLogContext, _CKSLogInit,
+                            _SiriMessagesUIVersionNumber,
+                            _SiriMessagesUIVersionString ]
+    objc-classes:         [ AudioWaveFormGenerator, VocabularySearchResult,
+                            VocabularySearcher,
+                            _TtC14SiriMessagesUI11AudioPlayer,
+                            _TtC14SiriMessagesUI16LinkViewDelegate,
+                            _TtC14SiriMessagesUI21DelayedSendTimerEvent ]
+    objc-ivars:           [ VocabularySearchResult._itemId,
+                            VocabularySearchResult._originAppId,
+                            VocabularySearchResult._term,
+                            VocabularySearchResult._vocabularyId,
+                            VocabularySearcher.searcher ]
+...

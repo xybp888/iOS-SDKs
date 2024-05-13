@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HeadphoneSettings.framework/HeadphoneSettings
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _HeadphoneSettingsVersionNumber,
+                            _HeadphoneSettingsVersionString,
+                            _sharedBluetoothSettingsLogComponent ]
+    objc-classes:         [ BTSDevice, BTSDeviceClassic, BTSDeviceLE,
+                            HPSConnectedHeadphoneInfo,
+                            HPSConnectedHeadphonesController, HPSProductUtils ]
+    objc-ivars:           [ BTSDeviceClassic._device,
+                            BTSDeviceClassic.ctkdDevice,
+                            BTSDeviceClassic.managedByWallet,
+                            BTSDeviceClassic.supportsBackgroundNI,
+                            BTSDeviceLE._centralManager, BTSDeviceLE._peripheral,
+                            BTSDeviceLE.ctkdDevice, BTSDeviceLE.healthDevice,
+                            BTSDeviceLE.managedByWallet,
+                            BTSDeviceLE.supportsBackgroundNI,
+                            HPSConnectedHeadphoneInfo._deviceID,
+                            HPSConnectedHeadphoneInfo._deviceImage,
+                            HPSConnectedHeadphoneInfo._deviceName,
+                            HPSConnectedHeadphoneInfo._deviceSpecifier,
+                            HPSConnectedHeadphonesController._bluetoothManager,
+                            HPSConnectedHeadphonesController._deviceChangeHandler ]
+...

@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AutomationMode.framework/AutomationMode
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _XAMAutomationModeDataVaultPath,
+                            _XAMAutomationModeDoesNotRequireAuthenticationFilePath,
+                            _XAMAutomationModeReaderMachServiceName,
+                            _XAMAutomationModeRequiresAuthentication,
+                            _XAMAutomationModeStateChangedNotificationName,
+                            _XAMAutomationModeStateFilePath,
+                            _XAMAutomationModeWriterMachServiceName,
+                            _XAMCreateNoAuthenticationRequiredCookie,
+                            _XAMCreateNoAuthenticationRequiredCookieWithCompletion,
+                            _XAMDisableAutomationMode,
+                            _XAMDisableAutomationModeWithCompletion,
+                            _XAMEnableAutomationMode,
+                            _XAMEnableAutomationModeWithCompletion,
+                            _XAMIsAutomationModeEnabled, _XAMLog,
+                            _XAMRegisterAutomationModeChangeHandler,
+                            _XAMRemoveNoAuthenticationRequiredCookie,
+                            _XAMRemoveNoAuthenticationRequiredCookieWithCompletion,
+                            _XAMResetSharedObserver, _XAMResetSharedWriter,
+                            _XAMUnregisterAutomationModeChangeHandler ]
+    objc-classes:         [ XAMHandlerRecord, XAMLocalAuthenticationProvider,
+                            XAMObserver, XAMWriter ]
+    objc-ivars:           [ XAMHandlerRecord._block, XAMHandlerRecord._queue,
+                            XAMObserver._changeNotificationName,
+                            XAMObserver._handlers,
+                            XAMObserver._hasReceivedAutomationModeEnabledState,
+                            XAMObserver._isAutomationModeEnabled,
+                            XAMObserver._observationToken, XAMObserver._queue,
+                            XAMObserver._readerConnectionFactory,
+                            XAMWriter._authorizationProvider,
+                            XAMWriter._writerConnectionFactory ]
+...

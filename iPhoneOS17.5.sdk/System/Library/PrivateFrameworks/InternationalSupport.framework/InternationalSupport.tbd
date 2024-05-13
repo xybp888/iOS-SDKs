@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/InternationalSupport.framework/InternationalSupport
+current-version:       74
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ISBackstopLanguage, _ISBackstopLocale,
+                            _InternationalSupportVersionNumber,
+                            _InternationalSupportVersionString ]
+    objc-classes:         [ ISLanguageCarousel, ISLanguageCarouselItem,
+                            ISUtilities ]
+    objc-ivars:           [ ISLanguageCarousel._cycle, ISLanguageCarousel._items,
+                            ISLanguageCarousel._mergeDuplicates,
+                            ISLanguageCarousel._queue,
+                            ISLanguageCarousel._queueIndex,
+                            ISLanguageCarousel._randomize,
+                            ISLanguageCarousel._rankingUsesGuessedRegion,
+                            ISLanguageCarousel._rankingUsesPreferredLanguages,
+                            ISLanguageCarousel._weightedRepetition,
+                            ISLanguageCarouselItem._data,
+                            ISLanguageCarouselItem._languageIdentifier ]
+...

@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreBrightness.framework/CoreBrightness
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ BrightnessSystem, BrightnessSystemClient,
+                            CBAdaptationClient, CBBlueLightClient, CBClient,
+                            CBDisplayStateClient, CBSimBrightnessController ]
+    objc-ivars:           [ BrightnessSystem._initializationComplete,
+                            CBAdaptationClient._supported,
+                            CBBlueLightClient._supported,
+                            CBClient._adaptationClient,
+                            CBClient._blueLightClient,
+                            CBDisplayStateClient._completionDelegate,
+                            CBDisplayStateClient._supported,
+                            CBSimBrightnessController._currentFactor,
+                            CBSimBrightnessController._delegate,
+                            CBSimBrightnessController._duration,
+                            CBSimBrightnessController._initialFactor,
+                            CBSimBrightnessController._logHandle,
+                            CBSimBrightnessController._startDate,
+                            CBSimBrightnessController._targetFactor,
+                            CBSimBrightnessController._transitionTimer,
+                            CBSimBrightnessController._workQueue ]
+...

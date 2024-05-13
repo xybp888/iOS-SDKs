@@ -1,0 +1,377 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.12.7 clang-1500.3.9.3)
+// swift-module-flags: -target arm64-apple-ios17.5 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftVision -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 3.0.3 -module-name Vision
+import CoreML
+import Darwin
+import Swift
+@_exported import Vision
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 10.13, iOS 11.0, tvOS 11.0, *)
+extension Vision.VNFaceLandmarkRegion2D {
+  @nonobjc public var normalizedPoints: [CoreFoundation.CGPoint] {
+    get
+  }
+  @nonobjc public func pointsInImage(imageSize: CoreFoundation.CGSize) -> [CoreFoundation.CGPoint]
+  @available(macOS 10.15, iOS 13.0, tvOS 13.0, *)
+  @nonobjc public var precisionEstimatesPerPoint: [Swift.Float]? {
+    get
+  }
+}
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, *)
+extension Vision.VNFaceObservation {
+  @nonobjc public var faceCaptureQuality: Swift.Float? {
+    get
+  }
+}
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, *)
+extension Vision.VNRecognizedText {
+  @nonobjc open func boundingBox(for range: Swift.Range<Swift.String.Index>) throws -> Vision.VNRectangleObservation?
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+extension Vision.VNContour {
+  @nonobjc public var normalizedPoints: [simd.simd_float2] {
+    get
+  }
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+extension Vision.VNDetectHumanBodyPoseRequest {
+  #if compiler(>=5.3) && $EffectfulProp
+  @nonobjc public var supportedJointNames: [Vision.VNHumanBodyPoseObservation.JointName] {
+    get throws
+  }
+  #endif
+  #if compiler(>=5.3) && $EffectfulProp
+  @nonobjc public var supportedJointsGroupNames: [Vision.VNHumanBodyPoseObservation.JointsGroupName] {
+    get throws
+  }
+  #endif
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+extension Vision.VNDetectHumanHandPoseRequest {
+  #if compiler(>=5.3) && $EffectfulProp
+  @nonobjc public var supportedJointNames: [Vision.VNHumanHandPoseObservation.JointName] {
+    get throws
+  }
+  #endif
+  #if compiler(>=5.3) && $EffectfulProp
+  @nonobjc public var supportedJointsGroupNames: [Vision.VNHumanHandPoseObservation.JointsGroupName] {
+    get throws
+  }
+  #endif
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+extension Vision.VNDetectAnimalBodyPoseRequest {
+  #if compiler(>=5.3) && $EffectfulProp
+  @nonobjc public var supportedJointNames: [Vision.VNAnimalBodyPoseObservation.JointName] {
+    get throws
+  }
+  #endif
+  #if compiler(>=5.3) && $EffectfulProp
+  @nonobjc public var supportedJointsGroupNames: [Vision.VNAnimalBodyPoseObservation.JointsGroupName] {
+    get throws
+  }
+  #endif
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+extension Vision.VNHumanBodyPose3DObservation {
+  @nonobjc public func cameraRelativePosition(_ jointName: Vision.VNHumanBodyPose3DObservation.JointName) throws -> simd.simd_float4x4
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+extension Vision.VNDetectHumanBodyPose3DRequest {
+  #if compiler(>=5.3) && $EffectfulProp
+  @nonobjc public var supportedJointNames: [Vision.VNHumanBodyPose3DObservation.JointName] {
+    get throws
+  }
+  #endif
+  #if compiler(>=5.3) && $EffectfulProp
+  @nonobjc public var supportedJointsGroupNames: [Vision.VNHumanBodyPose3DObservation.JointsGroupName] {
+    get throws
+  }
+  #endif
+}
+extension Vision.VNBarcodeSymbology {
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "aztec")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "aztec")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "aztec")
+  @_alwaysEmitIntoClient public static var Aztec: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE20_Aztec_compatibilityABvgZ")
+    get { .aztec }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _Aztec_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE5AztecABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "code39")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "code39")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "code39")
+  @_alwaysEmitIntoClient public static var Code39: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE21_Code39_compatibilityABvgZ")
+    get { .code39 }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _Code39_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE6Code39ABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "code39Checksum")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "code39Checksum")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "code39Checksum")
+  @_alwaysEmitIntoClient public static var Code39Checksum: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE29_Code39Checksum_compatibilityABvgZ")
+    get { .code39Checksum }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _Code39Checksum_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE14Code39ChecksumABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "code39FullASCII")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "code39FullASCII")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "code39FullASCII")
+  @_alwaysEmitIntoClient public static var Code39FullASCII: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE30_Code39FullASCII_compatibilityABvgZ")
+    get { .code39FullASCII }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _Code39FullASCII_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE15Code39FullASCIIABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "code39FullASCIIChecksum")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "code39FullASCIIChecksum")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "code39FullASCIIChecksum")
+  @_alwaysEmitIntoClient public static var Code39FullASCIIChecksum: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE30_Code45FullASCIIChecksum_compatibilityABvgZ")
+    get { .code39FullASCIIChecksum }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _Code39FullASCIIChecksum_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE23Code39FullASCIIChecksumABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "code93")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "code93")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "code93")
+  @_alwaysEmitIntoClient public static var Code93: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE21_Code93_compatibilityABvgZ")
+    get { .code93 }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _Code93_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE6Code93ABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "code93i")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "code93i")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "code93i")
+  @_alwaysEmitIntoClient public static var Code93i: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE22_Code93i_compatibilityABvgZ")
+    get { .code93i }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _Code93i_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE7Code93iABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "code128")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "code128")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "code128")
+  @_alwaysEmitIntoClient public static var Code128: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE22_Code128_compatibilityABvgZ")
+    get { .code128 }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _Code128_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE7Code128ABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "dataMatrix")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "dataMatrix")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "dataMatrix")
+  @_alwaysEmitIntoClient public static var DataMatrix: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE25_DataMatrix_compatibilityABvgZ")
+    get { .dataMatrix }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _DataMatrix_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE10DataMatrixABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "ean8")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "ean8")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "ean8")
+  @_alwaysEmitIntoClient public static var EAN8: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE19_EAN8_compatibilityABvgZ")
+    get { .ean8 }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _EAN8_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE4EAN8ABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "ean13")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "ean13")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "ean13")
+  @_alwaysEmitIntoClient public static var EAN13: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE20_EAN13_compatibilityABvgZ")
+    get { .ean13 }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _EAN13_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE5EAN13ABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "i2of5")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "i2of5")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "i2of5")
+  @_alwaysEmitIntoClient public static var I2of5: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE20_I2of5_compatibilityABvgZ")
+    get { .i2of5 }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _I2of5_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE5I2of5ABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "i2of5Checksum")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "i2of5Checksum")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "i2of5Checksum")
+  @_alwaysEmitIntoClient public static var I2of5Checksum: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE28_I2of5Checksum_compatibilityABvgZ")
+    get { .i2of5Checksum }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _I2of5Checksum_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE13I2of5ChecksumABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "itf14")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "itf14")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "itf14")
+  @_alwaysEmitIntoClient public static var ITF14: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE20_ITF14_compatibilityABvgZ")
+    get { .itf14 }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _ITF14_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE5ITF14ABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "pdf417")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "pdf417")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "pdf417")
+  @_alwaysEmitIntoClient public static var PDF417: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE21_PDF417_compatibilityABvgZ")
+    get { .pdf417 }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _PDF417_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE6PDF417ABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "qr")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "qr")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "qr")
+  @_alwaysEmitIntoClient public static var QR: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE17_QR_compatibilityABvgZ")
+    get { .qr }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _QR_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE2QRABvgZ")
+    get
+  }
+  @available(macOS, introduced: 10.13, deprecated: 12.0, renamed: "upce")
+  @available(iOS, introduced: 11.0, deprecated: 15.0, renamed: "upce")
+  @available(tvOS, introduced: 11.0, deprecated: 15.0, renamed: "upce")
+  @_alwaysEmitIntoClient public static var UPCE: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE19_UPCE_compatibilityABvgZ")
+    get { .upce }
+  }
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal static var _UPCE_compatibility: Vision.VNBarcodeSymbology {
+    @_silgen_name("$sSo18VNBarcodeSymbologya6VisionE4UPCEABvgZ")
+    get
+  }
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+extension Vision.VNRequest {
+  #if compiler(>=5.3) && $EffectfulProp
+  @nonobjc public var supportedComputeStageDevices: [Vision.VNComputeStage : [CoreML.MLComputeDevice]] {
+    get throws
+  }
+  #endif
+  @nonobjc public func computeDevice(for computeStage: Vision.VNComputeStage) -> CoreML.MLComputeDevice?
+  @nonobjc public func setComputeDevice(_ computeDevice: CoreML.MLComputeDevice?, for computeStage: Vision.VNComputeStage)
+}

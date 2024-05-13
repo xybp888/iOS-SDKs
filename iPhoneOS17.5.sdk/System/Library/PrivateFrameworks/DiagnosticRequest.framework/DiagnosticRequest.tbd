@@ -1,0 +1,68 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DiagnosticRequest.framework/DiagnosticRequest
+current-version:       0
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _DRCheckRapidLogSize, _DRConfigStringForState,
+                            _DRGetAllLogFileURLs, _DRRequestPassesTimeHysteresis,
+                            _DRShouldEnableLogGathering, _DRShouldGatherLog,
+                            _DRSubmitLog, _DRSubmitLogToCKContainer, _DRSubmitLogs,
+                            _DRSubmitRapidLog, _DRTailspinRequest,
+                            _DRTailspinRequestWithLogs,
+                            __DPCCancelPermissiveExpeditedUploadActivity,
+                            __DPCEnableLogGatheringQueryMessage,
+                            __DPCGetCKConfig, __DPCGetCloudChannelConfig,
+                            __DPCGetConfigStateForUUID,
+                            __DPCInjectEnableLogGatheringQueryResult,
+                            __DPCMarkConfigUUIDCompletedOrRejected,
+                            __DPCRefreshDampeningConfiguration,
+                            __DPCRequestTeamIDBroadcast, __DPCResetCKConfig,
+                            __DPCResetToDefaultCloudChannelConfig,
+                            __DPCSchedulePermissiveExpeditedUploadActivity,
+                            __DPCSendClearTaskingStateMessage,
+                            __DPCSendTaskingSystemJSONDataMessage,
+                            __DPCSetCKConfig, __DPCSetCloudChannelConfig,
+                            __DPCSubmitLogRequestMessage,
+                            __DPCSubmitLogToCKContainerRequestMessage,
+                            __DPCSubmitLogsRequestMessage,
+                            __DPCSubmitRapidLogRequestMessage,
+                            __DPCTailspinRequestMessage,
+                            __DPCTriggerRequestClean, __DPClientXPCSendMessage,
+                            __DPClientXPCSendMessageWithReplySync,
+                            __DRCResetDampeningConfigurationToDefault,
+                            __DRCSetDampeningConfigurationDefaults,
+                            __DRCSetDampeningIsEnabled, __DRCTriggerCloudKitWork,
+                            __DRRequestPassesTailspinHysteresis,
+                            __DRRequestResetHysteresisDict,
+                            __DRRequestResetTailspinHysteresis,
+                            _kDRRequestClientError,
+                            _kDRRequestOversizedContextDictErrorString ]
+    objc-classes:         [ DRClientLog, DRConfig, DRConfigMonitor,
+                            DRSubscriptionManager, _DRCConnectionState,
+                            _DRCTaskingConnectionState ]
+    objc-ivars:           [ DRClientLog._path, DRClientLog._sandboxExtension,
+                            DRClientLog._transferOwnership, DRConfig._build,
+                            DRConfig._configDescription, DRConfig._configUUID,
+                            DRConfig._endDate, DRConfig._payload,
+                            DRConfig._payloadDictionaryRepresentation,
+                            DRConfig._payloadIsJSON, DRConfig._receivedDate,
+                            DRConfig._skippedHysteresis, DRConfig._startDate,
+                            DRConfig._teamID, DRConfigMonitor._accessQueue,
+                            DRConfigMonitor._currentConfig,
+                            DRConfigMonitor._processingBlock,
+                            DRConfigMonitor._targetQueue,
+                            DRConfigMonitor._teamID,
+                            DRSubscriptionManager._accessQueue,
+                            DRSubscriptionManager._inFlightSubscriptionRequests,
+                            DRSubscriptionManager._perTeamIdConfigState,
+                            DRSubscriptionManager._perTeamIdMonitors,
+                            _DRCConnectionState._connection,
+                            _DRCConnectionState._connectionQueue,
+                            _DRCTaskingConnectionState._connection,
+                            _DRCTaskingConnectionState._connectionQueue,
+                            _DRCTaskingConnectionState._isClosed ]
+...

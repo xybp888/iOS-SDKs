@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/MPSMatrix'
+current-version: 127.5.2
+allowable-clients:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    clients:         [ MPSImage, MPSNDArray, MPSNeuralNetwork, MetalPerformanceShaders ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:    [ MPSMatrixBinaryKernel, MPSMatrixCopy, MPSMatrixCopyDescriptor, 
+                       MPSMatrixDecompositionCholesky, MPSMatrixDecompositionLU, 
+                       MPSMatrixFindTopK, MPSMatrixLogSoftMax, MPSMatrixLogSoftMaxGradient, 
+                       MPSMatrixMultiplication, MPSMatrixRandom, MPSMatrixRandomDistributionDescriptor, 
+                       MPSMatrixRandomMTGP32, MPSMatrixRandomPhilox, MPSMatrixSoftMax, 
+                       MPSMatrixSoftMaxGradient, MPSMatrixSolveCholesky, MPSMatrixSolveLU, 
+                       MPSMatrixSolveTriangular, MPSMatrixUnaryKernel, MPSMatrixVectorMultiplication ]
+...

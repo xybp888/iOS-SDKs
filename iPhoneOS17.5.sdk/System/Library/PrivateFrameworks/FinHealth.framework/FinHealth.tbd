@@ -1,0 +1,46 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FinHealth.framework/FinHealth
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _FinHealthVersionNumber, _FinHealthVersionString,
+                            _RequestFromPKAccountSummary,
+                            _ResponseToPKBillPaymentSuggestion ]
+    objc-classes:         [ FHPaymentRingData, FHPaymentRingSuggestionController,
+                            FHPaymentRingSuggestionRequest,
+                            FHSearchSuggestionController, FHStatementDetails ]
+    objc-ivars:           [ FHPaymentRingData._paymentAmountCategory,
+                            FHPaymentRingData._transactionAmount,
+                            FHPaymentRingData._transactionDate,
+                            FHPaymentRingSuggestionController._currentStatementIsLastMonthsStatement,
+                            FHPaymentRingSuggestionController._isOnPaymentPlan,
+                            FHPaymentRingSuggestionController._isOnPlanCompletion,
+                            FHPaymentRingSuggestionController._previousSelectedSuggestion,
+                            FHPaymentRingSuggestionController._searchController,
+                            FHPaymentRingSuggestionRequest._currentStatement,
+                            FHPaymentRingSuggestionRequest._currentStatementPaymentsSum,
+                            FHPaymentRingSuggestionRequest._merchantCategoryTransactionSums,
+                            FHPaymentRingSuggestionRequest._paymentDetails,
+                            FHPaymentRingSuggestionRequest._previousStatement,
+                            FHPaymentRingSuggestionRequest._previousStatementPaymentsSum,
+                            FHPaymentRingSuggestionRequest._statementPurchasesSum,
+                            FHStatementDetails._closingDate,
+                            FHStatementDetails._combinedBalance,
+                            FHStatementDetails._creditLimit,
+                            FHStatementDetails._currentBalance,
+                            FHStatementDetails._currentBalanceForMonthZero,
+                            FHStatementDetails._currentStatementIdentifier,
+                            FHStatementDetails._isMonthOfMerge,
+                            FHStatementDetails._isMonthOne,
+                            FHStatementDetails._isMonthZero,
+                            FHStatementDetails._minimumDue,
+                            FHStatementDetails._openingDate,
+                            FHStatementDetails._remainingMinimumPayment,
+                            FHStatementDetails._remainingStatementBalance,
+                            FHStatementDetails._statementBalance,
+                            FHStatementDetails._statementIdentifier ]
+...

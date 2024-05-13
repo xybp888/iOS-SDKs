@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PreviewsFoundationOS.framework/PreviewsFoundationOS
+current-version:       21.40.1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PreviewsFoundationOSVersionNumber,
+                            _PreviewsFoundationOSVersionString,
+                            _UVCurrentSystemBuildNumberString,
+                            _UVDebug_NameOfCurrentQueue, _UVExceptionErrorDomain,
+                            _UVPreviewAgentLog ]
+    objc-classes:         [ UVExceptionError, UVObjCExceptionHandler,
+                            UVObjCSingleFireEvent,
+                            _TtC20PreviewsFoundationOS19ObjcSingleFireEvent ]
+    objc-ivars:           [ UVExceptionError._exception,
+                            UVObjCSingleFireEvent._event ]
+...

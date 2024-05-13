@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AudioAnalytics.framework/AudioAnalytics
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AudioAnalyticsCopyConfiguration,
+                            _AudioAnalyticsCreateReporterID,
+                            _AudioAnalyticsCreateReporterIDFromSessionID,
+                            _AudioAnalyticsCreateSharedClient,
+                            _AudioAnalyticsDestroyReporterID,
+                            _AudioAnalyticsGetAudioServiceType,
+                            _AudioAnalyticsRequestMessage,
+                            _AudioAnalyticsSendMessage,
+                            _AudioAnalyticsSendSessionlessMessage,
+                            _AudioAnalyticsSetAudioServiceType,
+                            _AudioAnalyticsSetConfiguration,
+                            _AudioAnalyticsStartReporter,
+                            _AudioAnalyticsStopReporter ]
+    objc-classes:         [ Trace, TraceArgs, _TtC14AudioAnalytics12ServerClient,
+                            _TtC14AudioAnalytics22AudioAnalyticsReporter,
+                            _TtC14AudioAnalytics26AudioAnalyticsTestReporter ]
+    objc-ivars:           [ TraceArgs._arg1, TraceArgs._arg2, TraceArgs._arg3,
+                            TraceArgs._arg4 ]
+...

@@ -1,0 +1,156 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.12.7 clang-1500.3.9.3)
+// swift-module-flags: -target arm64e-apple-ios17.5 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftPassKit -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 1552.6.10 -module-name PassKit
+@_exported import PassKit
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 12.0, iOS 15.0, watchOS 8.0, *)
+extension PassKit.PKStoredValuePassProperties {
+  @objc @_alwaysEmitIntoClient dynamic public var isBlocked: Swift.Bool {
+    @objc get {
+        // Because this computed property is @_alwaysEmitIntoClient, changes to it will
+        // require clients to rebuild their binaries for the changes to take effect.
+        return isBlacklisted
+    }
+  }
+}
+@available(macOS 11.0, iOS 11.3, watchOS 4.3, *)
+extension PassKit.PKTransitPassProperties {
+  @available(macOS 11.3, iOS 14.5, watchOS 7.5, *)
+  @_alwaysEmitIntoClient @objc override dynamic public var isBlocked: Swift.Bool {
+    @objc get {
+        // Because this computed property is @_alwaysEmitIntoClient, changes to it will
+        // require clients to rebuild their binaries for the changes to take effect.
+        return isBlacklisted
+    }
+  }
+}
+@available(iOS 10.1, watchOS 3.1, *)
+extension PassKit.PKSuicaPassProperties {
+  @_alwaysEmitIntoClient @objc override dynamic public var isBlocked: Swift.Bool {
+    @objc get {
+        // Because this computed property is @_alwaysEmitIntoClient, changes to it will
+        // require clients to rebuild their binaries for the changes to take effect.
+        return isBlacklisted
+    }
+  }
+}
+@available(macOS 12.0, iOS 15.0, watchOS 8.0, *)
+extension PassKit.PKStoredValuePassBalance {
+  public static func == (lhs: PassKit.PKStoredValuePassBalance, rhs: PassKit.PKStoredValuePassBalance) -> Swift.Bool
+  public var amount: Foundation.Decimal {
+    get
+  }
+}
+extension PassKit.PKPaymentRequest {
+  @available(macOS 12.0, iOS 15.0, *)
+  @available(watchOS, unavailable)
+  public static func paymentCouponCodeInvalidError(localizedDescription: Swift.String? = nil) -> any Swift.Error
+  @available(macOS 12.0, iOS 15.0, *)
+  @available(watchOS, unavailable)
+  public static func paymentCouponCodeExpiredError(localizedDescription: Swift.String? = nil) -> any Swift.Error
+  @available(macOS 14.0, iOS 17.0, *)
+  public var applePayLaterAvailability: PassKit.PKPaymentRequest.ApplePayLaterAvailability {
+    get
+    set
+  }
+  @available(macOS 14.0, iOS 17.0, *)
+  public enum ApplePayLaterAvailability {
+    case available
+    case unavailable(PassKit.PKPaymentRequest.ApplePayLaterAvailability.Reason)
+    @available(macOS 14.0, iOS 17.0, *)
+    public enum Reason {
+      case itemIneligible
+      case recurringTransaction
+      public static func == (a: PassKit.PKPaymentRequest.ApplePayLaterAvailability.Reason, b: PassKit.PKPaymentRequest.ApplePayLaterAvailability.Reason) -> Swift.Bool
+      public func hash(into hasher: inout Swift.Hasher)
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+  }
+}
+extension PassKit.PKMerchantCapability {
+  @backDeployed(before: macOS 14, iOS 17, watchOS 10)
+  @available(macOS, introduced: 11, deprecated: 14, renamed: "threeDSecure")
+  @available(iOS, introduced: 8, deprecated: 17, renamed: "threeDSecure")
+  @available(watchOS, introduced: 3, deprecated: 10, renamed: "threeDSecure")
+  public static var capability3DS: PassKit.PKMerchantCapability {
+    get { .threeDSecure }
+  }
+  @backDeployed(before: macOS 14, iOS 17, watchOS 10)
+  @available(macOS, introduced: 11, deprecated: 14, renamed: "emv")
+  @available(iOS, introduced: 8, deprecated: 17, renamed: "emv")
+  @available(watchOS, introduced: 3, deprecated: 10, renamed: "emv")
+  public static var capabilityEMV: PassKit.PKMerchantCapability {
+    get { .emv }
+  }
+  @backDeployed(before: macOS 14, iOS 17)
+  @available(macOS, introduced: 11.0, deprecated: 14, renamed: "credit")
+  @available(iOS, introduced: 9, deprecated: 17, renamed: "credit")
+  @available(watchOS, introduced: 3, deprecated: 10, renamed: "credit")
+  public static var capabilityCredit: PassKit.PKMerchantCapability {
+    get { .credit }
+  }
+  @backDeployed(before: macOS 14, iOS 17)
+  @available(macOS, introduced: 11.0, deprecated: 14, renamed: "debit")
+  @available(iOS, introduced: 9, deprecated: 17, renamed: "debit")
+  @available(watchOS, introduced: 3, deprecated: 10, renamed: "debit")
+  public static var capabilityDebit: PassKit.PKMerchantCapability {
+    get { .debit }
+  }
+}
+@available(iOS 17.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension PassKit.PKDisbursementRequest {
+  public var region: Foundation.Locale.Region {
+    get
+    set
+  }
+  public var currency: Foundation.Locale.Currency {
+    get
+    set
+  }
+  public var supportedRegions: [Foundation.Locale.Region]? {
+    get
+    set
+  }
+  convenience public init(merchantIdentifier: Swift.String, currency: Foundation.Locale.Currency, region: Foundation.Locale.Region, supportedNetworks: [PassKit.PKPaymentNetwork], merchantCapabilities: PassKit.PKMerchantCapability, summaryItems: [PassKit.PKPaymentSummaryItem])
+}
+@available(iOS 17.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension PassKit.PKPayLaterView {
+  @_Concurrency.MainActor(unsafe) convenience public init(amount: Foundation.Decimal, currency: Foundation.Locale.Currency)
+  @_Concurrency.MainActor(unsafe) public var amount: Foundation.Decimal {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var currency: Foundation.Locale.Currency {
+    get
+    set
+  }
+}
+@available(iOS 17.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@frozen public enum PKPayLater {
+  #if compiler(>=5.3) && $AsyncAwait
+  public static func validate(amount: Foundation.Decimal, currency: Foundation.Locale.Currency) async -> Swift.Bool
+  #endif
+}
+@available(macOS 14.0, iOS 17.0, *)
+extension PassKit.PKPaymentRequest.ApplePayLaterAvailability.Reason : Swift.Equatable {}
+@available(macOS 14.0, iOS 17.0, *)
+extension PassKit.PKPaymentRequest.ApplePayLaterAvailability.Reason : Swift.Hashable {}
+@available(iOS 17.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension PassKit.PKPayLater : Swift.Sendable {}

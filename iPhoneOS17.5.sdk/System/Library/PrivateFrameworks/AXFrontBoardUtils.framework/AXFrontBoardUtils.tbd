@@ -1,0 +1,48 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AXFrontBoardUtils.framework/AXFrontBoardUtils
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AXApplicationNameLabelForBundleIdentifier,
+                            _AXFrontBoardCategoriesDidInstallNotification,
+                            _AXFrontBoardFBSceneManager,
+                            _AXFrontBoardFocusedAppPID,
+                            _AXFrontBoardFocusedAppPIDs,
+                            _AXFrontBoardFocusedAppPIDsIgnoringSiri,
+                            _AXFrontBoardFocusedAppProcess,
+                            _AXFrontBoardFocusedAppProcesses,
+                            _AXFrontBoardFocusedAppProcessesExcludingSiri,
+                            _AXFrontBoardFocusedAppProcessesForGuidedAccess,
+                            _AXFrontBoardFocusedApps,
+                            _AXFrontBoardIsSystemAppShowingAlert,
+                            _AXFrontBoardIsSystemAppUINonExclusive,
+                            _AXFrontBoardPIDForApplicationWithBundleID,
+                            _AXFrontBoardPurpleBuddyPID,
+                            _AXFrontBoardRebootDevice,
+                            _AXFrontBoardRunningAppPIDs,
+                            _AXFrontBoardRunningAppProcesses,
+                            _AXFrontBoardSpeakThisAppPIDForPoint,
+                            _AXFrontBoardSpeakThisAppPIDs,
+                            _AXFrontBoardSystemAppAlertWindow,
+                            _AXFrontBoardSystemAppPID,
+                            _AXFrontBoardSystemAppProcess,
+                            _AXFrontBoardUtilsVersionNumber,
+                            _AXFrontBoardUtilsVersionString,
+                            _AXFrontBoardVisibleAppProcesses,
+                            _AXIsPurpleBuddyFrontmost,
+                            _AXSpokenNameLabelForBundleURL,
+                            _AXValidateFocusedAppsNotification,
+                            __AXFrontBoardFilterFrontmostAppProcessesAndScenesForSiri,
+                            __stringForValidationEvent ]
+    objc-classes:         [ AXFBFakeProcess, AXFBFakeProcessState,
+                            AXFrontBoardProcessWatcher ]
+    objc-ivars:           [ AXFBFakeProcess._bundleIdentifier,
+                            AXFBFakeProcess._state, AXFBFakeProcessState._pid,
+                            AXFrontBoardProcessWatcher._appTransitionTimer,
+                            AXFrontBoardProcessWatcher._cachedFocusedAppPIDs,
+                            AXFrontBoardProcessWatcher._observerToken ]
+...

@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/VisualAlert.framework/VisualAlert
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ AXAutoForwardingLocalNotificationHandler,
+                            AXDistributedNotificationHandler,
+                            AXLocalNotificationHandler,
+                            AXTelephonyNotificationHandler, AXVisualAlertManager,
+                            VISAXNotificationHandler ]
+    objc-ivars:           [ AXAutoForwardingLocalNotificationHandler._possibleHandlers,
+                            AXAutoForwardingLocalNotificationHandler._possibleHandlersCount,
+                            AXLocalNotificationHandler._opaqueObserver,
+                            AXVisualAlertManager.ringerStateNotifyToken,
+                            VISAXNotificationHandler._dispatcher,
+                            VISAXNotificationHandler._notificationName,
+                            VISAXNotificationHandler._observerIdentifier,
+                            VISAXNotificationHandler._target,
+                            VISAXNotificationHandler._valid ]
+...

@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CSExattrCrypto.framework/CSExattrCrypto
+current-version:       2274.31
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ __MDItemCopyXattrsForURL, __MDItemDecrypt,
+                            __MDItemFetchPrivateAttributesForURL,
+                            __MDItemSetPrivateAttributesForURL ]
+    objc-classes:         [ MDKeyRing, MDPrivateXattrServices, _MDLabel ]
+    objc-ivars:           [ MDKeyRing._designatedKeyUUID, MDKeyRing._keysByUUID,
+                            MDKeyRing._queue, _MDLabel._attrBits, _MDLabel._attrs,
+                            _MDLabel._userUUID, _MDLabel._uuid ]
+...

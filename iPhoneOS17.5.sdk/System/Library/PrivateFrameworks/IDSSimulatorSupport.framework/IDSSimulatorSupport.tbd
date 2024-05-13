@@ -1,0 +1,49 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IDSSimulatorSupport.framework/IDSSimulatorSupport
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _IDSSimSupportMachServiceName,
+                            _IDSSimulatorLocalPairingAddPairedDevice,
+                            _IDSSimulatorLocalPairingDeletePairedDevice,
+                            _IDSSimulatorLocalPairingSetDidSwitchActivePairedDeviceCallback,
+                            _IDSSimulatorLocalPairingSwitchActivePairedDevice,
+                            _IDSSimulatorLocalPairingTransportConnect,
+                            _IDSSimulatorLocalPairingTransportDisconnect,
+                            _IDSSimulatorLocalPairingTransportResume,
+                            _IDSSimulatorLocalPairingTransportSuspend,
+                            _IDSSimulatorSupportErrorDomain,
+                            _IDSSimulatorSupportGetConnectionState,
+                            _IDSSimulatorSupportGetConnectionStateForSimulatorID,
+                            _IDSSimulatorSupportGetConnectionStateQueue,
+                            _IDSSimulatorSupportGetCurrentConnectedSimulatorID,
+                            _IDSSimulatorSupportGetSimulatedDeviceNetworkingState,
+                            _IDSSimulatorSupportOptionDestinationDeviceIdentifier,
+                            _IDSSimulatorSupportOptionSetMessageIdentifier,
+                            _IDSSimulatorSupportRegisterConnectionStateHandler,
+                            _IDSSimulatorSupportRegisterConnectionStateHandlerCallbackWithSim,
+                            _IDSSimulatorSupportRegisterDataHandler,
+                            _IDSSimulatorSupportSendData,
+                            _IDSSimulatorSupportSendDataWithOptions,
+                            _IDSSimulatorSupportSetSimulatedDeviceNetworkingState,
+                            _IDSSimulatorSupportUnregisterConnectionStateHandler,
+                            _IDSSimulatorSupportUnregisterDataHandler,
+                            _IDSSimulatorSupportVersionNumber,
+                            _IDSSimulatorSupportVersionString, __IDSSimLog,
+                            __IDSSimLogLine, _appID, _debugLoggingIsEnabled,
+                            _gLoggingFacility,
+                            _idsSimSupportConnectionStateHandlers,
+                            _idsSimSupportDataHandlers,
+                            _idsSimSupportDataHandlersForService,
+                            _idsSimSupportQueue, _idsSimSupportRemoteObjectProxy,
+                            _setupIDSSimLogging, _setupLoggingLevel ]
+    objc-classes:         [ IDSSimClient, IDSSimulatorLocalPairingState ]
+    objc-ivars:           [ IDSSimulatorLocalPairingState._activePairedDeviceSimulatorID,
+                            IDSSimulatorLocalPairingState._didSwitchActivePairedDeviceCallback,
+                            IDSSimulatorLocalPairingState._didSwitchActivePairedDeviceCallbackQueue,
+                            IDSSimulatorLocalPairingState._pendingQuickSwitchAcknowledgementID ]
+...
