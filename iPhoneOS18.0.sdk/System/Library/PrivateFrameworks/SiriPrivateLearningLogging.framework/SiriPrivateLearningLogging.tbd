@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriPrivateLearningLogging.framework/SiriPrivateLearningLogging
+current-version:       0
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PLLoggingXPCServiceInterface,
+                            _SiriPrivateLearningLoggingVersionNumber,
+                            _SiriPrivateLearningLoggingVersionString,
+                            _kPLLoggingServiceMachName ]
+    objc-classes:         [ PLLoggingServiceClient, PLLoggingServiceListener,
+                            PLLoggingServiceStore,
+                            _TtC26SiriPrivateLearningLogging25PLLoggingServiceStoreBase,
+                            _TtC26SiriPrivateLearningLogging26PLLoggingServiceBiomeStore,
+                            _TtC26SiriPrivateLearningLogging29PLLoggingServiceFlatFileStore,
+                            _TtC26SiriPrivateLearningLogging30PLLoggingServiceDefaultHandler,
+                            _TtC26SiriPrivateLearningLogging32PLLoggingServiceListenerDelegate ]
+    objc-ivars:           [ PLLoggingServiceClient._clientConnection,
+                            PLLoggingServiceClient._serialQueue,
+                            PLLoggingServiceListener._delegate,
+                            PLLoggingServiceListener._listener ]
+...

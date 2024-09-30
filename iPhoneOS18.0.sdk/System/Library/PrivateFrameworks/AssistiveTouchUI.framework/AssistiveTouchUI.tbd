@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AssistiveTouchUI.framework/AssistiveTouchUI
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AssistiveTouchUIVersionNumber,
+                            _AssistiveTouchUIVersionString ]
+    objc-classes:         [ ASTUICapturedGazeEnrollmentPoint,
+                            ASTUIDualMatrixCalibrationStrategy,
+                            ASTUIGazeEnrollmentManager, ASTUIGazeEnrollmentStore,
+                            ASTUILinearMatrixCalibrationStrategy,
+                            ASTUISingularMatrixCalibrationStrategy,
+                            _TtC16AssistiveTouchUI22CalibrationContentView,
+                            _TtC16AssistiveTouchUI25CalibrationViewController ]
+    objc-ivars:           [ ASTUICapturedGazeEnrollmentPoint._groundTruthPoint,
+                            ASTUICapturedGazeEnrollmentPoint._positionName,
+                            ASTUICapturedGazeEnrollmentPoint._predictedPoint,
+                            ASTUIDualMatrixCalibrationStrategy._bottomCalibrationMatrix,
+                            ASTUIDualMatrixCalibrationStrategy._storedEnrollments,
+                            ASTUIDualMatrixCalibrationStrategy._topCalibrationMatrix,
+                            ASTUIDualMatrixCalibrationStrategy._uncalibratedMiddleLineOfTheScreen,
+                            ASTUIGazeEnrollmentManager._calibrationStrategy,
+                            ASTUIGazeEnrollmentManager._enrollmentComplete,
+                            ASTUISingularMatrixCalibrationStrategy._store ]
+...

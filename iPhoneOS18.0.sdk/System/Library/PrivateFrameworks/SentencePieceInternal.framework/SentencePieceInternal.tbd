@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SentencePieceInternal.framework/SentencePieceInternal
+current-version:       51
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SPSentencePieceProcessorCreate,
+                            _SPSentencePieceProcessorCreateDecodedStringFromIDs,
+                            _SPSentencePieceProcessorCreateDecodedStringFromPieces,
+                            _SPSentencePieceProcessorCreateEncodedIDs,
+                            _SPSentencePieceProcessorCreateEncodedPieces ]
+    objc-classes:         [ SPSentencePieceModel ]
+    objc-ivars:           [ SPSentencePieceModel._processor ]
+...

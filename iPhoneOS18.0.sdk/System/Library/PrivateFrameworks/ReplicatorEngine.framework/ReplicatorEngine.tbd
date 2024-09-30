@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ReplicatorEngine.framework/ReplicatorEngine
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ReplicatorEngineLoggingSubsystem,
+                            _ReplicatorEngineVersionNumber,
+                            _ReplicatorEngineVersionString,
+                            _STRPCodingErrorDomain, _STRPLogCoding ]
+    objc-classes:         [ STRPOPACKCoder, STRPPropertyListTypeDecoder,
+                            STRPPropertyListTypeEncoder, STRPSampleByteEncodable,
+                            _TtC16ReplicatorEngine10OPACKCoder,
+                            _TtC16ReplicatorEngine17IDSServiceWrapper,
+                            _TtC16ReplicatorEngine21ConcreteIDSDependency ]
+    objc-ivars:           [ STRPPropertyListTypeDecoder._storage,
+                            STRPPropertyListTypeEncoder._storage,
+                            STRPSampleByteEncodable._aStruct ]
+...

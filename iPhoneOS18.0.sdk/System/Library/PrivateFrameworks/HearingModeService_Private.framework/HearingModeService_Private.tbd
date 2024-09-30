@@ -1,0 +1,41 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HearingModeService_Private.framework/HearingModeService_Private
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ HMDeviceAHPSConnectionManager, HMDeviceManager,
+                            HMHealthKitUtilities, HMServiceDaemon,
+                            HMServiceXPCConnection ]
+    objc-ivars:           [ HMDeviceAHPSConnectionManager._activateCalled,
+                            HMDeviceAHPSConnectionManager._centralManager,
+                            HMDeviceAHPSConnectionManager._diagnosticCheckWriteCompletion,
+                            HMDeviceAHPSConnectionManager._diagnosticStatusUpdateHandler,
+                            HMDeviceAHPSConnectionManager._dispatchQueue,
+                            HMDeviceAHPSConnectionManager._identifier,
+                            HMDeviceAHPSConnectionManager._isCentralManagerOn,
+                            HMDeviceAHPSConnectionManager._isDiagnosticCheckPending,
+                            HMDeviceAHPSConnectionManager._selectedPeripheral,
+                            HMDeviceManager._aaController,
+                            HMDeviceManager._activateCalled,
+                            HMDeviceManager._cloudServicesClient,
+                            HMDeviceManager._deviceAHPSConnectionManagerMap,
+                            HMDeviceManager._deviceManager,
+                            HMDeviceManager._deviceRecordMap,
+                            HMDeviceManager._diagnosticRecordMap,
+                            HMDeviceManager._dispatchQueue,
+                            HMHealthKitUtilities._activateCalled,
+                            HMHealthKitUtilities._dispatchQueue,
+                            HMServiceDaemon._dispatchQueue,
+                            HMServiceDaemon._xpcConnections,
+                            HMServiceDaemon._xpcListener,
+                            HMServiceXPCConnection._daemon,
+                            HMServiceXPCConnection._dispatchQueue,
+                            HMServiceXPCConnection._entitled,
+                            HMServiceXPCConnection._hearingModeClient,
+                            HMServiceXPCConnection._records,
+                            HMServiceXPCConnection._xpcCnx ]
+...

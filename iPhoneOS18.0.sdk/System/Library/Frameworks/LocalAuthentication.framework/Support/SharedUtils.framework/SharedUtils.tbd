@@ -1,0 +1,69 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/SharedUtils.framework/SharedUtils'
+current-version: 1656.0.99
+allowable-clients:
+  - targets:         [ arm64-ios, arm64e-ios ]
+    clients:         [ '-allowable_client', CoreAuthUI, DaemonUtils, LARecoveryUITest, 
+                       LATester, LATester macOS, LocalAuthentication, LocalAuthenticationBinTests, 
+                       LocalAuthenticationCoreTests, LocalAuthenticationCoreUI, LocalAuthenticationCoreUITests, 
+                       LocalAuthenticationEmbeddedUI, LocalAuthenticationInterfaceTests, 
+                       LocalAuthenticationPreboard, LocalAuthenticationPreboardTests, 
+                       LocalAuthenticationPrivateUI, LocalAuthenticationRecoveryUI, 
+                       LocalAuthenticationRemoteService, LocalAuthenticationTestSupport, 
+                       LocalAuthenticationTests, LocalAuthenticationUI, LocalAuthorizationTests, 
+                       MechOyster, MechPasscode, MechPearl, MechPushButton, MechTouchId, 
+                       MechWatch, MechanismBase, ModuleACM, ModuleBase, SecurityAgentPlugin, 
+                       SharedUtils, coreautha, coreauthd, latool ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _ACMContextAddCredential, _ACMContextAddCredentialWithScope, 
+                       _ACMContextContainsCredentialType, _ACMContextContainsCredentialTypeEx, 
+                       _ACMContextContainsPassphraseCredentialWithPurpose, _ACMContextCreate, 
+                       _ACMContextCreateWithExternalForm, _ACMContextDelete, _ACMContextGetExternalForm, 
+                       _ACMContextRemoveCredentialsByType, _ACMContextRemoveCredentialsByTypeAndScope, 
+                       _ACMContextRemoveCredentialsByValue, _ACMContextRemoveCredentialsByValueAndScope, 
+                       _ACMContextRemovePassphraseCredentialsByPurposeAndScope, _ACMContextReplacePassphraseCredentialsWithScope, 
+                       _ACMContextVerifyAclConstraint, _ACMContextVerifyPolicy, _ACMContextVerifyPolicyEx, 
+                       _ACMContextVerifyPolicyWithPreflight, _ACMCredentialCreate, 
+                       _ACMCredentialDelete, _ACMCredentialGetProperty, _ACMCredentialGetPropertyData, 
+                       _ACMCredentialGetType, _ACMCredentialSetProperty, _ACMParseAclAndCopyConstraintCharacteristics, 
+                       _ACMRequirementGetPriority, _ACMRequirementGetProperties, 
+                       _ACMRequirementGetProperty, _ACMRequirementGetPropertyData, 
+                       _ACMRequirementGetState, _ACMRequirementGetSubrequirements, 
+                       _ACMRequirementGetType, _CompareCredentials, _CopyCredential, 
+                       _DeallocCredential, _DeallocCredentialList, _DeallocRequirement, 
+                       _DeserializeAddCredential, _DeserializeCredential, _DeserializeCredentialList, 
+                       _DeserializeGetContextProperty, _DeserializeProcessAcl, _DeserializeRemoveCredential, 
+                       _DeserializeReplacePassphraseCredential, _DeserializeRequirement, 
+                       _DeserializeVerifyAclConstraint, _DeserializeVerifyPolicy, 
+                       _GetSerializedAddCredentialSize, _GetSerializedCredentialSize, 
+                       _GetSerializedGetContextPropertySize, _GetSerializedProcessAclSize, 
+                       _GetSerializedRemoveCredentialSize, _GetSerializedReplacePassphraseCredentialSize, 
+                       _GetSerializedRequirementSize, _GetSerializedVerifyAclConstraintSize, 
+                       _GetSerializedVerifyPolicySize, _LAErrorDomain, _LAErrorSubcodeKey, 
+                       _SerializeAddCredential, _SerializeCredential, _SerializeCredentialList, 
+                       _SerializeGetContextProperty, _SerializeProcessAcl, _SerializeRemoveCredential, 
+                       _SerializeReplacePassphraseCredential, _SerializeRequirement, 
+                       _SerializeVerifyAclConstraint, _SerializeVerifyPolicy, _SharedUtilsVersionNumber, 
+                       _SharedUtilsVersionString, __isMultiUser, __libBiometricKit, 
+                       _gAllocatedBytes, _gLastAllocatedBytes ]
+    objc-classes:    [ LABiometryOwner, LALogger, LASecureData ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _LAAssertionsProxyFactory, _LAFeatureFlagOysterSkipSDKVerification, 
+                       _LALogCategoryForOptions, _LALogCategoryForPolicy, _LALogForCategory, 
+                       _LALogForPolicy, _LALogSetProcessCategory, _LALogTypeForInternalError, 
+                       _LASerialScheduler, _NSStringFromACMRequirement, _NSStringFromLAPasscodeType, 
+                       _NSStringFromMechanismEvent ]
+    objc-classes:    [ LAACMBiometricAttemptNotifier, LAACMHelper, LAAssertionsProxy, 
+                       LABaseService, LABaseServiceManager, LACachedExternalizedContext, 
+                       LADFR, LADecriptionBuilder, LAErrorHelper, LAErrorOysterRedactor, 
+                       LAErrorRedactor, LAInstanceIDGenerator, LAInternalProtocols, 
+                       LALocalBackoffCounter, LAManagedACMParameters, LAParamChecker, 
+                       LAPasscodeHelper, LAPasscodeHelperPasscodeStateManagedSettings, 
+                       LAPasscodeHelperPasscodeStateRepository, LAPasscodeHelperPasscodeStateSimulator, 
+                       LAServiceAdapter, LAUtils, LAWeakBox ]
+    objc-ivars:      [ LABaseService._clients, LABaseService._listener, LABaseService._terminating, 
+                       LABaseServiceManager._sessions ]
+...

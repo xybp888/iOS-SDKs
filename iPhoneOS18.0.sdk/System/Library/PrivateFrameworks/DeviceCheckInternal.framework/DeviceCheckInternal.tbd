@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DeviceCheckInternal.framework/DeviceCheckInternal
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _DCBAASignerErrorDomain, _DCErrorDomain,
+                            _kBGSRefreshTaskID ]
+    objc-classes:         [ DCAsset, DCAssetFetcher, DCAssetFetcherContext,
+                            DCBAASigner, DCBAASigningController, DCBGSTask,
+                            DCBGSTaskController, DCCertificateGenerator, DCContext,
+                            DCCryptoProxyImpl, DCCryptoUtilities,
+                            DCDDeviceMetadata, DCTaskCreator ]
+    objc-ivars:           [ DCAsset._publicKey,
+                            DCAsset._publicKeyRefreshInterval, DCAsset._version,
+                            DCAssetFetcherContext._allowCatalogRefresh,
+                            DCAssetFetcherContext._ignoreCachedMetadata,
+                            DCBAASigningController._cryptoProxy,
+                            DCBGSTask._observerID, DCBGSTask._refreshInterval,
+                            DCBGSTask._taskHandler, DCBGSTask._taskID,
+                            DCBGSTaskController._defaultsSuite,
+                            DCBGSTaskController._tasks,
+                            DCCertificateGenerator._context,
+                            DCCertificateGenerator._publicKey,
+                            DCContext._clientAppID, DCDDeviceMetadata._context,
+                            DCDDeviceMetadata._cryptoProxy ]
+...

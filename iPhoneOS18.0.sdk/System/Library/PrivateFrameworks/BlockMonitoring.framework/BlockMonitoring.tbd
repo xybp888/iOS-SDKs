@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BlockMonitoring.framework/BlockMonitoring
+current-version:       379
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _BMEnrollIntoBlockMonitoring,
+                            _BMMonitorBlockExecutionWithSignature,
+                            _BMMonitorBlockExecutionWithSignatureAndTimeout,
+                            _BlockMonitoringVersionNumber,
+                            _BlockMonitoringVersionString ]
+    objc-classes:         [ BMBlockMonitoring ]
+    objc-ivars:           [ BMBlockMonitoring._bootDebugFlags,
+                            BMBlockMonitoring._deviceState,
+                            BMBlockMonitoring._enabled,
+                            BMBlockMonitoring._executionDuration,
+                            BMBlockMonitoring._logger,
+                            BMBlockMonitoring._osVersion,
+                            BMBlockMonitoring._panicPacing,
+                            BMBlockMonitoring._panicWithData,
+                            BMBlockMonitoring._persistencePath,
+                            BMBlockMonitoring._presentAlert,
+                            BMBlockMonitoring._queue,
+                            BMBlockMonitoring._sandboxHandle,
+                            BMBlockMonitoring._test_alertShown,
+                            BMBlockMonitoring._test_allowPanic,
+                            BMBlockMonitoring._test_bootArgs,
+                            BMBlockMonitoring._test_panicDeny,
+                            BMBlockMonitoring._test_panicReason,
+                            BMBlockMonitoring._test_panicSleep,
+                            BMBlockMonitoring._testing ]
+...

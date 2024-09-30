@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppleIDSetupDaemon.framework/AppleIDSetupDaemon
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AppleIDSetupDaemonVersionNumber,
+                            _AppleIDSetupDaemonVersionString ]
+    objc-classes:         [ AISDCloudDataProtectionHelper,
+                            AISDGameCenterSignInHelper,
+                            _TtC18AppleIDSetupDaemon14AnisetteClient,
+                            _TtC18AppleIDSetupDaemon17ConnectionManager,
+                            _TtC18AppleIDSetupDaemon18CloudSignInContext,
+                            _TtC18AppleIDSetupDaemon38AISSilentSignOutFlowControllerDelegate,
+                            _TtCC18AppleIDSetupDaemon11PushService29PushConnectionDelegateWrapper ]
+    objc-ivars:           [ AISDCloudDataProtectionHelper._queue,
+                            AISDCloudDataProtectionHelper._stateController,
+                            AISDGameCenterSignInHelper._authenticationResults ]
+...

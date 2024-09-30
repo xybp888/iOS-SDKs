@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CalendarUIKitInternal.framework/CalendarUIKitInternal
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CUIKITriggerReminderSync,
+                            _CalendarUIKitInternalVersionNumber,
+                            _CalendarUIKitInternalVersionString ]
+    objc-classes:         [ CUIKIPendingReminderTracker,
+                            CUIKIReminderColorDeserializer, CUIKIReminderEditor,
+                            CUIKReminderEntityAnnotation,
+                            _TtC21CalendarUIKitInternal22PendingReminderTracker,
+                            _TtC21CalendarUIKitInternal24CUIKIReminderSyncTrigger,
+                            _TtC21CalendarUIKitInternal25ReminderColorDeserializer,
+                            _TtC21CalendarUIKitInternal33CUIKIReminderEditorImplementation ]
+    objc-ivars:           [ CUIKIPendingReminderTracker._impl,
+                            CUIKIReminderEditor._reminderEditor ]
+...

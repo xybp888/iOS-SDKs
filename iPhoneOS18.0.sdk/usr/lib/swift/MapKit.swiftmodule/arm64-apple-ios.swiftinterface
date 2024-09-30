@@ -1,0 +1,49 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.7.24 clang-1600.0.25.1)
+// swift-module-flags: -target arm64-apple-ios18.0 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftMapKit -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 6 -module-name MapKit
+import Foundation
+@_exported import MapKit
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+public typealias MKMapItemIdentifier = MapKit.MKMapItem.Identifier
+@available(iOS 18.0, visionOS 2.0, tvOS 18.0, macOS 15.0, *)
+@available(watchOS, unavailable)
+extension MapKit.MKMapItem.Identifier : Swift.RawRepresentable, Swift.Codable {
+  public typealias RawValue = Swift.String
+}
+@available(iOS 14.0, tvOS 14.0, macOS 11.0, *)
+extension MapKit.MKGradientPolylineRenderer {
+  public var locations: [CoreFoundation.CGFloat] {
+    get
+  }
+  public func setColors(_ colors: [UIKit.UIColor], locations: [CoreFoundation.CGFloat])
+}
+extension MapKit.MKCoordinateSpan : Swift._ObjectiveCBridgeable {
+  public func _bridgeToObjectiveC() -> Foundation.NSValue
+  public static func _forceBridgeFromObjectiveC(_ source: Foundation.NSValue, result: inout MapKit.MKCoordinateSpan?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: Foundation.NSValue, result: inout MapKit.MKCoordinateSpan?) -> Swift.Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: Foundation.NSValue?) -> MapKit.MKCoordinateSpan
+  public typealias _ObjectiveCType = Foundation.NSValue
+}
+@available(iOS 18.0, macOS 15.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension MapKit.MKSelectionAccessory.MapItemDetailPresentationStyle {
+  public static func automatic(presentationViewController: UIKit.UIViewController? = nil) -> MapKit.MKSelectionAccessory.MapItemDetailPresentationStyle
+  public static func callout(_ style: MapKit.MKSelectionAccessory.MapItemDetailPresentationStyle.CalloutStyle = .automatic) -> MapKit.MKSelectionAccessory.MapItemDetailPresentationStyle
+}
+@available(iOS 14.0, tvOS 14.0, macOS 11.0, *)
+extension MapKit.MKMultiPoint {
+  public func locations(at indexes: Foundation.IndexSet) -> [CoreFoundation.CGFloat]
+}
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, *)
+extension MapKit.MKLocalSearch.Request {
+  public typealias ResultType = MapKit.MKLocalSearch.ResultType
+}

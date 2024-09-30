@@ -1,0 +1,16 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0 (swiftlang-6.0.0.7.24 clang-1600.0.25.1)
+// swift-module-flags: -target arm64-apple-ios18.0 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftsys_time -swift-version 6 -enforce-exclusivity=checked -O -library-level api -module-abi-name Darwin -user-module-version 228.0.13 -module-name sys_time
+import Swift
+@_exported import sys_time
+import sys_time.timeval
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, bridgeOS 7.0, visionOS 1.0, *)
+extension sys_time.timeval {
+  @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, bridgeOS 7.0, visionOS 1.0, *)
+  public init(_ duration: Swift.Duration)
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, bridgeOS 7.0, visionOS 1.0, *)
+extension Swift.Duration {
+  @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, bridgeOS 7.0, visionOS 1.0, *)
+  public init(_ tv: sys_time.timeval)
+}

@@ -1,0 +1,57 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PhotosFaceLayout.framework/PhotosFaceLayout
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PFLCancelGeneratingPhotosFaceForAsset,
+                            _PFLGeneratePhotosFace,
+                            _PFLGeneratePhotosFaceWithOptions,
+                            _PFLGenerateWatchLayout,
+                            _PhotosFaceLayoutVersionNumber,
+                            _PhotosFaceLayoutVersionString ]
+    objc-classes:         [ PFLImageDataScaler, PFLJetsamInfoFetcher,
+                            PFLJetsamInfoInterval, PFLLayoutConfiguration,
+                            PFLLayoutProvider, PFLSegmentationCalculator,
+                            _PFLSharedJetsamInfo ]
+    objc-ivars:           [ PFLImageDataScaler._compressionQuality,
+                            PFLImageDataScaler._data,
+                            PFLImageDataScaler._inputCrop,
+                            PFLImageDataScaler._inputSize,
+                            PFLImageDataScaler._orientation,
+                            PFLImageDataScaler._outputData,
+                            PFLImageDataScaler._outputSize,
+                            PFLImageDataScaler._type,
+                            PFLJetsamInfoInterval._fetcher,
+                            PFLJetsamInfoInterval._label,
+                            PFLJetsamInfoInterval._startInfo,
+                            PFLLayoutConfiguration._acceptableCropRect,
+                            PFLLayoutConfiguration._assetId,
+                            PFLLayoutConfiguration._assetSize,
+                            PFLLayoutConfiguration._colorAnalysis,
+                            PFLLayoutConfiguration._cropScore,
+                            PFLLayoutConfiguration._faceRects,
+                            PFLLayoutConfiguration._foregroundMask,
+                            PFLLayoutConfiguration._layoutScore,
+                            PFLLayoutConfiguration._maskIsInverted,
+                            PFLLayoutConfiguration._petRects,
+                            PFLLayoutConfiguration._preferredCropRect,
+                            PFLLayoutConfiguration._timePosition,
+                            PFLLayoutConfiguration._timeRect,
+                            PFLLayoutConfiguration._timeRectInAsset,
+                            PFLLayoutConfiguration._usesMask,
+                            PFLLayoutConfiguration._visibleRect,
+                            PFLLayoutProvider._resultsAreValid,
+                            PFLLayoutProvider._timePosition,
+                            PFLLayoutProvider._watchLayout,
+                            PFLSegmentationCalculator._segmentationData,
+                            PFLSegmentationCalculator._segmentationQueue,
+                            PFLSegmentationCalculator._segmentationQueueSema,
+                            PFLSegmentationCalculator._workQueue,
+                            _PFLSharedJetsamInfo._fetchers,
+                            _PFLSharedJetsamInfo._fetchersLock,
+                            _PFLSharedJetsamInfo._pid ]
+...

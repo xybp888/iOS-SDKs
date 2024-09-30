@@ -1,0 +1,38 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DictionaryUI.framework/DictionaryUI
+current-version:       36
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _DUDefinitionElementKeyHeadword,
+                            _DUDefinitionElementKeyPartOfSpeech,
+                            _DUDefinitionElementKeyPronunciation,
+                            _DUDefinitionElementKeyRecordID,
+                            _DUDefinitionElementKeySenses,
+                            _DUDefinitionElementKeySyllabifiedHeadword,
+                            _DictionaryUIVersionNumber,
+                            _DictionaryUIVersionString ]
+    objc-classes:         [ DUDefinitionDictionary, DUDefinitionValue,
+                            DUDictionaryManager, DUEntryViewController ]
+    objc-ivars:           [ DUDefinitionDictionary._activated,
+                            DUDefinitionDictionary._assetToUpgrade,
+                            DUDefinitionDictionary._definitionLanguage,
+                            DUDefinitionDictionary._dictionary,
+                            DUDefinitionDictionary._isAppleDictionary,
+                            DUDefinitionDictionary._isTTYDictionary,
+                            DUDefinitionDictionary._preferredOrder,
+                            DUDefinitionDictionary._progress,
+                            DUDefinitionDictionary._rawAsset,
+                            DUDefinitionValue._definition,
+                            DUDefinitionValue._definitionElements,
+                            DUDefinitionValue._foundRecordRefs,
+                            DUDefinitionValue._localizedDictionaryName,
+                            DUDefinitionValue._longDefinition,
+                            DUDefinitionValue._rawAsset, DUDefinitionValue._term,
+                            DUDictionaryManager._availableDefinitionDictionaries,
+                            DUDictionaryManager._initiallyEmptyAssets,
+                            DUEntryViewController._definitionValue ]
+...

@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AudioDSPManager.framework/AudioDSPManager
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CreateAudioDSPManager ]
+    objc-classes:         [ AudioDSPManager, DSPProcessor ]
+    objc-ivars:           [ AudioDSPManager._config,
+                            DSPProcessor._activeChangeRequest,
+                            DSPProcessor._activeDeviceConfigChanges,
+                            DSPProcessor._customPropertyManager,
+                            DSPProcessor._graphBuilder,
+                            DSPProcessor._hasRegisteredUIOrientation,
+                            DSPProcessor._hostCallback,
+                            DSPProcessor._hostDescription,
+                            DSPProcessor._nodeManager,
+                            DSPProcessor._pendingChangeRequest,
+                            DSPProcessor._pendingDeviceConfigChanges,
+                            DSPProcessor._systemConfiguration ]
+...

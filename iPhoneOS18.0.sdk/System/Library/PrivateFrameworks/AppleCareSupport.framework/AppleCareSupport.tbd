@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppleCareSupport.framework/AppleCareSupport
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AppleCareSupportVersionNumber,
+                            _AppleCareSupportVersionString,
+                            _kACSBatteryServiceOptionsServiceStateKey ]
+    objc-classes:         [ ACSBatteryServiceBookingCoordinator,
+                            _ACSBatteryServiceBookingCoordinator,
+                            _ACSBatteryServiceOptions ]
+    objc-ivars:           [ ACSBatteryServiceBookingCoordinator.coordinator ]
+...

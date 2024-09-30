@@ -1,0 +1,35 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PhotosMediaFoundation.framework/PhotosMediaFoundation
+current-version:       702.0.230
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PXAVAudioSessionCategoryDescription,
+                            _PXAVAudioSessionControllerError,
+                            _PXAVAudioSessionControllerErrorCategoryKey,
+                            _PXApplicationAudioSessionSetCategory,
+                            _PXApplicationRequestAVAudioSessionController ]
+    objc-classes:         [ PXConcreteAVResourceReclamationController,
+                            PXManualAVResourceReclamationController,
+                            PXResourceReclamationObservation,
+                            PXSystemAVAudioSessionController,
+                            PXSystemAVResourceReclamationController ]
+    objc-ivars:           [ PXConcreteAVResourceReclamationController._mostRecentReclamationEvent,
+                            PXConcreteAVResourceReclamationController._observers,
+                            PXConcreteAVResourceReclamationController._observersQueue,
+                            PXResourceReclamationObservation._controller,
+                            PXResourceReclamationObservation._eventHandler,
+                            PXResourceReclamationObservation._selector,
+                            PXResourceReclamationObservation._target,
+                            PXSystemAVAudioSessionController._audioSession,
+                            PXSystemAVAudioSessionController._category,
+                            PXSystemAVAudioSessionController._categoryLock,
+                            PXSystemAVAudioSessionController._name,
+                            PXSystemAVAudioSessionController._reclamationController,
+                            PXSystemAVAudioSessionController._signpostID,
+                            PXSystemAVResourceReclamationController._observerToken,
+                            PXSystemAVResourceReclamationController._systemController ]
+...

@@ -1,0 +1,16 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/GenerativeModels.framework/GenerativeModels
+current-version:       138
+compatibility-version: 1
+reexported-libraries:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:            [ /System/Library/PrivateFrameworks/GenerativeModelsFoundation.framework/GenerativeModelsFoundation,
+                            /System/Library/PrivateFrameworks/TokenGeneration.framework/TokenGeneration ]
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ GMAvailabilityWrapper,
+                            _TtC16GenerativeModels17CloudAvailability ]
+...

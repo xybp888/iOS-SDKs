@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/MechanismBase.framework/MechanismBase'
+current-version: 1656.0.99
+allowable-clients:
+  - targets:         [ arm64-ios, arm64e-ios ]
+    clients:         [ '-allowable_client', CoreAuthUI, DaemonUtils, LARecoveryUITest, 
+                       LATester, LATester macOS, LocalAuthentication, LocalAuthenticationBinTests, 
+                       LocalAuthenticationCoreTests, LocalAuthenticationCoreUI, LocalAuthenticationCoreUITests, 
+                       LocalAuthenticationEmbeddedUI, LocalAuthenticationInterfaceTests, 
+                       LocalAuthenticationPreboard, LocalAuthenticationPreboardTests, 
+                       LocalAuthenticationPrivateUI, LocalAuthenticationRecoveryUI, 
+                       LocalAuthenticationRemoteService, LocalAuthenticationTestSupport, 
+                       LocalAuthenticationTests, LocalAuthenticationUI, LocalAuthorizationTests, 
+                       MechOyster, MechPasscode, MechPearl, MechPushButton, MechTouchId, 
+                       MechWatch, MechanismBase, ModuleACM, ModuleBase, SecurityAgentPlugin, 
+                       SharedUtils, coreautha, coreauthd, latool ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _MechanismBaseVersionNumber, _MechanismBaseVersionString ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _kRemoteUIManagerDefaultActivateTimeout, _kRemoteUIManagerDefaultDeactivateTimeout ]
+    objc-classes:    [ ACMContextRecord, MechanismACM, MechanismAssertion, MechanismAssertionClientProcessVisible, 
+                       MechanismAssertionHolding, MechanismAssertionKeyBagUnlocked, 
+                       MechanismAssertionWithDarwinNotifications, MechanismBase, 
+                       MechanismBiometry, MechanismCompanion, MechanismContext, MechanismKofN, 
+                       MechanismKofNReorganizer, MechanismRatchet, MechanismRatchetFlow, 
+                       MechanismScheduler, MechanismUI, MechanismUINotificationCenter, 
+                       MutableMechanismRatchetFlowParams, PolicyOptionsSanitizer, 
+                       RemoteUIActivator, RemoteUIManager, RemoteUIManagerConfig, 
+                       RemoteUIParams ]
+...

@@ -1,0 +1,26 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PowerExperience.framework/PowerExperience
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PowerExperienceVersionNumber,
+                            _PowerExperienceVersionString, _initLogging,
+                            _setupLogging ]
+    objc-classes:         [ ContextualPowerModesClient, PowerModeConnection,
+                            ResourceConnection, ResourceHint ]
+    objc-ivars:           [ ContextualPowerModesClient._callback,
+                            ContextualPowerModesClient._callback_queue,
+                            ContextualPowerModesClient._connection,
+                            ContextualPowerModesClient._connectionInterrupted,
+                            ContextualPowerModesClient._identifier,
+                            ContextualPowerModesClient._interestedModes,
+                            PowerModeConnection._connection,
+                            ResourceConnection._connection,
+                            ResourceConnection._resourceHints,
+                            ResourceHint._resourceType, ResourceHint._state,
+                            ResourceHint._uuid ]
+...

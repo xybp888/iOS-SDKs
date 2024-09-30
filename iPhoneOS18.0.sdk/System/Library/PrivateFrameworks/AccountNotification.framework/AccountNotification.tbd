@@ -1,0 +1,44 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AccountNotification.framework/AccountNotification
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ANAccountNotificationClientEntitlement,
+                            _ANAccountNotificationManagerEntitlement,
+                            _ANDaemonMachServiceName,
+                            _AccountNotificationVersionNumber,
+                            _AccountNotificationVersionString, __ANLogSystem ]
+    objc-classes:         [ ANAccountNotification, ANAccountNotifier,
+                            ANClientCallbackInterface, ANDaemonInterface,
+                            ANManagedAccountNotification,
+                            ANManagedNotificationAction, ANNotificationAction,
+                            ANSectionSubtypeDescriptor ]
+    objc-ivars:           [ ANAccountNotification._accountTypeID,
+                            ANAccountNotification._activateAction,
+                            ANAccountNotification._activateButtonTitle,
+                            ANAccountNotification._callbackMachService,
+                            ANAccountNotification._date,
+                            ANAccountNotification._destinations,
+                            ANAccountNotification._dismissAction,
+                            ANAccountNotification._eventIdentifier,
+                            ANAccountNotification._identifier,
+                            ANAccountNotification._message,
+                            ANAccountNotification._sectionSubtype,
+                            ANAccountNotification._title,
+                            ANAccountNotification._userInfo,
+                            ANAccountNotifier._bulletinResponseListener,
+                            ANAccountNotifier._callbackMachService,
+                            ANAccountNotifier._daemonConnection,
+                            ANAccountNotifier._delegate,
+                            ANNotificationAction._isInternalURL,
+                            ANNotificationAction._options,
+                            ANNotificationAction._url,
+                            ANSectionSubtypeDescriptor._accountTypeID,
+                            ANSectionSubtypeDescriptor._allowsAddingToLockScreenWhenUnlocked,
+                            ANSectionSubtypeDescriptor._fullUnlockActionLabel,
+                            ANSectionSubtypeDescriptor._subtype ]
+...

@@ -1,0 +1,52 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.7.24 clang-1600.0.25.1)
+// swift-module-flags: -target arm64e-apple-ios18.0 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftVideoToolbox -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-upcoming-feature StrictConcurrency -enable-bare-slash-regex -user-module-version 3145.74.1.6 -module-name VideoToolbox
+import CoreFoundation
+@_exported import CoreMedia
+import CoreVideo
+import Foundation
+import Swift
+@_exported import VideoToolbox
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 15.0, iOS 18.0, tvOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+public class VTHDRPerFrameMetadataGenerationSession {
+  public enum HDRFormat : Swift.Int, Swift.Sendable {
+    case dolbyVision
+    public init?(rawValue: Swift.Int)
+    @available(iOS 18.0, tvOS 18.0, visionOS 2.0, macOS 15.0, *)
+    @available(watchOS, unavailable)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public init(framesPerSecond: Swift.Float, hdrFormats: [VideoToolbox.VTHDRPerFrameMetadataGenerationSession.HDRFormat]? = nil) throws
+  public func attachMetadata(to: CoreVideo.CVPixelBuffer, sceneChange: Swift.Bool = false) throws
+  @objc deinit
+}
+@available(*, unavailable)
+extension VideoToolbox.VTHDRPerFrameMetadataGenerationSession : Swift.Sendable {
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, visionOS 1.0, *)
+@available(watchOS, unavailable)
+public func VTDecompressionSessionCreate(allocator: CoreFoundation.CFAllocator?, formatDescription videoFormatDescription: CoreMedia.CMVideoFormatDescription, decoderSpecification videoDecoderSpecification: CoreFoundation.CFDictionary?, imageBufferAttributes destinationImageBufferAttributes: CoreFoundation.CFDictionary?, decompressionSessionOut: Swift.UnsafeMutablePointer<VideoToolbox.VTDecompressionSession?>) -> Darwin.OSStatus
+@available(macOS 14.0, iOS 17.0, visionOS 1.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public func VTDecompressionSessionDecodeFrame(_ session: VideoToolbox.VTDecompressionSession, sampleBuffer: CoreMedia.CMSampleBuffer, flags decodeFlags: VideoToolbox.VTDecodeFrameFlags, infoFlagsOut: Swift.UnsafeMutablePointer<VideoToolbox.VTDecodeInfoFlags>?, completionHandler: @escaping @Sendable (_ status: Darwin.OSStatus, _ infoFlags: VideoToolbox.VTDecodeInfoFlags, _ imageBuffer: CoreVideo.CVImageBuffer?, _ taggedBuffers: [CoreMedia.CMTaggedBuffer]?, _ presentationTimeStamp: CoreMedia.CMTime, _ presentationDuration: CoreMedia.CMTime) -> Swift.Void) -> Darwin.OSStatus
+@available(macOS 14.0, iOS 17.0, visionOS 1.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public func VTCompressionSessionEncodeMultiImageFrame(_ session: VideoToolbox.VTCompressionSession, taggedBuffers: [CoreMedia.CMTaggedBuffer], presentationTimeStamp: CoreMedia.CMTime, duration: CoreMedia.CMTime, frameProperties: CoreFoundation.CFDictionary?, infoFlagsOut: Swift.UnsafeMutablePointer<VideoToolbox.VTEncodeInfoFlags>?, outputHandler: @escaping VideoToolbox.VTCompressionOutputHandler) -> Darwin.OSStatus
+@available(macOS 15.0, iOS 18.0, tvOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox.VTHDRPerFrameMetadataGenerationSession.HDRFormat : Swift.Equatable {}
+@available(macOS 15.0, iOS 18.0, tvOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox.VTHDRPerFrameMetadataGenerationSession.HDRFormat : Swift.Hashable {}
+@available(macOS 15.0, iOS 18.0, tvOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+extension VideoToolbox.VTHDRPerFrameMetadataGenerationSession.HDRFormat : Swift.RawRepresentable {}

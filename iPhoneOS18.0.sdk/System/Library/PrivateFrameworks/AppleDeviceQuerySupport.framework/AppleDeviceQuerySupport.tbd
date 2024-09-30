@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppleDeviceQuerySupport.framework/AppleDeviceQuerySupport
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ZhuGeBulkCopyPrivileges, _ZhuGeBulkCopyValues,
+                            _ZhuGeCopyPrivilege, _ZhuGeCopyPrivilegeWithCFError,
+                            _ZhuGeCopyPrivilegeWithError, _ZhuGeCopyValue,
+                            _ZhuGeCopyValueWithCFError, _ZhuGeCopyValueWithError,
+                            _ZhuGeIsKeyValid, _ZhuGeSetLogHandler ]
+    objc-classes:         [ AppleDeviceQueryCacheSupport,
+                            AppleDeviceQueryInternalSupportAssistantSupport,
+                            AppleDeviceQueryLockerSupport,
+                            AppleDeviceQueryRestoreLogSupport,
+                            AppleDeviceQuerySingletonSupport,
+                            AppleDeviceQuerySupportAssistantSupport ]
+    objc-ivars:           [ AppleDeviceQueryCacheSupport._cacheDict,
+                            AppleDeviceQueryCacheSupport._cacheList,
+                            AppleDeviceQueryCacheSupport._cacheType,
+                            AppleDeviceQueryCacheSupport._capacity,
+                            AppleDeviceQueryCacheSupport._name,
+                            AppleDeviceQueryCacheSupport.aRecursiveMutex,
+                            AppleDeviceQueryLockerSupport._keysCacheForCopyValue,
+                            AppleDeviceQueryLockerSupport._logHandler,
+                            AppleDeviceQueryLockerSupport.recursiveMutexForCopyValue ]
+...

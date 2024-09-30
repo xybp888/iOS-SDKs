@@ -1,0 +1,64 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CryptoKitPrivate.framework/CryptoKitPrivate
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CryptoKitPrivateVersionNumber,
+                            _CryptoKitPrivateVersionString,
+                            _ciphersuiteForKeyByteCount, _cryptokit_scrypt ]
+    objc-classes:         [ CKPATKeyBlinding, KVACAwaitingActivation,
+                            KVACCredential, KVACIssuance, KVACPresentation,
+                            KVACTestServer, RSABSSATokenBlinder,
+                            RSABSSATokenIssuer, RSABSSATokenReady,
+                            RSABSSATokenWaitingActivation, TDMEvaluation,
+                            TDMTestServer, TDMToken,
+                            _TtC16CryptoKitPrivate10KVACClient,
+                            _TtC16CryptoKitPrivate10KVACServer,
+                            _TtC16CryptoKitPrivate18AlishaSPAKE2Prover,
+                            _TtC16CryptoKitPrivate18CKPIETFKeyBlinding,
+                            _TtC16CryptoKitPrivate18KVACRequestWrapper,
+                            _TtC16CryptoKitPrivate19KVACIssuanceWrapper,
+                            _TtC16CryptoKitPrivate19RSAPSSSPKI_Bridging,
+                            _TtC16CryptoKitPrivate19TDMServerEvaluation,
+                            _TtC16CryptoKitPrivate21KVACCredentialWrapper,
+                            _TtC16CryptoKitPrivate23KVACPresentationWrapper,
+                            _TtC16CryptoKitPrivate27AlishaSPAKE2ProverConfirmed,
+                            _TtC16CryptoKitPrivate6Scrypt,
+                            _TtC16CryptoKitPrivate9TDMClient,
+                            _TtC16CryptoKitPrivate9TDMServer ]
+    objc-ivars:           [ KVACAwaitingActivation._client,
+                            KVACAwaitingActivation._request,
+                            KVACAwaitingActivation._requestData,
+                            KVACCredential._credential,
+                            KVACCredential._credentialData,
+                            KVACCredential._serverKeyId,
+                            KVACIssuance._issuanceData, KVACIssuance._keyId,
+                            KVACPresentation._prefix,
+                            KVACPresentation._presentationData,
+                            KVACPresentation._serverKeyId, KVACPresentation._tag,
+                            KVACTestServer._keyId, KVACTestServer._server,
+                            RSABSSATokenBlinder._ciphersuite,
+                            RSABSSATokenBlinder._ciphersuiteModulusByteCount,
+                            RSABSSATokenBlinder._keyId,
+                            RSABSSATokenBlinder._publicKey,
+                            RSABSSATokenIssuer._ciphersuite,
+                            RSABSSATokenIssuer._ciphersuiteModulusByteCount,
+                            RSABSSATokenIssuer._keyId,
+                            RSABSSATokenIssuer._publicKey,
+                            RSABSSATokenIssuer._rsaPrivateKey,
+                            RSABSSATokenReady._keyId,
+                            RSABSSATokenReady._signature,
+                            RSABSSATokenReady._tokenContent,
+                            RSABSSATokenWaitingActivation._blindedMessage,
+                            RSABSSATokenWaitingActivation._blindingInverse,
+                            RSABSSATokenWaitingActivation._ciphersuite,
+                            RSABSSATokenWaitingActivation._tokenBlinder,
+                            RSABSSATokenWaitingActivation._tokenContent,
+                            TDMEvaluation._evaluatedElement,
+                            TDMEvaluation._proof, TDMTestServer._tdmServer,
+                            TDMToken._tdmClient ]
+...

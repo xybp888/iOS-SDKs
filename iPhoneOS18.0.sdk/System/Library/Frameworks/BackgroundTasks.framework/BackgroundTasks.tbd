@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/System/Library/Frameworks/BackgroundTasks.framework/BackgroundTasks'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _BGTaskSchedulerErrorDomain, __BGTaskSchedulerRunningTasksDidChangeNotification ]
+    objc-classes:    [ BGAppRefreshTask, BGAppRefreshTaskRequest, BGContinuedProcessingTask, 
+                       BGContinuedProcessingTaskRequest, BGHealthResearchTask, BGHealthResearchTaskRequest, 
+                       BGProcessingTask, BGProcessingTaskRequest, BGTask, BGTaskRequest, 
+                       BGTaskScheduler, _BGContinuedProcessingTask, _BGContinuedProcessingTaskRequest ]
+...

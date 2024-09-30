@@ -1,0 +1,44 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CloudSubscriptionFeatures.framework/CloudSubscriptionFeatures
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CSFGeoClassificationStatusDescription,
+                            _CloudSubscriptionFeaturesVersionNumber,
+                            _CloudSubscriptionFeaturesVersionString,
+                            __CSFGetLogSystem, _globalDomainUserDefaultsKey,
+                            _kCloudSubscriptionFeatureChangedNotificationName,
+                            _kCloudSubscriptionOptInChangeNotificationName,
+                            _kCloudSubscriptionTicketChangedNotificationName,
+                            _mobileGestaltDeviceNameKey, _suiteName ]
+    objc-classes:         [ CSFAvailability, CSFEligibility, CSFEligibilityFetcher,
+                            CSFFeatureManager, CSFFollowUp, CSFGMOptIn,
+                            CSFSoftLinking, CSFTicketObject, CloudFeature,
+                            CloudFeatureObject, DaemonController,
+                            FeatureChangeObserver, FeaturesDaemon,
+                            _TtC25CloudSubscriptionFeatures12TicketStatus,
+                            _TtC25CloudSubscriptionFeatures14GMAssetsBypass,
+                            _TtC25CloudSubscriptionFeatures17CSFGMFeatureFlags,
+                            _TtC25CloudSubscriptionFeatures19GMEligibilityBypass,
+                            _TtC25CloudSubscriptionFeatures21FeatureRequestHandler,
+                            _TtC25CloudSubscriptionFeatures21GeoClassificationInfo,
+                            _TtC25CloudSubscriptionFeatures6Assets,
+                            _TtC25CloudSubscriptionFeatures6Ticket,
+                            _TtC25CloudSubscriptionFeatures7GMOptIn,
+                            _TtC25CloudSubscriptionFeatures8GMBypass,
+                            _TtC25CloudSubscriptionFeatures9XPCCaller ]
+    objc-ivars:           [ CSFAvailability._status,
+                            CSFAvailability._unavailabiltyReasons,
+                            CSFGMOptIn._gmOptIn, CSFTicketObject._status,
+                            CSFTicketObject._ticket,
+                            CloudFeatureObject._accessToken,
+                            CloudFeatureObject._canUse,
+                            CloudFeatureObject._featureID,
+                            CloudFeatureObject._limit,
+                            CloudFeatureObject._status,
+                            FeaturesDaemon._controller ]
+...

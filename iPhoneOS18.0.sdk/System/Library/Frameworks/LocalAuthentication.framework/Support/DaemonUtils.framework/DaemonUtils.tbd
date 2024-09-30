@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/DaemonUtils.framework/DaemonUtils'
+current-version: 1656.0.99
+allowable-clients:
+  - targets:         [ arm64-ios, arm64e-ios ]
+    clients:         [ '-allowable_client', CoreAuthUI, DaemonUtils, LARecoveryUITest, 
+                       LATester, LATester macOS, LocalAuthentication, LocalAuthenticationBinTests, 
+                       LocalAuthenticationCoreTests, LocalAuthenticationCoreUI, LocalAuthenticationCoreUITests, 
+                       LocalAuthenticationEmbeddedUI, LocalAuthenticationInterfaceTests, 
+                       LocalAuthenticationPreboard, LocalAuthenticationPreboardTests, 
+                       LocalAuthenticationPrivateUI, LocalAuthenticationRecoveryUI, 
+                       LocalAuthenticationRemoteService, LocalAuthenticationTestSupport, 
+                       LocalAuthenticationTests, LocalAuthenticationUI, LocalAuthorizationTests, 
+                       MechOyster, MechPasscode, MechPearl, MechPushButton, MechTouchId, 
+                       MechWatch, MechanismBase, ModuleACM, ModuleBase, SecurityAgentPlugin, 
+                       SharedUtils, coreautha, coreauthd, latool ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _DaemonUtilsVersionNumber, _DaemonUtilsVersionString ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _LAAnalyticsAuthenticationTypeFromEvent, _LANVRAMNamespaceStartupManager, 
+                       _PreflightCacheCapacity ]
+    objc-classes:    [ BiometryHelper, BiometryLockoutInvalidationSource, Caller, 
+                       DaemonUtils, DarwinNotificationInvalidationSource, DomainStateRequest, 
+                       EvaluationRequest, InstalledAppsCache, LAAnalytics, LAAnalyticsDTO, 
+                       LAAnalyticsEvaluation, LAAnalyticsPasscodeFallbackPeriod, 
+                       LANVRAM, NotificationCenterInvalidationSource, PasscodeInvalidationSource, 
+                       PreflightCache, PreflightCacheAssertion, PreflightCacheBypassAssertion, 
+                       PreflightCacheInvalidationSource, PushButtonMonitor, Request, 
+                       StorageRequest ]
+...

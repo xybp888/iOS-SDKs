@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AssistantSettingsFoundation.framework/AssistantSettingsFoundation
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ASFDistributedPreferencesDidChangeNotification,
+                            _AssistantSettingsFoundationVersionNumber,
+                            _AssistantSettingsFoundationVersionString ]
+    objc-classes:         [ ASFAssistantMetrics, ASFController ]
+    objc-ivars:           [ ASFAssistantMetrics._confirmedTrueFalseProperty,
+                            ASFAssistantMetrics._detailToggleFoundInAppsTracker,
+                            ASFAssistantMetrics._detailToggleSearchTracker,
+                            ASFAssistantMetrics._detailToggleSiriKitTracker,
+                            ASFAssistantMetrics._detailToggleTrackerNameProperty,
+                            ASFAssistantMetrics._detailVisitFoundInAppsTracker,
+                            ASFAssistantMetrics._detailVisitTracker,
+                            ASFAssistantMetrics._disableSiriTracker,
+                            ASFAssistantMetrics._enableSiriTracker,
+                            ASFAssistantMetrics._foundInAppsProperty,
+                            ASFAssistantMetrics._onOffProperty,
+                            ASFAssistantMetrics._siriSourceProperty,
+                            ASFAssistantMetrics._startEnrollmentTracker,
+                            ASFAssistantMetrics._toggleTracker,
+                            ASFAssistantMetrics._toggleTrackerNameProperty,
+                            ASFAssistantMetrics._visitTracker ]
+...

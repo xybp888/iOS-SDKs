@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SensingPredictServices.framework/SensingPredictServices
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ SPContext, SPContextMonitor ]
+    objc-ivars:           [ SPContext._locationCategory, SPContext._noiseLevel,
+                            SPContextMonitor._activateCalled,
+                            SPContextMonitor._activateCompletion,
+                            SPContextMonitor._clientID,
+                            SPContextMonitor._contextChangeFlags,
+                            SPContextMonitor._contextChangeHandler,
+                            SPContextMonitor._contextSignalUpdatedHandler,
+                            SPContextMonitor._dispatchQueue,
+                            SPContextMonitor._interruptionHandler,
+                            SPContextMonitor._invalidateCalled,
+                            SPContextMonitor._invalidateDone,
+                            SPContextMonitor._invalidationHandler,
+                            SPContextMonitor._xpcCnx ]
+...

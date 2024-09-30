@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/LegacyGameKit.framework/LegacyGameKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _GKPeerPickerConnectionNearbyKey ]
+    objc-classes:         [ GKContentView, GKPeerPickerController,
+                            GKPeerPickerTableViewCell,
+                            GKPeerPickerViewController ]
+    objc-ivars:           [ GKContentView._activityIndicator,
+                            GKContentView._cancelButton,
+                            GKContentView._connectionButtons,
+                            GKContentView._iconView, GKContentView._messageLabel,
+                            GKContentView._otherButton,
+                            GKContentView._titleLabel,
+                            GKPeerPickerController._connectionTypesMask,
+                            GKPeerPickerController._picker,
+                            GKPeerPickerTableViewCell._topSeparator,
+                            GKPeerPickerViewController._btView,
+                            GKPeerPickerViewController._connectTypeView,
+                            GKPeerPickerViewController._connectionTypesMask,
+                            GKPeerPickerViewController._currentView,
+                            GKPeerPickerViewController._delegate,
+                            GKPeerPickerViewController._inviteView,
+                            GKPeerPickerViewController._listView,
+                            GKPeerPickerViewController._noPeersView,
+                            GKPeerPickerViewController._statusView ]
+...

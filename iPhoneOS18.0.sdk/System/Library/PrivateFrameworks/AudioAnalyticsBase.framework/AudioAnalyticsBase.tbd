@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AudioAnalyticsBase.framework/AudioAnalyticsBase
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _isTapToRadarAvailable ]
+    objc-classes:         [ AARadarComponent, AARadarDraft, PredicateHelper,
+                            Sysdiagnose, Trace, TraceArgs ]
+    objc-ivars:           [ AARadarComponent._identifier, AARadarComponent._name,
+                            AARadarComponent._version, AARadarDraft._attachments,
+                            AARadarDraft._component, AARadarDraft._displayReason,
+                            AARadarDraft._problemDescription,
+                            AARadarDraft._title, TraceArgs._arg1, TraceArgs._arg2,
+                            TraceArgs._arg3, TraceArgs._arg4 ]
+...
