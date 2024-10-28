@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/SensitiveContentAnalysis.framework/SensitiveContentAnalysis
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SCError, _SCErrorCausedBy, _SCErrorDomain,
+                            _SCIsAnalyticsEnabled,
+                            _SensitiveContentAnalysisVersionNumber,
+                            _SensitiveContentAnalysisVersionString,
+                            _kSCLogSubsystem, _kSCServiceEntitlement ]
+    objc-classes:         [ SCAnalytics, SCEntitlements, SCLog,
+                            SCManagedSettingsReader, SCMediaAnalysisService,
+                            SCSensitivityAnalysis,
+                            SCSensitivityAnalysisAvailabilityObserver,
+                            SCSensitivityAnalyzer ]
+    objc-ivars:           [ SCAnalytics._ageGroup, SCAnalytics._biomeMASSource,
+                            SCAnalytics._biomeMASStream,
+                            SCAnalytics._clientBundleID,
+                            SCMediaAnalysisService._service,
+                            SCSensitivityAnalysis._sensitive,
+                            SCSensitivityAnalysisAvailabilityObserver._subscription,
+                            SCSensitivityAnalyzer._dispatchQueue,
+                            SCSensitivityAnalyzer._madService ]
+...

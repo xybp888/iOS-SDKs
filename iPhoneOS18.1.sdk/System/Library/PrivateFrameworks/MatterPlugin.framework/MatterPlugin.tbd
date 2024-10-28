@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MatterPlugin.framework/MatterPlugin
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MatterPluginVersionNumber,
+                            _MatterPluginVersionString,
+                            ___XPC_MTRRemoteDeviceController_initWithParameters_response,
+                            ___XPC_MTRRemoteDevice_delegate_deviceBecameActive,
+                            ___XPC_MTRRemoteDevice_delegate_receivedAttributeReport,
+                            ___XPC_MTRRemoteDevice_delegate_receivedEventReport,
+                            ___XPC_MTRRemoteDevice_delegate_stateChanged,
+                            ___XPC_MTRRemoteDevice_estimatedStartTime_response,
+                            ___XPC_MTRRemoteDevice_invokeCommand_response,
+                            ___XPC_MTRRemoteDevice_readAttribute_response ]
+    objc-classes:         [ MTRDevicePluginServer, MTRDevicePluginSyncManager,
+                            MTRPlugin, MTRPluginDeviceControllerRegistry ]
+...

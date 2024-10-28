@@ -1,0 +1,64 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/ThreadNetwork.framework/ThreadNetwork
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CTCSErrorDomain, _CTCSXPCErrorDomain,
+                            _CTCSXpcServiceName, _DEFAULT_XPC_TIMEOUT,
+                            _DispatchXPCConnectionQueueIfNecessaryAndWait,
+                            _DispatchXPCConnectionQueueIfNecessarySync,
+                            _THChannelNone, _ThreadNetworkLoggingCategory,
+                            _ThreadNetworkVersionNumber,
+                            _ThreadNetworkVersionString,
+                            _dispatch_get_xpc_connection_queue,
+                            _kTHNetworkChannel_None, _openlog, _setlogmask,
+                            _syslog_is_the_mask_enabled ]
+    objc-classes:         [ THClient, THCredentials, THThreadNetwork,
+                            THThreadNetworkBorderAgent,
+                            THThreadNetworkCredentials,
+                            THThreadNetworkCredentialsActiveDataSetRecord,
+                            THThreadNetworkCredentialsDataSet,
+                            THThreadNetworkCredentialsStoreRecord, XPCInterface ]
+    objc-ivars:           [ THClient._isConnected,
+                            THClient._threadSafePropertyQueue,
+                            THClient._xpcConnection, THCredentials._PSKC,
+                            THCredentials._activeOperationalDataSet,
+                            THCredentials._borderAgentID, THCredentials._channel,
+                            THCredentials._creationDate,
+                            THCredentials._extendedPANID,
+                            THCredentials._lastModificationDate,
+                            THCredentials._networkKey,
+                            THCredentials._networkName, THCredentials._panID,
+                            THThreadNetwork._extendedPANID,
+                            THThreadNetwork._networkName,
+                            THThreadNetworkBorderAgent._discriminatorId,
+                            THThreadNetworkCredentials._PANID,
+                            THThreadNetworkCredentials._PSKc,
+                            THThreadNetworkCredentials._channel,
+                            THThreadNetworkCredentials._credentialsDataSet,
+                            THThreadNetworkCredentials._isActiveDevice,
+                            THThreadNetworkCredentials._masterKey,
+                            THThreadNetworkCredentials._passPhrase,
+                            THThreadNetworkCredentials._userInfo,
+                            THThreadNetworkCredentialsActiveDataSetRecord._borderAgent,
+                            THThreadNetworkCredentialsActiveDataSetRecord._creationDate,
+                            THThreadNetworkCredentialsActiveDataSetRecord._credentials,
+                            THThreadNetworkCredentialsActiveDataSetRecord._credentialsDataSet,
+                            THThreadNetworkCredentialsActiveDataSetRecord._keychainAccessGroup,
+                            THThreadNetworkCredentialsActiveDataSetRecord._lastModificationDate,
+                            THThreadNetworkCredentialsActiveDataSetRecord._network,
+                            THThreadNetworkCredentialsActiveDataSetRecord._uniqueIdentifier,
+                            THThreadNetworkCredentialsDataSet._dataSetArray,
+                            THThreadNetworkCredentialsDataSet._userInfo,
+                            THThreadNetworkCredentialsStoreRecord._creationDate,
+                            THThreadNetworkCredentialsStoreRecord._credentials,
+                            THThreadNetworkCredentialsStoreRecord._keychainAccessGroup,
+                            THThreadNetworkCredentialsStoreRecord._lastModificationDate,
+                            THThreadNetworkCredentialsStoreRecord._network,
+                            THThreadNetworkCredentialsStoreRecord._uniqueIdentifier ]
+...

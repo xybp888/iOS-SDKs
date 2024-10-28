@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AudioAnalyticsBase.framework/AudioAnalyticsBase
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _isTapToRadarAvailable ]
+    objc-classes:         [ AudioAnalyticsPredicateHelper,
+                            AudioAnalyticsRadarComponent,
+                            AudioAnalyticsRadarDraft, AudioAnalyticsSysdiagnose,
+                            AudioAnalyticsTrace, AudioAnalyticsTraceArgs ]
+    objc-ivars:           [ AudioAnalyticsRadarComponent._identifier,
+                            AudioAnalyticsRadarComponent._name,
+                            AudioAnalyticsRadarComponent._version,
+                            AudioAnalyticsRadarDraft._attachments,
+                            AudioAnalyticsRadarDraft._component,
+                            AudioAnalyticsRadarDraft._displayReason,
+                            AudioAnalyticsRadarDraft._problemDescription,
+                            AudioAnalyticsRadarDraft._title,
+                            AudioAnalyticsTraceArgs._arg1,
+                            AudioAnalyticsTraceArgs._arg2,
+                            AudioAnalyticsTraceArgs._arg3,
+                            AudioAnalyticsTraceArgs._arg4 ]
+...

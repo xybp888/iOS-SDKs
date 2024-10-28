@@ -1,0 +1,43 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SpeechDetector.framework/SpeechDetector
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SDLogContextFacilityLocalSRBridge,
+                            _SDLogInitIfNeeded, _SDLoggingSubsystem, _domain,
+                            _inputFeatureName, _inputShape, _kSDBlendshapeOrdering,
+                            _kSDLoggingContextFramework, _numBlendshapes,
+                            _numFramesToProcess, _outputFeatureName,
+                            _outputProbabilityFeatureName,
+                            _predictionFrequencyInFrames ]
+    objc-classes:         [ LipMovementData, OSDAnalyzer, OSDFeatures,
+                            SDLipMovementVAD ]
+    objc-ivars:           [ LipMovementData._absMachTime,
+                            LipMovementData._blendshapes,
+                            OSDAnalyzer._caesuraSPG, OSDAnalyzer._delegate,
+                            OSDAnalyzer._endOfSpeechDetected,
+                            OSDAnalyzer._lipMovementQueue,
+                            OSDAnalyzer._lipMovementVAD,
+                            OSDAnalyzer._numConsecutiveNonSilenceFrames,
+                            OSDAnalyzer._osdContext, OSDAnalyzer._osdFeatures,
+                            OSDAnalyzer._queue,
+                            OSDAnalyzer._startOfSpeechDetected,
+                            OSDFeatures._inferenceTime,
+                            OSDFeatures._processedAudioMs,
+                            OSDFeatures._silenceDurationMs,
+                            OSDFeatures._silenceFramesCountMs,
+                            OSDFeatures._silenceProbability,
+                            SDLipMovementVAD._blendshapeLocationToIndexMap,
+                            SDLipMovementVAD._configFile,
+                            SDLipMovementVAD._delegate,
+                            SDLipMovementVAD._framesToNextPrediction,
+                            SDLipMovementVAD._lipMovementDataArray,
+                            SDLipMovementVAD._lipMovementVADModel,
+                            SDLipMovementVAD._options,
+                            SDLipMovementVAD._visualSpeechProbability ]
+...

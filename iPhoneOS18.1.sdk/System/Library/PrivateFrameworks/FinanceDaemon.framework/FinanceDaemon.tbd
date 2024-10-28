@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FinanceDaemon.framework/FinanceDaemon
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FinanceDaemonVersionNumber,
+                            _FinanceDaemonVersionString ]
+    objc-classes:         [ FDAccountNotificationHandler,
+                            FDWalletMessagingProvider,
+                            _TtC13FinanceDaemon22BankConnectDataDeleter,
+                            _TtC13FinanceDaemon22WalletDeletionObserver,
+                            _TtC13FinanceDaemon23WalletMessagingProvider,
+                            _TtC13FinanceDaemon26AccountNotificationHandler,
+                            _TtC13FinanceDaemon30DaemonCoreDataSpotlightIndexer,
+                            _TtC13FinanceDaemon39DaemonCoreDataStoreServerHandlingPolicy ]
+    objc-ivars:           [ FDAccountNotificationHandler._wrappedHandler,
+                            FDWalletMessagingProvider._wrappedProvider ]
+...

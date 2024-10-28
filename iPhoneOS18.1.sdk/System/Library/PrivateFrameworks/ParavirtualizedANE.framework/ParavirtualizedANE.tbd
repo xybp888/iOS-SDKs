@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ParavirtualizedANE.framework/ParavirtualizedANE
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ParavirtualizedANEVersionNumber,
+                            _ParavirtualizedANEVersionString,
+                            __Z12getIOSurfaceyPU19objcproto9OS_os_log8NSObject,
+                            _kANEFInMemoryModelIdentifierKey,
+                            _kANEFInMemoryModelIsCachedKey ]
+    objc-classes:         [ _ANEVirtualModel, _ANEVirtualPlatformClient ]
+    objc-ivars:           [ _ANEVirtualModel._model, _ANEVirtualModel._refcount,
+                            _ANEVirtualPlatformClient._aneClient,
+                            _ANEVirtualPlatformClient._aneModelDict,
+                            _ANEVirtualPlatformClient._anebaseDirectory,
+                            _ANEVirtualPlatformClient._avpSaveRestoreSupported,
+                            _ANEVirtualPlatformClient._guestBuildVersion,
+                            _ANEVirtualPlatformClient._negotiatedCapabilityMask,
+                            _ANEVirtualPlatformClient._negotiatedDataInterfaceVersion,
+                            _ANEVirtualPlatformClient._queue ]
+...

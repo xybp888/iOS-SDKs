@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppAnalytics.framework/AppAnalytics
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AppAnalyticsVersionNumber,
+                            _AppAnalyticsVersionString ]
+    objc-classes:         [ AAAccessQueue, AAAccessSessionManager, AAAccessTracker,
+                            AAAppSessionManager, AABridgedMescalSigner, AAClient,
+                            AADataEventTraits, AADelayedToken, AAEndpoint,
+                            AAEventData, AAEventProperty, AAFlushManager, AAGroup,
+                            AAJSON, AALoggingEventProcessor, AAPrivacyValidation,
+                            AAPrivacyValidationProvider, AAProcessEvent,
+                            AAProcessorManager, AARawDataEvent, AARawEvent,
+                            AARawEventProperty, AASession, AASessionData,
+                            AASessionGroup, AASessionManager, AASessionObserver,
+                            AATimedData, AATimestampGranularityFactory,
+                            AATimestampJitter, AATracker, AATrackingConsent,
+                            AATransparencyLogging, AAUploadBatchEventConfig,
+                            AAUploadBatchEventProcessor, AAViewingSession,
+                            AAViewingSessionManager ]
+    objc-ivars:           [ AABridgedMescalSigner._bag ]
+...

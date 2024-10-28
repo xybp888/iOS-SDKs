@@ -1,0 +1,71 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Cards.framework/Cards
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CRContextCards, _CRErrorCodeGetName, _CRErrorDomain,
+                            _CRJSContextErrorDomain,
+                            _CRJSObjectBackingObjectPropertyName,
+                            _CRLogContextCards, _CRLogInitIfNeeded,
+                            _CRLoggingSubsystem, _CardsVersionNumber,
+                            _CardsVersionString, __CRSystemRootDirectory ]
+    objc-classes:         [ CRBasicAsyncCardReceiptFeedback,
+                            CRBasicAsyncCardRequestFeedback, CRBasicCard,
+                            CRBasicCardSection,
+                            CRBasicCardSectionViewAppearanceFeedback,
+                            CRBasicCardSectionViewDisappearanceFeedback,
+                            CRBasicPayloadCommand, CRBeganEditingCommand,
+                            CRBundleManager, CRCardMocks, CRError,
+                            CRFinishedEditingCommand, CRHandleIntentCommand,
+                            CRInvocationChain, CRInvocationPayloadCommand,
+                            CRJSContext, CRJSObject, CRMockAsyncCard,
+                            CRNextCardCommand, CRPBSerialization,
+                            CRProtocolRestrictedInvocationChain,
+                            CRPunchoutCommand, CRRequestUserConfirmationCommand,
+                            CRSFCardLoader, CRSFCardSectionUtilities,
+                            CRUpdateProgressCommand ]
+    objc-ivars:           [ CRBasicAsyncCardReceiptFeedback.baseCard,
+                            CRBasicAsyncCardReceiptFeedback.receivedCard,
+                            CRBasicAsyncCardReceiptFeedback.requestedCard,
+                            CRBasicAsyncCardRequestFeedback.baseCard,
+                            CRBasicAsyncCardRequestFeedback.requestedCard,
+                            CRBasicCard._cardIdentifier,
+                            CRBasicCard._cardSections,
+                            CRBasicCard._dismissalCommands,
+                            CRBasicCard._interactions, CRBasicCard.cardFormat,
+                            CRBasicCardSection._backingCardSection,
+                            CRBasicCardSection._cardSectionIdentifier,
+                            CRBasicCardSectionViewAppearanceFeedback._cardSection,
+                            CRBasicCardSectionViewDisappearanceFeedback._cardSection,
+                            CRBasicPayloadCommand.commandDirection,
+                            CRBasicPayloadCommand.payload,
+                            CRBasicPayloadCommand.userInfo,
+                            CRBeganEditingCommand._commandDirection,
+                            CRBeganEditingCommand.userInfo,
+                            CRBundleManager._bundles,
+                            CRBundleManager._serialQueue,
+                            CRFinishedEditingCommand._commandDirection,
+                            CRFinishedEditingCommand.userInfo,
+                            CRHandleIntentCommand._intent,
+                            CRInvocationChain._chainedObjects,
+                            CRInvocationChain._chainedObjectsAccessQueue,
+                            CRInvocationChain._delegate,
+                            CRInvocationPayloadCommand._invocationIdentifier,
+                            CRJSObject._backingObject,
+                            CRNextCardCommand._nextCard,
+                            CRProtocolRestrictedInvocationChain._restrictingProtocol,
+                            CRPunchoutCommand._punchout,
+                            CRRequestUserConfirmationCommand.commandDirection,
+                            CRRequestUserConfirmationCommand.userInfo,
+                            CRSFCardLoader._loadedCards,
+                            CRUpdateProgressCommand._animatesProgress,
+                            CRUpdateProgressCommand._event,
+                            CRUpdateProgressCommand._progress,
+                            CRUpdateProgressCommand.commandDirection,
+                            CRUpdateProgressCommand.userInfo ]
+...

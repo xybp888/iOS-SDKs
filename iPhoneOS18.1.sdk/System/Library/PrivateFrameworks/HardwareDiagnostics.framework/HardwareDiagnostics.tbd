@@ -1,0 +1,51 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HardwareDiagnostics.framework/HardwareDiagnostics
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HDAuxDataDecodingClassAllowList, _HDBaseDomain,
+                            _HDCapturePlugInErrorDomain, _HDCreateError,
+                            _HDDefaultLogHandle, _HDDiagnosticAnalysisDataKey,
+                            _HDDiagnosticAnalysisParametersKey,
+                            _HDDiagnosticExperimentDataKey,
+                            _HDDiagnosticExperimentParametersKey, _HDErrorDomain,
+                            _HDIOReportDomain, _HDIOReportErrorDomain,
+                            _HardwareDiagnosticsVersionNumber,
+                            _HardwareDiagnosticsVersionString ]
+    objc-classes:         [ HDAnalysisResult, HDBound, HDDescription,
+                            HDDimensionlessUnit, HDExperimentResult,
+                            HDKeyedObjectParameter, HDLab, HDLimit, HDMeasuredResult,
+                            HDNumberParameter, HDReport, HDSimpleDiagnostic,
+                            HDStringParameter ]
+    objc-ivars:           [ HDAnalysisResult._auxiliaryData,
+                            HDAnalysisResult._files,
+                            HDAnalysisResult._measuredResults, HDBound._open,
+                            HDBound._value, HDDescription._metadata,
+                            HDDescription._parameters, HDDescription._summary,
+                            HDExperimentResult._auxiliaryData,
+                            HDExperimentResult._files,
+                            HDExperimentResult._measurements,
+                            HDKeyedObjectParameter._keys,
+                            HDKeyedObjectParameter._required,
+                            HDKeyedObjectParameter._summary, HDLab._analyses,
+                            HDLab._diagnostics, HDLab._experiments,
+                            HDLimit._lowerBound, HDLimit._name,
+                            HDLimit._upperBound, HDMeasuredResult._limit,
+                            HDMeasuredResult._measurement,
+                            HDMeasuredResult._name,
+                            HDMeasuredResult._valueWithinLimits,
+                            HDNumberParameter._required,
+                            HDNumberParameter._summary, HDReport._auxiliaryData,
+                            HDReport._endTime, HDReport._error, HDReport._files,
+                            HDReport._results, HDReport._startTime,
+                            HDReport._status, HDSimpleDiagnostic._analysis,
+                            HDSimpleDiagnostic._experiment,
+                            HDSimpleDiagnostic._summary,
+                            HDStringParameter._required,
+                            HDStringParameter._summary ]
+...

@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AirPlaySenderUI.framework/AirPlaySenderUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AirPlaySenderUIVersionNumber,
+                            _AirPlaySenderUIVersionString ]
+    objc-classes:         [ APUIAirPlaySetupConfiguration,
+                            APUIAirPlaySetupConfigurationDiscoveryBroker,
+                            APUIAirPlaySetupConfigurationReceiver,
+                            APUIAirPlaySetupConfigurationWiFi,
+                            APUIAirPlaySetupFlowLauncher ]
+    objc-ivars:           [ APUIAirPlaySetupConfiguration._broker,
+                            APUIAirPlaySetupConfiguration._receiver,
+                            APUIAirPlaySetupConfiguration._wifi,
+                            APUIAirPlaySetupConfigurationDiscoveryBroker._ID,
+                            APUIAirPlaySetupConfigurationDiscoveryBroker._authToken,
+                            APUIAirPlaySetupConfigurationReceiver._ID,
+                            APUIAirPlaySetupConfigurationReceiver._authString,
+                            APUIAirPlaySetupConfigurationReceiver._routeToReceiverAfterSetup,
+                            APUIAirPlaySetupConfigurationWiFi._SSID,
+                            APUIAirPlaySetupConfigurationWiFi._captivePortalBypassToken,
+                            APUIAirPlaySetupConfigurationWiFi._passphrase ]
+...

@@ -1,0 +1,35 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PeopleUIInternal.framework/PeopleUIInternal
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PPLPeopleAppBundleIdentifier,
+                            _PPLPeopleViewServiceLog ]
+    objc-classes:         [ PPLMutablePeopleEntitySceneSettings,
+                            PPLPeopleAppLauncher, PPLPeopleAppSceneManager,
+                            PPLPeopleEntityMetadata,
+                            PPLPeopleEntitySceneSettings,
+                            PPLPeopleEntitySceneSpecification,
+                            PPLPeopleEntitySceneTransitionContext,
+                            PPLPeopleEntityViewController ]
+    objc-ivars:           [ PPLPeopleAppLauncher._delegate,
+                            PPLPeopleAppLauncher._initializationAssertion,
+                            PPLPeopleAppLauncher._peopleAppProcessHandle,
+                            PPLPeopleAppLauncher._queue,
+                            PPLPeopleAppSceneManager._peopleAppLauncher,
+                            PPLPeopleAppSceneManager._scene,
+                            PPLPeopleAppSceneManager._sceneRequesters,
+                            PPLPeopleAppSceneManager._transaction,
+                            PPLPeopleEntityMetadata._url,
+                            PPLPeopleEntityViewController._delegate,
+                            PPLPeopleEntityViewController._hostView,
+                            PPLPeopleEntityViewController._metadata,
+                            PPLPeopleEntityViewController._presenter,
+                            PPLPeopleEntityViewController._scene,
+                            PPLPeopleEntityViewController._sceneManager ]
+...

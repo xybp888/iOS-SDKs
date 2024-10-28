@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppleFirmwareUpdate.framework/AppleFirmwareUpdate
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AppleFirmwareUpdateVersionNumber,
+                            _AppleFirmwareUpdateVersionString, _errorString ]
+    objc-classes:         [ AppleFirmwareUpdateController ]
+    objc-ivars:           [ AppleFirmwareUpdateController._delegate,
+                            AppleFirmwareUpdateController._delegateQueue,
+                            AppleFirmwareUpdateController._fdrClasses,
+                            AppleFirmwareUpdateController._fwAssetDirectory,
+                            AppleFirmwareUpdateController._fwAssetFile,
+                            AppleFirmwareUpdateController._fwAssetSignatureType,
+                            AppleFirmwareUpdateController._fwAssetSize,
+                            AppleFirmwareUpdateController._fwAssetVersion,
+                            AppleFirmwareUpdateController._img4Tag,
+                            AppleFirmwareUpdateController._iokitNotifyPort,
+                            AppleFirmwareUpdateController._log,
+                            AppleFirmwareUpdateController._pendingCriticalEarlyBootEntriesInternal,
+                            AppleFirmwareUpdateController._registryEntryID,
+                            AppleFirmwareUpdateController._workQueue ]
+...

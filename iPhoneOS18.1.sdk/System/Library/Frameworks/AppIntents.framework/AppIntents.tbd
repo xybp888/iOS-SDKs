@@ -1,0 +1,44 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/AppIntents.framework/AppIntents
+current-version:       210.13
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ LNAppConnectionListener, LNAppContext,
+                            LNAppContextWrapper, LNClientConnection,
+                            LNConnectionListener, LNDaemonConnectionListener,
+                            LNExtensionConnectionHandler,
+                            LNOneShotActionExecutor,
+                            LNPerformActionExecutorDelegateProxy,
+                            LNPerformActionOperation, LNUserActivityHelper,
+                            LNXPCListenerEndpointContainer,
+                            _AppIntentsUserActivityHelper,
+                            _TtC10AppIntents28SystemIntentExecutorDelegate ]
+    objc-ivars:           [ LNAppContextWrapper._appContext,
+                            LNClientConnection._appContext,
+                            LNClientConnection._connectionListener,
+                            LNClientConnection._performActionOperations,
+                            LNClientConnection._queue,
+                            LNClientConnection._xpcConnection,
+                            LNConnectionListener._appContext,
+                            LNConnectionListener._clientConnections,
+                            LNConnectionListener._lock,
+                            LNConnectionListener._xpcListener,
+                            LNExtensionConnectionHandler._appContext,
+                            LNExtensionConnectionHandler._clientConnections,
+                            LNExtensionConnectionHandler._lock,
+                            LNExtensionConnectionHandler._principalObject,
+                            LNPerformActionOperation._action,
+                            LNPerformActionOperation._client,
+                            LNPerformActionOperation._completionHandler,
+                            LNPerformActionOperation._connectionIdentifier,
+                            LNPerformActionOperation._delegate,
+                            LNPerformActionOperation._hasValidConnection,
+                            LNPerformActionOperation._options,
+                            LNPerformActionOperation._progress,
+                            LNPerformActionOperation._result ]
+...

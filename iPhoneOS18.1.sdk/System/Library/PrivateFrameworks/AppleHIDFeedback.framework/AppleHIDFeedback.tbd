@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppleHIDFeedback.framework/AppleHIDFeedback
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ AHFManager, AHFPencilController,
+                            AHFPencilPatternLibrary, AHFTrackpadController ]
+    objc-ivars:           [ AHFManager._pencilController,
+                            AHFManager._trackpadController,
+                            AHFPencilController._availableDigitizerStylus,
+                            AHFPencilController._availableOpaqueTouch,
+                            AHFPencilController._availablePencilHaptics,
+                            AHFPencilController._digitizerStylusClient,
+                            AHFPencilController._opaqueTouchClient,
+                            AHFPencilController._patternsLibrary,
+                            AHFPencilController._pencilHapticsClient,
+                            AHFPencilController._prevTimestampUs,
+                            AHFPencilController._queue,
+                            AHFPencilPatternLibrary._library,
+                            AHFTrackpadController._availableTrackpads,
+                            AHFTrackpadController._prevTimestampUs,
+                            AHFTrackpadController._queue,
+                            AHFTrackpadController._trackpadClient ]
+...

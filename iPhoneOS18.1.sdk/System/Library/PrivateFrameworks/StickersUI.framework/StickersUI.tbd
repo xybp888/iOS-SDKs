@@ -1,0 +1,30 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/StickersUI.framework/StickersUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _STKAddEffectToSticker, _STKAngleFromDelta,
+                            _STKCenterOfRect, _STKDistance, _STKExponentialDecay,
+                            _STKNiceAngleFromDelta, _STKSubtractPoints ]
+    objc-classes:         [ STKMSStickerView,
+                            STKStickerKeyboardRecentCollectionViewController,
+                            STKStickerMetadataUtilities,
+                            _TtC10StickersUI10LiveButton,
+                            _TtC10StickersUI11KeylineView,
+                            _TtC10StickersUI17PoofAnimationView,
+                            _TtC10StickersUI20StickerEffectChooser,
+                            _TtC10StickersUI25StickerEditViewController,
+                            _TtC10StickersUI26StickerCollectionBlankCell,
+                            _TtC10StickersUI28StickerCollectionStickerCell,
+                            _TtC10StickersUI30StickerCollectionAddButtonCell,
+                            _TtC10StickersUI31StickerCollectionMoreButtonCell,
+                            _TtC10StickersUI31StickerCollectionViewController,
+                            _TtC10StickersUI8PuffView ]
+    objc-ivars:           [ STKMSStickerView._delegate,
+                            STKMSStickerView._longPressGestureRecognizer ]
+...

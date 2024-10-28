@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/system/libsystem_symptoms.dylib
+current-version:       1
+compatibility-version: 1
+parent-umbrella:       System
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __symptoms_daemon_fallback_initial_disposition,
+                            __symptoms_daemon_fallback_subseq_disposition,
+                            __symptoms_is_daemon_fallback_blacklisted,
+                            _symptom_framework_init,
+                            _symptom_framework_set_version, _symptom_new,
+                            _symptom_send, _symptom_send_immediate,
+                            _symptom_set_additional_qualifier,
+                            _symptom_set_qualifier ]
+...

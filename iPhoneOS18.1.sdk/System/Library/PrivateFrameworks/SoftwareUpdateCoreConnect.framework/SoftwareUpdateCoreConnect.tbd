@@ -1,0 +1,61 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SoftwareUpdateCoreConnect.framework/SoftwareUpdateCoreConnect
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _kSUCoreConnectClientIDTypeAny,
+                            _kSUCoreConnectMonitorReplyErrorKey,
+                            _kSUCoreConnectMonitorReplyMessageKey ]
+    objc-classes:         [ SUCoreConnectClient, SUCoreConnectClientPolicy,
+                            SUCoreConnectClientProxy, SUCoreConnectConstants,
+                            SUCoreConnectMessage, SUCoreConnectServer,
+                            SUCoreConnectServerPolicy, SUCoreConnectVersion ]
+    objc-ivars:           [ SUCoreConnectClient._clientCompletionQueue,
+                            SUCoreConnectClient._clientConnectionStateAccessQueue,
+                            SUCoreConnectClient._clientDelegateCallbackQueue,
+                            SUCoreConnectClient._clientMessageQueue,
+                            SUCoreConnectClient._clientReplyCompletionQueue,
+                            SUCoreConnectClient._logger,
+                            SUCoreConnectClient._policy,
+                            SUCoreConnectClient._serverConnection,
+                            SUCoreConnectClientPolicy._clientDelegate,
+                            SUCoreConnectClientPolicy._clientID,
+                            SUCoreConnectClientPolicy._clientIDRaw,
+                            SUCoreConnectClientPolicy._clientProcessIdentifier,
+                            SUCoreConnectClientPolicy._proxyObjectClasses,
+                            SUCoreConnectClientPolicy._serviceName,
+                            SUCoreConnectClientPolicy._usesPersistentXPCConnections,
+                            SUCoreConnectClientProxy._clientID,
+                            SUCoreConnectClientProxy._clientIDRaw,
+                            SUCoreConnectClientProxy._clientProcessIdentifier,
+                            SUCoreConnectClientProxy._completionQueue,
+                            SUCoreConnectClientProxy._genericBlock,
+                            SUCoreConnectClientProxy._progressBlock,
+                            SUCoreConnectMessage._allowlistedClasses,
+                            SUCoreConnectMessage._clientConnectionAuditToken,
+                            SUCoreConnectMessage._clientID,
+                            SUCoreConnectMessage._clientIDRaw,
+                            SUCoreConnectMessage._clientProcessIdentifier,
+                            SUCoreConnectMessage._error,
+                            SUCoreConnectMessage._message,
+                            SUCoreConnectMessage._messageName,
+                            SUCoreConnectMessage._messageType,
+                            SUCoreConnectMessage._version,
+                            SUCoreConnectServer._connectionPolicy,
+                            SUCoreConnectServer._connectionSendMessageQueue,
+                            SUCoreConnectServer._connections,
+                            SUCoreConnectServer._connectionsAccessQueue,
+                            SUCoreConnectServer._logger,
+                            SUCoreConnectServer._observerConnections,
+                            SUCoreConnectServerPolicy._connectionQueue,
+                            SUCoreConnectServerPolicy._delegateQueue,
+                            SUCoreConnectServerPolicy._entitlements,
+                            SUCoreConnectServerPolicy._serverDelegate,
+                            SUCoreConnectServerPolicy._serviceName,
+                            SUCoreConnectVersion._selectorString ]
+...

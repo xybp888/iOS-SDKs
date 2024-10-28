@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DropInCore.framework/DropInCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DICVolumeControllerErrorDomain,
+                            _DropInCoreVersionNumber, _DropInCoreVersionString ]
+    objc-classes:         [ DICVolumeController, DIOneshotTimer,
+                            _TtC10DropInCore10IDSManager,
+                            _TtC10DropInCore11HomeManager,
+                            _TtC10DropInCore13DropInManager,
+                            _TtC10DropInCore17AudioPowerManager,
+                            _TtC10DropInCore17CallCenterManager,
+                            _TtC10DropInCore17ConversationTimer,
+                            _TtC10DropInCore23CallCenterManagerClient,
+                            _TtC10DropInCore29DropInServiceListenerDelegate ]
+...

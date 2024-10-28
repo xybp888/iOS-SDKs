@@ -1,0 +1,34 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MetricKitServices.framework/MetricKitServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MetricKitServicesVersionNumber,
+                            _MetricKitServicesVersionString ]
+    objc-classes:         [ MXHangTracerService, MXPowerlogService,
+                            MXReportCrashService, MXService, MXSpinTracerService,
+                            MXUtilities ]
+    objc-ivars:           [ MXHangTracerService._MXHangTracerServiceLogHandle,
+                            MXHangTracerService._hangTracerDataPaths,
+                            MXHangTracerService._requestQueue,
+                            MXHangTracerService._unarchivedHangTracerData,
+                            MXPowerlogService._MXPowerLogServiceLogHandle,
+                            MXPowerlogService._powerlogDataPaths,
+                            MXPowerlogService._requestQueue,
+                            MXPowerlogService._unarchivedPowerlogData,
+                            MXReportCrashService._MXReportCrashServiceLogHandle,
+                            MXReportCrashService._reportCrashDataPaths,
+                            MXReportCrashService._requestQueue,
+                            MXReportCrashService._unarchivedReportCrashData,
+                            MXService._currentClient, MXService._isStarted,
+                            MXService._sourceID,
+                            MXSpinTracerService._MXSpinTracerServiceLogHandle,
+                            MXSpinTracerService._requestQueue,
+                            MXSpinTracerService._spinTracerDataPaths,
+                            MXSpinTracerService._unarchivedSpinTracerData ]
+...

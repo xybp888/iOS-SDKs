@@ -1,0 +1,68 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/UserAlerts.framework/UserAlerts
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _URTAlertCancel, _URTAlertCreate,
+                            _URTAlertCreateRunLoopSource,
+                            _URTAlertReceiveResponse,
+                            _URTDescriptionForAlertDestination,
+                            _URTDescriptionForAlertPresentationStyle,
+                            _URTMachPortNameForAlertDestination,
+                            _kURTAlertAllowedApplicationsKey,
+                            _kURTAlertCarPlayAllowedApplicationsKey,
+                            _kURTAlertCarPlayCancelButtonTitleKey,
+                            _kURTAlertCarPlayDefaultButtonTitleKey,
+                            _kURTAlertCarPlayHeaderKey,
+                            _kURTAlertCarPlayMessageKey,
+                            _kURTAlertShowInPreviewsKey ]
+    objc-classes:         [ URTAlert, URTAlertAction, URTAlertConnection,
+                            URTAlertPresenter, URTAlertService,
+                            URTAlertServiceDelegateProxy,
+                            URTAlertServiceSpecification,
+                            URTDefaultDestinationPresentation,
+                            URTServiceDestinationPresentation,
+                            URTUserNotificationPresentation ]
+    objc-ivars:           [ URTAlert._allowedApplicationBundleIDs,
+                            URTAlert._cancelAction, URTAlert._defaultAction,
+                            URTAlert._identifier, URTAlert._message,
+                            URTAlert._otherAction, URTAlert._title,
+                            URTAlertAction._handler, URTAlertAction._title,
+                            URTAlertConnection._alert,
+                            URTAlertConnection._connection,
+                            URTAlertPresenter._compatibilityCallback,
+                            URTAlertPresenter._compatibilityResponse,
+                            URTAlertPresenter._compatibilityResponseButtonFlag,
+                            URTAlertPresenter._presentationsForDestinations,
+                            URTAlertPresenter._presentationsQueue,
+                            URTAlertPresenter._userNotificationPresentation,
+                            URTAlertService._connectionQueue,
+                            URTAlertService._connections,
+                            URTAlertService._delegate,
+                            URTAlertService._delegateProxy,
+                            URTAlertService._domain,
+                            URTAlertService._domainActivationToken,
+                            URTAlertService._listener,
+                            URTAlertServiceDelegateProxy._service,
+                            URTDefaultDestinationPresentation._alert,
+                            URTDefaultDestinationPresentation._delegate,
+                            URTDefaultDestinationPresentation._destination,
+                            URTDefaultDestinationPresentation._preferredPresentationStyle,
+                            URTDefaultDestinationPresentation._runLoopSource,
+                            URTServiceDestinationPresentation._alert,
+                            URTServiceDestinationPresentation._connection,
+                            URTServiceDestinationPresentation._connectionQueue,
+                            URTServiceDestinationPresentation._delegate,
+                            URTServiceDestinationPresentation._destination,
+                            URTServiceDestinationPresentation._preferredPresentationStyle,
+                            URTServiceDestinationPresentation._remoteTargetQueue,
+                            URTUserNotificationPresentation._contents,
+                            URTUserNotificationPresentation._creationFlags,
+                            URTUserNotificationPresentation._error,
+                            URTUserNotificationPresentation._userNotification ]
+...

@@ -1,0 +1,30 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SessionAssertion.framework/SessionAssertion
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SNAAssertionErrorDomain,
+                            _SessionAssertionVersionNumber,
+                            _SessionAssertionVersionString ]
+    objc-classes:         [ SNAAssertion, SNAAssertionTarget,
+                            SNAPresentationAssertion,
+                            SNAProminentPresentationAssertion,
+                            _TtC16SessionAssertion15AssertionClient,
+                            _TtC16SessionAssertion16AssertionOptions,
+                            _TtC16SessionAssertion21PresentationAssertion,
+                            _TtC16SessionAssertion23SessionRequestAssertion,
+                            _TtC16SessionAssertion29DisableAPIThrottlingAssertion,
+                            _TtC16SessionAssertion30ProminentPresentationAssertion ]
+    objc-ivars:           [ SNAAssertion._invalidationHandler,
+                            SNAAssertion._sessionAssertion,
+                            SNAAssertionTarget._bundleIdentifier,
+                            SNAPresentationAssertion._assertion,
+                            SNAPresentationAssertion._invalidationHandler,
+                            SNAProminentPresentationAssertion._assertion,
+                            SNAProminentPresentationAssertion._invalidationHandler ]
+...

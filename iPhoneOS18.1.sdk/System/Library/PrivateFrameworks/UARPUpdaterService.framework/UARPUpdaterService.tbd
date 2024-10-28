@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/UARPUpdaterService.framework/UARPUpdaterService
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _UARPUpdaterServiceVersionNumber,
+                            _UARPUpdaterServiceVersionString ]
+    objc-classes:         [ UARPServiceUpdaterAccessoryMatchingRule,
+                            UARPServiceUpdaterDASMatchingRule,
+                            UARPServiceUpdaterMatchedEARule,
+                            UARPServiceUpdaterMatchedIOKitRule,
+                            UARPUpdaterServiceBase,
+                            UARPUpdaterServicePreferences ]
+    objc-ivars:           [ UARPServiceUpdaterAccessoryMatchingRule._identifier,
+                            UARPServiceUpdaterAccessoryMatchingRule._matchingDictionary,
+                            UARPServiceUpdaterAccessoryMatchingRule._xpcEventStream,
+                            UARPServiceUpdaterDASMatchingRule._identifier,
+                            UARPServiceUpdaterDASMatchingRule._matchingDictionary,
+                            UARPServiceUpdaterMatchedEARule._accessorySerialNumber,
+                            UARPServiceUpdaterMatchedEARule._eaIdentifier,
+                            UARPServiceUpdaterMatchedIOKitRule._identifier,
+                            UARPServiceUpdaterMatchedIOKitRule._registryEntryID,
+                            UARPUpdaterServicePreferences._domain ]
+...

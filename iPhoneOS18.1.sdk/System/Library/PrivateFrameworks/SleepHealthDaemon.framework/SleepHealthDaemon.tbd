@@ -1,0 +1,59 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SleepHealthDaemon.framework/SleepHealthDaemon
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HDSHSleepApneaRescindedNotificationDateShownKey,
+                            __ProtectedOperationDebugIdentifier ]
+    objc-classes:         [ HDSHAccessibilityAssertionManager,
+                            HDSHBreathingDisturbanceAnalysisAnalyticsEvent,
+                            HDSHBreathingDisturbanceAnalysisScheduler,
+                            HDSHBreathingDisturbanceAnalyzer, HDSHPluginServer,
+                            HDSHProfileExtension, HDSHSleepApneaControlServer,
+                            HDSHSleepApneaNotificationUITriggerObserver,
+                            HDSHSleepApneaRescindedNotificationManager,
+                            HDSHSleepHealthDaemonPlugin,
+                            HDSHWidgetSchedulingManager ]
+    objc-ivars:           [ HDSHAccessibilityAssertionManager._accessibilityAssertion,
+                            HDSHAccessibilityAssertionManager._profile,
+                            HDSHAccessibilityAssertionManager._queue,
+                            HDSHBreathingDisturbanceAnalysisAnalyticsEvent._defaultAnalyticsPayload,
+                            HDSHBreathingDisturbanceAnalysisScheduler._activity,
+                            HDSHBreathingDisturbanceAnalysisScheduler._analysisTimeInterval,
+                            HDSHBreathingDisturbanceAnalysisScheduler._cachedCalendar,
+                            HDSHBreathingDisturbanceAnalysisScheduler._completion,
+                            HDSHBreathingDisturbanceAnalysisScheduler._completionLock,
+                            HDSHBreathingDisturbanceAnalysisScheduler._currentDateProvider,
+                            HDSHBreathingDisturbanceAnalysisScheduler._featureAvailabilityProviding,
+                            HDSHBreathingDisturbanceAnalysisScheduler._featureStatusProvider,
+                            HDSHBreathingDisturbanceAnalysisScheduler._keyValueDomain,
+                            HDSHBreathingDisturbanceAnalysisScheduler._profile,
+                            HDSHBreathingDisturbanceAnalysisScheduler._protectedDataOperation,
+                            HDSHBreathingDisturbanceAnalysisScheduler._queue,
+                            HDSHBreathingDisturbanceAnalysisScheduler._unitTesting_profileDidBecomeReadyBlock,
+                            HDSHBreathingDisturbanceAnalysisScheduler._useTimeIntervalOverride,
+                            HDSHBreathingDisturbanceAnalyzer._analyticsEventSubmissionManager,
+                            HDSHBreathingDisturbanceAnalyzer._profile,
+                            HDSHProfileExtension._accessibilityAssertionManager,
+                            HDSHProfileExtension._breathingDisturbanceAnalysisScheduler,
+                            HDSHProfileExtension._profile,
+                            HDSHProfileExtension._rescindedNotificationManager,
+                            HDSHProfileExtension._sleepApneaNotificationsAvailabilityManager,
+                            HDSHProfileExtension._triggerObserver,
+                            HDSHProfileExtension._widgetSchedulingManager,
+                            HDSHSleepApneaNotificationUITriggerObserver._profile,
+                            HDSHSleepApneaRescindedNotificationManager._featureStatusProvider,
+                            HDSHSleepApneaRescindedNotificationManager._localKeyValueDomain,
+                            HDSHSleepApneaRescindedNotificationManager._profile,
+                            HDSHSleepApneaRescindedNotificationManager._queue,
+                            HDSHSleepApneaRescindedNotificationManager._unitTesting_postNotificationHandler,
+                            HDSHWidgetSchedulingManager._profile,
+                            HDSHWidgetSchedulingManager._queue,
+                            HDSHWidgetSchedulingManager._reloadThrottler,
+                            HDSHWidgetSchedulingManager._sleepStore ]
+...

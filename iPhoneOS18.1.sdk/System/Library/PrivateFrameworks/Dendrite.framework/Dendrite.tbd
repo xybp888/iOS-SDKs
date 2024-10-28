@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Dendrite.framework/Dendrite
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DendriteVersionNumber, _DendriteVersionString ]
+    objc-classes:         [ _TtC8Dendrite14DEStagingEntry,
+                            _TtC8Dendrite21BlockShimForPBCodable ]
+...

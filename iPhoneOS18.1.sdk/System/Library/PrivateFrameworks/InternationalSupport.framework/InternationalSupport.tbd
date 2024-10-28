@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/InternationalSupport.framework/InternationalSupport
+current-version:       74
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ISBackstopLanguage, _ISBackstopLocale,
+                            _ISEnumerateKnownUrduSequencesInString,
+                            _InternationalSupportVersionNumber,
+                            _InternationalSupportVersionString ]
+    objc-classes:         [ ISLanguageCarousel, ISLanguageCarouselItem,
+                            ISRegionDetector, ISUtilities ]
+    objc-ivars:           [ ISLanguageCarousel._cycle, ISLanguageCarousel._items,
+                            ISLanguageCarousel._mergeDuplicates,
+                            ISLanguageCarousel._queue,
+                            ISLanguageCarousel._queueIndex,
+                            ISLanguageCarousel._randomize,
+                            ISLanguageCarousel._rankingUsesGuessedRegion,
+                            ISLanguageCarousel._rankingUsesPreferredLanguages,
+                            ISLanguageCarousel._weightedRepetition,
+                            ISLanguageCarouselItem._data,
+                            ISLanguageCarouselItem._languageIdentifier,
+                            ISRegionDetector._fakeMode,
+                            ISRegionDetector._firstGuessedLanguages,
+                            ISRegionDetector._guessedCountries,
+                            ISRegionDetector._guessedCountryFromTelephony,
+                            ISRegionDetector._numberOfWiFiScanAttemptsRemaining,
+                            ISRegionDetector._validCountries,
+                            ISRegionDetector._wirelessScanStartDate,
+                            ISRegionDetector.fWifiDevice,
+                            ISRegionDetector.fWifiManager ]
+...

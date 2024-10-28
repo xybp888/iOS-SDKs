@@ -1,0 +1,71 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Notes.framework/Notes
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ICHTMLIndexerDataSourceIdentifier,
+                            _LegacyDeviceLocalAccountID,
+                            _NoteContextChangedElsewhereNotification,
+                            _NoteContextDeletedNotesNotification,
+                            _NoteContextDidSetUpCoreDataStackNotification,
+                            _NoteContextDidUnlockObjectCreationNotification,
+                            _NoteContextIndexPath,
+                            _NoteContextManagedObjectModelPath,
+                            _NoteContextPersistentStorePath,
+                            _NoteContextRootDirectoryPath,
+                            _NoteContextUpdatedIndexNotification,
+                            _NoteContextWillLockObjectCreationNotification,
+                            _NoteContextWillSaveNotification,
+                            _NoteContextWillSetUpCoreDataStackNotification,
+                            _NoteObjectItemProviderUTI,
+                            _NoteObjectMaximumImapSyncableSize,
+                            _NoteObjectTitleMaximumLength,
+                            _NotesAccountUtilitiesDidUpdateAccounts,
+                            _NotesVersionNumber, _NotesVersionString,
+                            _kLocalAccountIdentifier, _kLocalStoreIdentifier,
+                            _kNoteCollectionPrimaryIdentifierKey,
+                            _kNoteCollectionSecondaryIdentifierKey,
+                            _kNoteCollectionTypeAccount, _kNoteCollectionTypeKey,
+                            _kNoteCollectionTypeStore ]
+    objc-classes:         [ AccountUtilities,
+                            ExternalSequenceNumberToAttachmentNoteBodyToAttachmentMigrationPolicy,
+                            ICHTMLSearchIndexerDataSource,
+                            ICMutableSetOfNumbersSecureUnarchiveFromDataTransformer,
+                            ICMutableSetOfStringsSecureUnarchiveFromDataTransformer,
+                            ICNSStringOrNumberSecureUnarchiveFromDataTransformer,
+                            MNFNoteProperty, NoteAccountObject,
+                            NoteAttachmentObject, NoteBodyObject, NoteChangeObject,
+                            NoteCollectionObject, NoteContext, NoteObject,
+                            NoteResurrectionMergePolicy, NoteStoreObject,
+                            NotesMigrationManager, NotesMigrationMapping ]
+    objc-ivars:           [ AccountUtilities._accountIDsEnabledForNotes,
+                            AccountUtilities._accountStore,
+                            AccountUtilities._backgroundDispatchGroup,
+                            AccountUtilities._noteContext,
+                            AccountUtilities._updateAccountInfosLock,
+                            NoteAccountObject._constraints,
+                            NoteAccountObject._preventMovingNotesToOtherAccounts,
+                            NoteContext._accountUtilities,
+                            NoteContext._externalChangeNotificationDelayer,
+                            NoteContext._hasPriorityInSaveConflicts,
+                            NoteContext._inMigrator, NoteContext._indexInBatches,
+                            NoteContext._isMainContext,
+                            NoteContext._localAccount, NoteContext._localStore,
+                            NoteContext._logChanges,
+                            NoteContext._managedObjectContext,
+                            NoteContext._mocUpdater, NoteContext._nextId,
+                            NoteContext._nextIdContext, NoteContext._nextIdLock,
+                            NoteContext._notePropertyObjectsRealized,
+                            NoteContext._notificationCount,
+                            NoteContext._objectCreationLock,
+                            NoteContext._usePrivateQueue,
+                            NotesMigrationMapping._descriptionString,
+                            NotesMigrationMapping._destinationModel,
+                            NotesMigrationMapping._sourceModels,
+                            NotesMigrationMapping._type ]
+...

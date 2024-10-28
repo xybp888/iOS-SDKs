@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BusinessServices.framework/BusinessServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BSBrandURIIsAppleMain, _BSBrandURIIsAppleMako,
+                            _BusinessServicesBrandManagerErrorDomain ]
+    objc-classes:         [ BSBrand, BSBrandManager, BSBrandManagerObjcShim,
+                            BSBrandMessagingDetails,
+                            BSBrandMessagingDetailsObjcShim, BSBrandObjcShim,
+                            BSOpaqueWrapper,
+                            IMBrandChatBotBrandDataSourceObjcShim,
+                            IMSharedUtilitiesSoftLinkingWrapper,
+                            _BSOpaqueWrapper,
+                            _TtC16BusinessServices19XPCDaemonConnection,
+                            _TtC16BusinessServices21FrameworkBundleAnchor ]
+    objc-ivars:           [ BSBrand._messagingDetails, BSBrand._sandboxExtension,
+                            BSBrand._shim, BSBrandManager._shim,
+                            BSBrandMessagingDetails._shim,
+                            BSOpaqueWrapper._opaqueWrapper ]
+...

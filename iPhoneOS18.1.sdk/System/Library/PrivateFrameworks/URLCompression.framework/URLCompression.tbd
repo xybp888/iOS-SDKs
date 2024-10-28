@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/URLCompression.framework/URLCompression
+current-version:       1001.3
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _UCURLCoderErrorDomain, _UCURLCoderErrorSymbolKey,
+                            _UCURLCoderUnsupportedURLComponentTypeKey ]
+    objc-classes:         [ UCAppClipCodeEnDecUtility, UCAppClipCodeURLDecoder,
+                            UCAppClipCodeURLEncoder,
+                            UCAppClipCodeURLEncodingResult, UCResourceFilePath ]
+    objc-ivars:           [ UCAppClipCodeURLDecoder._codingVersion,
+                            UCAppClipCodeURLDecoder._compressionVersion,
+                            UCAppClipCodeURLDecoder._prefixedDecoder,
+                            UCAppClipCodeURLDecoder._segmentedDecoder,
+                            UCAppClipCodeURLEncoder._codingVersion,
+                            UCAppClipCodeURLEncoder._compressionVersion,
+                            UCAppClipCodeURLEncoder._prefixedURLEncoder,
+                            UCAppClipCodeURLEncoder._segmentedEncoder,
+                            UCAppClipCodeURLEncodingResult._appClipCodeBytes,
+                            UCAppClipCodeURLEncodingResult._hasPathOrQueryEncoding,
+                            UCAppClipCodeURLEncodingResult._hostEncodedBitCount,
+                            UCAppClipCodeURLEncodingResult._hostEncodingFormat,
+                            UCAppClipCodeURLEncodingResult._nonTemplatePathAndQueryEncodeType,
+                            UCAppClipCodeURLEncodingResult._rawEncodedBits,
+                            UCAppClipCodeURLEncodingResult._subdomainType,
+                            UCAppClipCodeURLEncodingResult._templateType,
+                            UCAppClipCodeURLEncodingResult._url ]
+...

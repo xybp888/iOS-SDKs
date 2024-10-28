@@ -1,0 +1,16 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/AudioToolbox.framework/libVibeSynthEngine.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _VibeSynthEngineCancelWithOptions,
+                            _VibeSynthEngineHasHardwareSupport,
+                            _VibeSynthEngineInitialize, _VibeSynthEnginePlay,
+                            _VibeSynthEngineStartPrewarm,
+                            _VibeSynthEngineStopPrewarm ]
+...

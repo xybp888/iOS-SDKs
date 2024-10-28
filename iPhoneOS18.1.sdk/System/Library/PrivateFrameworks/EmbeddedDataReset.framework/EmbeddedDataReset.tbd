@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/EmbeddedDataReset.framework/EmbeddedDataReset
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ DDRResetOptions, DDRResetRequest, DDRResetService ]
+    objc-ivars:           [ DDRResetOptions._disallowProximitySetup,
+                            DDRResetOptions._eraseDataPlan,
+                            DDRResetOptions._exclusionPaths,
+                            DDRResetOptions._hideProgress, DDRResetRequest._mode,
+                            DDRResetRequest._options, DDRResetRequest._reason,
+                            DDRResetService._currentResetState,
+                            DDRResetService._dataResetXPCConnection,
+                            DDRResetService._invalidated, DDRResetService._lock,
+                            DDRResetService._mode, DDRResetService._obervers,
+                            DDRResetService._observerNonLaunchingXPCConnection,
+                            DDRResetService._observerQueue ]
+...

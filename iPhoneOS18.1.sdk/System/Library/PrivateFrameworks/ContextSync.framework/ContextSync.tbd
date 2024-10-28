@@ -1,0 +1,68 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ContextSync.framework/ContextSync
+current-version:       153.10
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ContextSyncErrorDomain,
+                            _GetMessageIntentFromDistributedContextClientIdentifier,
+                            _kBMIdentifierKey, _kBMMessageType, _kBMMessageVersion,
+                            _kBMNewContextType, _kBMStreamIdentifierKey,
+                            _kBMSubscriptionType, _kBMVersionKey ]
+    objc-classes:         [ BMDistributedContextContextChangedMessage,
+                            BMDistributedContextEventTranslation,
+                            BMDistributedContextService,
+                            BMDistributedContextStreamWriter,
+                            BMDistributedContextSubscribeMessage,
+                            BMDistributedContextSubscription,
+                            BMDistributedContextSubscriptionConfiguration,
+                            BMDistributedContextSubscriptionManager,
+                            BMDistributedContextTranslatedEventMessage,
+                            BMDistributedContextUserDefaultStorage,
+                            BMDistributedContextUtilities, ContextSyncClient ]
+    objc-ivars:           [ BMDistributedContextContextChangedMessage._messageIntent,
+                            BMDistributedContextContextChangedMessage._messageVersion,
+                            BMDistributedContextContextChangedMessage._protocolVersion,
+                            BMDistributedContextContextChangedMessage._subscriptionIdentifier,
+                            BMDistributedContextContextChangedMessage._translatedEvent,
+                            BMDistributedContextEventTranslation._localDeviceIdentifier,
+                            BMDistributedContextService._biomeQueue,
+                            BMDistributedContextService._deviceUUID,
+                            BMDistributedContextService._eventTranslator,
+                            BMDistributedContextService._idsQueue,
+                            BMDistributedContextService._internetService,
+                            BMDistributedContextService._listener,
+                            BMDistributedContextService._localService,
+                            BMDistributedContextService._lockedUpdates,
+                            BMDistributedContextService._queue,
+                            BMDistributedContextService._rebootNotificationDelivered,
+                            BMDistributedContextService._subscriptionDefaults,
+                            BMDistributedContextService._subscriptionManager,
+                            BMDistributedContextService._subscriptionSinks,
+                            BMDistributedContextService._subscriptionStorage,
+                            BMDistributedContextSubscribeMessage._localDevice,
+                            BMDistributedContextSubscribeMessage._messageIntent,
+                            BMDistributedContextSubscribeMessage._messageVersion,
+                            BMDistributedContextSubscribeMessage._shouldWake,
+                            BMDistributedContextSubscribeMessage._subscriptions,
+                            BMDistributedContextSubscription._configuration,
+                            BMDistributedContextSubscription._dsl,
+                            BMDistributedContextSubscription._identifier,
+                            BMDistributedContextSubscription._subscribedDevice,
+                            BMDistributedContextSubscription._subscribingDevice,
+                            BMDistributedContextSubscriptionConfiguration._lastChangedDate,
+                            BMDistributedContextSubscriptionConfiguration._oneOffSubscription,
+                            BMDistributedContextSubscriptionConfiguration._wakeState,
+                            BMDistributedContextSubscriptionManager._storage,
+                            BMDistributedContextSubscriptionManager._subscriptions,
+                            BMDistributedContextTranslatedEventMessage._eventData,
+                            BMDistributedContextTranslatedEventMessage._eventDataVersion,
+                            BMDistributedContextTranslatedEventMessage._streamIdentifier,
+                            BMDistributedContextUserDefaultStorage._storage,
+                            ContextSyncClient._clientName,
+                            ContextSyncClient._connection ]
+...

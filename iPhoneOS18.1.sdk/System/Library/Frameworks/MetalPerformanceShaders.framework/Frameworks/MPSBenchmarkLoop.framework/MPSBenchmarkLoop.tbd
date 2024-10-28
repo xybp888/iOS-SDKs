@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSBenchmarkLoop.framework/MPSBenchmarkLoop
+current-version:       128.1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Z10archStringv, __Z11uarchStringv,
+                            __Z12kpc_get_timev,
+                            __Z13kpc_time_diffPK13kpc_timestampS1_,
+                            __Z14kpc_cycle_diffPK13kpc_timestampS1_,
+                            __Z14kpc_get_cyclesv, __Z15kpc_cycles_initv,
+                            __Z16initCounterStatsP14counterStats_t,
+                            __Z17kpc_estimate_freqv, __Z17peakFlopsPerCyclev,
+                            __Z7kpc_nowP13kpc_timestamp ]
+    objc-classes:         [ CPUStatistics, GeneralStatistics, MPSBenchmarkLoop,
+                            MPSBenchmarkLoopStatistics, MPSCounterData,
+                            MPSCounterStatistics, MPSCounters ]
+...

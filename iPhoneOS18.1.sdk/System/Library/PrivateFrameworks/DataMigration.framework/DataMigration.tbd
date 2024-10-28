@@ -1,0 +1,65 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DataMigration.framework/DataMigration
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DMCancelDeferredExit,
+                            _DMChangeGraphicalProgressVisibility,
+                            _DMCopyCurrentBuildVersion,
+                            _DMCopyMigrationPhaseDescription,
+                            _DMCopyOrderedPluginIndentifiers,
+                            _DMCopyUserDataDispositionAuxiliaryData,
+                            _DMDeferExit, _DMForceMigrationOnNextReboot,
+                            _DMForceMigrationOnNextRebootWithUserDataDisposition,
+                            _DMGetMigrationPluginResults,
+                            _DMGetPreviousBuildVersion,
+                            _DMGetUserDataDisposition, _DMIsMigrationNeeded,
+                            _DMPerformMigration, _DMPerformMigrationIfNeeded,
+                            _DMPerformMigrationReturningAfterPlugin,
+                            _DMProgressHostIsReady, _DMReportMigrationFailure,
+                            _DMSetContext, _DMTestMigrationUI,
+                            _DMTestPerformMigrationInfrastructure,
+                            _DMUserDataDispositionAuxiliaryDataRestoredBackupBuildVersion,
+                            _DMUserDataDispositionAuxiliaryDataRestoredBackupDeviceName,
+                            _DMUserDataDispositionAuxiliaryDataRestoredBackupProductType,
+                            __DMCoreLog, __DMLog, __DMLogFunc, __DMPerformMigration,
+                            __DMPluginSignpostLog,
+                            _kDMMigrationDeferredExitEntitlement ]
+    objc-classes:         [ DMClientAPIController, DMConnection, DMEnvironment,
+                            DMMigrationDeferredExitManager,
+                            DMMigrationPluginWrapperConnection,
+                            DMPluginFileSystemRep, DMPluginParameters, DMTimer,
+                            DMUserDataDispositionManager, DMXPCConnection,
+                            DataClassMigrator ]
+    objc-ivars:           [ DMClientAPIController._connectionMigrationMaximumAttempts,
+                            DMClientAPIController._connectionMigrationTimeIntervalToLastRetryDate,
+                            DMConnection._connection,
+                            DMEnvironment._testMigrationInfrastructureOnly,
+                            DMMigrationPluginWrapperConnection._connection,
+                            DMMigrationPluginWrapperConnection._didReceivePid,
+                            DMPluginFileSystemRep._bundle,
+                            DMPluginFileSystemRep._bundleIdentifier,
+                            DMPluginFileSystemRep._name,
+                            DMPluginFileSystemRep._path,
+                            DMPluginParameters._backupDeviceUUID,
+                            DMPluginParameters._dispositionSupersetOfContext,
+                            DMTimer._fireBlock, DMTimer._secondsBeforeFirstFire,
+                            DMTimer._secondsOfLeeway, DMTimer._timer,
+                            DMXPCConnection._connection,
+                            DMXPCConnection._interruptionHandler,
+                            DMXPCConnection._invalidationHandler,
+                            DMXPCConnection._messageHandler,
+                            DMXPCConnection._queue, DMXPCConnection._replyQueue,
+                            DataClassMigrator._context,
+                            DataClassMigrator._didUpgrade,
+                            DataClassMigrator._dmBundleIdentifier,
+                            DataClassMigrator._restoredBackupBuildVersion,
+                            DataClassMigrator._restoredBackupDeviceName,
+                            DataClassMigrator._restoredBackupProductType,
+                            DataClassMigrator._userDataDisposition ]
+...

@@ -1,0 +1,18 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/librealtime_safety.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ ___realtime_assert_rtn,
+                            _realtime_runtime_check_crash,
+                            _realtime_runtime_check_pop_authorization,
+                            _realtime_runtime_check_push_authorization,
+                            _realtime_runtime_check_register_checker,
+                            _realtime_runtime_check_start,
+                            _realtime_runtime_check_stop,
+                            _realtime_runtime_checker_get_current_thread_storage ]
+...

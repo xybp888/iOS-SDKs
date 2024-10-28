@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Mercury.framework/Mercury
+current-version:       54
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MercuryVersionNumber, _MercuryVersionString,
+                            _XPCErrorConnectionInterrupted,
+                            _XPCErrorConnectionInvalid,
+                            _XPCErrorGetPeerCodeSigningRequirement,
+                            _XPCErrorKeyDescription,
+                            _XPCErrorTerminationImminent, _XPCEventKeyName,
+                            _XPCFileTransfer_open, _XPCTypeActivity, _XPCTypeArray,
+                            _XPCTypeBool, _XPCTypeBundle, _XPCTypeConnection,
+                            _XPCTypeData, _XPCTypeDate, _XPCTypeDictionary,
+                            _XPCTypeDouble, _XPCTypeEndpoint, _XPCTypeError,
+                            _XPCTypeFD, _XPCTypeFileTransfer,
+                            _XPCTypeGetMachSendOnce, _XPCTypeInt64,
+                            _XPCTypeMachRecv, _XPCTypeMachSend, _XPCTypeNull,
+                            _XPCTypePipe, _XPCTypePointer,
+                            _XPCTypeRemoteConnection, _XPCTypeSerializer,
+                            _XPCTypeService, _XPCTypeServiceInstance,
+                            _XPCTypeShmem, _XPCTypeString, _XPCTypeUInt64,
+                            _XPCTypeUUID, _XPCaudit_token_to_asid,
+                            _XPCaudit_token_to_auid, _XPCaudit_token_to_egid,
+                            _XPCaudit_token_to_euid, _XPCaudit_token_to_pid,
+                            _XPCaudit_token_to_pidversion,
+                            _XPCaudit_token_to_rgid, _XPCaudit_token_to_ruid,
+                            _connect_loopback_sync, _detach_loopback ]
+    objc-classes:         [ RemoteXPCPair, RemoteXPCShim ]
+    objc-ivars:           [ RemoteXPCPair._client, RemoteXPCPair._server ]
+...

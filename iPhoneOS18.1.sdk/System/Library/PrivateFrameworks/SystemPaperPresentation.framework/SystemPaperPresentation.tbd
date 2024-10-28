@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SystemPaperPresentation.framework/SystemPaperPresentation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ICEnableSystemPaperExtensionKey,
+                            _ICSystemPaperExtensionBundleIdentifier,
+                            _ICSystemPaperExtensionPointIdentifier,
+                            _SystemPaperPresentationVersionNumber,
+                            _SystemPaperPresentationVersionString ]
+    objc-classes:         [ ICSystemPaperDismissAction,
+                            ICSystemPaperExtensionHostViewController,
+                            ICSystemPaperPresenter,
+                            ICSystemPaperSceneViewController ]
+    objc-ivars:           [ ICSystemPaperExtensionHostViewController._connection,
+                            ICSystemPaperExtensionHostViewController._didFinish,
+                            ICSystemPaperExtensionHostViewController._presentationDelegate,
+                            ICSystemPaperExtensionHostViewController._startHostingBlock,
+                            ICSystemPaperExtensionHostViewController._userActivityData,
+                            ICSystemPaperSceneViewController._active,
+                            ICSystemPaperSceneViewController._invalidated,
+                            ICSystemPaperSceneViewController._scene,
+                            ICSystemPaperSceneViewController._sceneContainerView,
+                            ICSystemPaperSceneViewController._scenePresenter,
+                            ICSystemPaperSceneViewController._uiParentScene,
+                            ICSystemPaperSceneViewController._userActivityData,
+                            ICSystemPaperSceneViewController._visible ]
+...

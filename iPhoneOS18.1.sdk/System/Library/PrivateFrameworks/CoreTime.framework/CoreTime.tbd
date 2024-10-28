@@ -1,0 +1,40 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreTime.framework/CoreTime
+current-version:       332.0.4
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _TMBBTimeActiveNotification, _TMConfirmTimeZone,
+                            _TMConvertTicksToSeconds, _TMCopyComputedTimeZone,
+                            _TMFetchNTP, _TMGetBAFinderTime,
+                            _TMGetKernelMonotonicClock, _TMGetRTCResetCount,
+                            _TMGetReferenceTime, _TMGetTrustedInterval,
+                            _TMIsAutomaticTimeEnabled,
+                            _TMIsAutomaticTimeZoneEnabled, _TMIsBBTimeActive,
+                            _TMIsTimeZoneConfirmed,
+                            _TMLocationTimeZoneActiveNotification,
+                            _TMProvideBBTime, _TMProvideCellularTimeZone,
+                            _TMRTCResetNotification, _TMResetToFirstLaunch,
+                            _TMSetAuthenticatedSourceTime,
+                            _TMSetAutomaticTimeEnabled,
+                            _TMSetAutomaticTimeZoneEnabled, _TMSetManualTime,
+                            _TMSetSourceAvailable, _TMSetSourceTime,
+                            _TMSetSourceTimeZone, _TMSetSourceUnavailable,
+                            _TMSetTestSourceTime, _TMSetupTime, _TMSetupTimeZone,
+                            _TMSourceAPNS, _TMSourceAccessory, _TMSourceAirPlay,
+                            _TMSourceCdma, _TMSourceGps, _TMSourceHarvestServer,
+                            _TMSourceLocation, _TMSourceLocationServer,
+                            _TMSourceMobileLockdown, _TMSourceNitz, _TMSourceNtp,
+                            _TMSourceNtpLowConfidence, _TMSourceNtpPacket,
+                            _TMSourceProxBuddy, _TMSourceiTunesServer,
+                            _TMTimeZoneConfirmedNotification ]
+    objc-classes:         [ TMTime, TMTimeZone ]
+    objc-ivars:           [ TMTime._reliability, TMTime._rtc_ns, TMTime._sf,
+                            TMTime._sfUnc, TMTime._source, TMTime._synthesized,
+                            TMTime._utcUnc_s, TMTime._utc_ns,
+                            TMTimeZone._olsonName, TMTimeZone._source ]
+...

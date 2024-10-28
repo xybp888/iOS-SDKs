@@ -1,0 +1,51 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IdleTimerServices.framework/IdleTimerServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ITIdleTimerServicesConfigurationErrorDomain,
+                            _ITIdleTimerServicesErrorConfigurationDescriptionKey,
+                            _ITIdleTimerServicesErrorReasonKey,
+                            _ITIdleTimerStateServiceDomain,
+                            _ITIdleTimerStateServiceMachName,
+                            _ITIdleTimerStateServiceName, _ITLogIdleTimer,
+                            _ITLoggingSubsystem, _IdleTimerServicesVersionNumber,
+                            _IdleTimerServicesVersionString ]
+    objc-classes:         [ ITIdleTimerAssertion, ITIdleTimerConfiguration,
+                            ITIdleTimerServiceProvider, ITIdleTimerState,
+                            ITIdleTimerStateClient, ITIdleTimerStateModel,
+                            ITIdleTimerStateServer, ITIdleTimerStateService ]
+    objc-ivars:           [ ITIdleTimerAssertion._configuration,
+                            ITIdleTimerConfiguration._disablesTimer,
+                            ITIdleTimerConfiguration._identifier,
+                            ITIdleTimerConfiguration._idleEventHandlerBlock,
+                            ITIdleTimerConfiguration._idleEventMask,
+                            ITIdleTimerState._accessLock,
+                            ITIdleTimerState._model,
+                            ITIdleTimerState._requestHandler,
+                            ITIdleTimerStateClient._accessLock,
+                            ITIdleTimerStateClient._access_serviceAvailability,
+                            ITIdleTimerStateClient._connection,
+                            ITIdleTimerStateClient._delegate,
+                            ITIdleTimerStateModel._accessLock,
+                            ITIdleTimerStateModel._access_idleTimerAssertionsByConfigIdentifier,
+                            ITIdleTimerStateModel._requestHandler,
+                            ITIdleTimerStateModel._stateCaptureAssertion,
+                            ITIdleTimerStateServer._accessLock,
+                            ITIdleTimerStateServer._calloutQueue,
+                            ITIdleTimerStateServer._clientTargetsByConfigIdentifier,
+                            ITIdleTimerStateServer._connectionListener,
+                            ITIdleTimerStateServer._connections,
+                            ITIdleTimerStateServer._delegate,
+                            ITIdleTimerStateService._assertionReasonsByClientID,
+                            ITIdleTimerStateService._assertionsByReason,
+                            ITIdleTimerStateService._calloutDispatchQueue,
+                            ITIdleTimerStateService._delegate,
+                            ITIdleTimerStateService._server,
+                            ITIdleTimerStateService._stateCaptureAssertion ]
+...

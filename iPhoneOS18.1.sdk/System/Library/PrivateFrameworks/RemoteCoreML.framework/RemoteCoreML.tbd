@@ -1,0 +1,50 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RemoteCoreML.framework/RemoteCoreML
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _RemoteCoreMLVersionNumber,
+                            _RemoteCoreMLVersionString, _g_inbound_connection,
+                            _kMLAckFailNetworkHeaderEncoding,
+                            _kMLAckSuccessNetworkHeaderEncoding,
+                            _kMLCustomNetworkHeaderEncoding,
+                            _kMLErrorNetworkHeaderEncoding,
+                            _kMLIncomingDataNetworkHeaderEncoding,
+                            _kMLLoadNetworkHeaderEncoding, _kMLNetworkFamilyKey,
+                            _kMLNetworkLocalAddrKey, _kMLNetworkLocalPortKey,
+                            _kMLNetworkNameIdentifierKey,
+                            _kMLNetworkPortNumberKey, _kMLNetworkPskKey,
+                            _kMLNetworkUseAWDLKey, _kMLNetworkUseBonjourKey,
+                            _kMLNetworkUseTLSKey, _kMLNetworkUseUDPKey,
+                            _kMLPredictNetworkHeaderEncoding,
+                            _kMLTextNetworkHeaderEncoding,
+                            _kMLUnLoadNetworkHeaderEncoding ]
+    objc-classes:         [ _MLLog, _MLNetworkHeaderEncoding, _MLNetworkOptions,
+                            _MLNetworkPacket, _MLNetworkUtilities, _MLNetworking,
+                            _MLRemoteConnection, _MLRemoteCoreMLErrors, _MLServer ]
+    objc-ivars:           [ _MLNetworkOptions._networkOptions,
+                            _MLNetworkOptions._receiveTimeout,
+                            _MLNetworkPacket._buffer, _MLNetworkPacket._command,
+                            _MLNetworkPacket._doubleBuffer,
+                            _MLNetworkPacket._sizeOfPacket,
+                            _MLNetworking._connection, _MLNetworking._isClient,
+                            _MLNetworking._listener, _MLNetworking._logType,
+                            _MLNetworking._nwOptions, _MLNetworking._parameters,
+                            _MLNetworking._protocol_stack, _MLNetworking._q,
+                            _MLRemoteConnection._connection,
+                            _MLRemoteConnection._jobCount,
+                            _MLRemoteConnection._nwObj,
+                            _MLRemoteConnection._nwOptions,
+                            _MLRemoteConnection._outputResult,
+                            _MLRemoteConnection._packet, _MLRemoteConnection._q,
+                            _MLRemoteConnection._semaphore,
+                            _MLServer._loadFunction, _MLServer._nwObj,
+                            _MLServer._nwOptions, _MLServer._packet,
+                            _MLServer._predictFunction, _MLServer._q,
+                            _MLServer._textFunction, _MLServer._unLoadFunction ]
+...

@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DSRemotePairing.framework/DSRemotePairing
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DSRemotePairingVersionNumber,
+                            _DSRemotePairingVersionString ]
+    objc-classes:         [ DSPairedComputer, DSRemotePairingStore,
+                            DSRemotePairingWrapper,
+                            _TtC15DSRemotePairing15DSRemotePairing ]
+    objc-ivars:           [ DSPairedComputer._datePaired,
+                            DSPairedComputer._deviceName,
+                            DSPairedComputer._lockdownFrameworkIdentifier,
+                            DSPairedComputer._lockdownFrameworkKey,
+                            DSPairedComputer._marketingName,
+                            DSPairedComputer._remotePairingFrameworkIdentifier,
+                            DSPairedComputer._serialNumber,
+                            DSRemotePairingStore._remotePairingSwift,
+                            DSRemotePairingStore._workQueue,
+                            DSRemotePairingWrapper._remotePairing ]
+...

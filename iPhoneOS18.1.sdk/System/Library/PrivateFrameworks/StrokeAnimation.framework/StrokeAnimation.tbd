@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/StrokeAnimation.framework/StrokeAnimation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _StrokeAnimationVersionNumber,
+                            _StrokeAnimationVersionString ]
+    objc-classes:         [ SAStrokeData, SAStrokeDataInternal,
+                            SAStrokeViewProvider,
+                            _TtC15StrokeAnimation10StrokeView,
+                            _TtC15StrokeAnimation18StrokeContourLayer,
+                            _TtC15StrokeAnimation20StrokeAnimatingLayer ]
+    objc-ivars:           [ SAStrokeData._underlyingObject,
+                            SAStrokeViewProvider._strokeView ]
+...

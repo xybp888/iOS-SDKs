@@ -1,0 +1,38 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/EditScript.framework/EditScript
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _EditScriptVersionNumber, _EditScriptVersionString,
+                            _TestEditScript, _TestEditScriptDataArray,
+                            _TestEditScriptIndexed, _TestEditScriptRanged,
+                            _TestEditScriptSmallestSingleEditRanged,
+                            _TestSmallestEditThinkLikeAHuman, _main ]
+    objc-classes:         [ ESAtomIndexed, ESAtomRanged, ESEditScript,
+                            ESEditScriptDataArray, ESEditScriptIndexed,
+                            ESEditScriptRanged, ESIntArray2D ]
+    objc-ivars:           [ ESAtomIndexed._editOperation,
+                            ESAtomIndexed._indexInArrayB,
+                            ESAtomIndexed._indexToEdit,
+                            ESAtomIndexed._replacementText,
+                            ESAtomRanged._editRange,
+                            ESAtomRanged._replacementText,
+                            ESEditScript._currentOperation,
+                            ESEditScript._distanceMatrix,
+                            ESEditScript._itemAData, ESEditScript._itemBData,
+                            ESEditScript._operationPrecedenceArray,
+                            ESEditScript._orderAtomsAscending,
+                            ESEditScript._script,
+                            ESEditScriptDataArray._cachedStringValue,
+                            ESEditScriptDataArray._data,
+                            ESEditScriptIndexed._currentScriptAtom,
+                            ESEditScriptRanged._currentScriptAtom,
+                            ESEditScriptRanged._options, ESIntArray2D._arrayData,
+                            ESIntArray2D._iSize, ESIntArray2D._jSize,
+                            ESIntArray2D._shouldBoundsCheck ]
+...

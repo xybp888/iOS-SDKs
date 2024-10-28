@@ -1,0 +1,35 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AudioAnalytics.framework/AudioAnalytics
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AudioAnalyticsCopyConfiguration,
+                            _AudioAnalyticsCreateReporter,
+                            _AudioAnalyticsCreateReporterFromSessionID,
+                            _AudioAnalyticsCreateSharedClient,
+                            _AudioAnalyticsCreateSharedClientWithEndpoint,
+                            _AudioAnalyticsDestroyReporter,
+                            _AudioAnalyticsGetAudioServiceType,
+                            _AudioAnalyticsRequestMessage,
+                            _AudioAnalyticsSendMessage,
+                            _AudioAnalyticsSendSessionlessMessage,
+                            _AudioAnalyticsSetAudioServiceType,
+                            _AudioAnalyticsSetConfiguration,
+                            _AudioAnalyticsStartReporter,
+                            _AudioAnalyticsStopReporter,
+                            _kAAPCMetricDirtyMemPeakDeltaID,
+                            _kAAPCMetricDirtyMemRecentPeakID ]
+    objc-classes:         [ AudioAnalyticsReporter, AudioAnalyticsTrace,
+                            AudioAnalyticsTraceArgs,
+                            _TtC14AudioAnalytics12ServerClient,
+                            _TtC14AudioAnalytics26AudioAnalyticsTestReporter ]
+    objc-ivars:           [ AudioAnalyticsTraceArgs._arg1,
+                            AudioAnalyticsTraceArgs._arg2,
+                            AudioAnalyticsTraceArgs._arg3,
+                            AudioAnalyticsTraceArgs._arg4 ]
+...

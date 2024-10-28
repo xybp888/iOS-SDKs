@@ -1,0 +1,49 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/LocalAuthentication.framework/Support/ModuleBase.framework/ModuleBase
+current-version:       1656.40.25
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AuthenticationPriorityForPolicy ]
+    objc-classes:         [ AuthenticationInProgress, AuthenticationManager,
+                            ContextPlugin, MechanismManager, Module, RemoteContext ]
+    objc-ivars:           [ AuthenticationInProgress._clientInfo,
+                            AuthenticationInProgress._enqueuedAuthentication,
+                            AuthenticationInProgress._internalOptions,
+                            AuthenticationInProgress._mechanism,
+                            AuthenticationInProgress._options,
+                            AuthenticationInProgress._originatorId,
+                            AuthenticationInProgress._originatorPid,
+                            AuthenticationInProgress._originatorUid,
+                            AuthenticationInProgress._policy,
+                            AuthenticationInProgress._preflightCacheBypassAssertion,
+                            AuthenticationInProgress._reply,
+                            AuthenticationInProgress._request,
+                            AuthenticationInProgress._running,
+                            AuthenticationInProgress._started,
+                            AuthenticationInProgress._uiDelegate,
+                            AuthenticationManager._completionHandler,
+                            AuthenticationManager._idleBlocks,
+                            AuthenticationManager._pendingAuthentication,
+                            AuthenticationManager._runningAuthentication,
+                            ContextPlugin._cachedExternalizedContext,
+                            ContextPlugin._contextOwner,
+                            ContextPlugin._creationTime,
+                            ContextPlugin._instanceId,
+                            ContextPlugin._internalOperationOptions,
+                            ContextPlugin._module, ContextPlugin._resultInfo,
+                            ContextPlugin._underlyingPtr,
+                            MechanismManager._evaluatedPolicy,
+                            MechanismManager._mechanismContext,
+                            MechanismManager._plugins,
+                            MechanismManager._serverQueue,
+                            Module._mechanismManager, Module._type,
+                            RemoteContext._acmExternalizedFormHash,
+                            RemoteContext._description,
+                            RemoteContext._originalOwnership,
+                            RemoteContext._ownership, RemoteContext._uuid ]
+...

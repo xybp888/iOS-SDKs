@@ -1,0 +1,44 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/Cinematic.framework/Cinematic
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CNCinematicErrorDomain, _CinematicVersionNumber,
+                            __CNCinematicError ]
+    objc-classes:         [ CNAssetInfo, CNBoundsPrediction, CNCompositionInfo,
+                            CNCustomDetectionTrack, CNDecision, CNDetection,
+                            CNDetectionTrack, CNFixedDetectionTrack,
+                            CNObjectTracker, CNRenderingSession,
+                            CNRenderingSessionAttributes,
+                            CNRenderingSessionFrameAttributes, CNScript,
+                            CNScriptChanges, CNScriptFrame ]
+    objc-ivars:           [ CNAssetInfo._cinematicDisparityTrack,
+                            CNAssetInfo._cinematicMetadataTrack,
+                            CNAssetInfo._cinematicVideoTrack,
+                            CNBoundsPrediction._confidence,
+                            CNBoundsPrediction._normalizedBounds,
+                            CNDecision._internalDecision,
+                            CNDetection._creationHash,
+                            CNDetection._internalDetection,
+                            CNDetectionTrack._internalTrack,
+                            CNObjectTracker._internalTapToTrack,
+                            CNRenderingSession._commandQueue,
+                            CNRenderingSession._preferredTransform,
+                            CNRenderingSession._quality,
+                            CNRenderingSession._renderPipeline,
+                            CNRenderingSession._renderState,
+                            CNRenderingSession._sessionAttributes,
+                            CNRenderingSession._textureCache,
+                            CNRenderingSessionAttributes._internalMetadata,
+                            CNRenderingSessionFrameAttributes._fNumber,
+                            CNRenderingSessionFrameAttributes._focusDisparity,
+                            CNRenderingSessionFrameAttributes._internalMetadata,
+                            CNScript._internalScript, CNScript._queue,
+                            CNScriptChanges._internalChanges,
+                            CNScriptFrame._internalFrame ]
+...

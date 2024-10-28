@@ -1,0 +1,32 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppleFlatBuffers.framework/AppleFlatBuffers
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AFBErrorDomain, _AFBIsValidUTF8, _AFBMisuseException,
+                            _AFBUnicodeDecodeException,
+                            _AppleFlatBuffersVersionNumber,
+                            _AppleFlatBuffersVersionString ]
+    objc-classes:         [ AFBArray, AFBBufRef, AFBBufferBuilder, AFBDictionary,
+                            AFBDictionaryEnumerator ]
+    objc-ivars:           [ AFBArray._bufRef, AFBArray._count,
+                            AFBArray._objectAtIndex,
+                            AFBBufRef._cfReleaseBackingDataDeallocator,
+                            AFBBufRef._data, AFBBufferBuilder._fbbStorage,
+                            AFBBufferBuilder._fileAllocator,
+                            AFBBufferBuilder._firstError,
+                            AFBBufferBuilder._initOk,
+                            AFBBufferBuilder._isFinalized,
+                            AFBBufferBuilder._path, AFBDictionary._bufRef,
+                            AFBDictionary._count, AFBDictionary._keyAtIndex,
+                            AFBDictionary._keyClass,
+                            AFBDictionary._objectForValidKey,
+                            AFBDictionary._tableAtIndex,
+                            AFBDictionaryEnumerator._dict,
+                            AFBDictionaryEnumerator._index ]
+...

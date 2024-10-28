@@ -1,0 +1,48 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WatchReplies.framework/WatchReplies
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _WRBundle, _WRDeviceLanguage,
+                            _WRLocalizedCategoryString,
+                            _WRLocalizedStringForLanguage, _WRSmartRepliesMarker,
+                            _WatchRepliesVersionNumber,
+                            _WatchRepliesVersionString,
+                            __WRCannedRepliesStore_handleStoreChange ]
+    objc-classes:         [ WRCalendarReplyStoreInfo, WRCannedRepliesStore,
+                            WRCannedRepliesViewController, WRCannedReply,
+                            WRMailReplyStoreInfo, WRMessagesReplyStoreInfo,
+                            WRPhoneReplyStoreInfo, WRReplyStoreInfo,
+                            WRThirdPartyReplyStoreInfo ]
+    objc-ivars:           [ WRCannedRepliesStore._cachedLanguage,
+                            WRCannedRepliesStore._cachedLocalizedReplies,
+                            WRCannedRepliesStore._cannedReplies,
+                            WRCannedRepliesStore._category,
+                            WRCannedRepliesStore._didLocalizeDefaultReplies,
+                            WRCannedRepliesStore._didMigrationCheck,
+                            WRCannedRepliesStore._domainAccessor,
+                            WRCannedRepliesStore._info,
+                            WRCannedRepliesStore._lock,
+                            WRCannedRepliesStore._log,
+                            WRCannedRepliesStore._npsManager,
+                            WRCannedRepliesViewController._accessoryImage,
+                            WRCannedRepliesViewController._addNewSpecifier,
+                            WRCannedRepliesViewController._category,
+                            WRCannedRepliesViewController._highlightedAccessoryImage,
+                            WRCannedRepliesViewController._repliesStore,
+                            WRCannedRepliesViewController._smartRepliesSpecifier,
+                            WRCannedRepliesViewController._supportedEnhancedEditing,
+                            WRCannedReply._defaultReplyKey,
+                            WRCannedReply._defaultReplyText, WRCannedReply._text,
+                            WRReplyStoreInfo._defaultCount,
+                            WRReplyStoreInfo._defaultsChangedNotificationName,
+                            WRReplyStoreInfo._defaultsDomain,
+                            WRReplyStoreInfo._defaultsKey,
+                            WRReplyStoreInfo._hiddenTinkerReplyKeys,
+                            WRReplyStoreInfo._supportsSmartReplies ]
+...

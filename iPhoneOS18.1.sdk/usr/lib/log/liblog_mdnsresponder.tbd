@@ -1,0 +1,35 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/log/liblog_mdnsresponder.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DNSClassTypeToString, _DNSComputeDNSKeyTag,
+                            _DNSExtendedDNSErrorCodeToString,
+                            _DNSMessageCollapse, _DNSMessageExtractDomainName,
+                            _DNSMessageExtractDomainNameString,
+                            _DNSMessageExtractQuestion, _DNSMessageExtractRData,
+                            _DNSMessageExtractRecord,
+                            _DNSMessageGetAnswerSection,
+                            _DNSMessageGetExtendedDNSError,
+                            _DNSMessageGetOptRecord,
+                            _DNSMessagePrintObfuscatedIPv4Address,
+                            _DNSMessagePrintObfuscatedIPv6Address,
+                            _DNSMessagePrintObfuscatedString,
+                            _DNSMessageToString, _DNSMessageWriteQuery,
+                            _DNSRCodeFromString, _DNSRCodeToString,
+                            _DNSRecordDataToStringEx,
+                            _DNSRecordTypeStringToValue,
+                            _DNSRecordTypeValueToString, _DomainLabelEqual,
+                            _DomainNameAppendDomainName, _DomainNameAppendString,
+                            _DomainNameDupEx, _DomainNameEqual,
+                            _DomainNameFromString, _DomainNameLabelCount,
+                            _DomainNameLength, _DomainNameToString,
+                            _OSLogCopyFormattedString,
+                            _mdns_memcmp_us_ascii_case_insensitive,
+                            _mdns_memcpy_bits ]
+...

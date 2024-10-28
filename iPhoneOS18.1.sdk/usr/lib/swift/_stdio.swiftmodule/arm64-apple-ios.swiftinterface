@@ -1,0 +1,24 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0 (swiftlang-6.0.0.7.43 clang-1600.0.25.3)
+// swift-module-flags: -target arm64-apple-ios18.1 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swift_stdio -swift-version 6 -enforce-exclusivity=checked -O -library-level api -module-abi-name Darwin -user-module-version 228.0.13 -module-name _stdio
+import Swift
+@_exported import _stdio
+@available(macOS 10.9, iOS 7.0, watchOS 2.0, tvOS 9.0, bridgeOS 7.0, visionOS 1.0, *)
+public var stdin: Swift.UnsafeMutablePointer<_stdio.FILE> {
+  get
+  set
+}
+@available(macOS 10.9, iOS 7.0, watchOS 2.0, tvOS 9.0, bridgeOS 7.0, visionOS 1.0, *)
+public var stdout: Swift.UnsafeMutablePointer<_stdio.FILE> {
+  get
+  set
+}
+@available(macOS 10.9, iOS 7.0, watchOS 2.0, tvOS 9.0, bridgeOS 7.0, visionOS 1.0, *)
+public var stderr: Swift.UnsafeMutablePointer<_stdio.FILE> {
+  get
+  set
+}
+@available(macOS 10.9, iOS 7.0, watchOS 2.0, tvOS 9.0, bridgeOS 7.0, visionOS 1.0, *)
+public func dprintf(_ fd: Swift.Int, _ format: Swift.UnsafePointer<Swift.Int8>, _ args: any Swift.CVarArg...) -> Swift.Int32
+@available(macOS 10.9, iOS 7.0, watchOS 2.0, tvOS 9.0, bridgeOS 7.0, visionOS 1.0, *)
+public func snprintf(ptr: Swift.UnsafeMutablePointer<Swift.Int8>, _ len: Swift.Int, _ format: Swift.UnsafePointer<Swift.Int8>, _ args: any Swift.CVarArg...) -> Swift.Int32

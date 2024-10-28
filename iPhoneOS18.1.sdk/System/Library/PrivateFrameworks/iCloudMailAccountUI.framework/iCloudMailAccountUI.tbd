@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/iCloudMailAccountUI.framework/iCloudMailAccountUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __MSLogSystem, _iCloudMailAccountUIVersionNumber,
+                            _iCloudMailAccountUIVersionString ]
+    objc-classes:         [ _TtC19iCloudMailAccountUI21EmailCreateAPIRequest,
+                            _TtC19iCloudMailAccountUI24EmailAvailableAPIRequest,
+                            _TtC19iCloudMailAccountUI24LegacyMailAccountCreator,
+                            _TtC19iCloudMailAccountUI26EmailSuggestionsAPIRequest,
+                            _TtC19iCloudMailAccountUI35iCloudMailValidationRulesAPIRequest,
+                            iCloudMailAccountProvider,
+                            iCloudMailAccountProviderSwift ]
+    objc-ivars:           [ iCloudMailAccountProvider.provider ]
+...

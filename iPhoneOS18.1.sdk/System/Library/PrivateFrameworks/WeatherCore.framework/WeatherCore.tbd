@@ -1,0 +1,45 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WeatherCore.framework/WeatherCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _WCCountryCodeEstimate, _WCLogForCategory,
+                            _WCPowerLogNotificationEnablement,
+                            _WCPowerLogPrecipitationFetch,
+                            _WCPowerLogSevereNotificationsReport,
+                            _WeatherCoreVersionNumber, _WeatherCoreVersionString,
+                            _isChineseSKU, _isJapaneseSKU,
+                            _kWeatherPrefAppToPrefsDidUpdate,
+                            _kWeatherPrefGroupPrefsDidUpdate,
+                            _kWeatherPrefPrefsToAppDidUpdate ]
+    objc-classes:         [ NPSManagerBridge, WCCapabilities, WCCloudMigrator,
+                            WCDefaultCity, WCDefaultCityManager, WCDeviceLookup,
+                            WCDistributedNotificationCenter,
+                            WCMobileGestaltBridge,
+                            _TtC11WeatherCore15LocationManager,
+                            _TtC11WeatherCore21SavedLocationsManager,
+                            _TtC11WeatherCore27WeatherConfigurationManager,
+                            _TtC11WeatherCore28DaemonDecommissioningService,
+                            _TtC11WeatherCore33PrecipitationNotificationsManager ]
+    objc-ivars:           [ NPSManagerBridge._npsManager,
+                            WCCloudMigrator._deviceLookup,
+                            WCDefaultCity._countryName,
+                            WCDefaultCity._countryOverride,
+                            WCDefaultCity._latitude, WCDefaultCity._localeCode,
+                            WCDefaultCity._longitude, WCDefaultCity._name,
+                            WCDefaultCity._timeZone,
+                            WCDefaultCity._unlocalizedCountryName,
+                            WCDefaultCity._unlocalizedCountryOverride,
+                            WCDefaultCity._unlocalizedName,
+                            WCDefaultCityManager._dataSynchronizationLock,
+                            WCDefaultCityManager._defaultCities,
+                            WCDefaultCityManager._reloadQueue,
+                            WCDeviceLookup._accountStore,
+                            WCDistributedNotificationCenter._dataSynchronizationLock,
+                            WCDistributedNotificationCenter._observers ]
+...

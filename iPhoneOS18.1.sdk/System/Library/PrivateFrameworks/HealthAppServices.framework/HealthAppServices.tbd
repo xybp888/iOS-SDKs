@@ -1,0 +1,49 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HealthAppServices.framework/HealthAppServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AllHealthAppAnalyticsAgreements,
+                            _HAScribeAnalyticEventName,
+                            _HAScribeAnalyticKeyDataType,
+                            _HAScribeAnalyticKeyHourOfDay,
+                            _HAScribeAnalyticKeyIsFirstInvocation,
+                            _HAScribeAnalyticKeyIsHealthDataAuthorized,
+                            _HAScribeAnalyticKeyIsIHAEnabled,
+                            _HAScribeAnalyticKeyRequestCategory,
+                            _HAScribeAnalyticKeyRequestInterval,
+                            _HAScribeAnalyticKeyRequestType,
+                            _HAScribeAnalyticKeyUserAction,
+                            _HAScribeAnalyticUserActionAssistantService,
+                            _HAScribeAnalyticUserActionHealth,
+                            _HAStringForDataRequestType,
+                            _HealthAppAnalyticsAgreementImproveHealthAndAnalytics,
+                            _HealthAppAnalyticsAgreementImproveHealthRecords,
+                            _HealthAppAnalyticsStoreTaskServerIdentifier ]
+    objc-classes:         [ HAServicesDefines, HealthAppAnalyticsAcceptance,
+                            HealthAppAnalyticsStore,
+                            HealthAppAuthorizationManagementLinkBuilder,
+                            HealthAppDataTypeDetailLinkBuilder,
+                            HealthAppLinkBuilder,
+                            HealthAppNotificationsLinkBuilder,
+                            HealthAppScribeAnalyticEventManager,
+                            HealthAppSharingLinkBuilder,
+                            HealthAppTrendsLinkBuilder,
+                            _TtC17HealthAppServices19NotificationSupport,
+                            _TtC17HealthAppServices25ProfileInformationSupport,
+                            _TtC17HealthAppServices28HealthAppOrchestrationClient ]
+    objc-ivars:           [ HealthAppAnalyticsAcceptance._accepted,
+                            HealthAppAnalyticsAcceptance._agreement,
+                            HealthAppAnalyticsAcceptance._modificationDate,
+                            HealthAppAnalyticsAcceptance._version,
+                            HealthAppAnalyticsStore._healthStore,
+                            HealthAppAnalyticsStore._proxyProvider,
+                            HealthAppLinkBuilder._profileIdentifier,
+                            HealthAppLinkBuilder._source,
+                            HealthAppLinkBuilder._useExternalURLScheme ]
+...

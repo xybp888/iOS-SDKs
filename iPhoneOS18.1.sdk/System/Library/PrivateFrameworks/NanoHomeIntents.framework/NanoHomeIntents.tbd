@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NanoHomeIntents.framework/NanoHomeIntents
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NHOLogForCategory, _NanoHomeIntentsVersionNumber,
+                            _NanoHomeIntentsVersionString ]
+    objc-classes:         [ NHOAccessoryIntent, NHOActionSetIntent,
+                            NHOElectricityRatesIntent, NHOElectricityUsageIntent,
+                            NHOEnergyForecastIntent, NHOFeatureFlags,
+                            NHOHomeUserCapabilities, NHOIntentConstants,
+                            NHOIntentLocalization, NHOLogging,
+                            NHOSmartStackActionIntent, NHOWidgetKind,
+                            _TtC15NanoHomeIntents16HomeManagerActor ]
+    objc-ivars:           [ NHOLogging._categoryMap, NHOLogging._lock,
+                            NHOLogging._logs ]
+...

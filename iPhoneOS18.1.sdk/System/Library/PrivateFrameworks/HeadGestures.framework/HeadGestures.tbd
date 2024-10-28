@@ -1,0 +1,41 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HeadGestures.framework/HeadGestures
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HGGetTemporaryDirectoryPath,
+                            _HGGetTemporaryNotificationDataDirectory,
+                            _HGGetTemporaryRawDataDirectory,
+                            _HGSetTemporaryDirectorySuffix,
+                            _HeadGesturesVersionNumber,
+                            _HeadGesturesVersionString, __HGObjCLoggingFacility,
+                            _kHGObjCLogCategoryDE, _kHGObjCLogCategoryFramework ]
+    objc-classes:         [ HGAudioFeedbackConfiguration,
+                            HGAudioFeedbackConfigurationInternal,
+                            HGConfiguration, HGConfigurationInternal,
+                            HGHeadGestureResult, HGMLConfiguration,
+                            HGMLConfigurationInternal, HGManager,
+                            HGManagerInternal,
+                            _TtC12HeadGestures18HGFileDataProvider,
+                            _TtC12HeadGestures20HGMotionDataProvider,
+                            _TtC12HeadGestures27HGBuiltinMotionDataProvider,
+                            _TtC12HeadGestures29HGHeadphoneMotionDataProvider,
+                            _TtC12HeadGestures8FooModel ]
+    objc-ivars:           [ HGAudioFeedbackConfiguration._internal,
+                            HGConfiguration._audioFeedbackConfig,
+                            HGConfiguration._internal, HGConfiguration._mlConfig,
+                            HGHeadGestureResult._avgConfidence,
+                            HGHeadGestureResult._headGesture,
+                            HGHeadGestureResult._headGesturePart,
+                            HGHeadGestureResult._timestamp,
+                            HGHeadGestureResult._uuid,
+                            HGMLConfiguration._internal,
+                            HGManager._configuration, HGManager._internal,
+                            HGManager._muteAudioFeedback,
+                            HGManager._requestPartGestures ]
+...

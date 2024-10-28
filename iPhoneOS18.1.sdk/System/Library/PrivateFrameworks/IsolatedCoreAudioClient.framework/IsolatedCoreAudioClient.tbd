@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IsolatedCoreAudioClient.framework/IsolatedCoreAudioClient
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CreateIsolatedAudioServicePortal,
+                            _RegisterForIsolatedAudio, _RequestIsolatedAudio,
+                            _SetAudioLapseHandler, _StartIsolatedAudio,
+                            _StartIsolatedAudioAtTime, _StopIsolatedAudio ]
+    objc-classes:         [ IOThreadXPCMappedMemoryTransporter,
+                            IOThreadXPCSemaphoreTransporter,
+                            IOThreadXPCWorkgroupTransporter,
+                            IsolatedCoreAudioXPCService ]
+    objc-ivars:           [ IOThreadXPCMappedMemoryTransporter._serverMemory,
+                            IOThreadXPCSemaphoreTransporter._clientListenableSemaphore,
+                            IOThreadXPCSemaphoreTransporter._clientPingableSemaphore,
+                            IOThreadXPCWorkgroupTransporter._workgroup,
+                            IsolatedCoreAudioXPCService._connections,
+                            IsolatedCoreAudioXPCService._mServerSideSwitchboard ]
+...

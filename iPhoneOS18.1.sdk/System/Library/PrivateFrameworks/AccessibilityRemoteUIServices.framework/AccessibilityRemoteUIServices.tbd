@@ -1,0 +1,41 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AccessibilityRemoteUIServices.framework/AccessibilityRemoteUIServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXRUIImageForRemoteAction,
+                            _AXRUIImageForRemoteActionWithDeviceType,
+                            _AccessibilityRemoteUIServicesVersionNumber,
+                            _AccessibilityRemoteUIServicesVersionString ]
+    objc-classes:         [ AXRActionCollectionViewCell,
+                            AXRActionsCollectionView,
+                            AXRConnectedDeviceViewController,
+                            AXRDeviceActionsViewController,
+                            AXRNearbyDevicesViewController,
+                            AXRVoiceOverTouchPadView,
+                            AXRemoteUIAlertCallbackHolder,
+                            AXRemoteUIAlertManager, AXRemoteViewServiceAdaptor,
+                            _AXRemoteNearbyDevicesViewController ]
+    objc-ivars:           [ AXRActionCollectionViewCell._imageView,
+                            AXRConnectedDeviceViewController._actionsCollectionView,
+                            AXRConnectedDeviceViewController._activeDevice,
+                            AXRConnectedDeviceViewController._collectionViewFlowLayout,
+                            AXRConnectedDeviceViewController._eventProcessor,
+                            AXRConnectedDeviceViewController._eventSenderQueue,
+                            AXRConnectedDeviceViewController._remoteActionsToShow,
+                            AXRDeviceActionsViewController._activeDevice,
+                            AXRDeviceActionsViewController._delegate,
+                            AXRNearbyDevicesViewController._discoveredDevices,
+                            AXRNearbyDevicesViewController._discoveryManager,
+                            AXRVoiceOverTouchPadView._delegate,
+                            AXRemoteUIAlertCallbackHolder._dismissalHandler,
+                            AXRemoteUIAlertCallbackHolder._presentationHandler,
+                            AXRemoteUIAlertCallbackHolder._remoteAlertHandle,
+                            AXRemoteUIAlertManager._remoteCallbackHolders,
+                            _AXRemoteNearbyDevicesViewController._dismissHandler ]
+...

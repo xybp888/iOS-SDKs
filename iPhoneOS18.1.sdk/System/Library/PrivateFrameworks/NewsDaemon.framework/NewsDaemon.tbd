@@ -1,0 +1,62 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NewsDaemon.framework/NewsDaemon
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NDANFDecodingServiceXPCConnection,
+                            _NDANFDecodingServiceXPCInterface,
+                            _NDAnalyticsMachServiceName,
+                            _NDArticleIDFromAudioContentID,
+                            _NDAudioContentIDFromArticleID,
+                            _NDAudioContentIDPrefix, _NDDownloadMachServiceName,
+                            _NDDownloadServiceHasUnfinishedWorkKey,
+                            _NDDownloadServiceXPCConnection,
+                            _NDDownloadServiceXPCInterface,
+                            _NDLiveActivityMachServiceName,
+                            _NDNewsdDataContainerClass,
+                            _NDNewsdDataContainerIdentifier, _NDNewsdProcessName,
+                            _NDSharedClientLog, _NDSharedServiceLog,
+                            _NDTodayFeedConfigDecodingServiceXPCConnection,
+                            _NDTodayFeedConfigDecodingServiceXPCInterface,
+                            _NDTodayFeedMachServiceName,
+                            _NDTodayFeedServiceXPCConnection,
+                            _NDTodayFeedServiceXPCInterface,
+                            _NDTodayMachServiceName,
+                            _NDURLResolutionMachServiceName,
+                            _NewsDaemonVersionNumber, _NewsDaemonVersionString ]
+    objc-classes:         [ NDANFHelper, NDANFHelperProxy,
+                            NDANFHelperProxyWithFallback, NDDownloadLimits,
+                            NDDownloadRequest, NDNewsDaemonContext,
+                            NDNewsServiceConnection,
+                            NDNewsServiceConnectionClientProxy, NDTodayFeed,
+                            NDTodayFeedConfig,
+                            _TtC10NewsDaemon27LiveActivityScheduleRequest ]
+    objc-ivars:           [ NDANFHelperProxy._xpcConnection,
+                            NDANFHelperProxy._xpcConnectionInterest,
+                            NDANFHelperProxy._xpcConnectionLock,
+                            NDANFHelperProxyWithFallback._inProcessHelper,
+                            NDANFHelperProxyWithFallback._proxyHelper,
+                            NDDownloadLimits._maxDownloadStorage,
+                            NDDownloadLimits._minDeviceStorage,
+                            NDDownloadRequest._contentID,
+                            NDDownloadRequest._contentType,
+                            NDDownloadRequest._options,
+                            NDNewsDaemonContext._daemon,
+                            NDNewsDaemonContext._updateResultsHandler,
+                            NDNewsServiceConnection._accessQueue,
+                            NDNewsServiceConnection._client,
+                            NDNewsServiceConnection._connection,
+                            NDNewsServiceConnection._daemon,
+                            NDNewsServiceConnectionClientProxy._client,
+                            NDTodayFeed._configData, NDTodayFeed._contentArchive,
+                            NDTodayFeed._contentManifest,
+                            NDTodayFeed._publishDate,
+                            NDTodayFeedConfig._publishDate,
+                            NDTodayFeedConfig._topStoriesArticleIDs,
+                            NDTodayFeedConfig._topStoriesPackageURLs ]
+...

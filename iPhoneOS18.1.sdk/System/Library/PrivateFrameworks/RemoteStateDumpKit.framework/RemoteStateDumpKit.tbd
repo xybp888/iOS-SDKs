@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RemoteStateDumpKit.framework/RemoteStateDumpKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _RemoteStateDumpKitVersionNumber,
+                            _RemoteStateDumpKitVersionString ]
+    objc-classes:         [ RSPeerToPeerClientController,
+                            RSPeerToPeerConnectionController,
+                            RSPeerToPeerServerController, RSStateInfo ]
+    objc-ivars:           [ RSPeerToPeerClientController._serviceBrowser,
+                            RSPeerToPeerConnectionController._alreadyConnectedPeerIDs,
+                            RSPeerToPeerConnectionController._dataSource,
+                            RSPeerToPeerConnectionController._delegate,
+                            RSPeerToPeerConnectionController._localPeerID,
+                            RSPeerToPeerConnectionController._session,
+                            RSPeerToPeerServerController._advertiserDidNotStartAdvertising,
+                            RSPeerToPeerServerController._serviceAdvertiser,
+                            RSStateInfo._actionRevision, RSStateInfo._stateType ]
+...

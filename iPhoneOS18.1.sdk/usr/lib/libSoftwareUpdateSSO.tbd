@@ -1,0 +1,44 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libSoftwareUpdateSSO.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MSUSSOIsAvailable, _SoftwareUpdateSSOlogDebug,
+                            _SoftwareUpdateSSOlogError,
+                            _SoftwareUpdateSSOlogFault,
+                            _SoftwareUpdateSSOlogInfo, _copyDawToken,
+                            _copyPersonID, _copyPersonalizationSSOToken,
+                            _kSUExtensibleSSOAppIdentifierKey,
+                            _kSUExtensibleSSODAWTokenRequiredKey,
+                            _kSUExtensibleSSOEnvIdentifierKey,
+                            _kSUExtensibleSSOInteractivityKey,
+                            _kSUExtensibleSSOOtherParametersKey,
+                            _kSUExtensibleSSOUsernameKey,
+                            _kSoftwareUpdateSSOErrorDomain,
+                            _kSoftwareUpdateSSOPersonIDKey,
+                            _kSoftwareUpdateSSOUserNameKey ]
+    objc-classes:         [ SoftwareUpdateExtensibleSSOAuthenticator,
+                            SoftwareUpdateSSO ]
+    objc-ivars:           [ SoftwareUpdateExtensibleSSOAuthenticator._appIdentifier,
+                            SoftwareUpdateExtensibleSSOAuthenticator._authenticationController,
+                            SoftwareUpdateExtensibleSSOAuthenticator._delegate,
+                            SoftwareUpdateExtensibleSSOAuthenticator._envIdentifier,
+                            SoftwareUpdateExtensibleSSOAuthenticator._interactivity,
+                            SoftwareUpdateExtensibleSSOAuthenticator._otherParameters,
+                            SoftwareUpdateExtensibleSSOAuthenticator._username,
+                            SoftwareUpdateSSO.SoftwareUpdateSSOCompletionSemaphore,
+                            SoftwareUpdateSSO._appIdentifier,
+                            SoftwareUpdateSSO._authenticator,
+                            SoftwareUpdateSSO._dawToken,
+                            SoftwareUpdateSSO._defaultAuthParameters,
+                            SoftwareUpdateSSO._envIdentifier,
+                            SoftwareUpdateSSO._interactivityLevel,
+                            SoftwareUpdateSSO._personID,
+                            SoftwareUpdateSSO._resultCallBack,
+                            SoftwareUpdateSSO._userName ]
+...

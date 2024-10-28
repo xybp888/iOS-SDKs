@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/AVRouting.framework/AVRouting
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AVCustomRoutingControllerActiveRoutesDidChangeNotification,
+                            _AVCustomRoutingControllerAuthorizedRoutesDidChangeNotification,
+                            _AVCustomRoutingControllerCustomActionItemsDidChangeNotification ]
+    objc-classes:         [ AVCustomDeviceRoute, AVCustomRoutingActionItem,
+                            AVCustomRoutingController, AVCustomRoutingEvent,
+                            AVCustomRoutingPartialIP ]
+    objc-ivars:           [ AVCustomDeviceRoute._active,
+                            AVCustomDeviceRoute._bluetoothIdentifier,
+                            AVCustomDeviceRoute._device,
+                            AVCustomDeviceRoute._networkEndpoint,
+                            AVCustomRoutingActionItem._identifier,
+                            AVCustomRoutingActionItem._overrideTitle,
+                            AVCustomRoutingActionItem._type,
+                            AVCustomRoutingController._authorizedRoutes,
+                            AVCustomRoutingController._customActionItems,
+                            AVCustomRoutingController._delegate,
+                            AVCustomRoutingController._knownRouteIPs,
+                            AVCustomRoutingController._pendingEvents,
+                            AVCustomRoutingController._routeEventRecords,
+                            AVCustomRoutingController._session,
+                            AVCustomRoutingController._sessionSuspended,
+                            AVCustomRoutingEvent._reason,
+                            AVCustomRoutingEvent._route,
+                            AVCustomRoutingEvent._succeeded,
+                            AVCustomRoutingPartialIP._address,
+                            AVCustomRoutingPartialIP._mask ]
+...

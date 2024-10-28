@@ -1,0 +1,38 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AirPlaySenderKit.framework/AirPlaySenderKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _APSKSessionOptionsKey_TimeoutSeconds ]
+    objc-classes:         [ APSKDestination, APSKSession, APSKStreamAudio,
+                            APSKStreamVideo ]
+    objc-ivars:           [ APSKDestination._destinationType,
+                            APSKDestination._value, APSKSession._audioStream,
+                            APSKSession._client, APSKSession._delegate,
+                            APSKSession._delegateQueue, APSKSession._objectID,
+                            APSKSession._passcode, APSKSession._queue,
+                            APSKSession._remote, APSKSession._sender,
+                            APSKSession._senderNotifObserver, APSKSession._state,
+                            APSKSession._videoStream, APSKStreamAudio._asbd,
+                            APSKStreamAudio._audioSender,
+                            APSKStreamAudio._delegate,
+                            APSKStreamAudio._delegateQueue,
+                            APSKStreamAudio._failurePosted,
+                            APSKStreamAudio._options, APSKStreamAudio._queue,
+                            APSKStreamAudio._rtQueue,
+                            APSKStreamAudio._rtRingBuffer,
+                            APSKStreamAudio._rtRingBufferEntries,
+                            APSKStreamAudio._rtSignal,
+                            APSKStreamAudio._useVideoLatency,
+                            APSKStreamVideo._delegate,
+                            APSKStreamVideo._delegateQueue,
+                            APSKStreamVideo._frameSender,
+                            APSKStreamVideo._height, APSKStreamVideo._options,
+                            APSKStreamVideo._queue, APSKStreamVideo._refreshRate,
+                            APSKStreamVideo._width ]
+...

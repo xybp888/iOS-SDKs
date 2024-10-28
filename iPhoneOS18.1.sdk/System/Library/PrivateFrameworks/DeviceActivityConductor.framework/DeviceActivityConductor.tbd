@@ -1,0 +1,74 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DeviceActivityConductor.framework/DeviceActivityConductor
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DACLifecycleServiceResetNotificationName,
+                            _DACLifecycleServiceServiceName,
+                            _DACRoleServiceResetNotificationName,
+                            _DACRoleServiceServiceName,
+                            _DeviceActivityConductorVersionNumber,
+                            _DeviceActivityConductorVersionString ]
+    objc-classes:         [ DACActivityAssertion, DACActivityDescriptor,
+                            DACActivityList, DACActivityListEntry, DACChangeMarker,
+                            DACDeviceRole, DACLifecycleChangelist,
+                            DACLifecycleInfo, DACLifecycleManager,
+                            DACLifecycleManagerMediator, DACRoleManager,
+                            DACUnknownActivityPolicy ]
+    objc-ivars:           [ DACActivityAssertion._activity,
+                            DACActivityAssertion._changeMarker,
+                            DACActivityAssertion._invalidationHandler,
+                            DACActivityAssertion._lock,
+                            DACActivityAssertion._origin,
+                            DACActivityAssertion._relinquishHandler,
+                            DACActivityAssertion._state,
+                            DACActivityDescriptor._identifier,
+                            DACActivityDescriptor._localOnly,
+                            DACActivityDescriptor._policy,
+                            DACActivityDescriptor._priority,
+                            DACActivityList._activeActivities,
+                            DACActivityList._lastModified, DACActivityList._lock,
+                            DACActivityListEntry._activity,
+                            DACActivityListEntry._changeMarker,
+                            DACActivityListEntry._date,
+                            DACActivityListEntry._origin,
+                            DACActivityListEntry._reason, DACChangeMarker._uuid,
+                            DACChangeMarker._version, DACDeviceRole._flags,
+                            DACLifecycleChangelist._infos,
+                            DACLifecycleInfo._activity,
+                            DACLifecycleInfo._changeMarker,
+                            DACLifecycleInfo._origin, DACLifecycleInfo._reason,
+                            DACLifecycleInfo._state,
+                            DACLifecycleManager._activityList,
+                            DACLifecycleManager._assertions,
+                            DACLifecycleManager._connected,
+                            DACLifecycleManager._currentConnection,
+                            DACLifecycleManager._delegate,
+                            DACLifecycleManager._delegateQueue,
+                            DACLifecycleManager._queue,
+                            DACLifecycleManager._registeredActivities,
+                            DACLifecycleManager._resetNotifyToken,
+                            DACLifecycleManager._role,
+                            DACLifecycleManager._shouldAttemptReconnect,
+                            DACLifecycleManager._subscriptionActive,
+                            DACLifecycleManagerMediator._manager,
+                            DACRoleManager._connected,
+                            DACRoleManager._currentConnection,
+                            DACRoleManager._delegate,
+                            DACRoleManager._delegateQueue,
+                            DACRoleManager._fallbackTimer,
+                            DACRoleManager._lastLeaderAt, DACRoleManager._queue,
+                            DACRoleManager._resetNotifyToken,
+                            DACRoleManager._role,
+                            DACRoleManager._shouldAttemptReconnect,
+                            DACUnknownActivityPolicy._audioSessionCategory,
+                            DACUnknownActivityPolicy._audioSessionMode,
+                            DACUnknownActivityPolicy._audioSessionOptions,
+                            DACUnknownActivityPolicy._audioSessionRouteSharingPolicy,
+                            DACUnknownActivityPolicy._options ]
+...

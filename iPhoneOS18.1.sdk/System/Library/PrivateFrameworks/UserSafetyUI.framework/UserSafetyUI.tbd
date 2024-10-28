@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/UserSafetyUI.framework/UserSafetyUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/PrivateFrameworks/SensitiveContentAnalysisUI.framework/SensitiveContentAnalysisUI ]
+    symbols:              [ _UserSafetyUIVersionNumber,
+                            _UserSafetyUIVersionString ]
+    objc-classes:         [ USUIContactParentsHelper,
+                            USUIInterventionScreenAction,
+                            USUIInterventionScreenBullet,
+                            USUIInterventionScreenModel,
+                            USUIInterventionViewController,
+                            USUIMoreHelpMenuAction, USUIMoreHelpMenuModel ]
+    objc-ivars:           [ USUIInterventionScreenAction._actionID,
+                            USUIInterventionScreenAction._primary,
+                            USUIInterventionScreenAction._title,
+                            USUIInterventionScreenBullet._emoji,
+                            USUIInterventionScreenBullet._imageName,
+                            USUIInterventionScreenBullet._text,
+                            USUIInterventionScreenModel._actions,
+                            USUIInterventionScreenModel._bullets,
+                            USUIInterventionScreenModel._emoji,
+                            USUIInterventionScreenModel._imageName,
+                            USUIInterventionScreenModel._title,
+                            USUIMoreHelpMenuAction._actionID,
+                            USUIMoreHelpMenuAction._destructive,
+                            USUIMoreHelpMenuAction._title,
+                            USUIMoreHelpMenuModel._actions,
+                            USUIMoreHelpMenuModel._title ]
+...

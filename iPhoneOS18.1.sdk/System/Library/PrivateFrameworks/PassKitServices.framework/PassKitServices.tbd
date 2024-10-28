@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PassKitServices.framework/PassKitServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ PKPassKitServicesXPCService,
+                            PKServicePaymentTransactionImageGenerator ]
+    objc-ivars:           [ PKPassKitServicesXPCService._connection,
+                            PKServicePaymentTransactionImageGenerator._evictionHitCount,
+                            PKServicePaymentTransactionImageGenerator._hasSetupTempDir,
+                            PKServicePaymentTransactionImageGenerator._keysHitCounts,
+                            PKServicePaymentTransactionImageGenerator._lock,
+                            PKServicePaymentTransactionImageGenerator._mappedFiles,
+                            PKServicePaymentTransactionImageGenerator._mappedFilesIndices,
+                            PKServicePaymentTransactionImageGenerator._nextKeyToEvict,
+                            PKServicePaymentTransactionImageGenerator._xpcService ]
+...
