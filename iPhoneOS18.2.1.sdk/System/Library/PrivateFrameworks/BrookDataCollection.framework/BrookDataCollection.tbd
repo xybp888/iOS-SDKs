@@ -1,0 +1,54 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BrookDataCollection.framework/BrookDataCollection
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BRKPreferredAudioFormat,
+                            _BrookDataCollectionVersionNumber,
+                            _BrookDataCollectionVersionString,
+                            _NSStringFromDataCollectionEnabled,
+                            __BRKHandleForUploadNotification, _kDCDeviceIdKey,
+                            _kDCPreferencesDomain ]
+    objc-classes:         [ BRKAccelerationBufferedFileWriter,
+                            BRKAccelerationFileWriter, BRKAudioFileReader,
+                            BRKAudioFileWriter, BRKDataCollectionBundle,
+                            BRKDataCollectionLogger, BRKDataCollectionScheduler,
+                            BRKLogFileWriter, BRKMetricsLogger, BRKWriter,
+                            S3AccessConfig, S3Content, S3ContentConfig ]
+    objc-ivars:           [ BRKAccelerationBufferedFileWriter._values,
+                            BRKAccelerationFileWriter._outputStream,
+                            BRKAudioFileReader._audioFile,
+                            BRKAudioFileReader._path,
+                            BRKAudioFileWriter._audioFile,
+                            BRKAudioFileWriter._format,
+                            BRKDataCollectionBundle._basePath,
+                            BRKDataCollectionBundle._folderName,
+                            BRKDataCollectionBundle._isPackaged,
+                            BRKDataCollectionBundle._manifest,
+                            BRKDataCollectionBundle._settings,
+                            BRKDataCollectionBundle._writers,
+                            BRKDataCollectionBundle._writersLock,
+                            BRKDataCollectionLogger._dateFormatter,
+                            BRKDataCollectionLogger._externalDailyDeviceIdentifier,
+                            BRKDataCollectionLogger._externalDailySessionUploadCount,
+                            BRKDataCollectionLogger._idsFilesList,
+                            BRKDataCollectionLogger._lock,
+                            BRKDataCollectionLogger._queue,
+                            BRKDataCollectionLogger._storageDirectory,
+                            BRKDataCollectionLogger._uploadScheduler,
+                            BRKDataCollectionScheduler._queue,
+                            BRKDataCollectionScheduler._scheduler,
+                            BRKDataCollectionScheduler._sema,
+                            BRKLogFileWriter._json, BRKWriter._lock,
+                            BRKWriter._path, S3AccessConfig._AWSAccessKeyID,
+                            S3AccessConfig._AWSSecretAccessKey,
+                            S3Content._bucket, S3Content._content,
+                            S3Content._filename, S3Content._gzip,
+                            S3Content._gzipContentCache, S3ContentConfig._bucket,
+                            S3ContentConfig._filename ]
+...

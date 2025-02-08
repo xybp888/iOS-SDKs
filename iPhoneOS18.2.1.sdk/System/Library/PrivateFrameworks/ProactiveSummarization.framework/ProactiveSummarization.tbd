@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ProactiveSummarization.framework/ProactiveSummarization
+current-version:       1271.5
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PSUINMessageReactionTypeTapbackDislikedReaction,
+                            _PSUINMessageReactionTypeTapbackEmphasizedReaction,
+                            _PSUINMessageReactionTypeTapbackLaughedReaction,
+                            _PSUINMessageReactionTypeTapbackLikedReaction,
+                            _PSUINMessageReactionTypeTapbackLovedReaction,
+                            _PSUINMessageReactionTypeTapbackQuestionedReaction,
+                            _PSUMailAttachmentSpotlightPrefix,
+                            _PSUMailRichLinkSpotlightPrefix,
+                            _PSUSpotlightMessageTypeLink,
+                            _PSUSpotlightMessageTypeSticker,
+                            _PSUSummarizationLogging,
+                            _ProactiveSummarizationVersionNumber,
+                            _ProactiveSummarizationVersionString ]
+    objc-classes:         [ PSUCurrentActivityManager,
+                            PSUIntentMessageHistorySearcher,
+                            PSUModeConfigurationService,
+                            PSUSummarizationAnalytics, PSUSummarizationPipeline,
+                            PSUSummarizationXPCServer, PSUVIPManager,
+                            _PSUAvailabilityManager, _PSUSummarizationPipeline,
+                            _TtC22ProactiveSummarization29SummarizationPipelineDatabase ]
+    objc-ivars:           [ PSUCurrentActivityManager._monitor,
+                            PSUModeConfigurationService._didCompleteOneSuccessfulModeConfigurationFetch,
+                            PSUModeConfigurationService._modeService,
+                            PSUModeConfigurationService._modesWithIntelligentBreakthroughEnabled,
+                            PSUSummarizationPipeline._pipeline ]
+...

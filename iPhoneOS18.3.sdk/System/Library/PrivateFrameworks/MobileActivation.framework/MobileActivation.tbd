@@ -1,0 +1,77 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MobileActivation.framework/MobileActivation
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MAEActivateDeviceWithError,
+                            _MAECopyActivationRecordWithError,
+                            _MAECopyDCRTWithError, _MAECopyDCRTWithOptions,
+                            _MAECopyLegacyDeviceIdentityWithError,
+                            _MAECopyPCRTToken, _MAECopyUCRTToken,
+                            _MAECreateActivationInfo,
+                            _MAECreateActivationRequest,
+                            _MAECreateActivationRequestWithError,
+                            _MAECreateSessionRequestWithError,
+                            _MAECreateStorebagRequest, _MAEDeactivateDevice,
+                            _MAEDeactivateDeviceWithError,
+                            _MAEDeleteLegacyDeviceIdentityWithError,
+                            _MAEGetActivationBuild, _MAEGetActivationState,
+                            _MAEGetActivationStateWithError,
+                            _MAEGetActivationURLFromStorebag,
+                            _MAEGetActivationURLFromStorebagWithError,
+                            _MAEGetBrickState, _MAEGetDCRTStateWithError,
+                            _MAEGetDCRTStateWithOptions,
+                            _MAEGetUCRTOSVersionInfoWithError,
+                            _MAEHandleActivationInfo, _MAEInFieldCollected,
+                            _MAEIssueClientCertificate,
+                            _MAEIssueDCRTWithCallback,
+                            _MAEIssueDCRTWithCompletion,
+                            _MAEPerformCollectionWithCompletion,
+                            _MAERecertifyDevice, _MAERecertifyDeviceWithError,
+                            _MAEReissueUCRTWithError, _MAETryActivate,
+                            _MAEUCRTAvailable, _MAEUCRTUpgradeRequired,
+                            _MAEUpdateBasebandTicketWithError,
+                            _MAGetActivationState, _MARequestReactivation,
+                            _MAUCRTActivationLocked, _MAUnbrickDevice,
+                            _MobileActivationErrorDomain,
+                            _MobileActivationFunctionNameErrorKey,
+                            _MobileActivationServerErrorDomain,
+                            _MobileActivationSourceFileLineErrorKey,
+                            _kMAActivationStateActivated,
+                            _kMAActivationStateFactoryActivated,
+                            _kMAActivationStateUnactivated,
+                            _kMAActivationStateUnavailable, _kMADCRTAvailable,
+                            _kMADCRTUnavailable,
+                            _kMANotificationCollectionPerformed,
+                            _kMANotificationDCRTOOBPerformed,
+                            _kMANotificationIdentityChanged,
+                            _kMANotificationUCRTOOBPerformed,
+                            _kMAOptionsActivationLockInfo,
+                            _kMAOptionsActivationLockPET,
+                            _kMAOptionsActivationLockUsername,
+                            _kMAOptionsActivationResponseHeaders,
+                            _kMAOptionsAllowInvalidNetworkCertificates,
+                            _kMAOptionsBasebandWaitCount,
+                            _kMAOptionsFactoryActivationRequest,
+                            _kMAOptionsIgnoreExistingCollection,
+                            _kMAOptionsIgnoreExistingDCRT,
+                            _kMAOptionsIgnoreExistingUCRT,
+                            _kMAOptionsNetworkTimeoutInterval,
+                            _kMAOptionsPromptForCredentials,
+                            _kMAOptionsSDCRTAttestation,
+                            _kMAOptionsSOCKSProxyHost, _kMAOptionsSOCKSProxyPort,
+                            _kMAOptionsScheduleCollectionForCurrentBuild,
+                            _kMAOptionsUseCellularBootstrapConnection,
+                            _kMAOptionsUseCellularOTAConnection,
+                            _kMAOptionsWaitForBasebandReady,
+                            _kNotificationActivationStateChanged,
+                            _kNotificationBrickStateChanged,
+                            _mobileactivationErrorHasDomainAndErrorCode ]
+    objc-classes:         [ GestaltHlprMobileActivation, MadGate ]
+    objc-ivars:           [ MadGate._connection ]
+...

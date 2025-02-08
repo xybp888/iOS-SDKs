@@ -1,0 +1,30 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/TeaSnappy.framework/TeaSnappy
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SNDefaultLog, _SNLogSubsystemIdentifier,
+                            _SNSetupLogging, _TeaSnappyVersionNumber,
+                            _TeaSnappyVersionString ]
+    objc-classes:         [ SNAssembly, SNTestAssembly, SNTestChain, SNTestContext,
+                            SNTestCoordinator, SNTestFailure, SNTestRun,
+                            SNTestRunner, SNTestStore, SNTestSuite,
+                            _TtC9TeaSnappy3PPT ]
+    objc-ivars:           [ SNAssembly._assemblies, SNTestChain._linkBlocks,
+                            SNTestContext._application, SNTestContext._objects,
+                            SNTestContext._testName,
+                            SNTestCoordinator._application,
+                            SNTestFailure._message, SNTestRun._testCase,
+                            SNTestRun._testSuite, SNTestRunner._application,
+                            SNTestRunner._testCoordinator,
+                            SNTestRunner._testStore,
+                            SNTestStore._extendedLaunchTest,
+                            SNTestStore._testCases, SNTestStore._testSuites,
+                            SNTestSuite._parentTestSuite,
+                            SNTestSuite._subTestSuites, SNTestSuite._testCases ]
+...

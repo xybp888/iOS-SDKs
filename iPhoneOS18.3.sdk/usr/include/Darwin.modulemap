@@ -1,0 +1,174 @@
+module Darwin [system] {
+  // These must all be set in the GCC_PREPROCESSOR_DEFINITIONS Xcode build
+  // setting, or passed on the command line with -D in order to have an
+  // effect. #define won't do anything for any of these.
+//  config_macros
+//    // <curses.h>
+//    _XOPEN_SOURCE_EXTENDED,
+//
+//    // <net/if.h>
+//    IFREQ_OPAQUE,
+
+  extern module C "Darwin_C.modulemap"
+
+  extern module POSIX "Darwin_POSIX.modulemap"
+
+  extern module bank "bank.modulemap"
+
+  explicit module bitstring {
+    requires !swift
+    header "bitstring.h"
+    export *
+  }
+
+  module ConditionalMacros {
+    header "ConditionalMacros.h"
+    export *
+  }
+
+  explicit module crt_externs {
+    header "crt_externs.h"
+    export *
+  }
+
+  module fts {
+    header "fts.h"
+    export *
+  }
+
+  module getopt {
+    header "getopt.h"
+    export *
+  }
+
+  module AssertMacros {
+    header "AssertMacros.h"
+    export *
+  }
+
+  module MacTypes {
+    header "MacTypes.h"
+    export *
+  }
+
+  extern module Mach "Darwin_Mach.modulemap"
+
+  extern module device "device.modulemap"
+
+  module libkern {
+    export *
+
+    module OSAtomic {
+      header "libkern/OSAtomic.h"
+      header "libkern/OSAtomicDeprecated.h"
+      header "libkern/OSSpinLockDeprecated.h"
+      header "libkern/OSAtomicQueue.h"
+      export *
+    }
+
+    module OSByteOrder {
+      header "libkern/OSByteOrder.h"
+
+      header "libkern/arm/OSByteOrder.h"
+
+      export *
+    }
+  }
+
+  module os {
+    module base {
+      header "os/base.h"
+      export *
+    }
+
+    module clock {
+      header "os/clock.h"
+      export *
+    }
+
+    module lock {
+      header "os/lock.h"
+      export *
+    }
+
+    module proc {
+      header "os/proc.h"
+      export *
+    }
+  }
+
+  module malloc {
+    header "malloc/malloc.h"
+    export *
+
+    explicit module _platform {
+      header "malloc/_platform.h"
+      export *
+    }
+  }
+
+  extern module machine "Darwin_machine.modulemap"
+
+  module block {
+    requires blocks
+    header "Block.h"
+    export *
+  }
+
+  module bsm {
+    module audit {
+      header "bsm/audit.h"
+      export *
+    }
+  }
+
+  module execinfo {
+    header "execinfo.h"
+    export *
+  }
+
+  module fstab {
+    header "fstab.h"
+    export *
+  }
+
+  explicit module membership {
+    header "membership.h"
+    export *
+  }
+
+  extern module net "net.modulemap"
+
+  extern module netinet "netinet.modulemap"
+
+  extern module netinet6 "netinet6.modulemap"
+
+  explicit module ntsid {
+    header "ntsid.h"
+    export *
+  }
+
+  extern module sys "Darwin_sys.modulemap"
+
+  explicit module sysdir {
+    header "sysdir.h"
+    export *
+  }
+
+  extern module uuid "uuid.modulemap"
+
+  module architecture {
+    header "architecture/byte_order.h"
+    export *
+  }
+
+  module paths {
+    header "paths.h"
+    export *
+  }
+
+  module sysexits {
+    header "sysexits.h"
+    export *
+  }
+}

@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CarKitNavigation.framework/CarKitNavigation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CRNavigationClientInterface,
+                            _CRNavigationServiceInterface, _CarNavLogging ]
+    objc-classes:         [ CRAccNavComponent, CRAccNavController, CRAccNavInfo,
+                            CRAccNavInfoCache, CRAccNavLaneGuidance,
+                            CRAccNavLaneInfo, CRAccNavManeuver, CRAccNavProvider,
+                            CRAccNavRouteGuidance ]
+    objc-ivars:           [ CRAccNavComponent._accessoryUID,
+                            CRAccNavComponent._component,
+                            CRAccNavComponent._componentIdentifier,
+                            CRAccNavComponent._uuid,
+                            CRAccNavController._component,
+                            CRAccNavController._delegate,
+                            CRAccNavController._routeGuidance,
+                            CRAccNavController._sentLaneGuidances,
+                            CRAccNavController._sentManeuvers,
+                            CRAccNavInfo._accNavInfo, CRAccNavInfo._component,
+                            CRAccNavInfoCache._accNavInfo,
+                            CRAccNavInfoCache._countLimit,
+                            CRAccNavProvider._accessoriesIndexed,
+                            CRAccNavProvider._accessoryLock,
+                            CRAccNavProvider._activeAccessoryComponentsIndexed,
+                            CRAccNavProvider._activeComponentsIndexed,
+                            CRAccNavProvider._delegate,
+                            CRAccNavProvider._iapNavigation,
+                            CRAccNavProvider._workQueue ]
+...

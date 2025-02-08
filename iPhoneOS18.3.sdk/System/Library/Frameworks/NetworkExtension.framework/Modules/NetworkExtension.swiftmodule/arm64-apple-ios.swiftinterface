@@ -1,0 +1,103 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 2063.60.20 -module-name NetworkExtension
+import Foundation
+import Network
+@_exported import NetworkExtension
+import Security
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 15.0, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension NetworkExtension.NENetworkRule {
+  convenience public init(destinationNetworkEndpoint networkEndpoint: Network.NWEndpoint, prefix destinationPrefix: Swift.Int, protocol: NetworkExtension.NENetworkRule.`Protocol`)
+  convenience public init(destinationHostEndpoint hostEndpoint: Network.NWEndpoint, protocol: NetworkExtension.NENetworkRule.`Protocol`)
+  convenience public init(remoteNetworkEndpoint: Network.NWEndpoint?, remotePrefix: Swift.Int, localNetworkEndpoint: Network.NWEndpoint?, localPrefix: Swift.Int, protocol: NetworkExtension.NENetworkRule.`Protocol`, direction: NetworkExtension.NETrafficDirection)
+  public var matchRemoteHostOrNetworkEndpoint: Network.NWEndpoint? {
+    get
+  }
+  public var matchLocalNetworkEndpoint: Network.NWEndpoint? {
+    get
+  }
+}
+@available(iOS 18.0, visionOS 2.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension.NEHotspotHelperCommand {
+  public var interface: Network.NWInterface {
+    get
+  }
+}
+@available(macOS 15.0, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension NetworkExtension.NEFilterPacketProvider {
+  public var handler: ((NetworkExtension.NEFilterPacketContext, Network.NWInterface, NetworkExtension.NETrafficDirection, Swift.UnsafeRawBufferPointer) -> NetworkExtension.NEFilterPacketProvider.Verdict)? {
+    get
+    set
+  }
+}
+@available(macOS 15.0, iOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension.NEAppProxyTCPFlow {
+  public var remoteFlowEndpoint: Network.NWEndpoint {
+    get
+  }
+}
+@available(macOS 15.0, iOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension.NEFilterSocketFlow {
+  public var remoteFlowEndpoint: Network.NWEndpoint? {
+    get
+  }
+  public var localFlowEndpoint: Network.NWEndpoint? {
+    get
+  }
+}
+@available(macOS 15.0, iOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension.NEAppProxyUDPFlow {
+  public func readDatagrams(completionHandler: @escaping ([(Foundation.Data, Network.NWEndpoint)]?, (any Swift.Error)?) -> Swift.Void)
+  public func readDatagrams() async -> ([(Foundation.Data, Network.NWEndpoint)]?, (any Swift.Error)?)
+  public func writeDatagrams(_ array: [(Foundation.Data, Network.NWEndpoint)], completionHandler: @escaping ((any Swift.Error)?) -> Swift.Void)
+  public func writeDatagrams(_ array: [(Foundation.Data, Network.NWEndpoint)]) async throws
+  public var localFlowEndpoint: Network.NWEndpoint? {
+    get
+  }
+}
+@available(macOS 15.0, iOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+public protocol NEAppProxyUDPFlowHandling {
+  func handleNewUDPFlow(_ flow: NetworkExtension.NEAppProxyUDPFlow, initialRemoteFlowEndpoint remoteEndpoint: Network.NWEndpoint) -> Swift.Bool
+}
+@available(macOS 15.0, iOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension.NEAppProxyFlow {
+  public func open(withLocalFlowEndpoint localEndpoint: Network.NWEndpoint?, completionHandler: @escaping ((any Swift.Error)?) -> Swift.Void)
+  public func open(withLocalFlowEndpoint localEndpoint: Network.NWEndpoint?) async throws
+  public func setMetadata(on parameters: Network.NWParameters)
+  public var interface: Network.NWInterface? {
+    get
+    set
+  }
+}
+@available(macOS 15.0, iOS 18.0, tvOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+extension NetworkExtension.NEPacketTunnelProvider {
+  public var virtualInterface: Network.NWInterface? {
+    get
+  }
+}

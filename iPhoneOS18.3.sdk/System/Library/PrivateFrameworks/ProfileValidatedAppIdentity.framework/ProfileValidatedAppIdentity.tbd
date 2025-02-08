@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ProfileValidatedAppIdentity.framework/ProfileValidatedAppIdentity
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PVAppIdentityErrorDomain,
+                            _PVAppIdentity_GenerateDigestWithCompletion,
+                            __PVAppIdentityLogSystem ]
+    objc-classes:         [ PVAppIdentityDigest ]
+    objc-ivars:           [ PVAppIdentityDigest.data0, PVAppIdentityDigest.data1,
+                            PVAppIdentityDigest.data2, PVAppIdentityDigest.data3,
+                            PVAppIdentityDigest.data4, PVAppIdentityDigest.data5,
+                            PVAppIdentityDigest.error,
+                            PVAppIdentityDigest.version ]
+...

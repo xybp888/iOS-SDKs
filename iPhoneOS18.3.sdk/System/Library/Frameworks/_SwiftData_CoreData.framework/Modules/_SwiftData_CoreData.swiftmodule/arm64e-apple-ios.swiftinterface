@@ -1,0 +1,15 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64e-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-experimental-feature VariadicGenerics -enable-experimental-feature ExtensionMacros -target-min-inlining-version min -enable-bare-slash-regex -user-module-version 92.1 -module-name _SwiftData_CoreData
+import CoreData
+import Swift
+@_exported import SwiftData
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(swift 5.9)
+@available(macOS 14, iOS 17, tvOS 17, watchOS 10, *)
+extension CoreData.NSManagedObjectModel {
+  public func makeManagedObjectModel(for schema: SwiftData.Schema, mergedWith managedObjectModel: CoreData.NSManagedObjectModel? = nil) -> CoreData.NSManagedObjectModel?
+  public static func makeManagedObjectModel(for entityTypes: [any SwiftData.PersistentModel.Type], mergedWith managedObjectModel: CoreData.NSManagedObjectModel? = nil) -> CoreData.NSManagedObjectModel?
+}

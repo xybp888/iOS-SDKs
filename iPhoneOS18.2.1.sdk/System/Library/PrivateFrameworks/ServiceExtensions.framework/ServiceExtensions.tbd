@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ServiceExtensions.framework/ServiceExtensions
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/Frameworks/BrowserEngineKit.framework/BrowserEngineKit,
+                            /System/Library/PrivateFrameworks/ServiceExtensionsCore.framework/ServiceExtensionsCore ]
+    objc-classes:         [ _SEBrowserProcess, _SECapabilities, _SECapability,
+                            _SEContentProcess, _SEExtensionProcess, _SEGPUProcess,
+                            _SEHostable, _SEHostingHandle,
+                            _SEHostingUpdateCoordinator, _SEHostingView,
+                            _SENetworkProcess, _SEServiceConfiguration,
+                            _SEServiceManager ]
+...

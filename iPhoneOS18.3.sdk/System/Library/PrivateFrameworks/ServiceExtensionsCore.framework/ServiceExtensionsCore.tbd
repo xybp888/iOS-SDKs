@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ServiceExtensionsCore.framework/ServiceExtensionsCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __SEBrowserEngineEntitlementGPU,
+                            __SEBrowserEngineEntitlementHost,
+                            __SEBrowserEngineEntitlementName,
+                            __SEBrowserEngineEntitlementNetworking,
+                            __SEBrowserEngineEntitlementWebContent,
+                            __SECheckEntitlmentForAuditToken,
+                            __SECheckEntitlmentForCurrentProcess,
+                            _se_memory_inline_jit_restrict_rwx_to_rw_with_witness_impl,
+                            _se_memory_inline_jit_restrict_rwx_to_rx_with_witness_impl,
+                            _se_memory_inline_jit_restrict_with_witness_supported ]
+    objc-classes:         [ _SESwiftCBridge, _SEUtil ]
+...

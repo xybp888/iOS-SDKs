@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SystemAperture.framework/SystemAperture
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SAEffectiveElementDescription,
+                            _SAEffectiveElementIdentityDescription,
+                            _SAElementDescription, _SAElementEqualToElement,
+                            _SAElementIdentitiesEqualToIdentities,
+                            _SAElementIdentityDescription,
+                            _SAElementIdentityEqualToIdentity,
+                            _SAHasActivityBehavior, _SAHasAlertBehavior,
+                            _SAHasIndicatorBehavior, _SALogElement,
+                            _SALogSubsystem, _SALogSystem,
+                            _SARegisterSystemApertureLogging,
+                            _SATargetElementFromBehaviorOverrider,
+                            _SystemApertureVersionNumber,
+                            _SystemApertureVersionString ]
+    objc-classes:         [ SAAssertion, SAAutomaticallyInvalidatingAssertion ]
+    objc-ivars:           [ SAAssertion._creationDate,
+                            SAAssertion._invalidationBlocks,
+                            SAAssertion._invalidationReason, SAAssertion._valid,
+                            SAAutomaticallyInvalidatingAssertion._automaticallyInvalidatable,
+                            SAAutomaticallyInvalidatingAssertion._invalidationInterval,
+                            SAAutomaticallyInvalidatingAssertion._invalidationTimer,
+                            SAAutomaticallyInvalidatingAssertion._key,
+                            SAAutomaticallyInvalidatingAssertion._lockReason ]
+...

@@ -1,0 +1,71 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MicroLocation.framework/MicroLocation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ULConfidenceReasonToString, _ULConfidenceToString,
+                            _ULConnectionAvailableNotification,
+                            _ULLocationTypeToString,
+                            _ULServiceQualityReasonToString,
+                            _ULServiceQualityToString, _ULServiceStateToString,
+                            _ULServiceSuspendReasonToString,
+                            _ULServiceTypeToString ]
+    objc-classes:         [ ULConfidenceReason, ULConnection,
+                            ULCustomLoiConfiguration, ULFingerprintError,
+                            ULFingerprintMetaInfo, ULLocationType, ULPlace,
+                            ULPrediction, ULServiceDescriptor, ULServiceMetaInfo,
+                            ULServiceQualityInfo, ULServiceQualityReason,
+                            ULServiceStatus, ULServiceSuspendReason,
+                            ULUpdateConfiguration, ULXPCProtocols ]
+    objc-ivars:           [ ULConfidenceReason._confidenceReasonEnum,
+                            ULConnection._connection,
+                            ULConnection._darwinNotificationHelper,
+                            ULConnection._delegate, ULConnection._delegateQueue,
+                            ULConnection._interrupted,
+                            ULConnection._legacyServiceIdentifier,
+                            ULConnection._queue, ULConnection._serviceIdentifier,
+                            ULConnection._serviceStatus,
+                            ULConnection._updateConfiguration,
+                            ULCustomLoiConfiguration._isInRoomDetectionEnabled,
+                            ULFingerprintError._fingerprintErrorEnum,
+                            ULFingerprintMetaInfo._errors,
+                            ULFingerprintMetaInfo._numberOfBLESources,
+                            ULFingerprintMetaInfo._numberOfUWBSources,
+                            ULFingerprintMetaInfo._numberOfWiFiAccessPoints,
+                            ULFingerprintMetaInfo._requestIdentifier,
+                            ULLocationType._locationType, ULPlace._identifier,
+                            ULPlace._score, ULPrediction._confidence,
+                            ULPrediction._confidenceReasons, ULPrediction._error,
+                            ULPrediction._places,
+                            ULPrediction._requestIdentifier, ULPrediction._time,
+                            ULServiceDescriptor._locationTypes,
+                            ULServiceDescriptor._serviceIdentifier,
+                            ULServiceDescriptor._serviceType,
+                            ULServiceMetaInfo._numberOfBLESources,
+                            ULServiceMetaInfo._numberOfClustersLearnedInModel,
+                            ULServiceMetaInfo._numberOfFingerprintsAfterPruning,
+                            ULServiceMetaInfo._numberOfFingerprintsBeforePruning,
+                            ULServiceMetaInfo._numberOfInputValidFingerprints,
+                            ULServiceMetaInfo._numberOfInputValidFingerprintsLabeled,
+                            ULServiceMetaInfo._numberOfInputValidFingerprintsUnLabeled,
+                            ULServiceMetaInfo._numberOfRecordingTriggersAtCurrentLocationOfInterest,
+                            ULServiceMetaInfo._numberOfUWBSources,
+                            ULServiceMetaInfo._numberOfWiFiAccessPoints,
+                            ULServiceQualityInfo._serviceQuality,
+                            ULServiceQualityInfo._serviceQualityReasons,
+                            ULServiceQualityReason._qualityReasonEnum,
+                            ULServiceStatus._currentLocationOfInterestType,
+                            ULServiceStatus._currentLocationOfInterestUuid,
+                            ULServiceStatus._error, ULServiceStatus._metaInfo,
+                            ULServiceStatus._serviceDescriptor,
+                            ULServiceStatus._serviceQualityInfo,
+                            ULServiceStatus._serviceState,
+                            ULServiceStatus._serviceSuspendReasons,
+                            ULServiceSuspendReason._suspendReasonEnum,
+                            ULUpdateConfiguration._isLowLatency ]
+...

@@ -1,0 +1,62 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Timeline.framework/Timeline
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _TLLoggingObjectForDomain, _TimelineVersionNumber,
+                            _TimelineVersionString ]
+    objc-classes:         [ TLOperation, TLPreviewTimelineError,
+                            TLPreviewTimelineSelectableRegion, TLTimeline,
+                            TLTimelineBlobEntry, TLTimelineEntryNode,
+                            TLTimelineEntryNodeRecycleBin,
+                            TLTimelineExtendOperation, TLTimelineNode,
+                            TLTimelineOperation, TLTimelineSegment,
+                            TLTimelineSessionOperation, TLTimelineSetupOperation,
+                            TLTimelineUtilities, TLTimelineWindow ]
+    objc-ivars:           [ TLOperation._dataSource, TLOperation._error,
+                            TLOperation._operationCompletionBlock,
+                            TLPreviewTimelineError._errorDescription,
+                            TLPreviewTimelineError._errorType,
+                            TLPreviewTimelineError._path,
+                            TLPreviewTimelineSelectableRegion._path,
+                            TLPreviewTimelineSelectableRegion._rect,
+                            TLTimeline._delegate,
+                            TLTimeline._delegateRespondsToTimerFired,
+                            TLTimeline._leftmostNode, TLTimeline._notifyToken,
+                            TLTimeline._nowWindow, TLTimeline._paused,
+                            TLTimeline._rightmostNode, TLTimeline._timer,
+                            TLTimeline._updatesNowNodeOnSignificantTimeChange,
+                            TLTimelineBlobEntry._blob,
+                            TLTimelineBlobEntry._tl_entryDate,
+                            TLTimelineEntryNode._entry,
+                            TLTimelineExtendOperation._afterDate,
+                            TLTimelineExtendOperation._extendError,
+                            TLTimelineExtendOperation._limit,
+                            TLTimelineExtendOperation._timelineEntries,
+                            TLTimelineExtendOperation._timeout,
+                            TLTimelineNode._leftNode, TLTimelineNode._rightNode,
+                            TLTimelineOperation._identifiable,
+                            TLTimelineSegment._count,
+                            TLTimelineSegment._leftmostNode,
+                            TLTimelineSegment._rightmostNode,
+                            TLTimelineSessionOperation._operationQueue,
+                            TLTimelineSessionOperation._operationTimeout,
+                            TLTimelineSessionOperation._operations,
+                            TLTimelineSessionOperation._provider,
+                            TLTimelineSessionOperation._providerTimeout,
+                            TLTimelineSessionOperation._sessionCompletionBlock,
+                            TLTimelineSessionOperation._sessionError,
+                            TLTimelineSetupOperation._entryLimit,
+                            TLTimelineSetupOperation._setupError,
+                            TLTimelineSetupOperation._timeline,
+                            TLTimelineSetupOperation._timeout,
+                            TLTimelineWindow._focalNode,
+                            TLTimelineWindow._leftSegment,
+                            TLTimelineWindow._maxNodes,
+                            TLTimelineWindow._rightSegment ]
+...

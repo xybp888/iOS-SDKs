@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/Animoji.axbundle/Animoji
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityJellyfishLocalizedString ]
+    objc-classes:         [ AXJellyfishGlue, AX_AvatarCarousel,
+                            LaunchViewControllerAccessibility,
+                            MessagesViewControllerAccessibility,
+                            PuppetCollectionViewCellAccessibility,
+                            PuppetCollectionViewControllerAccessibility,
+                            RecordButtonAccessibility,
+                            __LaunchViewControllerAccessibility_super,
+                            __MessagesViewControllerAccessibility_super,
+                            __PuppetCollectionViewCellAccessibility_super,
+                            __PuppetCollectionViewControllerAccessibility_super,
+                            __RecordButtonAccessibility_super ]
+    objc-ivars:           [ AX_AvatarCarousel._messagesController ]
+...

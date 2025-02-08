@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/VideoEncoders/H9.videoencoder
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AVE_CreateInstance, _AVE_DEBUG_SetCallback,
+                            _AVE_Plugin_HEVC_CreateInstance,
+                            _AVE_RemoteSession_HEVCSetCallback,
+                            _H9EncoderRegister ]
+...

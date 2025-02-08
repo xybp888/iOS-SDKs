@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreNameParser.framework/CoreNameParser
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __NPCollapseWhitespaceAndStrip,
+                            __NPRemoveAppSignature, __NPRemoveEmojis,
+                            __NPRemoveParenthesisBracketsAndInside,
+                            __NPStripDiatritics, __NPStripQuotationMarks,
+                            __NPTokenizeName, __NPTrimNonLetters,
+                            _charSetWithEndpoints ]
+    objc-classes:         [ NPComponentSequence, NPHMMClassifier,
+                            NPNameComponentsData, NPNameParser ]
+    objc-ivars:           [ NPComponentSequence._emissionModelScore,
+                            NPComponentSequence._favorite,
+                            NPComponentSequence._observation,
+                            NPComponentSequence._oovIndices,
+                            NPComponentSequence._score,
+                            NPComponentSequence._sequence,
+                            NPComponentSequence._stateModelScore,
+                            NPHMMClassifier._nameComponentsData,
+                            NPHMMClassifier._stateProbabilities,
+                            NPHMMClassifier._totalFamilyNamesCount,
+                            NPHMMClassifier._totalGivenNamesCount,
+                            NPHMMClassifier._uniqueFamilyNamesCount,
+                            NPHMMClassifier._uniqueGivenNamesCount,
+                            NPNameComponentsData._nameComponents,
+                            NPNameParser._classifier,
+                            NPNameParser._confidenceThreshold,
+                            NPNameParser._nameComponentsData ]
+...

@@ -1,0 +1,50 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SearchUICardKitProviderSupport.framework/SearchUICardKitProviderSupport
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CRKAudioPlaybackCardSectionIgnoresMuteSwitch,
+                            _CRKMapCardSectionParameterSuffix,
+                            _CRKMapCardSectionPlacemarkData,
+                            _SUICKPProviderIdentifier,
+                            _SearchUICardKitProviderSupportVersionNumber,
+                            _SearchUICardKitProviderSupportVersionString ]
+    objc-classes:         [ SUICKPActivityIndicatorCardSectionViewController,
+                            SUICKPAudioPlaybackCardSectionViewController,
+                            SUICKPCATExecutor, SUICKPCardSectionViewProvider,
+                            SUICKPCardViewControllerProvider, SUICKPEntryPoint,
+                            SUICKPFeedbackAdapter,
+                            SUICKPFeedbackDelegateDemultiplexer,
+                            SUICKPInteractiveCardSectionViewController,
+                            SUICKPMapCardSectionViewController,
+                            SUICKPMediaInfoCardSectionViewController,
+                            SUICKPMediaPunchoutCardSectionViewController,
+                            SUICKPWatchListCardSectionViewController ]
+    objc-ivars:           [ SUICKPCardSectionViewProvider._card,
+                            SUICKPCardSectionViewProvider._delegate,
+                            SUICKPCardSectionViewProvider._feedbackDelegateDemux,
+                            SUICKPCardSectionViewProvider._viewConfigurations,
+                            SUICKPCardViewControllerProvider._cardViewControllersByCardIdentifiers,
+                            SUICKPCardViewControllerProvider._cardsByCardSectionIdentifiers,
+                            SUICKPCardViewControllerProvider._feedbackDelegateDemultiplexersByCardIdentifiers,
+                            SUICKPCardViewControllerProvider._pendingDismissalCommands,
+                            SUICKPCardViewControllerProvider._preferredContentSize,
+                            SUICKPCardViewControllerProvider._preferredPunchoutIndex,
+                            SUICKPEntryPoint._cardViewControllerProvider,
+                            SUICKPEntryPoint._catExecutor,
+                            SUICKPFeedbackAdapter._feedbackDelegate,
+                            SUICKPFeedbackDelegateDemultiplexer._defaultDelegate,
+                            SUICKPFeedbackDelegateDemultiplexer._feedbackDelegatesByCardSectionIdentifiers,
+                            SUICKPFeedbackDelegateDemultiplexer._feedbackDelegatesByCardSectionViewIds,
+                            SUICKPFeedbackDelegateDemultiplexer._serialInstrumentationFeedbackQueue,
+                            SUICKPFeedbackDelegateDemultiplexer._snippetUIDelegate,
+                            SUICKPMapCardSectionViewController._inTrackingRunLoopMode,
+                            SUICKPMapCardSectionViewController._mainRunLoopObserverRef,
+                            SUICKPMapCardSectionViewController._mapSectionView,
+                            SUICKPMapCardSectionViewController._needsToLoadCardSectionView ]
+...

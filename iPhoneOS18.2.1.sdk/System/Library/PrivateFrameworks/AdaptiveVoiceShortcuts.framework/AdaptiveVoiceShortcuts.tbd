@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AdaptiveVoiceShortcuts.framework/AdaptiveVoiceShortcuts
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXPIBridgePerformActionForSystemAction,
+                            _AXPIBridgePerformWarm,
+                            _AdaptiveVoiceShortcutsVersionNumber,
+                            _AdaptiveVoiceShortcutsVersionString,
+                            _convertToShortLPCMBufFromFloatLPCMBuf, _kAdjust0DB ]
+    objc-classes:         [ AVAudioUtilities, AVSCoreSpeechBridge, AVSSettings,
+                            AVSStore, AVSTriggerController,
+                            AdaptiveVoiceShortcutObjcClass,
+                            _TtC22AdaptiveVoiceShortcuts20AVSAutomationSupport ]
+    objc-ivars:           [ AVSCoreSpeechBridge._commandControlListener,
+                            AVSCoreSpeechBridge._onBufferReceived,
+                            AVSCoreSpeechBridge._onStopped ]
+...

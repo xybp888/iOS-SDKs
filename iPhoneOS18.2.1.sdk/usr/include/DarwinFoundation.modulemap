@@ -1,0 +1,371 @@
+module DarwinFoundation [system] {
+  // These must all be set in the GCC_PREPROCESSOR_DEFINITIONS Xcode build
+  // setting, or passed on the command line with -D in order to have an
+  // effect. #define won't do anything for any of these.
+//  config_macros
+//    // <sys/cdefs.h> and many others
+//    _ANSI_SOURCE,
+//    _DARWIN_C_SOURCE,
+//    _POSIX_C_SOURCE,
+//    _POSIX_SOURCE,
+//    _XOPEN_SOURCE,
+//
+//    // <sys/appleapiopts.h>
+//    __APPLE_API_STRICT_CONFORMANCE,
+
+  // Basic macros.
+  explicit module appleapiopts {
+    header "sys/appleapiopts.h"
+    export *
+  }
+
+  explicit module cdefs {
+    header "sys/cdefs.h"
+    textual header "sys/_posix_availability.h"
+    textual header "sys/_symbol_aliasing.h"
+
+    export *
+  }
+
+  // Basic quality of service interfaces.
+  explicit module qos {
+    header "sys/qos.h"
+    export *
+  }
+
+  // Implementation for host/network byte swapping, use <arpa/inet.h> instead.
+  explicit module endian {
+    header "machine/endian.h"
+    header "arm/endian.h"
+
+    export *
+
+    module sys_endian {
+      header "sys/_endian.h"
+      export *
+    }
+
+    module _endian {
+      header "machine/_endian.h"
+      header "arm/_endian.h"
+
+      export *
+
+      module sys__endian {
+        header "sys/__endian.h"
+        export *
+      }
+    }
+  }
+
+  // Low level hardware structures used in the implementations of things
+  // like <signal.h> and <sys/ucontext.h>, use those headers instead.
+  explicit module mach {
+    explicit module structs {
+      header "mach/machine/_structs.h"
+      header "mach/arm/_structs.h"
+
+      export *
+    }
+  }
+
+  // Implementation for general byte swapping, use <libkern/OSByteOrder.h> instead.
+  explicit module OSByteOrder {
+    header "libkern/_OSByteOrder.h"
+    header "libkern/arm/_OSByteOrder.h"
+
+    export *
+  }
+
+  // Common implementation for secure variants of some C standard library and
+  // POSIX functions, use headers like <string.h> instead.
+  explicit module secure {
+    header "secure/_common.h"
+    export *
+  }
+
+  // Cover headers for <stdarg.h>, use that header instead. (These are used
+  // by <sys/_types.h>.)
+  explicit module stdarg {
+    explicit module va_list {
+      header "sys/_types/_va_list.h"
+      export *
+    }
+  }
+
+  // Cover headers for <stddef.h>, use that header instead. (These are used
+  // by <machine/_types.h> and <sys/_types.h>.)
+  explicit module stddef {
+    explicit module null {
+      header "sys/_types/_null.h"
+      export *
+    }
+
+    explicit module offsetof {
+      header "sys/_types/_offsetof.h"
+      export *
+    }
+
+    explicit module ptrdiff_t {
+      header "sys/_types/_ptrdiff_t.h"
+      export *
+    }
+
+    explicit module rsize_t {
+      header "sys/_types/_rsize_t.h"
+      export *
+    }
+
+    explicit module size_t {
+      header "sys/_types/_size_t.h"
+      export *
+    }
+
+    explicit module wchar_t {
+      header "sys/_types/_wchar_t.h"
+      export *
+    }
+  }
+
+  // Implementation for some <stdint.h> types, use that header instead. (The signed
+  // and pointer types are used by <machine/types.h> which is under <stdint.h>.)
+  explicit module stdint {
+    explicit module int8_t {
+      header "sys/_types/_int8_t.h"
+      export *
+    }
+
+    explicit module int16_t {
+      header "sys/_types/_int16_t.h"
+      export *
+    }
+
+    explicit module int32_t {
+      header "sys/_types/_int32_t.h"
+      export *
+    }
+
+    explicit module int64_t {
+      header "sys/_types/_int64_t.h"
+      export *
+    }
+
+    explicit module uint8_t {
+      header "_types/_uint8_t.h"
+      export *
+    }
+
+    explicit module uint16_t {
+      header "_types/_uint16_t.h"
+      export *
+    }
+
+    explicit module uint32_t {
+      header "_types/_uint32_t.h"
+      export *
+    }
+
+    explicit module uint64_t {
+      header "_types/_uint64_t.h"
+      export *
+    }
+
+    explicit module intptr_t {
+      header "sys/_types/_intptr_t.h"
+      export *
+    }
+
+    explicit module uintptr_t {
+      header "sys/_types/_uintptr_t.h"
+      export *
+    }
+
+    explicit module intmax_t {
+      header "_types/_intmax_t.h"
+      export *
+    }
+
+    explicit module uintmax_t {
+      header "_types/_uintmax_t.h"
+      export *
+    }
+  }
+
+  // Implementation for some <stdlib.h> types, use that header instead. (MB_CUR_MAX
+  // is included for compatibility in <xlocale.h> which is a sibling to <stdlib.h>.)
+  explicit module stdlib {
+    explicit module _mb_cur_max {
+      header "_mb_cur_max.h"
+      export *
+    }
+  }
+
+  // Implementation for some <wchar.h> types, use that header instead. (wint_t
+  // is included for compatibility in <stddef.h> which is under <wchar.h>.)
+  explicit module wchar {
+    explicit module wint_t {
+      header "sys/_types/_wint_t.h"
+      export *
+    }
+  }
+
+  // Implementation for C standard library and POSIX types, use headers like
+  // <stddef.h> or <sys/types.h> instead.
+  explicit module types {
+    header "machine/types.h"
+    header "arm/types.h"
+
+    export *
+
+    module _types {
+      header "_types.h"
+      export *
+    }
+
+    module sys_types {
+      header "sys/_types.h"
+      export *
+    }
+
+    module machine_types {
+      header "machine/_types.h"
+      header "arm/_types.h"
+
+      export *
+    }
+
+    module pthread_types {
+      header "sys/_pthread/_pthread_types.h"
+      export *
+    }
+  }
+
+  // Custom unsigned types used by other low level interfaces, use basic C
+  // or <stdint.h> types instead.
+  explicit module unsigned_types {
+    explicit module u_char {
+      header "sys/_types/_u_char.h"
+      export *
+    }
+
+    explicit module u_short {
+      header "sys/_types/_u_short.h"
+      export *
+    }
+
+    explicit module u_int {
+      header "sys/_types/_u_int.h"
+      export *
+    }
+
+    explicit module u_int8_t {
+      header "sys/_types/_u_int8_t.h"
+      export *
+    }
+
+    explicit module u_int16_t {
+      header "sys/_types/_u_int16_t.h"
+      export *
+    }
+
+    explicit module u_int32_t {
+      header "sys/_types/_u_int32_t.h"
+      export *
+    }
+
+    explicit module u_int64_t {
+      header "sys/_types/_u_int64_t.h"
+      export *
+    }
+  }
+
+  // Common implementation for xlocale functions, use <xlocale.h> with headers
+  // like <string.h> instead.
+  explicit module xlocale {
+    header "__xlocale.h"
+    export *
+  }
+}
+
+// Other shared foundational types that are less pervasive.
+
+// Use <mach/port.h> instead.
+module _mach_port_t [system] {
+  header "sys/_types/_mach_port_t.h"
+  export *
+}
+
+// Use <netinet/in.h> instead.
+module netinet_in [system] {
+  explicit module in_addr_t {
+    header "sys/_types/_in_addr_t.h"
+    export *
+  }
+
+  explicit module in_port_t {
+    header "sys/_types/_in_port_t.h"
+    export *
+  }
+}
+
+// Use <sys/select.h> instead. (Separate from the sys_select module
+// so that <sys/types.h> can include these headers without importing
+// the sys_select module.)
+module _sys_select [system] {
+  explicit module fd_def {
+    header "sys/_types/_fd_def.h"
+    export *
+  }
+
+  explicit module fd_setsize {
+    header "sys/_types/_fd_setsize.h"
+    export *
+  }
+
+  explicit module fd_clr {
+    header "sys/_types/_fd_clr.h"
+    export *
+  }
+
+  explicit module fd_copy {
+    header "sys/_types/_fd_copy.h"
+    export *
+  }
+
+  explicit module fd_isset {
+    header "sys/_types/_fd_isset.h"
+    export *
+  }
+
+  explicit module fd_set {
+    header "sys/_types/_fd_set.h"
+    export *
+  }
+
+  explicit module fd_zero {
+    header "sys/_types/_fd_zero.h"
+    export *
+  }
+}
+
+// Use <sys/time.h> instead.
+module sys_time [system] {
+  explicit module timeval {
+    header "sys/_types/_timeval.h"
+    export *
+  }
+}
+
+// Low level type used by other low level interfaces.
+module _useconds_t [system] {
+  header "sys/_types/_useconds_t.h"
+  export *
+}
+
+// Use <uuid/uuid.h> instead.
+module uuid [system] {
+  explicit module uuid_t {
+    header "sys/_types/_uuid_t.h"
+    export *
+  }
+}

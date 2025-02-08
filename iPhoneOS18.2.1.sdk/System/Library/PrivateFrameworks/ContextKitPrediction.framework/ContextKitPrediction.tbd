@@ -1,0 +1,35 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ContextKitPrediction.framework/ContextKitPrediction
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ContextKitPredictionVersionNumber,
+                            _ContextKitPredictionVersionString ]
+    objc-classes:         [ CKContextRecentsCache,
+                            CKContextRecentsPredictionManager,
+                            CKContextUserFacingUniversalRecent ]
+    objc-ivars:           [ CKContextRecentsCache._biomeQueue,
+                            CKContextRecentsCache._computedFocusModeQueue,
+                            CKContextRecentsCache._computedModeSink,
+                            CKContextRecentsCache._computedModeStream,
+                            CKContextRecentsCache._configuration,
+                            CKContextRecentsCache._deferredMaintenanceTaskBlock,
+                            CKContextRecentsCache._deferredMaintenanceTransaction,
+                            CKContextRecentsCache._delegate,
+                            CKContextRecentsCache._latestActivity,
+                            CKContextRecentsCache._stream,
+                            CKContextRecentsPredictionManager._clientModel,
+                            CKContextRecentsPredictionManager._delegate,
+                            CKContextRecentsPredictionManager._dndService,
+                            CKContextRecentsPredictionManager._recentsCache,
+                            CKContextRecentsPredictionManager._suggestionDonationTransaction,
+                            CKContextRecentsPredictionManager._suggestionReportingQueue,
+                            CKContextRecentsPredictionManager._suggestionsClearingBlock,
+                            CKContextRecentsPredictionManager._suggestionsContributionBlock,
+                            CKContextUserFacingUniversalRecent._event ]
+...

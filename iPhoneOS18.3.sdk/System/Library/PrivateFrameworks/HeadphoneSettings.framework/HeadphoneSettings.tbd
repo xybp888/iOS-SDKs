@@ -1,0 +1,44 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HeadphoneSettings.framework/HeadphoneSettings
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BTSDeviceUpdateHealthCustomProperty,
+                            _BTSFitnessClassicTag, _BTSFitnessDeviceTag,
+                            _HeadphoneSettingsVersionNumber,
+                            _HeadphoneSettingsVersionString,
+                            _sharedBluetoothSettingsLogComponent ]
+    objc-classes:         [ BTSDevice, BTSDeviceClassic, BTSDeviceLE,
+                            HPSConnectedHeadphoneInfo,
+                            HPSConnectedHeadphonesController, HPSProductUtils ]
+    objc-ivars:           [ BTSDevice._accessorySetupKitDisplayName,
+                            BTSDevice._linkedRadioAddress,
+                            BTSDevice._relatedFutureRadioAddress,
+                            BTSDeviceClassic._device,
+                            BTSDeviceClassic.accessorySetupKitDisplayName,
+                            BTSDeviceClassic.ctkdDevice,
+                            BTSDeviceClassic.denyIncomingClassicConnection,
+                            BTSDeviceClassic.managedByAliroWallet,
+                            BTSDeviceClassic.managedByDeviceAccess,
+                            BTSDeviceClassic.managedByWallet,
+                            BTSDeviceClassic.supportsBackgroundNI,
+                            BTSDeviceLE._centralManager, BTSDeviceLE._peripheral,
+                            BTSDeviceLE._underlyingDADevice,
+                            BTSDeviceLE.ctkdDevice,
+                            BTSDeviceLE.denyIncomingClassicConnection,
+                            BTSDeviceLE.healthDevice,
+                            BTSDeviceLE.managedByAliroWallet,
+                            BTSDeviceLE.managedByDeviceAccess,
+                            BTSDeviceLE.managedByWallet,
+                            BTSDeviceLE.supportsBackgroundNI,
+                            HPSConnectedHeadphoneInfo._deviceID,
+                            HPSConnectedHeadphoneInfo._deviceImage,
+                            HPSConnectedHeadphoneInfo._deviceName,
+                            HPSConnectedHeadphoneInfo._deviceSpecifier,
+                            HPSConnectedHeadphonesController._deviceChangeHandler ]
+...

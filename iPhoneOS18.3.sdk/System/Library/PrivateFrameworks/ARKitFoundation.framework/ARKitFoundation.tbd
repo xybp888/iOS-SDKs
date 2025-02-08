@@ -1,0 +1,40 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ARKitFoundation.framework/ARKitFoundation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ARDepthCameraCalibrationCopy,
+                            _ARDepthCameraCalibrationCreate,
+                            _ARDepthCameraCalibrationGetDeviceTransform,
+                            _ARDepthCameraCalibrationGetExtrinsics,
+                            _ARDepthCameraCalibrationGetIntrinsics,
+                            _ARDepthCameraCalibrationGetSLAMReinitCount,
+                            _ARDepthCameraCalibrationGetSLAMSessionID,
+                            _ARDepthCameraCalibrationGetTimestamp,
+                            _ARDepthCameraCalibrationRelease,
+                            _ARDepthCameraCalibrationSetDeviceTransform,
+                            _ARDepthCameraCalibrationSetExtrinsics,
+                            _ARDepthCameraCalibrationSetIntrinsics,
+                            _ARDepthCameraCalibrationSetSLAMReinitCount,
+                            _ARDepthCameraCalibrationSetSLAMSessionID,
+                            _ARDepthCameraCalibrationSetTimestamp,
+                            _ARDepthCameraCalibrationSize,
+                            _ARKitFoundationBuildVersionString,
+                            _ARKitFoundationVersionNumber,
+                            _ARKitFoundationVersionString ]
+    objc-classes:         [ ARDepthData ]
+    objc-ivars:           [ ARDepthData._adCameraCalibration,
+                            ARDepthData._cameraIntrinsics,
+                            ARDepthData._confidenceBuffer,
+                            ARDepthData._confidenceMap, ARDepthData._depthMap,
+                            ARDepthData._depthSensorsState,
+                            ARDepthData._deviceTransform,
+                            ARDepthData._extrinsicsToAppNode,
+                            ARDepthData._isValid, ARDepthData._normalsBuffer,
+                            ARDepthData._timestamp ]
+...

@@ -1,0 +1,54 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SettingsCellular.framework/SettingsCellular
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PSPerAppNetworkDataAccessPolicyChangedNotification,
+                            _PSSimStatusChangedToReadyNotification,
+                            _kCellularSettingsLogSubsystem,
+                            _kPSWirelessDataUsageCacheRefreshedNotification,
+                            _kPSWirelessDataUsageChangedNotification,
+                            _kPSWirelessDataUsageOtherDevicesKey ]
+    objc-classes:         [ Logger, PSAppCellularUsageSpecifier,
+                            PSAppDataUsagePolicyCache,
+                            PSAppDataUsagePolicyListController,
+                            PSAppDataUsagePolicySwitchSpecifier,
+                            PSAppDataUsagePolicySwitchTableCell,
+                            PSAppDataUsagePolicyTernaryControlSpecifier,
+                            PSAppDataUsagePolicyTernaryControlTableCell,
+                            PSBillingPeriodSelectorSpecifier,
+                            PSCellularManagementCache, PSDataUsageSpecifier,
+                            PSDataUsageStatisticsCache,
+                            PSMultilineTitleTableCell, PSSimStatusCache,
+                            PSSubtitleTableCell,
+                            PSWatchOnlyAppCellularUsageSpecifier,
+                            SettingsCellularSharedUtils ]
+    objc-ivars:           [ PSAppCellularUsageSpecifier._shouldShowUsage,
+                            PSAppDataUsagePolicyCache._ctClient,
+                            PSAppDataUsagePolicyCache._ctServerConnection,
+                            PSAppDataUsagePolicyCache._policyCache,
+                            PSAppDataUsagePolicyTernaryControlSpecifier._displayName,
+                            PSAppDataUsagePolicyTernaryControlSpecifier._fullyInitialized,
+                            PSBillingPeriodSelectorSpecifier._delegate,
+                            PSBillingPeriodSelectorSpecifier._selectedPeriod,
+                            PSCellularManagementCache._managedCellDataAppCache,
+                            PSDataUsageStatisticsCache._cacheNeedsRefresh,
+                            PSDataUsageStatisticsCache._cachedDeviceDataUsage,
+                            PSDataUsageStatisticsCache._client,
+                            PSDataUsageStatisticsCache._hotspotClientsUsage,
+                            PSDataUsageStatisticsCache._refreshCompletionHandler,
+                            PSDataUsageStatisticsCache._refreshInProgress,
+                            PSDataUsageStatisticsCache._workspaceInfo,
+                            PSSimStatusCache._coreTelephonyClient,
+                            PSSimStatusCache._currentDataSubscriptionContext,
+                            PSSimStatusCache._isAnySimPresent,
+                            PSSimStatusCache._simHardwareTypeDict,
+                            PSSimStatusCache._simStatusDict,
+                            PSSimStatusCache._subscriptionInfo,
+                            PSSimStatusCache._userDefaultVoiceSubscriptionContext ]
+...

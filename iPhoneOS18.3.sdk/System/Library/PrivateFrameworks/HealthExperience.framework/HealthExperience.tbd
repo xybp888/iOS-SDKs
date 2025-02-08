@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HealthExperience.framework/HealthExperience
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HAFeatureFlagAlwaysRunGenerationOnSharingSetUp,
+                            _HAFeatureFlagBridgeHealthFeaturesOnboardingEnabled,
+                            _HAFeatureFlagPreloadSummaryCells,
+                            _HAFeatureFlagShowTrendsInSummary,
+                            _HAFeatureFlagStewieEnabled,
+                            _HAFeatureFlagVO2MaxRetrocomputeEnabled,
+                            _HAFeatureFlagViewLoggingEnabled,
+                            _health_dispatch_get_current_workloop,
+                            _health_dispatch_workloop_create ]
+    objc-classes:         [ HK_TPSDiscoverabilitySignal, MedicalIDChangeObserver,
+                            OrganDonationObserver, _HKMobileGestaltBridge,
+                            _TtC16HealthExperience14MedicalIDCache,
+                            _TtC16HealthExperience20UserDefaultsObserver,
+                            _TtC16HealthExperience21AsynchronousOperation,
+                            _TtC16HealthExperience23MedicalIDFetchOperation,
+                            _TtC16HealthExperience25ThreadsafeHKCalendarCache,
+                            _TtC16HealthExperience26AsynchronousBlockOperation,
+                            _TtC16HealthExperience31CloudSyncEventPublisherObserver,
+                            _TtC16HealthExperience33SaveManagedObjectContextOperation,
+                            _TtC16HealthExperience37FirstRestoreNotInProgressPrecondition,
+                            _TtC16HealthExperience38FeatureStatusAdvertisableFeatureSource ]
+    objc-ivars:           [ HK_TPSDiscoverabilitySignal._identifier,
+                            MedicalIDChangeObserver._delegate,
+                            MedicalIDChangeObserver._medicalIDChangedToken,
+                            OrganDonationObserver._delegate,
+                            OrganDonationObserver._organDonationChangedToken ]
+...

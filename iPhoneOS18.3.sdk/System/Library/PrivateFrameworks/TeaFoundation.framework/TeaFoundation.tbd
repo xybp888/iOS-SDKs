@@ -1,0 +1,68 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/TeaFoundation.framework/TeaFoundation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LLVMFuzzerTestOneInput, _TFAmIBeingDebugged,
+                            _TFCallbackScopeAny, _TFCallbackScopeName,
+                            _TFCallbackScopeNames, _TFCompletedStartup,
+                            _TFCrashDetector, _TFDrawingUnlimitedPower,
+                            _TFExceptionHandler, _TFRegisterCrashCallbacks,
+                            _TFRemoveCrashFiles, _TFSetupCrashDetector,
+                            _TFSignalHandler, _TFUnregisterCrashCallbacks,
+                            _TeaFoundationVersionNumber,
+                            _TeaFoundationVersionString,
+                            _detectedCrashOnLaunchFile,
+                            _detectedCrashOnLaunchURL,
+                            _interprocessNotificationHandler, _isInternalBuild,
+                            _lastSigBus, _lastSigFpe, _lastSigIll, _lastSigSegv,
+                            _launchState,
+                            _tf_os_signpost_aggregate_store_generation_begin,
+                            _tf_os_signpost_aggregate_store_generation_end,
+                            _tf_os_signpost_blueprint_integrating_begin,
+                            _tf_os_signpost_blueprint_integrating_end,
+                            _tf_os_signpost_blueprint_modify_begin,
+                            _tf_os_signpost_blueprint_modify_end,
+                            _tf_os_signpost_blueprint_processing_begin,
+                            _tf_os_signpost_blueprint_processing_end,
+                            _tf_os_signpost_clustering_begin,
+                            _tf_os_signpost_clustering_end,
+                            _tf_os_signpost_news_extended_launch_begin,
+                            _tf_os_signpost_news_extended_launch_end,
+                            _tf_os_signpost_news_feed_group_fetch_begin,
+                            _tf_os_signpost_news_feed_group_fetch_end,
+                            _tf_os_signpost_today_prewarm_blueprint_modify_interval_begin,
+                            _tf_os_signpost_today_prewarm_blueprint_modify_interval_end,
+                            _tf_os_signpost_today_prewarm_data_manager_interval_begin,
+                            _tf_os_signpost_today_prewarm_data_manager_interval_end,
+                            _tf_os_signpost_today_prewarm_interval_begin,
+                            _tf_os_signpost_today_prewarm_interval_end,
+                            _wipeStateOnLaunchFile, _wipeStateOnLaunchURL ]
+    objc-classes:         [ TFArchiver, TFCallbackScope, TFCapabilities, TFContainer,
+                            TFCrashSimulator, TFDiagnosticData,
+                            TFDiagnosticFileCollector,
+                            TFInterprocessDiagnosticDumpNotifier,
+                            TFInterprocessDiagnosticFileReceiver,
+                            TFInterprocessNotificationCallback, TFKey,
+                            TFMultiDelegate, TFTeaFoundationAssembly,
+                            TSBackgroundFetchJournalEntry,
+                            _TtC13TeaFoundation14BridgedContext,
+                            _TtC13TeaFoundation15BridgedResolver,
+                            _TtC13TeaFoundation17BridgedDefinition,
+                            _TtC13TeaFoundation21BridgedProxyContainer,
+                            _TtC13TeaFoundation22BackgroundFetchManager,
+                            _TtC13TeaFoundation27BridgedCallbackRegistration,
+                            _TtC13TeaFoundation28BridgedRegistrationContainer,
+                            _TtC13TeaFoundation34NetworkOperationURLSessionDelegate ]
+    objc-ivars:           [ TFCallbackScope._names, TFCallbackScope._scope,
+                            TFInterprocessNotificationCallback._callback,
+                            TFInterprocessNotificationCallback._notificationName,
+                            TFKey._address, TFKey._name, TFKey._type,
+                            TFMultiDelegate._children,
+                            TFMultiDelegate._delegateProtocol ]
+...

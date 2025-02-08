@@ -1,0 +1,42 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppStoreFoundation.framework/AppStoreFoundation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ ASFAsn1IntegerToken, ASFAsn1OSToken,
+                            ASFAsn1ReceiptIAPToken, ASFAsn1ReceiptToken,
+                            ASFAsn1SetToken, ASFAsn1Token, ASFIAPItem, ASFReceipt ]
+    objc-ivars:           [ ASFAsn1IntegerToken.mValue, ASFAsn1OSToken.mValue,
+                            ASFAsn1ReceiptIAPToken.mContentToken,
+                            ASFAsn1ReceiptIAPToken.mType,
+                            ASFAsn1ReceiptIAPToken.mTypeVersion,
+                            ASFAsn1ReceiptToken.mContentToken,
+                            ASFAsn1ReceiptToken.mType,
+                            ASFAsn1ReceiptToken.mTypeVersion,
+                            ASFAsn1SetToken.mReadData, ASFAsn1Token.mClass,
+                            ASFAsn1Token.mData, ASFAsn1Token.mIdentifier,
+                            ASFIAPItem._originalPurchaseDate,
+                            ASFIAPItem._originalTransactionID,
+                            ASFIAPItem._productID, ASFIAPItem._purchaseDate,
+                            ASFIAPItem._quantity, ASFIAPItem._transactionID,
+                            ASFReceipt._bundleID, ASFReceipt._bundleIDData,
+                            ASFReceipt._bundleVersion,
+                            ASFReceipt._cancellationReason,
+                            ASFReceipt._creationDate, ASFReceipt._developerID,
+                            ASFReceipt._downloadID, ASFReceipt._expirationDate,
+                            ASFReceipt._frAppVersion, ASFReceipt._frToolVersion,
+                            ASFReceipt._hwtype, ASFReceipt._iaps,
+                            ASFReceipt._installerVersionID, ASFReceipt._itemID,
+                            ASFReceipt._mutableIAPs, ASFReceipt._opaqueDSIDData,
+                            ASFReceipt._opaqueDSIDString,
+                            ASFReceipt._organizationDisplayName,
+                            ASFReceipt._parentalControls, ASFReceipt._path,
+                            ASFReceipt._purchaseDate, ASFReceipt._receiptType,
+                            ASFReceipt._renewalDate, ASFReceipt._sha1,
+                            ASFReceipt._verbose ]
+...

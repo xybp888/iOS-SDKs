@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libsp.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _spd_client_checkin_socket,
+                            _spd_client_checkout_all_sockets,
+                            _spd_client_checkout_socket, _spd_client_create,
+                            _spd_client_destroy, _spd_client_session_create,
+                            _spd_client_session_destroy,
+                            _spd_client_session_set_callbacks,
+                            _spd_client_session_set_dispatch_queue,
+                            _spd_client_start_monitoring_all_sockets,
+                            _spd_client_start_monitoring_all_sockets_for_pid,
+                            _spd_client_start_monitoring_socket,
+                            _spd_client_stop_monitoring_all_sockets,
+                            _spd_client_stop_monitoring_all_sockets_for_pid,
+                            _spd_client_stop_monitoring_socket ]
+...

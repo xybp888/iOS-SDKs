@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/EnergyKitFoundation.framework/EnergyKitFoundation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _EnergyKitFoundationVersionNumber,
+                            _EnergyKitFoundationVersionString ]
+    objc-classes:         [ EnergySiteRecords, EnergyWindowNotifications,
+                            EnergyWindowsCache, EnergyWindowsTracker,
+                            IntervalBlocks, LocalLoadEvents, TOUPeaks,
+                            UsagePointRecords, UsageSummaryRecords,
+                            _TtC19EnergyKitFoundation10EKGuidance,
+                            _TtC19EnergyKitFoundation12EKEnergySite ]
+...

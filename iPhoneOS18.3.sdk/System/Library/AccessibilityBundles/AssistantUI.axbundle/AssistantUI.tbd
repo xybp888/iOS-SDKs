@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/AssistantUI.axbundle/AssistantUI
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AssistantUIAccessibilityLocalizedString,
+                            _kAXMobileCalendarBundleID, _kAXMobileMailBundleID,
+                            _kAXMobilePhoneBundleID, _kAXMobileSafariBundleID,
+                            _kAXSiriBundleID, _kAXStocksBundleID,
+                            _kAXWeatherBundleID ]
+    objc-classes:         [ AFUISiriCompactViewAccessibility,
+                            AFUISiriSessionAccessibility,
+                            AFUISiriViewAccessibility,
+                            AFUISiriViewControllerAccessibility,
+                            AssistantUIAXGlue,
+                            __AFUISiriCompactViewAccessibility_super,
+                            __AFUISiriSessionAccessibility_super,
+                            __AFUISiriViewAccessibility_super,
+                            __AFUISiriViewControllerAccessibility_super ]
+...

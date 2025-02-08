@@ -1,0 +1,59 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/UserNotificationsSettings.framework/UserNotificationsSettings
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _UNNotificationSourceFilterDefault,
+                            _UNUserNotificationSettingsServiceName,
+                            _UserNotificationsSettingsVersionNumber,
+                            _UserNotificationsSettingsVersionString,
+                            __UNNotificationSourceFilterAll ]
+    objc-classes:         [ UNMutableNotificationSystemSettings,
+                            UNNotificationMuteAssertion,
+                            UNNotificationSettingsCenter, UNNotificationSource,
+                            UNNotificationSourceMuteAssertion,
+                            UNNotificationSourceSettings,
+                            UNNotificationSystemSettings,
+                            UNNotificationThreadsMuteAssertion,
+                            UNNotificationTopicSettings,
+                            UNUserNotificationSettingsService,
+                            UNUserNotificationSettingsServiceConnection ]
+    objc-ivars:           [ UNNotificationSettingsCenter._delegate,
+                            UNNotificationSettingsCenter._observers,
+                            UNNotificationSettingsCenter._queue,
+                            UNNotificationSource._bundlePath,
+                            UNNotificationSource._displayName,
+                            UNNotificationSource._icon,
+                            UNNotificationSource._isHiddenFromSettings,
+                            UNNotificationSource._sourceIdentifier,
+                            UNNotificationSource._sourceSettings,
+                            UNNotificationSourceMuteAssertion._expirationDate,
+                            UNNotificationSourceSettings._isRestricted,
+                            UNNotificationSourceSettings._muteAssertion,
+                            UNNotificationSourceSettings._notificationSettings,
+                            UNNotificationSourceSettings._topicSettings,
+                            UNNotificationSystemSettings._announcementCarPlaySetting,
+                            UNNotificationSystemSettings._announcementHeadphonesSetting,
+                            UNNotificationSystemSettings._announcementSetting,
+                            UNNotificationSystemSettings._modifiedSettings,
+                            UNNotificationSystemSettings._notificationListDisplayStyleSetting,
+                            UNNotificationSystemSettings._remoteNotificationsSetting,
+                            UNNotificationSystemSettings._scheduledDeliverySetting,
+                            UNNotificationSystemSettings._scheduledDeliveryShowNextSummarySetting,
+                            UNNotificationSystemSettings._scheduledDeliveryTimes,
+                            UNNotificationSystemSettings._showPreviewsSetting,
+                            UNNotificationSystemSettings._summarizationSetting,
+                            UNNotificationThreadsMuteAssertion._expirationDateByThreadID,
+                            UNNotificationTopicSettings._muteAssertion,
+                            UNNotificationTopicSettings._topic,
+                            UNNotificationTopicSettings._topicSettings,
+                            UNUserNotificationSettingsServiceConnection._callOutQueue,
+                            UNUserNotificationSettingsServiceConnection._connection,
+                            UNUserNotificationSettingsServiceConnection._observers,
+                            UNUserNotificationSettingsServiceConnection._queue ]
+...

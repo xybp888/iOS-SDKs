@@ -1,0 +1,19 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios18.2 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftFileProvider -swift-version 5 -enforce-exclusivity=checked -O -library-level other -enable-bare-slash-regex -user-module-version 2732.60.128 -module-name FileProvider
+@_exported import FileProvider
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 11.3, iOS 16.0, *)
+@available(macCatalyst, unavailable)
+extension FileProvider.NSFileProviderDomainVersion : Swift.Comparable {
+  public static func < (lhs: FileProvider.NSFileProviderDomainVersion, rhs: FileProvider.NSFileProviderDomainVersion) -> Swift.Bool
+}
+@available(macOS 13.0, iOS 16.0, *)
+@available(macCatalyst, unavailable)
+extension FileProvider.NSFileProviderManager {
+  public func requestDownloadForItem(withIdentifier itemIdentifier: FileProvider.NSFileProviderItemIdentifier, requestedRange: Foundation.NSRange? = nil, completionHandler: @escaping ((any Swift.Error)?) -> Swift.Void)
+  public func requestDownloadForItem(withIdentifier itemIdentifier: FileProvider.NSFileProviderItemIdentifier, requestedRange: Foundation.NSRange? = nil) async throws
+}

@@ -1,0 +1,82 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64e-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 969.3.4 -module-name QuickLook -package-name com.apple.quicklook-package
+import Combine
+import DeveloperToolsSupport
+import ExtensionFoundation
+import ExtensionKit
+import Foundation
+import OSLog
+@_exported import QuickLook
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+@available(iOS 15.0, *)
+extension QuickLook.QLPreviewReply {
+  public var stringEncoding: Swift.String.Encoding {
+    get
+    set(newEncoding)
+  }
+  convenience public init(contextSize: CoreFoundation.CGSize, isBitmap: Swift.Bool, drawUsing closure: @escaping (CoreGraphics.CGContext, QuickLook.QLPreviewReply) throws -> Swift.Void)
+  convenience public init(forPDFWithPageSize defaultPageSize: CoreFoundation.CGSize, createDocumentUsing closure: @escaping (QuickLook.QLPreviewReply) throws -> PDFKit.PDFDocument)
+  convenience public init(dataOfContentType contentType: UniformTypeIdentifiers.UTType, contentSize: CoreFoundation.CGSize, createDataUsing closure: @escaping (QuickLook.QLPreviewReply) throws -> Foundation.Data)
+}
+
+@available(visionOS 2.0, *)
+@available(macOS, unavailable)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public typealias EditingMode = QuickLook.QLPreviewItemEditingMode
+@_hasMissingDesignatedInitializers @available(visionOS 2.0, *)
+@available(macOS, unavailable)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+final public class PreviewApplication {
+  final public class func open(urls: [Foundation.URL], selectedURL: Foundation.URL? = nil) -> QuickLook.PreviewSession
+  final public class func open(items: [QuickLook.PreviewItem], selectedItem: QuickLook.PreviewItem? = nil) -> QuickLook.PreviewSession
+  @objc deinit
+}
+@available(visionOS 2.0, *)
+@available(macOS, unavailable)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct PreviewItem : Swift.Equatable, Swift.Identifiable, Swift.Sendable, Swift.Hashable {
+  public let displayName: Swift.String?
+  public let editingMode: QuickLook.EditingMode
+  public init(url: Foundation.URL, displayName: Swift.String? = nil, editingMode: QuickLook.EditingMode = .updateContents)
+  public let id: Foundation.UUID
+  public static func == (lhs: QuickLook.PreviewItem, rhs: QuickLook.PreviewItem) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  @available(visionOS 2.0, *)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(macOS, unavailable)
+  public typealias ID = Foundation.UUID
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(visionOS 2.0, *)
+@available(macOS, unavailable)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct PreviewSession : Swift.Sendable {
+  public enum Event : Swift.Sendable {
+    case didOpen
+    case didFail(any Swift.Error)
+    case didClose
+  }
+  public var events: some _Concurrency.AsyncSequence<QuickLook.PreviewSession.Event, Swift.Never> {
+    get
+  }
+  public func close() async throws
+}

@@ -1,0 +1,66 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DoNotDisturbKit.framework/DoNotDisturbKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DNDEndOfEventAssertionIdentifier,
+                            _DNDKitRegisterLogging, _DNDLocalizedStringHelper,
+                            _DNDLogLocation, _DNDLogNotifications,
+                            _DNDLogToggleManager, _DNDOneHourLifetimeIdentifier,
+                            _DNDStringFromToggleTargetState,
+                            _DNDUntilEveningAssertionIdentifier,
+                            _DNDUntilILeaveAssertionIdentifier,
+                            _DNDUntilMorningAssertionIdentifier,
+                            _DoNotDisturbKitVersionNumber,
+                            _DoNotDisturbKitVersionString, _kEventSearchTime,
+                            _kLOIHighConfidence ]
+    objc-classes:         [ DNDAWDMetricsService, DNDLifetimeDetails,
+                            DNDLifetimeDetailsProvider, DNDNotificationsService,
+                            DNDToggleManager ]
+    objc-ivars:           [ DNDAWDMetricsService._currentState,
+                            DNDAWDMetricsService._lockState,
+                            DNDAWDMetricsService._notificationsStateService,
+                            DNDAWDMetricsService._queue,
+                            DNDLifetimeDetails._identifier,
+                            DNDLifetimeDetails._metadata,
+                            DNDLifetimeDetails._name,
+                            DNDLifetimeDetailsProvider._availableLifetimeDetails,
+                            DNDLifetimeDetailsProvider._calendarVisibilityManager,
+                            DNDLifetimeDetailsProvider._calloutQueue,
+                            DNDLifetimeDetailsProvider._currentPlaceInference,
+                            DNDLifetimeDetailsProvider._delegate,
+                            DNDLifetimeDetailsProvider._eventStore,
+                            DNDLifetimeDetailsProvider._eventStoreQueue,
+                            DNDLifetimeDetailsProvider._locationManager,
+                            DNDLifetimeDetailsProvider._monitoringLifetimes,
+                            DNDLifetimeDetailsProvider._queue,
+                            DNDLifetimeDetailsProvider._refreshTimer,
+                            DNDLifetimeDetailsProvider._relevantEvent,
+                            DNDNotificationsService._activitySuggestionClient,
+                            DNDNotificationsService._basicActive,
+                            DNDNotificationsService._clockBedtimeActive,
+                            DNDNotificationsService._currentBehaviorSettings,
+                            DNDNotificationsService._currentState,
+                            DNDNotificationsService._doNotDisturbActive,
+                            DNDNotificationsService._drivingActive,
+                            DNDNotificationsService._notificationsAssertionService,
+                            DNDNotificationsService._notificationsCenter,
+                            DNDNotificationsService._notificationsModeConfigurationService,
+                            DNDNotificationsService._notificationsSettingsService,
+                            DNDNotificationsService._notificationsStateService,
+                            DNDNotificationsService._queue,
+                            DNDNotificationsService._settingsBedtimeActive,
+                            DNDNotificationsService._sleepActive,
+                            DNDNotificationsService._transitionDate,
+                            DNDNotificationsService._transitionLifetimeType,
+                            DNDNotificationsService._windDownActive,
+                            DNDNotificationsService._workoutActive,
+                            DNDToggleManager._modeAssertionService,
+                            DNDToggleManager._stateService,
+                            DNDToggleManager._toggleAssertionIdentifier ]
+...

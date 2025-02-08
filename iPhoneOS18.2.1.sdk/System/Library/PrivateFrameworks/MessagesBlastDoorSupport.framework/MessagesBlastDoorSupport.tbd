@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MessagesBlastDoorSupport.framework/MessagesBlastDoorSupport
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MessagesBlastDoorSupportVersionNumber,
+                            _MessagesBlastDoorSupportVersionString ]
+    objc-classes:         [ BlastDoorLiteMessageCompressor,
+                            IMMessagesBlastDoorInterface,
+                            IMMessagesBlastDoorInterfaceInternal,
+                            IMMultiFrameImage ]
+    objc-ivars:           [ IMMessagesBlastDoorInterface._interface,
+                            IMMultiFrameImage._durations,
+                            IMMultiFrameImage._outputStream,
+                            IMMultiFrameImage._outputURL,
+                            IMMultiFrameImage._scale ]
+...

@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libSCLM.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DERDecodeItem, _DERDecodeItemPartialBuffer,
+                            _DERDecodeItemPartialBufferGetLength,
+                            _DERDecodeSeqContentInit, _DERDecodeSeqInit,
+                            _DERDecodeSeqNext,
+                            _DERDecodeSequenceContentWithBlock,
+                            _DERDecodeSequenceWithBlock, _DERParseBitString,
+                            _DERParseBoolean, _DERParseBooleanWithDefault,
+                            _DERParseInteger, _DERParseInteger64,
+                            _DERParseSequence, _DERParseSequenceContent,
+                            _DERParseSequenceContentToObject,
+                            _DERParseSequenceToObject,
+                            __ZN4SLAM4SLAM13PerformScriptENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEN3gsl8not_nullINS1_10shared_ptrINS_8SEHandleEEEEENS9_INSA_INS_7LogSinkEEEEE,
+                            __ZN4SLAM4SLAM13PerformScriptEyN3gsl8not_nullINSt3__110shared_ptrINS_8SEHandleEEEEENS2_INS4_INS_7LogSinkEEEEE,
+                            __ZN4SLAM4SLAM15PerformRecoveryEN3gsl8not_nullINSt3__110shared_ptrINS_8SEHandleEEEEENS2_INS4_INS_7LogSinkEEEEE ]
+    objc-classes:         [ LibSCLM, SLAMObjC, ScriptInfo ]
+    objc-ivars:           [ ScriptInfo._apduCount, ScriptInfo._scriptID,
+                            ScriptInfo._scriptName, ScriptInfo._scriptType ]
+...

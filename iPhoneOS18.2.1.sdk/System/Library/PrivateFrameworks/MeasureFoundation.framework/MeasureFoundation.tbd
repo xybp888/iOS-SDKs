@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MeasureFoundation.framework/MeasureFoundation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MeasureFoundationVersionNumber,
+                            _MeasureFoundationVersionString,
+                            _MeasureUnitsGetSystemDefault, _benchmarkBlock,
+                            _benchmarkIterations, _benchmarkStatsUpdated,
+                            _benchmarkValueFromDouble, _computeTriangulation,
+                            _makeSeconds ]
+    objc-classes:         [ Gestalt, SharedDefaults,
+                            _TtC17MeasureFoundation10WorldPoint,
+                            _TtC17MeasureFoundation11ScreenPoint,
+                            _TtC17MeasureFoundation11WorldPerson,
+                            _TtC17MeasureFoundation13MeasureObject,
+                            _TtC17MeasureFoundation14SurfaceTexture,
+                            _TtC17MeasureFoundation14WorldLineGuide,
+                            _TtC17MeasureFoundation14WorldRectangle,
+                            _TtC17MeasureFoundation15KernelHeightMap,
+                            _TtC17MeasureFoundation16KernelYCbCrToRGB,
+                            _TtC17MeasureFoundation16OverlayMetalView,
+                            _TtC17MeasureFoundation17KernelSimpleSobel,
+                            _TtC17MeasureFoundation18KernelReprojection,
+                            _TtC17MeasureFoundation19WorldRectangleGuide,
+                            _TtC17MeasureFoundation8Viewport,
+                            _TtC17MeasureFoundation9WorldEdge,
+                            _TtC17MeasureFoundation9WorldLine,
+                            _TtCC17MeasureFoundation21SegmentationProcessor16SegmentedTexture,
+                            _TtCE17MeasureFoundationCSo14NSUserDefaults14_DefaultsStore ]
+    objc-ivars:           [ SharedDefaults._cachedMeasureUnits ]
+...

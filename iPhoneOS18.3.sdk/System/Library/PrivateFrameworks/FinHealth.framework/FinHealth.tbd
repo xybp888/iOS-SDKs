@@ -1,0 +1,53 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FinHealth.framework/FinHealth
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FinHealthVersionNumber, _FinHealthVersionString,
+                            _RequestFromPKAccountSummary,
+                            _ResponseToPKBillPaymentSuggestion ]
+    objc-classes:         [ FHPaymentRingData, FHPaymentRingSuggestionController,
+                            FHPaymentRingSuggestionRequest,
+                            FHSearchSuggestionController, FHStatementDetails ]
+    objc-ivars:           [ FHPaymentRingData._paymentAmountCategory,
+                            FHPaymentRingData._transactionAmount,
+                            FHPaymentRingData._transactionDate,
+                            FHPaymentRingSuggestionController._currentStatementIsLastMonthsStatement,
+                            FHPaymentRingSuggestionController._isOnPaymentPlan,
+                            FHPaymentRingSuggestionController._isOnPlanCompletion,
+                            FHPaymentRingSuggestionController._previousSelectedSuggestion,
+                            FHPaymentRingSuggestionController._searchController,
+                            FHPaymentRingSuggestionRequest._currentStatement,
+                            FHPaymentRingSuggestionRequest._currentStatementPaymentsSum,
+                            FHPaymentRingSuggestionRequest._merchantCategoryTransactionSums,
+                            FHPaymentRingSuggestionRequest._paymentDetails,
+                            FHPaymentRingSuggestionRequest._previousStatement,
+                            FHPaymentRingSuggestionRequest._previousStatementPaymentsSum,
+                            FHPaymentRingSuggestionRequest._statementPurchasesSum,
+                            FHSearchSuggestionController._cacheConnectionInitiated,
+                            FHSearchSuggestionController._connection,
+                            FHSearchSuggestionController._delegate,
+                            FHSearchSuggestionController._instrumentationCache,
+                            FHSearchSuggestionController._lockCache,
+                            FHSearchSuggestionController._lockConnection,
+                            FHStatementDetails._closingDate,
+                            FHStatementDetails._combinedBalance,
+                            FHStatementDetails._creditLimit,
+                            FHStatementDetails._currentBalance,
+                            FHStatementDetails._currentBalanceForMonthZero,
+                            FHStatementDetails._currentStatementIdentifier,
+                            FHStatementDetails._isMonthOfMerge,
+                            FHStatementDetails._isMonthOne,
+                            FHStatementDetails._isMonthZero,
+                            FHStatementDetails._minimumDue,
+                            FHStatementDetails._openingDate,
+                            FHStatementDetails._remainingMinimumPayment,
+                            FHStatementDetails._remainingStatementBalance,
+                            FHStatementDetails._statementBalance,
+                            FHStatementDetails._statementIdentifier ]
+...

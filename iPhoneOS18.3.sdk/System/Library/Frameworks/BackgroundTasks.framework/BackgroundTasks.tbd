@@ -1,0 +1,52 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/BackgroundTasks.framework/BackgroundTasks
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BGTaskSchedulerErrorDomain,
+                            __BGTaskSchedulerRunningTasksDidChangeNotification ]
+    objc-classes:         [ BGAppRefreshTask, BGAppRefreshTaskRequest,
+                            BGContinuedProcessingTask,
+                            BGContinuedProcessingTaskRequest,
+                            BGHealthResearchTask, BGHealthResearchTaskRequest,
+                            BGProcessingTask, BGProcessingTaskRequest, BGTask,
+                            BGTaskRequest, BGTaskScheduler,
+                            _BGContinuedProcessingTask,
+                            _BGContinuedProcessingTaskRequest,
+                            _BGTaskSchedulerRegistration ]
+    objc-ivars:           [ BGContinuedProcessingTask.__progressHandler,
+                            BGContinuedProcessingTask._reason,
+                            BGContinuedProcessingTask._title,
+                            BGContinuedProcessingTaskRequest._reason,
+                            BGContinuedProcessingTaskRequest._title,
+                            BGHealthResearchTaskRequest._protectionTypeOfRequiredData,
+                            BGProcessingTaskRequest._requiresExternalPower,
+                            BGProcessingTaskRequest._requiresNetworkConnectivity,
+                            BGTask.__activity, BGTask.__completed,
+                            BGTask.__completionHandler, BGTask.__handlerQueue,
+                            BGTask.__lock, BGTask._expirationHandler,
+                            BGTask._identifier, BGTaskRequest._earliestBeginDate,
+                            BGTaskRequest._identifier, BGTaskScheduler.__lock,
+                            BGTaskScheduler.__permittedIdentifiers,
+                            BGTaskScheduler.__queuedExpiredLaunchActivities,
+                            BGTaskScheduler.__queuedLaunchActivities,
+                            BGTaskScheduler.__registrations,
+                            BGTaskScheduler.__runningTasksMap,
+                            BGTaskScheduler.__scheduler,
+                            _BGContinuedProcessingTask.__descriptionUpdateHandler,
+                            _BGContinuedProcessingTask.__progressHandler,
+                            _BGContinuedProcessingTask._internalProgress,
+                            _BGContinuedProcessingTask._reason,
+                            _BGContinuedProcessingTask._title,
+                            _BGContinuedProcessingTaskRequest._iconBundleIdentifier,
+                            _BGContinuedProcessingTaskRequest._reason,
+                            _BGContinuedProcessingTaskRequest._title,
+                            _BGTaskSchedulerRegistration._identifier,
+                            _BGTaskSchedulerRegistration._launchHandler,
+                            _BGTaskSchedulerRegistration._queue ]
+...

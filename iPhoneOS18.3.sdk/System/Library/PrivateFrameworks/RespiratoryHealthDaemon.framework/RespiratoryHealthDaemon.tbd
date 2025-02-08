@@ -1,0 +1,58 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RespiratoryHealthDaemon.framework/RespiratoryHealthDaemon
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HDRPOxygenSaturationRecordingFeatureAvailabilityProvider ]
+    objc-classes:         [ HDRPDailyAnalyticsReport,
+                            HDRPOxygenSaturationSessionServer,
+                            HDRPRespiratoryDailyAnalytics,
+                            HDRespiratoryProfileExtension, HLHeartRateData,
+                            HLOxygenSaturationMeasurement,
+                            HLOxygenSaturationSession, MockHDRPHealthLite ]
+    objc-ivars:           [ HDRPDailyAnalyticsReport._calendar,
+                            HDRPDailyAnalyticsReport._controlCenterUserDefaults,
+                            HDRPDailyAnalyticsReport._endTime,
+                            HDRPDailyAnalyticsReport._featureAvailabilityProvider,
+                            HDRPDailyAnalyticsReport._healthDataCollectionAllowed,
+                            HDRPDailyAnalyticsReport._oxygenSaturationSettings,
+                            HDRPDailyAnalyticsReport._pairedDeviceRegistry,
+                            HDRPDailyAnalyticsReport._profile,
+                            HDRPDailyAnalyticsReport._startTime,
+                            HDRPOxygenSaturationSessionServer._expectedDuration,
+                            HDRPOxygenSaturationSessionServer._expectedEndDate,
+                            HDRPOxygenSaturationSessionServer._queue,
+                            HDRPOxygenSaturationSessionServer._sensorSession,
+                            HDRPOxygenSaturationSessionServer._sessionState,
+                            HDRPOxygenSaturationSessionServer._startTime,
+                            HDRPRespiratoryDailyAnalytics._calculationPeriod,
+                            HDRPRespiratoryDailyAnalytics._featureAvailabilityProvider,
+                            HDRPRespiratoryDailyAnalytics._periodicActivity,
+                            HDRPRespiratoryDailyAnalytics._profile,
+                            HDRPRespiratoryDailyAnalytics._queue,
+                            HDRPRespiratoryDailyAnalytics._retryPeriod,
+                            HDRespiratoryProfileExtension._ageGatingDefaults,
+                            HDRespiratoryProfileExtension._dailyAnalytics,
+                            HDRespiratoryProfileExtension._featureAvailabilityManager,
+                            HDRespiratoryProfileExtension._featureDeliveryManager,
+                            HDRespiratoryProfileExtension._onboardingCacher,
+                            HDRespiratoryProfileExtension._profile,
+                            HDRespiratoryProfileExtension._queue,
+                            HDRespiratoryProfileExtension._settings,
+                            HDRespiratoryProfileExtension._unitTesting_healthLiteSessionWithDelegateHandler,
+                            HLHeartRateData._confidence,
+                            HLHeartRateData._confidenceLevel,
+                            HLHeartRateData._context, HLHeartRateData._heartRate,
+                            HLHeartRateData._timestamp, HLHeartRateData._uuid,
+                            HLOxygenSaturationMeasurement._averageHeartRateData,
+                            HLOxygenSaturationMeasurement._dateInterval,
+                            HLOxygenSaturationMeasurement._oxygenSaturationPercentage,
+                            HLOxygenSaturationMeasurement._pressureInKilopascals,
+                            HLOxygenSaturationSession._delegate,
+                            HLOxygenSaturationSession._queue ]
+...

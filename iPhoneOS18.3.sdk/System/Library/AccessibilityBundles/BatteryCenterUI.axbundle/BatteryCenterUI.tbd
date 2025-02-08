@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/BatteryCenterUI.axbundle/BatteryCenterUI
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityLocalizedString ]
+    objc-classes:         [ AXBatteryCenterUIGlue,
+                            BCBatteryWidgetRowViewAccessibility,
+                            BCBatteryWidgetViewControllerAccessibility,
+                            BCUIAvocadoViewControllerAccessibility,
+                            BCUIRowViewAccessibility,
+                            __BCBatteryWidgetRowViewAccessibility_super,
+                            __BCBatteryWidgetViewControllerAccessibility_super,
+                            __BCUIAvocadoViewControllerAccessibility_super,
+                            __BCUIRowViewAccessibility_super ]
+...

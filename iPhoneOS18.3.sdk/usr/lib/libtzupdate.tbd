@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libtzupdate.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _TZDAssetError, _TZDErrorDomain,
+                            _kTZXPCConnectionEntitlement, _kTZXPCConnectionName,
+                            _libtzupdateVersionNumber, _libtzupdateVersionString ]
+    objc-classes:         [ TZDLogging, TZDeviceInfoHelper, TZFileSystemInterface,
+                            TZPreferencesController, TZUpdate, TZUtilities,
+                            TZVersionInfo, TZXPCConstants ]
+    objc-ivars:           [ TZFileSystemInterface._cachedTZDataLocation,
+                            TZFileSystemInterface._currentVersionInfo,
+                            TZFileSystemInterface._dataExpansionVersionDirectory,
+                            TZFileSystemInterface._lastInstalledVersionInfo,
+                            TZFileSystemInterface._latestLinkDestinationAtStartup,
+                            TZFileSystemInterface._latestTZDataLink,
+                            TZFileSystemInterface._latestVersionInfo,
+                            TZFileSystemInterface._systemICUSchemaVersionURL,
+                            TZFileSystemInterface._systemICUTZSchemaVersion,
+                            TZFileSystemInterface._systemVersionInfo,
+                            TZFileSystemInterface._temporaryDirectory,
+                            TZUpdate._connectionToService,
+                            TZUpdate._fileSystemInterface,
+                            TZVersionInfo._alertZones,
+                            TZVersionInfo._bundleVersion,
+                            TZVersionInfo._changedFiles,
+                            TZVersionInfo._diskLocation,
+                            TZVersionInfo._icuTZSchemaVersion,
+                            TZVersionInfo._shouldAlertAll,
+                            TZVersionInfo._tzDataVersion ]
+...

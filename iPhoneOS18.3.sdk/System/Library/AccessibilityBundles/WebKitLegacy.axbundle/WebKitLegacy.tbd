@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/WebKitLegacy.axbundle/WebKitLegacy
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ AXWebKitGlueLegacy, DOMNodeAccessibility,
+                            UIAccessibilityPDFElement,
+                            UIWebBrowserViewAccessibility,
+                            UIWebDocumentViewAccessibility,
+                            UIWebViewAccessibility, WebHTMLViewAccessibility,
+                            WebPDFViewAccessibility, WebViewAccessibility,
+                            __DOMNodeAccessibility_super,
+                            __UIWebBrowserViewAccessibility_super,
+                            __UIWebDocumentViewAccessibility_super,
+                            __UIWebViewAccessibility_super,
+                            __WebHTMLViewAccessibility_super,
+                            __WebPDFViewAccessibility_super,
+                            __WebViewAccessibility_super ]
+    objc-ivars:           [ UIAccessibilityPDFElement._page,
+                            UIAccessibilityPDFElement._pageCount ]
+...

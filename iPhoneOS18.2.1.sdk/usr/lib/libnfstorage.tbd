@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libnfstorage.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _nfstorageVersionNumber, _nfstorageVersionString ]
+    objc-classes:         [ AppletEntity, ExpressESEEntity, ExpressIcfEntity,
+                            NFStorageController, NFStorageControllerApplet,
+                            NFStorageControllerESEExpress,
+                            PurpleTrustAppletEntity, PurpleTrustClientEntity,
+                            PurpleTrustKeyEntity ]
+    objc-ivars:           [ NFStorageController._managedObjectContext,
+                            NFStorageController._managedObjectModel,
+                            NFStorageController._persistentStoreCoordinator ]
+...

@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/TipsApp.axbundle/TipsApp
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Failover, _accessibilityLocalizedString ]
+    objc-classes:         [ AXTipsGlue, TPSPageControlAccessibility,
+                            TPSTipCollectionViewCellAccessibility,
+                            TPSUICollectionViewAccessibility,
+                            TPSViewControllerAccessibility,
+                            UIBarButtonItemAccessibility__Tips__UIKit,
+                            __TPSPageControlAccessibility_super,
+                            __TPSTipCollectionViewCellAccessibility_super,
+                            __TPSUICollectionViewAccessibility_super,
+                            __TPSViewControllerAccessibility_super,
+                            __UIBarButtonItemAccessibility__Tips__UIKit_super ]
+...

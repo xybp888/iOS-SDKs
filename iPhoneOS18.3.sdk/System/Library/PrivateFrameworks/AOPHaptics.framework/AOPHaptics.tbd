@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AOPHaptics.framework/AOPHaptics
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AOPHapticsActionKey, _AOPHapticsGainKey,
+                            _AOPHapticsOutputTypeKey,
+                            _AOPHapticsPreSilenceDurationKey,
+                            _AOPHapticsPriorityKey,
+                            _AOPHapticsRequestTimestampKey,
+                            _AOPHapticsSlotIndexKey ]
+    objc-classes:         [ AOPHapticsController ]
+    objc-ivars:           [ AOPHapticsController._activated,
+                            AOPHapticsController._arrivalNotification,
+                            AOPHapticsController._cancelHandler,
+                            AOPHapticsController._cancelled,
+                            AOPHapticsController._connect,
+                            AOPHapticsController._notificationPort,
+                            AOPHapticsController._queue,
+                            AOPHapticsController._readyHandler,
+                            AOPHapticsController._service ]
+...

@@ -1,0 +1,48 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          "/System/Library/CoreAccessories/PlugIns/Features/BLEPairing-iOS.feature/BLEPairing-iOS"
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ascii_to_hex, _createHexString, _getMemoryUse,
+                            _init_logging,
+                            _kXPCIAPBluetoothDeviceGetAccessoryConnectNotification,
+                            _kXPCIAPBluetoothDeviceGetAccessoryPairingInfo,
+                            _kXPCIAPBluetoothDeviceModeStr,
+                            _kXPCIAPBluetoothDevicePairingDataStr,
+                            _kXPCIAPBluetoothDevicePairingInfoUpdateStr,
+                            _kXPCIAPBluetoothDeviceStartBLEUpdatesStr,
+                            _kXPCIAPBluetoothDeviceStateUpdateStr,
+                            _kXPCIAPBluetoothDeviceStopBLEUpdatesStr,
+                            _kXPCIAPBluetoothForceUpdatesStr,
+                            _kXPCIAPBluetoothInfoAccessoryMfg,
+                            _kXPCIAPBluetoothInfoAccessoryModel,
+                            _kXPCIAPBluetoothInfoPairTypes,
+                            _kXPCIAPBluetoothInfoPairUUID,
+                            _kXPCIAPBluetoothPairDataStr,
+                            _kXPCIAPBluetoothPairInfoStr,
+                            _kXPCIAPBluetoothPairModeOnStr,
+                            _kXPCIAPBluetoothPairStatusStr,
+                            _kXPCIAPBluetoothPairTypeStr,
+                            _kXPCIAPBluetoothRadioOnStr,
+                            _kXPCIAPBluetoothUpdatesPairInfoStr,
+                            _kXPCIAPBluetoothUpdatesRadioStr, _kXPCMACAddressStr,
+                            _obfuscatedPointer, _printBytes, _removeNewline ]
+    objc-classes:         [ ACCBLEPairingAccessory, ACCBLEPairingFeaturePlugin,
+                            ACCBLEPairingShim ]
+    objc-ivars:           [ ACCBLEPairingAccessory._blePairingUUID,
+                            ACCBLEPairingAccessory._iap2ShimAccessory,
+                            ACCBLEPairingAccessory._selectedPairType,
+                            ACCBLEPairingAccessory._supportedPairTypes,
+                            ACCBLEPairingFeaturePlugin._blePairingAccessoryList,
+                            ACCBLEPairingFeaturePlugin._blePairingProvider,
+                            ACCBLEPairingFeaturePlugin._blePairingQueue,
+                            ACCBLEPairingFeaturePlugin._blePairingShim,
+                            ACCBLEPairingFeaturePlugin._iap2server,
+                            ACCBLEPairingFeaturePlugin._isRunning,
+                            ACCBLEPairingShim._delegate, ACCBLEPairingShim._uid ]
+...

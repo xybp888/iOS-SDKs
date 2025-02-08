@@ -1,0 +1,57 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ButtonResolver.framework/ButtonResolver
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BRConfigGainKey, _BRConfigMaxTimeKey,
+                            _BRConfigMinTimeKey, _BRConfigSpeedKey,
+                            _BRGlobalConfigForceFeelKey ]
+    objc-classes:         [ BRAsset, BRButtonResolverController, BRInterface,
+                            BRInterfaceAOP, BRInterfaceKeyboard, BRInterfaceLegacy,
+                            BRSlotData, BRStateData ]
+    objc-ivars:           [ BRAsset._hasAudio, BRAsset._hasHaptic, BRAsset._isNull,
+                            BRAsset._parameters, BRAsset._type,
+                            BRButtonResolverController._interfaces,
+                            BRInterface._isReady, BRInterface._maxAssetSlots,
+                            BRInterface._queue, BRInterface._timestampDict,
+                            BRInterface._unusedAssetSlots,
+                            BRInterfaceAOP._arrivalNotification,
+                            BRInterfaceAOP._connect, BRInterfaceAOP._fastHaptics,
+                            BRInterfaceAOP._freeSlots, BRInterfaceAOP._isReady,
+                            BRInterfaceAOP._loader,
+                            BRInterfaceAOP._maxAssetSlots,
+                            BRInterfaceAOP._notificationBlock,
+                            BRInterfaceAOP._notificationName,
+                            BRInterfaceAOP._notificationPort,
+                            BRInterfaceAOP._service, BRInterfaceAOP._slotArray,
+                            BRInterfaceAOP._stateDict,
+                            BRInterfaceKeyboard._client,
+                            BRInterfaceKeyboard._doublePressTimeoutUs,
+                            BRInterfaceKeyboard._isReady,
+                            BRInterfaceKeyboard._longPressTimeoutUs,
+                            BRInterfaceKeyboard._maxAssetSlots,
+                            BRInterfaceKeyboard._propertyCache,
+                            BRInterfaceKeyboard._services,
+                            BRInterfaceKeyboard._triplePressTimeoutUs,
+                            BRInterfaceKeyboard._unusedAssetSlots,
+                            BRInterfaceLegacy._block, BRInterfaceLegacy._client,
+                            BRInterfaceLegacy._doublePressTimeoutUs,
+                            BRInterfaceLegacy._doubleTapTimeoutUs,
+                            BRInterfaceLegacy._isReady,
+                            BRInterfaceLegacy._longPressTimeoutUs,
+                            BRInterfaceLegacy._maxAssetSlots,
+                            BRInterfaceLegacy._services,
+                            BRInterfaceLegacy._tapOnly,
+                            BRInterfaceLegacy._triplePressTimeoutUs,
+                            BRInterfaceLegacy._tripleTapTimeoutUs,
+                            BRInterfaceLegacy._unusedAssetSlots,
+                            BRSlotData._asset, BRSlotData._isProgrammed,
+                            BRSlotData._refCount, BRSlotData._slot,
+                            BRStateData._enabled, BRStateData._speedConfigs,
+                            BRStateData._speedSlots, BRStateData._state ]
+...

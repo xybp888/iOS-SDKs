@@ -1,0 +1,40 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          "/System/Library/CoreAccessories/PlugIns/Platform/Platform-Bluetooth.platform/Platform-Bluetooth"
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ACCBluetoothStatusComponentInfoAccessoryUID,
+                            _ACCBluetoothStatusComponentInfoEnabled,
+                            _ACCBluetoothStatusComponentInfoID,
+                            _ACCBluetoothStatusComponentInfoMACAddr,
+                            _ACCBluetoothStatusComponentInfoName,
+                            _ACCBluetoothStatusComponentInfoUID,
+                            _ACCBluetoothStatusComponentUpdateInfoAccessoryUID,
+                            _ACCBluetoothStatusComponentUpdateInfoProfiles,
+                            _ACCBluetoothStatusComponentUpdateInfoUID,
+                            _ACCBluetoothStatusComponentUpdateNotification,
+                            __sendBluetoothConnectionStatusNotification,
+                            _init_logging, _init_logging_signposts ]
+    objc-classes:         [ ACCPlatformBluetoothStatusAccessory,
+                            ACCPlatformPluginBluetooth,
+                            _ACCBluetoothStatusComponent ]
+    objc-ivars:           [ ACCPlatformBluetoothStatusAccessory._accessoryUID,
+                            ACCPlatformBluetoothStatusAccessory._componentList,
+                            ACCPlatformPluginBluetooth._accessoryList,
+                            ACCPlatformPluginBluetooth._btEventQueue,
+                            ACCPlatformPluginBluetooth._btSession,
+                            ACCPlatformPluginBluetooth._btUpdatesStarted,
+                            ACCPlatformPluginBluetooth._isRunning,
+                            _ACCBluetoothStatusComponent._accessoryUID,
+                            _ACCBluetoothStatusComponent._btAccessoryManager,
+                            _ACCBluetoothStatusComponent._btDevice,
+                            _ACCBluetoothStatusComponent._componentUID,
+                            _ACCBluetoothStatusComponent._macAddr,
+                            _ACCBluetoothStatusComponent._name,
+                            _ACCBluetoothStatusComponent._needToUnplugBTDevice ]
+...

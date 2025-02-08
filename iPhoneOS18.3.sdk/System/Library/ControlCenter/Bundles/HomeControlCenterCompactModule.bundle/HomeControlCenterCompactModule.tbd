@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/ControlCenter/Bundles/HomeControlCenterCompactModule.bundle/HomeControlCenterCompactModule
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HUCCPerformCommonInitialization,
+                            _HUCCStringForOrientation, _HUCCUpdateRunningState,
+                            _HUCCUpdateRunningStateWithAppleMediaAccessories,
+                            _launchHomeAppForModuleViewController ]
+    objc-classes:         [ HUCCCompactModuleContentViewController,
+                            HUCCCompactModulePropertyAnimator,
+                            HUCCControlCenterCompactModule,
+                            HUCCDashboardContainerViewController,
+                            HUCCLockStateHandler,
+                            HUCCRemoteDashboardViewController ]
+...

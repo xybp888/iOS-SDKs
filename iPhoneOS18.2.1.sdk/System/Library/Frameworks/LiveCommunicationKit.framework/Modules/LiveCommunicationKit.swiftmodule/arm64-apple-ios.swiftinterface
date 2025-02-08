@@ -1,0 +1,335 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -library-level api -user-module-version 55.300.181.2.10 -module-name LiveCommunicationKit
+import AVFoundation
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_hasMissingDesignatedInitializers @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+final public class PauseConversationAction : LiveCommunicationKit.ConversationAction {
+  final public let isPaused: Swift.Bool
+  public init(conversationUUID: Foundation.UUID, isPaused: Swift.Bool)
+  @objc deinit
+}
+prefix operator >>
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+extension LiveCommunicationKit.ConversationManager {
+  @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+  @available(tvOS, unavailable)
+  public struct Configuration {
+    public var ringtoneName: Swift.String?
+    public var iconTemplateImageData: Foundation.Data?
+    public var maximumConversationGroups: Swift.Int
+    public var maximumConversationsPerConversationGroup: Swift.Int
+    public var includesConversationInRecents: Swift.Bool
+    public var supportsVideo: Swift.Bool
+    public var supportedHandleTypes: Swift.Set<LiveCommunicationKit.Handle.Kind>
+    public init(ringtoneName: Swift.String?, iconTemplateImageData: Foundation.Data?, maximumConversationGroups: Swift.Int, maximumConversationsPerConversationGroup: Swift.Int, includesConversationInRecents: Swift.Bool, supportsVideo: Swift.Bool, supportedHandleTypes: Swift.Set<LiveCommunicationKit.Handle.Kind>)
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+final public class Conversation : Swift.Sendable {
+  final public var uuid: Foundation.UUID {
+    get
+    set
+  }
+  final public var state: LiveCommunicationKit.Conversation.State {
+    get
+  }
+  final public var localMember: LiveCommunicationKit.Handle? {
+    get
+  }
+  @objc deinit
+}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+extension LiveCommunicationKit.Conversation : Swift.CustomDebugStringConvertible {
+  final public var debugDescription: Swift.String {
+    get
+  }
+}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+extension LiveCommunicationKit.Conversation : Observation.Observable {
+}
+@_hasMissingDesignatedInitializers @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+open class ConversationAction {
+  final public var uuid: Foundation.UUID {
+    get
+  }
+  final public var conversationUUID: Foundation.UUID {
+    get
+  }
+  final public var state: LiveCommunicationKit.ConversationAction.State {
+    get
+  }
+  final public var timeoutDate: Foundation.Date {
+    get
+  }
+  convenience public init(conversationUUID: Foundation.UUID, timeoutDate: Foundation.Date = Date(timeIntervalSinceNow: 30))
+  final public func fulfill()
+  final public func fail()
+  @objc deinit
+}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+extension LiveCommunicationKit.Conversation {
+  public enum State : Swift.Int, Swift.Sendable, Swift.Codable, Swift.Hashable {
+    case idle
+    case joining
+    case joined
+    case paused
+    case leaving
+    case left
+    public init?(rawValue: Swift.Int)
+    @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+    @available(tvOS, unavailable)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+final public class StartConversationAction : LiveCommunicationKit.ConversationAction {
+  final public let handles: [LiveCommunicationKit.Handle]
+  final public let isVideo: Swift.Bool
+  public init(conversationUUID: Foundation.UUID, handles: [LiveCommunicationKit.Handle], isVideo: Swift.Bool)
+  final public func fulfill(dateStarted: Foundation.Date)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+final public class MergeConversationAction : LiveCommunicationKit.ConversationAction {
+  final public let conversationUUIDToMergeWith: Foundation.UUID
+  public init(conversationUUID: Foundation.UUID, conversationUUIDToMergeWith: Foundation.UUID)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+final public class ConversationManager {
+  final public var conversations: [LiveCommunicationKit.Conversation] {
+    get
+  }
+  weak final public var delegate: (any LiveCommunicationKit.ConversationManagerDelegate)?
+  final public let configuration: LiveCommunicationKit.ConversationManager.Configuration
+  final public var pendingActions: [LiveCommunicationKit.ConversationAction] {
+    get
+  }
+  convenience public init(configuration: LiveCommunicationKit.ConversationManager.Configuration)
+  final public func perform(_ actions: [LiveCommunicationKit.ConversationAction]) async throws
+  final public func reportNewIncomingConversation(uuid: Foundation.UUID, update: LiveCommunicationKit.Conversation.Update) async throws
+  final public func reportConversationEvent(_ event: LiveCommunicationKit.Conversation.Event, for conversation: LiveCommunicationKit.Conversation)
+  final public class func reportNewIncomingVoIPPushPayload(_ payload: [Swift.AnyHashable : Any]) async throws
+  final public func invalidate()
+  final public func pendingConversationActions(of conversationActionClass: LiveCommunicationKit.ConversationAction.Type, for conversation: LiveCommunicationKit.Conversation) -> [LiveCommunicationKit.ConversationAction]
+  @objc deinit
+}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+extension LiveCommunicationKit.ConversationManager : Observation.Observable {
+}
+@_hasMissingDesignatedInitializers @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+final public class JoinConversationAction : LiveCommunicationKit.ConversationAction {
+  public init(conversationUUID: Foundation.UUID)
+  final public func fulfill(dateConnected: Foundation.Date)
+  @objc deinit
+}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+extension LiveCommunicationKit.Conversation {
+  public enum Event : Swift.Sendable, Swift.Codable, Swift.Hashable {
+    case conversationUpdated(LiveCommunicationKit.Conversation.Update)
+    case conversationStartedConnecting(Foundation.Date)
+    case conversationConnected(Foundation.Date)
+    case conversationEnded(Foundation.Date, LiveCommunicationKit.Conversation.EndedReason)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: LiveCommunicationKit.Conversation.Event, b: LiveCommunicationKit.Conversation.Event) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+public protocol ConversationManagerDelegate : AnyObject {
+  func conversationManager(_ manager: LiveCommunicationKit.ConversationManager, conversationChanged conversation: LiveCommunicationKit.Conversation)
+  func conversationManagerDidBegin(_ manager: LiveCommunicationKit.ConversationManager)
+  func conversationManagerDidReset(_ manager: LiveCommunicationKit.ConversationManager)
+  func conversationManager(_ manager: LiveCommunicationKit.ConversationManager, perform action: LiveCommunicationKit.ConversationAction)
+  func conversationManager(_ manager: LiveCommunicationKit.ConversationManager, timedOutPerforming action: LiveCommunicationKit.ConversationAction)
+  func conversationManager(_ manager: LiveCommunicationKit.ConversationManager, didActivate audioSession: AVFAudio.AVAudioSession)
+  func conversationManager(_ manager: LiveCommunicationKit.ConversationManager, didDeactivate audioSession: AVFAudio.AVAudioSession)
+}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+extension LiveCommunicationKit.Conversation {
+  @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+  @available(tvOS, unavailable)
+  public struct Update : Swift.Sendable, Swift.Codable, Swift.Hashable {
+    public var localMember: LiveCommunicationKit.Handle?
+    public var members: Swift.Set<LiveCommunicationKit.Handle>?
+    public var activeRemoteMembers: Swift.Set<LiveCommunicationKit.Handle>?
+    public var capabilities: LiveCommunicationKit.Conversation.Capabilities?
+    public init(localMember: LiveCommunicationKit.Handle? = nil, members: Swift.Set<LiveCommunicationKit.Handle>? = nil, activeRemoteMembers: Swift.Set<LiveCommunicationKit.Handle>? = nil, capabilities: LiveCommunicationKit.Conversation.Capabilities? = nil)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: LiveCommunicationKit.Conversation.Update, b: LiveCommunicationKit.Conversation.Update) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+final public class PlayToneAction : LiveCommunicationKit.ConversationAction {
+  public enum Tone : Swift.Int, @unchecked Swift.Sendable {
+    case single
+    case softPause
+    case hardPause
+    public init?(rawValue: Swift.Int)
+    @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+    @available(tvOS, unavailable)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  final public let digits: Swift.String
+  final public let tone: LiveCommunicationKit.PlayToneAction.Tone
+  public init(conversationUUID: Foundation.UUID, digits: Swift.String, tone: LiveCommunicationKit.PlayToneAction.Tone)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+final public class EndConversationAction : LiveCommunicationKit.ConversationAction {
+  public init(conversationUUID: Foundation.UUID)
+  final public func fulfill(dateEnded: Foundation.Date)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+final public class UnmergeConversationAction : LiveCommunicationKit.ConversationAction {
+  public init(conversationUUID: Foundation.UUID)
+  @objc deinit
+}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+extension LiveCommunicationKit.Conversation {
+  @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+  @available(tvOS, unavailable)
+  public enum EndedReason : Swift.Int, Swift.Sendable, Swift.Codable, Swift.Hashable {
+    case failed
+    case remoteEnded
+    case unanswered
+    case joinedElsewhere
+    case declinedElsewhere
+    public init?(rawValue: Swift.Int)
+    @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+    @available(tvOS, unavailable)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+extension LiveCommunicationKit.Conversation {
+  public struct Capabilities : Swift.OptionSet, Swift.Sendable, Swift.Codable, Swift.Hashable {
+    public static let pausing: LiveCommunicationKit.Conversation.Capabilities
+    public static let merging: LiveCommunicationKit.Conversation.Capabilities
+    public static let unmerging: LiveCommunicationKit.Conversation.Capabilities
+    public static let video: LiveCommunicationKit.Conversation.Capabilities
+    public static let playingTones: LiveCommunicationKit.Conversation.Capabilities
+    public var rawValue: Swift.Int
+    public init(rawValue: Swift.Int)
+    @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+    @available(tvOS, unavailable)
+    public typealias ArrayLiteralElement = LiveCommunicationKit.Conversation.Capabilities
+    @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+    @available(tvOS, unavailable)
+    public typealias Element = LiveCommunicationKit.Conversation.Capabilities
+    @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+    @available(tvOS, unavailable)
+    public typealias RawValue = Swift.Int
+  }
+}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+extension LiveCommunicationKit.ConversationAction {
+  public enum State : Swift.Sendable, Swift.Codable, Swift.Hashable {
+    case idle
+    case running
+    case complete
+    case failed(reason: Swift.String)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: LiveCommunicationKit.ConversationAction.State, b: LiveCommunicationKit.ConversationAction.State) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+public struct Handle : Swift.Sendable, Swift.Codable, Swift.Hashable {
+  public enum Kind : Swift.Int, Swift.Sendable, Swift.Codable, Swift.Hashable {
+    case generic
+    case phoneNumber
+    case emailAddress
+    public init?(rawValue: Swift.Int)
+    @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+    @available(tvOS, unavailable)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public var type: LiveCommunicationKit.Handle.Kind
+  public var value: Swift.String
+  public var displayName: Swift.String
+  public init(type: LiveCommunicationKit.Handle.Kind, value: Swift.String, displayName: Swift.String? = nil)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: LiveCommunicationKit.Handle, b: LiveCommunicationKit.Handle) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+final public class MuteConversationAction : LiveCommunicationKit.ConversationAction {
+  final public let isMuted: Swift.Bool
+  public init(conversationUUID: Foundation.UUID, isMuted: Swift.Bool)
+  @objc deinit
+}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+extension LiveCommunicationKit.Conversation.State : Swift.RawRepresentable {}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+extension LiveCommunicationKit.PlayToneAction.Tone : Swift.Equatable {}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+extension LiveCommunicationKit.PlayToneAction.Tone : Swift.Hashable {}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+extension LiveCommunicationKit.PlayToneAction.Tone : Swift.RawRepresentable {}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+extension LiveCommunicationKit.Conversation.EndedReason : Swift.RawRepresentable {}
+@available(iOS 17.4, watchOS 10.4, visionOS 1.1, macCatalyst 17.4, *)
+@available(tvOS, unavailable)
+extension LiveCommunicationKit.Handle.Kind : Swift.RawRepresentable {}

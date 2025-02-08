@@ -1,0 +1,46 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/StudyLog.framework/StudyLog
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SLGCreateError, _SLGCreateLoggingIsDisabledError,
+                            _SLGCreateSessionEndMetadata,
+                            _SLGCreateSessionStartMetadata,
+                            _SLGLogDefaultsDomain, _SLGLogDefaultsEnabledKey,
+                            _SLGLogErrorDomain, _SLGLogIsEnabled,
+                            _SLGLogServiceName, _StudyLogVersionNumber,
+                            _StudyLogVersionString, _slg_general_log ]
+    objc-classes:         [ SLGActivatableLogger, SLGDomainWhitelist, SLGLog,
+                            SLGLogXPCClient, SLGNotificationActivatedLogger,
+                            SLGNotificationActivatedLoggerRegistration,
+                            SLGTimedLogger ]
+    objc-ivars:           [ SLGActivatableLogger._activationHandler,
+                            SLGActivatableLogger._active,
+                            SLGActivatableLogger._deactivationHandler,
+                            SLGActivatableLogger._lock,
+                            SLGActivatableLogger._logger,
+                            SLGDomainWhitelist._allowUnspecifiedDomains,
+                            SLGDomainWhitelist._lockQueue,
+                            SLGDomainWhitelist._whitelist, SLGLog._client,
+                            SLGLog._dateFormatter, SLGLog._isEnabled,
+                            SLGLog._observerCalloutQueue,
+                            SLGLog._observerLockQueue, SLGLog._observers,
+                            SLGLog._pid, SLGLog._processName, SLGLog._whitelist,
+                            SLGLogXPCClient._calloutQueue,
+                            SLGLogXPCClient._connection,
+                            SLGLogXPCClient._delegate,
+                            SLGLogXPCClient._lockQueue,
+                            SLGNotificationActivatedLogger._activeReasons,
+                            SLGNotificationActivatedLogger._lock,
+                            SLGNotificationActivatedLogger._logger,
+                            SLGNotificationActivatedLogger._registrationsByReason,
+                            SLGNotificationActivatedLoggerRegistration._beginToken,
+                            SLGNotificationActivatedLoggerRegistration._endToken,
+                            SLGTimedLogger._duration, SLGTimedLogger._lock,
+                            SLGTimedLogger._logger, SLGTimedLogger._timer ]
+...

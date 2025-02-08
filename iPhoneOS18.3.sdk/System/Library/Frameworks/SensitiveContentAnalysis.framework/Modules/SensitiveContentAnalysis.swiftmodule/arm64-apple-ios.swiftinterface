@@ -1,0 +1,20 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 88 -module-name SensitiveContentAnalysis
+import Foundation
+@_exported import SensitiveContentAnalysis
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 14.0, iOS 17.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension SensitiveContentAnalysis.SCSensitivityAnalyzer {
+  @_hasMissingDesignatedInitializers final public class VideoAnalysisHandler {
+    final public var progress: Foundation.Progress
+    final public func hasSensitiveContent() async throws -> SensitiveContentAnalysis.SCSensitivityAnalysis
+    @objc deinit
+  }
+  public func videoAnalysis(forFileAt fileURL: Foundation.URL) -> SensitiveContentAnalysis.SCSensitivityAnalyzer.VideoAnalysisHandler
+}

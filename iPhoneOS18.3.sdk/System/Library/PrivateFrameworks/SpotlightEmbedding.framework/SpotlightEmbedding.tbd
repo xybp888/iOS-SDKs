@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SpotlightEmbedding.framework/SpotlightEmbedding
+current-version:       2328.7.8
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SPEmbeddingModelErrorDomain,
+                            _SpotlightEmbeddingVersionNumber,
+                            _SpotlightEmbeddingVersionString ]
+    objc-classes:         [ SPEmbeddingModel, SPEmbeddingResult,
+                            SPEmbeddingTokenizer, SPTextInput ]
+    objc-ivars:           [ SPEmbeddingModel._queryIDs, SPEmbeddingModel._queue,
+                            SPEmbeddingModel._requestIDs,
+                            SPEmbeddingModel._service, SPEmbeddingResult._bias,
+                            SPEmbeddingResult._elementType,
+                            SPEmbeddingResult._embeddingData,
+                            SPEmbeddingResult._scale, SPEmbeddingResult._version,
+                            SPEmbeddingTokenizer._queue,
+                            SPEmbeddingTokenizer._tokenizer,
+                            SPTextInput._attributedString, SPTextInput._text,
+                            SPTextInput._tokenIDs, SPTextInput._type ]
+...

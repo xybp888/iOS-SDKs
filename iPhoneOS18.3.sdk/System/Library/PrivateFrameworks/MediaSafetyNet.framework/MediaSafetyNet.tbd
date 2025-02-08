@@ -1,0 +1,56 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MediaSafetyNet.framework/MediaSafetyNet
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MSNLog, _MSNMonitorBeginException,
+                            _MSNMonitorEndException,
+                            _MSNMonitorSetCameraNonStandardCameraClient,
+                            _MSNMonitorSetCameraState,
+                            _MSNMonitorSetLastCameraClient,
+                            _MSNMonitorSetLastMicrophoneClient,
+                            _MSNMonitorSetMicrophoneState,
+                            _MSNMonitorSetXCTestExceptionState, _MSNMonitorStart,
+                            _MSNMonitorStartCam, _MSNMonitorStartMic,
+                            _MSNMonitorStartingCamera,
+                            _MSNMonitorStartingMicrophone,
+                            _MSNMonitorStoppingCamera,
+                            _MSNMonitorStoppingMicrophone, _MediaSafetyNetActive,
+                            _MediaSafetyNetIsLocalMonitor,
+                            _MediaSafetyNetVersionNumber,
+                            _MediaSafetyNetVersionString, _g_cameraClient,
+                            _g_cameraExceptionState, _g_cameraState,
+                            _g_keyboardState, _g_microphoneClient,
+                            _g_microphoneState, _g_pillState, _g_production,
+                            _g_serverMode, _g_uiState ]
+    objc-classes:         [ MSNCarPlay, MSNPillDataSource,
+                            MSNPillDataSourceController, MSNPillDataSourceServer,
+                            MSNScopedException, MSNScopedExceptionsServer, MSNTTR ]
+    objc-ivars:           [ MSNCarPlay._carplayConnected,
+                            MSNCarPlay._systemController,
+                            MSNPillDataSource._connection,
+                            MSNPillDataSource._identifiers,
+                            MSNPillDataSourceController._dataSource,
+                            MSNPillDataSourceController._identifiers,
+                            MSNPillDataSourceController._queue,
+                            MSNPillDataSourceController._token,
+                            MSNPillDataSourceController._xpcConnection,
+                            MSNPillDataSourceServer._activeDataSources,
+                            MSNPillDataSourceServer._callingData,
+                            MSNPillDataSourceServer._callingDomain,
+                            MSNPillDataSourceServer._listener,
+                            MSNPillDataSourceServer._queue,
+                            MSNPillDataSourceServer._systemStatusDynamicAttributionMonitor,
+                            MSNScopedException._connection,
+                            MSNScopedException._exception,
+                            MSNScopedExceptionsServer._activeExceptions,
+                            MSNScopedExceptionsServer._listener,
+                            MSNScopedExceptionsServer._queue, MSNTTR._pendedTTR,
+                            MSNTTR._runLoopSource, MSNTTR._url,
+                            MSNTTR._userNotification ]
+...

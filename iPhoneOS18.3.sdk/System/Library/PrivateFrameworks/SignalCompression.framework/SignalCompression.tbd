@@ -1,0 +1,63 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SignalCompression.framework/SignalCompression
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SignalCompressionVersionNumber,
+                            _SignalCompressionVersionString,
+                            __ZN3gcl12computeCRC32EPKhm,
+                            __ZN3gcl15kMortonCode256XE,
+                            __ZN3gcl15kMortonCode256YE,
+                            __ZN3gcl15kMortonCode256ZE,
+                            __ZN3gcl17ArithmeticDecoder24probUpdateLutInterleavedE,
+                            __ZN3gcl17ArithmeticDecoder5startEv,
+                            __ZN3gcl17ArithmeticEncoder13probUpdateLutE,
+                            __ZN3gcl17ArithmeticEncoder5startEv,
+                            __ZN3gcl6motion11DecoderImpl11decodeFrameEPKhmRmPi,
+                            __ZN3gcl6motion11DecoderImpl14decodeResidualEiPKiiRKNS0_12BinarizationERNS0_9ACContextEPi,
+                            __ZN3gcl6motion11DecoderImpl23setSequenceParameterSetERKNS0_7Decoder13AttributeInfoE,
+                            __ZN3gcl6motion11DecoderImpl26decodeSequenceParameterSetEPKhmRmRNS0_7Decoder13AttributeInfoE,
+                            __ZN3gcl6motion11EncoderImpl11encodeFrameEPKiNS0_9FrameTypeEPhmRmRKNS0_7Encoder18EncodingParametersE,
+                            __ZN3gcl6motion11EncoderImpl14encodeResidualEiPKiS3_iRKNS0_12BinarizationERNS0_9ACContextE,
+                            __ZN3gcl6motion11EncoderImpl26encodeSequenceParameterSetEmmPhmRm,
+                            __ZN3gcl6motion7Decoder11decodeFrameEPKhmRmPi,
+                            __ZN3gcl6motion7Decoder17getCurrentFrameQPEv,
+                            __ZN3gcl6motion7Decoder20getCurrentFrameFlagsEv,
+                            __ZN3gcl6motion7Decoder21getCurrentFrameNumberEv,
+                            __ZN3gcl6motion7Decoder23setSequenceParameterSetERKNS1_13AttributeInfoE,
+                            __ZN3gcl6motion7Decoder25getlastDecodedFrameNumberEv,
+                            __ZN3gcl6motion7Decoder26decodeSequenceParameterSetEPKhmRmRNS1_13AttributeInfoE,
+                            __ZN3gcl6motion7Decoder28getCurrentFramePayloadLengthEv,
+                            __ZN3gcl6motion7DecoderC1Ev,
+                            __ZN3gcl6motion7DecoderC2Ev,
+                            __ZN3gcl6motion7DecoderD1Ev,
+                            __ZN3gcl6motion7DecoderD2Ev,
+                            __ZN3gcl6motion7Encoder11encodeFrameEPKiNS0_9FrameTypeEPhmRmRKNS1_18EncodingParametersE,
+                            __ZN3gcl6motion7Encoder26encodeSequenceParameterSetEmmPhmRm,
+                            __ZN3gcl6motion7Encoder26estimateEncodingParametersEmmRKNS1_13EncodingHintsE,
+                            __ZN3gcl6motion7Encoder27estimateMaxEncodedFrameSizeEmm,
+                            __ZN3gcl6motion7EncoderC1Ev,
+                            __ZN3gcl6motion7EncoderC2Ev,
+                            __ZN3gcl6motion7EncoderD1Ev,
+                            __ZN3gcl6motion7EncoderD2Ev ]
+    objc-classes:         [ MotionDecoderWrapper, MotionEncoderWrapper ]
+    objc-ivars:           [ MotionDecoderWrapper._attributeCount,
+                            MotionDecoderWrapper._componentsPerAttribute,
+                            MotionDecoderWrapper.decoder,
+                            MotionDecoderWrapper.encoderInfo,
+                            MotionEncoderWrapper._attributeCount,
+                            MotionEncoderWrapper._bitstream,
+                            MotionEncoderWrapper._componentsPerAttribute,
+                            MotionEncoderWrapper._encoderParamsData,
+                            MotionEncoderWrapper._frameCount,
+                            MotionEncoderWrapper._intraFramePeriod,
+                            MotionEncoderWrapper._quantization,
+                            MotionEncoderWrapper.encParametersLength,
+                            MotionEncoderWrapper.encoder,
+                            MotionEncoderWrapper.estimatedEncodedFrameSizeInBytes ]
+...

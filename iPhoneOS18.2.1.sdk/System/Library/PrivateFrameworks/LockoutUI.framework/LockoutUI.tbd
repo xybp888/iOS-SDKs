@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/LockoutUI.framework/LockoutUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LOErrorDomain, _LOErrorResponsePinErrorKey,
+                            _LOErrorResponseUserInfoKey,
+                            _LOLockoutUIVersionNumber, _LOLockoutUIVersionString ]
+    objc-classes:         [ LOViewController ]
+...

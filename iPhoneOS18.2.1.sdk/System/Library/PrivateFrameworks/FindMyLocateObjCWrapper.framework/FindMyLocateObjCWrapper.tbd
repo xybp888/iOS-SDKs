@@ -1,0 +1,38 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FindMyLocateObjCWrapper.framework/FindMyLocateObjCWrapper
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FMLSessionErrorDomain ]
+    objc-classes:         [ FMLDevice, FMLFriend, FMLHandle, FMLLocation, FMLPlaceMark,
+                            FindMyLocateSession,
+                            _TtC23FindMyLocateObjCWrapper13ObjCBootstrap ]
+    objc-ivars:           [ FMLDevice._deviceName, FMLDevice._identifier,
+                            FMLDevice._idsDeviceId, FMLDevice._isActive,
+                            FMLDevice._isAutoMeCapable, FMLDevice._isCompanion,
+                            FMLDevice._isThisDevice, FMLFriend._createdAt,
+                            FMLFriend._expiry, FMLFriend._handle,
+                            FMLFriend._handleType, FMLFriend._origin,
+                            FMLFriend._originatedFromTheSameClient,
+                            FMLHandle._identifier, FMLLocation._address,
+                            FMLLocation._altitude,
+                            FMLLocation._coarseAddressLabel,
+                            FMLLocation._floorLevel,
+                            FMLLocation._horizontalAccuracy, FMLLocation._labels,
+                            FMLLocation._latitude, FMLLocation._locationType,
+                            FMLLocation._longitude, FMLLocation._speed,
+                            FMLLocation._timestamp, FMLLocation._type,
+                            FMLLocation._verticalAccuracy,
+                            FMLPlaceMark._administrativeArea,
+                            FMLPlaceMark._country,
+                            FMLPlaceMark._formattedAddressLines,
+                            FMLPlaceMark._locality, FMLPlaceMark._stateCode,
+                            FMLPlaceMark._streetAddress,
+                            FMLPlaceMark._streetName,
+                            FindMyLocateSession._trampoline ]
+...

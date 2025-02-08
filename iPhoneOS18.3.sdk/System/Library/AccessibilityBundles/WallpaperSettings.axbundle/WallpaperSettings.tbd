@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/WallpaperSettings.axbundle/WallpaperSettings
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXWallpaperLabel, __Failover,
+                            _accessibilityLocalizedString ]
+    objc-classes:         [ AXWallpaperSettingsGlue,
+                            SwiftUIAccessibilityNode__WallpaperSettings__SwiftUI,
+                            WSBundleCollectionOptionViewAccessibility,
+                            WallpaperPhotoCellAccessibility,
+                            __SwiftUIAccessibilityNode__WallpaperSettings__SwiftUI_super,
+                            __WSBundleCollectionOptionViewAccessibility_super,
+                            __WallpaperPhotoCellAccessibility_super ]
+...

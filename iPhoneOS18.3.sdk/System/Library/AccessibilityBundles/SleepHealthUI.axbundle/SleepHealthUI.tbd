@@ -1,0 +1,32 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/SleepHealthUI.axbundle/SleepHealthUI
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityLocalizedString ]
+    objc-classes:         [ AXSleepHealthUIGlue,
+                            ScheduleOccurrenceAlarmVolumeTableViewCellAccessibility,
+                            ScheduleOccurrenceComponentsEditTableViewCellAccessibility,
+                            ScheduleOccurrenceDayPickerTableViewCellAccessibility,
+                            SleepScheduleClockAccessibility,
+                            SleepScheduleClockCaptionAccessibility,
+                            SleepScheduleClockHandAccessibility,
+                            SleepScheduleComponentsHeaderAccessibility,
+                            SleepScheduleDayPickerDayAccessibility,
+                            TimeDurationPickerAccessibility,
+                            __ScheduleOccurrenceAlarmVolumeTableViewCellAccessibility_super,
+                            __ScheduleOccurrenceComponentsEditTableViewCellAccessibility_super,
+                            __ScheduleOccurrenceDayPickerTableViewCellAccessibility_super,
+                            __SleepScheduleClockAccessibility_super,
+                            __SleepScheduleClockCaptionAccessibility_super,
+                            __SleepScheduleClockHandAccessibility_super,
+                            __SleepScheduleComponentsHeaderAccessibility_super,
+                            __SleepScheduleDayPickerDayAccessibility_super,
+                            __TimeDurationPickerAccessibility_super ]
+    objc-ivars:           [ SleepScheduleClockAccessibility._accessibilityDraggingBedtimeHand ]
+...

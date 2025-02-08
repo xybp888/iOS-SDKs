@@ -1,0 +1,71 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64e-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 460.0.21 -module-name NearbyInteraction
+import Foundation
+@_exported import NearbyInteraction
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 14.0, watchOS 7.3, tvOS 14.4, *)
+@available(macOS, unavailable)
+extension NearbyInteraction.NINearbyObject {
+  public var distance: Swift.Float? {
+    get
+  }
+  public var direction: simd.simd_float3? {
+    get
+  }
+  @available(iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+  @available(macOS, unavailable)
+  public var horizontalAngle: Swift.Float? {
+    get
+  }
+}
+@available(iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+@available(macOS, unavailable)
+public enum NIAlgorithmConvergenceStatus : Swift.Equatable {
+  case unknown
+  case notConverged([NearbyInteraction.NIAlgorithmConvergenceStatus.Reason])
+  case converged
+  public static func == (lhs: NearbyInteraction.NIAlgorithmConvergenceStatus, rhs: NearbyInteraction.NIAlgorithmConvergenceStatus) -> Swift.Bool
+}
+@available(iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+@available(macOS, unavailable)
+extension NearbyInteraction.NIAlgorithmConvergenceStatus {
+  @available(iOS 16.0, *)
+  public struct Reason : Swift.Hashable, Swift.Equatable, Swift.RawRepresentable {
+    public var rawValue: Swift.String
+    public init(rawValue: Swift.String)
+    public var localizedDescription: Swift.String? {
+      get
+    }
+    @available(iOS 16.0, tvOS 16.0, watchOS 9.0, *)
+    @available(macOS, unavailable)
+    public typealias RawValue = Swift.String
+  }
+}
+@available(iOS 16.0, watchOS 9.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+extension NearbyInteraction.NIAlgorithmConvergenceStatus.Reason {
+  public static let insufficientSignalStrength: NearbyInteraction.NIAlgorithmConvergenceStatus.Reason
+  public static let insufficientHorizontalSweep: NearbyInteraction.NIAlgorithmConvergenceStatus.Reason
+  public static let insufficientVerticalSweep: NearbyInteraction.NIAlgorithmConvergenceStatus.Reason
+  public static let insufficientMovement: NearbyInteraction.NIAlgorithmConvergenceStatus.Reason
+  public static let insufficientLighting: NearbyInteraction.NIAlgorithmConvergenceStatus.Reason
+}
+@available(iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+@available(macOS, unavailable)
+extension NearbyInteraction.NIAlgorithmConvergence {
+  public var status: NearbyInteraction.NIAlgorithmConvergenceStatus {
+    get
+  }
+}
+@available(iOS 16.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension NearbyInteraction.NISession {
+  public func worldTransform(for object: NearbyInteraction.NINearbyObject) -> simd.simd_float4x4?
+}

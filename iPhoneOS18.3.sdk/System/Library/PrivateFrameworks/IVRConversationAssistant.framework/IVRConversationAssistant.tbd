@@ -1,0 +1,18 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IVRConversationAssistant.framework/IVRConversationAssistant
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _IVRConversationAssistantVersionNumber,
+                            _IVRConversationAssistantVersionString ]
+    objc-classes:         [ IVROptionStream, IVROptionStreamData ]
+    objc-ivars:           [ IVROptionStream._clientQueue,
+                            IVROptionStream._serviceConnection,
+                            IVROptionStreamData._optionStreamData,
+                            IVROptionStreamData._type ]
+...

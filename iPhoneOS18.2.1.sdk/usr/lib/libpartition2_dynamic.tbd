@@ -1,0 +1,42 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libpartition2_dynamic.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LPAPFSContainerMediaTypeUUID,
+                            _LPAPFSPhysicalStoreDiagsMediaUUID,
+                            _LPAPFSPhysicalStoreMediaUUID,
+                            _LPAPFSPhysicalStoreRecoveryMediaUUID,
+                            _LPAPFSSnapshotPropertyKeyMarkedForRevert,
+                            _LPAPFSSnapshotPropertyKeyMarkedForRoot,
+                            _LPAPFSSnapshotPropertyKeyName,
+                            _LPAPFSSnapshotPropertyKeyXID,
+                            _LPAPFSVolumeMediaTypeUUID,
+                            _LPAPFSVolumeMountOptionNoBrowse,
+                            _LPAPFSVolumeMountOptionNoFirmlinks,
+                            _LPAPFSVolumeMountOptionReadOnly,
+                            _LPAPFSVolumeMountOptionSnapshotName,
+                            _LPAPFSVolumeRevertOptionSkipRemount,
+                            _LPAPFSVolumeSnapshotMountPointKeyMountPoint,
+                            _LPAPFSVolumeSnapshotMountPointKeyName,
+                            _LPAPFSVolumeUnmountOptionAll,
+                            _LPAPFSVolumeUnmountOptionDoNotLock,
+                            _LPAPFSVolumeUnmountOptionForce,
+                            _LPAPFSVolumeUnmountOptionSnapshotName,
+                            _LPLogSetOutput, _LPLogSetVerbosity, __LPLogObject,
+                            __LPLogPack, _iterateSafely,
+                            _kLPDefaultLiveOSMountPointTable,
+                            _kLPDefaultMountPointTable,
+                            _kLPDefaultRAMDiskMountPointTable,
+                            _sLegacyVolumeNameMappingCount, _sMountMaxRetryCount,
+                            _sMountSleepTime, _sRoleEncodingMappingCount,
+                            _sUnmountMaxRetryCount, _sUnmountSleepTime ]
+    objc-classes:         [ LPAPFSContainer, LPAPFSPhysicalStore, LPAPFSVolume,
+                            LPMedia, LPPartitionMedia ]
+    objc-ivars:           [ LPMedia._ioMedia ]
+...

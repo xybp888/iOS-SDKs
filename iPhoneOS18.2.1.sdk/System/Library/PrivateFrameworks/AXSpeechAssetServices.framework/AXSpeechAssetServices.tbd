@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AXSpeechAssetServices.framework/AXSpeechAssetServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AVSpeechSynthesisVoiceIdentifierFred,
+                            _AVSpeechSynthesisVoiceIdentifierVictoria ]
+    objc-classes:         [ AXSettingsVoiceAssetManager,
+                            AXSpeechAssetMonitorHelper,
+                            AXSpeechPronunciationHelper,
+                            AXSpeechPronunciationOptions ]
+    objc-ivars:           [ AXSettingsVoiceAssetManager._reachability,
+                            AXSpeechAssetMonitorHelper._assetService,
+                            AXSpeechAssetMonitorHelper._lastVoiceAssetUpdateTime,
+                            AXSpeechAssetMonitorHelper._longOperationQueue,
+                            AXSpeechAssetMonitorHelper._migrationQueue,
+                            AXSpeechAssetMonitorHelper._reachability,
+                            AXSpeechAssetMonitorHelper._speechAssetClient,
+                            AXSpeechPronunciationHelper._inSession,
+                            AXSpeechPronunciationHelper._resultCallback,
+                            AXSpeechPronunciationOptions._language,
+                            AXSpeechPronunciationOptions._orthography ]
+...

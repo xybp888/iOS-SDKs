@@ -1,0 +1,74 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FedStatsPluginCore.framework/FedStatsPluginCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FedStatsPluginCoreVersionNumber,
+                            _FedStatsPluginCoreVersionString,
+                            _FedStatsPluginErrorDomain,
+                            _FedStatsPluginSQLQueryValidatorAllowListFilename,
+                            _FedStatsPluginSQLQueryValidatorBlockListFilename,
+                            _kFedStatsCohortMissingField,
+                            _kFedStatsDataCohortAllowList,
+                            _kFedStatsDataEncoderCollectionKeyPrefix,
+                            _kFedStatsPluginExperimentRetentionPeriod,
+                            _kFedStatsPluginUserDefaultsDomain,
+                            _kFedStatsPluginUserDefaultsKeyExperimentList ]
+    objc-classes:         [ FedStatsCohortFactory, FedStatsCohortGeohash,
+                            FedStatsCohortQueryDeviceType,
+                            FedStatsCohortQueryFieldGeneric,
+                            FedStatsCohortQueryInstalledApps,
+                            FedStatsCohortQueryInstalledAppsMedia,
+                            FedStatsCohortQueryInstalledAppsPhone,
+                            FedStatsCohortQueryLocale,
+                            FedStatsCohortQueryURLBits,
+                            FedStatsCollectionKeyGenerator, FedStatsDataCohort,
+                            FedStatsPluginClientValidator,
+                            FedStatsPluginDnUConsentChecker,
+                            FedStatsPluginEngine, FedStatsPluginError,
+                            FedStatsPluginIHAConsentChecker,
+                            FedStatsPluginLocationServiceConsentChecker,
+                            FedStatsPluginLog, FedStatsPluginRecipe,
+                            FedStatsPluginSQL, FedStatsPluginSQLQueryValidator,
+                            FedStatsPluginTelemetry,
+                            FedStatsPluginUserProofingConsentChecker,
+                            InstalledApp ]
+    objc-ivars:           [ FedStatsCohortFactory._cohortObjects,
+                            FedStatsCohortGeohash._precision,
+                            FedStatsCohortQueryDeviceType._deviceType,
+                            FedStatsCohortQueryFieldGeneric._cohortName,
+                            FedStatsCohortQueryInstalledApps._domainToInstalledApps,
+                            FedStatsCohortQueryInstalledApps._numOfMediaApps,
+                            FedStatsCohortQueryInstalledApps._numOfPhoneApps,
+                            FedStatsCohortQueryLocale._deviceLocale,
+                            FedStatsCohortQueryURLBits._cohortName,
+                            FedStatsCollectionKeyGenerator._cohortKeys,
+                            FedStatsCollectionKeyGenerator._deploymentIdentifier,
+                            FedStatsCollectionKeyGenerator._experimentIdentifier,
+                            FedStatsCollectionKeyGenerator._namespaceIdentifier,
+                            FedStatsCollectionKeyGenerator._prefix,
+                            FedStatsCollectionKeyGenerator._requiredFields,
+                            FedStatsCollectionKeyGenerator._treatmentIdentifier,
+                            FedStatsCollectionKeyGenerator._unifiedFields,
+                            FedStatsDataCohort._namespaceMap,
+                            FedStatsPluginClientValidator._association,
+                            FedStatsPluginRecipe._assetProvider,
+                            FedStatsPluginRecipe._clientIdentifier,
+                            FedStatsPluginRecipe._cohortNameList,
+                            FedStatsPluginRecipe._dataTypeContent,
+                            FedStatsPluginRecipe._recipeIdentifier,
+                            FedStatsPluginRecipe._recordMetadata,
+                            FedStatsPluginRecipe._sqlQuery,
+                            FedStatsPluginSQL._database,
+                            FedStatsPluginSQLQueryValidator._allowList,
+                            FedStatsPluginSQLQueryValidator._blockList,
+                            InstalledApp._appName,
+                            InstalledApp._bundleIdentifier,
+                            InstalledApp._supportedIntents,
+                            InstalledApp._supportedMediaCategories ]
+...

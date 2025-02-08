@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HomeAccessoryControlUI.framework/HomeAccessoryControlUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __ZN8Spectrum16positionForColorEf23FragmentShaderArguments,
+                            __ZN8Spectrum18colorRGBAtPositionEDv2_f23FragmentShaderArguments,
+                            __ZN8Spectrum26colorTemperatureAtPositionEDv2_f23FragmentShaderArguments,
+                            __ZN8Spectrum27getColorForLightTemperatureEf ]
+    objc-classes:         [ ColorTemperatureSpectrumRenderer,
+                            _TtCV22HomeAccessoryControlUI22MediaPlayerWrapperView11Coordinator ]
+    objc-ivars:           [ ColorTemperatureSpectrumRenderer._commandQueue,
+                            ColorTemperatureSpectrumRenderer._device,
+                            ColorTemperatureSpectrumRenderer._endColor,
+                            ColorTemperatureSpectrumRenderer._fragmentShaderArgumentBuffer,
+                            ColorTemperatureSpectrumRenderer._metalView,
+                            ColorTemperatureSpectrumRenderer._pipelineState,
+                            ColorTemperatureSpectrumRenderer._startColor,
+                            ColorTemperatureSpectrumRenderer._vertexBuffer ]
+...

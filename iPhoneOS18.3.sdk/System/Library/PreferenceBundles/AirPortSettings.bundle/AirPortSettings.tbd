@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PreferenceBundles/AirPortSettings.bundle/AirPortSettings
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ APNetworksController ]
+    objc-ivars:           [ APNetworksController._airportController,
+                            APNetworksController._deferredURL,
+                            APNetworksController._healthOverrides,
+                            APNetworksController._joinEnterprise,
+                            APNetworksController._pushDataUsage,
+                            APNetworksController._settingsViewController,
+                            APNetworksController._viewLoaded ]
+...

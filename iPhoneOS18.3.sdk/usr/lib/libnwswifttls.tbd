@@ -1,0 +1,44 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libnwswifttls.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _nwswifttls_copy_definition, _nwswifttls_identifier ]
+    objc-classes:         [ NWConcrete_nwswifttls,
+                            _TtC10nwswifttls14STLSHandshaker ]
+    objc-ivars:           [ NWConcrete_nwswifttls.application_output_handler,
+                            NWConcrete_nwswifttls.application_protocols,
+                            NWConcrete_nwswifttls.application_transport,
+                            NWConcrete_nwswifttls.connected,
+                            NWConcrete_nwswifttls.early_output_handler,
+                            NWConcrete_nwswifttls.enable_tls_keylog,
+                            NWConcrete_nwswifttls.handshake_output_handler,
+                            NWConcrete_nwswifttls.handshaker,
+                            NWConcrete_nwswifttls.initial_output_handler,
+                            NWConcrete_nwswifttls.metadata,
+                            NWConcrete_nwswifttls.new_session_ticket_request,
+                            NWConcrete_nwswifttls.options,
+                            NWConcrete_nwswifttls.output_application_frame_array,
+                            NWConcrete_nwswifttls.output_early_frame_array,
+                            NWConcrete_nwswifttls.output_handshake_frame_array,
+                            NWConcrete_nwswifttls.output_initial_frame_array,
+                            NWConcrete_nwswifttls.protocol,
+                            NWConcrete_nwswifttls.quic_transport_parameters,
+                            NWConcrete_nwswifttls.resumed_session_ticket_request,
+                            NWConcrete_nwswifttls.sent_error,
+                            NWConcrete_nwswifttls.server_name,
+                            NWConcrete_nwswifttls.session_state,
+                            NWConcrete_nwswifttls.session_update_block,
+                            NWConcrete_nwswifttls.session_update_queue,
+                            NWConcrete_nwswifttls.spki,
+                            NWConcrete_nwswifttls.started_handshake,
+                            NWConcrete_nwswifttls.tls_encryption_level_update_block,
+                            NWConcrete_nwswifttls.tls_encryption_level_update_queue,
+                            NWConcrete_nwswifttls.tls_secret_update_block,
+                            NWConcrete_nwswifttls.use_x25519_key_exchange ]
+...

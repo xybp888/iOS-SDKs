@@ -1,0 +1,133 @@
+// High level C interfaces.
+extern module AppleTextureEncoder "AppleTextureEncoder.modulemap"
+extern module asl "asl.modulemap"
+extern module Compression "compression.modulemap"
+extern module dnssd "dnssd.modulemap"
+extern module ICU_Placeholder_NewFile "unicode.modulemap"
+extern module SQLite3 "SQLite3.modulemap"
+extern module zlib "zlib.modulemap"
+
+// Interfaces for interprocess communication.
+extern module notify "notify.modulemap"
+extern module XPC "xpc.modulemap"
+
+// OS and kernel interfaces on top of Darwin/POSIX.
+extern module Dispatch "dispatch.modulemap"
+extern module DispatchIntrospection "dispatch.modulemap"
+extern module libkern "libkern.modulemap"
+extern module MachO_Placeholder_NewFile "MachO.modulemap"
+extern module os "os.modulemap"
+extern module os_object "os.modulemap"
+extern module os_workgroup "os.modulemap"
+
+// General Objective-C interfaces.
+extern module ObjectiveC "ObjectiveC.modulemap"
+
+// General C interfaces (roughly POSIX/BSD).
+extern module Darwin "Darwin.modulemap"
+
+// Interfaces above the C standard library.
+extern module libunwind "libunwind.modulemap"
+extern module unwind_h "DarwinBasic.modulemap"
+
+// Interfaces above the C standard library that are used by libc++. When
+// building with C++, these modules are intermingled with the libc++ and
+// C standard library modules.
+extern module gethostuuid "DarwinBasic.modulemap"
+extern module nl_types "DarwinBasic.modulemap"
+extern module pthread "DarwinBasic.modulemap"
+extern module sys_select "DarwinBasic.modulemap"
+extern module unistd "DarwinBasic.modulemap"
+extern module xlocale "DarwinBasic.modulemap"
+
+// C Standard Library. When building with C++, these modules will also
+// import the corresponding C++ library modules.
+extern module assert_h "c_standard_library.modulemap"
+extern module complex_h "c_standard_library.modulemap"
+extern module ctype_h "c_standard_library.modulemap"
+extern module errno_h "c_standard_library.modulemap"
+extern module fenv_h "c_standard_library.modulemap"
+extern module float_h "c_standard_library.modulemap"
+extern module inttypes_h "c_standard_library.modulemap"
+extern module iso646_h "c_standard_library.modulemap"
+extern module limits_h "c_standard_library.modulemap"
+extern module locale_h "c_standard_library.modulemap"
+extern module math_h "c_standard_library.modulemap"
+extern module setjmp_h "c_standard_library.modulemap"
+extern module signal_h "c_standard_library.modulemap"
+extern module stdalign_h "c_standard_library.modulemap"
+extern module stdarg_h "c_standard_library.modulemap"
+extern module stdatomic_h "c_standard_library.modulemap"
+extern module stdbool_h "c_standard_library.modulemap"
+extern module stddef_h "c_standard_library.modulemap"
+extern module stdint_h "c_standard_library.modulemap"
+extern module stdio_h "c_standard_library.modulemap"
+extern module stdlib_h "c_standard_library.modulemap"
+extern module stdnoreturn_h "c_standard_library.modulemap"
+extern module string_h "c_standard_library.modulemap"
+extern module tgmath_h "c_standard_library.modulemap"
+extern module time_h "c_standard_library.modulemap"
+extern module wchar_h "c_standard_library.modulemap"
+extern module wctype_h "c_standard_library.modulemap"
+
+// Interfaces that are intermingled with the C standard library.
+extern module alloca "DarwinBasic.modulemap"
+extern module runetype "DarwinBasic.modulemap"
+extern module _strings "DarwinBasic.modulemap"
+extern module sys_resource "DarwinBasic.modulemap"
+extern module sys_types "DarwinBasic.modulemap"
+extern module sys_wait "DarwinBasic.modulemap"
+
+// Base interfaces below the C standard library.
+extern module _mach_port_t "DarwinFoundation.modulemap"
+extern module netinet_in "DarwinFoundation.modulemap"
+extern module _sys_select "DarwinFoundation.modulemap"
+extern module sys_time "DarwinFoundation.modulemap"
+extern module _useconds_t "DarwinFoundation.modulemap"
+extern module uuid "DarwinFoundation.modulemap"
+extern module DarwinFoundation "DarwinFoundation.modulemap"
+extern module os_availability "os_availability.modulemap"
+extern module TargetConditionals "TargetConditionals.modulemap"
+// Deprecated, use os_availability
+extern module AvailabilityMacros "os_availability.modulemap"
+// Implementation detail, use os_availability.
+extern module os_availability_internal "os_availability.modulemap"
+
+// unwind.h implementation. This header is augmented by the compiler.
+// This module should never be directly imported, unwind_h should be
+// used instead.
+extern module unwind "libunwind.modulemap"
+
+// C Standard Library implementation. Most of these headers are augmented,
+// or even replaced, by the compiler or C++ library. These modules should
+// never be directly imported, the modules above should be used instead.
+extern module _assert "c_standard_library.modulemap"
+extern module _complex "c_standard_library.modulemap"
+extern module _ctype "c_standard_library.modulemap"
+extern module _errno "c_standard_library.modulemap"
+extern module _fenv "c_standard_library.modulemap"
+extern module _float "c_standard_library.modulemap"
+extern module _inttypes "c_standard_library.modulemap"
+extern module _iso646 "c_standard_library.modulemap"
+extern module _limits "c_standard_library.modulemap"
+extern module _locale "c_standard_library.modulemap"
+extern module _math "c_standard_library.modulemap"
+extern module _setjmp "c_standard_library.modulemap"
+extern module _signal "c_standard_library.modulemap"
+extern module _stdarg "c_standard_library.modulemap"
+extern module _stddef "c_standard_library.modulemap"
+extern module _stdint "c_standard_library.modulemap"
+extern module _stdio "c_standard_library.modulemap"
+extern module _stdlib "c_standard_library.modulemap"
+extern module _string "c_standard_library.modulemap"
+extern module _tgmath "c_standard_library.modulemap"
+extern module _time "c_standard_library.modulemap"
+extern module _wchar "c_standard_library.modulemap"
+extern module _wctype "c_standard_library.modulemap"
+extern module __wctype "c_standard_library.modulemap"
+
+// Source module maps for modules in sub-directories where a directory name
+// doesn't match a module name.
+extern module MachO_Placeholder_OldFile "mach-o/module.modulemap"
+extern module ICU_Placeholder_OldFile "unicode/module.modulemap"
+

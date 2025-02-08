@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppleHIDTransportSupport.framework/AppleHIDTransportSupport
+current-version:       8100.32
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ AHTBootLoader, AHTCommon, AHTDevice, AHTInterface,
+                            AHTLoader ]
+    objc-ivars:           [ AHTBootLoader._connect, AHTBootLoader._device,
+                            AHTBootLoader._imageTag, AHTBootLoader._interface,
+                            AHTBootLoader._machPort,
+                            AHTBootLoader._needsRestoreUpdate,
+                            AHTBootLoader._personality, AHTBootLoader._service,
+                            AHTBootLoader._supportsMemoryDump,
+                            AHTBootLoader._type, AHTCommon._connect,
+                            AHTCommon._name, AHTCommon._service,
+                            AHTInterface._interfaceID, AHTLoader._connect,
+                            AHTLoader._imageTag, AHTLoader._loadingGroup,
+                            AHTLoader._name, AHTLoader._service ]
+...

@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ShazamEvents.framework/ShazamEvents
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SHShazamEventsClientInterface,
+                            _SHShazamEventsServiceInterface ]
+    objc-classes:         [ SHShazamEventsServiceInterfaces,
+                            _TtC12ShazamEvents19ShazamEventsService,
+                            _TtC12ShazamEvents24LiveMusicEventConnection,
+                            _TtC12ShazamEvents31LiveMusicEventXPCValueContainer,
+                            _TtC12ShazamEvents34LiveMusicScheduleXPCValueContainer,
+                            _TtC12ShazamEvents39LiveMusicVenueScheduleXPCValueContainer ]
+...

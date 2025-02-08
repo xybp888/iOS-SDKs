@@ -1,0 +1,31 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64e-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -library-level spi -user-module-version 312.4 -module-name AccessorySetupKit
+@_exported import AccessorySetupKit
+import CoreBluetooth
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+@_spi(Private) @_inheritsConvenienceInitializers @available(iOS 18.0, *)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@objc public class ASUIClientManager : ObjectiveC.NSObject, @unchecked Swift.Sendable {
+  @_spi(Private) @objc public static let shared: AccessorySetupKit.ASUIClientManager
+  @_spi(Private) @objc public func activateConnection(session: AccessorySetupKit.ASAccessorySession, with displayItems: [AccessorySetupKit.ASPickerDisplayItem], for overrideBundleID: Swift.String? = nil, completionHandler: @escaping ((any Swift.Error)?) -> Swift.Void)
+  @_spi(Private) @objc public func fail(accessory: AccessorySetupKit.ASAccessory, completionHandler: @escaping ((any Swift.Error)?) -> Swift.Void)
+  @_spi(Private) @objc public func update(accessory: AccessorySetupKit.ASAccessory, options: AccessorySetupKit.ASAccessory.RenameOptions, for overrideBundleID: Swift.String? = nil, completionHandler: @escaping ((any Swift.Error)?) -> Swift.Void)
+  @_spi(Private) @objc deinit
+  @_spi(Private) @objc override dynamic public init()
+}
+#if compiler(>=5.3) && $RetroactiveAttribute
+extension os.Logger : @unchecked @retroactive Swift.Sendable {
+}
+#else
+extension os.Logger : @unchecked Swift.Sendable {
+}
+#endif

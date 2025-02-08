@@ -1,0 +1,43 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NCLaunchStats.framework/NCLaunchStats
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _KeepAppsUpToDateEnabledChangedNotification,
+                            _kMGQueryhas ]
+    objc-classes:         [ NCLaunchStats ]
+    objc-ivars:           [ NCLaunchStats._appUpdateTimes,
+                            NCLaunchStats._appsRequestingRefresh,
+                            NCLaunchStats._asyncRecommendHandler,
+                            NCLaunchStats._bootstrapWidgetIds,
+                            NCLaunchStats._bootstrapWidgetPrewarmActivity,
+                            NCLaunchStats._bootstrapWidgetTimeline,
+                            NCLaunchStats._defaultRequiresNetwork,
+                            NCLaunchStats._defaultSchedulingPriority,
+                            NCLaunchStats._historyDeletionActivity,
+                            NCLaunchStats._ncLog,
+                            NCLaunchStats._predictionTimeline,
+                            NCLaunchStats._predictionUpdateActivity,
+                            NCLaunchStats._predictor, NCLaunchStats._scheduler,
+                            NCLaunchStats._store, NCLaunchStats._syncQueue,
+                            NCLaunchStats._widgetPrewarmActivity,
+                            NCLaunchStats._widgetStream,
+                            NCLaunchStats._widgetViewTime,
+                            NCLaunchStats.appSpecificTriggerToken,
+                            NCLaunchStats.backgroundAppRefreshSwitchedOn,
+                            NCLaunchStats.classCLockedToken,
+                            NCLaunchStats.generatePredictionToken,
+                            NCLaunchStats.isClassCLocked,
+                            NCLaunchStats.kTimeGuardBand,
+                            NCLaunchStats.launchTracker,
+                            NCLaunchStats.numPrewarmedLaunches,
+                            NCLaunchStats.numRepeatedPrewarms,
+                            NCLaunchStats.predictedWidgetsToken,
+                            NCLaunchStats.prewarmDurationTracker,
+                            NCLaunchStats.prewarmTimeTracker ]
+...

@@ -1,0 +1,21 @@
+module MachO [system] {
+  umbrella "mach-o"
+
+  module dyld {
+    header "mach-o/dyld.h"
+    export *
+
+    explicit module utils {
+      header "mach-o/utils.h"
+      export *
+    }
+  }
+
+  // All swap APIs are deprecated.
+  exclude header "mach-o/i386/swap.h"
+
+  module * { export * }
+}
+
+module MachO_Placeholder_NewFile [system] {
+}

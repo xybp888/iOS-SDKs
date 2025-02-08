@@ -1,0 +1,42 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IntentsFoundation.framework/IntentsFoundation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _IFMergeDictionaries,
+                            _IntentsFoundationVersionNumber,
+                            _IntentsFoundationVersionString ]
+    objc-classes:         [ IFObjectHasher, INFGrammarCollection, INFNumber,
+                            INFPartOfSpeech, INFSentence, INFSentenceContext,
+                            INFSentenceToken, INFSentenceTokenWithContext,
+                            INFVariantsDescriptor, _IFValueTransformer ]
+    objc-ivars:           [ IFObjectHasher._finalized, IFObjectHasher._hash,
+                            IFObjectHasher._hasher,
+                            INFGrammarCollection._sentencesDictionary,
+                            INFGrammarCollection._tokensDictionary,
+                            INFNumber._identifier, INFNumber._value,
+                            INFPartOfSpeech._gender, INFPartOfSpeech._identifier,
+                            INFPartOfSpeech._language,
+                            INFPartOfSpeech._partOfSpeechType,
+                            INFPartOfSpeech._variants, INFSentence._collection,
+                            INFSentence._format, INFSentence._identifier,
+                            INFSentence._placeholders,
+                            INFSentence._placeholdersToTokens,
+                            INFSentence._relationships,
+                            INFSentenceContext._gender,
+                            INFSentenceContext._number,
+                            INFSentenceToken._identifier,
+                            INFSentenceTokenWithContext._context,
+                            INFSentenceTokenWithContext._originalToken,
+                            INFSentenceTokenWithContext._placeholderName,
+                            INFSentenceTokenWithContext._resolved,
+                            INFVariantsDescriptor._gender,
+                            INFVariantsDescriptor._plurality,
+                            _IFValueTransformer._forwardTransformation,
+                            _IFValueTransformer._reverseTransformation ]
+...

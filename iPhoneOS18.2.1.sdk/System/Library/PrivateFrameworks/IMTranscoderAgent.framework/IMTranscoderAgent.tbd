@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IMTranscoderAgent.framework/IMTranscoderAgent
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _IMTranscodeErrorDomain, __IMTranscoderLinkFile ]
+    objc-classes:         [ IMEmbeddedHardwareJPEGTranscoder,
+                            IMFallbackTranscoder,
+                            IMFallbackTranscoder_AudioMessage, IMTranscoder,
+                            IMTranscoderImageQualityEstimator,
+                            IMTranscoderImageSizeEstimator,
+                            IMTranscoderTelemetry, IMTranscoder_AV,
+                            IMTranscoder_Image, IMTranscodingAgentController,
+                            IMTranscriptionUtilities ]
+    objc-ivars:           [ IMEmbeddedHardwareJPEGTranscoder._canHardwareScaleImage,
+                            IMEmbeddedHardwareJPEGTranscoder._imageData,
+                            IMEmbeddedHardwareJPEGTranscoder._imageProperties,
+                            IMEmbeddedHardwareJPEGTranscoder._ioSurfaceRef,
+                            IMTranscodingAgentController._fallbackTranscoders,
+                            IMTranscodingAgentController._previewGenerationQueue,
+                            IMTranscodingAgentController._queue,
+                            IMTranscodingAgentController._transcoders ]
+...

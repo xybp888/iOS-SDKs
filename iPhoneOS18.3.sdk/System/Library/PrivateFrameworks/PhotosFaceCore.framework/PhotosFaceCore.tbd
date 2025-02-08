@@ -1,0 +1,55 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PhotosFaceCore.framework/PhotosFaceCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PFCNumberOfShufflesToGenerate,
+                            _PFCParallaxPaddingPercentage,
+                            _PFCRectForTimePosition, _PFCWatchScreenSize,
+                            _PhotosFaceCoreVersionNumber,
+                            _PhotosFaceCoreVersionString,
+                            _kPFCAlbumUpdateNotification,
+                            _kPFCGalleryUpdateNotification,
+                            _kPFCShuffleUpdateNotification,
+                            _kPFCUpdateNotification ]
+    objc-classes:         [ PFCShuffle, PFCShuffleDataSource, PFCShuffleGenerator,
+                            PFCShuffleUtilities, PFCStoredLayout, PFCStoredPhoto ]
+    objc-ivars:           [ PFCShuffle._cityscape, PFCShuffle._nature,
+                            PFCShuffle._people, PFCShuffle._pets,
+                            PFCShuffleDataSource._ambientPeople,
+                            PFCShuffleDataSource._numberOfCityscapeSuggestions,
+                            PFCShuffleDataSource._numberOfNatureSuggestions,
+                            PFCShuffleDataSource._numberOfPeopleSuggestions,
+                            PFCShuffleDataSource._numberOfPetSuggestions,
+                            PFCShuffleDataSource._photoLibrary,
+                            PFCShuffleDataSource._sortedTopAmbientPeople,
+                            PFCShuffleDataSource._topAmbientPeople,
+                            PFCShuffleGenerator._dataSource,
+                            PFCShuffleGenerator._photoLibrary,
+                            PFCShuffleGenerator._shuffleMinimumSuggestionRequired,
+                            PFCShuffleGenerator._shuffles,
+                            PFCShuffleGenerator._targetShuffleSize,
+                            PFCStoredLayout._backgroundZorder,
+                            PFCStoredLayout._baseImageName,
+                            PFCStoredLayout._colorInfo,
+                            PFCStoredLayout._foregroundZorder,
+                            PFCStoredLayout._imageAOTBrightness,
+                            PFCStoredLayout._maskImageName,
+                            PFCStoredLayout._originalCrop,
+                            PFCStoredLayout._timeElementZorder,
+                            PFCStoredLayout._timePosition,
+                            PFCStoredLayout._timeRect,
+                            PFCStoredLayout._userEdited,
+                            PFCStoredPhoto._accessibilityDescription,
+                            PFCStoredPhoto._layouts,
+                            PFCStoredPhoto._localIdentifier,
+                            PFCStoredPhoto._modificationDate,
+                            PFCStoredPhoto._parallaxScale,
+                            PFCStoredPhoto._preferredLayout,
+                            PFCStoredPhoto._userEdited ]
+...

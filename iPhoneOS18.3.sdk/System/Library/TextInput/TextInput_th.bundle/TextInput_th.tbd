@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/TextInput/TextInput_th.bundle/TextInput_th
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __ZNK17TIInputManager_th30create_custom_candidate_filterEN2KB10LookupTypeE,
+                            __ZNK2KB18CandidateFilter_th17filter_candidatesERNS_19CandidateCollectionERKNS_28CandidateFilterLookupContextERKNS_24CandidateFilterResourcesE,
+                            __ZNK2KB18CandidateFilter_th18filter_descriptionEv,
+                            __ZNK2KB18CandidateFilter_th27num_words_overlapping_inputERKNS_9CandidateES3_,
+                            __ZNK2KB18CandidateFilter_th31remove_low_word_score_candidateERNSt3__16vectorINS_9CandidateENS1_9allocatorIS3_EEEERKS3_P10__CFString,
+                            __ZNK2KB18CandidateFilter_th34remove_candidate_having_more_wordsERNSt3__16vectorINS_9CandidateENS1_9allocatorIS3_EEEERKS3_P10__CFString,
+                            __ZNK2KB18CandidateFilter_th53remove_duplicate_candidate_with_the_same_surface_formERNSt3__16vectorINS_9CandidateENS1_9allocatorIS3_EEEERKS3_P10__CFString,
+                            __ZTV17TIInputManager_th,
+                            __ZTVN2KB18CandidateFilter_thE ]
+    objc-classes:         [ TIKeyboardInputManagerFavonius_th,
+                            TIKeyboardInputManager_th, TIWordSearchThai ]
+    objc-ivars:           [ TIKeyboardInputManager_th._wordSearch,
+                            TIWordSearchThai._baseLayout ]
+...

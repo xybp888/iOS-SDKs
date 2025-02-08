@@ -1,0 +1,54 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libTLE.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LWCRErrorDomain, __ZN3TLE10operationsE,
+                            __ZN3TLE11InOperation7ExecuteERNS_12EncyclopediaE,
+                            __ZN3TLE11OrOperation7ExecuteERNS_12EncyclopediaE,
+                            __ZN3TLE12AndOperation7ExecuteERNS_12EncyclopediaE,
+                            __ZN3TLE13keyForContextER14der_vm_context,
+                            __ZN3TLE14QueryOperation7ExecuteERNS_12EncyclopediaE,
+                            __ZN3TLE14inDeserializerERNS_8ExecutorER14der_vm_contextRKNS_14FactDefinitionE,
+                            __ZN3TLE14orDeserializerERNS_8ExecutorER14der_vm_contextRKNS_14FactDefinitionE,
+                            __ZN3TLE15andDeserializerERNS_8ExecutorER14der_vm_contextRKNS_14FactDefinitionE,
+                            __ZN3TLE17OptionalOperation7ExecuteERNS_12EncyclopediaE,
+                            __ZN3TLE17matchRestrictListER8CEBuffermPKS0_,
+                            __ZN3TLE18factOpDeserializerERNS_8ExecutorER14der_vm_contextRKNS_14FactDefinitionE,
+                            __ZN3TLE19opTupleDeserializerERNS_8ExecutorER14der_vm_contextRKNS_14FactDefinitionE,
+                            __ZN3TLE19queryOpDeserializerERNS_8ExecutorER14der_vm_contextRKNS_14FactDefinitionE,
+                            __ZN3TLE21opArrayOpDeserializerERNS_8ExecutorER14der_vm_contextRKNS_14FactDefinitionE,
+                            __ZN3TLE21orArrayOpDeserializerERNS_8ExecutorER14der_vm_contextRKNS_14FactDefinitionE,
+                            __ZN3TLE22andArrayOpDeserializerERNS_8ExecutorER14der_vm_contextRKNS_14FactDefinitionE,
+                            __ZN3TLE22optionalOpDeserializerERNS_8ExecutorER14der_vm_contextRKNS_14FactDefinitionE,
+                            __ZN3TLE29getLowestCompatibleVersionForE13LWCRVersion_t,
+                            __ZN3TLE4LWCR10loadFromCEEP14CEQueryContext,
+                            __ZN3TLE4LWCR12requirementsEv, __ZN3TLE4LWCRC1Ev,
+                            __ZN3TLE4LWCRC2Ev,
+                            __ZN3TLE8Executor19getOperationsFromCEEP14CEQueryContext,
+                            __ZN3TLE8Executor29getDependentOpsFromDictionaryE14der_vm_contextRKNS_14FactDefinitionEbmPK8CEBuffer,
+                            __ZNK3TLE4LWCR13compatVersionEv,
+                            __ZNK3TLE4LWCR18constraintCategoryEv,
+                            __ZNK3TLE4LWCR7versionEv, __ZTIN3TLE11InOperationE,
+                            __ZTIN3TLE11OrOperationE, __ZTIN3TLE12AndOperationE,
+                            __ZTIN3TLE14QueryOperationE,
+                            __ZTIN3TLE17OptionalOperationE,
+                            __ZTSN3TLE11InOperationE, __ZTSN3TLE11OrOperationE,
+                            __ZTSN3TLE12AndOperationE,
+                            __ZTSN3TLE14QueryOperationE,
+                            __ZTSN3TLE17OptionalOperationE,
+                            __ZTVN3TLE11InOperationE, __ZTVN3TLE11OrOperationE,
+                            __ZTVN3TLE12AndOperationE,
+                            __ZTVN3TLE14QueryOperationE,
+                            __ZTVN3TLE17OptionalOperationE ]
+    objc-classes:         [ LWCR, LWCRExecutor, LWCRFact ]
+    objc-ivars:           [ LWCR._dictionary, LWCR.backingContext,
+                            LWCR.backingStorage, LWCR.lwcr,
+                            LWCRFact.dataFactStorage, LWCRFact.fact,
+                            LWCRFact.stringFactStorage ]
+...

@@ -1,0 +1,59 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreThread.framework/CoreThread
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _kTHNetworkChannel_None ]
+    objc-classes:         [ THFrozenThreadNetwork, THNetworkSignature,
+                            THPreferredThreadNetwork, THThreadNetwork,
+                            THThreadNetworkBorderAgent,
+                            THThreadNetworkCredentials,
+                            THThreadNetworkCredentialsActiveDataSetRecord,
+                            THThreadNetworkCredentialsDataSet,
+                            THThreadNetworkCredentialsStoreRecord ]
+    objc-ivars:           [ THFrozenThreadNetwork._creationDate,
+                            THFrozenThreadNetwork._credentialsDataSet,
+                            THFrozenThreadNetwork._lastModificationDate,
+                            THNetworkSignature._ipv4NwSignature,
+                            THNetworkSignature._ipv6NwSignature,
+                            THNetworkSignature._wifiPassword,
+                            THNetworkSignature._wifiSSID,
+                            THPreferredThreadNetwork._creationDate,
+                            THPreferredThreadNetwork._credentialsDataSetRecord,
+                            THPreferredThreadNetwork._lastModificationDate,
+                            THPreferredThreadNetwork._network,
+                            THPreferredThreadNetwork._networkSignature,
+                            THPreferredThreadNetwork._userInfo,
+                            THThreadNetwork._extendedPANID,
+                            THThreadNetwork._networkName,
+                            THThreadNetworkBorderAgent._discriminatorId,
+                            THThreadNetworkCredentials._PANID,
+                            THThreadNetworkCredentials._PSKc,
+                            THThreadNetworkCredentials._channel,
+                            THThreadNetworkCredentials._credentialsDataSet,
+                            THThreadNetworkCredentials._isActiveDevice,
+                            THThreadNetworkCredentials._masterKey,
+                            THThreadNetworkCredentials._passPhrase,
+                            THThreadNetworkCredentials._userInfo,
+                            THThreadNetworkCredentialsActiveDataSetRecord._borderAgent,
+                            THThreadNetworkCredentialsActiveDataSetRecord._creationDate,
+                            THThreadNetworkCredentialsActiveDataSetRecord._credentials,
+                            THThreadNetworkCredentialsActiveDataSetRecord._credentialsDataSet,
+                            THThreadNetworkCredentialsActiveDataSetRecord._keychainAccessGroup,
+                            THThreadNetworkCredentialsActiveDataSetRecord._lastModificationDate,
+                            THThreadNetworkCredentialsActiveDataSetRecord._network,
+                            THThreadNetworkCredentialsActiveDataSetRecord._uniqueIdentifier,
+                            THThreadNetworkCredentialsDataSet._dataSetArray,
+                            THThreadNetworkCredentialsDataSet._userInfo,
+                            THThreadNetworkCredentialsStoreRecord._creationDate,
+                            THThreadNetworkCredentialsStoreRecord._credentials,
+                            THThreadNetworkCredentialsStoreRecord._keychainAccessGroup,
+                            THThreadNetworkCredentialsStoreRecord._lastModificationDate,
+                            THThreadNetworkCredentialsStoreRecord._network,
+                            THThreadNetworkCredentialsStoreRecord._uniqueIdentifier ]
+...

@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ImageHarmonizationKit.framework/ImageHarmonizationKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _IHKErrorDomain, _getImageHarmonizationKitVersion,
+                            _kAdjustmentEndpointsKey,
+                            _kCIFilterSequence_inputNames,
+                            _kContentFVecEndpointKey, _kContentFVecShapeKey,
+                            _kInfoColorSpace, _kInfoFilterQuantizedKey,
+                            _kInfoFilterSequenceKey, _kInfoFilterStemTypeKey,
+                            _kInfoFilterStemTypeValue_Dual,
+                            _kInfoFilterStemTypeValue_Unified,
+                            _kInfoInputImageShapeKey, _kInfoNetworkTypeKey,
+                            _kNetworkTypeV1, _kNetworkTypeV2, _kNetworkTypeV2_1,
+                            _kSliderNetGatingMethod,
+                            _kStyleAndContentFVecEndpointKey,
+                            _kStyleAndContentFVecShapeKey,
+                            _kStyleFVecEndpointKey, _kStyleFVecShapeKey ]
+    objc-classes:         [ IHKBilateralHarmonizer, IHKError, IHKFeatureVector,
+                            IHKFilterSequence, IHKHarmonizationRequest,
+                            IHKHarmonizationResult, IHKImageUtils,
+                            IHKSliderNetCPModel, IHKSliderSpec ]
+...

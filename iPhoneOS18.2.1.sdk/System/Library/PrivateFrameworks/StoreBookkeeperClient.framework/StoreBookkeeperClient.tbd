@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/StoreBookkeeperClient.framework/StoreBookkeeperClient
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ SBCClientConfiguration,
+                            SBCMusicLibraryPlaybackPositionDomain,
+                            SBCPlaybackPositionDomain, SBCPlaybackPositionEntity,
+                            SBCPlaybackPositionService,
+                            SBCPlaybackPositionServiceInterface,
+                            SBCPlaybackPositionSyncService,
+                            SBCPlaybackPositionValueService, SBCXPCService,
+                            SBCXPCServiceInterface ]
+    objc-ivars:           [ SBCClientConfiguration._playbackPositionDomain,
+                            SBCPlaybackPositionDomain._domainIdentifier,
+                            SBCPlaybackPositionDomain._foreignDatabasePath,
+                            SBCPlaybackPositionDomain._supportsSyncProtocol,
+                            SBCPlaybackPositionDomain._ubiquitousDatabasePath,
+                            SBCPlaybackPositionEntity._bookmarkTime,
+                            SBCPlaybackPositionEntity._bookmarkTimestamp,
+                            SBCPlaybackPositionEntity._foreignDatabaseEntityID,
+                            SBCPlaybackPositionEntity._hasBeenPlayed,
+                            SBCPlaybackPositionEntity._playbackPositionDomain,
+                            SBCPlaybackPositionEntity._ubiquitousIdentifier,
+                            SBCPlaybackPositionEntity._userPlayCount,
+                            SBCPlaybackPositionService._playbackPositionDomain,
+                            SBCPlaybackPositionService._usingPlaybackPositions,
+                            SBCXPCService._XPCServiceInterface,
+                            SBCXPCService._clientConfiguration,
+                            SBCXPCService._connectionConfigured,
+                            SBCXPCService._xpcConnection ]
+...

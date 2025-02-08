@@ -1,0 +1,47 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/InAppMessagesCore.framework/InAppMessagesCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _IAMApplicationDidBecomeActiveEventName,
+                            _IAMLogCategoryDefault,
+                            _IAMLogCategoryDefault_Oversize,
+                            _IAMWebProcessShouldDismissPresentationBeforeOpen,
+                            _IAMWebProcessShouldDismissPresentationBeforePerformingAction,
+                            _InAppMessagesCoreVersionNumber,
+                            _InAppMessagesCoreVersionString ]
+    objc-classes:         [ IAMAction, IAMApplicationDidBecomeActiveEvent,
+                            IAMContent, IAMCountableEvent, IAMDecomposedKey,
+                            IAMEvent, IAMFigaroEvent, IAMImage, IAMImpression,
+                            IAMMessage, IAMPresentationPolicy, IAMTempTestMessages,
+                            IAMValueEvent ]
+    objc-ivars:           [ IAMAction._actionParameters, IAMAction._displayText,
+                            IAMAction._identifier, IAMAction._requiresDelegate,
+                            IAMAction._url, IAMContent._actions, IAMContent._body,
+                            IAMContent._contentParameters,
+                            IAMContent._identifier, IAMContent._images,
+                            IAMContent._subtitle, IAMContent._title,
+                            IAMDecomposedKey._ruleDestructuredIdentifiers,
+                            IAMDecomposedKey.compoundPredicate,
+                            IAMDecomposedKey.compoundPredicateNeedsInitialization,
+                            IAMDecomposedKey.rawPredicateConditions,
+                            IAMEvent._name, IAMEvent._type,
+                            IAMFigaroEvent._payload, IAMFigaroEvent._type,
+                            IAMImage._height, IAMImage._identifier, IAMImage._url,
+                            IAMImage._width, IAMImpression._displayEndTime,
+                            IAMImpression._displayStartTime,
+                            IAMImpression._messageEntry,
+                            IAMImpression._targetIdentifier,
+                            IAMMessage._contentPages, IAMMessage._identifier,
+                            IAMMessage._messageGroupIdentifier,
+                            IAMMessage._requiresCloseButton,
+                            IAMPresentationPolicy._minimumIntervalBetweenPresentations,
+                            IAMPresentationPolicy._policyGroup,
+                            IAMTempTestMessages._messageEntry,
+                            IAMValueEvent.value ]
+...

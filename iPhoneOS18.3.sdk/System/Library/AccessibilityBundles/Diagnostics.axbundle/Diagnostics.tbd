@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/Diagnostics.axbundle/Diagnostics
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityLocalizedString ]
+    objc-classes:         [ AXDiagnosticsGlue, CardViewCellAccessibility,
+                            DeviceInformationViewAccessibility,
+                            ImageButtonAccessibility, PromptViewAccessibility,
+                            TestRunnerViewAccessibility, TextButtonAccessibility,
+                            __CardViewCellAccessibility_super,
+                            __DeviceInformationViewAccessibility_super,
+                            __ImageButtonAccessibility_super,
+                            __PromptViewAccessibility_super,
+                            __TestRunnerViewAccessibility_super,
+                            __TextButtonAccessibility_super ]
+...

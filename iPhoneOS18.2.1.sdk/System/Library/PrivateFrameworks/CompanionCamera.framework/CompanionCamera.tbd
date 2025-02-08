@@ -1,0 +1,59 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CompanionCamera.framework/CompanionCamera
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __ccCaptureDeviceFromNCCaptureDevice,
+                            __ccCaptureModeFromNCCaptureMode,
+                            __ccFlashModeFromNCFlashMode,
+                            __ccHDRModeFromNCHDRMode, __ccIrisModeFromNCIrisMode,
+                            __ccSharedLibraryModeFromNCSharedLibraryMode,
+                            __ncCaptureDeviceFromCCCaptureDevice,
+                            __ncCaptureModeFromCCCaptureMode,
+                            __ncFlashModeFromCCFlashMode,
+                            __ncFlashSupportFromCCFlashSupport,
+                            __ncHDRModeFromCCHDRMode,
+                            __ncHDRSupportFromCCHDRSupport,
+                            __ncIrisModeFromCCIrisMode,
+                            __ncIrisSupportFromCCIrisSupport,
+                            __ncOrientationFromDeviceOrientation,
+                            __ncShallowDepthOfFieldStatusFromCCShallowDepthOfFieldStatus,
+                            __ncSharedLibraryModeFromCCSharedLibraryMode,
+                            __ncSharedLibrarySupportFromCCSharedLibrarySupport,
+                            _nanocamera_log_app, _nanocamera_log_control,
+                            _nanocamera_log_preview ]
+    objc-classes:         [ CCCameraConnection, CCCameraConnectionInternal ]
+    objc-ivars:           [ CCCameraConnection._burstInProgress,
+                            CCCameraConnection._capturePauseDate,
+                            CCCameraConnection._captureStartDate,
+                            CCCameraConnection._captureStartTimer,
+                            CCCameraConnection._capturing,
+                            CCCameraConnection._capturingPaused,
+                            CCCameraConnection._connectedToDockKitDevice,
+                            CCCameraConnection._currentPreviewState,
+                            CCCameraConnection._currentZoomMagnification,
+                            CCCameraConnection._delegate,
+                            CCCameraConnection._desiredPreviewState,
+                            CCCameraConnection._deviceConnectedNotificationToken,
+                            CCCameraConnection._deviceDisconnectedNotificationToken,
+                            CCCameraConnection._dockKitAgent,
+                            CCCameraConnection._internal,
+                            CCCameraConnection._interruptionCount,
+                            CCCameraConnection._lastSentZoomAmount,
+                            CCCameraConnection._orientationChangeObserver,
+                            CCCameraConnection._pendingZoomAmount,
+                            CCCameraConnection._previewEndpoint,
+                            CCCameraConnection._remoteViewfinder,
+                            CCCameraConnection._remoteViewfinderSession,
+                            CCCameraConnection._shallowDepthOfFieldStatus,
+                            CCCameraConnection._xpc,
+                            CCCameraConnection._zoomInProgress,
+                            CCCameraConnection._zoomMagnificationChanged,
+                            CCCameraConnection._zoomTimer,
+                            CCCameraConnectionInternal._parent ]
+...

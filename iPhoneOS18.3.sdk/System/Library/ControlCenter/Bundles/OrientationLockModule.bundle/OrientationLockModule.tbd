@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/ControlCenter/Bundles/OrientationLockModule.bundle/OrientationLockModule
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _OrientationLockModuleVersionNumber,
+                            _OrientationLockModuleVersionString ]
+    objc-classes:         [ CCUIOrientationLockModule ]
+    objc-ivars:           [ CCUIOrientationLockModule._systemAgent ]
+...

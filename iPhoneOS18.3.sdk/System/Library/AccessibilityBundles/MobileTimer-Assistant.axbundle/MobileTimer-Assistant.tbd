@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          "/System/Library/AccessibilityBundles/MobileTimer-Assistant.axbundle/MobileTimer-Assistant"
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Failover, _accessibilityLocalizedString ]
+    objc-classes:         [ AXTimerAssistantUIGlue,
+                            MobileTimerAssistantAlarmSnippetCellAccessibility,
+                            MobileTimerAssistantTimerSnippetCellAccessibility,
+                            MobileTimerAssistantWorldClockSnippetCellAccessibility,
+                            TimerSnippetTimeViewAccessibility,
+                            __MobileTimerAssistantAlarmSnippetCellAccessibility_super,
+                            __MobileTimerAssistantTimerSnippetCellAccessibility_super,
+                            __MobileTimerAssistantWorldClockSnippetCellAccessibility_super,
+                            __TimerSnippetTimeViewAccessibility_super ]
+...

@@ -1,0 +1,48 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AFKUser.framework/AFKUser
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AFKEndpointInterfaceDataQueueSizeKey,
+                            _AFKEndpointInterfaceEnsureCommandDeliveryKey,
+                            _AFKEndpointInterfaceEnsureDescriptorDeliveryKey,
+                            _AFKEndpointInterfaceEnsureReportDeliveryKey,
+                            _AFKEndpointInterfaceUserClientOOBThreshold,
+                            _AFKUserVersionNumber, _AFKUserVersionString,
+                            __AFKUserLog, _kAFKEventCancel, _kAFKEventError ]
+    objc-classes:         [ AFKBufferMemoryDescriptor, AFKEndpointInterface,
+                            AFKMemoryDescriptor, AFKMemoryDescriptorManager ]
+    objc-ivars:           [ AFKEndpointInterface._asyncPort,
+                            AFKEndpointInterface._commandHandler,
+                            AFKEndpointInterface._commandHandlerWithReturn,
+                            AFKEndpointInterface._connect,
+                            AFKEndpointInterface._dataQueue,
+                            AFKEndpointInterface._dataQueueMachChannel,
+                            AFKEndpointInterface._dataQueuePort,
+                            AFKEndpointInterface._dataQueueSize,
+                            AFKEndpointInterface._descriptorHandler,
+                            AFKEndpointInterface._descriptorManagers,
+                            AFKEndpointInterface._eventHandler,
+                            AFKEndpointInterface._properties,
+                            AFKEndpointInterface._queue,
+                            AFKEndpointInterface._regID,
+                            AFKEndpointInterface._reportHandler,
+                            AFKEndpointInterface._responseHandler,
+                            AFKEndpointInterface._service,
+                            AFKEndpointInterface._source,
+                            AFKEndpointInterface._state, AFKEndpointInterface.me,
+                            AFKMemoryDescriptor._buffer,
+                            AFKMemoryDescriptor._cachedLength,
+                            AFKMemoryDescriptor._capacity,
+                            AFKMemoryDescriptor._manager,
+                            AFKMemoryDescriptor._regID,
+                            AFKMemoryDescriptor._token,
+                            AFKMemoryDescriptorManager._connect,
+                            AFKMemoryDescriptorManager._regID,
+                            AFKMemoryDescriptorManager._service ]
+...

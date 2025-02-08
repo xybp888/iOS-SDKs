@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/WiFiKitUI.axbundle/WiFiKitUI
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Failover, _accessibilityLocalizedString ]
+    objc-classes:         [ AXWiFiKitUIGlue, WFHotspotCellAccessibility,
+                            WFNetworkListCellAccessibility,
+                            WFNetworkListRowAccessibility,
+                            WFTextFieldCellAccessibility,
+                            __WFHotspotCellAccessibility_super,
+                            __WFNetworkListCellAccessibility_super,
+                            __WFNetworkListRowAccessibility_super,
+                            __WFTextFieldCellAccessibility_super ]
+...

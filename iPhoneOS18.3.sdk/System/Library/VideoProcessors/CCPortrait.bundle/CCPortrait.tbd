@@ -1,0 +1,45 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/VideoProcessors/CCPortrait.bundle/CCPortrait
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ApplyHairnetProcessor, _MTLDataTypeAsString,
+                            _adjustTileAverage, _convertFloatToF16AsUshort,
+                            _createInpaintingMask, _createSimilarTexture,
+                            _enableFGBlur, _getTextureDataAsBuffer,
+                            _isSupportedType, _loadBMTL, _logTileDiffs,
+                            _numComponentsForType, _packSingleValue, _parseTXTFile,
+                            _pixelFormatName, _rootTexture,
+                            _shortTextureDescription, _stopProgrammaticCapture,
+                            _timingDetails, _tintSkippedTiles,
+                            _tmpTexturesFromTexture, _triggerProgrammaticCapture,
+                            _uni_activity, _uni_logger_api, _uni_logger_cache,
+                            _uni_logger_compile, _uni_logger_general,
+                            _uni_logger_performance, _uni_logger_render,
+                            _writeTextureAs2DBMTL ]
+    objc-classes:         [ ApplyBlurMapArgs, ApplyBlurMapIntermediates,
+                            ApplyBlurmap, ApplyHairnetModel, CCApplyBlurMap,
+                            CCApplyBlurMapArgs, CCApplyBlurMapIntermediates,
+                            CCFacePoints, CCMakeBlurMap, CCMakeBlurMapArgs,
+                            CCMakeBlurMapIntermediates, CCSDOFMetadata,
+                            CoreImageLibrary, CoreImageOnlyLibrary,
+                            EspressoWrapper, GuidedFilterProcessor,
+                            HighlightRecoveryProcessor, MakeBlurMap,
+                            MakeBlurMapArgs, MakeBlurMapIntermediates,
+                            SDOFHighlightRecovery, SDOFMetadata, URMTLArgument,
+                            URMTLPointerType, URMTLStructMemberInternal,
+                            URMTLStructType, UniCIFilter, UniCombineYCbCr,
+                            UniContext, UniDeviceCache, UniFakeImage,
+                            UniGaussianBlur, UniGuidedFilter, UniHighlightRecovery,
+                            UniImage, UniKernel, UniKernelInternal, UniLibrary,
+                            UniMorphology, UniRunInfo, UniScaleImage, UniSourceOver,
+                            UniTextureView, UnifiedRenderingFacePoints ]
+    objc-ivars:           [ EspressoWrapper._built, EspressoWrapper._ctx,
+                            EspressoWrapper._path, EspressoWrapper._plan,
+                            EspressoWrapper._planIdx, EspressoWrapper._queue ]
+...

@@ -1,0 +1,32 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/DeviceDiscoveryExtension.framework/DeviceDiscoveryExtension
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DDDeviceCategoryToString,
+                            _DDDeviceMediaPlaybackStateToString,
+                            _DDDeviceProtocolStringDIAL,
+                            _DDDeviceProtocolStringInvalid,
+                            _DDDeviceProtocolToString, _DDDeviceStateToString,
+                            _DDErrorCodeToString, _DDErrorDomain, _DDErrorF,
+                            _DDEventTypeToString, _DDNestedErrorF ]
+    objc-classes:         [ DDDevice, DDDeviceEvent, DDDiscoverySession ]
+    objc-ivars:           [ DDDevice._SSID, DDDevice._allowPairing,
+                            DDDevice._approveTime, DDDevice._bluetoothIdentifier,
+                            DDDevice._category, DDDevice._deviceSupports,
+                            DDDevice._displayImageName, DDDevice._displayName,
+                            DDDevice._identifier, DDDevice._mediaContentSubtitle,
+                            DDDevice._mediaContentTitle,
+                            DDDevice._mediaPlaybackState,
+                            DDDevice._networkEndpoint, DDDevice._protocol,
+                            DDDevice._protocolType, DDDevice._state,
+                            DDDevice._supportsGrouping, DDDevice._txtRecordData,
+                            DDDevice._url, DDDeviceEvent._device,
+                            DDDeviceEvent._error, DDDeviceEvent._eventType,
+                            DDDiscoverySession._eventHandler ]
+...

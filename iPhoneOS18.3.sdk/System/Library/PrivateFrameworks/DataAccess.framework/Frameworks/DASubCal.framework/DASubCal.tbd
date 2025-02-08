@@ -1,0 +1,65 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DASubCal.framework/DASubCal
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSStringFromSubCalRefreshTaskError,
+                            _SubCalCopyAuthNeededForHostNotification,
+                            _SubCalCopyDuplicateAccountNotification,
+                            _SubCalCopyInvalidAccountNotification,
+                            _SubCalCopySSLFailureNotification,
+                            _SubCalCopySaveAccountNotification,
+                            _SubCalCopyWhereToAccountNotification,
+                            __subCalLegacyDigestForCalendar,
+                            __subCalLegacySetDigestOnCalendar,
+                            _kSubCalExternalRepDigestKey,
+                            _kSubCalExternalRepresentation, _kSubCalSyncId,
+                            _subCalDigestForCalendar, _subCalExternalRep,
+                            _subCalRefreshFlagsForCalendar,
+                            _subCalSetRefreshFlagsOnCalendar ]
+    objc-classes:         [ SubCalAccount, SubCalDATask, SubCalLocalDBHelper,
+                            SubCalURLRequest, SubCalValidationTask ]
+    objc-ivars:           [ SubCalAccount._isManagedCalendar,
+                            SubCalAccount._subCalAccountVersion,
+                            SubCalAccount._tmpICSData, SubCalDATask._finished,
+                            SubCalDATask._statusReport,
+                            SubCalDATask._taskManager,
+                            SubCalURLRequest._connectionData,
+                            SubCalURLRequest._delegate,
+                            SubCalURLRequest._expectedDataSize,
+                            SubCalURLRequest._fileHandle,
+                            SubCalURLRequest._filePath,
+                            SubCalURLRequest._finished,
+                            SubCalURLRequest._idleTimer,
+                            SubCalURLRequest._password,
+                            SubCalURLRequest._receivedDataSize,
+                            SubCalURLRequest._sendDataUpdateCallback,
+                            SubCalURLRequest._session,
+                            SubCalURLRequest._startRunloopDescriptionString,
+                            SubCalURLRequest._startTime,
+                            SubCalURLRequest._statusReport,
+                            SubCalURLRequest._task, SubCalURLRequest._timestamp,
+                            SubCalURLRequest._url,
+                            SubCalURLRequest._useFileCache,
+                            SubCalURLRequest._useShortTimeoutInterval,
+                            SubCalURLRequest._username,
+                            SubCalURLRequest._wasUserRequested,
+                            SubCalValidationTask._calendarName,
+                            SubCalValidationTask._delegate,
+                            SubCalValidationTask._foundBeginVCal,
+                            SubCalValidationTask._foundCalName,
+                            SubCalValidationTask._icsData,
+                            SubCalValidationTask._icsDocument,
+                            SubCalValidationTask._password,
+                            SubCalValidationTask._performQuickValidation,
+                            SubCalValidationTask._request,
+                            SubCalValidationTask._searchIndex,
+                            SubCalValidationTask._subscriptionURL,
+                            SubCalValidationTask._useShortTimeout,
+                            SubCalValidationTask._username ]
+...

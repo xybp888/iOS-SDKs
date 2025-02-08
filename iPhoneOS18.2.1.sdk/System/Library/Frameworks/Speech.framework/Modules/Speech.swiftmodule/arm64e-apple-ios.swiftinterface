@@ -1,0 +1,172 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64e-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-bare-slash-regex -user-module-version 3402.43.2 -module-name Speech -package-name com.apple.Speech
+@_exported public import Speech
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(macOS 14, iOS 17, watchOS 10, tvOS 17, *)
+public protocol DataInsertable {
+  func insert(data: Speech.SFCustomLanguageModelData)
+}
+@available(macOS 14, iOS 17, watchOS 10, tvOS 17, *)
+public protocol TemplateInsertable {
+  func insert(generator: Speech.SFCustomLanguageModelData.TemplatePhraseCountGenerator)
+}
+@available(macOS 14, iOS 17, watchOS 10, tvOS 17, *)
+public class SFCustomLanguageModelData : Swift.Hashable, Swift.Codable {
+  public struct PhraseCount : Swift.Hashable, Swift.Sendable, Swift.CustomStringConvertible, Swift.Codable, Speech.DataInsertable {
+    public let phrase: Swift.String
+    public let count: Swift.Int
+    public init(phrase: Swift.String, count: Swift.Int)
+    public var description: Swift.String {
+      get
+    }
+    public func insert(data: Speech.SFCustomLanguageModelData)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: Speech.SFCustomLanguageModelData.PhraseCount, b: Speech.SFCustomLanguageModelData.PhraseCount) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct CustomPronunciation : Swift.Hashable, Swift.Sendable, Swift.CustomStringConvertible, Swift.Codable, Speech.DataInsertable {
+    public let grapheme: Swift.String
+    public let phonemes: [Swift.String]
+    public init(grapheme: Swift.String, phonemes: [Swift.String])
+    public var description: Swift.String {
+      get
+    }
+    public func insert(data: Speech.SFCustomLanguageModelData)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: Speech.SFCustomLanguageModelData.CustomPronunciation, b: Speech.SFCustomLanguageModelData.CustomPronunciation) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  @_functionBuilder public struct DataInsertableBuilder {
+    public static func buildBlock(_ components: any Speech.DataInsertable...) -> any Speech.DataInsertable
+    public static func buildEither(first: any Speech.DataInsertable) -> any Speech.DataInsertable
+    public static func buildEither(second: any Speech.DataInsertable) -> any Speech.DataInsertable
+    public static func buildOptional(_ component: (any Speech.DataInsertable)?) -> any Speech.DataInsertable
+    public static func buildArray(_ components: [any Speech.DataInsertable]) -> any Speech.DataInsertable
+  }
+  public class PhraseCountGenerator : Swift.Hashable, Swift.Codable, _Concurrency.AsyncSequence, Speech.DataInsertable {
+    public typealias AsyncIterator = Speech.SFCustomLanguageModelData.PhraseCountGenerator.Iterator
+    public typealias Element = Speech.SFCustomLanguageModelData.PhraseCount
+    public func makeAsyncIterator() -> Speech.SFCustomLanguageModelData.PhraseCountGenerator.Iterator
+    public init()
+    @_hasMissingDesignatedInitializers public class Iterator : _Concurrency.AsyncIteratorProtocol {
+      public typealias Element = Speech.SFCustomLanguageModelData.PhraseCount
+      public func next() async throws -> Speech.SFCustomLanguageModelData.PhraseCount?
+      #if compiler(>=5.3) && $AssociatedTypeImplements
+      @available(iOS 18.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, macOS 15.0, *)
+      @_implements(_Concurrency.AsyncIteratorProtocol, Failure) public typealias __AsyncIteratorProtocol_Failure = any Swift.Error
+      #else
+      @available(iOS 18.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, macOS 15.0, *)
+      public typealias __AsyncIteratorProtocol_Failure = any Swift.Error
+      #endif
+      @objc deinit
+    }
+    public static func == (lhs: Speech.SFCustomLanguageModelData.PhraseCountGenerator, rhs: Speech.SFCustomLanguageModelData.PhraseCountGenerator) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public func insert(data: Speech.SFCustomLanguageModelData)
+    #if compiler(>=5.3) && $AssociatedTypeImplements
+    @available(iOS 18.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, macOS 15.0, *)
+    @_implements(_Concurrency.AsyncSequence, Failure) public typealias __AsyncSequence_Failure = any Swift.Error
+    #else
+    @available(iOS 18.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, macOS 15.0, *)
+    public typealias __AsyncSequence_Failure = any Swift.Error
+    #endif
+    @objc deinit
+    public func encode(to encoder: any Swift.Encoder) throws
+    public var hashValue: Swift.Int {
+      get
+    }
+    required public init(from decoder: any Swift.Decoder) throws
+  }
+  @_inheritsConvenienceInitializers public class TemplatePhraseCountGenerator : Speech.SFCustomLanguageModelData.PhraseCountGenerator {
+    public struct Template : Swift.Hashable, Swift.Codable, Speech.TemplateInsertable {
+      public let body: Swift.String
+      public let count: Swift.Int
+      public init(_ body: Swift.String, count: Swift.Int)
+      public func insert(generator: Speech.SFCustomLanguageModelData.TemplatePhraseCountGenerator)
+      public func hash(into hasher: inout Swift.Hasher)
+      public static func == (a: Speech.SFCustomLanguageModelData.TemplatePhraseCountGenerator.Template, b: Speech.SFCustomLanguageModelData.TemplatePhraseCountGenerator.Template) -> Swift.Bool
+      public func encode(to encoder: any Swift.Encoder) throws
+      public var hashValue: Swift.Int {
+        get
+      }
+      public init(from decoder: any Swift.Decoder) throws
+    }
+    @_hasMissingDesignatedInitializers public class Iterator : Speech.SFCustomLanguageModelData.PhraseCountGenerator.Iterator {
+      public typealias Element = Speech.SFCustomLanguageModelData.PhraseCount
+      public init(templates: [Speech.SFCustomLanguageModelData.TemplatePhraseCountGenerator.Template], templateClasses: [Swift.String : [Swift.String]])
+      override public func next() async throws -> Speech.SFCustomLanguageModelData.PhraseCount?
+      @objc deinit
+    }
+    public func insert(template: Swift.String, count: Swift.Int)
+    public func define(className: Swift.String, values: [Swift.String])
+    override public func makeAsyncIterator() -> Speech.SFCustomLanguageModelData.PhraseCountGenerator.Iterator
+    public static func == (lhs: Speech.SFCustomLanguageModelData.TemplatePhraseCountGenerator, rhs: Speech.SFCustomLanguageModelData.TemplatePhraseCountGenerator) -> Swift.Bool
+    override public func hash(into hasher: inout Swift.Hasher)
+    override public init()
+    required public init(from decoder: any Swift.Decoder) throws
+    @objc deinit
+  }
+  public struct CompoundTemplate : Speech.TemplateInsertable {
+    public init(_ components: [any Speech.TemplateInsertable])
+    public func insert(generator: Speech.SFCustomLanguageModelData.TemplatePhraseCountGenerator)
+  }
+  @_functionBuilder public struct TemplateInsertableBuilder {
+    public static func buildBlock(_ components: any Speech.TemplateInsertable...) -> any Speech.TemplateInsertable
+    public static func buildEither(first: any Speech.TemplateInsertable) -> any Speech.TemplateInsertable
+    public static func buildEither(second: any Speech.TemplateInsertable) -> any Speech.TemplateInsertable
+    public static func buildOptional(_ component: (any Speech.TemplateInsertable)?) -> any Speech.TemplateInsertable
+    public static func buildArray(_ components: [any Speech.TemplateInsertable]) -> any Speech.TemplateInsertable
+  }
+  public struct PhraseCountsFromTemplates : Speech.DataInsertable {
+    public init(classes: [Swift.String : [Swift.String]], @Speech.SFCustomLanguageModelData.TemplateInsertableBuilder builder: () -> any Speech.TemplateInsertable)
+    public func insert(data: Speech.SFCustomLanguageModelData)
+  }
+  final public let locale: Foundation.Locale
+  final public let identifier: Swift.String
+  final public let version: Swift.String
+  public static func supportedPhonemes(locale: Foundation.Locale) -> [Swift.String]
+  public init(locale: Foundation.Locale, identifier: Swift.String, version: Swift.String)
+  convenience public init(locale: Foundation.Locale, identifier: Swift.String, version: Swift.String, @Speech.SFCustomLanguageModelData.DataInsertableBuilder builder: () -> any Speech.DataInsertable)
+  public func insert(phraseCount: Speech.SFCustomLanguageModelData.PhraseCount)
+  public func insert(phraseCountGenerator: Speech.SFCustomLanguageModelData.PhraseCountGenerator)
+  public func insert(term: Speech.SFCustomLanguageModelData.CustomPronunciation)
+  public func export(to path: Foundation.URL) async throws
+  public static func == (lhs: Speech.SFCustomLanguageModelData, rhs: Speech.SFCustomLanguageModelData) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@available(macOS 10.15, iOS 13.0, *)
+extension Speech.SFAcousticFeature {
+  public var acousticFeatureValuePerFrame: [Swift.Double] {
+    get
+  }
+}
+extension Swift.Sequence {
+  @inlinable internal func uniqued<Subject>(on projection: (Self.Element) throws -> Subject) rethrows -> [Self.Element] where Subject : Swift.Hashable {
+    var seen: Set<Subject> = []
+    var result: [Element] = []
+    for element in self {
+      if seen.insert(try projection(element)).inserted {
+        result.append(element)
+      }
+    }
+    return result
+  }
+}

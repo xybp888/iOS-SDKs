@@ -1,0 +1,367 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=unchecked -O -library-level api -enable-bare-slash-regex -user-module-version 12.2.1 -module-name GameController
+@_exported import GameController
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, *)
+public struct GCPhysicalInputElementCollection<T> : Swift.Collection where T : GameController.GCPhysicalInputElement {
+  public subscript(elementName: Swift.String) -> T? {
+    get
+  }
+  public typealias Element = T
+  public struct Index : Swift.Comparable {
+    public static func == (lhs: GameController.GCPhysicalInputElementCollection<T>.Index, rhs: GameController.GCPhysicalInputElementCollection<T>.Index) -> Swift.Bool
+    public static func < (lhs: GameController.GCPhysicalInputElementCollection<T>.Index, rhs: GameController.GCPhysicalInputElementCollection<T>.Index) -> Swift.Bool
+  }
+  public subscript(position: GameController.GCPhysicalInputElementCollection<T>.Index) -> GameController.GCPhysicalInputElementCollection<T>.Element {
+    get
+  }
+  public var startIndex: GameController.GCPhysicalInputElementCollection<T>.Index {
+    get
+  }
+  public var endIndex: GameController.GCPhysicalInputElementCollection<T>.Index {
+    get
+  }
+  public func index(after i: GameController.GCPhysicalInputElementCollection<T>.Index) -> GameController.GCPhysicalInputElementCollection<T>.Index
+  @available(iOS 16.0, tvOS 16.0, macOS 13.0, *)
+  public typealias Indices = Swift.DefaultIndices<GameController.GCPhysicalInputElementCollection<T>>
+  @available(iOS 16.0, tvOS 16.0, macOS 13.0, *)
+  public typealias Iterator = Swift.IndexingIterator<GameController.GCPhysicalInputElementCollection<T>>
+  @available(iOS 16.0, tvOS 16.0, macOS 13.0, *)
+  public typealias SubSequence = Swift.Slice<GameController.GCPhysicalInputElementCollection<T>>
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+public protocol GCPhysicalInputElementTypedName : Swift.Hashable, Swift.RawRepresentable, Swift.Sendable where Self.RawValue == Swift.String {
+  associatedtype PhysicalInputElement : GameController.GCPhysicalInputElement
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, *)
+public struct GCPhysicalInputElementName : Swift.RawRepresentable, Swift.Hashable, Swift.Sendable {
+  public init(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  @available(macOS 13.0, macCatalyst 16.0, *)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  public static let shifter: GameController.GCPhysicalInputElementName
+  @available(iOS 16.0, tvOS 16.0, macOS 13.0, *)
+  public typealias RawValue = Swift.String
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+extension GameController.GCPhysicalInputElementName : GameController.GCPhysicalInputElementTypedName {
+  public typealias PhysicalInputElement = GameController.GCPhysicalInputElement
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, *)
+extension GameController.GCPhysicalInputElementCollection where T == any GameController.GCPhysicalInputElement {
+  public subscript(elementName: GameController.GCPhysicalInputElementName) -> T? {
+    get
+  }
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+extension GameController.GCPhysicalInputElementCollection {
+  public subscript<Name>(elementName: Name) -> Name.PhysicalInputElement? where Name : GameController.GCPhysicalInputElementTypedName {
+    get
+  }
+  public subscript<Name>(elementName: Name) -> (any GameController.GCPhysicalInputElement)? where T == any GameController.GCPhysicalInputElement, Name : GameController.GCPhysicalInputElementTypedName {
+    get
+  }
+}
+extension GameController.GCDevicePhysicalInputStateDiff {
+  @available(macOS 13.0, iOS 16.0, tvOS 16.0, *)
+  @_transparent @_disfavoredOverload public func changedElements() -> Foundation.NSEnumerator? {
+        return __changedElements()
+    }
+  @available(macOS 13.0, iOS 16.0, tvOS 16.0, *)
+  @backDeployed(before: macOS 14.0, iOS 17.0, tvOS 17.0)
+  @inlinable public func changedElements() -> (some Swift.Sequence<any GameController.GCPhysicalInputElement>)? {
+        return __changedElements()?.lazy.compactMap { $0 as? any GCPhysicalInputElement }
+    }
+  
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, *)
+public struct GCAxisElementName : Swift.RawRepresentable, Swift.Hashable, Swift.Sendable {
+  public init(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  @available(macOS 13.0, macCatalyst 16.0, *)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  public static let steeringWheel: GameController.GCAxisElementName
+  @available(iOS 16.0, tvOS 16.0, macOS 13.0, *)
+  public typealias RawValue = Swift.String
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, *)
+extension GameController.GCPhysicalInputElementCollection where T == any GameController.GCAxisElement {
+  public subscript(elementName: GameController.GCAxisElementName) -> T? {
+    get
+  }
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+extension GameController.GCAxisElementName : GameController.GCPhysicalInputElementTypedName {
+  public typealias PhysicalInputElement = GameController.GCAxisElement
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, *)
+extension GameController.GCDevicePhysicalInputState {
+  public var elements: GameController.GCPhysicalInputElementCollection<any GameController.GCPhysicalInputElement> {
+    get
+  }
+  public var buttons: GameController.GCPhysicalInputElementCollection<any GameController.GCButtonElement> {
+    get
+  }
+  public var axes: GameController.GCPhysicalInputElementCollection<any GameController.GCAxisElement> {
+    get
+  }
+  public var switches: GameController.GCPhysicalInputElementCollection<any GameController.GCSwitchElement> {
+    get
+  }
+  public var dpads: GameController.GCPhysicalInputElementCollection<any GameController.GCDirectionPadElement> {
+    get
+  }
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, *)
+public struct GCDirectionPadElementName : Swift.RawRepresentable, Swift.Hashable, Swift.Sendable {
+  public init(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public static let directionPad: GameController.GCDirectionPadElementName
+  public static let leftThumbstick: GameController.GCDirectionPadElementName
+  public static let rightThumbstick: GameController.GCDirectionPadElementName
+  @available(iOS 16.0, tvOS 16.0, macOS 13.0, *)
+  public typealias RawValue = Swift.String
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, *)
+extension GameController.GCPhysicalInputElementCollection where T == any GameController.GCDirectionPadElement {
+  public subscript(elementName: GameController.GCDirectionPadElementName) -> T? {
+    get
+  }
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+extension GameController.GCDirectionPadElementName : GameController.GCPhysicalInputElementTypedName {
+  public typealias PhysicalInputElement = GameController.GCDirectionPadElement
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputButtonA: Swift.String {
+  get { __GCInputButtonName.a.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputButtonB: Swift.String {
+  get { __GCInputButtonName.b.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputButtonX: Swift.String {
+  get { __GCInputButtonName.x.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputButtonY: Swift.String {
+  get { __GCInputButtonName.y.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputDirectionPad: Swift.String {
+  get { __GCInputDirectionPadName.directionPad.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputLeftThumbstick: Swift.String {
+  get { __GCInputDirectionPadName.leftThumbstick.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputRightThumbstick: Swift.String {
+  get { __GCInputDirectionPadName.rightThumbstick.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputLeftShoulder: Swift.String {
+  get { __GCInputButtonName.leftShoulder.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputRightShoulder: Swift.String {
+  get { __GCInputButtonName.rightShoulder.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputLeftTrigger: Swift.String {
+  get { __GCInputButtonName.leftTrigger.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputRightTrigger: Swift.String {
+  get { __GCInputButtonName.rightTrigger.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputLeftThumbstickButton: Swift.String {
+  get { __GCInputButtonName.leftThumbstickButton.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputRightThumbstickButton: Swift.String {
+  get { __GCInputButtonName.rightThumbstickButton.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputButtonHome: Swift.String {
+  get { __GCInputButtonName.home.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputButtonMenu: Swift.String {
+  get { __GCInputButtonName.menu.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputButtonOptions: Swift.String {
+  get { __GCInputButtonName.options.rawValue }
+}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, *)
+@_alwaysEmitIntoClient public var GCInputButtonShare: Swift.String {
+  get { __GCInputButtonName.share.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputXboxPaddleOne: Swift.String {
+  get { __GCInputButtonName.xboxPaddleOne.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputXboxPaddleTwo: Swift.String {
+  get { __GCInputButtonName.xboxPaddleTwo.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputXboxPaddleThree: Swift.String {
+  get { __GCInputButtonName.xboxPaddleThree.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputXboxPaddleFour: Swift.String {
+  get { __GCInputButtonName.xboxPaddleFour.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputDualShockTouchpadOne: Swift.String {
+  get { __GCInputDirectionPadName.dualShockTouchpadOne.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputDualShockTouchpadTwo: Swift.String {
+  get { __GCInputDirectionPadName.dualShockTouchpadTwo.rawValue }
+}
+@available(macOS 11.0, iOS 14.0, tvOS 14.0, *)
+@_alwaysEmitIntoClient public var GCInputDualShockTouchpadButton: Swift.String {
+  get { __GCInputButtonName.dualShockTouchpadButton.rawValue }
+}
+@available(macOS 13.0, macCatalyst 16.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@_alwaysEmitIntoClient public var GCInputSteeringWheel: Swift.String {
+  get { __GCInputAxisName.steeringWheel.rawValue }
+}
+@available(macOS 13.0, macCatalyst 16.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@_alwaysEmitIntoClient public var GCInputShifter: Swift.String {
+  get { __GCInputElementName.shifter.rawValue }
+}
+@available(macOS 13.0, macCatalyst 16.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@_alwaysEmitIntoClient public var GCInputPedalAccelerator: Swift.String {
+  get { __GCInputButtonName.pedalAccelerator.rawValue }
+}
+@available(macOS 13.0, macCatalyst 16.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@_alwaysEmitIntoClient public var GCInputPedalBrake: Swift.String {
+  get { __GCInputButtonName.pedalBrake.rawValue }
+}
+@available(macOS 13.0, macCatalyst 16.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@_alwaysEmitIntoClient public var GCInputPedalClutch: Swift.String {
+  get { __GCInputButtonName.pedalClutch.rawValue }
+}
+@available(macOS 13.0, macCatalyst 16.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@_alwaysEmitIntoClient public var GCInputLeftPaddle: Swift.String {
+  get { __GCInputButtonName.leftPaddle.rawValue }
+}
+@available(macOS 13.0, macCatalyst 16.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@_alwaysEmitIntoClient public var GCInputRightPaddle: Swift.String {
+  get { __GCInputButtonName.rightPaddle.rawValue }
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, *)
+public struct GCSwitchElementName : Swift.RawRepresentable, Swift.Hashable, Swift.Sendable {
+  public init(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  @available(iOS 16.0, tvOS 16.0, macOS 13.0, *)
+  public typealias RawValue = Swift.String
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, *)
+extension GameController.GCPhysicalInputElementCollection where T == any GameController.GCSwitchElement {
+  public subscript(elementName: GameController.GCSwitchElementName) -> T? {
+    get
+  }
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+extension GameController.GCSwitchElementName : GameController.GCPhysicalInputElementTypedName {
+  public typealias PhysicalInputElement = GameController.GCSwitchElement
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, *)
+public struct GCButtonElementName : Swift.RawRepresentable, Swift.Hashable, Swift.Sendable {
+  public init(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public static let a: GameController.GCButtonElementName
+  public static let b: GameController.GCButtonElementName
+  public static let x: GameController.GCButtonElementName
+  public static let y: GameController.GCButtonElementName
+  public static let leftShoulder: GameController.GCButtonElementName
+  public static let rightShoulder: GameController.GCButtonElementName
+  @available(macOS 14.4, iOS 17.4, tvOS 17.4, visionOS 1.1, *)
+  public static let leftBumper: GameController.GCButtonElementName
+  @available(macOS 14.4, iOS 17.4, tvOS 17.4, visionOS 1.1, *)
+  public static let rightBumper: GameController.GCButtonElementName
+  public static let leftTrigger: GameController.GCButtonElementName
+  public static let rightTrigger: GameController.GCButtonElementName
+  public static let leftThumbstickButton: GameController.GCButtonElementName
+  public static let rightThumbstickButton: GameController.GCButtonElementName
+  @available(macOS 14.4, iOS 17.4, tvOS 17.4, visionOS 1.1, *)
+  public static func backLeftButton(position: Swift.Int) -> GameController.GCButtonElementName
+  @available(macOS 14.4, iOS 17.4, tvOS 17.4, visionOS 1.1, *)
+  public static func backRightButton(position: Swift.Int) -> GameController.GCButtonElementName
+  public static let home: GameController.GCButtonElementName
+  public static let menu: GameController.GCButtonElementName
+  public static let options: GameController.GCButtonElementName
+  public static let share: GameController.GCButtonElementName
+  @available(macOS 13.0, macCatalyst 16.0, *)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  public static let pedalAccelerator: GameController.GCButtonElementName
+  @available(macOS 13.0, macCatalyst 16.0, *)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  public static let pedalBrake: GameController.GCButtonElementName
+  @available(macOS 13.0, macCatalyst 16.0, *)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  public static let pedalClutch: GameController.GCButtonElementName
+  @available(macOS 13.0, macCatalyst 16.0, *)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  public static let leftPaddle: GameController.GCButtonElementName
+  @available(macOS 13.0, macCatalyst 16.0, *)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  public static let rightPaddle: GameController.GCButtonElementName
+  @available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+  public static func arcadeButton(row: Swift.Int, column: Swift.Int) -> GameController.GCButtonElementName
+  @available(iOS 16.0, tvOS 16.0, macOS 13.0, *)
+  public typealias RawValue = Swift.String
+}
+@available(macOS 13.0, iOS 16.0, tvOS 16.0, *)
+extension GameController.GCPhysicalInputElementCollection where T == any GameController.GCButtonElement {
+  public subscript(elementName: GameController.GCButtonElementName) -> T? {
+    get
+  }
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+extension GameController.GCButtonElementName : GameController.GCPhysicalInputElementTypedName {
+  public typealias PhysicalInputElement = GameController.GCButtonElement
+}

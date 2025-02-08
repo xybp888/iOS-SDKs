@@ -1,0 +1,40 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NanoMailCompanionUI.framework/NanoMailCompanionUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NMCUISettingsSpecifierAccountKey,
+                            _NMCUISettingsSpecifierDetailKey,
+                            _NMCUISettingsSpecifierLoadingKey,
+                            _NMCUISettingsSpecifierWarningKey,
+                            _NanoMailCompanionUIVersionNumber,
+                            _NanoMailCompanionUIVersionString, ___logCategories,
+                            _kNanoMailBridgeSettingsDomain,
+                            _nnmk_setupLoggingSubsystems ]
+    objc-classes:         [ NMCUIAccount, NMCUIAccountsSettingsViewCell,
+                            NMCUICloudNotificationAccountDataSource,
+                            NMCUICloudNotificationOnboardingViewController,
+                            NMCUISpecifierController ]
+    objc-ivars:           [ NMCUIAccount._acAccount, NMCUIAccount._nnmkAccount,
+                            NMCUIAccountsSettingsViewCell._spinner,
+                            NMCUIAccountsSettingsViewCell._warningLabel,
+                            NMCUICloudNotificationAccountDataSource._accountDataSource,
+                            NMCUICloudNotificationAccountDataSource._deviceSupportsPCC,
+                            NMCUICloudNotificationAccountDataSource._domainAccessor,
+                            NMCUICloudNotificationAccountDataSource._notificationSubsections,
+                            NMCUICloudNotificationAccountDataSource._pendingAccountIds,
+                            NMCUICloudNotificationAccountDataSource._showsAlerts,
+                            NMCUICloudNotificationAccountDataSource._syncManager,
+                            NMCUICloudNotificationOnboardingViewController._accounts,
+                            NMCUICloudNotificationOnboardingViewController._completion,
+                            NMCUICloudNotificationOnboardingViewController._dataSource,
+                            NMCUICloudNotificationOnboardingViewController._tableViewHeightConstraint,
+                            NMCUISpecifierController._dataSource,
+                            NMCUISpecifierController._isTinker,
+                            NMCUISpecifierController._listController ]
+...

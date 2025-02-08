@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/WebKit.axbundle/WebKit
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXWebNotificationName, _AXWebNotificationWithName,
+                            __AXUIInstallBaseCategories,
+                            _accessibilityLocalizedString ]
+    objc-classes:         [ AXWebKitGlue, UIAccessibilityLoaderWebShared,
+                            WKContentViewAccessibility,
+                            WKFormAccessoryViewAccessibility,
+                            WKMultipleSelectPickerAccessibility,
+                            WKScrollViewAccessibility,
+                            WKSelectSinglePickerAccessibility,
+                            WKWebViewAccessibility,
+                            __WKContentViewAccessibility_super,
+                            __WKFormAccessoryViewAccessibility_super,
+                            __WKMultipleSelectPickerAccessibility_super,
+                            __WKScrollViewAccessibility_super,
+                            __WKSelectSinglePickerAccessibility_super,
+                            __WKWebViewAccessibility_super ]
+...

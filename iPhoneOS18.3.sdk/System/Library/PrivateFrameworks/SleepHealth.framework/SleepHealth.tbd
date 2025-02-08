@@ -1,0 +1,69 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SleepHealth.framework/SleepHealth
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HDSleepHealthDaemonPluginServerInterface,
+                            _HKSHBreathingDisturbanceAnalysisSchedulerLastSuccessfulAnalysisAttemptDateKey,
+                            _HKSHBreathingDisturbanceAnalysisSchedulerSuccessfulAnalysisAttemptCountKey,
+                            _HKSHBreathingDisturbanceAnalysisWindowLength,
+                            _HKSHBreathingDisturbanceKeyValueDomainName,
+                            _HKSHCreatePossibleSleepApneaDetectedNotificationRequest,
+                            _HKSHHealthDaemonPluginIdentifier,
+                            _HKSHSleepApneaControlClientInterface,
+                            _HKSHSleepApneaControlServerIdentifier,
+                            _HKSHSleepApneaControlServerInterface,
+                            _HKSHSleepApneaEventSampleDetailURLPathComponent,
+                            _HKSHSleepApneaEventSampleDetailsLink,
+                            _HKSHSleepApneaNotificationActionLearnMore,
+                            _HKSHSleepApneaNotificationCategoryFeatureIsAvailableAgainAndEnabled,
+                            _HKSHSleepApneaNotificationCategoryPossibleSleepApnea,
+                            _HKSHSleepApneaNotificationCategoryRescindedNoLongerSupportedOnActiveRemoteDevice,
+                            _HKSHSleepApneaNotificationCategoryRescindedNoLongerSupportedOnLocalDevice,
+                            _HKSHSleepApneaNotificationCategoryRescindedRemoteDisabled,
+                            _HKSHSleepApneaNotificationCategoryRescindedSeedExpired,
+                            _HKSHSleepApneaNotificationRequestIdentifier,
+                            _HKSHSleepDurationGoalLeeway,
+                            _HKSleepHealthStoreInterface ]
+    objc-classes:         [ HKSHSleepApneaControl,
+                            HKSHSleepApneaNotificationInteractedAnalyticsEvent,
+                            HKSHSleepMetrics, HKSHSleepMetricsEngine,
+                            HKSleepHealthStore ]
+    objc-ivars:           [ HKSHSleepApneaControl._healthStore,
+                            HKSHSleepApneaControl._proxyProvider,
+                            HKSHSleepApneaNotificationInteractedAnalyticsEvent._response,
+                            HKSHSleepMetrics._averageAwakeDuration,
+                            HKSHSleepMetrics._averageBedtime,
+                            HKSHSleepMetrics._averageBedtimeMiss,
+                            HKSHSleepMetrics._averageCoreSleepDuration,
+                            HKSHSleepMetrics._averageDeepSleepDuration,
+                            HKSHSleepMetrics._averageInBedDuration,
+                            HKSHSleepMetrics._averageInBedEndTime,
+                            HKSHSleepMetrics._averageInBedStartTime,
+                            HKSHSleepMetrics._averageREMSleepDuration,
+                            HKSHSleepMetrics._averageSleepDuration,
+                            HKSHSleepMetrics._averageSleepDurationGoalMiss,
+                            HKSHSleepMetrics._averageSleepEndTime,
+                            HKSHSleepMetrics._averageSleepStartTime,
+                            HKSHSleepMetrics._averageUnspecifiedSleepDuration,
+                            HKSHSleepMetrics._averageWakeTime,
+                            HKSHSleepMetrics._bedtimeAchievedCount,
+                            HKSHSleepMetrics._morningIndexRange,
+                            HKSHSleepMetrics._sleepAnalysisAsleepCount,
+                            HKSHSleepMetrics._sleepAnalysisCount,
+                            HKSHSleepMetrics._sleepAnalysisInBedCount,
+                            HKSHSleepMetrics._sleepDurationGoalAchievedCount,
+                            HKSHSleepMetrics._sleepDurationGoalStreakCount,
+                            HKSHSleepMetrics._standardDeviationActualTimeAsleep,
+                            HKSHSleepMetrics._standardDeviationActualVsScheduledTimeAsleep,
+                            HKSHSleepMetrics._standardDeviationScheduledTimeAsleep,
+                            HKSHSleepMetricsEngine._healthStore,
+                            HKSleepHealthStore._healthStore,
+                            HKSleepHealthStore._proxyProvider,
+                            HKSleepHealthStore._scheduler ]
+...

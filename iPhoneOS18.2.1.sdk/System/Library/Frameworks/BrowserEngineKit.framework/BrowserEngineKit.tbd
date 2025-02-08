@@ -1,0 +1,71 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/BrowserEngineKit.framework/BrowserEngineKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/Frameworks/BrowserEngineCore.framework/BrowserEngineCore ]
+    symbols:              [ _BEAccessibilitySelectionChangedNotification,
+                            _BEAccessibilityTraitMenuItem,
+                            _BEAccessibilityTraitPopUpButton,
+                            _BEAccessibilityTraitRadioButton,
+                            _BEAccessibilityTraitReadOnly,
+                            _BEAccessibilityTraitVisited,
+                            _BEAccessibilityValueChangedNotification ]
+    objc-classes:         [ BEAccessibilityTextMarker,
+                            BEAccessibilityTextMarkerRange,
+                            BEAutoFillTextSuggestion, BEContextMenuConfiguration,
+                            BEDownloadMonitor, BEDownloadMonitorLocation,
+                            BEDownloadProgress, BEDragInteraction, BEKeyEntry,
+                            BEKeyEntryContext, BELayerHierarchy,
+                            BELayerHierarchyHandle,
+                            BELayerHierarchyHostingTransactionCoordinator,
+                            BELayerHierarchyHostingView, BEMediaEnvironment,
+                            BENetworkingProcess, BEProcessCapability,
+                            BERenderingProcess, BEScrollView,
+                            BEScrollViewScrollUpdate, BETextAlternatives,
+                            BETextDocumentContext, BETextDocumentRequest,
+                            BETextInteraction, BETextSuggestion, BEURLWithBookmark,
+                            BEWebAppManifest, BEWebContentProcess,
+                            _BEBurnableBlock ]
+    objc-ivars:           [ BEAccessibilityTextMarkerRange.endMarker,
+                            BEAccessibilityTextMarkerRange.startMarker,
+                            BEAutoFillTextSuggestion._backingSuggestion,
+                            BEContextMenuConfiguration._deferredCompletion,
+                            BEDragInteraction._delegateImplements,
+                            BEKeyEntry._backingKeyEvent,
+                            BEKeyEntry._backingUIKey,
+                            BEKeyEntryContext._backingKeyEventContext,
+                            BEKeyEntryContext._documentEditable,
+                            BEKeyEntryContext._keyEntry,
+                            BEKeyEntryContext._shouldEvaluateForInputSystemHandling,
+                            BEKeyEntryContext._shouldInsertCharacter,
+                            BELayerHierarchy._context, BELayerHierarchy._handle,
+                            BELayerHierarchy._invalidationSignal,
+                            BELayerHierarchyHandle._contextID,
+                            BELayerHierarchyHandle._pid,
+                            BELayerHierarchyHostingTransactionCoordinator._commitLock,
+                            BELayerHierarchyHostingTransactionCoordinator._commitLock_committed,
+                            BELayerHierarchyHostingTransactionCoordinator._commitLock_contexts,
+                            BELayerHierarchyHostingTransactionCoordinator._commitLock_hostingViews,
+                            BELayerHierarchyHostingTransactionCoordinator._fence,
+                            BELayerHierarchyHostingView._handle,
+                            BELayerHierarchyHostingView._visibility,
+                            BEScrollView._beScrollViewFlags,
+                            BEScrollViewScrollUpdate.__scrollEvent,
+                            BEScrollViewScrollUpdate._phase,
+                            BETextAlternatives._backingTextAlternatives,
+                            BETextDocumentContext._backingContext,
+                            BETextDocumentRequest._backingDocumentRequest,
+                            BETextInteraction._delegate,
+                            BETextInteraction._interaction,
+                            BETextInteraction._view,
+                            BETextSuggestion._uiSuggestion,
+                            BEWebAppManifest._jsonData,
+                            BEWebAppManifest._manifestURL,
+                            _BEBurnableBlock._block, _BEBurnableBlock._timer ]
+...

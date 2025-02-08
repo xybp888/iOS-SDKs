@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/ControlCenter/Bundles/TVRemoteModule.bundle/TVRemoteModule
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _TVRemoteModuleVersionNumber,
+                            _TVRemoteModuleVersionString, __TVRMControlCenterLog ]
+    objc-classes:         [ TVRMContentViewController, TVRMDeviceInfo,
+                            TVRemoteModule ]
+    objc-ivars:           [ TVRMContentViewController._backgroundViewController,
+                            TVRMContentViewController._contentModuleContext,
+                            TVRMContentViewController._hintsViewController,
+                            TVRMContentViewController._lastActiveEndpointIdentifier,
+                            TVRMContentViewController._remoteControlViewController,
+                            TVRMContentViewController._remoteDismissAnimator,
+                            TVRMContentViewController._remoteShowAnimator,
+                            TVRMContentViewController._showButtonGlyph,
+                            TVRMContentViewController._systemInitiatedDismissal,
+                            TVRMContentViewController._transitionSize,
+                            TVRemoteModule._contentViewController,
+                            TVRemoteModule._moduleContext ]
+...

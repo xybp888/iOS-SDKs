@@ -1,0 +1,63 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AdID.framework/AdID
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ADSimulatedCrashKillCode_InternalInconsistency,
+                            _AdIDVersionNumber, _AdIDVersionString ]
+    objc-classes:         [ ADAMSBagManager, ADAdTrackingSchedulingManager,
+                            ADAppTrackingService, ADClientDPIDManager,
+                            ADDeviceKnowledgeManager, ADIDManagerService,
+                            ADJingleOptOutRequest, ADJingleRequest,
+                            ADJingleRequestManager, ADJingleSegmentRequest,
+                            ADLoggingProfileMonitor,
+                            ADPersonalizedAdsStatusManager, ADSegmentDataManager ]
+    objc-ivars:           [ ADAdTrackingSchedulingManager._accountChangedNotifyToken,
+                            ADAdTrackingSchedulingManager._isConfigRequestInFlight,
+                            ADAdTrackingSchedulingManager._loggingProfileMonitor,
+                            ADAdTrackingSchedulingManager._pushConnection,
+                            ADAdTrackingSchedulingManager._storeFrontNotifyToken,
+                            ADAppTrackingService._listener,
+                            ADAppTrackingService._requestInFlight,
+                            ADClientDPIDManager._DPID,
+                            ADClientDPIDManager._backupFlowQueue,
+                            ADClientDPIDManager._dpidReconcileStartDate,
+                            ADClientDPIDManager._dpidReconcileState,
+                            ADClientDPIDManager._isPrivateContainerSecure,
+                            ADClientDPIDManager._isTest,
+                            ADClientDPIDManager._operationsInProgress,
+                            ADClientDPIDManager._privateContainer,
+                            ADClientDPIDManager._qualityOfService,
+                            ADClientDPIDManager._recordID,
+                            ADClientDPIDManager._recordIDLegacy,
+                            ADClientDPIDManager._sandboxEnvironment,
+                            ADClientDPIDManager._supportsDeviceToDeviceEncryption,
+                            ADClientDPIDManager._updateInProgress,
+                            ADClientDPIDManager._zoneID,
+                            ADDeviceKnowledgeManager._refreshInterval,
+                            ADDeviceKnowledgeManager._taskIsRunning,
+                            ADDeviceKnowledgeManager._xpc_task,
+                            ADIDManagerService._forceReconcileQueue,
+                            ADIDManagerService._listener,
+                            ADIDManagerService._reconcileArray,
+                            ADJingleRequest._DSID, ADJingleRequest._bagKey,
+                            ADJingleRequest._completionHandler,
+                            ADJingleRequest._error, ADJingleRequest._requestBody,
+                            ADJingleRequest._requestHeaders,
+                            ADJingleRequest._responseBody,
+                            ADJingleRequest._responseHeaders,
+                            ADJingleRequest._statusCode, ADJingleRequest._token,
+                            ADJingleRequestManager._jingleRequestInProgress,
+                            ADJingleRequestManager._pendingJingleRequests,
+                            ADLoggingProfileMonitor._initQueue,
+                            ADLoggingProfileMonitor._profileIdentifiers,
+                            ADPersonalizedAdsStatusManager._pendingJingleRequestToken,
+                            ADPersonalizedAdsStatusManager._sendingPersonalizedAdsToAdPlatforms,
+                            ADSegmentDataManager._pendingJingleRequestToken,
+                            ADSegmentDataManager._segmentUpdateInProgress ]
+...

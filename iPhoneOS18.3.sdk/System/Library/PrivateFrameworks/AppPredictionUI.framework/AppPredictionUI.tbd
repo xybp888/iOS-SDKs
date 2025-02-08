@@ -1,0 +1,44 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppPredictionUI.framework/AppPredictionUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _APUIIsIntentFromSystemApp, _APUIPointImageOfColor,
+                            _APUIRegisterCardKitProvidersIfNeeded,
+                            _APUIRegisterCardServicesIfNeeded,
+                            _AppPredictionUIVersionNumber,
+                            _AppPredictionUIVersionString,
+                            _kAPUICardServiceIdentifier ]
+    objc-classes:         [ APUIActionCardRequest, APUIActionCardUtils,
+                            APUIActionCardViewConfig,
+                            APUICardRequestSatisfactionCriteria, APUICardService,
+                            _APUIActionCardInfo,
+                            _APUICardRequestCompactSatisfactionCriteria,
+                            _APUICardRequestCustomIntentSatisfactionCriteria ]
+    objc-ivars:           [ APUIActionCardRequest._cardViewConfig,
+                            APUIActionCardViewConfig._bundleId,
+                            APUIActionCardViewConfig._fallbackToCustomResponseString,
+                            APUIActionCardViewConfig._maxLinesForFootnote,
+                            APUIActionCardViewConfig._maxLinesForSubtitle,
+                            APUIActionCardViewConfig._maxLinesForTitle,
+                            APUIActionCardViewConfig._showActionButton,
+                            APUIActionCardViewConfig._showAppFootnote,
+                            APUIActionCardViewConfig._showAppFootnoteIcon,
+                            APUIActionCardViewConfig._showThumbnailImage,
+                            APUIActionCardViewConfig._style,
+                            APUIActionCardViewConfig._useAppIconAsThumbnail,
+                            APUIActionCardViewConfig._useTinyIconVariant,
+                            _APUIActionCardInfo._actionItem,
+                            _APUIActionCardInfo._actionPunchout,
+                            _APUIActionCardInfo._appTitle,
+                            _APUIActionCardInfo._bundleId,
+                            _APUIActionCardInfo._footnote,
+                            _APUIActionCardInfo._image,
+                            _APUIActionCardInfo._subtitle,
+                            _APUIActionCardInfo._title ]
+...

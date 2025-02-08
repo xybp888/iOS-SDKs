@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PreviewsInjection.framework/PreviewsInjection
+current-version:       22.20.7
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PreviewsInjectionVersionNumber,
+                            _PreviewsInjectionVersionString,
+                            _UVConnectToRenderServerPort,
+                            ___SERVICEHUB_ATTACH_POINT__,
+                            ___previews_injection_get_debug_dodylib_swift_entry_section_data,
+                            ___previews_injection_jit_link_entrypoint,
+                            ___previews_injection_perform_first_jit_link,
+                            ___previews_injection_register_swift_extension_entry_section,
+                            ___previews_injection_run_user_entrypoint ]
+    objc-classes:         [ UVPreviewsInjectionEntryPoint,
+                            _TtC17PreviewsInjection19UVBSEndpointMonitor ]
+...

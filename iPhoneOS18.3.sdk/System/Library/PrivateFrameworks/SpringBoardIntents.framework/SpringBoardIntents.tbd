@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SpringBoardIntents.framework/SpringBoardIntents
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSStringFromSBINAppIntentActionSource,
+                            _NSStringFromSBINCameraCaptureDevice,
+                            _NSStringFromSBINCameraCaptureMode,
+                            _SBINAppIntentIdentifierFocus,
+                            _SBINAppIntentIdentifierOpenCamera,
+                            _SBINAppIntentIdentifierToggleFlashlight,
+                            _SBINFocusAppIntentActivityPickerPresentationModeIdentifier,
+                            _SBINLogCommon, _SBINLogIntentExecution,
+                            _SBINLoggingSubsystem,
+                            _SpringBoardIntentsVersionNumber,
+                            _SpringBoardIntentsVersionString ]
+    objc-classes:         [ SBINAppIntent, SBINAppIntentSystemContext,
+                            SBINAppIntentsCoordinator, SBINFocusAppIntent,
+                            SBINOpenCameraAppIntent, SBIN_FCActivityManager ]
+    objc-ivars:           [ SBINAppIntent._identifier,
+                            SBINAppIntent._systemContext,
+                            SBINAppIntentSystemContext._actionSource,
+                            SBINAppIntentSystemContext._preciseTimestamp,
+                            SBINAppIntentsCoordinator._delegate,
+                            SBINFocusAppIntent._modeIdentifier,
+                            SBINOpenCameraAppIntent._captureDevice,
+                            SBINOpenCameraAppIntent._captureMode ]
+...

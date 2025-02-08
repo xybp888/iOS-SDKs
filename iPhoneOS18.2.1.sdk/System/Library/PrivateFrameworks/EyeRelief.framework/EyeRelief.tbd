@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/EyeRelief.framework/EyeRelief
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _EREyeReliefCountReductionForUnknownDistance,
+                            _EREyeReliefProtocolInterface,
+                            _EyeReliefVersionNumber, _EyeReliefVersionString,
+                            _kEyeReliefServiceName ]
+    objc-classes:         [ ERAttentionAwarenessClient, ERDistanceEvent,
+                            EREyeReliefClient, EREyeReliefConnection,
+                            EREyeReliefEngine, EREyeReliefServer, ERLogging ]
+    objc-ivars:           [ ERAttentionAwarenessClient._attentionAwarenessClient,
+                            ERAttentionAwarenessClient._attentionAwarenessConfiguration,
+                            ERAttentionAwarenessClient._interruptHandler,
+                            ERAttentionAwarenessClient._queue,
+                            ERAttentionAwarenessClient._tooCloseDistanceThreshold,
+                            ERDistanceEvent._didDetectAttention,
+                            ERDistanceEvent._distance,
+                            ERDistanceEvent._distanceCategory,
+                            EREyeReliefConnection._connection,
+                            EREyeReliefEngine._attentionAwarenessClient,
+                            EREyeReliefEngine._interventionType,
+                            EREyeReliefEngine._tooCloseCount,
+                            EREyeReliefEngine._tooCloseDistanceThreshold,
+                            EREyeReliefEngine._userDefaults,
+                            EREyeReliefServer._clientConnections,
+                            EREyeReliefServer._connectionQueue,
+                            EREyeReliefServer._distanceSamplingToggleHandler,
+                            EREyeReliefServer._isDistanceSamplingEnabledHandler,
+                            EREyeReliefServer._listener ]
+...

@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          "/System/Library/Frameworks/MediaToolbox.framework/Support/libSTS-N.dylib"
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _STSAddForcedReconfigurationCallback,
+                            _STSCreateFlavorN,
+                            _STSRegisterSpatializerWithFallback,
+                            _STSRemoveForcedReconfigurationCallback,
+                            _STSSetRoomConfigurationDictionary,
+                            _STSSetSoundStageParameters, _STSTrackedLabelCount,
+                            _STSUnregisterSpatializer ]
+    objc-classes:         [ ForcedReconfigurationCallbackContainer ]
+    objc-ivars:           [ ForcedReconfigurationCallbackContainer._callbackCounter,
+                            ForcedReconfigurationCallbackContainer._callbacks,
+                            ForcedReconfigurationCallbackContainer._label ]
+...

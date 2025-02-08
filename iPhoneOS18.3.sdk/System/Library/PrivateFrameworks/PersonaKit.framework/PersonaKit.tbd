@@ -1,0 +1,50 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PersonaKit.framework/PersonaKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PRCachedOtherValuesDidChangeNotification,
+                            _PRCachedSelfValuesDidChangeNotification,
+                            _PRLikenessPropertyCropRect,
+                            _PRLikenessPropertyCurrent,
+                            _PRLikenessPropertyExternalID,
+                            _PRLikenessPropertyRecipe,
+                            _PRLikenessPropertyStaticRepresentation,
+                            _PRNilLikenessIdentifier,
+                            _PROtherLikenessesDidChangeNotification,
+                            _PRPersonaErrorDomain, _PRPersonaServiceMachName,
+                            _PRSelfLikenessesDidChangeNotification,
+                            _PersonaKitVersionNumber, _PersonaKitVersionString,
+                            __PRGetLogSystem, _kPRNilLikenessVersion ]
+    objc-classes:         [ PRLikeness, PRLikenessChange, PRManagedLikeness,
+                            PRManagedLikenessChange, PRManagedPropagationEvent,
+                            PRManagedScreenName, PRPersonaServiceInterface,
+                            PRPersonaStore ]
+    objc-ivars:           [ PRLikeness._creationDate,
+                            PRLikeness._cropRectForTopLeftOrigin,
+                            PRLikeness._dirtyProperties,
+                            PRLikeness._expirationDate,
+                            PRLikeness._externalIdentifier,
+                            PRLikeness._insertionDate, PRLikeness._isCurrent,
+                            PRLikeness._ownerID, PRLikeness._recipe,
+                            PRLikeness._scope, PRLikeness._softExpirationDate,
+                            PRLikeness._source, PRLikeness._staticRepresentation,
+                            PRLikeness._staticRepresentationData,
+                            PRLikeness._type, PRLikeness._uniqueIdentifier,
+                            PRLikeness._version,
+                            PRLikenessChange._changedLikenessID,
+                            PRLikenessChange._changedLikenessVersion,
+                            PRLikenessChange._dirtyLikenessProperties,
+                            PRLikenessChange._identifier, PRLikenessChange._type,
+                            PRPersonaStore._connectionLock,
+                            PRPersonaStore._dataVendingFlagLock,
+                            PRPersonaStore._hasVendedData,
+                            PRPersonaStore._personaServiceConnection,
+                            PRPersonaStore._replyHandlingQueue,
+                            PRPersonaStore._serviceListenerEndpoint ]
+...

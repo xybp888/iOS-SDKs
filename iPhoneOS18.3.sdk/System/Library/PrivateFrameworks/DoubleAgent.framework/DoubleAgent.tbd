@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DoubleAgent.framework/DoubleAgent
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DoubleAgentVersionNumber, _DoubleAgentVersionString,
+                            _doubleagent_std_log ]
+    objc-classes:         [ AppleDoubleParser, DoubleAgentManager ]
+    objc-ivars:           [ AppleDoubleParser._attrHeader,
+                            AppleDoubleParser._emptyFinderInfo,
+                            AppleDoubleParser._fileDescriptor,
+                            AppleDoubleParser._fileHeader,
+                            AppleDoubleParser._fileSize,
+                            AppleDoubleParser._finderinfo,
+                            AppleDoubleParser._firstAttrEntry,
+                            AppleDoubleParser._headerSize,
+                            AppleDoubleParser._isAllocateXattr,
+                            AppleDoubleParser._rawHeader,
+                            AppleDoubleParser._readOnly,
+                            AppleDoubleParser._rsrcfork ]
+...

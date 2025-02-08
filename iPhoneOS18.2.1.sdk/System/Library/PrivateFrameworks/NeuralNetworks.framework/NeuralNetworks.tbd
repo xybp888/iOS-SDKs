@@ -1,0 +1,66 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NeuralNetworks.framework/NeuralNetworks
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NeuralNetworksVersionNumber,
+                            _NeuralNetworksVersionString ]
+    objc-classes:         [ SNNComputePrecision, SNNComputeUnit, SNNError,
+                            SNNEspressoV1ExecutionContext, SNNLogging,
+                            SNNMILBlobValue, SNNMILContext, SNNMILDataValue,
+                            SNNMILFunction, SNNMILFunctionBuilder, SNNMILListValue,
+                            SNNMILNamedArgument, SNNMILNamedValue, SNNMILOperation,
+                            SNNMILOperationEnumerator, SNNMILProgram,
+                            SNNMILProgramBuilder, SNNMILSourceLocation,
+                            SNNMILValue, SNNMILValueDescriptor ]
+    objc-ivars:           [ SNNComputePrecision._kind, SNNComputeUnit._kind,
+                            SNNEspressoV1ExecutionContext._computePrecision,
+                            SNNEspressoV1ExecutionContext._computeUnits,
+                            SNNEspressoV1ExecutionContext._context,
+                            SNNEspressoV1ExecutionContext._cppNetwork,
+                            SNNEspressoV1ExecutionContext._network,
+                            SNNEspressoV1ExecutionContext._plan,
+                            SNNEspressoV1ExecutionContext._primaryComputeUnit,
+                            SNNMILBlobValue._dataType,
+                            SNNMILBlobValue._dimensions,
+                            SNNMILBlobValue._filename, SNNMILBlobValue._offset,
+                            SNNMILContext._context, SNNMILContext._opsetName,
+                            SNNMILDataValue._data, SNNMILDataValue._dataType,
+                            SNNMILDataValue._dimensions,
+                            SNNMILFunction._function, SNNMILFunction._name,
+                            SNNMILFunction._operationEnumerator,
+                            SNNMILFunctionBuilder._context,
+                            SNNMILFunctionBuilder._function,
+                            SNNMILFunctionBuilder._inputs,
+                            SNNMILFunctionBuilder._location,
+                            SNNMILFunctionBuilder._name,
+                            SNNMILFunctionBuilder._operations,
+                            SNNMILFunctionBuilder._outputNames,
+                            SNNMILFunctionBuilder._outputs,
+                            SNNMILFunctionBuilder._symbolCounter,
+                            SNNMILListValue._values, SNNMILNamedArgument._name,
+                            SNNMILNamedArgument._value, SNNMILNamedValue._name,
+                            SNNMILOperation._attributes, SNNMILOperation._inputs,
+                            SNNMILOperation._opName, SNNMILOperation._outputs,
+                            SNNMILOperationEnumerator._currentIndex,
+                            SNNMILOperationEnumerator._function,
+                            SNNMILProgram._milFilePath, SNNMILProgram._program,
+                            SNNMILProgramBuilder._context,
+                            SNNMILProgramBuilder._functionBuilders,
+                            SNNMILProgramBuilder._location,
+                            SNNMILProgramBuilder._program,
+                            SNNMILSourceLocation._column,
+                            SNNMILSourceLocation._filename,
+                            SNNMILSourceLocation._isLocationKnown,
+                            SNNMILSourceLocation._line,
+                            SNNMILSourceLocation._milLocation,
+                            SNNMILValueDescriptor._dataType,
+                            SNNMILValueDescriptor._dimensions,
+                            SNNMILValueDescriptor._name ]
+    weak-def-symbols:     [ __ZNSt3__119piecewise_constructE ]
+...

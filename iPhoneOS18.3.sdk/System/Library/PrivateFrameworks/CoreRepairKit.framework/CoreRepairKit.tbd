@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreRepairKit.framework/CoreRepairKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CoreRepairKitVersionNumber,
+                            _CoreRepairKitVersionString, _getDeviceChemID,
+                            _hasHadBatteryRepair, _hasHadBatteryRepairUsingCBCC,
+                            _kMRDataCollectionQueryTimeout ]
+    objc-classes:         [ CRAudioCodecStatus, CRAudioStatus, CRBackGlassStatus,
+                            CRBasebandStatus, CRBatteryStatus, CRBluetoothStatus,
+                            CRCameraAuth, CRCameraAuthUsingProperty,
+                            CRComponentAuth, CRDisplayStatus, CREnclosureStatus,
+                            CRFaceIDStatus, CRNFCStatus, CRPluginsController,
+                            CRRCamStatus, CRRepairStatus, CRSystemHealthStatus,
+                            CRTouchIDStatus, CRURLSessionDelegate, CRUWBStatus,
+                            CRWifiStatus, MRDataCollectionNotice, MRLocalization ]
+...

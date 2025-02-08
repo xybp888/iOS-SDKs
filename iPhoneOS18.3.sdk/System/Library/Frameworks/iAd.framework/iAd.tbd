@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/iAd.framework/iAd
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ADBannerContentSizeIdentifier320x50,
+                            _ADBannerContentSizeIdentifier480x32,
+                            _ADBannerContentSizeIdentifierLandscape,
+                            _ADBannerContentSizeIdentifierPortrait,
+                            _ADClampedBannerSize, _ADClientErrorDomain,
+                            _ADErrorDomain ]
+    objc-classes:         [ ADBannerView, ADClient, ADInterstitialAd,
+                            ADInterstitialAdPresentationViewController ]
+    objc-ivars:           [ ADBannerView._adType,
+                            ADBannerView._advertisingSection,
+                            ADBannerView._bannerLoaded,
+                            ADBannerView._bannerViewActionInProgress,
+                            ADBannerView._currentContentSizeIdentifier,
+                            ADBannerView._delegate,
+                            ADBannerView._requiredContentSizeIdentifiers,
+                            ADInterstitialAd._actionInProgress,
+                            ADInterstitialAd._delegate, ADInterstitialAd._loaded ]
+...

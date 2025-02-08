@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/GenerativeModels.framework/GenerativeModels
+current-version:       150.255
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/PrivateFrameworks/GenerativeModelsFoundation.framework/GenerativeModelsFoundation,
+                            /System/Library/PrivateFrameworks/TokenGeneration.framework/TokenGeneration ]
+    objc-classes:         [ GMAvailabilityWrapper,
+                            _TtC16GenerativeModels17CloudAvailability ]
+...

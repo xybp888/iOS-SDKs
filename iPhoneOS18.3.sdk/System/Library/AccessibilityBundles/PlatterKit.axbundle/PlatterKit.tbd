@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/PlatterKit.axbundle/PlatterKit
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXNCHeaderAppIconIdentification,
+                            _accessibilityLocalizedString ]
+    objc-classes:         [ AXAggregateHeaderView, AXPlatterKitGlue,
+                            NC_PLPlatterHeaderContentViewAccessibility,
+                            PLExpandedPlatterViewAccessibility,
+                            PLGlyphControlAccessibility, PLPillViewAccessibility,
+                            PLPlatterActionButtonAccessibility,
+                            UIButtonAccessibility__PlatterKit__UIKit,
+                            __NC_PLPlatterHeaderContentViewAccessibility_super,
+                            __PLExpandedPlatterViewAccessibility_super,
+                            __PLGlyphControlAccessibility_super,
+                            __PLPillViewAccessibility_super,
+                            __PLPlatterActionButtonAccessibility_super,
+                            __UIButtonAccessibility__PlatterKit__UIKit_super ]
+    objc-ivars:           [ AXAggregateHeaderView._dateLabel,
+                            AXAggregateHeaderView._iconButtons,
+                            AXAggregateHeaderView._titleLabel ]
+...

@@ -1,0 +1,46 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CompanionHealthDaemon.framework/CompanionHealthDaemon
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CHIsFitnessInstalled, _CHProfileExtensionForProfile,
+                            _CompanionHealthDaemonVersionNumber,
+                            _CompanionHealthDaemonVersionString,
+                            _kHDCompanionFitnessAppBundleID ]
+    objc-classes:         [ CHActivityApplicationInstallationManager,
+                            CHCoachingDiagnosticManager,
+                            CHCompanionWidgetSchedulingManager,
+                            CHCompanionWorkoutCreditManager,
+                            CHCompanionWorkoutCreditManagerInterval,
+                            CHFitnessAppBadgeManager,
+                            CHTrendsNotificationManager ]
+    objc-ivars:           [ CHActivityApplicationInstallationManager._installationRequestInProgress,
+                            CHActivityApplicationInstallationManager._profile,
+                            CHActivityApplicationInstallationManager._queue,
+                            CHActivityApplicationInstallationManager._systemAppRequest,
+                            CHCoachingDiagnosticManager._cachedLastSubmittedDate,
+                            CHCoachingDiagnosticManager._lastRingCompletionSubmittedIndex,
+                            CHCoachingDiagnosticManager._profile,
+                            CHCoachingDiagnosticManager._queue,
+                            CHCoachingDiagnosticManager._scheduler,
+                            CHCompanionWidgetSchedulingManager._profile,
+                            CHCompanionWidgetSchedulingManager._standalonePhoneFitnessModeChangeToken,
+                            CHCompanionWidgetSchedulingManager._wheelchairUse,
+                            CHCompanionWorkoutCreditManager._anchor,
+                            CHCompanionWorkoutCreditManager._calendar,
+                            CHCompanionWorkoutCreditManager._hasPairedWatches,
+                            CHCompanionWorkoutCreditManager._profile,
+                            CHCompanionWorkoutCreditManager._queue,
+                            CHCompanionWorkoutCreditManagerInterval._activityMoveMode,
+                            CHCompanionWorkoutCreditManagerInterval._dateInterval,
+                            CHFitnessAppBadgeManager._providers,
+                            CHFitnessAppBadgeManager._serialQueue,
+                            CHTrendsNotificationManager._keyValueDomain,
+                            CHTrendsNotificationManager._profile,
+                            CHTrendsNotificationManager._userNotificationCenter ]
+...

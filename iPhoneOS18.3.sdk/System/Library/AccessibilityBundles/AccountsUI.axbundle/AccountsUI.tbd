@@ -1,0 +1,16 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/AccountsUI.axbundle/AccountsUI
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Failover, _accessibilityLocalizedString ]
+    objc-classes:         [ ACUIAccountSummaryCellAccessibility,
+                            ACUIAppInstallCellAccessibility, AXAccountsUIGlue,
+                            __ACUIAccountSummaryCellAccessibility_super,
+                            __ACUIAppInstallCellAccessibility_super ]
+...

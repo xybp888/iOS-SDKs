@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriIdentityInternal.framework/SiriIdentityInternal
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SiriIdentityInternalVersionNumber,
+                            _SiriIdentityInternalVersionString ]
+    objc-classes:         [ Account, AccountResolutionResult,
+                            CaseTypeResolutionResult, Identity,
+                            IdentityResolutionResult,
+                            SwitchProfileAccountResolutionResult,
+                            SwitchProfileIntent, SwitchProfileIntentResponse,
+                            SwitchTypeResolutionResult,
+                            UserIdentifyIdentityResolutionResult,
+                            UserIdentifyIntent, UserIdentifyIntentResponse,
+                            _TtC20SiriIdentityInternal25IdentifyUserIntentHandler,
+                            _TtC20SiriIdentityInternal26EstablishUserIntentHandler,
+                            _TtC20SiriIdentityInternal26SwitchProfileIntentHandler ]
+...

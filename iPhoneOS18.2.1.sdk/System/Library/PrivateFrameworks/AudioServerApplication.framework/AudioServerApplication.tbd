@@ -1,0 +1,35 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AudioServerApplication.framework/AudioServerApplication
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ ASAAudioDevice, ASAAudioFormat, ASABooleanControl,
+                            ASABox, ASAClockDevice, ASAControl, ASACoreAudio,
+                            ASALevelControl, ASAObject, ASAPlaythrough, ASAPlugin,
+                            ASASelectorControl, ASASliderControl,
+                            ASAStereoPanControl, ASAStream ]
+    objc-ivars:           [ ASAAudioFormat._bitsPerChannel,
+                            ASAAudioFormat._bytesPerFrame,
+                            ASAAudioFormat._bytesPerPacket,
+                            ASAAudioFormat._channelsPerFrame,
+                            ASAAudioFormat._formatFlags,
+                            ASAAudioFormat._formatID,
+                            ASAAudioFormat._framesPerPacket,
+                            ASAAudioFormat._maximumSampleRate,
+                            ASAAudioFormat._minimumSampleRate,
+                            ASAAudioFormat._sampleRate, ASACoreAudio._cadPort,
+                            ASACoreAudio._clientQueue, ASACoreAudio._clients,
+                            ASACoreAudio._deathSource, ASACoreAudio._plugins,
+                            ASAObject._objectID, ASAPlaythrough._aggregateID,
+                            ASAPlaythrough._aggregateUID,
+                            ASAPlaythrough._audioDevice,
+                            ASAPlaythrough._channelMapping,
+                            ASAPlaythrough._ioContext, ASAPlaythrough._playing,
+                            ASAPlaythrough._procID,
+                            ASASelectorControl._currentItems ]
+...

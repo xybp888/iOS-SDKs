@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/TextToSpeechVoiceBankingUI.framework/TextToSpeechVoiceBankingUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _TTSDeviceSupportsBattery, _TTSDeviceTemplateType,
+                            _TTSUIAppImageForBundleID,
+                            _TextToSpeechVoiceBankingUIVersionNumber,
+                            _TextToSpeechVoiceBankingUIVersionString ]
+    objc-classes:         [ TTSPVSettingsWrapper,
+                            TTSPerVoiceSettingsViewController, TTSVBUILoader,
+                            TTS_AXDialectMapWrapper,
+                            TTS_AXLanguageManagerWrapper, TTS_AXSettingsWrapper,
+                            VBManagerViewBridge, VoiceManagementViewBridge,
+                            _TtC26TextToSpeechVoiceBankingUI14VoicePreviewer,
+                            _TtC26TextToSpeechVoiceBankingUI19VoiceBankingSession,
+                            _TtC26TextToSpeechVoiceBankingUI26CoreSynthesisVoicePickable,
+                            _TtC26TextToSpeechVoiceBankingUI33CoreSynthesisVoicePickableFetcher,
+                            _TtC26TextToSpeechVoiceBankingUI33VoiceBankingAudioServiceViewModel ]
+    objc-ivars:           [ TTSPerVoiceSettingsViewController._wrapper,
+                            TTS_AXDialectMapWrapper._dialectMap ]
+...

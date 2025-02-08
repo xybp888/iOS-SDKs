@@ -1,0 +1,41 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/LighthouseModelMonitoring.framework/LighthouseModelMonitoring
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LCFMMLogProactivePredictionRanker,
+                            _LCFMMLogShadowEvaluation,
+                            _LCFModelMonitoringLoggingCategoryProactivePredictionRanker,
+                            _LCFModelMonitoringLoggingCategoryShadowEvaluation,
+                            _LCFModelMonitoringLoggingSubsystem,
+                            _LCFModelMonitoringLoggingUtilsInit,
+                            _LighthouseModelMonitoringVersionNumber,
+                            _LighthouseModelMonitoringVersionString,
+                            _predictionSort ]
+    objc-classes:         [ LCFChangepointDetection, LCFFeatureImportance,
+                            LCFModelSelection, LCFProactiveMetricsComputation,
+                            LCFProactivePredictionRanker,
+                            LCFProactivePredictionRankerHolder,
+                            LCFShadowEvaluation, LCFShadowEvaluationParameters ]
+    objc-ivars:           [ LCFProactivePredictionRankerHolder._featureSet,
+                            LCFProactivePredictionRankerHolder._prediction,
+                            LCFShadowEvaluation._featureStore,
+                            LCFShadowEvaluation._modelStore,
+                            LCFShadowEvaluationParameters._destLabelName,
+                            LCFShadowEvaluationParameters._endDate,
+                            LCFShadowEvaluationParameters._featureNames,
+                            LCFShadowEvaluationParameters._groundTruthLabelFeatureName,
+                            LCFShadowEvaluationParameters._inferenceHandler,
+                            LCFShadowEvaluationParameters._metricsHandler,
+                            LCFShadowEvaluationParameters._modelNames,
+                            LCFShadowEvaluationParameters._predictedLabelFeatureName,
+                            LCFShadowEvaluationParameters._preprocessHandler,
+                            LCFShadowEvaluationParameters._srcLabelName,
+                            LCFShadowEvaluationParameters._startDate,
+                            LCFShadowEvaluationParameters._vectorFeatureName ]
+...

@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/AutomaticAssessmentConfiguration.framework/AutomaticAssessmentConfiguration
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AEAssessmentErrorDomain ]
+    objc-classes:         [ AEAssessmentApplication, AEAssessmentConfiguration,
+                            AEAssessmentParticipantConfiguration,
+                            AEAssessmentSession, _AEErrorHelper ]
+    objc-ivars:           [ AEAssessmentApplication._bundleIdentifier,
+                            AEAssessmentApplication._requiresSignatureValidation,
+                            AEAssessmentApplication._teamIdentifier,
+                            AEAssessmentConfiguration._allowsAccessibilitySpeech,
+                            AEAssessmentConfiguration._allowsActivityContinuation,
+                            AEAssessmentConfiguration._allowsContinuousPathKeyboard,
+                            AEAssessmentConfiguration._allowsDictation,
+                            AEAssessmentConfiguration._allowsKeyboardShortcuts,
+                            AEAssessmentConfiguration._allowsPasswordAutoFill,
+                            AEAssessmentConfiguration._allowsPredictiveKeyboard,
+                            AEAssessmentConfiguration._allowsSpellCheck,
+                            AEAssessmentConfiguration._autocorrectMode,
+                            AEAssessmentConfiguration._backingConfiguratonsByApplication,
+                            AEAssessmentConfiguration._mainParticipantConfiguration,
+                            AEAssessmentParticipantConfiguration._allowsNetworkAccess,
+                            AEAssessmentParticipantConfiguration._configurationInfo,
+                            AEAssessmentSession._delegate,
+                            AEAssessmentSession._sessionWrapper ]
+...

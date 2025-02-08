@@ -1,0 +1,46 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IsolatedCoreAudioClient.framework/IsolatedCoreAudioClient
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CreateIsolatedAudioServicePortal,
+                            _CreateIsolatedAudioSiphonPortal,
+                            _CreateMicrophoneActivityPortal,
+                            _RegisterForIsolatedAudio, _RequestIsolatedAudio,
+                            _SetAudioLapseHandler, _StartIsolatedAudio,
+                            _StartIsolatedAudioAtTime, _StopIsolatedAudio ]
+    objc-classes:         [ IOThreadXPCMappedMemoryTransporter,
+                            IOThreadXPCSemaphoreTransporter,
+                            IOThreadXPCWorkgroupTransporter,
+                            IsolatedCoreAudioClientNSXPCListenerDelegate,
+                            IsolatedCoreAudioUseCaseConnection,
+                            IsolatedCoreAudioXPCService,
+                            IsolatedCoreAudioXPCSiphon, MTDClientInterface,
+                            ReverseSiphonDelegate ]
+    objc-ivars:           [ IOThreadXPCMappedMemoryTransporter._serverMemory,
+                            IOThreadXPCSemaphoreTransporter._clientListenableSemaphore,
+                            IOThreadXPCSemaphoreTransporter._clientPingableSemaphore,
+                            IOThreadXPCWorkgroupTransporter._workgroup,
+                            IsolatedCoreAudioClientNSXPCListenerDelegate._mClientReaper,
+                            IsolatedCoreAudioClientNSXPCListenerDelegate._mConnections,
+                            IsolatedCoreAudioClientNSXPCListenerDelegate._mInterface,
+                            IsolatedCoreAudioUseCaseConnection._connection,
+                            IsolatedCoreAudioUseCaseConnection._pid,
+                            IsolatedCoreAudioUseCaseConnection.useCaseID,
+                            IsolatedCoreAudioXPCService._mServerSideSwitchboard,
+                            IsolatedCoreAudioXPCSiphon._mClientMap,
+                            IsolatedCoreAudioXPCSiphon._mSiphon,
+                            IsolatedCoreAudioXPCSiphon._reverseConnections,
+                            MTDClientInterface._reverseConnections,
+                            ReverseSiphonDelegate._reverseInterface,
+                            ReverseSiphonDelegate._reverseListener,
+                            ReverseSiphonDelegate.mAvailabilityCallback,
+                            ReverseSiphonDelegate.mAvailabilityData,
+                            ReverseSiphonDelegate.mLapseCallback,
+                            ReverseSiphonDelegate.mLapseData ]
+...

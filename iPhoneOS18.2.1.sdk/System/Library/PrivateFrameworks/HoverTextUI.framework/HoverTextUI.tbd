@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HoverTextUI.framework/HoverTextUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HTDisplayIDForWindow, _HTMaximumTextSize,
+                            _HTMinimumTextSize, _HTSuspensionBehavior,
+                            _HTUILocString, _HTUIParameterizedLocString,
+                            _HoverTextUIVersionNumber, _HoverTextUIVersionString ]
+    objc-classes:         [ AXObserverWrapper, HTUITaggedColor,
+                            _TtC11HoverTextUI15AXRuntimeClient,
+                            _TtC11HoverTextUI21HoverTextEventHandler,
+                            _TtC11HoverTextUI27HoverTextRootViewController ]
+    objc-ivars:           [ AXObserverWrapper._handler,
+                            AXObserverWrapper._notifications,
+                            AXObserverWrapper._observer,
+                            AXObserverWrapper._runloop,
+                            AXObserverWrapper._systemElement,
+                            HTUITaggedColor._color, HTUITaggedColor._identifier ]
+...

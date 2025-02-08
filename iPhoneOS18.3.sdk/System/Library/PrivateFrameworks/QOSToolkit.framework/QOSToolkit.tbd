@@ -1,0 +1,18 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/QOSToolkit.framework/QOSToolkit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _QOSToolkitVersionNumber, _QOSToolkitVersionString ]
+    objc-classes:         [ QOSAlertMessage, QOSAlertMessageInternal, QOSConfig,
+                            QOSConfigInternal, QOSErrorMessage,
+                            QOSErrorMessageInternal ]
+    objc-ivars:           [ QOSAlertMessage._underlyingObject,
+                            QOSConfig._underlyingObject,
+                            QOSErrorMessage._underlyingObject ]
+...

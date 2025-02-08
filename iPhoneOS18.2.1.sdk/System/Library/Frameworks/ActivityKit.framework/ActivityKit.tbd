@@ -1,0 +1,67 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/ActivityKit.framework/ActivityKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ActivityKitVersionNumber, _ActivityKitVersionString,
+                            _acTryWithObjCException ]
+    objc-classes:         [ ACActivityAuthorization, ACActivityCenter,
+                            ACActivityContent, ACActivityContentUpdate,
+                            ACActivityDescriptor,
+                            ACActivityPresentationDestination,
+                            ACActivityPresentationListener,
+                            ACActivityPresentationOptions,
+                            ACActivityProminenceListener, ACActivityQoSListener,
+                            ACAlertPresentationOptions,
+                            _TtC11ActivityKit11AlertClient,
+                            _TtC11ActivityKit18StateCaptureClient,
+                            _TtC11ActivityKit19ActivityInputClient,
+                            _TtC11ActivityKit20CancellableAssertion,
+                            _TtC11ActivityKit21ActivityAuthorization,
+                            _TtC11ActivityKit23ActivityPushTokenClient,
+                            _TtC11ActivityKit24ActivityCenterObjcBridge,
+                            _TtC11ActivityKit27ActivityAuthorizationClient,
+                            _TtC11ActivityKit28ActivityQoSObservationClient,
+                            _TtC11ActivityKit35ActivityProminenceObservationClient,
+                            _TtC11ActivityKit37ActivityPresentationObservationClient,
+                            _TtC11ActivityKit40ActivityFrequentUpdatesObservationClient,
+                            _TtC11ActivityKit40SubscriptionPreferencesObservationClient,
+                            _TtC11ActivityKit45ActivityRemoteSubscriptionPreferencesListener ]
+    objc-ivars:           [ ACActivityAuthorization._activityAuthorization,
+                            ACActivityCenter._activityCenter,
+                            ACActivityContent._contentData,
+                            ACActivityContent._relevanceScore,
+                            ACActivityContent._staleDate,
+                            ACActivityContentUpdate._content,
+                            ACActivityContentUpdate._descriptor,
+                            ACActivityContentUpdate._identifier,
+                            ACActivityContentUpdate._state,
+                            ACActivityDescriptor._activityIdentifier,
+                            ACActivityDescriptor._contentType,
+                            ACActivityDescriptor._createdDate,
+                            ACActivityDescriptor._descriptorData,
+                            ACActivityDescriptor._isEphemeral,
+                            ACActivityDescriptor._isMomentary,
+                            ACActivityDescriptor._localizedAppName,
+                            ACActivityDescriptor._platterTargetBundleIdentifier,
+                            ACActivityDescriptor._presentationOptions,
+                            ACActivityDescriptor._protectionClass,
+                            ACActivityDescriptor._remoteDeviceIdentifier,
+                            ACActivityPresentationDestination._destination,
+                            ACActivityPresentationListener._client,
+                            ACActivityPresentationOptions._authorizationOptionsType,
+                            ACActivityPresentationOptions._destinations,
+                            ACActivityPresentationOptions._isActionButtonInitiated,
+                            ACActivityPresentationOptions._isUserDismissalAllowedOnLockScreen,
+                            ACActivityPresentationOptions._shouldSuppressAlertContentOnLockScreen,
+                            ACActivityPresentationOptions._showsAuthorizationOptions,
+                            ACActivityProminenceListener._client,
+                            ACActivityQoSListener._client,
+                            ACAlertPresentationOptions._interrupting,
+                            ACAlertPresentationOptions._optional ]
+...

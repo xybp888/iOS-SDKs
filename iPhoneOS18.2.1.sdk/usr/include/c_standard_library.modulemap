@@ -1,0 +1,465 @@
+// The C Standard Library is declared in headers in libc++ and clang, and
+// the headers in this directory. These modules pull in the correct pieces
+// depending on the build environment.
+module assert_h [system] {
+  header "_modules/_assert_h.h"
+  export *
+}
+
+module complex_h [system] {
+  header "_modules/_complex_h.h"
+  export *
+}
+
+module ctype_h [system] {
+  header "_modules/_ctype_h.h"
+  export *
+}
+
+module errno_h [system] {
+  header "_modules/_errno_h.h"
+  export *
+}
+
+module fenv_h [system] {
+  header "_modules/_fenv_h.h"
+  export *
+}
+
+module float_h [system] {
+  header "_modules/_float_h.h"
+  export *
+}
+
+module inttypes_h [system] {
+  header "_modules/_inttypes_h.h"
+  export *
+}
+
+module iso646_h [system] {
+  header "_modules/_iso646_h.h"
+  export *
+}
+
+module limits_h [system] {
+  header "_modules/_limits_h.h"
+  export *
+}
+
+module locale_h [system] {
+  header "_modules/_locale_h.h"
+  export *
+}
+
+module math_h [system] {
+  header "_modules/_math_h.h"
+  export *
+}
+
+module setjmp_h [system] {
+  header "_modules/_setjmp_h.h"
+  export *
+}
+
+module signal_h [system] {
+  header "_modules/_signal_h.h"
+  export *
+}
+
+module stdalign_h [system] {
+  header "_modules/_stdalign_h.h"
+  export *
+}
+
+module stdarg_h [system] {
+  header "_modules/_stdarg_h.h"
+  export *
+}
+
+module stdatomic_h [system] {
+  header "_modules/_stdatomic_h.h"
+  export *
+}
+
+// stdbit.h is not available
+
+module stdbool_h [system] {
+  header "_modules/_stdbool_h.h"
+  export *
+}
+
+// stdckdint.h is not available
+
+module stddef_h [system] {
+  header "_modules/_stddef_h.h"
+  export *
+}
+
+module stdint_h [system] {
+  header "_modules/_stdint_h.h"
+  export *
+}
+
+module stdio_h [system] {
+  header "_modules/_stdio_h.h"
+  export *
+}
+
+module stdlib_h [system] {
+  header "_modules/_stdlib_h.h"
+  export *
+}
+
+module stdnoreturn_h [system] {
+  header "_modules/_stdnoreturn_h.h"
+  export *
+}
+
+module string_h [system] {
+  header "_modules/_string_h.h"
+  export *
+}
+
+module tgmath_h [system] {
+  header "_modules/_tgmath_h.h"
+  export *
+}
+
+// threads.h is not available.
+
+module time_h [system] {
+  header "_modules/_time_h.h"
+  export *
+}
+
+// uchar.h is not available
+// (It's present in libc++ but it doesn't declare anything.)
+
+module wchar_h [system] {
+  header "_modules/_wchar_h.h"
+  export *
+}
+
+module wctype_h [system] {
+  header "_modules/_wctype_h.h"
+  export *
+}
+
+
+// Low level modules to cover the Standard C Library interfaces declared
+// in this directory. The above modules should be imported instead.
+module _assert [system] {
+  textual header "assert.h"
+
+  explicit module _assert {
+    header "_assert.h"
+    export *
+  }
+
+  module _static_assert {
+    header "_static_assert.h"
+    export *
+  }
+}
+
+module _complex [system] {
+  header "complex.h"
+  export *
+}
+
+module _ctype [system] {
+  textual header "ctype.h"
+
+  explicit module xlocale {
+    header "xlocale/_ctype.h"
+    export *
+  }
+
+  header "_ctype.h"
+  export *
+}
+
+module _errno [system] {
+  header "errno.h"
+  header "sys/errno.h"
+  export *
+
+  module errno_t {
+    header "sys/_types/_errno_t.h"
+    export *
+  }
+}
+
+module _fenv [system] {
+  header "fenv.h"
+  export *
+}
+
+module _float [system] {
+  header "float.h"
+  export *
+}
+
+module _inttypes [system] {
+  textual header "inttypes.h"
+
+  explicit module xlocale {
+    header "xlocale/_inttypes.h"
+    export *
+  }
+
+  header "_inttypes.h"
+  export *
+}
+
+module _iso646 [system] {
+  header "iso646.h"
+  export *
+}
+
+module _limits [system] {
+  header "limits.h"
+
+  header "machine/limits.h"
+  header "arm/limits.h"
+
+  export *
+
+  module _limits {
+    header "arm/_limits.h"
+
+    export *
+  }
+
+  module syslimits {
+    header "sys/syslimits.h"
+    export *
+  }
+}
+
+module _locale [system] {
+  module locale {
+    header "locale.h"
+    export *
+  }
+
+  module _locale {
+    header "_locale.h"
+    export *
+  }
+}
+
+module _math [system] {
+  // These must all be set in the GCC_PREPROCESSOR_DEFINITIONS Xcode build
+  // setting, or passed on the command line with -D in order to have an
+  // effect. #define won't do anything for any of these.
+//  config_macros
+//    _REENTRANT,
+  header "math.h"
+  export *
+}
+
+module _setjmp [system] {
+  header "setjmp.h"
+  export *
+}
+
+module _signal [system] {
+  module signal {
+    header "signal.h"
+    export *
+  }
+
+  header "machine/signal.h"
+  header "arm/signal.h"
+
+  export *
+
+  module sys_signal {
+    header "sys/signal.h"
+    export *
+  }
+
+  module mcontext {
+    header "machine/_mcontext.h"
+    header "arm/_mcontext.h"
+
+    export *
+  }
+
+  module sigaltstack {
+    header "sys/_types/_sigaltstack.h"
+    export *
+  }
+
+  module sigset_t {
+    header "sys/_types/_sigset_t.h"
+    export *
+  }
+
+  module ucontext {
+    header "sys/_types/_ucontext.h"
+    export *
+  }
+}
+
+module _stddef [system] {
+  header "stddef.h"
+  export *
+}
+
+module _stdint [system] {
+  header "stdint.h"
+  export *
+}
+
+module _stdio [system] {
+  textual header "stdio.h"
+
+  explicit module xlocale {
+    header "xlocale/_stdio.h"
+    export *
+  }
+
+  header "_stdio.h"
+  textual header "secure/_stdio.h"
+  export *
+
+  module sys_stdio {
+    header "sys/stdio.h"
+    export *
+  }
+
+  module ctermid {
+    header "_ctermid.h"
+    export *
+  }
+
+  module printf {
+    header "_printf.h"
+    export *
+  }
+
+  module seek_set {
+    header "sys/_types/_seek_set.h"
+    export *
+  }
+}
+
+module _stdlib [system] {
+  textual header "stdlib.h"
+
+  explicit module xlocale {
+    header "xlocale/_stdlib.h"
+    export *
+  }
+
+  header "_stdlib.h"
+  export *
+
+  module abort {
+    header "_abort.h"
+    export *
+  }
+
+  module malloc {
+    header "malloc/_malloc.h"
+    export *
+
+    module malloc_type {
+      header "malloc/_malloc_type.h"
+      export *
+    }
+
+    module ptrcheck {
+      header "malloc/_ptrcheck.h"
+      export *
+    }
+  }
+}
+
+module _string [system] {
+  textual header "string.h"
+
+  explicit module xlocale {
+    header "xlocale/_string.h"
+    export *
+  }
+
+  header "_string.h"
+  textual header "secure/_string.h"
+  export *
+}
+
+module _tgmath [system] {
+  header "tgmath.h"
+  export *
+}
+
+module _time [system] {
+  textual header "time.h"
+
+  explicit module xlocale {
+    header "xlocale/_time.h"
+    export *
+  }
+
+  header "_time.h"
+  export *
+
+  module timespec {
+    header "sys/_types/_timespec.h"
+    export *
+  }
+}
+
+module _wchar [system] {
+  textual header "wchar.h"
+
+  explicit module xlocale {
+    header "xlocale/_wchar.h"
+    export *
+  }
+
+  header "_wchar.h"
+  export *
+}
+
+module _wctype [system] {
+  textual header "wctype.h"
+
+  explicit module xlocale {
+    header "xlocale/_wctype.h"
+    export *
+  }
+
+  header "_wctype.h"
+  export *
+}
+
+module __wctype [system] {
+  textual header "__wctype.h"
+
+  explicit module xlocale {
+    header "xlocale/___wctype.h"
+    export *
+  }
+
+  header "___wctype.h"
+  export *
+
+  module mbstate_t {
+    header "sys/_types/_mbstate_t.h"
+    export *
+  }
+
+  module wctrans_t {
+    header "_types/_wctrans_t.h"
+    export *
+  }
+
+  module wctype_t {
+    header "_types/_wctype_t.h"
+    export *
+  }
+}

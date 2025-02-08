@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DALDAP.framework/DALDAP
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _kLDAPScopeBase, _kLDAPScopeOneLevel,
+                            _kLDAPScopeSubtree, _kLDAPSearchContextScopeKey,
+                            _kLDAPSearchContextSearchBaseKey,
+                            _kLDAPSearchContextSearchDescriptionKey ]
+    objc-classes:         [ LDAPAccount, LDAPGetDefaultSearchBaseTask,
+                            LDAPLocalDBHelper, LDAPSearchSettings, LDAPSearchTask,
+                            LDAPTask ]
+    objc-ivars:           [ LDAPAccount._mutableSearchSettings,
+                            LDAPAccount._searchTaskSet,
+                            LDAPGetDefaultSearchBaseTask._defaultNamingContext,
+                            LDAPSearchSettings._scope,
+                            LDAPSearchSettings._searchBase,
+                            LDAPSearchSettings._searchDescription,
+                            LDAPSearchTask._foundContacts,
+                            LDAPSearchTask._operation, LDAPSearchTask._query,
+                            LDAPTask._dateConnectionWentOut, LDAPTask._delegate,
+                            LDAPTask._isFinished, LDAPTask._ldConnection,
+                            LDAPTask._taskManager ]
+...

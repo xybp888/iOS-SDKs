@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/AssetViewer.axbundle/AssetViewer
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityLocalizedString ]
+    objc-classes:         [ ARQuickLookOverlayControllerAccessibility,
+                            ASVPreviewViewControllerInternalAccessibility,
+                            AXAssetViewerGlue, AXEntityControllerAction,
+                            AXEntityControllerElement,
+                            CheckoutContainerViewAccessibility,
+                            __ARQuickLookOverlayControllerAccessibility_super,
+                            __ASVPreviewViewControllerInternalAccessibility_super,
+                            __CheckoutContainerViewAccessibility_super ]
+    objc-ivars:           [ AXEntityControllerAction._entityController,
+                            AXEntityControllerElement._entityController,
+                            AXEntityControllerElement._previewViewController ]
+...

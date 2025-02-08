@@ -1,0 +1,79 @@
+// -*- C++ -*-
+//===----------------------------------------------------------------------===//
+//
+// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+// See https://llvm.org/LICENSE.txt for license information.
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+//
+//===----------------------------------------------------------------------===//
+
+#ifndef _LIBCPP___ASSERTION_HANDLER
+#define _LIBCPP___ASSERTION_HANDLER
+
+#include <__config>
+#include <__verbose_abort>
+
+#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
+#  pragma GCC system_header
+#endif
+
+#if _LIBCPP_HARDENING_MODE == _LIBCPP_HARDENING_MODE_DEBUG
+
+#  define _LIBCPP_ASSERTION_HANDLER(message) _LIBCPP_VERBOSE_ABORT("%s", message)
+
+#else
+
+// The approach we're using to invoke the right version of `__builtin_verbose_trap` relies on generic lambdas.
+#  if _LIBCPP_STD_VER >= 20
+
+template <class T>
+consteval void __dependent_noop() {}
+
+#    define _SELECT_BUILTIN_VERBOSE_TRAP(message)                                                                      \
+      ([]<class T>(T) {                                                                                                \
+        if constexpr (requires { __builtin_verbose_trap((::__dependent_noop<T>(), message)); }) {                      \
+          /*                  */ __builtin_verbose_trap((::__dependent_noop<T>(), message));                           \
+        } else if constexpr (requires { __builtin_verbose_trap((::__dependent_noop<T>(), "libc++"), message); }) {     \
+          /*                         */ __builtin_verbose_trap((::__dependent_noop<T>(), "libc++"), message);          \
+        }                                                                                                              \
+      }(1))
+
+// If generic lambdas are unavailable, just fall back to using the regular trap builtin.
+#  else
+
+#    define _SELECT_BUILTIN_VERBOSE_TRAP(message) ((void)message, __builtin_trap())
+
+#  endif
+
+#  if __has_builtin(__builtin_verbose_trap)
+// AppleClang shipped a slightly different version of __builtin_verbose_trap from the upstream
+// version before upstream Clang actually got the builtin.
+#    if defined(_LIBCPP_APPLE_CLANG_VER)
+#      if _LIBCPP_APPLE_CLANG_VER < 1700
+#        define _LIBCPP_ASSERTION_HANDLER(message) __builtin_verbose_trap(message)
+#      else
+#        define _LIBCPP_ASSERTION_HANDLER(message) __builtin_verbose_trap("libc++", message)
+#      endif
+#    else // if defined(_LIBCPP_APPLE_CLANG_VER)
+// Workaround: TAPI comes with its own version of AppleClang that still has the old 1-argument version of
+// `__builtin_verbose_trap` but doesn't set the right macros for us to determine that it's AppleClang and not upstream
+// Clang. Since TAPI does not execute any code, it doesn't matter which function we call, so just fall back to the
+// regular trap.
+#      if defined(__clang_tapi__)
+#        define _LIBCPP_ASSERTION_HANDLER(message) ((void)message, __builtin_trap())
+// Similar to TAPI, the Swift compiler embeds an older version of AppleClang but doesn't set the right macros.
+// TODO(hardening): remove the SFINAE and switch based on `__SWIFT_COMPILER_VERSION` once the Swift compiler updates
+// its version of Clang.
+#      elif defined(__SWIFT_COMPILER_VERSION)
+#        define _LIBCPP_ASSERTION_HANDLER(message) _SELECT_BUILTIN_VERBOSE_TRAP(message)
+#      else
+#        define _LIBCPP_ASSERTION_HANDLER(message) __builtin_verbose_trap("libc++", message)
+#      endif
+#    endif
+#  else // if __has_builtin(__builtin_verbose_trap)
+#    define _LIBCPP_ASSERTION_HANDLER(message) ((void)message, __builtin_trap())
+#  endif
+
+#endif // _LIBCPP_HARDENING_MODE == _LIBCPP_HARDENING_MODE_DEBUG
+
+#endif // _LIBCPP___ASSERTION_HANDLER

@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FileProviderTelemetry.framework/FileProviderTelemetry
+current-version:       2732.80.49
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FPTelemetrySessionPropertyProviderIDKey,
+                            _FPTelemetrySessionPropertyProviderVersionKey ]
+    objc-classes:         [ FPRTCReportingSession, FPRTCReportingSessionManager ]
+    objc-ivars:           [ FPRTCReportingSession._backingManager,
+                            FPRTCReportingSession._categoryHooks,
+                            FPRTCReportingSession._commonProperties,
+                            FPRTCReportingSession._observer,
+                            FPRTCReportingSession._providerID,
+                            FPRTCReportingSession._providerVersion,
+                            FPRTCReportingSessionManager._group,
+                            FPRTCReportingSessionManager._queue ]
+...

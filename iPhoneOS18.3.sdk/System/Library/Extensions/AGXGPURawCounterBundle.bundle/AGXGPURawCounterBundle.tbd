@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Extensions/AGXGPURawCounterBundle.bundle/AGXGPURawCounterBundle
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ AGXGPURawCounterSource, AGXGPURawCounterSourceGroup,
+                            PollPostProcessBuffer ]
+    objc-ivars:           [ AGXGPURawCounterSource._counterList,
+                            AGXGPURawCounterSource._impl,
+                            AGXGPURawCounterSource._pollPostProcessBufferList,
+                            AGXGPURawCounterSource._selectedCounterList,
+                            AGXGPURawCounterSource._selectedTriggerList,
+                            AGXGPURawCounterSource._triggerList,
+                            AGXGPURawCounterSourceGroup._impl,
+                            PollPostProcessBuffer._dstBuffer,
+                            PollPostProcessBuffer._srcBufferPrevOffset,
+                            PollPostProcessBuffer._srcBufferPrevSize ]
+...

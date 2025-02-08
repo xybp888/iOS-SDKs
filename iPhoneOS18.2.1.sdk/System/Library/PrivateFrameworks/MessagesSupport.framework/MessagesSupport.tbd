@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MessagesSupport.framework/MessagesSupport
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MessagesSupportVersionNumber,
+                            _MessagesSupportVersionString ]
+    objc-classes:         [ CKInboxItem, CKInboxItemSwift, CKInboxModel,
+                            CKInboxSection, CKInboxViewControllerFactory,
+                            CKTranscriptCompositor, CKTranscriptCompositorSwift,
+                            CKTranscriptLayoutEnvironment,
+                            CKTranscriptLayoutMessageEditingContext,
+                            CKTranscriptLayoutUtilities,
+                            CKTranscriptLayoutUtilitiesSwift ]
+    objc-ivars:           [ CKInboxItem._action, CKInboxItem._filterMode,
+                            CKInboxItem._identifier, CKInboxItem._inboxItemSwift,
+                            CKInboxModel._delegate, CKInboxModel._footerAction,
+                            CKInboxModel._itemsMap,
+                            CKInboxModel._logInboxViewedMetric,
+                            CKInboxModel._sections, CKInboxSection._footer,
+                            CKInboxSection._header, CKInboxSection._identifier,
+                            CKInboxSection._items,
+                            CKTranscriptCompositor._representedObject,
+                            CKTranscriptLayoutEnvironment._collectionLayoutEnvironment,
+                            CKTranscriptLayoutEnvironment._collectionView,
+                            CKTranscriptLayoutEnvironment._datasource,
+                            CKTranscriptLayoutEnvironment._layoutContext,
+                            CKTranscriptLayoutEnvironment._marginInsets,
+                            CKTranscriptLayoutEnvironment._messageEditingContext,
+                            CKTranscriptLayoutMessageEditingContext._editedMessageGuid,
+                            CKTranscriptLayoutMessageEditingContext._editedMessageHeight ]
+...

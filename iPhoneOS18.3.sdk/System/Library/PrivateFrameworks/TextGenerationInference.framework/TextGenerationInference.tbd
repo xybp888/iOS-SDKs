@@ -1,0 +1,69 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/TextGenerationInference.framework/TextGenerationInference
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _TextGenerationInferenceVersionNumber,
+                            _TextGenerationInferenceVersionString,
+                            __ZN31TGITextGenerationInferenceModel11dumpBuffersERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE,
+                            __ZN31TGITextGenerationInferenceModel15setInputTokenIDEi,
+                            __ZN31TGITextGenerationInferenceModel23createWithConfigurationERK44TGITextGenerationInferenceModelConfiguration,
+                            __ZN31TGITextGenerationInferenceModel25setModelStepStateForIndexEmRK40TGITextGenerationInferenceModelStepState,
+                            __ZN31TGITextGenerationInferenceModel3runEi,
+                            __ZN31TGITextGenerationInferenceModel4initEv,
+                            __ZN31TGITextGenerationInferenceModel5allocEv,
+                            __ZN31TGITextGenerationInferenceModel5resetEmNSt3__18optionalImEE,
+                            __ZN31TGITextGenerationInferenceUtils12removePrefixERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEES8_,
+                            __ZN31TGITextGenerationInferenceUtils22executeBlockWithReasonERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEU13block_pointerFvvE,
+                            __ZN31TGITextGenerationInferenceUtils4trimERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE,
+                            __ZN35TGITextGenerationInferenceWordQueue12pushFragmentERK38TGITextGenerationInferenceWordFragment,
+                            __ZN35TGITextGenerationInferenceWordQueue5clearEv,
+                            __ZN35TGITextGenerationInferenceWordQueue8popWordsEv,
+                            __ZN40TGITextGenerationInferenceDecodingPolicy15stateWithLogitsEN4E5RT4SpanIDF16_Lm18446744073709551615EEE,
+                            __ZN40TGITextGenerationInferenceDecodingPolicy6createEv,
+                            __ZN43TGITextGenerationInferenceSessionStateCache25addCacheEntryForStepStateERK40TGITextGenerationInferenceModelStepStateRK45TGITextGenerationInferenceDecodingPolicyState,
+                            __ZN43TGITextGenerationInferenceSessionStateCache6createEm,
+                            __ZN43TGITextGenerationInferenceSessionStateCacheC1Em,
+                            __ZN43TGITextGenerationInferenceSessionStateCacheC2Em,
+                            __ZNK31TGITextGenerationInferenceModel14textForTokenIDEi,
+                            __ZNK31TGITextGenerationInferenceModel15textForTokenIDsERKN4E5RT4SpanIiLm18446744073709551615EEE,
+                            __ZNK31TGITextGenerationInferenceModel15tokenIDsForTextERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE,
+                            __ZNK43TGITextGenerationInferenceSessionStateCache21cacheEntryForTokenIDsERKN4E5RT4SpanIiLm18446744073709551615EEE,
+                            __ZNK43TGITextGenerationInferenceSessionStateCache34incrementUsageCountForSubSequencesERKN4E5RT4SpanIiLm18446744073709551615EEE,
+                            __ZTI31TGITextGenerationInferenceModel,
+                            __ZTS31TGITextGenerationInferenceModel,
+                            __ZTV31TGITextGenerationInferenceModel ]
+    objc-classes:         [ TGITextGenerationInference,
+                            TGITextGenerationInferenceDataSource,
+                            TGITextGenerationInferenceRunner,
+                            TGITextGenerationInferenceRunnerManager,
+                            TGITextGenerationInferenceSession ]
+    objc-ivars:           [ TGITextGenerationInference._inferenceRunnerManager,
+                            TGITextGenerationInference._workQueue,
+                            TGITextGenerationInferenceRunner._canceled,
+                            TGITextGenerationInferenceRunner._decodingPolicy,
+                            TGITextGenerationInferenceRunner._executionUUID,
+                            TGITextGenerationInferenceRunner._model,
+                            TGITextGenerationInferenceRunner._operation,
+                            TGITextGenerationInferenceRunner._session,
+                            TGITextGenerationInferenceRunner._shouldDoCacheLookUp,
+                            TGITextGenerationInferenceRunner._workQueue,
+                            TGITextGenerationInferenceRunnerManager._dataSource,
+                            TGITextGenerationInferenceRunnerManager._inferenceQueue,
+                            TGITextGenerationInferenceRunnerManager._inferenceRunnerByExecutionUUID,
+                            TGITextGenerationInferenceRunnerManager._model,
+                            TGITextGenerationInferenceRunnerManager._scheduledInferenceRunnerByExecutionUUID,
+                            TGITextGenerationInferenceRunnerManager._started,
+                            TGITextGenerationInferenceRunnerManager._workQueue,
+                            TGITextGenerationInferenceSession._configuration,
+                            TGITextGenerationInferenceSession._delegate,
+                            TGITextGenerationInferenceSession._inferenceRunnerManager,
+                            TGITextGenerationInferenceSession._stateCache,
+                            TGITextGenerationInferenceSession._uuid ]
+    weak-def-symbols:     [ __ZNSt3__119piecewise_constructE ]
+...

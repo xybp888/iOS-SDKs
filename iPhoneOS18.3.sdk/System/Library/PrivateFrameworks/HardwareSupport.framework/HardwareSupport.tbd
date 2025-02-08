@@ -1,0 +1,48 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HardwareSupport.framework/HardwareSupport
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HSDomain, _HSErrorDomain, _HSLogHandle,
+                            _HSRequestConcreteImplementation,
+                            _HardwareSupportVersionNumber,
+                            _HardwareSupportVersionString,
+                            ___HSDescribeFigDeviceStatus ]
+    objc-classes:         [ HSCMBaseObject, HSFigCaptureDevice, HSFigCaptureStream,
+                            HSFigCaptureSyncStreamsGroup, HSHIDDevice,
+                            HSHIDManager, HSIORChannelDescription, HSIORSample,
+                            HSIOReport, HSIOReportSnapshot, HSISPCapturePlugIn ]
+    objc-ivars:           [ HSCMBaseObject._underlyingObject,
+                            HSFigCaptureDevice._underlyingDevice,
+                            HSFigCaptureStream._device,
+                            HSFigCaptureStream._underlyingStream,
+                            HSFigCaptureSyncStreamsGroup._device,
+                            HSFigCaptureSyncStreamsGroup._underlyingSyncStreamsGroup,
+                            HSHIDDevice._active, HSHIDDevice._cancelled,
+                            HSHIDDevice._deviceRef,
+                            HSHIDDevice._deviceRemovedCallback,
+                            HSHIDDevice._inputReportCallback,
+                            HSHIDDevice._reportCallbackBuffer,
+                            HSHIDManager._active, HSHIDManager._cancelled,
+                            HSHIDManager._deviceEnumeratedCallback,
+                            HSHIDManager._deviceRemovedCallback,
+                            HSHIDManager._managerRef,
+                            HSIORChannelDescription._driverIdentifier,
+                            HSIORChannelDescription._driverName,
+                            HSIORChannelDescription._groupName,
+                            HSIORChannelDescription._identifier,
+                            HSIORChannelDescription._name,
+                            HSIORChannelDescription._reportingProtocol,
+                            HSIORChannelDescription._subGroupName,
+                            HSIORChannelDescription._summary,
+                            HSIORSample._channelDescription, HSIORSample._count,
+                            HSIOReport._channelDescriptions,
+                            HSIOReport._reportDictionary,
+                            HSIOReportSnapshot._samples,
+                            HSISPCapturePlugIn._createFunction ]
+...

@@ -1,0 +1,38 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SecureTransactionService.framework/SecureTransactionService
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NFCD_XPCHELPER_ERROR_DOMAIN,
+                            _STSXPCHelperErrorDescriptions,
+                            _STS_XCPHELPER_ERROR_BT_SUBDOMAIN,
+                            _STS_XCPHELPER_ERROR_DOMAIN,
+                            _STS_XCPHELPER_ERROR_WIFI_SUBDOMAIN,
+                            _kSTSErrorAlreadyInProgress,
+                            _kSTSTapToProvisionErrorDomain ]
+    objc-classes:         [ STS18013ReaderAnalyticsData, STS18013ReaderAuthInfo,
+                            STS18013RequestElement, STSAuxiliaryCredential,
+                            STSAuxiliaryTransaction, STSCredential,
+                            STSDCKAssertion, STSEngagementConfiguration,
+                            STSExpressEventInfo, STSExpressEventInfoWithDetail,
+                            STSExpressEventInfoWithIdentifiers, STSField,
+                            STSFieldNFC, STSInAppPaymentRequest,
+                            STSInAppPaymentResponse, STSListener,
+                            STSMerchantPaymentRequest,
+                            STSMerchantPaymentResponse, STSPaymentRequestBase,
+                            STSPaymentResponseBase, STSPeerPaymentRequest,
+                            STSPeerPaymentResponse,
+                            STSPeerPaymentTransferRequest, STSReader,
+                            STSReaderCryptarch, STSSession, STSSessionBase,
+                            STSSigningSession, STSTapToProvisionAppletData,
+                            STSTapToProvisionParameters, STSTapToProvisionReader,
+                            STSTapToProvisionResult, STSTestReader,
+                            STSTransaction18013Request, STSTransactionEndEvent,
+                            STSTransactionStartEvent, STSVASCredential,
+                            STSVASTransaction, STSVehicleReport ]
+...

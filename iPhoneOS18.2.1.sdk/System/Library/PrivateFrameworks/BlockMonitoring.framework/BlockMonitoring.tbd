@@ -1,0 +1,41 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BlockMonitoring.framework/BlockMonitoring
+current-version:       382
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BMEnrollIntoBlockMonitoring,
+                            _BMMonitorBlockExecutionWithSignature,
+                            _BMMonitorBlockExecutionWithSignatureAndOptions,
+                            _BlockMonitoringVersionNumber,
+                            _BlockMonitoringVersionString ]
+    objc-classes:         [ BMBlockMonitoring ]
+    objc-ivars:           [ BMBlockMonitoring._alreadyFaulted,
+                            BMBlockMonitoring._bootDebugFlags,
+                            BMBlockMonitoring._coreDumpsDisabled,
+                            BMBlockMonitoring._deviceState,
+                            BMBlockMonitoring._enabled,
+                            BMBlockMonitoring._executionDuration,
+                            BMBlockMonitoring._logger,
+                            BMBlockMonitoring._osVersion,
+                            BMBlockMonitoring._panicPacing,
+                            BMBlockMonitoring._panicWithData,
+                            BMBlockMonitoring._persistencePath,
+                            BMBlockMonitoring._presentAlert,
+                            BMBlockMonitoring._queue,
+                            BMBlockMonitoring._sandboxHandle,
+                            BMBlockMonitoring._test_alertShown,
+                            BMBlockMonitoring._test_allowPanic,
+                            BMBlockMonitoring._test_bootArgs,
+                            BMBlockMonitoring._test_debuggerState,
+                            BMBlockMonitoring._test_panicDeny,
+                            BMBlockMonitoring._test_panicReason,
+                            BMBlockMonitoring._test_panicSleep,
+                            BMBlockMonitoring._test_resultType,
+                            BMBlockMonitoring._test_wasFirstFault,
+                            BMBlockMonitoring._testing ]
+...

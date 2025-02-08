@@ -1,0 +1,16 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/VideoProcessors/DisparityV5.bundle/DisparityV5
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AdaptiveCorrection_computeVerticalBaselineTransform,
+                            _AdaptiveCorrection_fullCorrection,
+                            _AdaptiveCorrection_rotateCalModel,
+                            _AdaptiveCorrection_transformPointsWithMatrix ]
+    objc-classes:         [ FigDisparityGenerator, FigDisparityMetadata ]
+...

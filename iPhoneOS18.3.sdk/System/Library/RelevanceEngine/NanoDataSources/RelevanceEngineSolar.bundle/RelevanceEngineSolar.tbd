@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/RelevanceEngine/NanoDataSources/RelevanceEngineSolar.bundle/RelevanceEngineSolar
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSREAppBundleID, _NSREBundleID,
+                            _NSRELocalizationBundle, _NSRELocalizedImageNamed,
+                            _NSRELocalizedString, _NSRELocationKey,
+                            _NSRELocationKeyHash, _NSRELogger,
+                            _NSRESolarEventTypeSuffix ]
+    objc-classes:         [ NSREBundleClass, NSREBundleConfiguration,
+                            NSREContentFormatter, NSREDataSource,
+                            NSREDataSourceModel, NSRESampleDataSource,
+                            NSRESolarEvent ]
+...

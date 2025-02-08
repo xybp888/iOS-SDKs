@@ -1,0 +1,50 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CheckerBoardServices.framework/CheckerBoardServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CheckerBoardLogHandleForCategory,
+                            _CheckerBoardServicesVersionNumber,
+                            _CheckerBoardServicesVersionString, _kCellIdentifier,
+                            _kCheckerBoardIdentifier,
+                            _kCheckerBoardRebootEntitlement,
+                            _kCheckerBoardRebootReason,
+                            _kCheckerBoardRemoteAlertsEntitlement,
+                            _kCheckerBoardRemoteServerMachName,
+                            _kCheckerBoardServicesEntitlement,
+                            _kCheckerBoardSystemServicesEntitlement,
+                            _kOneTimeBootCommandCheckerBoard,
+                            _kOneTimeBootCommandNVRamVariable ]
+    objc-classes:         [ CBSClient, CBSDeviceInformationField,
+                            CBSGestaltEquipmentInfo, CBSNVRamUtil,
+                            CBSPaneViewController, CBSProxyServer,
+                            CBSTableViewController, CBSUIAlert, CBSUIAlertAction,
+                            CBSUtilities, FrameworkBundleHelper ]
+    objc-ivars:           [ CBSClient._connection,
+                            CBSDeviceInformationField._format,
+                            CBSDeviceInformationField._value,
+                            CBSGestaltEquipmentInfo._imeiArray,
+                            CBSGestaltEquipmentInfo._meid,
+                            CBSGestaltEquipmentInfo._serialNumber,
+                            CBSPaneViewController._primaryButton,
+                            CBSPaneViewController._secondaryButton,
+                            CBSProxyServer._port, CBSProxyServer._server,
+                            CBSProxyServer._token,
+                            CBSTableViewController._attributedDetailDescriptionText,
+                            CBSTableViewController._containerFooterView,
+                            CBSTableViewController._containerFooterViewFrame,
+                            CBSTableViewController._detailDescriptionText,
+                            CBSTableViewController._headerView,
+                            CBSTableViewController._tableView,
+                            CBSTableViewController._titleText,
+                            CBSUIAlert._actions, CBSUIAlert._identifier,
+                            CBSUIAlert._isActive, CBSUIAlert._message,
+                            CBSUIAlert._preferredStyle, CBSUIAlert._title,
+                            CBSUIAlertAction._handler, CBSUIAlertAction._style,
+                            CBSUIAlertAction._title ]
+...

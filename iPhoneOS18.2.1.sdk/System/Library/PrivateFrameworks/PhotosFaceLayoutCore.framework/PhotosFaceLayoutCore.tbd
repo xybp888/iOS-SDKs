@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PhotosFaceLayoutCore.framework/PhotosFaceLayoutCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PFLCCalculateLayout, _PFLCCurationScoreForAsset,
+                            _PhotosFaceLayoutCoreVersionNumber,
+                            _PhotosFaceLayoutCoreVersionString ]
+    objc-classes:         [ PFLCCoverageValidator, PFLCCurationPositionScore,
+                            PFLCCurationScore, PFLCLayout ]
+    objc-ivars:           [ PFLCCoverageValidator._cumulativeData,
+                            PFLCCoverageValidator._height,
+                            PFLCCoverageValidator._width,
+                            PFLCCurationPositionScore._classification,
+                            PFLCCurationPositionScore._cropRect,
+                            PFLCCurationPositionScore._cropScore,
+                            PFLCCurationPositionScore._timeLabelRect,
+                            PFLCCurationScore._positionScores,
+                            PFLCCurationScore._preferredPosition,
+                            PFLCLayout._cropScore,
+                            PFLCLayout._foregroundCoverage,
+                            PFLCLayout._layoutScore, PFLCLayout._usesMask,
+                            PFLCLayout._visibleRect ]
+...

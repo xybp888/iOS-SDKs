@@ -1,0 +1,34 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PreferenceBundles/ScheduleSettings.bundle/ScheduleSettings
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MailTableCellImageCenterForLevel,
+                            _MailTableCellTextLeftForLevel,
+                            _ScheduleSettingsAccountKey,
+                            _ScheduleSettingsAccountUniqueIdentifierKey,
+                            _ScheduleSettingsDataclassesKey ]
+    objc-classes:         [ PushedMailboxTableCell, ScheduleSettingsController,
+                            ScheduleSettingsStyleController ]
+    objc-ivars:           [ PushedMailboxTableCell._level,
+                            PushedMailboxTableCell._mailboxIcon,
+                            PushedMailboxTableCell._mailboxName,
+                            ScheduleSettingsController._accountStore,
+                            ScheduleSettingsController._checkedSpecifier,
+                            ScheduleSettingsController._fetchDividerRow,
+                            ScheduleSettingsController._isLowPowerMode,
+                            ScheduleSettingsController._radioGroup,
+                            ScheduleSettingsController._rowToSelect,
+                            ScheduleSettingsStyleController._account,
+                            ScheduleSettingsStyleController._ignoringNotifications,
+                            ScheduleSettingsStyleController._isExchangeAccount,
+                            ScheduleSettingsStyleController._mailAccountUniqueId,
+                            ScheduleSettingsStyleController._mailboxInfos,
+                            ScheduleSettingsStyleController._monitored,
+                            ScheduleSettingsStyleController._supportsUserPushedMailboxes ]
+...

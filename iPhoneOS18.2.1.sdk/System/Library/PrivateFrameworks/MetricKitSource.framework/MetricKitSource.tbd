@@ -1,0 +1,43 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MetricKitSource.framework/MetricKitSource
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MetricKitSourceVersionNumber,
+                            _MetricKitSourceVersionString ]
+    objc-classes:         [ MXHangTracerData, MXPowerlogData, MXReportCrashData,
+                            MXSampleAnalysisParser, MXSourceData, MXSourceManager,
+                            MXSourceUtilities, MXSourceXPCPayload,
+                            MXSpinTracerData ]
+    objc-ivars:           [ MXHangTracerData._appLaunchDiagnostic,
+                            MXHangTracerData._hangDiagnostic,
+                            MXPowerlogData._animationMetrics,
+                            MXPowerlogData._applicationExitMetrics,
+                            MXPowerlogData._applicationLaunchMetrics,
+                            MXPowerlogData._applicationResponsivenessMetrics,
+                            MXPowerlogData._applicationTimeMetrics,
+                            MXPowerlogData._beginDate,
+                            MXPowerlogData._cellularConditionMetrics,
+                            MXPowerlogData._cpuMetrics,
+                            MXPowerlogData._diskIOMetrics,
+                            MXPowerlogData._displayMetrics,
+                            MXPowerlogData._endDate, MXPowerlogData._gpuMetrics,
+                            MXPowerlogData._includesMultipleApplicationVersions,
+                            MXPowerlogData._locationActivityMetrics,
+                            MXPowerlogData._memoryMetrics,
+                            MXPowerlogData._networkTransferMetrics,
+                            MXPowerlogData._signpostMetrics,
+                            MXReportCrashData._crashDiagnostic,
+                            MXSourceManager._connection,
+                            MXSourceManager._sourceManagerLogHandle,
+                            MXSourceXPCPayload._datestamp,
+                            MXSourceXPCPayload._metrics,
+                            MXSourceXPCPayload._sourceID,
+                            MXSpinTracerData._cpuExceptionDiagnostic,
+                            MXSpinTracerData._diskWriteExceptionDiagnostic ]
+...

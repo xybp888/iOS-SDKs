@@ -1,0 +1,43 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64e-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level spi -enable-bare-slash-regex -user-module-version 312.4 -module-name DeviceDiscoveryExtension
+@_exported import DeviceDiscoveryExtension
+import ExtensionFoundation
+import Foundation
+@_spi(CTypeConversion) import Network
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+extension DeviceDiscoveryExtension.DDDevice {
+  public var networkEndpoint: Network.NWEndpoint? {
+    get
+    set
+  }
+  public var txtRecord: Network.NWTXTRecord? {
+    get
+    set
+  }
+}
+@available(iOS 16.0, *)
+public protocol DDDiscoveryExtensionConfigurationProtocol : ExtensionFoundation.AppExtensionConfiguration {
+}
+@available(iOS 16.0, *)
+public protocol DDDiscoveryExtension : ExtensionFoundation.AppExtension {
+  func startDiscovery(session: DeviceDiscoveryExtension.DDDiscoverySession)
+  func stopDiscovery(session: DeviceDiscoveryExtension.DDDiscoverySession)
+  @available(iOS 17.0, *)
+  func didReceiveEvent(_ event: DeviceDiscoveryExtension.DDDeviceEvent)
+}
+extension DeviceDiscoveryExtension.DDDiscoveryExtension {
+  public var configuration: some DeviceDiscoveryExtension.DDDiscoveryExtensionConfigurationProtocol {
+    get
+  }
+  public func didReceiveEvent(_ event: DeviceDiscoveryExtension.DDDeviceEvent)
+}
+@_Concurrency.MainActor @preconcurrency public class DDDiscoveryExtensionConfiguration<T> : DeviceDiscoveryExtension.DDDiscoveryExtensionConfigurationProtocol where T : DeviceDiscoveryExtension.DDDiscoveryExtension {
+  @_Concurrency.MainActor @preconcurrency public init(discoveryExtension: T)
+  nonisolated public func accept(connection inCnx: Foundation.NSXPCConnection) -> Swift.Bool
+  @objc deinit
+}

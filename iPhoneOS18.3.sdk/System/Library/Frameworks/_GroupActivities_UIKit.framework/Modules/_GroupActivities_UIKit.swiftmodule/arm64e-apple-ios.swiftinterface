@@ -1,0 +1,59 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64e-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 225.300.181 -module-name _GroupActivities_UIKit
+import Combine
+import CoreGraphics
+import Foundation
+@_exported import GroupActivities
+import QuartzCore
+import Swift
+import SwiftUI
+import UIKit
+import UniformTypeIdentifiers
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+@available(iOS 15.4, macCatalyst 15.4, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public enum GroupActivitySharingResult {
+  case success
+  case cancelled
+  public static func == (a: _GroupActivities_UIKit.GroupActivitySharingResult, b: _GroupActivities_UIKit.GroupActivitySharingResult) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @available(iOS 15.4, macCatalyst 15.4, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@_Concurrency.MainActor public class GroupActivitySharingController : UIKit.UIViewController {
+  @_Concurrency.MainActor @objc override dynamic public var modalPresentationStyle: UIKit.UIModalPresentationStyle {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor public var result: _GroupActivities_UIKit.GroupActivitySharingResult {
+    get async
+  }
+  @_Concurrency.MainActor public init<ActivityType>(_ activity: ActivityType) throws where ActivityType : GroupActivities.GroupActivity
+  @_Concurrency.MainActor public init<ActivityType>(preparationHandler: @escaping () async throws -> ActivityType) where ActivityType : GroupActivities.GroupActivity
+  @_Concurrency.MainActor @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @objc override dynamic public func viewDidLoad()
+  @objc deinit
+}
+prefix operator >>
+@available(iOS 15.4, macCatalyst 15.4, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension _GroupActivities_UIKit.GroupActivitySharingResult : Swift.Equatable {}
+@available(iOS 15.4, macCatalyst 15.4, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension _GroupActivities_UIKit.GroupActivitySharingResult : Swift.Hashable {}

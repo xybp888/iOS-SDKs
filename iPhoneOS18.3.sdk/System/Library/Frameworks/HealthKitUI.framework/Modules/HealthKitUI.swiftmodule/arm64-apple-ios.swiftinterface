@@ -1,0 +1,24 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-experimental-feature AccessLevelOnImport -enable-bare-slash-regex -user-module-version 5200.2.12.1.1 -module-name HealthKitUI
+import Foundation
+import HealthKit
+@_exported import HealthKitUI
+import Swift
+import SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 17.0, macOS 14.0, watchOS 10.2, *)
+@available(tvOS, unavailable)
+extension View {
+  @preconcurrency nonisolated public func healthDataAccessRequest(store: HKHealthStore, shareTypes: Set<HKSampleType>, readTypes: Set<HKObjectType>? = nil, trigger: some Equatable, completion: @Sendable @escaping (Result<Bool, Error>) -> Void) -> some View
+  
+  @preconcurrency nonisolated public func healthDataAccessRequest(store: HKHealthStore, readTypes: Set<HKObjectType>, trigger: some Equatable, completion: @Sendable @escaping (Result<Bool, Error>) -> Void) -> some View
+  
+  @available(iOS 17.0, macOS 14.0, *)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @preconcurrency nonisolated public func healthDataAccessRequest(store: HKHealthStore, objectType: HKObjectType, predicate: NSPredicate? = nil, trigger: some Equatable, completion: @Sendable @escaping (Result<Bool, Error>) -> Void) -> some View
+  
+}

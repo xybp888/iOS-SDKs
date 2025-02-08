@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/CoreAccessories/PlugIns/Features/HID.feature/HID
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ascii_to_hex, _createHexString, _getMemoryUse,
+                            _init_logging, _obfuscatedPointer, _printBytes,
+                            _removeNewline ]
+    objc-classes:         [ ACCFeaturePluginHID, ACCFeaturePluginHIDDescriptor,
+                            ACCFeaturePluginHIDProvider ]
+    objc-ivars:           [ ACCFeaturePluginHID._hidProvider,
+                            ACCFeaturePluginHID._isRunning,
+                            ACCFeaturePluginHIDDescriptor._deviceRef,
+                            ACCFeaturePluginHIDDescriptor._getReportBuffer,
+                            ACCFeaturePluginHIDDescriptor._getReportID,
+                            ACCFeaturePluginHIDDescriptor._getReportResult,
+                            ACCFeaturePluginHIDDescriptor._getReportSemaphore,
+                            ACCFeaturePluginHIDDescriptor._getReportType,
+                            ACCFeaturePluginHIDDescriptor._hidCallbackQueue,
+                            ACCFeaturePluginHIDDescriptor._hidDeviceUUIDStr,
+                            ACCFeaturePluginHIDDescriptor._hidEventSystemClientRef,
+                            ACCFeaturePluginHIDDescriptor._initialReportCache,
+                            ACCFeaturePluginHIDDescriptor._isReady,
+                            ACCFeaturePluginHIDDescriptor._isShuttingDown,
+                            ACCFeaturePluginHIDDescriptor._registerDeviceMatchingTimerSource,
+                            ACCFeaturePluginHIDDescriptor._sendComponentUpdate,
+                            ACCFeaturePluginHIDDescriptor._sendGetReport,
+                            ACCFeaturePluginHIDDescriptor._sendOutReport,
+                            ACCFeaturePluginHIDProvider._descriptorUUIDs,
+                            ACCFeaturePluginHIDProvider._hidClient,
+                            ACCFeaturePluginHIDProvider._hidProviderLock ]
+...

@@ -1,0 +1,31 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BagKit.framework/BagKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BAGIsValidConfigKeyType, _BAGIsValidLoadState,
+                            _BAGIsValidResourceType,
+                            _BAGResourceLoadStateToString,
+                            _BAGResourceTypeToString,
+                            _BAGResourceVendorErrorDomain ]
+    objc-classes:         [ BAGConfig, BAGFile, BAGLog, BAGResourceOptions,
+                            BAGResourceUpdateContext, BAGResourceVendor,
+                            BAGXPCInterface ]
+    objc-ivars:           [ BAGConfig._configuration, BAGConfig._defaultKeyType,
+                            BAGConfig._options, BAGFile._contentType,
+                            BAGFile._options, BAGFile._resource,
+                            BAGResourceOptions._additionalOptions,
+                            BAGResourceOptions._bundleID,
+                            BAGResourceOptions._name, BAGResourceOptions._type,
+                            BAGResourceUpdateContext._error,
+                            BAGResourceUpdateContext._loadState,
+                            BAGResourceVendor._daemonController,
+                            BAGResourceVendor._queue,
+                            BAGResourceVendor._updateBlocksByOptions,
+                            BAGResourceVendor._vendorID ]
+...

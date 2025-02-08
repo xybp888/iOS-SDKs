@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/FileProvider.framework/OverrideBundles/FileProviderOverride.bundle/FileProviderOverride
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FPCaptureLogsForOperation, ___fp_create_section,
+                            ___fp_leave_section, ___fp_leave_section_Debug,
+                            ___fp_leave_section_Error,
+                            ___fp_leave_section_Notice, ___fp_log_adopt,
+                            ___fp_log_fork, ___fp_pop_log, _fp_backtrace,
+                            _fp_backtrace_exception_snprint,
+                            _fp_current_or_default_log, _fp_default_log,
+                            _fp_simulate_crash, _fpfs_adopt_log,
+                            _fpfs_create_log_for_provider, _fpfs_current_log,
+                            _fpfs_current_or_default_log, _fssync_default_log ]
+...

@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ActivityAwardsClient.framework/ActivityAwardsClient
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AACMachServiceName, _AACTransportInterface,
+                            _AACXPCEndpointAwardsClient,
+                            _AACXPCEndpointAwardsDateQuery,
+                            _AACXPCEndpointAwardsQuery,
+                            _ActivityAwardsClientVersionNumber,
+                            _ActivityAwardsClientVersionString ]
+    objc-classes:         [ AACAwardsClient, AACXPCClient ]
+    objc-ivars:           [ AACAwardsClient._client, AACXPCClient._clientQueue,
+                            AACXPCClient._endpointConnection, AACXPCClient._lock,
+                            AACXPCClient._mainDaemonConnection,
+                            AACXPCClient._serverQueue ]
+...

@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CloudSharing.framework/CloudSharing
+current-version:       151
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CSLogCategoryForCategory, _CSLogCategoryGeneral,
+                            _CSLogForCategory, _CSLogSubsystem,
+                            _CloudSharingVersionNumber,
+                            _CloudSharingVersionString ]
+    objc-classes:         [ CSCloudSharing, CloudSharing,
+                            _TtC12CloudSharing15InitiateSharing ]
+...

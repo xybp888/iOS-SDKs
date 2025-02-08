@@ -1,0 +1,49 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AirPlayKit.framework/AirPlayKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _APKLoggingSubsystem,
+                            _APKOutputDeviceCommunicationChannelDataDestinationFitness,
+                            _APKOutputDeviceDiscoverySessionAvailableOutputDevicesDidChange,
+                            _APKOutputDeviceErrorDomain,
+                            _APKRemoteInspectorConnected,
+                            _APKRemoteInspectorDisconnected,
+                            _AVDataDestinationForAPKDataDestination,
+                            _AirPlayKitVersionNumber, _AirPlayKitVersionString ]
+    objc-classes:         [ APKCommunicationChannel, APKInspectorLogger,
+                            APKKeyValueObserver, APKOSVariant,
+                            APKOutputDeviceDiscoverySession, APKRemoteInspector,
+                            APKRemoteInspectorCSSAgent,
+                            APKRemoteInspectorDOMAgent,
+                            APKRemoteInspectorNetworkAgent,
+                            APKRemoteInspectorPageAgent,
+                            _TtC10AirPlayKit17AirPlayConnection,
+                            _TtC10AirPlayKit19RunLoopWorkerThread ]
+    objc-ivars:           [ APKCommunicationChannel._channel,
+                            APKCommunicationChannel._onClose,
+                            APKCommunicationChannel._onData,
+                            APKKeyValueObserver._changeHandler,
+                            APKKeyValueObserver._keyPath,
+                            APKKeyValueObserver._observeredObject,
+                            APKKeyValueObserver._options,
+                            APKOutputDeviceDiscoverySession._session,
+                            APKRemoteInspector._CSSAgent,
+                            APKRemoteInspector._DOMAgent,
+                            APKRemoteInspector._context,
+                            APKRemoteInspector._networkAgent,
+                            APKRemoteInspector._pageAgent,
+                            APKRemoteInspectorCSSAgent._delegate,
+                            APKRemoteInspectorCSSAgent._dispatcher,
+                            APKRemoteInspectorDOMAgent._delegate,
+                            APKRemoteInspectorDOMAgent._dispatcher,
+                            APKRemoteInspectorNetworkAgent._delegate,
+                            APKRemoteInspectorNetworkAgent._dispatcher,
+                            APKRemoteInspectorPageAgent._delegate,
+                            APKRemoteInspectorPageAgent._dispatcher ]
+...

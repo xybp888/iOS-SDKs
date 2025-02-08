@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/MusicUI.axbundle/MusicUI
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXAlbumHeaderViewPlayPauseButtonIdentifier,
+                            _accessibilityMusicLocalizedString,
+                            _accessibilityMusicUILocalizedString ]
+    objc-classes:         [ AXMusicUIGlue,
+                            MusicPlaylistEditingPickerOverlayAccessibility,
+                            SocialProfileButtonUIViewAccessibility,
+                            UICollectionViewAccessibility__MusicUI__UIKit,
+                            UITabBarButtonAccessibility__MusicUI__UIKit,
+                            __MusicPlaylistEditingPickerOverlayAccessibility_super,
+                            __SocialProfileButtonUIViewAccessibility_super,
+                            __UICollectionViewAccessibility__MusicUI__UIKit_super,
+                            __UITabBarButtonAccessibility__MusicUI__UIKit_super ]
+...

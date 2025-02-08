@@ -1,0 +1,16 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/TextInput/TextInput_el.bundle/TextInput_el
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __ZN2KB29InputManagerSpecialization_elC1EPK10__CFLocale,
+                            __ZN2KB29InputManagerSpecialization_elC2EPK10__CFLocale,
+                            __ZNK2KB29InputManagerSpecialization_el27do_apply_custom_conversionsERNS_19CandidateCollectionE,
+                            __ZTVN2KB29InputManagerSpecialization_elE ]
+    objc-classes:         [ TIKeyboardFeatureSpecialization_el ]
+...

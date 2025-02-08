@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FamilyControlsObjC.framework/FamilyControlsObjC
+current-version:       1204
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _FOFamilyControlsAgentPrivateServiceName ]
+    objc-classes:         [ FOAgentConnectionPrivate, FOAuthorizationCenter,
+                            FOAuthorizationRecord, FOLocations,
+                            FOXPCRemoteObjectProxy ]
+    objc-ivars:           [ FOAuthorizationCenter._connectionLock,
+                            FOAuthorizationCenter._currentConnection,
+                            FOAuthorizationRecord._bundleIdentifier,
+                            FOAuthorizationRecord._recordIdentifier,
+                            FOAuthorizationRecord._status,
+                            FOAuthorizationRecord._teamIdentifier,
+                            FOAuthorizationRecord._type ]
+...

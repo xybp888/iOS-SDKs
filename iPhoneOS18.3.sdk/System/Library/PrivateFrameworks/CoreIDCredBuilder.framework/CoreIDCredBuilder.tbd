@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreIDCredBuilder.framework/CoreIDCredBuilder
+current-version:       7.255
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CIDCBuilderErrorDomain,
+                            _CIDCSessionCryptarchErrorDomain ]
+    objc-classes:         [ CIDCBuilderSignatureDetails, CIDCElement,
+                            CIDCPayloadBuilder, CIDCPayloadBuilderDetails,
+                            CIDCSessionCryptarch,
+                            _TtC17CoreIDCredBuilder26CIDCInternalPayloadBuilder,
+                            _TtC17CoreIDCredBuilder28CIDCInternalSessionCryptarch ]
+    objc-ivars:           [ CIDCBuilderSignatureDetails._issuerCertificate,
+                            CIDCBuilderSignatureDetails._issuerKey,
+                            CIDCBuilderSignatureDetails._signature,
+                            CIDCBuilderSignatureDetails._signingAlgorithm,
+                            CIDCElement._arrayValue, CIDCElement._dataValue,
+                            CIDCElement._dateValue, CIDCElement._dictionaryValue,
+                            CIDCElement._elementIdentifier,
+                            CIDCElement._integerKeyedDictionaryValue,
+                            CIDCElement._numberValue, CIDCElement._stringValue,
+                            CIDCPayloadBuilder._payloadBuilder,
+                            CIDCPayloadBuilderDetails._deviceKey,
+                            CIDCPayloadBuilderDetails._docType,
+                            CIDCPayloadBuilderDetails._elements,
+                            CIDCPayloadBuilderDetails._format,
+                            CIDCPayloadBuilderDetails._signingAlgorithm,
+                            CIDCPayloadBuilderDetails._timePolicy,
+                            CIDCPayloadBuilderDetails._validFrom,
+                            CIDCPayloadBuilderDetails._validUntil,
+                            CIDCSessionCryptarch._internalCryptarch ]
+...

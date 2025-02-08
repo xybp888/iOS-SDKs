@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/FMFindingUI.axbundle/FMFindingUI
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityLocalizedString ]
+    objc-classes:         [ AXFMFindingUIGlue,
+                            FMFindingViewControllerAccessibility,
+                            FMR1DistanceViewAccessibility,
+                            FMR1GlyphButtonAccessibility,
+                            __FMFindingViewControllerAccessibility_super,
+                            __FMR1DistanceViewAccessibility_super,
+                            __FMR1GlyphButtonAccessibility_super ]
+...

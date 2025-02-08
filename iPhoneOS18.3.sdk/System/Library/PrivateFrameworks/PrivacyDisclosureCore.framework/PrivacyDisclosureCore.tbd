@@ -1,0 +1,54 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PrivacyDisclosureCore.framework/PrivacyDisclosureCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PDCApplicationIdentityToLSApplicationIdentity,
+                            _PDCCurrentRegulatoryDisclosureVersionForApplicationIdentity,
+                            _PDCCurrentRegulatoryDisclosureVersionForApplicationRecord,
+                            _PDCCurrentRegulatoryDisclosureVersionForInfoPlistContent,
+                            _PDCGlobalApplicationEnvironment,
+                            _PDCGlobalBackupManager,
+                            _PDCGlobalConsentStoreInstance,
+                            _PDCGlobalDeviceSettings,
+                            _PDCPerformOneTimeImplicitConsentGrant,
+                            _PDCSetOneTimeImplicitConsentGranted,
+                            _PDCSetOneTimeImplicitConsentState,
+                            _PDC_LOG_CHANNEL_PREFIXPrivacyDisclosureCore,
+                            _PrivacyDisclosureCoreVersionNumber,
+                            _PrivacyDisclosureCoreVersionString,
+                            _kPDCGlobalConsentStorePath,
+                            _kRemoteViewControllerName,
+                            _kViewServiceBundleIdentifier ]
+    objc-classes:         [ PDCApplicationEnvironmentMonitoringHandle,
+                            PDCApplicationEventListener,
+                            PDCFileBackedConsentStore,
+                            PDCLSBackedApplicationEnvironment,
+                            PDCPreflightManager, PDCPreflightRequestHandle,
+                            PDCPrivacyAlertPresenter ]
+    objc-ivars:           [ PDCApplicationEnvironmentMonitoringHandle._delegate,
+                            PDCApplicationEnvironmentMonitoringHandle._queue,
+                            PDCApplicationEnvironmentMonitoringHandle._workspace,
+                            PDCApplicationEventListener._activated,
+                            PDCApplicationEventListener._applicationEnvironment,
+                            PDCApplicationEventListener._cancelled,
+                            PDCApplicationEventListener._consentStore,
+                            PDCApplicationEventListener._environmentMonitoringHandle,
+                            PDCApplicationEventListener._queue,
+                            PDCFileBackedConsentStore._changeObserver,
+                            PDCFileBackedConsentStore._storeURL,
+                            PDCLSBackedApplicationEnvironment._workspace,
+                            PDCPreflightManager._consentStore,
+                            PDCPreflightManager._queue,
+                            PDCPreflightRequestHandle._completionHandler,
+                            PDCPreflightRequestHandle._isComplete,
+                            PDCPreflightRequestHandle._queue,
+                            PDCPrivacyAlertPresenter._alertHandle,
+                            PDCPrivacyAlertPresenter._queue,
+                            PDCPrivacyAlertPresenter._requestToAlertMap ]
+...

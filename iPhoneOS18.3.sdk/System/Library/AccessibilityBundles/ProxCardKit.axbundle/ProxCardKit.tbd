@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/ProxCardKit.axbundle/ProxCardKit
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityLocalizedString ]
+    objc-classes:         [ AXProxCardKitGlue, PRXCardContainerViewAccessibility,
+                            PRXCardContentViewAccessibility,
+                            PRXCardContentViewControllerAccessibility,
+                            PRXCardContentWrapperViewAccessibility,
+                            PRXTextViewAccessibility,
+                            __PRXCardContainerViewAccessibility_super,
+                            __PRXCardContentViewAccessibility_super,
+                            __PRXCardContentViewControllerAccessibility_super,
+                            __PRXCardContentWrapperViewAccessibility_super,
+                            __PRXTextViewAccessibility_super ]
+...

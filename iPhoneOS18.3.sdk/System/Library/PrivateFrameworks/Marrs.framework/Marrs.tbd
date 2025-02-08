@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Marrs.framework/Marrs
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ ContextualSpanMatcher,
+                            ContextualSpanMatcherSELFLogging, ConverterUtils,
+                            MDMRSELFLoggingUtils, MRRMultimodalMentionDetector,
+                            MRRMultimodalMentionResolver,
+                            MarrsSiriNLUTypesConverter, MarrsSiriNLUTypesUtils,
+                            NLXMetadataGenerator, PredictorUtils,
+                            QRSELFLoggingUtils, QueryRewriter, SampleClassObjC,
+                            _TtC5Marrs11SampleClass ]
+    objc-ivars:           [ MRRMultimodalMentionDetector._dispatchQueue,
+                            MRRMultimodalMentionDetector._locale,
+                            MRRMultimodalMentionDetector._mentionDetector,
+                            MRRMultimodalMentionResolver._dispatchQueue,
+                            MRRMultimodalMentionResolver._locale,
+                            MRRMultimodalMentionResolver._mrOrchestrator,
+                            QueryRewriter._locale, QueryRewriter._plugin,
+                            QueryRewriter._predictorName,
+                            QueryRewriter._predictorType ]
+...

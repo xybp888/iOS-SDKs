@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BackBoardHIDEventProcessors.framework/BackBoardHIDEventProcessors
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _BKLogAccelerometer, _BKLogBootUI, _BKLogButton,
+                            _BKLogDisplayAnnotations, _BKLogDisplayMonitor,
+                            _BKLogGenericGesture, _BKLogHID, _BKLogHapticFeedback,
+                            _BKLogIdleTimer, _BKLogKeyPresses, _BKLogMotionEvents,
+                            _BKLogRenderOverlay, _BKLogSendHIDEvent,
+                            _BackBoardHIDEventProcessorsVersionNumber,
+                            _BackBoardHIDEventProcessorsVersionString ]
+    objc-classes:         [ BKHIDBiometricEventProcessor,
+                            BKHIDGameControllerEventProcessor,
+                            BKHIDGenericGestureEventProcessor,
+                            BKHIDPointerEventProcessor, BKHIDPointerEventRecord,
+                            BKHIDScrollEventProcessor,
+                            BKHIDVendorDefinedEventProcessor ]
+    objc-ivars:           [ BKHIDGenericGestureEventProcessor._eventDispatcher,
+                            BKHIDGenericGestureEventProcessor._genericGestureTypePerSenderID,
+                            BKHIDGenericGestureEventProcessor._lock,
+                            BKHIDGenericGestureEventProcessor._pendingDestinationsPerSenderID,
+                            BKHIDPointerEventProcessor._eventRecords,
+                            BKHIDPointerEventRecord._destinationCaptureTime,
+                            BKHIDPointerEventRecord._destinations,
+                            BKHIDPointerEventRecord._didTrackButtonDown,
+                            BKHIDPointerEventRecord._didTrackPointerMovement,
+                            BKHIDPointerEventRecord._senderInfo,
+                            BKHIDPointerEventRecord._trackingButtonDown,
+                            BKHIDPointerEventRecord._trackingPointerMovement ]
+...

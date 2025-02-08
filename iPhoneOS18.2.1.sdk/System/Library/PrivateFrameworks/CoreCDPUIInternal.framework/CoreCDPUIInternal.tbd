@@ -1,0 +1,32 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreCDPUIInternal.framework/CoreCDPUIInternal
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CoreCDPUIInternalVersionNumber,
+                            _CoreCDPUIInternalVersionString ]
+    objc-classes:         [ CDPRecoveryTestController,
+                            DummyRemoteDeviceSecretValidator,
+                            DummyWalrusStateController,
+                            DummyWebAccessStateController, SettingsController ]
+    objc-ivars:           [ CDPRecoveryTestController._mockDevices,
+                            CDPRecoveryTestController._navController,
+                            CDPRecoveryTestController._recoveryController,
+                            DummyRemoteDeviceSecretValidator._edpRepairAction,
+                            DummyRemoteDeviceSecretValidator._expectedString,
+                            DummyRemoteDeviceSecretValidator._failedAttempts,
+                            DummyRemoteDeviceSecretValidator._stubbedEDPHealth,
+                            DummyWalrusStateController.walrusStatus,
+                            DummyWebAccessStateController.webAccessStatus,
+                            SettingsController._didUseSMS,
+                            SettingsController._recoveryController,
+                            SettingsController._recoveryTestController,
+                            SettingsController._uiController,
+                            SettingsController._walrusStateController,
+                            SettingsController._webAccessStatusController ]
+...

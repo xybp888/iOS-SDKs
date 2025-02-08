@@ -1,0 +1,278 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64e-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 47 -module-name ContactProvider
+import Combine
+@_exported import ContactProvider
+import Contacts
+import ExtensionFoundation
+import Foundation
+import OSLog
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.activity
+import os.log
+import os
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public protocol ContactProviderExtension : ContactProvider.ContactItemEnumerating, ExtensionFoundation.AppExtension {
+  func configure(for domain: any ContactProvider.ContactProviderDomain)
+  func invalidate() async throws
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension ContactProvider.ContactProviderExtension {
+  public var configuration: some ExtensionFoundation.AppExtensionConfiguration {
+    get
+  }
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public protocol ContactItemEnumerating {
+  func enumerator(for collection: ContactProvider.ContactItem.Identifier) -> any ContactProvider.ContactItemEnumerator
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public protocol ContactItemEnumerator {
+  func enumerateContent(in page: ContactProvider.ContactItemPage, for observer: any ContactProvider.ContactItemContentObserver) async
+  func enumerateChanges(startingAt syncAnchor: ContactProvider.ContactItemSyncAnchor, for observer: any ContactProvider.ContactItemChangeObserver) async
+  func invalidate() async
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public protocol ContactItemContentObserver {
+  func didEnumerate(_: [ContactProvider.ContactItem])
+  func didFinishEnumeratingPage(upTo nextPage: ContactProvider.ContactItemPage)
+  func didFinishEnumeratingContent(upTo generationMarker: Foundation.Data)
+  func didFinishEnumeratingContentWithError(_: any Swift.Error)
+  var suggestedPageSize: Swift.Int { get }
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public protocol ContactItemChangeObserver {
+  func didUpdate(_ items: [ContactProvider.ContactItem])
+  func didDelete(_ identifiers: [ContactProvider.ContactItem.Identifier])
+  func didFinishEnumeratingChanges(upTo syncAnchor: ContactProvider.ContactItemSyncAnchor, moreComing: Swift.Bool)
+  func didFinishEnumeratingChangesWithError(_: any Swift.Error)
+  var suggestedBatchSize: Swift.Int { get }
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public class ContactProviderManager {
+  public init(domainIdentifier: Swift.String = DefaultContactProviderDomain.identifier) throws
+  public var domain: any ContactProvider.ContactProviderDomain {
+    get
+  }
+  public var isEnabled: Swift.Bool {
+    get
+  }
+  public func enable() async throws
+  public func disable() async throws
+  public func signalEnumerator(for collection: ContactProvider.ContactItem.Identifier = .rootContainer) async throws
+  public func invalidate() async throws
+  public func reset() async throws
+  @objc deinit
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct ContactItemPage : Swift.Equatable, Swift.Codable {
+  public init(generationMarker: Foundation.Data, offset: Swift.Int)
+  public var generationMarker: Foundation.Data
+  public var offset: Swift.Int
+  public static func == (a: ContactProvider.ContactItemPage, b: ContactProvider.ContactItemPage) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension ContactProvider.ContactItemPage {
+  public static let initialPage: ContactProvider.ContactItemPage
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public enum ContactItem : Swift.Hashable {
+  case contact(Contacts.CNMutableContact, ContactProvider.ContactItem.Identifier)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: ContactProvider.ContactItem, b: ContactProvider.ContactItem) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension ContactProvider.ContactItem {
+  @available(iOS 18, *)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(visionOS, unavailable)
+  public struct Identifier : Swift.Equatable, Swift.Hashable {
+    public let value: Swift.String
+    public init(_ value: Swift.String)
+    public static func == (a: ContactProvider.ContactItem.Identifier, b: ContactProvider.ContactItem.Identifier) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension ContactProvider.ContactItem.Identifier {
+  public static let rootContainer: ContactProvider.ContactItem.Identifier
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct ContactItemSyncAnchor : Swift.Equatable, Swift.Codable {
+  public init(generationMarker: Foundation.Data, offset: Swift.Int)
+  public var generationMarker: Foundation.Data
+  public var offset: Swift.Int
+  public static func == (a: ContactProvider.ContactItemSyncAnchor, b: ContactProvider.ContactItemSyncAnchor) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public enum ContactProviderError : Swift.Error {
+  case extensionNotFound
+  case itemsLimitReached
+  case cannotEnumerate
+  case pageExpired
+  case changeAnchorExpired
+  case featureNotAvailable
+  case deniedByUser
+  case enumerationTimeout
+  case extensionInvalidated
+  case extensionInvalidateTimeout
+  case domainNotRegistered
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension ContactProvider.ContactProviderError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public var failureReason: Swift.String? {
+    get
+  }
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension ContactProvider.ContactProviderError : Foundation.CustomNSError {
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public protocol ContactProviderDomain {
+  var identifier: Swift.String { get }
+  var displayName: Swift.String { get }
+  var userInfo: Swift.Dictionary<Swift.String, Any> { get }
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct DefaultContactProviderDomain : ContactProvider.ContactProviderDomain {
+  public init()
+  public static let identifier: Swift.String
+  public var identifier: Swift.String {
+    get
+  }
+  public let displayName: Swift.String
+  public let userInfo: Swift.Dictionary<Swift.String, Any>
+}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension ContactProvider.ContactProviderError : Swift.Equatable {}
+@available(iOS 18, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension ContactProvider.ContactProviderError : Swift.Hashable {}

@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CardServices.framework/CardServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CardServicesVersionNumber,
+                            _CardServicesVersionString ]
+    objc-classes:         [ CRSCardRequest, CRSCardResponse,
+                            CRSIdentifiedServiceRegistry, CRSRequest, CRSResponse,
+                            _CRSCardServiceBundle, _CRSCardServiceBundleManager,
+                            _CRSPassthroughService, _CRSServiceBundle,
+                            _CRSServiceBundleManager ]
+    objc-ivars:           [ CRSCardRequest._content,
+                            CRSCardRequest._excludedServiceIdentifiers,
+                            CRSCardRequest._format,
+                            CRSCardRequest._loadsBundleServices,
+                            CRSCardRequest._queue, CRSCardResponse._card,
+                            CRSCardResponse._request,
+                            CRSIdentifiedServiceRegistry._identifiedServices,
+                            _CRSCardServiceBundle._cardService,
+                            _CRSServiceBundle._service ]
+...

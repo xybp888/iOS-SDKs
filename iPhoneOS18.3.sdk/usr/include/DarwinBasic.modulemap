@@ -1,0 +1,315 @@
+module alloca [system] {
+  header "alloca.h"
+  export *
+}
+
+module gethostuuid [system] {
+  header "gethostuuid.h"
+  export *
+}
+
+module nl_types [system] {
+  header "nl_types.h"
+  export *
+
+  module _nl_item {
+    header "_types/_nl_item.h"
+    export *
+  }
+}
+
+module pthread [system] {
+  header "pthread/pthread.h"
+  export *
+
+  module pthread_impl {
+    header "pthread/pthread_impl.h"
+    export *
+  }
+
+  module qos {
+    header "pthread/qos.h"
+    export *
+  }
+
+  module sched {
+    header "pthread/sched.h"
+    export *
+  }
+}
+
+module runetype [system] {
+  header "runetype.h"
+  export *
+
+  module ct_rune_t {
+    header "sys/_types/_ct_rune_t.h"
+    export *
+  }
+
+  module rune_t {
+    header "sys/_types/_rune_t.h"
+    export *
+  }
+}
+
+module _strings [system] {
+  header "_strings.h"
+  textual header "secure/_strings.h"
+  export *
+}
+
+
+module sys_resource [system] {
+  header "sys/resource.h"
+  export *
+}
+
+module sys_select [system] {
+  header "sys/select.h"
+  export *
+
+  module _select {
+    header "sys/_select.h"
+    export *
+  }
+}
+
+module sys_types [system] {
+  header "sys/types.h"
+  export *
+
+  module blkcnt_t {
+    header "sys/_types/_blkcnt_t.h"
+    export *
+  }
+
+  module blksize_t {
+    header "sys/_types/_blksize_t.h"
+    export *
+  }
+
+  module caddr_t {
+    header "sys/_types/_caddr_t.h"
+    export *
+  }
+
+  module clock_t {
+    header "sys/_types/_clock_t.h"
+    export *
+  }
+
+  module dev_t {
+    header "sys/_types/_dev_t.h"
+    export *
+  }
+
+  module fsblkcnt_t {
+    header "sys/_types/_fsblkcnt_t.h"
+    export *
+  }
+
+  module fsfilcnt_t {
+    header "sys/_types/_fsfilcnt_t.h"
+    export *
+  }
+
+  module gid_t {
+    header "sys/_types/_gid_t.h"
+    export *
+  }
+
+  module id_t {
+    header "sys/_types/_id_t.h"
+    export *
+  }
+
+  module ino_t {
+    header "sys/_types/_ino_t.h"
+    export *
+  }
+
+  module ino64_t {
+    header "sys/_types/_ino64_t.h"
+    export *
+  }
+
+  module key_t {
+    header "sys/_types/_key_t.h"
+    export *
+  }
+
+  module mode_t {
+    header "sys/_types/_mode_t.h"
+    export *
+  }
+
+  module nlink_t {
+    header "sys/_types/_nlink_t.h"
+    export *
+  }
+
+  module off_t {
+    header "sys/_types/_off_t.h"
+    export *
+  }
+
+  module pid_t {
+    header "sys/_types/_pid_t.h"
+    export *
+  }
+
+  module pthread_attr_t {
+    header "sys/_pthread/_pthread_attr_t.h"
+    export *
+  }
+
+  module pthread_cond_t {
+    header "sys/_pthread/_pthread_cond_t.h"
+    export *
+  }
+
+  module pthread_condattr_t {
+    header "sys/_pthread/_pthread_condattr_t.h"
+    export *
+  }
+
+  module pthread_key_t {
+    header "sys/_pthread/_pthread_key_t.h"
+    export *
+  }
+
+  module pthread_mutex_t {
+    header "sys/_pthread/_pthread_mutex_t.h"
+    export *
+  }
+
+  module pthread_mutexattr_t {
+    header "sys/_pthread/_pthread_mutexattr_t.h"
+    export *
+  }
+
+  module pthread_once_t {
+    header "sys/_pthread/_pthread_once_t.h"
+    export *
+  }
+
+  module pthread_rwlock_t {
+    header "sys/_pthread/_pthread_rwlock_t.h"
+    export *
+  }
+
+  module pthread_rwlockattr_t {
+    header "sys/_pthread/_pthread_rwlockattr_t.h"
+    export *
+  }
+
+  module pthread_t {
+    header "sys/_pthread/_pthread_t.h"
+    export *
+  }
+
+  module ssize_t {
+    header "sys/_types/_ssize_t.h"
+    export *
+  }
+
+  module suseconds_t {
+    header "sys/_types/_suseconds_t.h"
+    export *
+  }
+
+  module time_t {
+    header "sys/_types/_time_t.h"
+    export *
+  }
+
+  module uid_t {
+    header "sys/_types/_uid_t.h"
+    export *
+  }
+}
+
+module sys_wait [system] {
+  header "sys/wait.h"
+  export *
+}
+
+module unistd [system] {
+  header "unistd.h"
+  export *
+
+  module sys_unistd {
+    header "sys/unistd.h"
+    export *
+  }
+
+  module _posix_vdisable {
+    header "sys/_types/_posix_vdisable.h"
+    export *
+  }
+}
+
+// unwind.h is declared in headers in clang and in this directory.
+// This module pulls in the correct pieces.
+module unwind_h [system] {
+  header "_modules/_unwind_h.h"
+  export *
+}
+
+module xlocale [system] {
+  textual header "xlocale.h"
+  header "_xlocale.h"
+  export *
+}
+
+
+// Cross import modules to support xlocale. These are imported automatically
+// in Swift when the crossed modules are imported. e.g. when both ctype_h and
+// xlocale are imported in Swift, _xlocale_ctype_h will automatically be imported.
+// clang doesn't currently support cross imports; these modules can be imported
+// directly instead.
+module _Darwin_xlocale [system] {
+  header "_modules/_Darwin_xlocale.h"
+  export *
+}
+
+module _xlocale_ctype_h [system] {
+  header "_modules/_xlocale_ctype_h.h"
+  export *
+}
+
+module _xlocale_inttypes_h [system] {
+  header "_modules/_xlocale_inttypes_h.h"
+  export *
+}
+
+module _xlocale_stdio_h [system] {
+  header "_modules/_xlocale_stdio_h.h"
+  export *
+}
+
+module _xlocale_stdlib_h [system] {
+  header "_modules/_xlocale_stdlib_h.h"
+  export *
+}
+
+module _xlocale_string_h [system] {
+  header "_modules/_xlocale_string_h.h"
+  export *
+}
+
+module _xlocale_time_h [system] {
+  header "_modules/_xlocale_time_h.h"
+  export *
+}
+
+module _xlocale_wchar_h [system] {
+  header "_modules/_xlocale_wchar_h.h"
+  export *
+}
+
+module _xlocale_wctype_h [system] {
+  header "_modules/_xlocale_wctype_h.h"
+  export *
+}

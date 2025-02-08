@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/Compass.axbundle/Compass
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Failover, _accessibilityLocalizedString,
+                            _axCompassController, _axCompassPageViewController,
+                            _axLevelPageViewController ]
+    objc-classes:         [ AXCompassGlue,
+                            CompassPageViewControllerAccessibility,
+                            UIPageControlCompassAccessibility,
+                            UIViewCompassAccessibility,
+                            __CompassPageViewControllerAccessibility,
+                            __CompassPageViewControllerAccessibility_super,
+                            __UIPageControlCompassAccessibility_super,
+                            __UIViewCompassAccessibility_super ]
+    objc-ivars:           [ __CompassPageViewControllerAccessibility.__CGPoint__ ]
+...

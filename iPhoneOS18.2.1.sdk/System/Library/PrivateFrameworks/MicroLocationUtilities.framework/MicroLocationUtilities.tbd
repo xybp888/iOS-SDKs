@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MicroLocationUtilities.framework/MicroLocationUtilities
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ ULDarwinNotificationHelper,
+                            ULDarwinNotificationRecord, ULFuture,
+                            ULImmediateScheduler, ULPlatform, ULPromise,
+                            ULQueueScheduler, ULScheduler, ULTapToRadar,
+                            ULUserNotification, ULWeakProxy ]
+    objc-ivars:           [ ULDarwinNotificationHelper._queue,
+                            ULDarwinNotificationHelper._registrations,
+                            ULDarwinNotificationRecord._handler,
+                            ULDarwinNotificationRecord._notificationName,
+                            ULDarwinNotificationRecord._registrationToken,
+                            ULFuture._completionBlocks, ULFuture._error,
+                            ULFuture._result, ULFuture._stateLock,
+                            ULPromise._future, ULQueueScheduler._queue,
+                            ULWeakProxy._class, ULWeakProxy._object ]
+...

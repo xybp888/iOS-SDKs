@@ -1,0 +1,65 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/SafetyKit.framework/SafetyKit
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SAClientInterface, _SACrashDetectionEntitlement,
+                            _SACrashDetectionEventTimeoutDefault,
+                            _SAEmergencyResponseVoiceCallTimeoutDefault,
+                            _SAErrorDomain, _SALoggingSubsystem,
+                            _SAMachServiceName, _SAServerInterface,
+                            _sa_default_log ]
+    objc-classes:         [ SAAuthorization, SAAuthorizationInFlight,
+                            SABundleManager, SABundleManagerApp, SAClient,
+                            SACrashDetectionEvent, SACrashDetectionManager,
+                            SACriticalNotification, SAEmergencyResponseManager,
+                            SAEntitlement, SAError, SAGestalt, SALocationManager,
+                            SAPhoneApplicationLauncher, SAServer,
+                            SATelephonyManager, SAWatchApplicationLauncher ]
+    objc-ivars:           [ SAAuthorizationInFlight._completionHandler,
+                            SAAuthorizationInFlight._fromApp,
+                            SAAuthorizationInFlight._fromBundleId,
+                            SAAuthorizationInFlight._inFlight,
+                            SAAuthorizationInFlight._preflightAuthorizationStatus,
+                            SAAuthorizationInFlight._toBundleId,
+                            SAAuthorizationInFlight.toBundleLocalizedName,
+                            SABundleManager._applicationLauncher,
+                            SABundleManager._options, SABundleManager._server,
+                            SABundleManager._service,
+                            SABundleManagerApp._authorizationDate,
+                            SABundleManagerApp._bundleId,
+                            SABundleManagerApp._deviceType,
+                            SABundleManagerApp._name,
+                            SABundleManagerApp._pairedBundleId,
+                            SAClient._authenticationRequestHandler,
+                            SAClient._connection,
+                            SAClient._crashDetectionClientDelegate,
+                            SAClient._emergencyResponseClientDelegate,
+                            SAClient._messageQueue, SACrashDetectionEvent._date,
+                            SACrashDetectionEvent._isNotified,
+                            SACrashDetectionEvent._location,
+                            SACrashDetectionEvent._response,
+                            SACrashDetectionEvent._timeOfResolution,
+                            SACrashDetectionManager._delegate,
+                            SACriticalNotification._bundleManager,
+                            SACriticalNotification._center,
+                            SAEmergencyResponseManager._delegate,
+                            SALocationManager._delegate,
+                            SALocationManager._locationManager,
+                            SAPhoneApplicationLauncher._assertionMap,
+                            SAServer._bundleManager, SAServer._clientConnections,
+                            SAServer._criticalNotification, SAServer._listener,
+                            SAServer._locationAcquired,
+                            SAServer._locationManager, SAServer._messageQueue,
+                            SAServer._mostRecentLocation,
+                            SAServer._telephonyManager, SATelephonyManager._call,
+                            SATelephonyManager._callFailed,
+                            SATelephonyManager._callInProgress,
+                            SATelephonyManager._callQueue,
+                            SATelephonyManager._delegate ]
+...

@@ -1,0 +1,55 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64e-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 52.12 -module-name _SecureElementCredential_SwiftUI
+import Foundation
+@_exported import SecureElementCredential
+import Swift
+import SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SwiftUICore.View {
+  nonisolated public func transactionTask(_ configuration: _SecureElementCredential_SwiftUI.CredentialTransaction.Configuration?, action: @escaping (_ transaction: _SecureElementCredential_SwiftUI.CredentialTransaction) async -> Swift.Void) -> some SwiftUICore.View
+  
+}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential.CredentialSession {
+  nonisolated public func configuration() async throws -> _SecureElementCredential_SwiftUI.CredentialTransaction.Configuration
+}
+@_hasMissingDesignatedInitializers @available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public class CredentialTransaction {
+  @_hasMissingDesignatedInitializers public class Configuration : Swift.Equatable {
+    public func invalidate() async throws
+    public static func == (lhs: _SecureElementCredential_SwiftUI.CredentialTransaction.Configuration, rhs: _SecureElementCredential_SwiftUI.CredentialTransaction.Configuration) -> Swift.Bool
+    @objc deinit
+  }
+  public func performTransaction(using credential: _SecureElementCredential_SwiftUI.Credential, options: _SecureElementCredential_SwiftUI.CardEmulationOptions = .init()) async throws
+  public func performTransactionInWiredMode(using credential: _SecureElementCredential_SwiftUI.Credential, instanceAID: Foundation.Data) async throws
+  public func performCardEmulationTransactionWithCurrentCredential(options: _SecureElementCredential_SwiftUI.CardEmulationOptions = .init()) async throws
+  @objc deinit
+}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public typealias Credential = SecureElementCredential.CredentialSession.Credential
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public typealias CardEmulationOptions = SecureElementCredential.CredentialSession.CardEmulationOptions

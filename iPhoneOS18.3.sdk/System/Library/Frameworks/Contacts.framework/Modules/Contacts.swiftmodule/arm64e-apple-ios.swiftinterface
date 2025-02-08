@@ -1,0 +1,31 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64e-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 3770.300.1.2.3 -module-name Contacts
+@_exported import Contacts
+import CoreData
+import ExtensionFoundation
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 10.11, iOS 9.0, *)
+extension Contacts.CNError {
+  public var affectedRecords: [Swift.AnyObject]? {
+    get
+  }
+  public var affectedRecordIdentifiers: [Swift.String]? {
+    get
+  }
+  public var keyPaths: [Swift.String]? {
+    get
+  }
+}
+@available(macOS 14, iOS 17, *)
+extension Contacts.CNContact : Swift.Identifiable {
+  @objc dynamic open var id: Foundation.UUID {
+    @objc get
+  }
+  @available(iOS 17, macOS 14, *)
+  public typealias ID = Foundation.UUID
+}

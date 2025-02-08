@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/GeneralSettingsUI.axbundle/GeneralSettingsUI
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityLocalizedString,
+                            _accessibilityNonLocalizedStringForKey ]
+    objc-classes:         [ AXGeneralSettingsUIGlue,
+                            PSGCarrierRejectCodePaneAccessibility,
+                            PSGCircleSegmentedControlAccessibility,
+                            PSGPreBuddyCellAccessibility,
+                            __PSGCarrierRejectCodePaneAccessibility_super,
+                            __PSGCircleSegmentedControlAccessibility_super,
+                            __PSGPreBuddyCellAccessibility_super ]
+...

@@ -1,0 +1,40 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/libEDR.framework/libEDR
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _EDRCreateClientForDisplay,
+                            _EDRCreateClientForDisplayWithTimeoutAndCallback,
+                            _EDRCreateClientWithTimeoutAndCallback, _EDREnable,
+                            _EDRGetAmbientIlluminance, _EDRGetBrightnessScaler,
+                            _EDRGetDefaultMinScalingFactor,
+                            _EDRGetDisplayBacklightBrightness,
+                            _EDRGetDisplayBrightness, _EDRGetDisplayHeadroom,
+                            _EDRGetDisplayMaxLuminance,
+                            _EDRGetDisplayScalingFactor,
+                            _EDRHasAccessibilityLimit, _EDRIsEnabled,
+                            _EDRRegisterCallbackBlock,
+                            _EDRRegisterCallbackBlockOnQueue, _EDRReleaseClient,
+                            _EDRRequestAccessibilityLimit,
+                            _EDRRequestBrightnessAnimationTimeStepFactor,
+                            _EDRRequestDisplayHeadroomLimit,
+                            _EDRRequestRampingSpeedFactor,
+                            _EDRRequestTransitionAnimationTimeStepFactor,
+                            _EDRServerAddDisplay, _EDRServerAddMainDisplay,
+                            _EDRServerEnableForDisplay,
+                            _EDRServerGetCurrentDisplayPropertiesForDisplay,
+                            _EDRServerGetDisplayBrightnessForDisplay,
+                            _EDRServerIsEnabledForDisplay,
+                            _EDRServerRegisterCallbackBlock,
+                            _EDRServerRegisterCallbackBlockOnQueue,
+                            _EDRServerRemoveDisplay,
+                            _EDRServerSetDisplayBrightnessForDisplay,
+                            _EDRServerStartService, _EDRServerStopService,
+                            _EDRServerUnregisterCallbackBlock,
+                            _EDRUnregisterCallbackBlock ]
+...

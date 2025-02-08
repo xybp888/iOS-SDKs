@@ -1,0 +1,13 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/swift/libswiftCoreML.dylib
+current-version:       3402.5.1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/Frameworks/CoreML.framework/CoreML ]
+    symbols:              [ __swift_FORCE_LOAD_$_swiftCoreML ]
+...

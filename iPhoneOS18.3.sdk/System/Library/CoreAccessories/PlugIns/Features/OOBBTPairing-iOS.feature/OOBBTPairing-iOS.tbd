@@ -1,0 +1,40 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          "/System/Library/CoreAccessories/PlugIns/Features/OOBBTPairing-iOS.feature/OOBBTPairing-iOS"
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ascii_to_hex, _createHexString, _getMemoryUse,
+                            _init_logging, _kBTQueueName, _kBTSessionName,
+                            _kProcessingQueueName, _kXPCIAPAppBeginOOBPairingStr,
+                            _obfuscatedPointer, _printBytes, _removeNewline ]
+    objc-classes:         [ ACCOOBBTPairingAccessory,
+                            ACCOOBBTPairingFeaturePlugin, ACCOOBBTPairingShim ]
+    objc-ivars:           [ ACCOOBBTPairingAccessory._BTAccessoryManager,
+                            ACCOOBBTPairingAccessory._BTSession,
+                            ACCOOBBTPairingAccessory._BTSessionQueue,
+                            ACCOOBBTPairingAccessory._carPlaySupported,
+                            ACCOOBBTPairingAccessory._certData,
+                            ACCOOBBTPairingAccessory._certSerial,
+                            ACCOOBBTPairingAccessory._currentOOBBTPairingUID,
+                            ACCOOBBTPairingAccessory._currentRemoteBTDevice,
+                            ACCOOBBTPairingAccessory._currentRemoteMACAddress,
+                            ACCOOBBTPairingAccessory._displayName,
+                            ACCOOBBTPairingAccessory._iap2ShimAccessory,
+                            ACCOOBBTPairingAccessory._isBTReady,
+                            ACCOOBBTPairingAccessory._oobPairing2Supported,
+                            ACCOOBBTPairingAccessory._processingQueue,
+                            ACCOOBBTPairingAccessory._setup_complete_semaphore,
+                            ACCOOBBTPairingFeaturePlugin._iap2server,
+                            ACCOOBBTPairingFeaturePlugin._isRunning,
+                            ACCOOBBTPairingFeaturePlugin._oobBtPairingAccessoryList,
+                            ACCOOBBTPairingFeaturePlugin._oobBtPairingProvider,
+                            ACCOOBBTPairingFeaturePlugin._oobBtPairingQueue,
+                            ACCOOBBTPairingFeaturePlugin._oobBtPairingShim,
+                            ACCOOBBTPairingShim._delegate,
+                            ACCOOBBTPairingShim._uid ]
+...

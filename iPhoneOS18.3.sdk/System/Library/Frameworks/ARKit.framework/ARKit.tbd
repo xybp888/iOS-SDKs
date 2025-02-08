@@ -1,0 +1,30 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/ARKit.framework/ARKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/PrivateFrameworks/ARKitCore.framework/ARKitCore,
+                            /System/Library/PrivateFrameworks/ARKitFoundation.framework/ARKitFoundation,
+                            /System/Library/PrivateFrameworks/ARKitUI.framework/ARKitUI ]
+    symbols:              [ _ARFileDescriptorIsTTY, _ARKitBuildVersionString,
+                            _ARKitVersionNumber, _ARKitVersionString,
+                            _ARPrintColorBlue, _ARPrintColorBold,
+                            _ARPrintColorBoldRed, _ARPrintColorBoldUnderlineBlue,
+                            _ARPrintColorGreen, _ARPrintColorNormal,
+                            _ARPrintColorPurple, _ARPrintColorRed,
+                            _ARPrintColorYellow,
+                            _ARPrintEscapeDisableAlternativeBuffer,
+                            _ARPrintEscapeEnableAlternativeBuffer,
+                            _ARPrintEscapeEraseScreen,
+                            _ARPrintEscapeMoveToLocation, _ARPrintToiTerm,
+                            _ARPrintUsageStrings, __printColoredMessage,
+                            __printError, __printFormat, __printInfo, __printMessage,
+                            __printMessageWithColor, __printWarning,
+                            _printColoredMessage, _printError, _printInfo,
+                            _printMessage, _printVector3, _printWarning ]
+...

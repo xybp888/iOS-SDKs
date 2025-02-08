@@ -1,0 +1,34 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64e-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -library-level api -enable-bare-slash-regex -user-module-version 722.0.180 -module-name Photos
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import CoreData
+import Foundation
+@_exported import Photos
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+@available(iOS 8.0, tvOS 10.0, watchOS 8.0, macOS 10.13, *)
+extension Photos.PHChange {
+  public func changeDetails<T>(for object: T) -> Photos.PHObjectChangeDetails<T>? where T : Photos.PHObject
+  public func changeDetails<T>(for fetchResult: Photos.PHFetchResult<T>) -> Photos.PHFetchResultChangeDetails<T>? where T : Photos.PHObject
+}
+@available(iOS 15, tvOS 15, macOS 12, *)
+extension Photos.PHPhotoLibrary {
+  public func cloudIdentifierMappings(forLocalIdentifiers localIdentifiers: [Swift.String]) -> [Swift.String : Swift.Result<Photos.PHCloudIdentifier, any Swift.Error>]
+  public func localIdentifierMappings(for cloudIdentifiers: [Photos.PHCloudIdentifier]) -> [Photos.PHCloudIdentifier : Swift.Result<Swift.String, any Swift.Error>]
+}
+@available(iOS 16, macOS 13, tvOS 16, *)
+extension Photos.PHPersistentChangeFetchResult : Swift.Sequence {
+  final public class Iterator : Swift.IteratorProtocol {
+    public typealias Element = Photos.PHPersistentChange
+    public init(fetchResult: Photos.PHPersistentChangeFetchResult)
+    final public func next() -> Photos.PHPersistentChangeFetchResult.Iterator.Element?
+    @objc deinit
+  }
+  public func makeIterator() -> Photos.PHPersistentChangeFetchResult.Iterator
+  @available(iOS 16, tvOS 16, macOS 13, *)
+  public typealias Element = Photos.PHPersistentChangeFetchResult.Iterator.Element
+}

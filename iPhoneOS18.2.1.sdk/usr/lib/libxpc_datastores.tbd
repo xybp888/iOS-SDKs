@@ -1,0 +1,46 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/libxpc_datastores.dylib
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __xdo_fetch_ds_data_req_serialize,
+                            __xdo_fetch_ds_data_resp_deserialize,
+                            __xdp_register_ds_req_serialize,
+                            __xdp_register_ds_resp_deserialize,
+                            __xdp_set_ds_data_req_serialize,
+                            __xds_fetch_ds_info_req_serialize,
+                            __xds_fetch_ds_info_resp_deserialize,
+                            __xpc_datastore_publisher_alloc,
+                            __xpc_datastore_publisher_create_suspended,
+                            __xpc_datastore_publisher_resume,
+                            __xpc_datastore_subscriber_alloc,
+                            __xpc_datastore_subscriber_initial_handshake,
+                            __xpc_datastore_subscriber_invalidated,
+                            __xpc_datastore_subscriber_refresh,
+                            __xpc_datastores_service_connection,
+                            _xpc_datastore_copy_state,
+                            _xpc_datastore_publisher_create,
+                            _xpc_datastore_publisher_invalidate_state,
+                            _xpc_datastore_subscriber_create ]
+    objc-classes:         [ OS_xds_local_cache, OS_xpc_datastore_object,
+                            OS_xpc_datastore_publisher,
+                            OS_xpc_datastore_subscriber ]
+    objc-ivars:           [ OS_xds_local_cache.data, OS_xds_local_cache.ds_type,
+                            OS_xds_local_cache.size,
+                            OS_xpc_datastore_object.conn,
+                            OS_xpc_datastore_object.ds_name,
+                            OS_xpc_datastore_object.ds_type,
+                            OS_xpc_datastore_object.local_data,
+                            OS_xpc_datastore_object.lock,
+                            OS_xpc_datastore_object.max_size,
+                            OS_xpc_datastore_publisher.activated,
+                            OS_xpc_datastore_publisher.dq,
+                            OS_xpc_datastore_publisher.pending_work_dq,
+                            OS_xpc_datastore_publisher.publish_data,
+                            OS_xpc_datastore_subscriber.recvp ]
+...

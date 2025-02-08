@@ -1,0 +1,30 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ReplicatorServices.framework/ReplicatorServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ReplicatorServicesVersionNumber,
+                            _ReplicatorServicesVersionString,
+                            __FileDescriptorKey ]
+    objc-classes:         [ RPLReplicatorControlClient, RPLReplicatorDevice,
+                            _TtC18ReplicatorServices15MigrationServer,
+                            _TtC18ReplicatorServices18StateCaptureClient,
+                            _TtC18ReplicatorServices33ReplicatorControlClientObjcBridge,
+                            _TtC18ReplicatorServices36MigrationXPCServerResponseGetRecords,
+                            _TtC18ReplicatorServices36ReplicationXPCServerParametersRecord,
+                            _TtC18ReplicatorServices38ReplicationXPCServerResponseGetRecords,
+                            _TtC18ReplicatorServices40ReplicationXPCServerParametersAddRecords,
+                            _TtC18ReplicatorServices41ReplicationXPCServerParametersRecordValue,
+                            _TtC18ReplicatorServices47ReplicationXPCServerParametersExtendedAttribute ]
+    objc-ivars:           [ RPLReplicatorControlClient._controlClient,
+                            RPLReplicatorDevice._deviceID,
+                            RPLReplicatorDevice._deviceType,
+                            RPLReplicatorDevice._initialDiscoveryDate,
+                            RPLReplicatorDevice._name,
+                            RPLReplicatorDevice._relationshipID ]
+...

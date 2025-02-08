@@ -1,0 +1,89 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64e-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 1402.300.181.2.16 -module-name Messages
+import DeveloperToolsSupport
+import Foundation
+@_exported import Messages
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 18.2, *)
+public enum MSCriticalMessagingError : Swift.Int, Swift.Error, Swift.Sendable {
+  case unknown
+  case invalidAuthenticationRequest
+  case notSupported
+  case notAuthorized
+  case sendFailed
+  public init?(rawValue: Swift.Int)
+  @available(iOS 18.2, *)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 18.2, *)
+extension Messages.MSCriticalMessagingError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@available(iOS 18.2, *)
+extension Messages.MSCriticalMessagingError : Foundation.CustomNSError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+}
+@available(iOS 18.2, *)
+public enum MSCriticalMessagingAuthorizationStatus : Swift.Int, Swift.Sendable {
+  case unknown
+  case denied
+  case approved
+  public init?(rawValue: Swift.Int)
+  @available(iOS 18.2, *)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 18.2, *)
+public struct MSRecipient : Swift.Hashable, Swift.Sendable {
+  public var phoneNumber: Swift.String
+  public init(phoneNumber: Swift.String)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: Messages.MSRecipient, b: Messages.MSRecipient) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 18.2, *)
+public struct MSCriticalMessage : Swift.Sendable {
+  public var messageText: Swift.String
+  public init(messageText: Swift.String)
+}
+@objc @_inheritsConvenienceInitializers @available(iOS 18.2, *)
+public class MSCriticalSMSMessenger : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  public func requestAuthorization(for recipients: [Messages.MSRecipient]) async throws -> [Messages.MSRecipient : Messages.MSCriticalMessagingAuthorizationStatus]
+  public func checkAuthorizationStatus(for recipients: [Messages.MSRecipient]) async throws -> [Messages.MSRecipient : Messages.MSCriticalMessagingAuthorizationStatus]
+  public func send(_ message: Messages.MSCriticalMessage, to recipient: Messages.MSRecipient) async throws -> Swift.Bool
+  public var maximumCriticalMessagingRecipients: Swift.Int {
+    get
+  }
+  @objc deinit
+}
+@available(iOS 18.2, *)
+extension Messages.MSCriticalMessagingError : Swift.Equatable {}
+@available(iOS 18.2, *)
+extension Messages.MSCriticalMessagingError : Swift.Hashable {}
+@available(iOS 18.2, *)
+extension Messages.MSCriticalMessagingError : Swift.RawRepresentable {}
+@available(iOS 18.2, *)
+extension Messages.MSCriticalMessagingAuthorizationStatus : Swift.Equatable {}
+@available(iOS 18.2, *)
+extension Messages.MSCriticalMessagingAuthorizationStatus : Swift.Hashable {}
+@available(iOS 18.2, *)
+extension Messages.MSCriticalMessagingAuthorizationStatus : Swift.RawRepresentable {}

@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MobileLookup.framework/MobileLookup
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MLUMobileLookupVersionNumber,
+                            _MLUMobileLookupVersionString ]
+    objc-classes:         [ DDPreviewNavigationController, MLUBlurryView,
+                            MLULookupItem, MLULookupItemAttachmentContent,
+                            MLULookupItemContent, MLULookupItemDDContent,
+                            MLULookupItemRawTextContent ]
+    objc-ivars:           [ MLUBlurryView._hasActivated,
+                            MLUBlurryView._shouldRasterizeForTransition,
+                            MLULookupItem._attachments,
+                            MLULookupItem._currentAttachmentIndex,
+                            MLULookupItem._ddResult,
+                            MLULookupItem._documentProperties,
+                            MLULookupItem._focusRange,
+                            MLULookupItem._previewContent,
+                            MLULookupItem._proposedRange,
+                            MLULookupItem._resolved, MLULookupItem._text,
+                            MLULookupItem._url, MLULookupItemContent._commitType,
+                            MLULookupItemContent._commitURL,
+                            MLULookupItemContent._commitViewController,
+                            MLULookupItemContent._previewViewController,
+                            MLULookupItemContent._valid,
+                            MLULookupItemDDContent._previewAction ]
+...

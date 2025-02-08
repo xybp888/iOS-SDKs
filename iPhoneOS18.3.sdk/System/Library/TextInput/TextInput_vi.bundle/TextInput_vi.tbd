@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/TextInput/TextInput_vi.bundle/TextInput_vi
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __ZNK17TIInputManager_vi21create_quality_filterEN2KB10LookupTypeENS0_20CandidateFilterFlagsE,
+                            __ZNK17TIInputManager_vi23filter_pre_lookup_inputERKN2KB6StringE,
+                            __ZNK17TIInputManager_vi27vni_filter_pre_lookup_inputERKN2KB6StringE,
+                            __ZNK17TIInputManager_vi28viqr_filter_pre_lookup_inputERKN2KB6StringE,
+                            __ZNK17TIInputManager_vi44should_accept_candidate_for_mixed_case_inputERKN2KB9CandidateERKNS0_4WordERKNS0_6StringERKNSt3__16vectorIjNSA_9allocatorIjEEEEb,
+                            __ZNK2KB18CandidateFilter_vi17filter_candidatesERNS_19CandidateCollectionERKNS_28CandidateFilterLookupContextERKNS_24CandidateFilterResourcesE,
+                            __ZNK2KB18CandidateFilter_vi18filter_descriptionEv,
+                            __ZTV17TIInputManager_vi,
+                            __ZTVN2KB18CandidateFilter_viE,
+                            _kVietnameseVIQRSpecialCharacters ]
+    objc-classes:         [ TIKeyboardFeatureSpecialization_vi,
+                            TIKeyboardInputManager_vi,
+                            TIKeyboardInputManager_vi_VIQR,
+                            TIKeyboardInputManager_vi_VNI ]
+    objc-ivars:           [ TIKeyboardInputManager_vi.m_lexiconID,
+                            TIKeyboardInputManager_vi.m_transliterator,
+                            TIKeyboardInputManager_vi.m_useInternalIndex ]
+...

@@ -1,0 +1,38 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HID.framework/HID
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HIDVersionNumber, _HIDVersionString,
+                            _kHIDUserDevicePropertyCreateInactiveKey ]
+    objc-classes:         [ HIDEventSystemClient, HIDManager, HIDTransaction,
+                            HIDUserDevice, HIDVirtualEventService ]
+    objc-ivars:           [ HIDEventSystemClient._activated,
+                            HIDEventSystemClient._cancelHandler,
+                            HIDEventSystemClient._client,
+                            HIDEventSystemClient._eventHandler,
+                            HIDEventSystemClient._filterHandler,
+                            HIDEventSystemClient._handlerLock,
+                            HIDEventSystemClient._propertyChangedHandler,
+                            HIDEventSystemClient._resetHandler,
+                            HIDEventSystemClient._serviceHandler,
+                            HIDManager._activated, HIDManager._cancelHandler,
+                            HIDManager._deviceNotificationHandler,
+                            HIDManager._elementHandler, HIDManager._handlerLock,
+                            HIDManager._inputReportHandler, HIDManager._manager,
+                            HIDTransaction._transaction,
+                            HIDUserDevice._cancelHandler, HIDUserDevice._device,
+                            HIDUserDevice._getReportHandler,
+                            HIDUserDevice._service,
+                            HIDUserDevice._setReportHandler,
+                            HIDVirtualEventService._client,
+                            HIDVirtualEventService._delegate,
+                            HIDVirtualEventService._queue,
+                            HIDVirtualEventService._serviceClient,
+                            HIDVirtualEventService._state ]
+...

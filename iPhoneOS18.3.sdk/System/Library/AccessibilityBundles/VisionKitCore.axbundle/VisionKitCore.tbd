@@ -1,0 +1,40 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/VisionKitCore.axbundle/VisionKitCore
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AXImageAnalysisLabel, _AXMagnifierBundleIdentifier,
+                            _accessibilityLocalizedString,
+                            _accessibilityLookupButtonName ]
+    objc-classes:         [ AXVKCImageTextSelectionViewAccessibilityElement,
+                            AXVisionKitCoreGlue,
+                            VKCCornerLookupButtonAccessibility,
+                            VKCDataDetectorElementViewAccessibility,
+                            VKCImageAnalysisBaseViewAccessibility,
+                            VKCImageSubjectHighlightViewAccessibility,
+                            VKCImageTextSelectionView_iOSAccessibility,
+                            VKCImageVisualSearchViewAccessibility,
+                            VKCVisualSearchCornerViewAccessibility,
+                            VKCVisualSearchResultItemViewAccessibility,
+                            VKImageAnalysisBarButtonItemAccessibility,
+                            VKImageAnalysisButtonAccessibility,
+                            VKKeyboardCameraGuidanceViewAccessibility,
+                            __VKCCornerLookupButtonAccessibility_super,
+                            __VKCDataDetectorElementViewAccessibility_super,
+                            __VKCImageAnalysisBaseViewAccessibility_super,
+                            __VKCImageSubjectHighlightViewAccessibility_super,
+                            __VKCImageTextSelectionView_iOSAccessibility_super,
+                            __VKCImageVisualSearchViewAccessibility_super,
+                            __VKCVisualSearchCornerViewAccessibility_super,
+                            __VKCVisualSearchResultItemViewAccessibility_super,
+                            __VKImageAnalysisBarButtonItemAccessibility_super,
+                            __VKImageAnalysisButtonAccessibility_super,
+                            __VKKeyboardCameraGuidanceViewAccessibility_super ]
+    objc-ivars:           [ AXVKCImageTextSelectionViewAccessibilityElement.__accessibilityContent,
+                            AXVKCImageTextSelectionViewAccessibilityElement._textRange ]
+...

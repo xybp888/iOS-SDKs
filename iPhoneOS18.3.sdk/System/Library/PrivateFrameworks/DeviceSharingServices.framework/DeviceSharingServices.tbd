@@ -1,0 +1,77 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DeviceSharingServices.framework/DeviceSharingServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _DSSDeviceSharingErrorDomain,
+                            _DSSGuestUserModeAllowedAppsInfoKeyBundleIdentifiersToHideInControlCenter,
+                            _DSSGuestUserModeAllowedAppsInfoKeyRecentlySharedApplications,
+                            _DSSGuestUserModeAllowedAppsInfoKeyShareableApplications,
+                            _DSSGuestUserModeAppRestrictionStateIsRestrictedState,
+                            _DSSGuestUserModeRequestReasonControlCenter,
+                            _DSSGuestUserModeRequestReasonDeviceLocked,
+                            _DSSGuestUserModeRequestReasonDeviceUnlocked,
+                            _DSSGuestUserModeRequestReasonFirstUnlock,
+                            _DSSGuestUserModeRequestReasonGuestUserHandover,
+                            _DSSGuestUserModeRequestReasonGuestUserModeEntrance,
+                            _DSSGuestUserModeRequestReasonHUD,
+                            _DSSGuestUserModeRequestReasonHeadsetOff,
+                            _DSSGuestUserModeRequestReasonHomeUI,
+                            _DSSGuestUserModeRequestReasonInitialized,
+                            _DSSGuestUserModeRequestReasonInputRecovery,
+                            _DSSGuestUserModeRequestReasonLiveActivity,
+                            _DSSGuestUserModeRequestReasonSiri,
+                            _DSSGuestUserModeRequestReasonSurfBoardInit,
+                            _DSSGuestUserModeRequestReasonSurfBoardctl,
+                            _DSSGuestUserModeRequestReasonTesting,
+                            _DSSGuestUserModeRequestReasonTimeout,
+                            _DSSGuestUserModeRequestReasonUnknown,
+                            _DSSGuestUserModeRequestReasonValidator,
+                            _DSSSharingModeRequestReasonControlCenter,
+                            _DSSSharingModeRequestReasonDeviceLocked,
+                            _DSSSharingModeRequestReasonHUD,
+                            _DSSSharingModeRequestReasonHeadsetOff,
+                            _DSSSharingModeRequestReasonHomeUI,
+                            _DSSSharingModeRequestReasonInitialized,
+                            _DSSSharingModeRequestReasonInputRecovery,
+                            _DSSSharingModeRequestReasonSharingModeEntrance,
+                            _DSSSharingModeRequestReasonSurfBoardInit,
+                            _DSSSharingModeRequestReasonSurfBoardctl,
+                            _DSSSharingModeRequestReasonTimeout,
+                            _DSSSharingModeRequestReasonValidator,
+                            _NSStringFromDSSGuestUserModeAppRestrictionState,
+                            _NSStringFromDSSGuestUserModeState ]
+    objc-classes:         [ DSSConstants, DSSFeatureFlags, DSSGuestPreferences,
+                            DSSGuestUser, DSSGuestUserModeNotificationRequest,
+                            DSSGuestUserRemoteUnlockDevice, DSSMutableGuestUser,
+                            DSSSharingModeService ]
+    objc-ivars:           [ DSSGuestPreferences._store,
+                            DSSGuestUser._hasSeenGuestSafetyNotice,
+                            DSSGuestUser._lastSwitchTime,
+                            DSSGuestUser._managedAssetsProfileUUID,
+                            DSSGuestUser._synced, DSSGuestUser._temporaryUser,
+                            DSSGuestUser._uuid,
+                            DSSGuestUserModeNotificationRequest._notificationType,
+                            DSSGuestUserModeNotificationRequest._reason,
+                            DSSGuestUserRemoteUnlockDevice._isPaired,
+                            DSSGuestUserRemoteUnlockDevice._modelIdentifier,
+                            DSSGuestUserRemoteUnlockDevice._name,
+                            DSSGuestUserRemoteUnlockDevice._uniqueIdentifier,
+                            DSSSharingModeService._assetEnrolled,
+                            DSSSharingModeService._axOpened,
+                            DSSSharingModeService._clipOnsPresent,
+                            DSSSharingModeService._mode,
+                            DSSSharingModeService._numAppsOpened,
+                            DSSSharingModeService._openedApps,
+                            DSSSharingModeService._sessionIdentifier,
+                            DSSSharingModeService._sharingModeStartTime,
+                            DSSSharingModeService._smEnabled,
+                            DSSSharingModeService._soundIDEnded,
+                            DSSSharingModeService._soundIDStarted,
+                            DSSSharingModeService._tccShown ]
+...

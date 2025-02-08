@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/HealthToolbox.axbundle/HealthToolbox
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _accessibilityLocalizedString ]
+    objc-classes:         [ AXHealthToolboxGlue,
+                            WDDataProviderTableViewCellAccessibility,
+                            WDDataTableViewCellAccessibility,
+                            WDElectrocardiogramSetupWatchImageViewAccessibility,
+                            WDProfileTableViewCellAccessibility,
+                            WDUnitPreferenceViewControllerAccessibility,
+                            __WDDataProviderTableViewCellAccessibility_super,
+                            __WDDataTableViewCellAccessibility_super,
+                            __WDElectrocardiogramSetupWatchImageViewAccessibility_super,
+                            __WDProfileTableViewCellAccessibility_super,
+                            __WDUnitPreferenceViewControllerAccessibility_super ]
+...

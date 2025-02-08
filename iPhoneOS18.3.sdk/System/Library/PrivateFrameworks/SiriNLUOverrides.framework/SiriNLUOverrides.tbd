@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriNLUOverrides.framework/SiriNLUOverrides
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _OverridesLogContext, _OverridesLoggingCategory,
+                            _OverridesLoggingSubsystem, _REGEX_KEY,
+                            _SiriNLUOverridesVersionNumber,
+                            _SiriNLUOverridesVersionString ]
+    objc-classes:         [ ParseOverride, SiriNLUMarisaTrie,
+                            SiriNLUOverridesClient, SiriNLUOverridesLogging,
+                            SiriNLUOverridesTrieBundle,
+                            _TtC16SiriNLUOverrides18RegexOverrideCache ]
+    objc-ivars:           [ SiriNLUMarisaTrie.keyset, SiriNLUMarisaTrie.trie,
+                            SiriNLUOverridesTrieBundle.overrideIdTrie,
+                            SiriNLUOverridesTrieBundle.overrideTimeStampTrie,
+                            SiriNLUOverridesTrieBundle.patternTrie,
+                            SiriNLUOverridesTrieBundle.ruleTrie,
+                            SiriNLUOverridesTrieBundle.userParseTrie ]
+...

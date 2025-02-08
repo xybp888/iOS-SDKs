@@ -1,0 +1,32 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SeymourClient.framework/SeymourClient
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SeymourClientVersionNumber,
+                            _SeymourClientVersionString ]
+    objc-classes:         [ SMCAirplaneModeObserver, SMCCoreTelephonyClient,
+                            SMCNotify, SMCOSVariant,
+                            _TtC13SeymourClient12WiFiObserver,
+                            _TtC13SeymourClient14NetworkMonitor,
+                            _TtC13SeymourClient20HealthWorkoutSession,
+                            _TtC13SeymourClient21CoreTelephonyObserver,
+                            _TtC13SeymourClient25SessionDarwinNotification,
+                            _TtC13SeymourClient30AchievementProgressEnvironment,
+                            _TtC13SeymourClient9XPCServer ]
+    objc-ivars:           [ SMCAirplaneModeObserver._delegate,
+                            SMCAirplaneModeObserver._queue,
+                            SMCAirplaneModeObserver._radiosPreferences,
+                            SMCCoreTelephonyClient._cellularDataEnabled,
+                            SMCCoreTelephonyClient._ctClient,
+                            SMCCoreTelephonyClient._ctServerConnection,
+                            SMCCoreTelephonyClient._delegate,
+                            SMCCoreTelephonyClient._preferredDataSubscriptionContext,
+                            SMCCoreTelephonyClient._queue,
+                            SMCCoreTelephonyClient._roaming ]
+...

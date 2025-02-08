@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/ControlCenter/Bundles/PerformanceTraceModule.bundle/PerformanceTraceModule
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _PerformanceTraceModuleVersionNumber,
+                            _PerformanceTraceModuleVersionString ]
+    objc-classes:         [ CCUIPerformanceTraceModule,
+                            CCUIPerformanceTraceModuleViewController ]
+    objc-ivars:           [ CCUIPerformanceTraceModuleViewController._performanceTraceSession,
+                            CCUIPerformanceTraceModuleViewController._traceSession,
+                            CCUIPerformanceTraceModuleViewController._traceStartScenes,
+                            CCUIPerformanceTraceModuleViewController.state ]
+...

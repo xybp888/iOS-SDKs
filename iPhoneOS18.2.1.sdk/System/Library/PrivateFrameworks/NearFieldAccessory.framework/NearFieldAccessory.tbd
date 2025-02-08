@@ -1,0 +1,34 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NearFieldAccessory.framework/NearFieldAccessory
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    objc-classes:         [ NFACTag, NFAccessoryHardwareManager,
+                            NFAccessoryReaderSession, NFAccessorySession,
+                            NFHardwareManagerAccessoryCallbacks,
+                            NFHardwareManagerAccessoryInterface,
+                            NFReaderSessionAccessoryCallbacks,
+                            NFReaderSessionAccessoryInterface ]
+    objc-ivars:           [ NFACTag._allSystemCodes, NFACTag._appData,
+                            NFACTag._atqa, NFACTag._description,
+                            NFACTag._historicalBytes, NFACTag._ndefAvailability,
+                            NFACTag._ndefContainerSize, NFACTag._ndefMessageSize,
+                            NFACTag._pmm, NFACTag._sak, NFACTag._silentType,
+                            NFACTag._tagID, NFACTag._technology, NFACTag._type,
+                            NFACTag._uid, NFAccessoryHardwareManager._connection,
+                            NFAccessoryHardwareManager._hwSupport,
+                            NFAccessoryHardwareManager._refCount,
+                            NFAccessoryHardwareManager._sessions,
+                            NFAccessoryReaderSession._delegate,
+                            NFAccessorySession._callbackQueue,
+                            NFAccessorySession._didEndCallback,
+                            NFAccessorySession._didStartCallback,
+                            NFAccessorySession._isCallbackQueueSuspended,
+                            NFAccessorySession._isFirstInQueue,
+                            NFAccessorySession._proxy, NFAccessorySession._state ]
+...

@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Feedback.framework/Feedback
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    re-exports:           [ /System/Library/PrivateFrameworks/FeedbackService.framework/FeedbackService ]
+    symbols:              [ _FeedbackVersionNumber, _FeedbackVersionString ]
+    objc-classes:         [ ExtensionController, _TtC8Feedback14Authentication,
+                            _TtC8Feedback15FBKFeedbackForm,
+                            _TtC8Feedback18FBKSubmissionError,
+                            _TtC8Feedback19SandboxExtensionURL,
+                            _TtC8Feedback23FBKEvaluationController,
+                            _TtC8Feedback29BatchEvaluationViewController,
+                            _TtC8Feedback30FBKFeedbackDraftViewController,
+                            _TtC8Feedback31DraftingExtensionViewController,
+                            _TtC8Feedback32FBKFeedbackDraftLaunchController ]
+...

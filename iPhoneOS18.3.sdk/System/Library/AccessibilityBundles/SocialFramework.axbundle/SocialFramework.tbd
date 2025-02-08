@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/SocialFramework.axbundle/SocialFramework
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __Failover, _accessibilityLocalizedString ]
+    objc-classes:         [ AXSocialFrameworkGlue,
+                            SLMicroBlogComposeViewControllerAccessibility,
+                            SLSheetTextComposeViewAccessibility,
+                            UIButtonAccessibility__Social__UIKit,
+                            UITableViewAccessibility__Social__UIKit,
+                            UITextViewAccessibility__Social__UIKit,
+                            __SLMicroBlogComposeViewControllerAccessibility_super,
+                            __SLSheetTextComposeViewAccessibility_super,
+                            __UIButtonAccessibility__Social__UIKit_super,
+                            __UITableViewAccessibility__Social__UIKit_super,
+                            __UITextViewAccessibility__Social__UIKit_super ]
+...

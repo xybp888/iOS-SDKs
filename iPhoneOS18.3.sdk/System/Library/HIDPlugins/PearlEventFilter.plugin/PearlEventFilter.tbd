@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/HIDPlugins/PearlEventFilter.plugin/PearlEventFilter
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AWDBiometricKitPrewarmCameraReadFrom,
+                            _PearlEventFilterFactory,
+                            __ZN16PearlEventFilter13functionTableE, ___osLog,
+                            ___osLogTrace ]
+    objc-classes:         [ AWDBiometricKitPrewarmCamera ]
+    objc-ivars:           [ AWDBiometricKitPrewarmCamera._has,
+                            AWDBiometricKitPrewarmCamera._machTimestampInMillisecond,
+                            AWDBiometricKitPrewarmCamera._prewarmCameraEventSource,
+                            AWDBiometricKitPrewarmCamera._timestamp ]
+...

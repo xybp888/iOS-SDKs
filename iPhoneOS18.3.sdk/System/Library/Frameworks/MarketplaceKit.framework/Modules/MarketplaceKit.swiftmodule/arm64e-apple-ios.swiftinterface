@@ -1,0 +1,202 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64e-apple-ios18.2 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature ExistentialAny -user-module-version 2.2.32.2.4 -module-name MarketplaceKit
+public import ExtensionFoundation
+public import Foundation
+@_exported public import MarketplaceKit
+public import Swift
+public import SwiftUI
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 17.4, *)
+@_Concurrency.MainActor @preconcurrency public protocol MarketplaceExtensionConfiguration : ExtensionFoundation.AppExtensionConfiguration {
+}
+@available(iOS 17.4, *)
+public struct AppVersion : Swift.Sendable, Swift.CustomStringConvertible {
+  public let appleItemID: MarketplaceKit.AppleItemID
+  public let appleVersionID: Swift.UInt64
+  public init(appleItemID: MarketplaceKit.AppleItemID, appleVersionID: Swift.UInt64)
+  public var description: Swift.String {
+    get
+  }
+}
+@available(iOS 17.4, *)
+public struct AutomaticUpdate : Swift.Sendable {
+  public let appleItemID: MarketplaceKit.AppleItemID
+  public let alternativeDistributionPackage: Foundation.URL
+  public let account: Swift.String
+  public let installVerificationToken: Swift.String
+  @available(iOS 18.0, *)
+  public var appShareURL: Foundation.URL?
+  public init(appleItemID: MarketplaceKit.AppleItemID, alternativeDistributionPackage: Foundation.URL, account: Swift.String, installVerificationToken: Swift.String)
+}
+@available(iOS 17.4, *)
+public protocol MarketplaceExtension : ExtensionFoundation.AppExtension, Swift.Sendable {
+  func additionalHeaders(for request: Foundation.URLRequest, account: Swift.String) -> [Swift.String : Swift.String]?
+  func availableAppVersions(forAppleItemIDs ids: [MarketplaceKit.AppleItemID]) -> [MarketplaceKit.AppVersion]?
+  func requestFailed(with response: Foundation.HTTPURLResponse) -> Swift.Bool
+  func automaticUpdates(for installedAppVersions: [MarketplaceKit.AppVersion]) async throws -> [MarketplaceKit.AutomaticUpdate]
+}
+extension MarketplaceKit.MarketplaceExtension {
+  @available(iOS 17.4, *)
+  public var configuration: some MarketplaceKit.MarketplaceExtensionConfiguration {
+    get
+  }
+}
+@available(iOS 17.4, *)
+public struct InstallRequirements : Swift.Sendable, Swift.Codable {
+  public var minimumSystemVersion: Swift.String?
+  public var requiredDeviceCapabilities: Swift.Set<Swift.String>?
+  public var ageRatingRank: Swift.Int?
+  public var expectedInstallSize: Swift.UInt64?
+  public init()
+  public func satisfiedByDevice() -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 17.4, *)
+public let MarketplaceKitURIScheme: Swift.String
+@available(iOS 17.4, *)
+public enum MarketplaceKitError : Swift.Error, Swift.CustomStringConvertible, Swift.Sendable, Swift.Codable {
+  case unknown
+  case missingCapabilities([Swift.String])
+  case unsupportedPlatform
+  case minimumPlatformVersionNotSatisfied(Swift.String)
+  case installationRestricted
+  case installationOfMarketplaceDenied
+  case ratingRestricted
+  case insufficientStorageSpace(Foundation.Measurement<Foundation.UnitInformationStorage>)
+  case noSupportedVariant
+  case appNotInstalled
+  case invalidManifest
+  case networkError
+  case invalidAlternativeDistributionPackageURL
+  case invalidAlternativeDistributionPackageSignature
+  case featureUnavailable
+  case cancelled
+  case mismatchedInstallType
+  case oauthTokenError
+  case invalidLicense
+  case invalidURL
+  case missingInstallVerificationToken
+  public var description: Swift.String {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public typealias AppleItemID = Swift.UInt64
+@_hasMissingDesignatedInitializers @available(iOS 17.4, *)
+@_Concurrency.MainActor final public class AppLibrary {
+  nonisolated public static let current: MarketplaceKit.AppLibrary
+  @_Concurrency.MainActor final public var installedApps: Swift.Set<MarketplaceKit.AppLibrary.App> {
+    get
+    set
+    _modify
+  }
+  @_Concurrency.MainActor final public var installingApps: Swift.Set<MarketplaceKit.AppLibrary.App> {
+    get
+    set
+    _modify
+  }
+  @_Concurrency.MainActor final public var isLoading: Swift.Bool {
+    get
+    set
+    _modify
+  }
+  @_Concurrency.MainActor final public func app(forAppleItemID appleItemID: MarketplaceKit.AppleItemID) -> MarketplaceKit.AppLibrary.App
+  @available(iOS 18.0, *)
+  public struct InstallationRequest {
+    public var alternativeDistributionPackageURL: Foundation.URL
+    public var account: Swift.String
+    public var installVerificationToken: Swift.String
+    public var appShareURL: Foundation.URL?
+    public init(alternativeDistributionPackageURL: Foundation.URL, account: Swift.String, installVerificationToken: Swift.String)
+  }
+  @available(iOS, deprecated: 18.0, message: "Please use requestAppInstallation(_ request: InstallationRequest)")
+  nonisolated final public func requestAppInstallation(for url: Foundation.URL, account: Swift.String, installVerificationToken: Swift.String) async throws
+  @available(iOS 18.0, *)
+  nonisolated final public func requestAppInstallation(_ request: MarketplaceKit.AppLibrary.InstallationRequest) async throws
+  nonisolated final public func requestAppInstallationFromBrowser(for url: Foundation.URL, referrer: Foundation.URL) async throws
+  @available(iOS 18.0, *)
+  nonisolated final public func requestAppUpdate(_ request: MarketplaceKit.AppLibrary.InstallationRequest) async throws
+  @available(iOS, deprecated: 18.0, message: "Please use requestAppUpdate(_ request: InstallationRequest)")
+  nonisolated final public func requestAppUpdate(for url: Foundation.URL, account: Swift.String, installVerificationToken: Swift.String) async throws
+  @available(iOS 17.5, *)
+  nonisolated final public func didAuthenticate(account: Swift.String) async
+  nonisolated final public var searchTerritory: Swift.String? {
+    get async
+  }
+  nonisolated final public func setSearchTerritory(_ territory: Swift.String?) async
+  nonisolated final public func requestLicenseRenewal(appleItemIDs: [Swift.UInt64]) async throws
+  @objc deinit
+}
+@available(iOS 17.4, *)
+extension MarketplaceKit.AppLibrary : Observation.Observable {
+}
+public typealias AppleVersionID = Swift.UInt64
+extension MarketplaceKit.AppLibrary {
+  @_hasMissingDesignatedInitializers @available(iOS 17.4, *)
+  @_Concurrency.MainActor final public class App : Swift.Identifiable, Swift.Hashable {
+    nonisolated final public let id: MarketplaceKit.AppleItemID
+    public struct Metadata : Swift.Sendable, Swift.Equatable {
+      public let appleVersionID: MarketplaceKit.AppleVersionID
+      public let version: Swift.String
+      public let shortVersion: Swift.String
+      public let account: Swift.String?
+      public static func == (a: MarketplaceKit.AppLibrary.App.Metadata, b: MarketplaceKit.AppLibrary.App.Metadata) -> Swift.Bool
+    }
+    public struct Installation : Swift.Sendable {
+      public var progress: Foundation.Progress {
+        get
+      }
+    }
+    @_Concurrency.MainActor final public var installedMetadata: MarketplaceKit.AppLibrary.App.Metadata? {
+      get
+    }
+    @_Concurrency.MainActor final public var installation: MarketplaceKit.AppLibrary.App.Installation? {
+      get
+    }
+    @available(iOS 18.0, *)
+    @_Concurrency.MainActor final public var installationError: MarketplaceKit.MarketplaceKitError? {
+      get
+    }
+    @_Concurrency.MainActor final public var isInstalled: Swift.Bool {
+      get
+    }
+    @_Concurrency.MainActor final public var isInstalling: Swift.Bool {
+      get
+    }
+    @_Concurrency.MainActor final public var isUpdating: Swift.Bool {
+      get
+    }
+    nonisolated public static func == (lhs: MarketplaceKit.AppLibrary.App, rhs: MarketplaceKit.AppLibrary.App) -> Swift.Bool
+    nonisolated final public func hash(into hasher: inout Swift.Hasher)
+    @available(iOS 17.4, *)
+    public typealias ID = MarketplaceKit.AppleItemID
+    @objc deinit
+    nonisolated final public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+@available(iOS 17.4, *)
+extension MarketplaceKit.AppLibrary.App : Observation.Observable {
+}
+@available(iOS 17.4, *)
+public enum AppDistributor {
+  public static var current: MarketplaceKit.AppDistributor {
+    get async throws
+  }
+  case appStore
+  case testFlight
+  case marketplace(Swift.String)
+  @available(iOS 17.5, *)
+  case web
+  case other
+}
+@available(iOS 17.4, *)
+extension MarketplaceKit.AppLibrary : Swift.Sendable {}
+@available(iOS 17.4, *)
+extension MarketplaceKit.AppLibrary.App : Swift.Sendable {}

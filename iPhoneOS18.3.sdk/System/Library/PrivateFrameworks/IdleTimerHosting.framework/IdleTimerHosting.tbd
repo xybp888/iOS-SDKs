@@ -1,0 +1,42 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IdleTimerHosting.framework/IdleTimerHosting
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ITLogIdleTimer, _ITLoggingSubsystem,
+                            _IdleTimerHostingVersionNumber,
+                            _IdleTimerHostingVersionString ]
+    objc-classes:         [ ITAttentionAwareIdleTimer,
+                            ITAttentionAwarenessClient,
+                            ITAttentionAwarenessContext,
+                            ITAttentionAwarenessDomain,
+                            ITAttentionAwarenessSettings, ITIdleTimeout,
+                            ITIdleTimerDescriptor ]
+    objc-ivars:           [ ITAttentionAwareIdleTimer._accessLock,
+                            ITAttentionAwareIdleTimer._access_client,
+                            ITAttentionAwareIdleTimer._access_context,
+                            ITAttentionAwareIdleTimer._access_descriptor,
+                            ITAttentionAwareIdleTimer._configurationIdentifier,
+                            ITAttentionAwareIdleTimer._delegate,
+                            ITAttentionAwareIdleTimer._nonSampledAttentionLostTimeout,
+                            ITAttentionAwareIdleTimer._nonSampledAttentionLostTimeoutEnable,
+                            ITAttentionAwareIdleTimer._settings,
+                            ITAttentionAwarenessClient._accessLock,
+                            ITAttentionAwarenessClient._access_attentionAwarenessClient,
+                            ITAttentionAwarenessClient._access_enabled,
+                            ITAttentionAwarenessClient._delegate,
+                            ITAttentionAwarenessContext._identifier,
+                            ITAttentionAwarenessSettings._nonSampledAttentionLostTimeout,
+                            ITAttentionAwarenessSettings._nonSampledAttentionLostTimeoutEnable,
+                            ITIdleTimeout._duration, ITIdleTimeout._identifier,
+                            ITIdleTimerDescriptor._attentionMaintenanceEventMask,
+                            ITIdleTimerDescriptor._attentionRecoveryEventMask,
+                            ITIdleTimerDescriptor._attentionSamplingPeriod,
+                            ITIdleTimerDescriptor._attentionSamplingStartDelay,
+                            ITIdleTimerDescriptor._timeouts ]
+...

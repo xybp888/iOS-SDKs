@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          "/System/Library/AccessibilityBundles/Restaurants-Assistant.axbundle/Restaurants-Assistant"
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _restaurantAccessibilityLocalizedString ]
+    objc-classes:         [ AXRestaurantsAssistantGlue,
+                            SiriRestaurantsDetailDescriptionCellAccessibility,
+                            SiriRestaurantsDetailViewControllerAccessibility,
+                            SiriRestaurantsListItemCellAccessibility,
+                            SiriRestaurantsLogoButtonAccessibility,
+                            SiriRestaurantsOpenHoursCellAccessibility,
+                            __SiriRestaurantsDetailDescriptionCellAccessibility_super,
+                            __SiriRestaurantsDetailViewControllerAccessibility_super,
+                            __SiriRestaurantsListItemCellAccessibility_super,
+                            __SiriRestaurantsLogoButtonAccessibility_super,
+                            __SiriRestaurantsOpenHoursCellAccessibility_super ]
+...
