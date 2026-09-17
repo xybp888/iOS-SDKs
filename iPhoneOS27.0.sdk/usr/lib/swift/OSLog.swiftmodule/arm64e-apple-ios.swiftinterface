@@ -1,0 +1,28 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -autolink-force-load -enable-library-evolution -module-link-name swiftOSLog -language-mode 5 -O -library-level api -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 10 -module-name OSLog
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import Foundation
+@_exported import OSLog
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 10.15, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
+extension OSLog::OSLogStore {
+  public func getEntries(with options: OSLog::OSLogEnumerator.OSLog::Options = [], at position: OSLog::OSLogPosition? = nil, matching predicate: Foundation::NSPredicate? = nil) throws -> Swift::AnySequence<OSLog::OSLogEntry>
+}
+@available(macOS 10.15, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
+extension OSLog::OSLogMessageComponent {
+  public enum Argument {
+    case undefined
+    case data(Foundation::Data)
+    case double(Swift::Double)
+    case signed(Swift::Int64)
+    case string(Swift::String)
+    case unsigned(Swift::UInt64)
+  }
+  public var argument: OSLog::OSLogMessageComponent.OSLog::Argument {
+    get
+  }
+}

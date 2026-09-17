@@ -1,0 +1,79 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 2131.10.1.2.11 -module-name _DeviceDiscoveryUI_SwiftUI
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported public import DeviceDiscoveryUI
+public import Network
+public import Swift
+public import SwiftUI
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+extension DeviceDiscoveryUI::DDDevicePickerViewController : Swift::Sendable {
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+@_Concurrency::MainActor @preconcurrency public struct DevicePairingView<Label, Fallback> : SwiftUICore::View where Label : SwiftUICore::View, Fallback : SwiftUICore::View {
+  @_Concurrency::MainActor @preconcurrency public init(_ listenerProvider: any Network::ListenerProvider, access: DeviceDiscoveryUI::DDDevicePairingAccess = .default, @SwiftUICore::ViewBuilder label: () -> Label, @SwiftUICore::ViewBuilder fallback: () -> Fallback)
+  @_Concurrency::MainActor @preconcurrency public var body: some SwiftUICore::View {
+    get
+  }
+  @available(iOS 26.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias Body = @_opaqueReturnTypeOf("$s024_DeviceDiscoveryUI_SwiftC00A11PairingViewV4bodyQrvp", 0) __<Label, Fallback>
+}
+@available(iOS 26.0, tvOS 16.0, *)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+@_Concurrency::MainActor @preconcurrency public struct DevicePicker<Label, Fallback> : SwiftUICore::View where Label : SwiftUICore::View, Fallback : SwiftUICore::View {
+  @available(iOS 26.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(watchOS, unavailable)
+  @_Concurrency::MainActor @preconcurrency public init<Provider>(_ browserProvider: Provider, access: DeviceDiscoveryUI::DDDevicePairingAccess = .default, onSelect: @escaping (Provider.Endpoint) -> Swift::Void, @SwiftUICore::ViewBuilder label: () -> Label, @SwiftUICore::ViewBuilder fallback: () -> Fallback, parameters: (() -> Network::NWParameters)? = nil) where Provider : Network::BrowserProvider
+  @_Concurrency::MainActor @preconcurrency public var body: some SwiftUICore::View {
+    get
+  }
+  @available(iOS 26.0, tvOS 16.0, *)
+  @available(macOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias Body = @_opaqueReturnTypeOf("$s024_DeviceDiscoveryUI_SwiftC00A6PickerV4bodyQrvp", 0) __<Label, Fallback>
+}
+@available(tvOS 16.0, *)
+@available(iOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+public struct DevicePickerSupportedAction {
+  public func callAsFunction(_ browseDescriptor: Network::NWBrowser.Network::Descriptor, parameters: (() -> Network::NWParameters)? = nil) -> Swift::Bool
+}
+extension SwiftUICore::EnvironmentValues {
+  @available(tvOS 16.0, *)
+  @available(iOS, unavailable)
+  @available(macOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(watchOS, unavailable)
+  public var devicePickerSupports: _DeviceDiscoveryUI_SwiftUI::DevicePickerSupportedAction {
+    get
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+extension _DeviceDiscoveryUI_SwiftUI::DevicePairingView : Swift::Sendable {}
+@available(iOS 26.0, tvOS 16.0, *)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+extension _DeviceDiscoveryUI_SwiftUI::DevicePicker : Swift::Sendable {}

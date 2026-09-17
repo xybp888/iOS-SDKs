@@ -1,0 +1,47 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SleepHealth.framework/SleepHealth
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _HDSleepHealthDaemonPluginServerInterface,
+                            _HKSHBreathingDisturbanceAnalysisSchedulerLastSuccessfulAnalysisAttemptDateKey,
+                            _HKSHBreathingDisturbanceAnalysisSchedulerSuccessfulAnalysisAttemptCountKey,
+                            _HKSHBreathingDisturbanceAnalysisWindowLength,
+                            _HKSHBreathingDisturbanceKeyValueDomainName,
+                            _HKSHCreatePossibleSleepApneaDetectedNotificationRequest,
+                            _HKSHHealthDaemonPluginIdentifier,
+                            _HKSHSleepApneaControlClientInterface,
+                            _HKSHSleepApneaControlServerIdentifier,
+                            _HKSHSleepApneaControlServerInterface,
+                            _HKSHSleepApneaEventSampleDetailURLPathComponent,
+                            _HKSHSleepApneaEventSampleDetailsLink,
+                            _HKSHSleepApneaNotificationActionDelivered,
+                            _HKSHSleepApneaNotificationActionLearnMore,
+                            _HKSHSleepApneaNotificationCategoryFeatureIsAvailableAgainAndEnabled,
+                            _HKSHSleepApneaNotificationCategoryPossibleSleepApnea,
+                            _HKSHSleepApneaNotificationCategoryRescindedNoLongerSupportedOnActiveRemoteDevice,
+                            _HKSHSleepApneaNotificationCategoryRescindedNoLongerSupportedOnLocalDevice,
+                            _HKSHSleepApneaNotificationCategoryRescindedRemoteDisabled,
+                            _HKSHSleepApneaNotificationCategoryRescindedSeedExpired,
+                            _HKSHSleepApneaNotificationRequestIdentifier,
+                            _HKSHSleepApneaRescindedNotificationRequestIdentifier,
+                            _HKSHSleepScoreResultsNotificationEventIdentifier,
+                            _HKSleepHealthStoreInterface ]
+    objc-classes:         [ HKSHSleepApneaControl,
+                            HKSHSleepApneaNotificationInteractedAnalyticsEvent,
+                            HKSHSleepMetricsEngine,
+                            HKSHSleepScoreResultsNotification,
+                            HKSleepHealthStore,
+                            _TtC11SleepHealth29SleepScoreResultsNotification ]
+    objc-ivars:           [ HKSHSleepApneaControl._healthStore,
+                            HKSHSleepApneaControl._proxyProvider,
+                            HKSHSleepApneaNotificationInteractedAnalyticsEvent._actionIdentifier,
+                            HKSHSleepApneaNotificationInteractedAnalyticsEvent._request,
+                            HKSleepHealthStore._healthStore,
+                            HKSleepHealthStore._proxyProvider,
+                            HKSleepHealthStore._scheduler ]
+...

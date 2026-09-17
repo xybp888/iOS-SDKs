@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NameRecognition.framework/NameRecognition
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AXNameRecognitionService,
+                            _NameRecognitionVersionNumber,
+                            _NameRecognitionVersionString, _kAdjust0DB ]
+    objc-classes:         [ CollectedEnrollment, NameConfiguration,
+                            _TtC15NameRecognition12AudioManager,
+                            _TtC15NameRecognition21NameRecognitionClient,
+                            _TtC15NameRecognition21NameTriggerController ]
+...

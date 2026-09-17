@@ -1,0 +1,67 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 1056.2.1 -module-name CrashReportExtension
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported public import ExtensionFoundation
+@_exported public import Foundation
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 27.0, macOS 27.0, *)
+public struct CrashReason {
+  public let exception: Swift::Int32
+  public let codes: [Swift::UInt64]
+  public init(exception: Swift::Int32, codes: [Swift::UInt64])
+}
+@available(iOS 27.0, macOS 27.0, *)
+public struct SymbolicatedFrame : Swift::Codable, Swift::Sendable {
+  public let symbol: Swift::String
+  public let symbolOffset: Swift::UInt64
+  public let sourceFile: Swift::String?
+  public let sourceLine: Swift::Int?
+  public let isInline: Swift::Bool
+  public init(symbol: Swift::String, symbolOffset: Swift::UInt64, sourceFile: Swift::String?, sourceLine: Swift::Int?, isInline: Swift::Bool)
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, *)
+public struct BinaryImageInfo : Swift::Codable, Swift::Sendable {
+  public let path: Swift::String
+  public let uuid: Foundation::UUID?
+  public let baseAddress: Swift::UInt64
+  public let size: Swift::UInt64
+  public let cpuType: Darwin::cpu_type_t
+  public let cpuSubType: Darwin::cpu_subtype_t
+  public init(path: Swift::String, uuid: Foundation::UUID?, baseAddress: Swift::UInt64, size: Swift::UInt64, cpuType: Darwin::cpu_type_t, cpuSubType: Darwin::cpu_subtype_t)
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@_hasMissingDesignatedInitializers @available(iOS 27.0, macOS 27.0, *)
+final public class CrashedProcess {
+  final public var reason: CrashReportExtension::CrashReason
+  @objc deinit
+  final public var corpsePort: _DarwinFoundation2::mach_port_t {
+    get
+  }
+  final public func symbolicateAddress(_ address: Swift::UInt64) -> [CrashReportExtension::SymbolicatedFrame]
+  final public func symbolicateAddresses(_ addresses: [Swift::UInt64]) -> [[CrashReportExtension::SymbolicatedFrame]]
+  final public var binaryImages: [CrashReportExtension::BinaryImageInfo] {
+    get
+  }
+  final public func symbolAddress(imageName: Swift::String?, symbolName: Swift::String) -> Swift::UInt64
+}
+@available(iOS 27.0, macOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public protocol CrashReporterExtension : ExtensionFoundation::AppExtension {
+  func processCrashReport(process: CrashReportExtension::CrashedProcess)
+}
+@available(iOS 27.0, macOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension CrashReportExtension::CrashReporterExtension {
+  public var configuration: some ExtensionFoundation::AppExtensionConfiguration {
+    get
+  }
+}

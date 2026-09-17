@@ -1,0 +1,77 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-experimental-feature DebugDescriptionMacro -user-module-version 313 -module-name LinkPresentation
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import Accelerate
+import CoreGraphics
+import CoreTransferable
+import DeveloperToolsSupport
+import Foundation
+@_exported import LinkPresentation
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 26.4, macOS 26.4, visionOS 26.4, watchOS 26.4, tvOS 26.4, *)
+nonisolated public struct LinkMetadata : Swift::Sendable {
+}
+@available(iOS 26.4, macOS 26.4, visionOS 26.4, watchOS 26.4, tvOS 26.4, *)
+extension LinkPresentation::LinkMetadata {
+  nonisolated public struct Attachment : Swift::Sendable {
+  }
+}
+@available(iOS 26.4, macOS 26.4, visionOS 26.4, watchOS 26.4, tvOS 26.4, *)
+extension LinkPresentation::LinkMetadata.LinkPresentation::Attachment {
+  public static var image: LinkPresentation::LinkMetadata.LinkPresentation::Attachment {
+    get
+  }
+  public static var icon: LinkPresentation::LinkMetadata.LinkPresentation::Attachment {
+    get
+  }
+  public static var video: LinkPresentation::LinkMetadata.LinkPresentation::Attachment {
+    get
+  }
+}
+@available(iOS 26.4, macOS 26.4, visionOS 26.4, watchOS 26.4, tvOS 26.4, *)
+extension LinkPresentation::LinkMetadata {
+  nonisolated public var url: Foundation::URL {
+    get
+    set
+  }
+  nonisolated public var originalURL: Foundation::URL {
+    get
+    set
+  }
+  nonisolated public var title: Swift::String? {
+    get
+    set
+  }
+  nonisolated public var remoteVideo: Foundation::URL? {
+    get
+    set
+  }
+  nonisolated public init(url: Foundation::URL)
+  nonisolated public init?(_ metadata: sending LinkPresentation::LPLinkMetadata)
+  nonisolated public init(fetching url: Foundation::URL, timeout: Swift::Duration = .seconds(30), includeSubresources: Swift::Bool = true) async throws
+  nonisolated public init(fetching request: Foundation::URLRequest, timeout: Swift::Duration = .seconds(30), includeSubresources: Swift::Bool = true) async throws
+  nonisolated public func media<Media>(_ attachment: LinkPresentation::LinkMetadata.LinkPresentation::Attachment, as type: Media.Type) async throws -> Media? where Media : CoreTransferable::Transferable
+  nonisolated public func containsMedia(_ attachment: LinkPresentation::LinkMetadata.LinkPresentation::Attachment, exportableAs type: (some Transferable).Type) -> Swift::Bool
+  nonisolated public mutating func setMedia(_ media: some Transferable, for attachment: LinkPresentation::LinkMetadata.LinkPresentation::Attachment)
+}
+@available(iOS 26.4, macOS 26.4, visionOS 26.4, watchOS 26.4, tvOS 26.4, *)
+extension LinkPresentation::LinkMetadata : Swift::Encodable {
+  nonisolated public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(iOS 26.4, macOS 26.4, visionOS 26.4, watchOS 26.4, tvOS 26.4, *)
+extension LinkPresentation::LinkMetadata : Swift::Decodable {
+  nonisolated public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.4, macOS 26.4, visionOS 26.4, watchOS 26.4, tvOS 26.4, *)
+extension LinkPresentation::LinkMetadata : CoreTransferable::Transferable {
+  public static var transferRepresentation: some CoreTransferable::TransferRepresentation {
+    get
+  }
+  @available(macOS 26.4, iOS 26.4, tvOS 26.4, watchOS 26.4, visionOS 26.4, *)
+  public typealias Representation = @_opaqueReturnTypeOf("$s16LinkPresentation0A8MetadataV22transferRepresentationQrvpZ", 0) __
+}

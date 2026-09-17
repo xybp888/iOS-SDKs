@@ -1,0 +1,52 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 246 -module-name VisualIntelligence -package-name com.apple.VisualIntelligence
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import AppIntents
+import CoreVideo
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 26.0, macOS 27.0, macCatalyst 27.0, *)
+extension VisualIntelligence.SemanticContentDescriptor : AppIntents._SystemIntentValue {
+  public static var persistentIdentifier: Swift.String {
+    get
+  }
+  public static var defaultResolverSpecification: some AppIntents.ResolverSpecification {
+    get
+  }
+  public static var typeDisplayRepresentation: AppIntents.TypeDisplayRepresentation {
+    get
+  }
+  public var displayRepresentation: AppIntents.DisplayRepresentation {
+    get
+  }
+  @available(macOS 27.0, iOS 26.0, macCatalyst 27.0, *)
+  public typealias Specification = @_opaqueReturnTypeOf("$s18VisualIntelligence25SemanticContentDescriptorV28defaultResolverSpecificationQrvpZ", 0) __
+  @available(macOS 27.0, iOS 26.0, macCatalyst 27.0, *)
+  public typealias UnwrappedType = VisualIntelligence.SemanticContentDescriptor
+  @available(macOS 27.0, iOS 26.0, macCatalyst 27.0, *)
+  public typealias ValueType = VisualIntelligence.SemanticContentDescriptor
+}
+@available(macOS 27.0, iOS 27.0, *)
+extension VisualIntelligence.SemanticContentDescriptor : AppIntentsTypeSupport.IntentValueConvertible {
+}
+@available(iOS 26.0, macOS 27.0, macCatalyst 27.0, *)
+public struct SemanticContentDescriptor : Swift.Sendable {
+  public let labels: [Swift.String]
+  public var pixelBuffer: CoreVideo.CVReadOnlyPixelBuffer? {
+    get
+  }
+}
+@available(iOS 26.0, macOS 27.0, macCatalyst 27.0, *)
+extension VisualIntelligence.SemanticContentDescriptor : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 26.0, macOS 27.0, macCatalyst 27.0, *)
+extension VisualIntelligence.SemanticContentDescriptor : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}

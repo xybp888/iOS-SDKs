@@ -1,0 +1,342 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 2333 -module-name AlarmKit -package-name com.apple.AlarmKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import ActivityKit
+@_exported import AlarmKit
+import AppIntents
+import Foundation
+import Swift
+import SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 26.0, *)
+@available(macCatalyst, unavailable)
+public struct AlarmAttributes<Metadata> : ActivityKit::ActivityAttributes, Swift::Sendable where Metadata : AlarmKit::AlarmMetadata {
+  public typealias ContentState = AlarmKit::AlarmPresentationState
+  public var presentation: AlarmKit::AlarmPresentation
+  public var metadata: Metadata?
+  public var tintColor: SwiftUICore::Color
+  public init(presentation: AlarmKit::AlarmPresentation, metadata: Metadata? = nil, tintColor: SwiftUICore::Color)
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(iOS 26.0, *)
+@available(macCatalyst, unavailable)
+public struct AlarmButton : Swift::Codable, Swift::Sendable {
+  public var text: Foundation::LocalizedStringResource
+  public var textColor: SwiftUICore::Color
+  public var systemImageName: Swift::String
+  public init(text: Foundation::LocalizedStringResource, textColor: SwiftUICore::Color, systemImageName: Swift::String)
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(iOS 26.0, *)
+@available(macCatalyst, unavailable)
+public protocol AlarmMetadata : Swift::Decodable, Swift::Encodable, Swift::Hashable, Swift::Sendable {
+}
+@available(iOS 26.0, *)
+@available(macCatalyst, unavailable)
+public struct AlarmPresentation : Swift::Codable, Swift::Sendable {
+  public struct Alert : Swift::Codable, Swift::Sendable {
+    public enum SecondaryButtonBehavior : Swift::Codable, Swift::Sendable, Swift::Hashable {
+      case countdown
+      case custom
+      public static func == (a: AlarmKit::AlarmPresentation.AlarmKit::Alert.AlarmKit::SecondaryButtonBehavior, b: AlarmKit::AlarmPresentation.AlarmKit::Alert.AlarmKit::SecondaryButtonBehavior) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public var title: Foundation::LocalizedStringResource
+    @available(*, deprecated, message: "This property is not used anymore and will be removed.")
+    public var stopButton: AlarmKit::AlarmButton {
+      get
+      set
+    }
+    public var secondaryButton: AlarmKit::AlarmButton?
+    public var secondaryButtonBehavior: AlarmKit::AlarmPresentation.AlarmKit::Alert.AlarmKit::SecondaryButtonBehavior?
+    @available(iOS 26.1, *)
+    public init(title: Foundation::LocalizedStringResource, secondaryButton: AlarmKit::AlarmButton? = nil, secondaryButtonBehavior: AlarmKit::AlarmPresentation.AlarmKit::Alert.AlarmKit::SecondaryButtonBehavior? = nil)
+    @available(iOS, deprecated: 26.1, message: "stopButton is deprecated and will no longer be used")
+    public init(title: Foundation::LocalizedStringResource, stopButton: AlarmKit::AlarmButton, secondaryButton: AlarmKit::AlarmButton? = nil, secondaryButtonBehavior: AlarmKit::AlarmPresentation.AlarmKit::Alert.AlarmKit::SecondaryButtonBehavior? = nil)
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct Countdown : Swift::Codable, Swift::Sendable {
+    public var title: Foundation::LocalizedStringResource
+    public var pauseButton: AlarmKit::AlarmButton?
+    public init(title: Foundation::LocalizedStringResource, pauseButton: AlarmKit::AlarmButton? = nil)
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct Paused : Swift::Codable, Swift::Sendable {
+    public var title: Foundation::LocalizedStringResource
+    public var resumeButton: AlarmKit::AlarmButton
+    public init(title: Foundation::LocalizedStringResource, resumeButton: AlarmKit::AlarmButton)
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public var alert: AlarmKit::AlarmPresentation.AlarmKit::Alert
+  public var countdown: AlarmKit::AlarmPresentation.AlarmKit::Countdown?
+  public var paused: AlarmKit::AlarmPresentation.AlarmKit::Paused?
+  public init(alert: AlarmKit::AlarmPresentation.AlarmKit::Alert, countdown: AlarmKit::AlarmPresentation.AlarmKit::Countdown? = nil, paused: AlarmKit::AlarmPresentation.AlarmKit::Paused? = nil)
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macCatalyst, unavailable)
+public struct AlarmPresentationState : Swift::Codable, Swift::Sendable, Swift::Hashable {
+  public enum Mode : Swift::Codable, Swift::Equatable, Swift::Sendable, Swift::Hashable {
+    public struct Countdown : Swift::Codable, Swift::Equatable, Swift::Sendable, Swift::Hashable {
+      public var totalCountdownDuration: Foundation::TimeInterval
+      public var previouslyElapsedDuration: Foundation::TimeInterval
+      public var startDate: Foundation::Date
+      public var fireDate: Foundation::Date
+      public init(totalCountdownDuration: Foundation::TimeInterval, previouslyElapsedDuration: Foundation::TimeInterval, startDate: Foundation::Date, fireDate: Foundation::Date)
+      public static func == (a: AlarmKit::AlarmPresentationState.AlarmKit::Mode.AlarmKit::Countdown, b: AlarmKit::AlarmPresentationState.AlarmKit::Mode.AlarmKit::Countdown) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public struct Paused : Swift::Codable, Swift::Equatable, Swift::Sendable, Swift::Hashable {
+      public var totalCountdownDuration: Foundation::TimeInterval
+      public var previouslyElapsedDuration: Foundation::TimeInterval
+      public init(totalCountdownDuration: Foundation::TimeInterval, previouslyElapsedDuration: Foundation::TimeInterval)
+      public static func == (a: AlarmKit::AlarmPresentationState.AlarmKit::Mode.AlarmKit::Paused, b: AlarmKit::AlarmPresentationState.AlarmKit::Mode.AlarmKit::Paused) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public struct Alert : Swift::Codable, Swift::Equatable, Swift::Sendable, Swift::Hashable {
+      public var time: AlarmKit::Alarm.AlarmKit::Schedule.AlarmKit::Relative.AlarmKit::Time
+      public init(time: AlarmKit::Alarm.AlarmKit::Schedule.AlarmKit::Relative.AlarmKit::Time)
+      public static func == (a: AlarmKit::AlarmPresentationState.AlarmKit::Mode.AlarmKit::Alert, b: AlarmKit::AlarmPresentationState.AlarmKit::Mode.AlarmKit::Alert) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    case alert(AlarmKit::AlarmPresentationState.AlarmKit::Mode.AlarmKit::Alert)
+    case countdown(AlarmKit::AlarmPresentationState.AlarmKit::Mode.AlarmKit::Countdown)
+    case paused(AlarmKit::AlarmPresentationState.AlarmKit::Mode.AlarmKit::Paused)
+    public static func == (a: AlarmKit::AlarmPresentationState.AlarmKit::Mode, b: AlarmKit::AlarmPresentationState.AlarmKit::Mode) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public var alarmID: AlarmKit::Alarm.AlarmKit::ID
+  public var mode: AlarmKit::AlarmPresentationState.AlarmKit::Mode
+  public init(alarmID: AlarmKit::Alarm.AlarmKit::ID, mode: AlarmKit::AlarmPresentationState.AlarmKit::Mode)
+  public static func == (a: AlarmKit::AlarmPresentationState, b: AlarmKit::AlarmPresentationState) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macCatalyst, unavailable)
+public struct Alarm : Swift::Identifiable, Swift::Codable, Swift::Sendable {
+  public enum Schedule : Swift::Codable, Swift::Equatable, Swift::Hashable, Swift::Sendable {
+    public struct Relative : Swift::Codable, Swift::Equatable, Swift::Sendable, Swift::Hashable {
+      public struct Time : Swift::Codable, Swift::Equatable, Swift::Sendable, Swift::Hashable {
+        public var hour: Swift::Int
+        public var minute: Swift::Int
+        public init(hour: Swift::Int, minute: Swift::Int)
+        public static func == (a: AlarmKit::Alarm.AlarmKit::Schedule.AlarmKit::Relative.AlarmKit::Time, b: AlarmKit::Alarm.AlarmKit::Schedule.AlarmKit::Relative.AlarmKit::Time) -> Swift::Bool
+        public func encode(to encoder: any Swift::Encoder) throws
+        public func hash(into hasher: inout Swift::Hasher)
+        public var hashValue: Swift::Int {
+          get
+        }
+        public init(from decoder: any Swift::Decoder) throws
+      }
+      public enum Recurrence : Swift::Codable, Swift::Equatable, Swift::Sendable, Swift::Hashable {
+        case weekly([Foundation::Locale.Foundation::Weekday])
+        case never
+        public static func == (a: AlarmKit::Alarm.AlarmKit::Schedule.AlarmKit::Relative.AlarmKit::Recurrence, b: AlarmKit::Alarm.AlarmKit::Schedule.AlarmKit::Relative.AlarmKit::Recurrence) -> Swift::Bool
+        public func encode(to encoder: any Swift::Encoder) throws
+        public func hash(into hasher: inout Swift::Hasher)
+        public var hashValue: Swift::Int {
+          get
+        }
+        public init(from decoder: any Swift::Decoder) throws
+      }
+      public var repeats: AlarmKit::Alarm.AlarmKit::Schedule.AlarmKit::Relative.AlarmKit::Recurrence
+      public var time: AlarmKit::Alarm.AlarmKit::Schedule.AlarmKit::Relative.AlarmKit::Time
+      public init(time: AlarmKit::Alarm.AlarmKit::Schedule.AlarmKit::Relative.AlarmKit::Time, repeats: AlarmKit::Alarm.AlarmKit::Schedule.AlarmKit::Relative.AlarmKit::Recurrence = .never)
+      public static func == (a: AlarmKit::Alarm.AlarmKit::Schedule.AlarmKit::Relative, b: AlarmKit::Alarm.AlarmKit::Schedule.AlarmKit::Relative) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    case fixed(Foundation::Date)
+    case relative(AlarmKit::Alarm.AlarmKit::Schedule.AlarmKit::Relative)
+    public static func == (a: AlarmKit::Alarm.AlarmKit::Schedule, b: AlarmKit::Alarm.AlarmKit::Schedule) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct CountdownDuration : Swift::Codable, Swift::Sendable, Swift::Equatable {
+    public var preAlert: Foundation::TimeInterval?
+    public var postAlert: Foundation::TimeInterval?
+    public init(preAlert: Foundation::TimeInterval?, postAlert: Foundation::TimeInterval?)
+    public static func == (a: AlarmKit::Alarm.AlarmKit::CountdownDuration, b: AlarmKit::Alarm.AlarmKit::CountdownDuration) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public enum State : Swift::Equatable, Swift::Codable, Swift::Sendable {
+    case scheduled
+    case countdown
+    case paused
+    case alerting
+    public static func == (a: AlarmKit::Alarm.AlarmKit::State, b: AlarmKit::Alarm.AlarmKit::State) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public var id: Foundation::UUID
+  public var schedule: AlarmKit::Alarm.AlarmKit::Schedule?
+  public var countdownDuration: AlarmKit::Alarm.AlarmKit::CountdownDuration?
+  public var state: AlarmKit::Alarm.AlarmKit::State
+  @available(iOS 26.0, *)
+  @available(macCatalyst, unavailable)
+  public typealias ID = Foundation::UUID
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@_hasMissingDesignatedInitializers @available(iOS 26.0, *)
+@available(macCatalyst, unavailable)
+public class AlarmManager {
+  public enum AlarmError : Swift::Error {
+    case maximumLimitReached
+    public static func == (a: AlarmKit::AlarmManager.AlarmKit::AlarmError, b: AlarmKit::AlarmManager.AlarmKit::AlarmError) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public enum AuthorizationState : Swift::Codable, Swift::Sendable {
+    case notDetermined
+    case denied
+    case authorized
+    public static func == (a: AlarmKit::AlarmManager.AlarmKit::AuthorizationState, b: AlarmKit::AlarmManager.AlarmKit::AuthorizationState) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct AlarmConfiguration<Metadata> where Metadata : AlarmKit::AlarmMetadata {
+    public init(countdownDuration: AlarmKit::Alarm.AlarmKit::CountdownDuration? = nil, schedule: AlarmKit::Alarm.AlarmKit::Schedule? = nil, attributes: AlarmKit::AlarmAttributes<Metadata>, stopIntent: (any AppIntents::LiveActivityIntent)? = nil, secondaryIntent: (any AppIntents::LiveActivityIntent)? = nil, sound: ActivityKit::AlertConfiguration.ActivityKit::AlertSound = .default)
+    public static func timer(duration: Foundation::TimeInterval, attributes: AlarmKit::AlarmAttributes<Metadata>, stopIntent: (any AppIntents::LiveActivityIntent)? = nil, secondaryIntent: (any AppIntents::LiveActivityIntent)? = nil, sound: ActivityKit::AlertConfiguration.ActivityKit::AlertSound = .default) -> AlarmKit::AlarmManager.AlarmKit::AlarmConfiguration<Metadata>
+    public static func alarm(schedule: AlarmKit::Alarm.AlarmKit::Schedule? = nil, attributes: AlarmKit::AlarmAttributes<Metadata>, stopIntent: (any AppIntents::LiveActivityIntent)? = nil, secondaryIntent: (any AppIntents::LiveActivityIntent)? = nil, sound: ActivityKit::AlertConfiguration.ActivityKit::AlertSound = .default) -> AlarmKit::AlarmManager.AlarmKit::AlarmConfiguration<Metadata>
+  }
+  public static let shared: AlarmKit::AlarmManager
+  public func schedule<Metadata>(id: AlarmKit::Alarm.AlarmKit::ID, configuration: AlarmKit::AlarmManager.AlarmKit::AlarmConfiguration<Metadata>) async throws -> AlarmKit::Alarm where Metadata : AlarmKit::AlarmMetadata
+  public func countdown(id: AlarmKit::Alarm.AlarmKit::ID) throws
+  public func cancel(id: AlarmKit::Alarm.AlarmKit::ID) throws
+  public func stop(id: AlarmKit::Alarm.AlarmKit::ID) throws
+  public func pause(id: AlarmKit::Alarm.AlarmKit::ID) throws
+  public func resume(id: AlarmKit::Alarm.AlarmKit::ID) throws
+  public var alarms: [AlarmKit::Alarm] {
+    get throws
+  }
+  public var alarmUpdates: some _Concurrency::AsyncSequence<Swift::Array<AlarmKit::Alarm>, Swift::Never> {
+    get
+  }
+  public var authorizationState: AlarmKit::AlarmManager.AlarmKit::AuthorizationState {
+    get
+  }
+  public func requestAuthorization() async throws -> AlarmKit::AlarmManager.AlarmKit::AuthorizationState
+  public var authorizationUpdates: some _Concurrency::AsyncSequence<AlarmKit::AlarmManager.AlarmKit::AuthorizationState, Swift::Never> {
+    get
+  }
+  public struct AlarmUpdates : _Concurrency::AsyncSequence {
+    public typealias Element = [AlarmKit::Alarm]
+    public func makeAsyncIterator() -> AlarmKit::AlarmManager.AlarmKit::AlarmUpdates.AlarmKit::Iterator
+    public struct Iterator : _Concurrency::AsyncIteratorProtocol {
+      public mutating func next() async -> AlarmKit::AlarmManager.AlarmKit::AlarmUpdates.AlarmKit::Element?
+      @available(iOS 26.0, *)
+      @available(macCatalyst, unavailable)
+      public typealias Element = AlarmKit::AlarmManager.AlarmKit::AlarmUpdates.AlarmKit::Element
+      @available(macOS 15.0, iOS 26.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, *)
+      @available(macCatalyst, unavailable)
+      @_implements(_Concurrency::AsyncIteratorProtocol, Failure) public typealias __AsyncIteratorProtocol_Failure = Swift::Never
+    }
+    @available(iOS 26.0, *)
+    @available(macCatalyst, unavailable)
+    public typealias AsyncIterator = AlarmKit::AlarmManager.AlarmKit::AlarmUpdates.AlarmKit::Iterator
+    @available(macOS 15.0, iOS 26.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, *)
+    @available(macCatalyst, unavailable)
+    @_implements(_Concurrency::AsyncSequence, Failure) public typealias __AsyncSequence_Failure = Swift::Never
+  }
+  public struct AlarmAuthorizationStateUpdates : _Concurrency::AsyncSequence {
+    public typealias Element = AlarmKit::AlarmManager.AlarmKit::AuthorizationState
+    public func makeAsyncIterator() -> AlarmKit::AlarmManager.AlarmKit::AlarmAuthorizationStateUpdates.AlarmKit::Iterator
+    public struct Iterator : _Concurrency::AsyncIteratorProtocol {
+      public mutating func next() async -> AlarmKit::AlarmManager.AlarmKit::AuthorizationState?
+      @available(iOS 26.0, *)
+      @available(macCatalyst, unavailable)
+      public typealias Element = AlarmKit::AlarmManager.AlarmKit::AuthorizationState
+      @available(macOS 15.0, iOS 26.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, *)
+      @available(macCatalyst, unavailable)
+      @_implements(_Concurrency::AsyncIteratorProtocol, Failure) public typealias __AsyncIteratorProtocol_Failure = Swift::Never
+    }
+    @available(iOS 26.0, *)
+    @available(macCatalyst, unavailable)
+    public typealias AsyncIterator = AlarmKit::AlarmManager.AlarmKit::AlarmAuthorizationStateUpdates.AlarmKit::Iterator
+    @available(macOS 15.0, iOS 26.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, *)
+    @available(macCatalyst, unavailable)
+    @_implements(_Concurrency::AsyncSequence, Failure) public typealias __AsyncSequence_Failure = Swift::Never
+  }
+  @objc deinit
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension AlarmKit::AlarmManager.AlarmKit::AlarmConfiguration {
+  public init(countdownDuration: AlarmKit::Alarm.AlarmKit::CountdownDuration? = nil, schedule: AlarmKit::Alarm.AlarmKit::Schedule? = nil, attributes: AlarmKit::AlarmAttributes<Metadata>, appEntityIdentifier: AppIntents::EntityIdentifier? = nil, stopIntent: (any AppIntents::LiveActivityIntent)? = nil, secondaryIntent: (any AppIntents::LiveActivityIntent)? = nil, sound: ActivityKit::AlertConfiguration.ActivityKit::AlertSound = .default)
+  public static func timer(duration: Foundation::TimeInterval, attributes: AlarmKit::AlarmAttributes<Metadata>, appEntityIdentifier: AppIntents::EntityIdentifier? = nil, stopIntent: (any AppIntents::LiveActivityIntent)? = nil, secondaryIntent: (any AppIntents::LiveActivityIntent)? = nil, sound: ActivityKit::AlertConfiguration.ActivityKit::AlertSound = .default) -> AlarmKit::AlarmManager.AlarmKit::AlarmConfiguration<Metadata>
+  public static func alarm(schedule: AlarmKit::Alarm.AlarmKit::Schedule? = nil, attributes: AlarmKit::AlarmAttributes<Metadata>, appEntityIdentifier: AppIntents::EntityIdentifier? = nil, stopIntent: (any AppIntents::LiveActivityIntent)? = nil, secondaryIntent: (any AppIntents::LiveActivityIntent)? = nil, sound: ActivityKit::AlertConfiguration.ActivityKit::AlertSound = .default) -> AlarmKit::AlarmManager.AlarmKit::AlarmConfiguration<Metadata>
+}
+@available(iOS 26.0, *)
+@available(macCatalyst, unavailable)
+extension AlarmKit::Alarm.AlarmKit::State : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macCatalyst, unavailable)
+extension AlarmKit::AlarmManager.AlarmKit::AlarmError : Swift::Equatable {}
+@available(iOS 26.0, *)
+@available(macCatalyst, unavailable)
+extension AlarmKit::AlarmManager.AlarmKit::AlarmError : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macCatalyst, unavailable)
+extension AlarmKit::AlarmManager.AlarmKit::AuthorizationState : Swift::Equatable {}
+@available(iOS 26.0, *)
+@available(macCatalyst, unavailable)
+extension AlarmKit::AlarmManager.AlarmKit::AuthorizationState : Swift::Hashable {}

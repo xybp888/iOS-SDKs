@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SystemPaperPresentation.framework/SystemPaperPresentation
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ICEnableSystemPaperExtensionKey,
+                            _ICSystemPaperExtensionBundleIdentifier,
+                            _ICSystemPaperExtensionPointIdentifier,
+                            _SystemPaperPresentationVersionNumber,
+                            _SystemPaperPresentationVersionString ]
+    objc-classes:         [ ICSystemPaperDismissAction,
+                            ICSystemPaperExtensionHostViewController,
+                            ICSystemPaperPresenter,
+                            ICSystemPaperSceneViewController ]
+    objc-ivars:           [ ICSystemPaperExtensionHostViewController._connection,
+                            ICSystemPaperExtensionHostViewController._didFinish,
+                            ICSystemPaperExtensionHostViewController._presentationDelegate,
+                            ICSystemPaperExtensionHostViewController._startHostingBlock,
+                            ICSystemPaperExtensionHostViewController._userActivityData,
+                            ICSystemPaperSceneViewController._active,
+                            ICSystemPaperSceneViewController._invalidated,
+                            ICSystemPaperSceneViewController._scene,
+                            ICSystemPaperSceneViewController._sceneContainerView,
+                            ICSystemPaperSceneViewController._scenePresenter,
+                            ICSystemPaperSceneViewController._uiParentScene,
+                            ICSystemPaperSceneViewController._userActivityData,
+                            ICSystemPaperSceneViewController._visible ]
+...

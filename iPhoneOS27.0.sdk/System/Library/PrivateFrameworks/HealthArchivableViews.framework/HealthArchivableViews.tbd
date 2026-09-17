@@ -1,0 +1,39 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HealthArchivableViews.framework/HealthArchivableViews
+current-version:       1
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ HAVFakeHeartRateGenerator,
+                            HAVHeartRateDailyRangeTextProvider,
+                            HAVHeartRateTextProvider, _HAVHeartRateCoordinator,
+                            _TtC21HealthArchivableViews21LiveHeartRateReceiver,
+                            _TtC21HealthArchivableViews37HAVHeartRateObservableBoolUserDefault ]
+    objc-ivars:           [ HAVFakeHeartRateGenerator._callbacks,
+                            HAVFakeHeartRateGenerator._currentBPM,
+                            HAVFakeHeartRateGenerator._timer,
+                            HAVHeartRateDailyRangeTextProvider._bundle,
+                            HAVHeartRateDailyRangeTextProvider._fontSize,
+                            HAVHeartRateDailyRangeTextProvider._hasRange,
+                            HAVHeartRateDailyRangeTextProvider._healthStore,
+                            HAVHeartRateDailyRangeTextProvider._isPlaceholder,
+                            HAVHeartRateDailyRangeTextProvider._maximumBPM,
+                            HAVHeartRateDailyRangeTextProvider._minimumBPM,
+                            HAVHeartRateTextProvider._bundle,
+                            HAVHeartRateTextProvider._fontSize,
+                            HAVHeartRateTextProvider._fontWeight,
+                            HAVHeartRateTextProvider._hasCustomFontWeight,
+                            HAVHeartRateTextProvider._isPlaceholder,
+                            HAVHeartRateTextProvider._showsBPMSuffix,
+                            _HAVHeartRateCoordinator._cachedHeartRate,
+                            _HAVHeartRateCoordinator._consumers,
+                            _HAVHeartRateCoordinator._fakeHeartRatesPreferenceObserver,
+                            _HAVHeartRateCoordinator._hasConfiguredDataSource,
+                            _HAVHeartRateCoordinator._heartRateRequestor,
+                            _HAVHeartRateCoordinator._lastHeartRateTimestamp,
+                            _HAVHeartRateCoordinator._staleUpdateTimer,
+                            _HAVHeartRateCoordinator._usingFakeData ]
+...

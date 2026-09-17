@@ -1,0 +1,36 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NanoAppRegistry.framework/NanoAppRegistry
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _NARApplicationsChangedNotification, _NARItemNameKey,
+                            _NARSyncedInfoPlistKeys,
+                            _NARSyncedLocalizedInfoPlistKeys,
+                            _NARSyncediTunesPlistKeys, _NARVendorNameKey,
+                            _NARWorkspaceServiceInterface, _nar_sync_log,
+                            _nar_workspace_log ]
+    objc-classes:         [ NARApplication, NARApplicationState,
+                            NARApplicationWorkspace, NARGlance, NARWorkspaceInfo ]
+    objc-ivars:           [ NARApplication._appState, NARApplication._appTags,
+                            NARApplication._iTunesPlistStrings,
+                            NARApplication._infoPlist,
+                            NARApplication._launchServicesBundleType,
+                            NARApplication._localizedStrings,
+                            NARApplication._parentApplicationBundleIdentifier,
+                            NARApplication._sequenceNumber,
+                            NARApplication._supportsForegroundApplication,
+                            NARApplicationState._removedSystemApp,
+                            NARApplicationState._restricted,
+                            NARApplicationWorkspace._connection,
+                            NARApplicationWorkspace._queue, NARGlance._appID,
+                            NARGlance._displayName, NARGlance._glanceID,
+                            NARGlance._localizedDisplayNameMap,
+                            NARWorkspaceInfo._UUID,
+                            NARWorkspaceInfo._applications,
+                            NARWorkspaceInfo._sequenceNumber,
+                            NARWorkspaceInfo._standaloneGlances ]
+...

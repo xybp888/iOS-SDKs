@@ -1,0 +1,29 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SwiftCRLite.framework/SwiftCRLite
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SecCRLiteCertStatus, _SecCRLiteCopyCoverageInfo,
+                            _SecCRLiteCreate, _SecCRLiteDestroy,
+                            _SecCRLiteGetCoverageInfo, _SecCRLiteLoadFilter,
+                            _SecCRLiteUpdateValid, _SwiftCRLiteIngestFullDump,
+                            _kCRLiteErrorDomain ]
+    objc-classes:         [ SwiftCRLiteClient, SwiftCRLiteInfo, SwiftValidInfo,
+                            _TtC11SwiftCRLite11ValidClient,
+                            _TtC11SwiftCRLite14ValidDaemonIPC,
+                            _TtC11SwiftCRLite17StreamingDownload,
+                            _TtC11SwiftCRLite9SecCRLite,
+                            _TtCC11SwiftCRLite15ValidDownloader15SessionDelegate ]
+    objc-ivars:           [ SwiftCRLiteClient._client,
+                            SwiftCRLiteInfo._generationUsed,
+                            SwiftCRLiteInfo._status,
+                            SwiftCRLiteInfo._versionUsed, SwiftValidInfo._flags,
+                            SwiftValidInfo._format, SwiftValidInfo._matched,
+                            SwiftValidInfo._notAfterDate,
+                            SwiftValidInfo._notBeforeDate,
+                            SwiftValidInfo._policyConstraints ]
+...

@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ParavirtualizedANE.framework/ParavirtualizedANE
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ParavirtualizedANEVersionNumber,
+                            _ParavirtualizedANEVersionString,
+                            __Z12getIOSurfaceyPU19objcproto9OS_os_log8NSObject ]
+    objc-classes:         [ _ANEMutableWeightsMapping, _ANEVirtualModel,
+                            _ANEVirtualPlatformClient ]
+    objc-ivars:           [ _ANEMutableWeightsMapping._guestIOSurface,
+                            _ANEMutableWeightsMapping._hwBuffer,
+                            _ANEMutableWeightsMapping._hwSize,
+                            _ANEVirtualModel._baseKeeperProgram,
+                            _ANEVirtualModel._model,
+                            _ANEVirtualModel._modelURLFromGuest,
+                            _ANEVirtualModel._mutableWeightsMappings,
+                            _ANEVirtualModel._refcount,
+                            _ANEVirtualModel._tmpModelFilesPath,
+                            _ANEVirtualModel._tmpWeightFilesPath,
+                            _ANEVirtualPlatformClient._aneClient,
+                            _ANEVirtualPlatformClient._aneModelDict,
+                            _ANEVirtualPlatformClient._anebaseDirectory,
+                            _ANEVirtualPlatformClient._assetsOnDiskUUIDToDirMap,
+                            _ANEVirtualPlatformClient._avpSaveRestoreSupported,
+                            _ANEVirtualPlatformClient._guestBuildVersion,
+                            _ANEVirtualPlatformClient._negotiatedCapabilityMask,
+                            _ANEVirtualPlatformClient._negotiatedDataInterfaceVersion,
+                            _ANEVirtualPlatformClient._queue ]
+...

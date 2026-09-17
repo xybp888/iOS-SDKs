@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DRMFoundation.framework/DRMFoundation
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _DRMFoundationVersionNumber,
+                            _DRMFoundationVersionString ]
+    objc-classes:         [ _OSBatchingQueue, _OSDataProtectionManager,
+                            _OSDataProtectionStateMonitor, _OSPriorityQueue ]
+    objc-ivars:           [ _OSBatchingQueue._executionQueue,
+                            _OSBatchingQueue._maxDelay,
+                            _OSBatchingQueue._maxQueueDepth,
+                            _OSBatchingQueue._syncQueue, _OSBatchingQueue._timer,
+                            _OSBatchingQueue._workHandler,
+                            _OSBatchingQueue._workItems,
+                            _OSDataProtectionManager._availableState,
+                            _OSDataProtectionManager._deviceFormatedForContentProtection,
+                            _OSDataProtectionManager._handlers,
+                            _OSDataProtectionManager._notifyEnabled,
+                            _OSDataProtectionManager._notifyQueue,
+                            _OSDataProtectionManager._notifyToken,
+                            _OSDataProtectionManager._stateQueue,
+                            _OSDataProtectionStateMonitor._changeHandler,
+                            _OSDataProtectionStateMonitor._handlerUUID,
+                            _OSDataProtectionStateMonitor._manager,
+                            _OSPriorityQueue._count,
+                            _OSPriorityQueue._highestPriority,
+                            _OSPriorityQueue._lowestPriority,
+                            _OSPriorityQueue._objects ]
+...

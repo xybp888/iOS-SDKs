@@ -1,0 +1,39 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/OSAServicesClient.framework/OSAServicesClient
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _DiagnosticMonitorLog,
+                            _OSADiagnosticMonitorClientInterface,
+                            _OSADiagnosticMonitorServerInterface,
+                            _OSAServicesClientVersionNumber,
+                            _OSAServicesClientVersionString,
+                            _kOSADiagnosticMonitorMachService ]
+    objc-classes:         [ EventObserver, OSADiagnosticMonitor,
+                            OSADiagnosticMonitorClient, OSALogEvent,
+                            OSALogIdentity, OSALogWriteResult, OSAServicesClient,
+                            ObserverShim, WriteObserver ]
+    objc-ivars:           [ EventObserver._bugTypes, EventObserver._observer,
+                            OSADiagnosticMonitor._calloutQueue,
+                            OSADiagnosticMonitor._eventObservers,
+                            OSADiagnosticMonitor._observedEventTypes,
+                            OSADiagnosticMonitor._observedWriteTypes,
+                            OSADiagnosticMonitor._queue,
+                            OSADiagnosticMonitor._serverConnection,
+                            OSADiagnosticMonitor._writeObservers,
+                            OSADiagnosticMonitorClient._observers,
+                            OSADiagnosticMonitorClient._queue,
+                            OSALogEvent._details, OSALogEvent._identity,
+                            OSALogIdentity._bugType, OSALogIdentity._incidentID,
+                            OSALogWriteResult._error,
+                            OSALogWriteResult._filePath,
+                            OSALogWriteResult._identity,
+                            OSAServicesClient._connection,
+                            OSAServicesClient._synchRemoteObjectProxy,
+                            ObserverShim._observer, WriteObserver._bugTypes,
+                            WriteObserver._observer ]
+...

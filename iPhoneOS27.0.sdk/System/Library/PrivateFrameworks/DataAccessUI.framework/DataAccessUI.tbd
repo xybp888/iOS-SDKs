@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DataAccessUI.framework/DataAccessUI
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _DAAccountDescriptionFromHostname,
+                            _DiagnosticsEnabledKey,
+                            _kDADiagnosticSaveNotesDelegate ]
+    objc-classes:         [ DADiagnosticsNotesController, DADiagnosticsNotesPane,
+                            DADiagnosticsPSController,
+                            DASettingsAccountsUIController,
+                            DASettingsDataclassConfigurationViewController ]
+    objc-ivars:           [ DADiagnosticsNotesPane._notesView,
+                            DADiagnosticsPSController._savingDataAlert,
+                            DADiagnosticsPSController._simpleAlert,
+                            DADiagnosticsPSController._simpleConfirmSheetDismissedSEL,
+                            DASettingsAccountsUIController._account,
+                            DASettingsAccountsUIController._accountNeedsAdd,
+                            DASettingsAccountsUIController._attemptedValidation,
+                            DASettingsAccountsUIController._confirmedUnvalidatedAccount,
+                            DASettingsAccountsUIController._didSetFullHostURL,
+                            DASettingsAccountsUIController._haveRegisteredForAccountsChanged,
+                            DASettingsAccountsUIController._isSettingUpNewAccount,
+                            DASettingsAccountsUIController._needsSave,
+                            DASettingsAccountsUIController._transitioningToFinishedAccountSetup,
+                            DASettingsAccountsUIController._validatedSuccessfully,
+                            DASettingsDataclassConfigurationViewController._daAccount,
+                            DASettingsDataclassConfigurationViewController._haveRegisteredForAccountsChanged ]
+...

@@ -1,0 +1,563 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -autolink-force-load -enable-library-evolution -language-mode 5 -O -library-level api -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 616.100 -module-name PencilKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import CoreGraphics
+import CoreImage
+import DeveloperToolsSupport
+import Foundation
+import MetalKit
+@_exported import PencilKit
+import Swift
+import SwiftUI
+import Synchronization
+import UIKit.UIGestureRecognizerSubclass
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+import simd
+@available(iOS 26.0, visionOS 26.0, *)
+extension PencilKit::PKToolPickerVisibility {
+  public mutating func toggle()
+}
+@available(iOS 26.0, visionOS 26.0, *)
+extension PencilKit::PKResponderState {
+  public var toolPickerVisibility: PencilKit::PKToolPickerVisibility? {
+    get
+    set
+  }
+}
+extension PencilKit::PKStroke {
+  @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+  public struct RenderState : Swift::Sendable, Swift::Codable, Swift::Equatable {
+    public var grainOffset: CoreFoundation::CGPoint?
+    public init(grainOffset: CoreFoundation::CGPoint? = nil)
+    public init(_ objcValue: PencilKit::PKStrokeRenderStateReference)
+    public init(from decoder: any Swift::Decoder) throws
+    public func encode(to encoder: any Swift::Encoder) throws
+    public static func == (a: PencilKit::PKStroke.PencilKit::RenderState, b: PencilKit::PKStroke.PencilKit::RenderState) -> Swift::Bool
+  }
+}
+@available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+extension PencilKit::PKStrokeRenderStateReference {
+  convenience public init(_ swiftValue: PencilKit::PKStroke.PencilKit::RenderState)
+}
+@available(iOS 14.0, macOS 11.0, *)
+public struct PKStroke : Swift::Sendable {
+  public init(ink: PencilKit::PKInk, path: PencilKit::PKStrokePath, transform: CoreFoundation::CGAffineTransform = .identity, mask: UIKit::UIBezierPath? = nil)
+  @available(iOS 16.0, macOS 13.0, *)
+  public init(ink: PencilKit::PKInk, path: PencilKit::PKStrokePath, transform: CoreFoundation::CGAffineTransform = .identity, mask: UIKit::UIBezierPath? = nil, randomSeed: Swift::UInt32)
+  @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+  public init(ink: PencilKit::PKInk, path: PencilKit::PKStrokePath, transform: CoreFoundation::CGAffineTransform = .identity, mask: UIKit::UIBezierPath? = nil, randomSeed: Swift::UInt32 = UInt32.random(in: 0...UInt32.max), id: Foundation::UUID = UUID(), renderGroupID: Foundation::UUID? = nil, renderState: PencilKit::PKStroke.PencilKit::RenderState? = nil)
+  @available(iOS 17.0, macOS 14.0, *)
+  public var requiredContentVersion: PencilKit::PKContentVersion {
+    get
+  }
+  public var ink: PencilKit::PKInk {
+    get
+    set
+  }
+  public var transform: CoreFoundation::CGAffineTransform {
+    get
+    set
+  }
+  public var path: PencilKit::PKStrokePath {
+    get
+    set
+  }
+  public var mask: UIKit::UIBezierPath? {
+    get
+    set
+  }
+  public var renderBounds: CoreFoundation::CGRect {
+    get
+  }
+  public var maskedPathRanges: [Swift::ClosedRange<CoreFoundation::CGFloat>] {
+    get
+  }
+  @available(iOS 16.0, macOS 13.0, *)
+  public var randomSeed: Swift::UInt32 {
+    get
+    set
+  }
+  @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+  public var renderGroupID: Foundation::UUID? {
+    get
+    set
+  }
+  @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+  public var renderState: PencilKit::PKStroke.PencilKit::RenderState? {
+    get
+    set
+  }
+  @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+  public func substroke(range: Swift::ClosedRange<CoreFoundation::CGFloat>) -> PencilKit::PKStroke
+}
+@available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+extension PencilKit::PKStroke : Swift::Identifiable {
+  @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+  public var id: Foundation::UUID {
+    get
+    set
+  }
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  public typealias ID = Foundation::UUID
+}
+@available(iOS 14.0, macOS 11.0, *)
+extension PencilKit::PKStroke : Swift::_ObjectiveCBridgeable {
+  public typealias _ObjectiveCType = PencilKit::PKStrokeReference
+  public func _bridgeToObjectiveC() -> PencilKit::PKStroke.PencilKit::_ObjectiveCType
+  public static func _forceBridgeFromObjectiveC(_ source: PencilKit::PKStroke.PencilKit::_ObjectiveCType, result: inout PencilKit::PKStroke?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: PencilKit::PKStroke.PencilKit::_ObjectiveCType, result: inout PencilKit::PKStroke?) -> Swift::Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: PencilKit::PKStroke.PencilKit::_ObjectiveCType?) -> PencilKit::PKStroke
+}
+@available(iOS 13.0, macOS 11.0, *)
+public struct PKEraserTool : PencilKit::PKTool, Swift::Equatable, Swift::Sendable {
+  public init(_ eraserType: PencilKit::PKEraserTool.PencilKit::EraserType)
+  @available(iOS 16.4, macOS 13.3, *)
+  public init(_ eraserType: PencilKit::PKEraserTool.PencilKit::EraserType, width: CoreFoundation::CGFloat)
+  public enum EraserType {
+    case vector
+    case bitmap
+    @available(iOS 16.4, macOS 13.3, *)
+    case fixedWidthBitmap
+    @available(iOS 16.4, macOS 13.3, *)
+    public var defaultWidth: CoreFoundation::CGFloat {
+      get
+    }
+    @available(iOS 16.4, macOS 13.3, *)
+    public var validWidthRange: Swift::ClosedRange<CoreFoundation::CGFloat> {
+      get
+    }
+    public static func == (a: PencilKit::PKEraserTool.PencilKit::EraserType, b: PencilKit::PKEraserTool.PencilKit::EraserType) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public var eraserType: PencilKit::PKEraserTool.PencilKit::EraserType {
+    get
+    set
+  }
+  @available(iOS 16.4, macOS 13.3, *)
+  public var width: CoreFoundation::CGFloat {
+    get
+    set
+  }
+  public static func == (a: PencilKit::PKEraserTool, b: PencilKit::PKEraserTool) -> Swift::Bool
+}
+@available(iOS 13.0, macOS 11.0, *)
+extension PencilKit::PKEraserTool : Swift::_ObjectiveCBridgeable {
+  public typealias _ObjectiveCType = PencilKit::PKEraserToolReference
+  public func _bridgeToObjectiveC() -> PencilKit::PKEraserTool.PencilKit::_ObjectiveCType
+  public static func _forceBridgeFromObjectiveC(_ source: PencilKit::PKEraserTool.PencilKit::_ObjectiveCType, result: inout PencilKit::PKEraserTool?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: PencilKit::PKEraserTool.PencilKit::_ObjectiveCType, result: inout PencilKit::PKEraserTool?) -> Swift::Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: PencilKit::PKEraserTool.PencilKit::_ObjectiveCType?) -> PencilKit::PKEraserTool
+}
+@available(iOS 14.0, macOS 11.0, *)
+public struct PKStrokePoint : Swift::Sendable {
+  public init(location: CoreFoundation::CGPoint, timeOffset: Foundation::TimeInterval, size: CoreFoundation::CGSize, opacity: CoreFoundation::CGFloat, force: CoreFoundation::CGFloat, azimuth: CoreFoundation::CGFloat, altitude: CoreFoundation::CGFloat)
+  @available(iOS 17.0, macOS 14.0, *)
+  public init(location: CoreFoundation::CGPoint, timeOffset: Foundation::TimeInterval, size: CoreFoundation::CGSize, opacity: CoreFoundation::CGFloat, force: CoreFoundation::CGFloat, azimuth: CoreFoundation::CGFloat, altitude: CoreFoundation::CGFloat, secondaryScale: CoreFoundation::CGFloat)
+  @available(iOS 26.0, macOS 26.0, visionOS 26.0, *)
+  public init(location: CoreFoundation::CGPoint, timeOffset: Foundation::TimeInterval, size: CoreFoundation::CGSize, opacity: CoreFoundation::CGFloat, force: CoreFoundation::CGFloat, azimuth: CoreFoundation::CGFloat, altitude: CoreFoundation::CGFloat, secondaryScale: CoreFoundation::CGFloat, threshold: CoreFoundation::CGFloat)
+  @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+  public init(location: CoreFoundation::CGPoint, timeOffset: Foundation::TimeInterval, size: CoreFoundation::CGSize, opacity: CoreFoundation::CGFloat, force: CoreFoundation::CGFloat, azimuth: CoreFoundation::CGFloat, altitude: CoreFoundation::CGFloat, secondaryScale: CoreFoundation::CGFloat, threshold: CoreFoundation::CGFloat, lateralJitter: CoreFoundation::CGFloat)
+  public var location: CoreFoundation::CGPoint {
+    get
+  }
+  public var timeOffset: Foundation::TimeInterval {
+    get
+  }
+  public var size: CoreFoundation::CGSize {
+    get
+  }
+  public var opacity: CoreFoundation::CGFloat {
+    get
+  }
+  public var azimuth: CoreFoundation::CGFloat {
+    get
+  }
+  public var force: CoreFoundation::CGFloat {
+    get
+  }
+  public var altitude: CoreFoundation::CGFloat {
+    get
+  }
+  @available(iOS 17.0, macOS 14.0, *)
+  public var secondaryScale: CoreFoundation::CGFloat {
+    get
+  }
+  @available(iOS 26.0, macOS 26.0, visionOS 26.0, *)
+  public var threshold: CoreFoundation::CGFloat {
+    get
+  }
+  @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+  public var lateralJitter: CoreFoundation::CGFloat {
+    get
+  }
+}
+@available(iOS 14.0, macOS 11.0, *)
+extension PencilKit::PKStrokePoint : Swift::_ObjectiveCBridgeable {
+  public typealias _ObjectiveCType = PencilKit::PKStrokePointReference
+  public func _bridgeToObjectiveC() -> PencilKit::PKStrokePoint.PencilKit::_ObjectiveCType
+  public static func _forceBridgeFromObjectiveC(_ source: PencilKit::PKStrokePoint.PencilKit::_ObjectiveCType, result: inout PencilKit::PKStrokePoint?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: PencilKit::PKStrokePoint.PencilKit::_ObjectiveCType, result: inout PencilKit::PKStrokePoint?) -> Swift::Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: PencilKit::PKStrokePoint.PencilKit::_ObjectiveCType?) -> PencilKit::PKStrokePoint
+}
+extension PencilKit::PKToolPickerItem {
+  @available(iOS 26.0, visionOS 26.0, *)
+  public var tool: (any PencilKit::PKTool)? {
+    get
+  }
+}
+@available(iOS 18.0, visionOS 2.0, macOS 26.0, *)
+extension PencilKit::PKToolPickerEraserItem {
+  convenience public init(type: PencilKit::PKEraserTool.PencilKit::EraserType)
+  convenience public init(type: PencilKit::PKEraserTool.PencilKit::EraserType, width: CoreFoundation::CGFloat)
+  public var eraserTool: PencilKit::PKEraserTool {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+final public actor PKStrokeRecognizer {
+  public struct SearchResult {
+    public let strokes: Swift::Set<Foundation::UUID>
+    public let bounds: CoreFoundation::CGRect
+  }
+  public static var supportedLanguages: Swift::Set<Foundation::Locale.Foundation::Language> {
+    get
+  }
+  public static var recognitionVersion: Swift::Int {
+    get
+  }
+  public init(preferredLanguages: [Foundation::Locale.Foundation::Language]? = nil)
+  final public var drawing: PencilKit::PKDrawing {
+    get
+  }
+  final public func updateDrawing(_ drawing: PencilKit::PKDrawing) async
+  final public var languages: [Foundation::Locale.Foundation::Language] {
+    get
+  }
+  final public var indexableContent: Swift::String? {
+    get async
+  }
+  final public func recognizedText(strokeIDs: Swift::Set<Foundation::UUID>? = nil) async -> Swift::String?
+  final public func search(_ query: Swift::String, fullWordsOnly: Swift::Bool = false, caseMatchingOnly: Swift::Bool = false) async -> [PencilKit::PKStrokeRecognizer.PencilKit::SearchResult]
+  @objc deinit
+  @_semantics("defaultActor") nonisolated final public var unownedExecutor: _Concurrency::UnownedSerialExecutor {
+    get
+  }
+}
+@available(iOS 13.0, macOS 10.15, *)
+public struct PKDrawing : Swift::Sendable {
+  public init()
+  public init(data: Foundation::Data) throws
+  public func dataRepresentation() -> Foundation::Data
+  public var bounds: CoreFoundation::CGRect {
+    get
+  }
+  public func image(from rect: CoreFoundation::CGRect, scale: CoreFoundation::CGFloat) -> UIKit::UIImage
+  public mutating func transform(using transform: CoreFoundation::CGAffineTransform)
+  public func transformed(using transform: CoreFoundation::CGAffineTransform) -> PencilKit::PKDrawing
+  public mutating func append(_ toAppend: PencilKit::PKDrawing)
+  public func appending(_ toAppend: PencilKit::PKDrawing) -> PencilKit::PKDrawing
+  @available(iOS 27.0, visionOS 27.0, *)
+  public mutating func erasePath(_ eraserPath: PencilKit::PKStrokePath, mask: UIKit::UIBezierPath? = nil, transform: CoreFoundation::CGAffineTransform = .identity)
+  @available(iOS 27.0, visionOS 27.0, *)
+  public func erasingPath(_ eraserPath: PencilKit::PKStrokePath, mask: UIKit::UIBezierPath? = nil, transform: CoreFoundation::CGAffineTransform = .identity) -> PencilKit::PKDrawing
+  @available(iOS 17.0, macOS 14.0, *)
+  public var requiredContentVersion: PencilKit::PKContentVersion {
+    get
+  }
+}
+@available(iOS 14.0, macOS 11.0, *)
+extension PencilKit::PKDrawing {
+  public init<S>(strokes: S) where S : Swift::Sequence, S.Element == PencilKit::PKStroke
+  public var strokes: [PencilKit::PKStroke] {
+    get
+    set
+  }
+}
+@available(iOS 13.0, macOS 10.15, *)
+extension PencilKit::PKDrawing : Swift::Equatable {
+  public static func == (a: PencilKit::PKDrawing, b: PencilKit::PKDrawing) -> Swift::Bool
+}
+@available(iOS 13.0, macOS 10.15, *)
+extension PencilKit::PKDrawing : Swift::Codable {
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(iOS 13.0, macOS 10.15, *)
+extension PencilKit::PKDrawing : Swift::_ObjectiveCBridgeable {
+  public typealias _ObjectiveCType = PencilKit::PKDrawingReference
+  public func _bridgeToObjectiveC() -> PencilKit::PKDrawing.PencilKit::_ObjectiveCType
+  public static func _forceBridgeFromObjectiveC(_ source: PencilKit::PKDrawing.PencilKit::_ObjectiveCType, result: inout PencilKit::PKDrawing?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: PencilKit::PKDrawing.PencilKit::_ObjectiveCType, result: inout PencilKit::PKDrawing?) -> Swift::Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: PencilKit::PKDrawing.PencilKit::_ObjectiveCType?) -> PencilKit::PKDrawing
+}
+@available(iOS 14.0, macOS 11.0, *)
+public struct PKInk : Swift::Sendable {
+  public typealias InkType = PencilKit::PKInkingTool.PencilKit::InkType
+  public init(_ inkType: PencilKit::PKInk.PencilKit::InkType, color: UIKit::UIColor = UIColor.black)
+  public var inkType: PencilKit::PKInk.PencilKit::InkType {
+    get
+    set
+  }
+  public var color: UIKit::UIColor {
+    get
+    set
+  }
+  @available(iOS 17.0, macOS 14.0, *)
+  public var requiredContentVersion: PencilKit::PKContentVersion {
+    get
+  }
+}
+@available(iOS 14.0, macOS 11.0, *)
+extension PencilKit::PKInk : Swift::_ObjectiveCBridgeable {
+  public typealias _ObjectiveCType = PencilKit::PKInkReference
+  public func _bridgeToObjectiveC() -> PencilKit::PKInk.PencilKit::_ObjectiveCType
+  public static func _forceBridgeFromObjectiveC(_ source: PencilKit::PKInk.PencilKit::_ObjectiveCType, result: inout PencilKit::PKInk?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: PencilKit::PKInk.PencilKit::_ObjectiveCType, result: inout PencilKit::PKInk?) -> Swift::Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: PencilKit::PKInk.PencilKit::_ObjectiveCType?) -> PencilKit::PKInk
+}
+@available(iOS 14.0, macOS 11.0, *)
+extension PencilKit::PKStrokePath.PencilKit::InterpolatedSlice : Swift::Sequence, Swift::IteratorProtocol {
+  public mutating func next() -> PencilKit::PKStrokePoint?
+  @available(macOS 11.0, iOS 14.0, *)
+  public typealias Element = PencilKit::PKStrokePoint
+  @available(macOS 11.0, iOS 14.0, *)
+  public typealias Iterator = PencilKit::PKStrokePath.PencilKit::InterpolatedSlice
+}
+@available(iOS 13.0, macOS 11.0, *)
+public struct PKInkingTool : PencilKit::PKTool, Swift::Equatable, Swift::Sendable {
+  public init(_ inkType: PencilKit::PKInkingTool.PencilKit::InkType, color: UIKit::UIColor = UIColor.black, width: CoreFoundation::CGFloat? = nil)
+  @available(iOS 26.0, visionOS 26.0, *)
+  public init(_ inkType: PencilKit::PKInkingTool.PencilKit::InkType, color: UIKit::UIColor = UIColor.black, width: CoreFoundation::CGFloat? = nil, azimuth: CoreFoundation::CGFloat)
+  public enum InkType : Swift::String {
+    case pen
+    case pencil
+    case marker
+    @available(iOS 17.0, macOS 14.0, *)
+    case monoline
+    @available(iOS 17.0, macOS 14.0, *)
+    case fountainPen
+    @available(iOS 17.0, macOS 14.0, *)
+    case watercolor
+    @available(iOS 17.0, macOS 14.0, *)
+    case crayon
+    @available(iOS 26.0, macOS 26.0, visionOS 26.0, *)
+    case reed
+    public var defaultWidth: CoreFoundation::CGFloat {
+      get
+    }
+    public var validWidthRange: Swift::ClosedRange<CoreFoundation::CGFloat> {
+      get
+    }
+    @available(iOS 17.0, macOS 14.0, *)
+    public var requiredContentVersion: PencilKit::PKContentVersion {
+      get
+    }
+    public init?(rawValue: Swift::String)
+    @available(macOS 11.0, iOS 13.0, *)
+    public typealias RawValue = Swift::String
+    public var rawValue: Swift::String {
+      get
+    }
+  }
+  public var color: UIKit::UIColor {
+    get
+    set
+  }
+  public static func convertColor(_ color: UIKit::UIColor, from: UIKit::UIUserInterfaceStyle, to: UIKit::UIUserInterfaceStyle) -> UIKit::UIColor
+  public var width: CoreFoundation::CGFloat {
+    get
+    set
+  }
+  @available(iOS 26.0, macOS 26.0, visionOS 26.0, *)
+  public var azimuth: CoreFoundation::CGFloat {
+    get
+    set
+  }
+  public var inkType: PencilKit::PKInkingTool.PencilKit::InkType {
+    get
+    set
+  }
+  @available(iOS 17.0, macOS 14.0, *)
+  public var requiredContentVersion: PencilKit::PKContentVersion {
+    get
+  }
+  public static func == (a: PencilKit::PKInkingTool, b: PencilKit::PKInkingTool) -> Swift::Bool
+}
+@available(iOS 14.0, macOS 11.0, *)
+extension PencilKit::PKInkingTool {
+  public init(ink: PencilKit::PKInk, width: CoreFoundation::CGFloat)
+  public var ink: PencilKit::PKInk {
+    get
+  }
+}
+@available(iOS 13.0, macOS 11.0, *)
+extension PencilKit::PKInkingTool : Swift::_ObjectiveCBridgeable {
+  public typealias _ObjectiveCType = PencilKit::PKInkingToolReference
+  public func _bridgeToObjectiveC() -> PencilKit::PKInkingTool.PencilKit::_ObjectiveCType
+  public static func _forceBridgeFromObjectiveC(_ source: PencilKit::PKInkingTool.PencilKit::_ObjectiveCType, result: inout PencilKit::PKInkingTool?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: PencilKit::PKInkingTool.PencilKit::_ObjectiveCType, result: inout PencilKit::PKInkingTool?) -> Swift::Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: PencilKit::PKInkingTool.PencilKit::_ObjectiveCType?) -> PencilKit::PKInkingTool
+}
+@available(iOS 18.0, visionOS 2.0, *)
+extension PencilKit::PKToolPickerLassoItem {
+  public var lassoTool: PencilKit::PKLassoTool {
+    get
+  }
+}
+@available(iOS 18.0, visionOS 2.0, *)
+extension PencilKit::PKToolPickerCustomItem {
+  public var configuration: PencilKit::PKToolPickerCustomItem.PencilKit::Configuration {
+    get
+  }
+  convenience public init(configuration: PencilKit::PKToolPickerCustomItem.PencilKit::Configuration)
+  public struct Configuration {
+    public var identifier: Swift::String
+    public var name: Swift::String
+    public var imageProvider: ((PencilKit::PKToolPickerCustomItem) -> UIKit::UIImage)?
+    public var viewControllerProvider: ((PencilKit::PKToolPickerCustomItem) -> UIKit::UIViewController)?
+    public var defaultWidth: CoreFoundation::CGFloat
+    public var widthVariants: [CoreFoundation::CGFloat : UIKit::UIImage]
+    public var defaultColor: UIKit::UIColor
+    public var allowsColorSelection: Swift::Bool
+    public var toolAttributeControls: PencilKit::PKToolPickerCustomItem.PencilKit::ControlOptions
+    public init(identifier: Swift::String, name: Swift::String)
+  }
+}
+@available(iOS 13.0, macOS 11.0, *)
+public struct PKLassoTool : PencilKit::PKTool, Swift::Equatable, Swift::Sendable {
+  public init()
+  public static func == (a: PencilKit::PKLassoTool, b: PencilKit::PKLassoTool) -> Swift::Bool
+}
+@available(iOS 13.0, macOS 11.0, *)
+extension PencilKit::PKLassoTool : Swift::_ObjectiveCBridgeable {
+  public typealias _ObjectiveCType = PencilKit::PKLassoToolReference
+  public func _bridgeToObjectiveC() -> PencilKit::PKLassoTool.PencilKit::_ObjectiveCType
+  public static func _forceBridgeFromObjectiveC(_ source: PencilKit::PKLassoTool.PencilKit::_ObjectiveCType, result: inout PencilKit::PKLassoTool?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: PencilKit::PKLassoTool.PencilKit::_ObjectiveCType, result: inout PencilKit::PKLassoTool?) -> Swift::Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: PencilKit::PKLassoTool.PencilKit::_ObjectiveCType?) -> PencilKit::PKLassoTool
+}
+@available(iOS 18.0, visionOS 2.0, macOS 26.0, *)
+extension PencilKit::PKToolPickerInkingItem {
+  convenience public init(type: PencilKit::PKInkingTool.PencilKit::InkType, color: UIKit::UIColor? = nil, width: CoreFoundation::CGFloat? = nil, identifier: Swift::String? = nil)
+  @available(iOS 26.0, visionOS 26.0, *)
+  convenience public init(type: PencilKit::PKInkingTool.PencilKit::InkType, color: UIKit::UIColor? = nil, width: CoreFoundation::CGFloat? = nil, azimuth: CoreFoundation::CGFloat? = nil, identifier: Swift::String? = nil)
+  public var inkingTool: PencilKit::PKInkingTool {
+    get
+  }
+}
+extension PencilKit::PKDrawing {
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  @available(iOS 26.0, macOS 26.0, visionOS 26.0, *)
+  nonisolated(nonsending) public func draw(in cgContext: CoreGraphics::CGContext, frame: CoreFoundation::CGRect, from sourceRect: CoreFoundation::CGRect, darkUserInterfaceStyle: Swift::Bool = false) async
+  #endif
+}
+@available(iOS 13.0, *)
+extension PencilKit::PKToolPicker {
+  @available(iOS, introduced: 13.0, deprecated: 18.0, message: "Use selectedToolItem instead.")
+  @available(visionOS, introduced: 1.0, deprecated: 2.0, message: "Use selectedToolItem instead.")
+  public var selectedTool: any PencilKit::PKTool {
+    get
+    set
+  }
+}
+@available(iOS 13.0, *)
+extension PencilKit::PKCanvasView {
+  @_Concurrency::MainActor @preconcurrency public var tool: any PencilKit::PKTool {
+    get
+    set
+  }
+}
+@available(iOS 13.0, macOS 11.0, *)
+public protocol PKTool {
+}
+@available(iOS 14.0, macOS 11.0, *)
+public struct PKStrokePath : Swift::RandomAccessCollection, Swift::Sendable {
+  public init()
+  public init<T>(controlPoints: T, creationDate: Foundation::Date) where T : Swift::Sequence, T.Element == PencilKit::PKStrokePoint
+  @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+  public init(bezierPath: CoreGraphics::CGPath, creationDate: Foundation::Date, pointProvider: (_ convertedPoint: PencilKit::PKStrokePath.PencilKit::ConvertedBezierPoint) -> PencilKit::PKStrokePoint)
+  @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+  public struct ConvertedBezierPoint {
+    public let index: Swift::Int
+    public let pointCount: Swift::Int
+    public let location: CoreFoundation::CGPoint
+    public let bezierSegmentIndex: Swift::Int
+  }
+  public var creationDate: Foundation::Date {
+    get
+  }
+  @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+  public var bezierRepresentation: CoreGraphics::CGPath {
+    get
+  }
+  public func interpolatedLocation(at parametricValue: CoreFoundation::CGFloat) -> CoreFoundation::CGPoint
+  public func interpolatedPoint(at parametricValue: CoreFoundation::CGFloat) -> PencilKit::PKStrokePoint
+  public func interpolatedPoints(in range: Swift::ClosedRange<CoreFoundation::CGFloat>? = nil, by stride: PencilKit::PKStrokePath.PencilKit::InterpolatedSlice.PencilKit::Stride) -> PencilKit::PKStrokePath.PencilKit::InterpolatedSlice
+  public func parametricValue(_ parametricValue: CoreFoundation::CGFloat, offsetBy step: PencilKit::PKStrokePath.PencilKit::InterpolatedSlice.PencilKit::Stride) -> CoreFoundation::CGFloat
+  public struct InterpolatedSlice {
+    public enum Stride {
+      case distance(CoreFoundation::CGFloat)
+      case time(Foundation::TimeInterval)
+      case parametricStep(CoreFoundation::CGFloat)
+    }
+  }
+  public typealias Element = PencilKit::PKStrokePoint
+  public typealias Index = Swift::Int
+  public var startIndex: Swift::Int {
+    get
+  }
+  public var endIndex: Swift::Int {
+    get
+  }
+  public subscript(index: PencilKit::PKStrokePath.PencilKit::Index) -> PencilKit::PKStrokePoint {
+    get
+  }
+  @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+  public subscript(range: Swift::ClosedRange<CoreFoundation::CGFloat>) -> PencilKit::PKStrokePath {
+    get
+  }
+  @available(macOS 11.0, iOS 14.0, *)
+  public typealias Indices = Swift::Range<PencilKit::PKStrokePath.PencilKit::Index>
+  @available(macOS 11.0, iOS 14.0, *)
+  public typealias Iterator = Swift::IndexingIterator<PencilKit::PKStrokePath>
+  @available(macOS 11.0, iOS 14.0, *)
+  public typealias SubSequence = Swift::Slice<PencilKit::PKStrokePath>
+}
+@available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+extension PencilKit::PKStrokePath : Swift::Identifiable {
+  @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+  public init<T>(controlPoints: T, creationDate: Foundation::Date, id: Foundation::UUID) where T : Swift::Sequence, T.Element == PencilKit::PKStrokePoint
+  @available(iOS 27.0, macOS 27.0, visionOS 27.0, *)
+  public var id: Foundation::UUID {
+    get
+  }
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  public typealias ID = Foundation::UUID
+}
+@available(iOS 14.0, macOS 11.0, *)
+extension PencilKit::PKStrokePath : Swift::_ObjectiveCBridgeable {
+  public typealias _ObjectiveCType = PencilKit::PKStrokePathReference
+  public func _bridgeToObjectiveC() -> PencilKit::PKStrokePath.PencilKit::_ObjectiveCType
+  public static func _forceBridgeFromObjectiveC(_ source: PencilKit::PKStrokePath.PencilKit::_ObjectiveCType, result: inout PencilKit::PKStrokePath?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: PencilKit::PKStrokePath.PencilKit::_ObjectiveCType, result: inout PencilKit::PKStrokePath?) -> Swift::Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: PencilKit::PKStrokePath.PencilKit::_ObjectiveCType?) -> PencilKit::PKStrokePath
+}
+@available(iOS 13.0, macOS 11.0, *)
+extension PencilKit::PKEraserTool.PencilKit::EraserType : Swift::Equatable {}
+@available(iOS 13.0, macOS 11.0, *)
+extension PencilKit::PKEraserTool.PencilKit::EraserType : Swift::Hashable {}
+@available(iOS 13.0, macOS 11.0, *)
+extension PencilKit::PKInkingTool.PencilKit::InkType : Swift::Equatable {}
+@available(iOS 13.0, macOS 11.0, *)
+extension PencilKit::PKInkingTool.PencilKit::InkType : Swift::Hashable {}
+@available(iOS 13.0, macOS 11.0, *)
+extension PencilKit::PKInkingTool.PencilKit::InkType : Swift::RawRepresentable {}

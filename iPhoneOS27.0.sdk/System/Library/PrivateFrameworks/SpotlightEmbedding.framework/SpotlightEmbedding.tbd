@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SpotlightEmbedding.framework/SpotlightEmbedding
+current-version:       2459.105
+compatibility-version: 1
+reexported-libraries:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:            [ /System/Library/PrivateFrameworks/SpotlightEmbeddingCore.framework/SpotlightEmbeddingCore ]
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SPEmbeddingModelErrorDomain,
+                            _SPEmbeddingModelVersion ]
+    objc-classes:         [ SPEmbeddingModel, SPEmbeddingTailspinDumper,
+                            SPEmbeddingTokenizer ]
+    objc-ivars:           [ SPEmbeddingModel._queryIDs, SPEmbeddingModel._queue,
+                            SPEmbeddingModel._requestIDs,
+                            SPEmbeddingModel._service,
+                            SPEmbeddingModel._warmedUp,
+                            SPEmbeddingTailspinDumper._dumpQueue,
+                            SPEmbeddingTailspinDumper._latestDumpDate,
+                            SPEmbeddingTokenizer._queue,
+                            SPEmbeddingTokenizer._tokenizer ]
+...

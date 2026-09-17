@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AdPlatforms.framework/AdPlatforms
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AdPlatformsVersionNumber, _AdPlatformsVersionString ]
+    objc-classes:         [ ADAttribution, ADStatusConditionRateLimitedObject,
+                            ADStatusConditions, ADStatusConditionsImpl ]
+    objc-ivars:           [ ADAttribution._hasCompletedResponse,
+                            ADAttribution._numRetries,
+                            ADStatusConditionRateLimitedObject._operation,
+                            ADStatusConditionRateLimitedObject._setTime,
+                            ADStatusConditionRateLimitedObject._statusCondition ]
+...

@@ -1,0 +1,57 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/system/libsystem_dnssd.dylib
+current-version:       3111.0.5
+compatibility-version: 1
+parent-umbrella:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    umbrella:               System
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _DNSServiceAddRecord, _DNSServiceAttrCreate,
+                            _DNSServiceAttrFree,
+                            _DNSServiceAttrSetFailoverPolicy,
+                            _DNSServiceAttrSetValidationData,
+                            _DNSServiceAttrSetValidationPolicy,
+                            _DNSServiceAttributeCreate,
+                            _DNSServiceAttributeDeallocate,
+                            _DNSServiceAttributeSetAAAAPolicy,
+                            _DNSServiceAttributeSetHostKeyHash,
+                            _DNSServiceAttributeSetResolverOverride,
+                            _DNSServiceAttributeSetTimestamp, _DNSServiceBrowse,
+                            _DNSServiceBrowseEx, _DNSServiceConstructFullName,
+                            _DNSServiceCreateConnection,
+                            _DNSServiceCreateDelegateConnection,
+                            _DNSServiceEnumerateDomains,
+                            _DNSServiceErrorCodeToString, _DNSServiceGetAddrInfo,
+                            _DNSServiceGetAddrInfoEx, _DNSServiceGetPID,
+                            _DNSServiceGetProperty, _DNSServiceGetValidationData,
+                            _DNSServiceNATPortMappingCreate,
+                            _DNSServiceProcessResult, _DNSServiceQueryRecord,
+                            _DNSServiceQueryRecordEx,
+                            _DNSServiceQueryRecordWithAttribute,
+                            _DNSServiceReconfirmRecord, _DNSServiceRefDeallocate,
+                            _DNSServiceRefSockFD, _DNSServiceRegister,
+                            _DNSServiceRegisterRecord,
+                            _DNSServiceRegisterRecordWithAttribute,
+                            _DNSServiceRegisterWithAttribute,
+                            _DNSServiceRemoveRecord, _DNSServiceResolve,
+                            _DNSServiceResolveEx, _DNSServiceSendQueuedRequests,
+                            _DNSServiceSetDefaultDomainForUser,
+                            _DNSServiceSetDispatchQueue,
+                            _DNSServiceSetResolverDefaults,
+                            _DNSServiceSleepKeepalive,
+                            _DNSServiceSleepKeepalive_sockaddr,
+                            _DNSServiceUpdateRecord,
+                            _DNSServiceUpdateRecordWithAttribute,
+                            _PeerConnectionRelease, _TXTRecordContainsKey,
+                            _TXTRecordCreate, _TXTRecordDeallocate,
+                            _TXTRecordGetBytesPtr, _TXTRecordGetCount,
+                            _TXTRecordGetItemAtIndex, _TXTRecordGetLength,
+                            _TXTRecordGetValuePtr, _TXTRecordRemoveValue,
+                            _TXTRecordSetValue, _kDNSServiceAttrAllowFailover,
+                            _kDNSServiceAttrValidationRequired,
+                            _kDNSServiceAttributeAAAAFallback ]
+...

@@ -1,0 +1,135 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -Osize -library-level api -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 912.0.234 -module-name Photos
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+public import CloudKit
+public import ExtensionFoundation
+@_exported public import Photos
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 27.0, macOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public class PHReferenceImageInfo : @unchecked Swift::Sendable {
+  public init(fileURL: Foundation::URL)
+  public init(asset: Photos::PHAsset)
+  public var imageContainsReferenceImageData: Swift::Bool {
+    get
+  }
+  @objc deinit
+}
+@available(iOS 8.0, tvOS 10.0, macOS 10.13, *)
+@available(watchOS, unavailable)
+extension Photos::PHChange {
+  public func changeDetails<T>(for object: T) -> Photos::PHObjectChangeDetails<T>? where T : Photos::PHObject
+  public func changeDetails<T>(for fetchResult: Photos::PHFetchResult<T>) -> Photos::PHFetchResultChangeDetails<T>? where T : Photos::PHObject
+}
+@available(iOS 15, tvOS 15, macOS 12, *)
+@available(watchOS, unavailable)
+extension Photos::PHPhotoLibrary {
+  public func cloudIdentifierMappings(forLocalIdentifiers localIdentifiers: [Swift::String]) -> [Swift::String : Swift::Result<Photos::PHCloudIdentifier, any Swift::Error>]
+  public func localIdentifierMappings(for cloudIdentifiers: [Photos::PHCloudIdentifier]) -> [Photos::PHCloudIdentifier : Swift::Result<Swift::String, any Swift::Error>]
+  @available(iOS 27, tvOS 27, macOS 27, visionOS 27, *)
+  @available(watchOS, unavailable)
+  public func localIdentifierMappings(forSynced cloudIdentifiers: [Photos::PHCloudIdentifier]) -> [Photos::PHCloudIdentifier : Swift::Result<Swift::String, any Swift::Error>]
+}
+@available(iOS 16, macOS 13, tvOS 16, *)
+@available(watchOS, unavailable)
+extension Photos::PHPersistentChangeFetchResult : Swift::Sequence {
+  final public class Iterator : Swift::IteratorProtocol {
+    public typealias Element = Photos::PHPersistentChange
+    public init(fetchResult: Photos::PHPersistentChangeFetchResult)
+    final public func next() -> Photos::PHPersistentChangeFetchResult.Photos::Iterator.Photos::Element?
+    @objc deinit
+  }
+  public func makeIterator() -> Photos::PHPersistentChangeFetchResult.Photos::Iterator
+  @available(macOS 13, iOS 16, tvOS 16, *)
+  @available(watchOS, unavailable)
+  public typealias Element = Photos::PHPersistentChangeFetchResult.Photos::Iterator.Photos::Element
+}
+@available(iOS 27, tvOS 27, macOS 27, visionOS 27, *)
+@available(watchOS, unavailable)
+extension Photos::PHAssetResourceManager {
+  public func exportedAssetID(for resource: Photos::PHAssetResource) async throws -> CloudKit::CKAsset.CloudKit::ExportedAssetID
+}
+@available(iOS 27, tvOS 27, macOS 27, visionOS 27, *)
+@available(watchOS, unavailable)
+extension Photos::PHAssetResource {
+  public var dataSize: Swift::Int? {
+    get
+  }
+}
+@available(iOS 26.1, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+public enum PHBackgroundResourceUploadProcessingResult : Swift::Int {
+  case failure
+  case processing
+  case completed
+  public init?(rawValue: Swift::Int)
+  @available(macOS 27.0, iOS 26.1, macCatalyst 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias RawValue = Swift::Int
+  public var rawValue: Swift::Int {
+    get
+  }
+}
+@available(iOS, introduced: 26.1, deprecated: 27.0, message: "Adopt PHBackgroundResourceUploadJobExtension instead")
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+public protocol PHBackgroundResourceUploadExtension : ExtensionFoundation::AppExtension {
+  func process() -> Photos::PHBackgroundResourceUploadProcessingResult
+  func notifyTermination()
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+public protocol PHBackgroundResourceUploadJobExtension : ExtensionFoundation::AppExtension {
+  func processJobs() async -> Photos::PHBackgroundResourceUploadProcessingResult
+  func willTerminate() async
+}
+@available(iOS, introduced: 26.1, deprecated: 27.0, message: "Adopt PHBackgroundResourceUploadJobExtension instead")
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+extension Photos::PHBackgroundResourceUploadExtension {
+  public var configuration: some ExtensionFoundation::AppExtensionConfiguration {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+extension Photos::PHBackgroundResourceUploadJobExtension {
+  public var configuration: some ExtensionFoundation::AppExtensionConfiguration {
+    get
+  }
+}
+@available(iOS 26.1, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+extension Photos::PHBackgroundResourceUploadProcessingResult : Swift::Equatable {}
+@available(iOS 26.1, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+extension Photos::PHBackgroundResourceUploadProcessingResult : Swift::Hashable {}
+@available(iOS 26.1, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+extension Photos::PHBackgroundResourceUploadProcessingResult : Swift::RawRepresentable {}

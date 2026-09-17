@@ -1,0 +1,68 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -Osize -library-level api -enable-experimental-feature ABIAttribute -enable-experimental-feature GlobalActorInferenceCutoff -enable-experimental-feature AnyAppleOSAvailability -enable-experimental-feature ImmutableWeakCaptures -enable-experimental-feature ABIAttribute -enable-experimental-feature GlobalActorInferenceCutoff -enable-experimental-feature AnyAppleOSAvailability -enable-experimental-feature ImmutableWeakCaptures -package-name com.apple.SuggestedActions -target-min-inlining-version min -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature ExistentialAny -enable-experimental-feature DebugDescriptionMacro -user-module-version 20 -module-name SuggestedActions
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import Foundation
+import Swift
+import SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+
+@available(macOS 27.0, iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct SuggestedActionsMessage : Swift::Sendable {
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public init(id: some Hashable, date: Foundation::Date, subject: Foundation::AttributedString?, body: Foundation::AttributedString, sender: SuggestedActions::SuggestedActionsMessage.SuggestedActions::Participant, recipients: [SuggestedActions::SuggestedActionsMessage.SuggestedActions::Participant])
+}
+extension SuggestedActions::SuggestedActionsMessage {
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public static var previousMessagesLimit: Swift::Int {
+    get
+  }
+}
+extension SuggestedActions::SuggestedActionsMessage {
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public struct Participant : Swift::Sendable {
+    public init(name: Swift::String, handle: Swift::String, isUser: Swift::Bool)
+  }
+}
+@available(macOS 27.0, iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@_Concurrency::MainActor public struct SuggestedActionsView : SwiftUICore::View {
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @_Concurrency::MainActor @preconcurrency public var body: some SwiftUICore::View {
+    get
+  }
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public typealias Body = @_opaqueReturnTypeOf("$s16SuggestedActions0aB4ViewV4bodyQrvp", 0) __
+}
+
+extension SuggestedActions::SuggestedActionsView {
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  nonisolated public static func generate(message: SuggestedActions::SuggestedActionsMessage, previousMessages: [SuggestedActions::SuggestedActionsMessage] = []) async
+}
+extension SuggestedActions::SuggestedActionsView {
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @_Concurrency::MainActor public init(message: SuggestedActions::SuggestedActionsMessage, previousMessages: [SuggestedActions::SuggestedActionsMessage] = [])
+}
+@available(macOS 27.0, iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SuggestedActions::SuggestedActionsView : Swift::Sendable {}

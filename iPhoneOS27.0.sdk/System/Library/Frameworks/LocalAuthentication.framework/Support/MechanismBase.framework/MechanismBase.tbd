@@ -1,0 +1,34 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-ios, arm64e.x1-ios ]
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/MechanismBase.framework/MechanismBase'
+current-version: 2319.0.63
+allowable-clients:
+  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+    clients:         [ '-allowable_client', DaemonUtils, LARecoveryUITest, LATester, 
+                       LATester macOS, LATesterAHP, LocalAuthentication, LocalAuthenticationAutomation, 
+                       LocalAuthenticationBinTests, LocalAuthenticationCoreTests, 
+                       LocalAuthenticationCoreUI, LocalAuthenticationCoreUITests, 
+                       LocalAuthenticationCredentialServicesTests, LocalAuthenticationEmbeddedUI, 
+                       LocalAuthenticationPreboard, LocalAuthenticationPreboardTests, 
+                       LocalAuthenticationPrivateUI, LocalAuthenticationRecoveryUI, 
+                       LocalAuthenticationRemoteService, LocalAuthenticationTestSupport, 
+                       LocalAuthenticationTests, LocalAuthenticationUI, LocalAuthenticationUIService, 
+                       LocalAuthenticationUserTests, LocalAuthorizationTests, MechOyster, 
+                       MechPasscode, MechPearl, MechPushButton, MechTouchId, MechWatch, 
+                       MechanismBase, ModuleACM, ModuleBase, SecurityAgentPlugin, 
+                       SharedUtils, _LocalAuthentication_SwiftUI, coreautha, coreauthd, 
+                       latool, userauthd ]
+exports:
+  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+    symbols:         [ _kRemoteUIManagerDefaultActivateTimeout, _kRemoteUIManagerDefaultDeactivateTimeout ]
+    objc-classes:    [ ACMContextRecord, MechanismACM, MechanismAssertion, MechanismAssertionClientProcessVisible, 
+                       MechanismAssertionHolding, MechanismAssertionKeyBagUnlocked, 
+                       MechanismAssertionWithDarwinNotifications, MechanismBase, 
+                       MechanismBaseComposite, MechanismBiometry, MechanismCompanion, 
+                       MechanismContext, MechanismKofN, MechanismKofNReorganizer, 
+                       MechanismRatchet, MechanismRatchetFlow, MechanismScheduler, 
+                       MechanismUI, MechanismUI_PC, MutableMechanismRatchetFlowParams, 
+                       PolicyOptionsSanitizer, RemoteUIActivator, RemoteUIManager, 
+                       RemoteUIManagerConfig ]
+...

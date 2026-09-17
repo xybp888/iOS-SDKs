@@ -1,0 +1,31 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SpotlightDiagnostics.framework/SpotlightDiagnostics
+current-version:       2459.105
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SDDiagnosticDefaultPrivacyLevel,
+                            _SDDiagnosticGateIsInternal,
+                            _SDDiagnosticGateIsSeedBuild, _SDError,
+                            _SDGetActiveUID, _SDLogCategoryClient,
+                            _SDLogCategoryExtension, _SDLogCategoryGeneral,
+                            _SDLogCategoryHelper, _SDLogCategoryUserHelper,
+                            _SDSearchDirectory, _SpotlightDiagnosticErrorDomain,
+                            _SpotlightDiagnosticsVersionNumber,
+                            _SpotlightDiagnosticsVersionString ]
+    objc-classes:         [ SDCoreSpotlightDiagnosticClient, SDDiagnosticClient,
+                            SDDiagnosticClientSet ]
+    objc-ivars:           [ SDCoreSpotlightDiagnosticClient._bundleID,
+                            SDCoreSpotlightDiagnosticClient._index,
+                            SDCoreSpotlightDiagnosticClient._managed,
+                            SDCoreSpotlightDiagnosticClient._path,
+                            SDCoreSpotlightDiagnosticClient._private,
+                            SDCoreSpotlightDiagnosticClient._protectionClass,
+                            SDCoreSpotlightDiagnosticClient._testIndex,
+                            SDDiagnosticClientSet._defaultClients,
+                            SDDiagnosticClientSet._managedClients,
+                            SDDiagnosticClientSet._privateClients ]
+...

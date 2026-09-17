@@ -1,0 +1,53 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CarPlaySetup.framework/CarPlaySetup
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CARSetupLogForCategory ]
+    objc-classes:         [ CARMicaPlayer, CARSetupAppIconProgressView,
+                            CARSetupAssetProgressViewController,
+                            CARSetupAssetPrompt,
+                            CARSetupAssetReadySoonViewController,
+                            CARSetupAssetUnavailableViewController,
+                            CARSetupHeadUnitPairingPrompt,
+                            CARSetupOnboardingViewController,
+                            CARSetupProgressView, CARSetupPrompts,
+                            CARSetupRouteSharingPermissionViewController ]
+    objc-ivars:           [ CARMicaPlayer._delegate,
+                            CARMicaPlayer._documentDuration,
+                            CARMicaPlayer._isNotifyingDelegate,
+                            CARMicaPlayer._loopDuringPlayback,
+                            CARMicaPlayer._path, CARMicaPlayer._playTimer,
+                            CARMicaPlayer._preferredPlaybackSpeed,
+                            CARMicaPlayer._publishedObjects,
+                            CARMicaPlayer._retinaScale, CARMicaPlayer._rootLayer,
+                            CARSetupAppIconProgressView._micaPlayer,
+                            CARSetupAssetProgressViewController._cancelHandler,
+                            CARSetupAssetProgressViewController._progressReporter,
+                            CARSetupAssetProgressViewController._progressView,
+                            CARSetupAssetProgressViewController._subtitleLabel,
+                            CARSetupAssetProgressViewController._titleLabel,
+                            CARSetupAssetProgressViewController._useLaterButton,
+                            CARSetupAssetProgressViewController._useLaterTimer,
+                            CARSetupAssetPrompt._primaryButton,
+                            CARSetupAssetPrompt._secondaryButton,
+                            CARSetupAssetPrompt._subtitleLabel,
+                            CARSetupAssetPrompt._titleLabel,
+                            CARSetupAssetReadySoonViewController._doneButton,
+                            CARSetupAssetReadySoonViewController._doneHandler,
+                            CARSetupAssetReadySoonViewController._subtitleLabel,
+                            CARSetupAssetReadySoonViewController._titleLabel,
+                            CARSetupAssetUnavailableViewController._assetDescription,
+                            CARSetupAssetUnavailableViewController._responseHandler,
+                            CARSetupHeadUnitPairingPrompt._connection,
+                            CARSetupHeadUnitPairingPrompt._delegate,
+                            CARSetupHeadUnitPairingPrompt._keyIdentifier,
+                            CARSetupOnboardingViewController._doneHandler,
+                            CARSetupOnboardingViewController._showSetUpCarKey,
+                            CARSetupProgressView._animatedObservedProgress,
+                            CARSetupRouteSharingPermissionViewController._responseHandler ]
+...

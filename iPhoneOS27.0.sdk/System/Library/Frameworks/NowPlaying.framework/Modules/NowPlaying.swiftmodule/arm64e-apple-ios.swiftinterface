@@ -1,0 +1,600 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -Osize -library-level api -enable-experimental-feature NestedProtocols -enable-experimental-feature PackIteration -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 4026.110.4 -module-name NowPlaying -package-name com.apple.nowplaying
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+public import CoreGraphics
+public import ExtensionFoundation
+public import Foundation
+public import Observation
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public struct MediaCommand {
+  public func enabled(_ isEnabled: Swift::Bool) -> NowPlaying::MediaCommand
+  public enum FeedbackStatus : Swift::CaseIterable, Swift::Sendable {
+    case positive
+    case neutral
+    case negative
+    public static func == (a: NowPlaying::MediaCommand.NowPlaying::FeedbackStatus, b: NowPlaying::MediaCommand.NowPlaying::FeedbackStatus) -> Swift::Bool
+    @available(macOS 27, iOS 27, tvOS 27, watchOS 27, visionOS 27, *)
+    public typealias AllCases = [NowPlaying::MediaCommand.NowPlaying::FeedbackStatus]
+    nonisolated public static var allCases: [NowPlaying::MediaCommand.NowPlaying::FeedbackStatus] {
+      get
+    }
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public enum RepeatMode : Swift::CaseIterable, Swift::Sendable {
+    case off
+    case one
+    case all
+    public static func == (a: NowPlaying::MediaCommand.NowPlaying::RepeatMode, b: NowPlaying::MediaCommand.NowPlaying::RepeatMode) -> Swift::Bool
+    @available(macOS 27, iOS 27, tvOS 27, watchOS 27, visionOS 27, *)
+    public typealias AllCases = [NowPlaying::MediaCommand.NowPlaying::RepeatMode]
+    nonisolated public static var allCases: [NowPlaying::MediaCommand.NowPlaying::RepeatMode] {
+      get
+    }
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public enum ShuffleMode : Swift::CaseIterable, Swift::Sendable {
+    case off
+    case items
+    case collections
+    public static func == (a: NowPlaying::MediaCommand.NowPlaying::ShuffleMode, b: NowPlaying::MediaCommand.NowPlaying::ShuffleMode) -> Swift::Bool
+    @available(macOS 27, iOS 27, tvOS 27, watchOS 27, visionOS 27, *)
+    public typealias AllCases = [NowPlaying::MediaCommand.NowPlaying::ShuffleMode]
+    nonisolated public static var allCases: [NowPlaying::MediaCommand.NowPlaying::ShuffleMode] {
+      get
+    }
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public static func play(_ action: @escaping () async throws -> Swift::Void) -> NowPlaying::MediaCommand
+  public static func pause(_ action: @escaping () async throws -> Swift::Void) -> NowPlaying::MediaCommand
+  public static func stop(_ action: @escaping () async throws -> Swift::Void) -> NowPlaying::MediaCommand
+  public static func togglePlayPause(_ action: @escaping () async throws -> Swift::Void) -> NowPlaying::MediaCommand
+  public static func next(_ action: @escaping () async throws -> Swift::Void) -> NowPlaying::MediaCommand
+  public static func previous(_ action: @escaping () async throws -> Swift::Void) -> NowPlaying::MediaCommand
+  public static func skipForward(preferredIntervals: [Foundation::TimeInterval] = [10], _ action: @escaping (Foundation::TimeInterval) async throws -> Swift::Void) -> NowPlaying::MediaCommand
+  public static func skipBackward(preferredIntervals: [Foundation::TimeInterval] = [10], _ action: @escaping (Foundation::TimeInterval) async throws -> Swift::Void) -> NowPlaying::MediaCommand
+  public static func seekToPosition(_ action: @escaping (Foundation::TimeInterval) async throws -> Swift::Void) -> NowPlaying::MediaCommand
+  public static func seekForward(beginAction: @escaping () async throws -> Swift::Void, endAction: @escaping () async throws -> Swift::Void) -> NowPlaying::MediaCommand
+  public static func seekBackward(beginAction: @escaping () async throws -> Swift::Void, endAction: @escaping () async throws -> Swift::Void) -> NowPlaying::MediaCommand
+  public static func changePlaybackRate(supported: [Swift::Float], _ action: @escaping (Swift::Float) async throws -> Swift::Void) -> NowPlaying::MediaCommand
+  public static func changeRepeatMode(current: NowPlaying::MediaCommand.NowPlaying::RepeatMode, supported: [NowPlaying::MediaCommand.NowPlaying::RepeatMode]? = nil, _ action: @escaping (NowPlaying::MediaCommand.NowPlaying::RepeatMode) async throws -> Swift::Void) -> NowPlaying::MediaCommand
+  public static func changeShuffleMode(current: NowPlaying::MediaCommand.NowPlaying::ShuffleMode, supported: [NowPlaying::MediaCommand.NowPlaying::ShuffleMode]? = nil, _ action: @escaping (NowPlaying::MediaCommand.NowPlaying::ShuffleMode) async throws -> Swift::Void) -> NowPlaying::MediaCommand
+  public static func feedback(title: Swift::String? = nil, shortTitle: Swift::String? = nil, status: NowPlaying::MediaCommand.NowPlaying::FeedbackStatus = .neutral, _ action: @escaping (NowPlaying::MediaCommand.NowPlaying::FeedbackStatus) async throws -> Swift::Void) -> NowPlaying::MediaCommand
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public struct MediaPlaybackSnapshot : Swift::Sendable {
+  public enum PlaybackState : Swift::Sendable {
+    case stopped
+    case playing(rate: Swift::Float = 1.0)
+    case paused
+    case buffering
+    case interrupted
+  }
+  public init(state: NowPlaying::MediaPlaybackSnapshot.NowPlaying::PlaybackState, defaultPlaybackRate: Swift::Float = 1.0, elapsedTime: Foundation::TimeInterval? = nil, timestamp: Foundation::Date? = nil)
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::MediaPlaybackSnapshot.NowPlaying::PlaybackState : Swift::Equatable {
+  public static func == (lhs: NowPlaying::MediaPlaybackSnapshot.NowPlaying::PlaybackState, rhs: NowPlaying::MediaPlaybackSnapshot.NowPlaying::PlaybackState) -> Swift::Bool
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::MediaPlaybackSnapshot : Swift::Equatable {
+  public static func == (lhs: NowPlaying::MediaPlaybackSnapshot, rhs: NowPlaying::MediaPlaybackSnapshot) -> Swift::Bool
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public enum MediaSessionError : Swift::Error {
+  case internalFailure
+  case sessionInvalidated
+  case invalidState
+  public static func == (a: NowPlaying::MediaSessionError, b: NowPlaying::MediaSessionError) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+@available(iOSApplicationExtension, unavailable)
+@_Concurrency::MainActor public class MediaSession<Representable> : Swift::Identifiable where Representable : NowPlaying::MediaSessionRepresentable {
+  @_Concurrency::MainActor final public let id: Swift::String
+  @_Concurrency::MainActor public var isApplicationPrimary: Swift::Bool {
+    get
+  }
+  @_Concurrency::MainActor public var canBecomeApplicationPrimary: Swift::Bool {
+    get
+  }
+  @available(iOS 27, *)
+  @available(iOSApplicationExtension, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(macOS, unavailable)
+  @available(visionOS, unavailable)
+  @_Concurrency::MainActor public var isSystemPrimary: Swift::Bool {
+    get
+  }
+  @_Concurrency::MainActor public init(_ representable: Representable)
+  @_Concurrency::MainActor public func requestToBecomeApplicationPrimary() async throws
+  @available(iOS 27, *)
+  @available(iOSApplicationExtension, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(macOS, unavailable)
+  @available(visionOS, unavailable)
+  @_Concurrency::MainActor public func requestToBecomeSystemPrimary() async throws
+  @objc isolated deinit
+  @available(macOS 27, iOS 27, tvOS 27, watchOS 27, visionOS 27, *)
+  @available(iOSApplicationExtension, unavailable)
+  public typealias ID = Swift::String
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+@available(iOSApplicationExtension, unavailable)
+extension NowPlaying::MediaSession : nonisolated Observation::Observable {
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+@_Concurrency::MainActor public protocol MediaSessionRepresentable : Swift::Identifiable {
+  @_Concurrency::MainActor var id: Swift::String { get }
+  @_Concurrency::MainActor var content: (any NowPlaying::MediaContentRepresentable)? { get }
+  @_Concurrency::MainActor var playbackSnapshot: NowPlaying::MediaPlaybackSnapshot? { get }
+  @_Concurrency::MainActor var commands: [NowPlaying::MediaCommand] { get }
+}
+@available(iOS 27, iOSApplicationExtension 27, *)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+public protocol RemoteMediaSessionAttributes : Swift::Decodable, Swift::Encodable {
+  var id: Swift::String { get }
+}
+@available(iOS 27, *)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+public enum RemoteMediaSessionError : Swift::Error {
+  case invalidAttributes
+  case internalFailure
+  public static func == (a: NowPlaying::RemoteMediaSessionError, b: NowPlaying::RemoteMediaSessionError) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 27, *)
+@available(iOSApplicationExtension, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor public class RemoteMediaSession<Attributes> : Swift::Identifiable where Attributes : NowPlaying::RemoteMediaSessionAttributes {
+  @_Concurrency::MainActor final public let id: Swift::String
+  @_Concurrency::MainActor public var isSystemPrimary: Swift::Bool {
+    get
+  }
+  @objc isolated deinit
+  @_Concurrency::MainActor public static func start(attributes: Attributes) async throws -> NowPlaying::RemoteMediaSession<Attributes>
+  @_Concurrency::MainActor public static func sessions() async throws -> [NowPlaying::RemoteMediaSession<Attributes>]
+  @_Concurrency::MainActor public func update(_ attributes: Attributes) async throws
+  @_Concurrency::MainActor public func end() async throws
+  @_Concurrency::MainActor public func requestToBecomeSystemPrimary() async throws
+  @available(iOS 27, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable)
+  @available(iOSApplicationExtension, unavailable)
+  public typealias ID = Swift::String
+}
+@available(iOS 27, *)
+@available(iOSApplicationExtension, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+extension NowPlaying::RemoteMediaSession {
+  @_Concurrency::MainActor public static var pushToStartTokenUpdates: _Concurrency::AsyncStream<Foundation::Data> {
+    get
+  }
+  @_Concurrency::MainActor public static var pushToStartToken: Foundation::Data? {
+    get
+  }
+}
+@available(iOS 27, *)
+@available(iOSApplicationExtension, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+extension NowPlaying::RemoteMediaSession : nonisolated Observation::Observable {
+}
+@available(iOSApplicationExtension 27, iOS 27, *)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+public struct MediaDevice : Swift::Identifiable, Swift::Equatable, Swift::Sendable {
+  public enum DeviceType : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    case speaker
+    case tv
+    case phone
+    case tablet
+    case wearable
+    case desktop
+    case laptop
+    case setTopBox
+    case mediaStick
+    case gamingConsole
+    case web
+    case car
+    public static func == (a: NowPlaying::MediaDevice.NowPlaying::DeviceType, b: NowPlaying::MediaDevice.NowPlaying::DeviceType) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct Capability : Swift::Sendable {
+    public static func absoluteVolume(_ currentLevel: Swift::Float, onChange: @escaping @Sendable (_ newLevel: Swift::Float) async throws -> Swift::Void) -> NowPlaying::MediaDevice.NowPlaying::Capability
+    public static func relativeVolume(onIncrement: @escaping @Sendable () async throws -> Swift::Void, onDecrement: @escaping @Sendable () async throws -> Swift::Void) -> NowPlaying::MediaDevice.NowPlaying::Capability
+  }
+  public let id: Swift::String
+  public let name: Swift::String
+  public let type: NowPlaying::MediaDevice.NowPlaying::DeviceType
+  public let capabilities: [NowPlaying::MediaDevice.NowPlaying::Capability]
+  public init(id: Swift::String, name: Swift::String, type: NowPlaying::MediaDevice.NowPlaying::DeviceType, capabilities: [NowPlaying::MediaDevice.NowPlaying::Capability])
+  public static func == (lhs: NowPlaying::MediaDevice, rhs: NowPlaying::MediaDevice) -> Swift::Bool
+  @available(iOS 27, iOSApplicationExtension 27, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable)
+  public typealias ID = Swift::String
+}
+@available(iOSApplicationExtension 27, iOS 27, *)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor public protocol RemoteMediaSessionRepresentable : Swift::Identifiable {
+  associatedtype Attributes : NowPlaying::RemoteMediaSessionAttributes
+  @_Concurrency::MainActor var id: Swift::String { get }
+  @_Concurrency::MainActor var content: (any NowPlaying::MediaContentRepresentable)? { get }
+  @_Concurrency::MainActor var playbackSnapshot: NowPlaying::MediaPlaybackSnapshot? { get }
+  @_Concurrency::MainActor var commands: [NowPlaying::MediaCommand] { get }
+  @_Concurrency::MainActor func update(_ attributes: Self.Attributes)
+  @_Concurrency::MainActor var devices: [NowPlaying::MediaDevice] { get }
+}
+@available(iOSApplicationExtension 27, iOS 27, *)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+extension NowPlaying::RemoteMediaSessionRepresentable {
+  @_Concurrency::MainActor public var pushToken: Foundation::Data? {
+    get
+  }
+  @_Concurrency::MainActor public var pushTokenUpdates: _Concurrency::AsyncStream<Foundation::Data> {
+    get
+  }
+}
+@available(iOSApplicationExtension 27.0, iOS 27, *)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor public protocol RemoteMediaSessionExtension<Attributes> : ExtensionFoundation::AppExtension {
+  associatedtype Attributes where Self.Attributes == Self.Session.Attributes
+  associatedtype Session : NowPlaying::RemoteMediaSessionRepresentable
+  @_Concurrency::MainActor func session(_ attributes: Self.Attributes) async throws -> Self.Session
+}
+@available(iOSApplicationExtension 27.0, iOS 27, *)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+extension NowPlaying::RemoteMediaSessionExtensionConfiguration : ExtensionFoundation::AppExtensionConfiguration {
+  final nonisolated public func accept(connection: Foundation::NSXPCConnection) -> Swift::Bool
+}
+@available(iOSApplicationExtension 27.0, iOS 27, *)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor final public class RemoteMediaSessionExtensionConfiguration<Extension> where Extension : NowPlaying::RemoteMediaSessionExtension {
+  @_Concurrency::MainActor public init(extension: Extension)
+  @objc deinit
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public struct BookContent : NowPlaying::MediaContentRepresentable {
+  public let id: Swift::String
+  public let title: Swift::String
+  public let authorName: Swift::String
+  public let narratorName: Swift::String?
+  public let type: NowPlaying::MediaType
+  public let duration: NowPlaying::MediaDuration?
+  public let artwork: NowPlaying::Artwork?
+  public let animatedArtwork: NowPlaying::AnimatedArtwork?
+  public var isExplicit: Swift::Bool?
+  public var isExcludedFromSuggestions: Swift::Bool?
+  public var genre: Swift::String?
+  public init(id: Swift::String, title: Swift::String, authorName: Swift::String, narratorName: Swift::String? = nil, type: NowPlaying::MediaType = .audio, duration: NowPlaying::MediaDuration?, artwork: NowPlaying::Artwork?)
+  public init(id: Swift::String, title: Swift::String, authorName: Swift::String, narratorName: Swift::String? = nil, type: NowPlaying::MediaType = .audio, duration: NowPlaying::MediaDuration?, artwork: NowPlaying::Artwork, animatedArtwork: NowPlaying::AnimatedArtwork?)
+  public var chapter: (current: Swift::Int, total: Swift::Int)?
+  @available(macOS 27, iOS 27, tvOS 27, watchOS 27, visionOS 27, *)
+  public typealias ID = Swift::String
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public struct GenericContent : NowPlaying::MediaContentRepresentable {
+  public let id: Swift::String
+  public let title: Swift::String
+  public let subtitle: Swift::String?
+  public let type: NowPlaying::MediaType
+  public let duration: NowPlaying::MediaDuration?
+  public let artwork: NowPlaying::Artwork?
+  public let animatedArtwork: NowPlaying::AnimatedArtwork?
+  public var isExplicit: Swift::Bool?
+  public var isExcludedFromSuggestions: Swift::Bool?
+  public var genre: Swift::String?
+  public init(id: Swift::String, title: Swift::String, subtitle: Swift::String? = nil, type: NowPlaying::MediaType, duration: NowPlaying::MediaDuration?, artwork: NowPlaying::Artwork?)
+  public init(id: Swift::String, title: Swift::String, subtitle: Swift::String? = nil, type: NowPlaying::MediaType, duration: NowPlaying::MediaDuration?, artwork: NowPlaying::Artwork, animatedArtwork: NowPlaying::AnimatedArtwork?)
+  @available(macOS 27, iOS 27, tvOS 27, watchOS 27, visionOS 27, *)
+  public typealias ID = Swift::String
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public struct HomeMediaContent : NowPlaying::MediaContentRepresentable {
+  public let id: Swift::String
+  public let sourceName: Swift::String
+  public let contentDescription: Swift::String?
+  public let type: NowPlaying::MediaType
+  public let duration: NowPlaying::MediaDuration?
+  public let artwork: NowPlaying::Artwork?
+  public let animatedArtwork: NowPlaying::AnimatedArtwork?
+  public var isExplicit: Swift::Bool?
+  public var isExcludedFromSuggestions: Swift::Bool?
+  public var genre: Swift::String?
+  public init(id: Swift::String, sourceName: Swift::String, contentDescription: Swift::String?, type: NowPlaying::MediaType, duration: NowPlaying::MediaDuration?, artwork: NowPlaying::Artwork?)
+  public init(id: Swift::String, sourceName: Swift::String, contentDescription: Swift::String?, type: NowPlaying::MediaType, duration: NowPlaying::MediaDuration?, artwork: NowPlaying::Artwork, animatedArtwork: NowPlaying::AnimatedArtwork?)
+  @available(macOS 27, iOS 27, tvOS 27, watchOS 27, visionOS 27, *)
+  public typealias ID = Swift::String
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public struct MovieContent : NowPlaying::MediaContentRepresentable {
+  public let id: Swift::String
+  public let title: Swift::String
+  public var type: NowPlaying::MediaType {
+    get
+  }
+  public let duration: NowPlaying::MediaDuration?
+  public let artwork: NowPlaying::Artwork?
+  public let animatedArtwork: NowPlaying::AnimatedArtwork?
+  public var isExplicit: Swift::Bool?
+  public var isExcludedFromSuggestions: Swift::Bool?
+  public var genre: Swift::String?
+  public init(id: Swift::String, title: Swift::String, duration: NowPlaying::MediaDuration?, artwork: NowPlaying::Artwork?)
+  public init(id: Swift::String, title: Swift::String, duration: NowPlaying::MediaDuration?, artwork: NowPlaying::Artwork, animatedArtwork: NowPlaying::AnimatedArtwork?)
+  @available(macOS 27, iOS 27, tvOS 27, watchOS 27, visionOS 27, *)
+  public typealias ID = Swift::String
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public struct MusicContent : NowPlaying::MediaContentRepresentable {
+  public let id: Swift::String
+  public let songTitle: Swift::String
+  public let artistName: Swift::String
+  public let albumName: Swift::String
+  public let type: NowPlaying::MediaType
+  public let duration: NowPlaying::MediaDuration?
+  public let artwork: NowPlaying::Artwork?
+  public let animatedArtwork: NowPlaying::AnimatedArtwork?
+  public var isExplicit: Swift::Bool?
+  public var isExcludedFromSuggestions: Swift::Bool?
+  public var genre: Swift::String?
+  public init(id: Swift::String, songTitle: Swift::String, artistName: Swift::String, albumName: Swift::String, type: NowPlaying::MediaType, duration: NowPlaying::MediaDuration?, artwork: NowPlaying::Artwork?)
+  public init(id: Swift::String, songTitle: Swift::String, artistName: Swift::String, albumName: Swift::String, type: NowPlaying::MediaType, duration: NowPlaying::MediaDuration?, artwork: NowPlaying::Artwork, animatedArtwork: NowPlaying::AnimatedArtwork?)
+  public var composer: Swift::String?
+  public var isrc: Swift::String?
+  @available(macOS 27, iOS 27, tvOS 27, watchOS 27, visionOS 27, *)
+  public typealias ID = Swift::String
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public struct PodcastContent : NowPlaying::MediaContentRepresentable {
+  public let id: Swift::String
+  public let episodeTitle: Swift::String
+  public let showName: Swift::String
+  public let releaseDate: Foundation::Date?
+  public let type: NowPlaying::MediaType
+  public let duration: NowPlaying::MediaDuration?
+  public let artwork: NowPlaying::Artwork?
+  public let animatedArtwork: NowPlaying::AnimatedArtwork?
+  public var isExplicit: Swift::Bool?
+  public var isExcludedFromSuggestions: Swift::Bool?
+  public var genre: Swift::String?
+  public init(id: Swift::String, episodeTitle: Swift::String, showName: Swift::String, releaseDate: Foundation::Date?, type: NowPlaying::MediaType, duration: NowPlaying::MediaDuration?, artwork: NowPlaying::Artwork?)
+  public init(id: Swift::String, episodeTitle: Swift::String, showName: Swift::String, releaseDate: Foundation::Date?, type: NowPlaying::MediaType, duration: NowPlaying::MediaDuration?, artwork: NowPlaying::Artwork, animatedArtwork: NowPlaying::AnimatedArtwork?)
+  @available(macOS 27, iOS 27, tvOS 27, watchOS 27, visionOS 27, *)
+  public typealias ID = Swift::String
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public struct RadioContent : NowPlaying::MediaContentRepresentable {
+  public let id: Swift::String
+  public let stationName: Swift::String
+  public let programName: Swift::String?
+  public let type: NowPlaying::MediaType
+  public let duration: NowPlaying::MediaDuration?
+  public let artwork: NowPlaying::Artwork?
+  public let animatedArtwork: NowPlaying::AnimatedArtwork?
+  public var isExplicit: Swift::Bool?
+  public var isExcludedFromSuggestions: Swift::Bool?
+  public var genre: Swift::String?
+  public init(id: Swift::String, stationName: Swift::String, programName: Swift::String? = nil, type: NowPlaying::MediaType = .audio, duration: NowPlaying::MediaDuration? = .live, artwork: NowPlaying::Artwork?)
+  public init(id: Swift::String, stationName: Swift::String, programName: Swift::String? = nil, type: NowPlaying::MediaType = .audio, duration: NowPlaying::MediaDuration? = .live, artwork: NowPlaying::Artwork, animatedArtwork: NowPlaying::AnimatedArtwork?)
+  @available(macOS 27, iOS 27, tvOS 27, watchOS 27, visionOS 27, *)
+  public typealias ID = Swift::String
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public struct TVShowContent : NowPlaying::MediaContentRepresentable {
+  public let id: Swift::String
+  public let episodeTitle: Swift::String
+  public let showName: Swift::String
+  public var type: NowPlaying::MediaType {
+    get
+  }
+  public let duration: NowPlaying::MediaDuration?
+  public let artwork: NowPlaying::Artwork?
+  public let animatedArtwork: NowPlaying::AnimatedArtwork?
+  public var isExplicit: Swift::Bool?
+  public var isExcludedFromSuggestions: Swift::Bool?
+  public var genre: Swift::String?
+  public init(id: Swift::String, episodeTitle: Swift::String, showName: Swift::String, duration: NowPlaying::MediaDuration?, artwork: NowPlaying::Artwork?)
+  public init(id: Swift::String, episodeTitle: Swift::String, showName: Swift::String, duration: NowPlaying::MediaDuration?, artwork: NowPlaying::Artwork, animatedArtwork: NowPlaying::AnimatedArtwork?)
+  @available(macOS 27, iOS 27, tvOS 27, watchOS 27, visionOS 27, *)
+  public typealias ID = Swift::String
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public struct ArtworkRepresentation {
+  public enum ArtworkRepresentationError : Swift::Error {
+    case noRepresentationAvailable
+    public static func == (a: NowPlaying::ArtworkRepresentation.NowPlaying::ArtworkRepresentationError, b: NowPlaying::ArtworkRepresentation.NowPlaying::ArtworkRepresentationError) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public init(data: Foundation::Data) throws
+  public init(cgImage: CoreGraphics::CGImage) throws
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public struct Artwork : Swift::Identifiable {
+  public let id: Swift::String
+  public init(id: Swift::String, artworkProvider: @escaping @Sendable (CoreFoundation::CGSize) async throws -> NowPlaying::ArtworkRepresentation)
+  @available(macOS 27, iOS 27, tvOS 27, watchOS 27, visionOS 27, *)
+  public typealias ID = Swift::String
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public struct AnimatedArtwork : Swift::Identifiable {
+  public enum AspectRatio : Swift::Sendable {
+    case square
+    case tall
+    public static func == (a: NowPlaying::AnimatedArtwork.NowPlaying::AspectRatio, b: NowPlaying::AnimatedArtwork.NowPlaying::AspectRatio) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public let id: Swift::String
+  public static let compatibleAspectRatios: [NowPlaying::AnimatedArtwork.NowPlaying::AspectRatio]
+  public let supportedAspectRatios: [NowPlaying::AnimatedArtwork.NowPlaying::AspectRatio]
+  public init(id: Swift::String, supportedAspectRatios: [NowPlaying::AnimatedArtwork.NowPlaying::AspectRatio] = [.square], preview previewProvider: @escaping @Sendable (CoreFoundation::CGSize, NowPlaying::AnimatedArtwork.NowPlaying::AspectRatio) async throws -> NowPlaying::ArtworkRepresentation, video videoProvider: @escaping @Sendable (CoreFoundation::CGSize, NowPlaying::AnimatedArtwork.NowPlaying::AspectRatio) async throws -> Foundation::URL)
+  @available(macOS 27, iOS 27, tvOS 27, watchOS 27, visionOS 27, *)
+  public typealias ID = Swift::String
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public enum MediaType {
+  case audio
+  case video
+  public static func == (a: NowPlaying::MediaType, b: NowPlaying::MediaType) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public enum MediaDuration {
+  case live
+  case continuous
+  case finite(_: Foundation::TimeInterval)
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+public protocol MediaContentRepresentable : Swift::Identifiable {
+  var id: Swift::String { get }
+  var type: NowPlaying::MediaType { get }
+  var duration: NowPlaying::MediaDuration? { get }
+  var artwork: NowPlaying::Artwork? { get }
+  var animatedArtwork: NowPlaying::AnimatedArtwork? { get }
+  var isExplicit: Swift::Bool? { get set }
+  var isExcludedFromSuggestions: Swift::Bool? { get set }
+  var genre: Swift::String? { get set }
+}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::MediaCommand.NowPlaying::FeedbackStatus : Swift::Equatable {}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::MediaCommand.NowPlaying::FeedbackStatus : Swift::Hashable {}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::MediaCommand.NowPlaying::RepeatMode : Swift::Equatable {}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::MediaCommand.NowPlaying::RepeatMode : Swift::Hashable {}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::MediaCommand.NowPlaying::ShuffleMode : Swift::Equatable {}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::MediaCommand.NowPlaying::ShuffleMode : Swift::Hashable {}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::MediaSessionError : Swift::Equatable {}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::MediaSessionError : Swift::Hashable {}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+@available(iOSApplicationExtension, unavailable)
+extension NowPlaying::MediaSession : Swift::Sendable {}
+@available(iOS 27, *)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+extension NowPlaying::RemoteMediaSessionError : Swift::Equatable {}
+@available(iOS 27, *)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+extension NowPlaying::RemoteMediaSessionError : Swift::Hashable {}
+@available(iOS 27, *)
+@available(iOSApplicationExtension, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+extension NowPlaying::RemoteMediaSession : Swift::Sendable {}
+@available(iOSApplicationExtension 27, iOS 27, *)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+extension NowPlaying::MediaDevice.NowPlaying::DeviceType : Swift::Hashable {}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::ArtworkRepresentation.NowPlaying::ArtworkRepresentationError : Swift::Equatable {}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::ArtworkRepresentation.NowPlaying::ArtworkRepresentationError : Swift::Hashable {}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::AnimatedArtwork.NowPlaying::AspectRatio : Swift::Equatable {}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::AnimatedArtwork.NowPlaying::AspectRatio : Swift::Hashable {}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::MediaType : Swift::Equatable {}
+@available(iOS 27, macOS 27, watchOS 27, tvOS 27, visionOS 27, *)
+extension NowPlaying::MediaType : Swift::Hashable {}

@@ -1,0 +1,1252 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-experimental-feature Lifetimes -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature ExistentialAny -enable-experimental-feature DebugDescriptionMacro -user-module-version 24.0.7 -module-name RealityCoreRenderer -package-name RealityCoreRenderer
+// swift-module-flags-ignorable: -strict-memory-safety -public-module-name RealityKit -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+public import CoreGraphics
+public import Darwin
+public import Foundation
+public import Metal
+public import ShaderGraph
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+public import Darwin.Mach.mach_types
+public import simd
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+@frozen public struct BoundingSphereBox : Swift::Sendable {
+  @usableFromInline
+  internal struct Content : Swift::Sendable {
+  }
+  internal var content: RealityCoreRenderer::BoundingSphereBox.RealityCoreRenderer::Content
+  public var center: Swift::SIMD3<Swift::Float> {
+    get
+    set
+  }
+  public var radius: Swift::Float {
+    get
+    set
+  }
+  public var halfExtents: Swift::SIMD3<Swift::Float>? {
+    get
+    set
+  }
+  public var fullExtents: Swift::SIMD3<Swift::Float>? {
+    get
+    set
+  }
+  public init(center: Swift::SIMD3<Swift::Float>, radius: Swift::Float)
+  public init(center: Swift::SIMD3<Swift::Float>, halfExtents: Swift::SIMD3<Swift::Float>)
+  public init(center: Swift::SIMD3<Swift::Float>, fullExtents: Swift::SIMD3<Swift::Float>)
+  public init(boxMin: Swift::SIMD3<Swift::Float>, boxMax: Swift::SIMD3<Swift::Float>)
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class LowLevelArgumentTable {
+  public struct Descriptor : Swift::Sendable, Swift::Equatable {
+    public struct Buffer : Swift::Sendable, Swift::Equatable {
+      public var size: Swift::Int {
+        get
+        set
+      }
+      public init(size: Swift::Int)
+      public static func == (a: RealityCoreRenderer::LowLevelArgumentTable.RealityCoreRenderer::Descriptor.RealityCoreRenderer::Buffer, b: RealityCoreRenderer::LowLevelArgumentTable.RealityCoreRenderer::Descriptor.RealityCoreRenderer::Buffer) -> Swift::Bool
+    }
+    public var buffers: [RealityCoreRenderer::LowLevelArgumentTable.RealityCoreRenderer::Descriptor.RealityCoreRenderer::Buffer] {
+      get
+      set
+    }
+    public struct Texture : Swift::Sendable, Swift::Equatable {
+      public var type: Metal::MTLTextureType {
+        get
+        set
+      }
+      public init(type: Metal::MTLTextureType)
+      public static func == (a: RealityCoreRenderer::LowLevelArgumentTable.RealityCoreRenderer::Descriptor.RealityCoreRenderer::Texture, b: RealityCoreRenderer::LowLevelArgumentTable.RealityCoreRenderer::Descriptor.RealityCoreRenderer::Texture) -> Swift::Bool
+    }
+    public var textures: [RealityCoreRenderer::LowLevelArgumentTable.RealityCoreRenderer::Descriptor.RealityCoreRenderer::Texture] {
+      get
+      set
+    }
+    public static func == (a: RealityCoreRenderer::LowLevelArgumentTable.RealityCoreRenderer::Descriptor, b: RealityCoreRenderer::LowLevelArgumentTable.RealityCoreRenderer::Descriptor) -> Swift::Bool
+  }
+  final public var descriptor: RealityCoreRenderer::LowLevelArgumentTable.RealityCoreRenderer::Descriptor {
+    get
+  }
+  final public func setBufferSlice(_ bufferSlice: RealityCoreRenderer::LowLevelBufferSlice, at index: Swift::Int) throws(RealityCoreRenderer::LowLevelRenderContextError)
+  final public func bufferSlice(at index: Swift::Int) -> RealityCoreRenderer::LowLevelBufferSlice?
+  final public func setTexture(_ texture: RealityCoreRenderer::LowLevelTextureResource, at index: Swift::Int) throws(RealityCoreRenderer::LowLevelRenderContextError)
+  final public func texture(at index: Swift::Int) -> RealityCoreRenderer::LowLevelTextureResource?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class LowLevelBufferResource {
+  public struct Descriptor : Swift::Sendable, Swift::Equatable {
+    public var capacity: Swift::Int {
+      get
+      set
+    }
+    public var sizeMultiple: Swift::Int {
+      get
+      set
+    }
+    public init(capacity: Swift::Int, sizeMultiple: Swift::Int = 16)
+    public static func == (a: RealityCoreRenderer::LowLevelBufferResource.RealityCoreRenderer::Descriptor, b: RealityCoreRenderer::LowLevelBufferResource.RealityCoreRenderer::Descriptor) -> Swift::Bool
+  }
+  final public var descriptor: RealityCoreRenderer::LowLevelBufferResource.RealityCoreRenderer::Descriptor {
+    get
+  }
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelBufferResource {
+  final public func read<R, E>(_ body: (Swift::RawSpan) throws(E) -> R) throws(E) -> R where E : Swift::Error, R : ~Copyable
+  final public func update<R, E>(_ body: (inout Swift::MutableRawSpan) throws(E) -> R) throws(E) -> R where E : Swift::Error, R : ~Copyable
+  final public func replace<R, E>(_ body: (inout Swift::MutableRawSpan) throws(E) -> R) throws(E) -> R where E : Swift::Error, R : ~Copyable
+  final public func replace(commandBuffer: (any Metal::MTLCommandBuffer)?) -> any Metal::MTLBuffer
+  final public func read(commandBuffer: (any Metal::MTLCommandBuffer)?) -> any Metal::MTLBuffer
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public struct LowLevelBufferSlice {
+  public var buffer: RealityCoreRenderer::LowLevelBufferResource {
+    get
+  }
+  public var offset: Swift::Int {
+    get
+  }
+  public var size: Swift::Int {
+    get
+  }
+  public init(buffer: RealityCoreRenderer::LowLevelBufferResource, offset: Swift::Int, size: Swift::Int) throws(RealityCoreRenderer::LowLevelRenderContextError)
+  public mutating func setOffset(_ offset: Swift::Int) throws(RealityCoreRenderer::LowLevelRenderContextError)
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelBufferSlice : Swift::Equatable {
+  public static func == (lhs: RealityCoreRenderer::LowLevelBufferSlice, rhs: RealityCoreRenderer::LowLevelBufferSlice) -> Swift::Bool
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class LowLevelInstanceTransformResource {
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelInstanceTransformResource {
+  final public var instanceCapacity: Swift::Int {
+    get
+  }
+  final public var instanceCount: Swift::Int {
+    get
+    set
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelInstanceTransformResource {
+  final public func read<R, E>(_ body: (consuming Swift::Span<simd::float4x4>) throws(E) -> R) throws(E) -> R where E : Swift::Error, R : ~Copyable
+  final public func update<R, E>(_ body: (inout Swift::MutableSpan<simd::float4x4>) throws(E) -> R) throws(E) -> R where E : Swift::Error, R : ~Copyable
+  final public func replace<R, E>(_ body: (inout Swift::MutableSpan<simd::float4x4>) throws(E) -> R) throws(E) -> R where E : Swift::Error, R : ~Copyable
+  final public func replace(commandBuffer: (any Metal::MTLCommandBuffer)?) -> any Metal::MTLBuffer
+  final public func read(commandBuffer: (any Metal::MTLCommandBuffer)?) -> any Metal::MTLBuffer
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public struct LowLevelMaterialParameterMapping : Swift::Sendable {
+  public struct ConstantParameter : Swift::Sendable {
+    public var name: Swift::String {
+      get
+      set
+    }
+    public var offset: Swift::Int {
+      get
+      set
+    }
+    public var metalType: Metal::MTLDataType {
+      get
+      set
+    }
+  }
+  public struct BufferParameter : Swift::Sendable {
+    public var name: Swift::String {
+      get
+      set
+    }
+    public var size: Swift::Int {
+      get
+      set
+    }
+  }
+  public enum Buffer : Swift::Sendable {
+    case constants([RealityCoreRenderer::LowLevelMaterialParameterMapping.RealityCoreRenderer::ConstantParameter])
+    case buffer(RealityCoreRenderer::LowLevelMaterialParameterMapping.RealityCoreRenderer::BufferParameter)
+  }
+  public struct TextureParameter : Swift::Sendable {
+    public var name: Swift::String {
+      get
+      set
+    }
+    public var textureIndex: Swift::Int {
+      get
+      set
+    }
+    public var metalType: Metal::MTLTextureType {
+      get
+      set
+    }
+  }
+  public struct ConstantLocation : Swift::Sendable {
+    public var bufferIndex: Swift::Int {
+      get
+      set
+    }
+    public var constantIndex: Swift::Int {
+      get
+      set
+    }
+  }
+  public var buffers: [RealityCoreRenderer::LowLevelMaterialParameterMapping.RealityCoreRenderer::Buffer] {
+    get
+  }
+  public var textures: [RealityCoreRenderer::LowLevelMaterialParameterMapping.RealityCoreRenderer::TextureParameter] {
+    get
+  }
+  public func bufferLocation(named name: Swift::String) -> Swift::Int?
+  public func constantLocation(named name: Swift::String) -> RealityCoreRenderer::LowLevelMaterialParameterMapping.RealityCoreRenderer::ConstantLocation?
+  public func textureLocation(named name: Swift::String) -> Swift::Int?
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class LowLevelMaterialResource : Swift::Sendable {
+  public struct Descriptor : Swift::Sendable {
+    public var geometry: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::GeometryModifier {
+      get
+      set
+    }
+    public var surface: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader {
+      get
+      set
+    }
+    public var lighting: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::LightingFunction {
+      get
+      set
+    }
+    public init(geometry: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::GeometryModifier, surface: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader, lighting: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::LightingFunction)
+  }
+  final public var geometry: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::GeometryModifier {
+    get
+  }
+  final public var surface: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader {
+    get
+  }
+  final public var lighting: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::LightingFunction {
+    get
+  }
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMaterialResource {
+  public protocol Function : Swift::Sendable {
+    var argumentTableDescriptor: RealityCoreRenderer::LowLevelArgumentTable.RealityCoreRenderer::Descriptor? { get }
+    var parameterMapping: RealityCoreRenderer::LowLevelMaterialParameterMapping? { get }
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader.RealityCoreRenderer::Descriptor {
+  public init(named name: Swift::String, in library: any Metal::MTLLibrary, constantValues: Metal::MTLFunctionConstantValues = .init(), uniformsSize: Swift::Int)
+  public init<UniformsType>(named name: Swift::String, in library: any Metal::MTLLibrary, constantValues: Metal::MTLFunctionConstantValues = .init(), uniformsType: UniformsType.Type)
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::GeometryModifier.RealityCoreRenderer::Descriptor {
+  public init(named name: Swift::String, in library: any Metal::MTLLibrary, constantValues: Metal::MTLFunctionConstantValues = .init(), uniformsSize: Swift::Int)
+  public init<UniformsType>(named name: Swift::String, in library: any Metal::MTLLibrary, constantValues: Metal::MTLFunctionConstantValues = .init(), uniformsType: UniformsType.Type)
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMaterialResource {
+  @_hasMissingDesignatedInitializers final public class GeometryModifier : RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::Function, Swift::Sendable {
+    public struct Descriptor : Swift::Sendable {
+      public var name: Swift::String {
+        get
+        set
+      }
+      public var library: any Metal::MTLLibrary {
+        get
+        set
+      }
+      public var constantValues: Metal::MTLFunctionConstantValues {
+        get
+        set
+      }
+      public init(named name: Swift::String, in library: any Metal::MTLLibrary)
+      public init(named name: Swift::String, in library: any Metal::MTLLibrary, constantValues: Metal::MTLFunctionConstantValues)
+    }
+    final public var argumentTableDescriptor: RealityCoreRenderer::LowLevelArgumentTable.RealityCoreRenderer::Descriptor? {
+      get
+    }
+    final public var parameterMapping: RealityCoreRenderer::LowLevelMaterialParameterMapping? {
+      get
+    }
+    @objc deinit
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMaterialResource {
+  @_hasMissingDesignatedInitializers final public class LightingFunction : RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::Function, Swift::Sendable {
+    final public var argumentTableDescriptor: RealityCoreRenderer::LowLevelArgumentTable.RealityCoreRenderer::Descriptor? {
+      get
+    }
+    final public var parameterMapping: RealityCoreRenderer::LowLevelMaterialParameterMapping? {
+      get
+    }
+    @objc deinit
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMaterialResource {
+  public struct ShaderGraphOutput : Swift::Sendable {
+    public var geometryModifier: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::GeometryModifier? {
+      get
+    }
+    public var surfaceShader: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader {
+      get
+    }
+    public enum Blending : Swift::Sendable {
+      case opaque
+      case transparent
+      public static func == (a: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::ShaderGraphOutput.RealityCoreRenderer::Blending, b: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::ShaderGraphOutput.RealityCoreRenderer::Blending) -> Swift::Bool
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+    }
+    public var blending: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::ShaderGraphOutput.RealityCoreRenderer::Blending {
+      get
+    }
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMaterialResource {
+  public struct SimpleSurfaceDescriptor : Swift::Sendable {
+    public var useTintColor: Swift::Bool {
+      get
+      set
+    }
+    public var useTexture: Swift::Bool {
+      get
+      set
+    }
+    public enum OutputChannel : Swift::Sendable {
+      case baseColor
+      case emissiveColor
+      public static func == (a: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SimpleSurfaceDescriptor.RealityCoreRenderer::OutputChannel, b: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SimpleSurfaceDescriptor.RealityCoreRenderer::OutputChannel) -> Swift::Bool
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+    }
+    public var outputChannel: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SimpleSurfaceDescriptor.RealityCoreRenderer::OutputChannel {
+      get
+      set
+    }
+    public var outputOpacity: Swift::Bool {
+      get
+      set
+    }
+    public init(useTintColor: Swift::Bool, useTexture: Swift::Bool, outputChannel: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SimpleSurfaceDescriptor.RealityCoreRenderer::OutputChannel, outputOpacity: Swift::Bool)
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMaterialResource {
+  @_hasMissingDesignatedInitializers final public class SurfaceShader : RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::Function, Swift::Sendable {
+    public struct Descriptor : Swift::Sendable {
+      public var name: Swift::String {
+        get
+        set
+      }
+      public var library: any Metal::MTLLibrary {
+        get
+        set
+      }
+      public var constantValues: Metal::MTLFunctionConstantValues {
+        get
+        set
+      }
+      public init(named name: Swift::String, in library: any Metal::MTLLibrary)
+      public init(named name: Swift::String, in library: any Metal::MTLLibrary, constantValues: Metal::MTLFunctionConstantValues)
+    }
+    final public var argumentTableDescriptor: RealityCoreRenderer::LowLevelArgumentTable.RealityCoreRenderer::Descriptor? {
+      get
+    }
+    final public var parameterMapping: RealityCoreRenderer::LowLevelMaterialParameterMapping? {
+      get
+    }
+    @objc deinit
+  }
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class LowLevelMeshInstance {
+  final public var meshPart: RealityCoreRenderer::LowLevelMeshPart {
+    get
+  }
+  final public var pipeline: RealityCoreRenderer::LowLevelRenderPipelineState {
+    get
+  }
+  final public var geometryArguments: RealityCoreRenderer::LowLevelArgumentTable? {
+    get
+  }
+  final public var surfaceArguments: RealityCoreRenderer::LowLevelArgumentTable? {
+    get
+  }
+  final public var lightingArguments: RealityCoreRenderer::LowLevelArgumentTable? {
+    get
+  }
+  final public var transform: simd::simd_float4x4 {
+    get
+    set
+  }
+  final public var bounds: RealityCoreRenderer::BoundingSphereBox? {
+    get
+    set
+  }
+  final public var instanceTransforms: RealityCoreRenderer::LowLevelInstanceTransformResource? {
+    get
+  }
+  final public func setInstanceTransforms(_ instanceTransforms: RealityCoreRenderer::LowLevelInstanceTransformResource?) throws(RealityCoreRenderer::LowLevelRenderContextError)
+  public enum SortCategory : Swift::Sendable, Swift::Equatable {
+    case opaque
+    case transparent
+    public static func == (a: RealityCoreRenderer::LowLevelMeshInstance.RealityCoreRenderer::SortCategory, b: RealityCoreRenderer::LowLevelMeshInstance.RealityCoreRenderer::SortCategory) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  final public var sortCategory: RealityCoreRenderer::LowLevelMeshInstance.RealityCoreRenderer::SortCategory {
+    get
+    set
+  }
+  final public var triangleFillMode: Metal::MTLTriangleFillMode {
+    get
+    set
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class LowLevelMeshInstanceArray {
+  public typealias Element = RealityCoreRenderer::LowLevelMeshInstance?
+  final public var renderTargets: RealityCoreRenderer::LowLevelRenderTarget.RealityCoreRenderer::DescriptorSet {
+    get
+  }
+  final public var count: Swift::Int {
+    get
+  }
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMeshInstanceArray : Swift::Sequence {
+  public struct Iterator : Swift::IteratorProtocol {
+    public mutating func next() -> RealityCoreRenderer::LowLevelMeshInstanceArray.RealityCoreRenderer::Element?
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias Element = RealityCoreRenderer::LowLevelMeshInstanceArray.RealityCoreRenderer::Element
+  }
+  final public func makeIterator() -> RealityCoreRenderer::LowLevelMeshInstanceArray.RealityCoreRenderer::Iterator
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMeshInstanceArray : Swift::Collection {
+  public typealias Index = Swift::Int
+  public typealias SubSequence = Swift::Slice<RealityCoreRenderer::LowLevelMeshInstanceArray>
+  final public subscript(position: Swift::Int) -> RealityCoreRenderer::LowLevelMeshInstance? {
+    get
+  }
+  final public var startIndex: Swift::Int {
+    get
+  }
+  final public var endIndex: Swift::Int {
+    get
+  }
+  final public func index(after i: Swift::Int) -> Swift::Int
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias Indices = Swift::DefaultIndices<RealityCoreRenderer::LowLevelMeshInstanceArray>
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMeshInstanceArray {
+  final public func setMeshInstance(_ newElement: RealityCoreRenderer::LowLevelMeshInstanceArray.RealityCoreRenderer::Element, index: Swift::Int) throws(RealityCoreRenderer::LowLevelRenderContextError)
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class LowLevelMeshPart {
+  final public var resource: RealityCoreRenderer::LowLevelMeshResource {
+    get
+  }
+  final public var primitive: Metal::MTLPrimitiveType {
+    get
+  }
+  final public var indexOffset: Swift::Int {
+    get
+  }
+  final public var indexCount: Swift::Int {
+    get
+  }
+  final public var windingOrder: Metal::MTLWinding {
+    get
+    set
+  }
+  final public var bounds: RealityCoreRenderer::BoundingSphereBox {
+    get
+    set
+  }
+  final public func setIndexRange(indexOffset: Swift::Int, indexCount: Swift::Int) throws(RealityCoreRenderer::LowLevelRenderContextError)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class LowLevelMeshResource {
+  public enum VertexSemantic : Swift::Sendable, Swift::Equatable {
+    case position
+    case color
+    case normal
+    case tangent
+    case bitangent
+    case uv0
+    case uv1
+    case uv2
+    case uv3
+    case uv4
+    case uv5
+    case uv6
+    case uv7
+    case unspecified
+    public static func == (a: RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::VertexSemantic, b: RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::VertexSemantic) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public struct Attribute : Swift::Sendable, Swift::Equatable {
+    public var semantic: RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::VertexSemantic {
+      get
+      set
+    }
+    public var format: Metal::MTLVertexFormat {
+      get
+      set
+    }
+    public var offset: Swift::Int {
+      get
+      set
+    }
+    public var layoutIndex: Swift::Int {
+      get
+      set
+    }
+    public init()
+    public static func == (a: RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Attribute, b: RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Attribute) -> Swift::Bool
+  }
+  public struct Layout : Swift::Sendable, Swift::Equatable {
+    public var bufferIndex: Swift::Int {
+      get
+      set
+    }
+    public var bufferOffset: Swift::Int {
+      get
+      set
+    }
+    public var bufferStride: Swift::Int {
+      get
+      set
+    }
+    public var stepRate: Swift::Int {
+      get
+      set
+    }
+    public var stepFunction: Metal::MTLVertexStepFunction {
+      get
+      set
+    }
+    public init()
+    public static func == (a: RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Layout, b: RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Layout) -> Swift::Bool
+  }
+  public struct Descriptor : Swift::Sendable, Swift::Equatable {
+    public init(vertexCapacity: Swift::Int = 0, vertexAttributes: [RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Attribute] = [Attribute](), vertexLayouts: [RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Layout] = [Layout](), indexCapacity: Swift::Int = 0, indexType: Metal::MTLIndexType = MTLIndexType.uint32, instanceCapacity: Swift::Int = 0)
+    public static let maxVertexBufferCount: Swift::Int
+    public var vertexBufferCount: Swift::Int {
+      get
+    }
+    public var vertexCapacity: Swift::Int {
+      get
+      set
+    }
+    public var vertexAttributes: [RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Attribute] {
+      get
+      set
+    }
+    public var vertexLayouts: [RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Layout] {
+      get
+      set
+    }
+    public var indexCapacity: Swift::Int {
+      get
+      set
+    }
+    public var indexType: Metal::MTLIndexType {
+      get
+      set
+    }
+    public var instanceCapacity: Swift::Int {
+      get
+      set
+    }
+    public static func == (a: RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Descriptor, b: RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Descriptor) -> Swift::Bool
+  }
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Attribute {
+  public init(semantic: RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::VertexSemantic, format: Metal::MTLVertexFormat, layoutIndex: Swift::Int = 0, offset: Swift::Int)
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Layout {
+  public init(bufferIndex: Swift::Int, bufferOffset: Swift::Int = 0, bufferStride: Swift::Int, stepFunction: Metal::MTLVertexStepFunction = .perVertex, stepRate: Swift::Int = 1)
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMeshResource {
+  final public func readVertices<R, E>(at index: Swift::Int, _ body: (Swift::RawSpan) throws(E) -> R) throws(E) -> R where E : Swift::Error, R : ~Copyable
+  final public func readIndices<R, E>(_ body: (Swift::RawSpan) throws(E) -> R) throws(E) -> R where E : Swift::Error, R : ~Copyable
+  final public func updateIndices<R, E>(_ body: (inout Swift::MutableRawSpan) throws(E) -> R) throws(E) -> R where E : Swift::Error, R : ~Copyable
+  final public func replaceIndices<R, E>(_ body: (inout Swift::MutableRawSpan) throws(E) -> R) throws(E) -> R where E : Swift::Error, R : ~Copyable
+  final public func updateVertices<R, E>(at index: Swift::Int, _ body: (inout Swift::MutableRawSpan) throws(E) -> R) throws(E) -> R where E : Swift::Error, R : ~Copyable
+  final public func replaceVertices<R, E>(at index: Swift::Int, _ body: (inout Swift::MutableRawSpan) throws(E) -> R) throws(E) -> R where E : Swift::Error, R : ~Copyable
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMeshResource {
+  final public func readVertices(at index: Swift::Int, commandBuffer: (any Metal::MTLCommandBuffer)?) -> any Metal::MTLBuffer
+  final public func replaceVertices(at index: Swift::Int, commandBuffer: (any Metal::MTLCommandBuffer)?) -> any Metal::MTLBuffer
+  final public func readIndices(commandBuffer: (any Metal::MTLCommandBuffer)?) -> any Metal::MTLBuffer
+  final public func replaceIndices(commandBuffer: (any Metal::MTLCommandBuffer)?) -> any Metal::MTLBuffer
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMeshResource {
+  final public var descriptor: RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Descriptor {
+    get
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public protocol LowLevelRenderContext : AnyObject {
+  var device: any Metal::MTLDevice { get }
+  func makeMeshResource(descriptor: RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Descriptor) throws -> RealityCoreRenderer::LowLevelMeshResource
+  func makeTextureResource(descriptor: RealityCoreRenderer::LowLevelTextureResource.RealityCoreRenderer::Descriptor) throws -> RealityCoreRenderer::LowLevelTextureResource
+  func makeBufferResource(descriptor: RealityCoreRenderer::LowLevelBufferResource.RealityCoreRenderer::Descriptor) throws -> RealityCoreRenderer::LowLevelBufferResource
+  func makeArgumentTable(descriptor: RealityCoreRenderer::LowLevelArgumentTable.RealityCoreRenderer::Descriptor, buffers: [RealityCoreRenderer::LowLevelBufferSlice], textures: [RealityCoreRenderer::LowLevelTextureResource]) throws -> RealityCoreRenderer::LowLevelArgumentTable
+  func waitForCommandBuffer(_ commandBuffer: any Metal::MTLCommandBuffer)
+  func makeMeshPart(resource: RealityCoreRenderer::LowLevelMeshResource, indexOffset: Swift::Int, indexCount: Swift::Int, primitive: Metal::MTLPrimitiveType, windingOrder: Metal::MTLWinding, bounds: RealityCoreRenderer::BoundingSphereBox) throws -> RealityCoreRenderer::LowLevelMeshPart
+  func makeMeshInstance(meshPart: RealityCoreRenderer::LowLevelMeshPart, pipeline: RealityCoreRenderer::LowLevelRenderPipelineState, geometryArguments: RealityCoreRenderer::LowLevelArgumentTable?, surfaceArguments: RealityCoreRenderer::LowLevelArgumentTable?, lightingArguments: RealityCoreRenderer::LowLevelArgumentTable?, transform: simd::simd_float4x4, sortCategory: RealityCoreRenderer::LowLevelMeshInstance.RealityCoreRenderer::SortCategory) throws -> RealityCoreRenderer::LowLevelMeshInstance
+  func makeInstanceTransformResource(instanceCapacity: Swift::Int) throws -> RealityCoreRenderer::LowLevelInstanceTransformResource
+  func makeMeshInstanceArray(renderTargets: RealityCoreRenderer::LowLevelRenderTarget.RealityCoreRenderer::DescriptorSet, count: Swift::Int) throws -> RealityCoreRenderer::LowLevelMeshInstanceArray
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) func makeMaterialResource(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::Descriptor) async throws -> sending RealityCoreRenderer::LowLevelMaterialResource
+  #endif
+  @available(*, noasync)
+  func makeMaterialResource(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::Descriptor) throws -> sending RealityCoreRenderer::LowLevelMaterialResource
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) func makeGeometryModifier(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::GeometryModifier.RealityCoreRenderer::Descriptor) async throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::GeometryModifier
+  #endif
+  @available(*, noasync)
+  func makeGeometryModifier(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::GeometryModifier.RealityCoreRenderer::Descriptor) throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::GeometryModifier
+  func makeDefaultGeometryModifier() -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::GeometryModifier
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) func makeRenderPipelineState(descriptor: RealityCoreRenderer::LowLevelRenderPipelineState.RealityCoreRenderer::Descriptor) async throws -> sending RealityCoreRenderer::LowLevelRenderPipelineState
+  #endif
+  @available(*, noasync)
+  func makeRenderPipelineState(descriptor: RealityCoreRenderer::LowLevelRenderPipelineState.RealityCoreRenderer::Descriptor) throws -> sending RealityCoreRenderer::LowLevelRenderPipelineState
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) func makeSimpleSurfaceShader(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SimpleSurfaceDescriptor) async throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader
+  #endif
+  @available(*, noasync)
+  func makeSimpleSurfaceShader(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SimpleSurfaceDescriptor) throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) func makeSurfaceShader(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader.RealityCoreRenderer::Descriptor) async throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader
+  #endif
+  @available(*, noasync)
+  func makeSurfaceShader(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader.RealityCoreRenderer::Descriptor) throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public struct LowLevelRenderContextError : Swift::Error {
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderContextError : Foundation::LocalizedError {
+  public var errorDescription: Swift::String? {
+    get
+  }
+  public var failureReason: Swift::String? {
+    get
+  }
+  public var helpAnchor: Swift::String? {
+    get
+  }
+  public var recoverySuggestion: Swift::String? {
+    get
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public protocol LowLevelRenderContextLighting {
+  func makeImageBasedLightingFunction() -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::LightingFunction
+  func makeUnlitLightingFunction() -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::LightingFunction
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderContext {
+  public var lighting: any RealityCoreRenderer::LowLevelRenderContextLighting {
+    get
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public protocol LowLevelRenderContextShaderGraph {
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) func makeShaderGraphFunctions(shaderGraph: ShaderGraph::ShaderGraph, constantValues: Metal::MTLFunctionConstantValues) async throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::ShaderGraphOutput
+  #endif
+  @available(*, noasync)
+  func makeShaderGraphFunctions(shaderGraph: ShaderGraph::ShaderGraph, constantValues: Metal::MTLFunctionConstantValues) throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::ShaderGraphOutput
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderContext {
+  public var shaderGraph: any RealityCoreRenderer::LowLevelRenderContextShaderGraph {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class LowLevelRenderContextStandalone {
+  public struct Configuration : Swift::Sendable {
+    public var device: any Metal::MTLDevice {
+      get
+      set
+    }
+    public var memoryOwner: Darwin::task_id_token_t? {
+      get
+      set
+    }
+    public init(device: any Metal::MTLDevice)
+  }
+  public struct Resources : Swift::Sendable {
+    #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+    nonisolated(nonsending) public init(device: any Metal::MTLDevice) async throws
+    #endif
+  }
+  public init(configuration: RealityCoreRenderer::LowLevelRenderContextStandalone.RealityCoreRenderer::Configuration, resources: RealityCoreRenderer::LowLevelRenderContextStandalone.RealityCoreRenderer::Resources) throws
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) public init(configuration: RealityCoreRenderer::LowLevelRenderContextStandalone.RealityCoreRenderer::Configuration) async throws
+  #endif
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderContextStandalone : RealityCoreRenderer::LowLevelRenderContext {
+  final public var device: any Metal::MTLDevice {
+    get
+  }
+  final public func makeMeshResource(descriptor: RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Descriptor) throws -> RealityCoreRenderer::LowLevelMeshResource
+  final public func makeTextureResource(descriptor: RealityCoreRenderer::LowLevelTextureResource.RealityCoreRenderer::Descriptor) throws -> RealityCoreRenderer::LowLevelTextureResource
+  final public func makeBufferResource(descriptor: RealityCoreRenderer::LowLevelBufferResource.RealityCoreRenderer::Descriptor) throws -> RealityCoreRenderer::LowLevelBufferResource
+  final public func makeArgumentTable(descriptor: RealityCoreRenderer::LowLevelArgumentTable.RealityCoreRenderer::Descriptor, buffers: [RealityCoreRenderer::LowLevelBufferSlice], textures: [RealityCoreRenderer::LowLevelTextureResource]) throws -> RealityCoreRenderer::LowLevelArgumentTable
+  final public func makeMeshPart(resource: RealityCoreRenderer::LowLevelMeshResource, indexOffset: Swift::Int, indexCount: Swift::Int, primitive: Metal::MTLPrimitiveType, windingOrder: Metal::MTLWinding, bounds: RealityCoreRenderer::BoundingSphereBox) throws -> RealityCoreRenderer::LowLevelMeshPart
+  final public func makeMeshInstance(meshPart: RealityCoreRenderer::LowLevelMeshPart, pipeline: RealityCoreRenderer::LowLevelRenderPipelineState, geometryArguments: RealityCoreRenderer::LowLevelArgumentTable?, surfaceArguments: RealityCoreRenderer::LowLevelArgumentTable?, lightingArguments: RealityCoreRenderer::LowLevelArgumentTable?, transform: simd::simd_float4x4, sortCategory: RealityCoreRenderer::LowLevelMeshInstance.RealityCoreRenderer::SortCategory) throws -> RealityCoreRenderer::LowLevelMeshInstance
+  final public func makeInstanceTransformResource(instanceCapacity: Swift::Int) throws -> RealityCoreRenderer::LowLevelInstanceTransformResource
+  final public func makeMeshInstanceArray(renderTargets: RealityCoreRenderer::LowLevelRenderTarget.RealityCoreRenderer::DescriptorSet, count: Swift::Int) throws -> RealityCoreRenderer::LowLevelMeshInstanceArray
+  final public func waitForCommandBuffer(_ commandBuffer: any Metal::MTLCommandBuffer)
+  @available(*, noasync)
+  final public func makeMaterialResource(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::Descriptor) throws -> sending RealityCoreRenderer::LowLevelMaterialResource
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) final public func makeMaterialResource(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::Descriptor) async throws -> sending RealityCoreRenderer::LowLevelMaterialResource
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) final public func makeGeometryModifier(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::GeometryModifier.RealityCoreRenderer::Descriptor) async throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::GeometryModifier
+  #endif
+  @available(*, noasync)
+  final public func makeGeometryModifier(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::GeometryModifier.RealityCoreRenderer::Descriptor) throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::GeometryModifier
+  final public func makeDefaultGeometryModifier() -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::GeometryModifier
+  @available(*, noasync)
+  final public func makeRenderPipelineState(descriptor: RealityCoreRenderer::LowLevelRenderPipelineState.RealityCoreRenderer::Descriptor) throws -> sending RealityCoreRenderer::LowLevelRenderPipelineState
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) final public func makeRenderPipelineState(descriptor: RealityCoreRenderer::LowLevelRenderPipelineState.RealityCoreRenderer::Descriptor) async throws -> sending RealityCoreRenderer::LowLevelRenderPipelineState
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) final public func makeSimpleSurfaceShader(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SimpleSurfaceDescriptor) async throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader
+  #endif
+  @available(*, noasync)
+  final public func makeSimpleSurfaceShader(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SimpleSurfaceDescriptor) throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) final public func makeSurfaceShader(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader.RealityCoreRenderer::Descriptor) async throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader
+  #endif
+  @available(*, noasync)
+  final public func makeSurfaceShader(descriptor: RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader.RealityCoreRenderer::Descriptor) throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SurfaceShader
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderContextStandalone : RealityCoreRenderer::LowLevelRenderContextLighting {
+  final public func makeImageBasedLightingFunction() -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::LightingFunction
+  final public func makeUnlitLightingFunction() -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::LightingFunction
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderContextStandalone : RealityCoreRenderer::LowLevelRenderContextShaderGraph {
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) final public func makeShaderGraphFunctions(shaderGraph: ShaderGraph::ShaderGraph, constantValues: Metal::MTLFunctionConstantValues) async throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::ShaderGraphOutput
+  #endif
+  @available(*, noasync)
+  final public func makeShaderGraphFunctions(shaderGraph: ShaderGraph::ShaderGraph, constantValues: Metal::MTLFunctionConstantValues) throws -> sending RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::ShaderGraphOutput
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class LowLevelRenderer {
+  final public var output: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Output {
+    _read
+    _modify
+  }
+  final public var cameras: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CameraArray {
+    _read
+    _modify
+  }
+  final public var renderTargetDescriptor: RealityCoreRenderer::LowLevelRenderTarget.RealityCoreRenderer::Descriptor {
+    get
+  }
+  final public var time: Swift::Float {
+    get
+    set
+  }
+  public struct ColorMatch {
+    public var colorGamutConversion: simd::simd_half3x3 {
+      get
+      set
+    }
+    public var enableClampValues: Swift::Bool {
+      get
+      set
+    }
+    public init(colorGamutConversion: simd::simd_half3x3 = matrix_identity_half3x3, enableClampValues: Swift::Bool = false)
+  }
+  final public var colorMatch: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::ColorMatch {
+    get
+    set
+  }
+  public struct Output {
+    public struct Texture {
+      public var texture: any Metal::MTLTexture {
+        get
+        set
+      }
+      public var level: Swift::Int {
+        get
+        set
+      }
+      public var slice: Swift::Int {
+        get
+        set
+      }
+      public var depthPlane: Swift::Int {
+        get
+        set
+      }
+      public init(texture: any Metal::MTLTexture, level: Swift::Int = 0, slice: Swift::Int = 0, depthPlane: Swift::Int = 0)
+    }
+    public var color: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Output.RealityCoreRenderer::Texture? {
+      get
+      set
+    }
+    public var clearColor: Metal::MTLClearColor {
+      get
+      set
+    }
+    public var depth: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Output.RealityCoreRenderer::Texture? {
+      get
+      set
+    }
+    public var clearDepth: Swift::Double {
+      get
+      set
+    }
+    public var depthResolveFilter: Metal::MTLMultisampleDepthResolveFilter {
+      get
+      set
+    }
+    public var renderTargetWidth: Swift::Int {
+      get
+      set
+    }
+    public var renderTargetHeight: Swift::Int {
+      get
+      set
+    }
+    public var renderTargetArrayLength: Swift::Int {
+      get
+      set
+    }
+    public var viewports: [Metal::MTLViewport]? {
+      get
+      set
+    }
+    public var scissorRects: [Metal::MTLScissorRect]? {
+      get
+      set
+    }
+    public var rasterizationRateMap: (any Metal::MTLRasterizationRateMap)? {
+      get
+      set
+    }
+    public var threadgroupMemoryLength: Swift::Int {
+      get
+      set
+    }
+    public init(color: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Output.RealityCoreRenderer::Texture? = nil, depth: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Output.RealityCoreRenderer::Texture? = nil)
+  }
+  public struct Resources {
+    #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+    nonisolated(nonsending) public init(configuration: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Configuration, renderContext: any RealityCoreRenderer::LowLevelRenderContext) async throws
+    #endif
+  }
+  public init(resources: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Resources) throws(RealityCoreRenderer::LowLevelRendererError)
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) convenience public init(configuration: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Configuration, renderContext: any RealityCoreRenderer::LowLevelRenderContext) async throws
+  #endif
+  final public var meshInstancesArrayCount: Swift::Int {
+    get
+    set
+  }
+  final public func meshInstances(at index: Swift::Int) -> RealityCoreRenderer::LowLevelMeshInstanceArray?
+  final public func setMeshInstances(_ meshInstances: RealityCoreRenderer::LowLevelMeshInstanceArray?, at index: Swift::Int) throws(RealityCoreRenderer::LowLevelRendererError)
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderer {
+  public struct CameraArray : Swift::MutableCollection {
+    public typealias Index = Swift::Int
+    public typealias Element = RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Camera
+    public static let maxCount: Swift::Int
+    public subscript(index: Swift::Int) -> RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Camera {
+      _read
+      _modify
+    }
+    public var count: Swift::Int {
+      get
+      set
+    }
+    public init(cameras: [RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Camera])
+    public var startIndex: Swift::Int {
+      get
+    }
+    public var endIndex: Swift::Int {
+      get
+    }
+    public func index(after i: Swift::Int) -> Swift::Int
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias Indices = Swift::DefaultIndices<RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CameraArray>
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias Iterator = Swift::IndexingIterator<RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CameraArray>
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias SubSequence = Swift::Slice<RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CameraArray>
+  }
+  public struct Camera {
+    public var position: Swift::SIMD3<Swift::Float> {
+      get
+      set
+    }
+    public var rotation: simd::simd_quatf {
+      get
+      set
+    }
+    public struct Projection : Swift::Sendable {
+      public var matrix: simd::simd_float4x4 {
+        get
+      }
+    }
+    public var projection: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Camera.RealityCoreRenderer::Projection {
+      get
+      set
+    }
+    public var viewportArrayIndex: Swift::Int {
+      get
+      set
+    }
+    public var renderTargetArrayIndex: Swift::Int {
+      get
+      set
+    }
+    public init(position: Swift::SIMD3<Swift::Float>, rotation: simd::simd_quatf, projection: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Camera.RealityCoreRenderer::Projection = .custom(matrix: .init(diagonal: .one)), viewportArrayIndex: Swift::Int = 0, renderTargetArrayIndex: Swift::Int = 0)
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Camera.RealityCoreRenderer::Projection {
+  public static func perspective(fovYRadians: Swift::Float, aspectRatio: Swift::Float, nearZ: Swift::Float, farZ: Swift::Float, reverseZ: Swift::Bool = true) -> RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Camera.RealityCoreRenderer::Projection
+  public static func perspective(leftTangent: Swift::Float, rightTangent: Swift::Float, topTangent: Swift::Float, bottomTangent: Swift::Float, nearZ: Swift::Float, farZ: Swift::Float, reverseZ: Swift::Bool = true) -> RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Camera.RealityCoreRenderer::Projection
+  public static func orthographic(height: Swift::Float, aspectRatio: Swift::Float, nearZ: Swift::Float, farZ: Swift::Float, reverseZ: Swift::Bool = true) -> RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Camera.RealityCoreRenderer::Projection
+  public static func orthographic(left: Swift::Float, right: Swift::Float, bottom: Swift::Float, top: Swift::Float, nearZ: Swift::Float, farZ: Swift::Float, reverseZ: Swift::Bool = true) -> RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Camera.RealityCoreRenderer::Projection
+  public static func custom(matrix: simd::simd_float4x4) -> RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Camera.RealityCoreRenderer::Projection
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::ColorMatch {
+  public init(workingColorSpace: CoreGraphics::CGColorSpace, targetColorSpace: CoreGraphics::CGColorSpace) throws(RealityCoreRenderer::LowLevelRendererError)
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderer {
+  final public var workingColorSpace: CoreGraphics::CGColorSpace {
+    get
+  }
+  final public func setColorMatch(targetingColorSpace targetColorSpace: CoreGraphics::CGColorSpace) throws(RealityCoreRenderer::LowLevelRendererError)
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderer {
+  public struct Configuration : Swift::Sendable {
+    public struct Output : Swift::Sendable {
+      public var colorPixelFormat: Metal::MTLPixelFormat? {
+        get
+        set
+      }
+      public var depthPixelFormat: Metal::MTLPixelFormat? {
+        get
+        set
+      }
+      public init(colorPixelFormat: Metal::MTLPixelFormat?, depthPixelFormat: Metal::MTLPixelFormat? = nil)
+    }
+    public var output: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Configuration.RealityCoreRenderer::Output {
+      get
+      set
+    }
+    public var rasterSampleCount: Swift::Int {
+      get
+      set
+    }
+    public var enableTonemap: Swift::Bool {
+      get
+      set
+    }
+    public var enableColorMatch: Swift::Bool {
+      get
+      set
+    }
+    public var alphaPremultiply: Swift::Bool {
+      get
+      set
+    }
+    public var maxCameraCount: Swift::Int {
+      get
+      set
+    }
+    public var colorAttachmentPixelFormats: [Metal::MTLPixelFormat] {
+      get
+    }
+    public var depthAttachmentPixelFormat: Metal::MTLPixelFormat {
+      get
+    }
+    public var stencilAttachmentPixelFormat: Metal::MTLPixelFormat {
+      get
+    }
+    public var renderTargetDescriptor: RealityCoreRenderer::LowLevelRenderTarget.RealityCoreRenderer::Descriptor {
+      get
+    }
+    public init(output: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Configuration.RealityCoreRenderer::Output, rasterSampleCount: Swift::Int, enableTonemap: Swift::Bool = true, enableColorMatch: Swift::Bool = false, alphaPremultiply: Swift::Bool = true, maxCameraCount: Swift::Int = 1)
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderer {
+  public struct CullConfiguration {
+    @frozen public struct Plane {
+      internal var _vector: Swift::SIMD4<Swift::Float>
+      public init(position: Swift::SIMD3<Swift::Float>, direction: Swift::SIMD3<Swift::Float>)
+      public init(position0 p0: Swift::SIMD3<Swift::Float>, position1 p1: Swift::SIMD3<Swift::Float>, position2 p2: Swift::SIMD3<Swift::Float>)
+    }
+    public struct Frustum {
+      public var cullingPlanes: [RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CullConfiguration.RealityCoreRenderer::Plane] {
+        get
+        set
+      }
+      public init(cullingPlanes: [RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CullConfiguration.RealityCoreRenderer::Plane])
+    }
+    public var frustum: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CullConfiguration.RealityCoreRenderer::Frustum {
+      get
+      set
+    }
+    public init(frustum: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CullConfiguration.RealityCoreRenderer::Frustum)
+  }
+  public static func cullMeshInstances(_ meshInstances: RealityCoreRenderer::LowLevelMeshInstanceArray, indices: Swift::Span<Swift::Int>, outIndices: inout Swift::OutputSpan<Swift::Int>, configuration: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CullConfiguration)
+  @_alwaysEmitIntoClient public static func cullMeshInstances(_ meshInstances: RealityCoreRenderer::LowLevelMeshInstanceArray, indices: Swift::Span<Swift::Int>, configuration: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CullConfiguration) -> [Swift::Int] {
+        let outIndices: [Int] = .init(capacity: indices.count) { span in
+            cullMeshInstances(meshInstances,
+                              indices: indices,
+                              outIndices: &span,
+                              configuration: configuration)
+        }
+        return outIndices
+    }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Camera {
+  #if compiler(>=5.3) && $Lifetimes
+  public func computeCullingPlanes(_ outPlanes: inout Swift::OutputSpan<RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CullConfiguration.RealityCoreRenderer::Plane>)
+  #else
+  public func computeCullingPlanes(_ outPlanes: inout Swift::OutputSpan<RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CullConfiguration.RealityCoreRenderer::Plane>)
+  #endif
+  @_alwaysEmitIntoClient public func computeCullingPlanes() -> [RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CullConfiguration.RealityCoreRenderer::Plane] {
+        let outPlanes: [LowLevelRenderer.CullConfiguration.Plane] = .init(capacity: 6) { span in
+            computeCullingPlanes(&span)
+        }
+        return outPlanes
+    }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CullConfiguration.RealityCoreRenderer::Frustum {
+  public init(from camera: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::Camera)
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderer {
+  public struct RenderState : ~Swift::Copyable, ~Swift::Escapable {
+    public var encoder: any Metal::MTLRenderCommandEncoder {
+      get
+    }
+    public func reset()
+    public func render(meshInstancesArrayIndex: Swift::Int, meshInstanceIndex: Swift::Int)
+    public func render(meshInstancesArrayIndex: Swift::Int, range: Swift::Range<Swift::Int>)
+  }
+  final public func render(using commandBuffer: any Metal::MTLCommandBuffer, _ callback: (inout RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::RenderState) -> ())
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderer {
+  public struct SortConfiguration {
+    public var cameraPosition: Swift::SIMD3<Swift::Float> {
+      get
+      set
+    }
+    public init(cameraPosition: Swift::SIMD3<Swift::Float>)
+  }
+  public static func sortMeshInstances(_ meshInstances: RealityCoreRenderer::LowLevelMeshInstanceArray, indices: inout Swift::MutableSpan<Swift::Int>, configuration: RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::SortConfiguration)
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public struct LowLevelRendererError : Swift::Error {
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRendererError : Foundation::LocalizedError {
+  public var errorDescription: Swift::String? {
+    get
+  }
+  public var failureReason: Swift::String? {
+    get
+  }
+  public var helpAnchor: Swift::String? {
+    get
+  }
+  public var recoverySuggestion: Swift::String? {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class LowLevelRenderPipelineState : Swift::Sendable {
+  public struct Descriptor : Swift::Sendable {
+    public var mesh: RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Descriptor? {
+      get
+      set
+    }
+    public var material: RealityCoreRenderer::LowLevelMaterialResource {
+      get
+      set
+    }
+    public var renderTargets: RealityCoreRenderer::LowLevelRenderTarget.RealityCoreRenderer::DescriptorSet {
+      get
+      set
+    }
+    public var blending: RealityCoreRenderer::LowLevelRenderPipelineState.RealityCoreRenderer::Descriptor.RealityCoreRenderer::Blending? {
+      get
+      set
+    }
+    public var writeMask: Metal::MTLColorWriteMask {
+      get
+      set
+    }
+    public struct Blending : Swift::Sendable {
+      public static var sourceOver: RealityCoreRenderer::LowLevelRenderPipelineState.RealityCoreRenderer::Descriptor.RealityCoreRenderer::Blending {
+        get
+      }
+      public static var add: RealityCoreRenderer::LowLevelRenderPipelineState.RealityCoreRenderer::Descriptor.RealityCoreRenderer::Blending {
+        get
+      }
+      public static func custom(sourceRGBBlendFactor: Metal::MTLBlendFactor = .one, destinationRGBBlendFactor: Metal::MTLBlendFactor = .zero, rgbBlendOperation: Metal::MTLBlendOperation = .add, sourceAlphaBlendFactor: Metal::MTLBlendFactor = .one, destinationAlphaBlendFactor: Metal::MTLBlendFactor = .zero, alphaBlendOperation: Metal::MTLBlendOperation = .add) -> RealityCoreRenderer::LowLevelRenderPipelineState.RealityCoreRenderer::Descriptor.RealityCoreRenderer::Blending
+    }
+    public init(mesh: RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::Descriptor, material: RealityCoreRenderer::LowLevelMaterialResource, renderTargets: RealityCoreRenderer::LowLevelRenderTarget.RealityCoreRenderer::DescriptorSet, blending: RealityCoreRenderer::LowLevelRenderPipelineState.RealityCoreRenderer::Descriptor.RealityCoreRenderer::Blending? = nil)
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class LowLevelRenderTarget {
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderTarget {
+  public struct Descriptor : Swift::Sendable, Swift::Equatable {
+    public static func == (a: RealityCoreRenderer::LowLevelRenderTarget.RealityCoreRenderer::Descriptor, b: RealityCoreRenderer::LowLevelRenderTarget.RealityCoreRenderer::Descriptor) -> Swift::Bool
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderTarget {
+  public struct DescriptorSet : Swift::Sendable, Swift::Equatable, Swift::ExpressibleByArrayLiteral {
+    public typealias ArrayLiteralElement = RealityCoreRenderer::LowLevelRenderTarget.RealityCoreRenderer::Descriptor
+    public init(_ descriptors: [RealityCoreRenderer::LowLevelRenderTarget.RealityCoreRenderer::Descriptor])
+    public init(arrayLiteral elements: RealityCoreRenderer::LowLevelRenderTarget.RealityCoreRenderer::Descriptor...)
+    public static func == (a: RealityCoreRenderer::LowLevelRenderTarget.RealityCoreRenderer::DescriptorSet, b: RealityCoreRenderer::LowLevelRenderTarget.RealityCoreRenderer::DescriptorSet) -> Swift::Bool
+  }
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class LowLevelTextureResource {
+  public struct Descriptor : Swift::Sendable {
+    public var textureType: Metal::MTLTextureType {
+      get
+      set
+    }
+    public var pixelFormat: Metal::MTLPixelFormat {
+      get
+      set
+    }
+    public var width: Swift::Int {
+      get
+      set
+    }
+    public var height: Swift::Int {
+      get
+      set
+    }
+    public var depth: Swift::Int {
+      get
+      set
+    }
+    public var mipmapLevelCount: Swift::Int {
+      get
+      set
+    }
+    public var arrayLength: Swift::Int {
+      get
+      set
+    }
+    public var textureUsage: Metal::MTLTextureUsage {
+      get
+      set
+    }
+    public var swizzle: Metal::MTLTextureSwizzleChannels {
+      get
+      set
+    }
+    public init(textureType: Metal::MTLTextureType = .type2D, pixelFormat: Metal::MTLPixelFormat = .invalid, width: Swift::Int = 0, height: Swift::Int = 0, depth: Swift::Int = 1, mipmapLevelCount: Swift::Int = 1, arrayLength: Swift::Int = 1, textureUsage: Metal::MTLTextureUsage = .unknown, swizzle: Metal::MTLTextureSwizzleChannels = .init(red: .red, green: .green, blue: .blue, alpha: .alpha))
+  }
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelTextureResource.RealityCoreRenderer::Descriptor : Swift::Equatable {
+  public static func == (lhs: RealityCoreRenderer::LowLevelTextureResource.RealityCoreRenderer::Descriptor, rhs: RealityCoreRenderer::LowLevelTextureResource.RealityCoreRenderer::Descriptor) -> Swift::Bool
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelTextureResource {
+  final public var descriptor: RealityCoreRenderer::LowLevelTextureResource.RealityCoreRenderer::Descriptor {
+    get
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelTextureResource {
+  final public func read(commandBuffer: (any Metal::MTLCommandBuffer)?) -> any Metal::MTLTexture
+  final public func replace(commandBuffer: (any Metal::MTLCommandBuffer)?) -> any Metal::MTLTexture
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::ShaderGraphOutput.RealityCoreRenderer::Blending : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::ShaderGraphOutput.RealityCoreRenderer::Blending : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SimpleSurfaceDescriptor.RealityCoreRenderer::OutputChannel : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMaterialResource.RealityCoreRenderer::SimpleSurfaceDescriptor.RealityCoreRenderer::OutputChannel : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMeshInstance.RealityCoreRenderer::SortCategory : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelMeshResource.RealityCoreRenderer::VertexSemantic : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CullConfiguration.RealityCoreRenderer::Plane : Swift::Sendable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreRenderer::LowLevelRenderer.RealityCoreRenderer::CullConfiguration.RealityCoreRenderer::Plane : Swift::BitwiseCopyable {}

@@ -1,0 +1,553 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-experimental-feature Lifetimes -enable-experimental-feature LifetimeDependence -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 794.106 -module-name AVFAudio
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported import AVFAudio
+import CoreAudio
+import CoreAudioTypes
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+extension AVFAudio::AVAudioFormat : @unchecked Swift::Sendable {
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension AVFAudio::AVAudioUnitComponent {
+  public struct TagsDidChangeMessage : Foundation::NotificationCenter.Foundation::AsyncMessage {
+    public typealias Subject = AVFAudio::AVAudioUnitComponent
+    public static var name: Foundation::Notification.Foundation::Name {
+      get
+    }
+    public static func makeNotification(_ message: AVFAudio::AVAudioUnitComponent.AVFAudio::TagsDidChangeMessage) -> Foundation::Notification
+    public static func makeMessage(_ notification: Foundation::Notification) -> AVFAudio::AVAudioUnitComponent.AVFAudio::TagsDidChangeMessage?
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, visionOS 27.0, *)
+@available(watchOS, unavailable)
+extension AVFAudio::AVAudioUnitComponentManager {
+  public struct RegistrationsChangedMessage : Foundation::NotificationCenter.Foundation::AsyncMessage {
+    public typealias Subject = AVFAudio::AVAudioUnitComponentManager
+    public static var name: Foundation::Notification.Foundation::Name {
+      get
+    }
+    public static func makeNotification(_ message: AVFAudio::AVAudioUnitComponentManager.AVFAudio::RegistrationsChangedMessage) -> Foundation::Notification
+    public static func makeMessage(_ notification: Foundation::Notification) -> AVFAudio::AVAudioUnitComponentManager.AVFAudio::RegistrationsChangedMessage?
+  }
+}
+@available(macOS 27.0, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<AVFAudio::AVAudioUnitComponent.AVFAudio::TagsDidChangeMessage> {
+  public static var tagsDidChange: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<AVFAudio::AVAudioUnitComponent.AVFAudio::TagsDidChangeMessage> {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, visionOS 27.0, *)
+@available(watchOS, unavailable)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<AVFAudio::AVAudioUnitComponentManager.AVFAudio::RegistrationsChangedMessage> {
+  public static var registrationsChanged: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<AVFAudio::AVAudioUnitComponentManager.AVFAudio::RegistrationsChangedMessage> {
+    get
+  }
+}
+@available(macOS 10.0, iOS 8.0, tvOS 9.0, watchOS 2.0, *)
+extension AVFAudio::AVAudioNode {
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public func installAudioTap(onBus bus: AVFAudio::AVAudioNodeBus, bufferSize: AVFAudio::AVAudioFrameCount, format: AVFAudio::AVAudioFormat?, tapProvider: @escaping @Sendable (AVFAudio::AVReadOnlyAudioPCMBuffer, AVFAudio::AVAudioTime) -> Swift::Void) throws
+  @available(macOS, introduced: 10.13, deprecated: 27.0, message: "Deprecated in favor of withAUAudioUnit")
+  @available(iOS, introduced: 11.0, deprecated: 27.0, message: "Deprecated in favor of withAUAudioUnit")
+  @available(tvOS, introduced: 11.0, deprecated: 27.0, message: "Deprecated in favor of withAUAudioUnit")
+  @available(visionOS, introduced: 1.0, deprecated: 27.0, message: "Deprecated in favor of withAUAudioUnit")
+  @available(macCatalyst, introduced: 13.1, deprecated: 27.0, message: "Deprecated in favor of withAUAudioUnit")
+  @available(watchOS, unavailable)
+  @export(implementation) public var auAudioUnit: AudioToolbox::AUAudioUnit {
+    get {
+			return self.__auAudioUnit
+		}
+  }
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @available(watchOS, unavailable)
+  public func withAUAudioUnit<R, E>(_ body: (borrowing AudioToolbox::AUAudioUnit) throws(E) -> R) throws(E) -> R where E : Swift::Error
+}
+@available(macOS 10.0, iOS 8, tvOS 9, *)
+@available(watchOS, unavailable)
+extension AVFAudio::AVAudioIONode {
+  @available(macOS, introduced: 10.0, deprecated: 27.0, message: "Deprecated in favor of withAudioUnit")
+  @available(iOS, introduced: 8.0, deprecated: 27.0, message: "Deprecated in favor of withAudioUnit")
+  @available(tvOS, introduced: 9.0, deprecated: 27.0, message: "Deprecated in favor of withAudioUnit")
+  @available(visionOS, introduced: 1.0, deprecated: 27.0, message: "Deprecated in favor of withAudioUnit")
+  @available(macCatalyst, introduced: 13.1, deprecated: 27.0, message: "Deprecated in favor of withAudioUnit")
+  @available(watchOS, unavailable)
+  @export(implementation) public var audioUnit: AudioToolbox::AudioUnit? {
+    get {
+			return self.__audioUnit
+		}
+  }
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, visionOS 27.0, macCatalyst 27.0, *)
+  @available(watchOS, unavailable)
+  public func withAudioUnit<R, E>(_ body: (borrowing AudioToolbox::AudioUnit?) throws(E) -> R) throws(E) -> R where E : Swift::Error
+}
+@available(macOS 10.10, iOS 8.0, tvOS 9.0, *)
+@available(watchOS, unavailable)
+extension AVFAudio::AVAudioUnit {
+  @available(macOS, introduced: 10.10, deprecated: 27.0, message: "Deprecated in favor of withAudioUnit")
+  @available(iOS, introduced: 8.0, deprecated: 27.0, message: "Deprecated in favor of withAudioUnit")
+  @available(tvOS, introduced: 9.0, deprecated: 27.0, message: "Deprecated in favor of withAudioUnit")
+  @available(visionOS, introduced: 1.0, deprecated: 27.0, message: "Deprecated in favor of withAudioUnit")
+  @available(macCatalyst, introduced: 13.1, deprecated: 27.0, message: "Deprecated in favor of withAudioUnit")
+  @available(watchOS, unavailable)
+  @export(implementation) public var audioUnit: AudioToolbox::AudioUnit {
+    get {
+			return self.__audioUnit;
+		}
+  }
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, visionOS 27.0, macCatalyst 27.0, *)
+  @available(watchOS, unavailable)
+  public func withAudioUnit<R, E>(_ body: (borrowing AudioToolbox::AudioUnit) throws(E) -> R) throws(E) -> R where E : Swift::Error
+}
+@available(macOS 10.10, iOS 8.0, tvOS 9.0, watchOS 2.0, *)
+extension AVFAudio::AVAudioPlayerNode {
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public func scheduleBuffer(_ buffer: AVFAudio::AVAudioPCMBuffer, atTime when: AVFAudio::AVAudioTime? = nil, options: AVFAudio::AVAudioPlayerNodeBufferOptions = [], completionCallbackType callbackType: AVFAudio::AVAudioPlayerNodeCompletionCallbackType, completionHandler: (@Sendable () -> Swift::Void)?)
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public func scheduleBuffer(_ buffer: AVFAudio::AVReadOnlyAudioPCMBuffer, atTime when: AVFAudio::AVAudioTime? = nil, options: AVFAudio::AVAudioPlayerNodeBufferOptions = [], completionCallbackType callbackType: AVFAudio::AVAudioPlayerNodeCompletionCallbackType = .dataConsumed, completionHandler: (@Sendable () -> Swift::Void)? = nil)
+}
+@available(macOS 10.10, iOS 8.0, tvOS 9.0, *)
+@available(watchOS, unavailable)
+extension AVFAudio::AVAudioEngine {
+  @available(macOS, introduced: 10.10, deprecated: 27.0, message: "Deprecated in favor of withMusicSequence")
+  @available(iOS, introduced: 8.0, deprecated: 27.0, message: "Deprecated in favor of withMusicSequence")
+  @available(tvOS, introduced: 9.0, deprecated: 27.0, message: "Deprecated in favor of withMusicSequence")
+  @available(visionOS, introduced: 1.0, deprecated: 27.0, message: "Deprecated in favor of withMusicSequence")
+  @available(macCatalyst, introduced: 13.1, deprecated: 27.0, message: "Deprecated in favor of withMusicSequence")
+  @available(watchOS, unavailable)
+  @export(implementation) public var musicSequence: AudioToolbox::MusicSequence? {
+    get {
+			return self.__musicSequence;
+		}
+  }
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @available(watchOS, unavailable)
+  public func withMusicSequence<R, E>(_ body: (borrowing AudioToolbox::MusicSequence?) throws(E) -> R) throws(E) -> R where E : Swift::Error
+}
+@available(iOS 7.0, watchOS 2.0, tvOS 9.0, visionOS 1, *)
+@available(macOS, unavailable)
+@_originallyDefinedIn(module: "AVFoundation", iOS 26.0)
+@_originallyDefinedIn(module: "AVFoundation", tvOS 26.0)
+@_originallyDefinedIn(module: "AVFoundation", watchOS 26.0)
+@_originallyDefinedIn(module: "AVFoundation", visionOS 26.0)
+extension AVFAudio::AVAudioSession.AVFAudio::Location {
+  @available(macOS, unavailable)
+  @available(iOS, deprecated, introduced: 7.0, renamed: "AVAudioSession.Orientation.top")
+  @available(tvOS, deprecated, introduced: 9.0, renamed: "AVAudioSession.Orientation.top")
+  @available(watchOS, deprecated, introduced: 2.0, renamed: "AVAudioSession.Orientation.top")
+  @available(visionOS, deprecated, introduced: 1.0, renamed: "AVAudioSession.Orientation.top")
+  @_alwaysEmitIntoClient public static var orientationTop: AVFAudio::AVAudioSession.AVFAudio::Location {
+    get {
+		Self(rawValue: AVAudioSession.Orientation.top.rawValue)
+	}
+  }
+  @available(macOS, unavailable)
+  @available(iOS, deprecated, introduced: 7.0, renamed: "AVAudioSession.Orientation.bottom")
+  @available(tvOS, deprecated, introduced: 9.0, renamed: "AVAudioSession.Orientation.bottom")
+  @available(watchOS, deprecated, introduced: 2.0, renamed: "AVAudioSession.Orientation.bottom")
+  @available(visionOS, deprecated, introduced: 1.0, renamed: "AVAudioSession.Orientation.bottom")
+  @_alwaysEmitIntoClient public static var orientationBottom: AVFAudio::AVAudioSession.AVFAudio::Location {
+    get {
+		Self(rawValue: AVAudioSession.Orientation.bottom.rawValue)
+	}
+  }
+  @available(macOS, unavailable)
+  @available(iOS, deprecated, introduced: 7.0, renamed: "AVAudioSession.Orientation.front")
+  @available(tvOS, deprecated, introduced: 9.0, renamed: "AVAudioSession.Orientation.front")
+  @available(watchOS, deprecated, introduced: 2.0, renamed: "AVAudioSession.Orientation.front")
+  @available(visionOS, deprecated, introduced: 1.0, renamed: "AVAudioSession.Orientation.front")
+  @_alwaysEmitIntoClient public static var orientationFront: AVFAudio::AVAudioSession.AVFAudio::Location {
+    get {
+		Self(rawValue: AVAudioSession.Orientation.front.rawValue)
+	}
+  }
+  @available(macOS, unavailable)
+  @available(iOS, deprecated, introduced: 7.0, renamed: "AVAudioSession.Orientation.back")
+  @available(tvOS, deprecated, introduced: 9.0, renamed: "AVAudioSession.Orientation.back")
+  @available(watchOS, deprecated, introduced: 2.0, renamed: "AVAudioSession.Orientation.back")
+  @available(visionOS, deprecated, introduced: 1.0, renamed: "AVAudioSession.Orientation.back")
+  @_alwaysEmitIntoClient public static var orientationBack: AVFAudio::AVAudioSession.AVFAudio::Location {
+    get {
+		Self(rawValue: AVAudioSession.Orientation.back.rawValue)
+	}
+  }
+  @available(macOS, unavailable)
+  @available(iOS, deprecated, introduced: 8.0, renamed: "AVAudioSession.Orientation.left")
+  @available(tvOS, deprecated, introduced: 9.0, renamed: "AVAudioSession.Orientation.left")
+  @available(watchOS, deprecated, introduced: 2.0, renamed: "AVAudioSession.Orientation.left")
+  @available(visionOS, deprecated, introduced: 1.0, renamed: "AVAudioSession.Orientation.left")
+  @_alwaysEmitIntoClient public static var orientationLeft: AVFAudio::AVAudioSession.AVFAudio::Location {
+    get {
+		Self(rawValue: AVAudioSession.Orientation.left.rawValue)
+	}
+  }
+  @available(macOS, unavailable)
+  @available(iOS, deprecated, introduced: 8.0, renamed: "AVAudioSession.Orientation.right")
+  @available(tvOS, deprecated, introduced: 9.0, renamed: "AVAudioSession.Orientation.right")
+  @available(watchOS, deprecated, introduced: 2.0, renamed: "AVAudioSession.Orientation.right")
+  @available(visionOS, deprecated, introduced: 1.0, renamed: "AVAudioSession.Orientation.right")
+  @_alwaysEmitIntoClient public static var orientationRight: AVFAudio::AVAudioSession.AVFAudio::Location {
+    get {
+		Self(rawValue: AVAudioSession.Orientation.right.rawValue)
+	}
+  }
+}
+@available(iOS 7.0, tvOS 9.0, watchOS 2.0, visionOS 1.0, *)
+@available(macOS, unavailable)
+@_originallyDefinedIn(module: "AVFoundation", iOS 26.0)
+@_originallyDefinedIn(module: "AVFoundation", tvOS 26.0)
+@_originallyDefinedIn(module: "AVFoundation", watchOS 26.0)
+@_originallyDefinedIn(module: "AVFoundation", visionOS 26.0)
+extension AVFAudio::AVAudioSession.AVFAudio::Location {
+  @available(macOS, unavailable)
+  @available(iOS, deprecated, introduced: 7.0, renamed: "AVAudioSession.PolarPattern.cardioid")
+  @available(tvOS, deprecated, introduced: 9.0, renamed: "AVAudioSession.PolarPattern.cardioid")
+  @available(watchOS, deprecated, introduced: 2.0, renamed: "AVAudioSession.PolarPattern.cardioid")
+  @available(visionOS, deprecated, introduced: 1.0, renamed: "AVAudioSession.PolarPattern.cardioid")
+  @_alwaysEmitIntoClient public static var polarPatternCardioid: AVFAudio::AVAudioSession.AVFAudio::Location {
+    get {
+		Self(rawValue: AVAudioSession.PolarPattern.cardioid.rawValue)
+	}
+  }
+  @available(macOS, unavailable)
+  @available(iOS, deprecated, introduced: 7.0, renamed: "AVAudioSession.PolarPattern.omnidirectional")
+  @available(tvOS, deprecated, introduced: 9.0, renamed: "AVAudioSession.PolarPattern.omnidirectional")
+  @available(watchOS, deprecated, introduced: 2.0, renamed: "AVAudioSession.PolarPattern.omnidirectional")
+  @available(visionOS, deprecated, introduced: 1.0, renamed: "AVAudioSession.PolarPattern.omnidirectional")
+  @_alwaysEmitIntoClient public static var polarPatternOmnidirectional: AVFAudio::AVAudioSession.AVFAudio::Location {
+    get {
+		Self(rawValue: AVAudioSession.PolarPattern.omnidirectional.rawValue)
+	}
+  }
+  @available(macOS, unavailable)
+  @available(iOS, deprecated, introduced: 7.0, renamed: "AVAudioSession.PolarPattern.subcardioid")
+  @available(tvOS, deprecated, introduced: 9.0, renamed: "AVAudioSession.PolarPattern.subcardioid")
+  @available(watchOS, deprecated, introduced: 2.0, renamed: "AVAudioSession.PolarPattern.subcardioid")
+  @available(visionOS, deprecated, introduced: 1.0, renamed: "AVAudioSession.PolarPattern.subcardioid")
+  @_alwaysEmitIntoClient public static var polarPatternSubcardioid: AVFAudio::AVAudioSession.AVFAudio::Location {
+    get {
+		Self(rawValue: AVAudioSession.PolarPattern.subcardioid.rawValue)
+	}
+  }
+}
+@available(iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+@available(macOS, unavailable)
+extension AVFAudio::AVAudioSession {
+  public struct DidBecomeActiveMessage : Foundation::NotificationCenter.Foundation::MainActorMessage {
+    public typealias Subject = AVFAudio::AVAudioSession
+    public static var name: Foundation::Notification.Foundation::Name {
+      get
+    }
+    @_Concurrency::MainActor public static func makeNotification(_ message: AVFAudio::AVAudioSession.AVFAudio::DidBecomeActiveMessage) -> Foundation::Notification
+    @_Concurrency::MainActor public static func makeMessage(_ notification: Foundation::Notification) -> AVFAudio::AVAudioSession.AVFAudio::DidBecomeActiveMessage?
+  }
+  public struct DidBecomeInactiveMessage : Foundation::NotificationCenter.Foundation::MainActorMessage {
+    public typealias Subject = AVFAudio::AVAudioSession
+    public static var name: Foundation::Notification.Foundation::Name {
+      get
+    }
+    public let deactivationResult: AVFAudio::AVAudioSession.AVFAudio::DeactivationResult
+    @_Concurrency::MainActor public static func makeNotification(_ message: AVFAudio::AVAudioSession.AVFAudio::DidBecomeInactiveMessage) -> Foundation::Notification
+    @_Concurrency::MainActor public static func makeMessage(_ notification: Foundation::Notification) -> AVFAudio::AVAudioSession.AVFAudio::DidBecomeInactiveMessage?
+  }
+  public struct ResumptionRecommendationMessage : Foundation::NotificationCenter.Foundation::MainActorMessage {
+    public typealias Subject = AVFAudio::AVAudioSession
+    public static var name: Foundation::Notification.Foundation::Name {
+      get
+    }
+    public let recommendation: AVFAudio::AVAudioSession.AVFAudio::ResumptionRecommendation
+    @_Concurrency::MainActor public static func makeNotification(_ message: AVFAudio::AVAudioSession.AVFAudio::ResumptionRecommendationMessage) -> Foundation::Notification
+    @_Concurrency::MainActor public static func makeMessage(_ notification: Foundation::Notification) -> AVFAudio::AVAudioSession.AVFAudio::ResumptionRecommendationMessage?
+  }
+}
+@available(iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+@available(macOS, unavailable)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<AVFAudio::AVAudioSession.AVFAudio::DidBecomeActiveMessage> {
+  public static var didBecomeActive: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<AVFAudio::AVAudioSession.AVFAudio::DidBecomeActiveMessage> {
+    get
+  }
+}
+@available(iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+@available(macOS, unavailable)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<AVFAudio::AVAudioSession.AVFAudio::DidBecomeInactiveMessage> {
+  public static var didBecomeInactive: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<AVFAudio::AVAudioSession.AVFAudio::DidBecomeInactiveMessage> {
+    get
+  }
+}
+@available(iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+@available(macOS, unavailable)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<AVFAudio::AVAudioSession.AVFAudio::ResumptionRecommendationMessage> {
+  public static var resumptionRecommendation: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<AVFAudio::AVAudioSession.AVFAudio::ResumptionRecommendationMessage> {
+    get
+  }
+}
+@available(iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+@available(macOS, unavailable)
+extension AVFAudio::AVAudioSession {
+  public enum DeactivationResult : Swift::Sendable {
+    case systemInterruption(AVFAudio::AVAudioSession.AVFAudio::InterruptionContext)
+    case appDeactivated
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+extension AVFAudio::AVAudioConverter : @unchecked Swift::Sendable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension AVFAudio::AVAudioPlayer : @unchecked Swift::Sendable {
+}
+@available(macOS 27, iOS 27, tvOS 27, visionOS 27, *)
+@available(watchOS, unavailable)
+extension AVFAudio::AVMIDIPlayer : @unchecked Swift::Sendable {
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+extension AVFAudio::AVAudioFile : @unchecked Swift::Sendable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension AVFAudio::AVAudioFile {
+  public func read(frameCount: AVFAudio::AVAudioFrameCount) throws -> AVFAudio::AVReadOnlyAudioPCMBuffer
+  public func write(from buffer: AVFAudio::AVReadOnlyAudioPCMBuffer) throws
+}
+@available(macOS 26.0, iOS 26.0, tvOS 18.0, watchOS 26.0, visionOS 26.0, *)
+extension AVFAudio::AVAudioRecorder : @unchecked Swift::Sendable {
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+extension AVFAudio::AVAudioCompressedBuffer {
+  public var packetDependencies: [CoreAudioTypes::AudioStreamPacketDependencyDescription]? {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct AVReadOnlyAudioPCMBuffer : Swift::Sendable {
+  public init(copying buffer: AVFAudio::AVAudioPCMBuffer)
+  @unsafe public init(unsafeRetaining buffer: sending AVFAudio::AVAudioPCMBuffer)
+  public init(format: AVFAudio::AVAudioFormat, frameCapacity: Swift::Int, initializingWith: (_ audioBufferList: Swift::UnsafeMutablePointer<CoreAudioTypes::AudioBufferList>) throws -> Swift::Void) throws
+  public var format: AVFAudio::AVAudioFormat {
+    get
+  }
+  public var frameCapacity: Swift::Int {
+    get
+  }
+  public var frameLength: Swift::Int {
+    get
+  }
+  public var stride: Swift::Int {
+    get
+  }
+  public enum ChannelData : ~Swift::Escapable {
+    case int16(Swift::Span<Swift::Int16>)
+    case int32(Swift::Span<Swift::Int32>)
+    case float(Swift::Span<Swift::Float>)
+  }
+  @unsafe public func withUnsafeAudioBufferList<R>(_ body: (Swift::UnsafePointer<CoreAudioTypes::AudioBufferList>) throws -> R) rethrows -> R
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(borrow self)
+  public func channelData(_ index: Swift::Int) -> AVFAudio::AVReadOnlyAudioPCMBuffer.AVFAudio::ChannelData
+  #else
+  @lifetime(borrow self)
+  public func channelData(_ index: Swift::Int) -> AVFAudio::AVReadOnlyAudioPCMBuffer.AVFAudio::ChannelData
+  #endif
+  #endif
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension AVFAudio::AVAudioPCMBuffer {
+  convenience public init(copying readOnlyBuffer: AVFAudio::AVReadOnlyAudioPCMBuffer)
+  convenience public init(copying source: AVFAudio::AVAudioPCMBuffer)
+  public enum ChannelData : ~Swift::Escapable {
+    case int16(Swift::Span<Swift::Int16>)
+    case int32(Swift::Span<Swift::Int32>)
+    case float(Swift::Span<Swift::Float>)
+  }
+  public enum MutableChannelData : ~Swift::Copyable, ~Swift::Escapable {
+    case int16(Swift::MutableSpan<Swift::Int16>)
+    case int32(Swift::MutableSpan<Swift::Int32>)
+    case float(Swift::MutableSpan<Swift::Float>)
+  }
+  @unsafe public func withUnsafeAudioBufferList<R>(_ body: (Swift::UnsafePointer<CoreAudioTypes::AudioBufferList>) throws -> R) rethrows -> R
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(borrow self)
+  @unsafe public func channelData(_ index: Swift::Int) -> AVFAudio::AVAudioPCMBuffer.AVFAudio::ChannelData
+  #else
+  @lifetime(borrow self)
+  @unsafe public func channelData(_ index: Swift::Int) -> AVFAudio::AVAudioPCMBuffer.AVFAudio::ChannelData
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(borrow self)
+  @unsafe public func mutableChannelData(_ index: Swift::Int) -> AVFAudio::AVAudioPCMBuffer.AVFAudio::MutableChannelData
+  #else
+  @lifetime(borrow self)
+  @unsafe public func mutableChannelData(_ index: Swift::Int) -> AVFAudio::AVAudioPCMBuffer.AVFAudio::MutableChannelData
+  #endif
+  #endif
+}
+@available(macOS, unavailable)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct AVReadOnlyAudioCompressedBuffer : Swift::Sendable {
+  public init(copying buffer: AVFAudio::AVAudioCompressedBuffer)
+  @unsafe public init(unsafeRetaining buffer: sending AVFAudio::AVAudioCompressedBuffer)
+  public init(format: AVFAudio::AVAudioFormat, packetCapacity: Swift::Int, maximumPacketSize: Swift::Int, initializingWith: (_ data: inout Swift::OutputSpan<Swift::UInt8>, _ packetDescriptions: inout Swift::OutputSpan<CoreAudioTypes::AudioStreamPacketDescription>) throws -> (packetCount: Swift::Int, byteLength: Swift::Int)) throws
+  public init(format: AVFAudio::AVAudioFormat, packetCapacity: Swift::Int, initializingWith: (_ data: inout Swift::OutputSpan<Swift::UInt8>) throws -> Swift::Int) throws
+  public var format: AVFAudio::AVAudioFormat {
+    get
+  }
+  public var packetCapacity: Swift::Int {
+    get
+  }
+  public var packetCount: Swift::Int {
+    get
+  }
+  public var maximumPacketSize: Swift::Int {
+    get
+  }
+  public var byteCapacity: Swift::Int {
+    get
+  }
+  public var byteLength: Swift::Int {
+    get
+  }
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  public var data: Swift::Span<Swift::UInt8> {
+    @_lifetime(borrow self)
+    get
+  }
+  #else
+  public var data: Swift::Span<Swift::UInt8> {
+    @lifetime(borrow self)
+    get
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  public var packetDescriptions: Swift::Span<CoreAudioTypes::AudioStreamPacketDescription>? {
+    @_lifetime(borrow self)
+    get
+  }
+  #else
+  public var packetDescriptions: Swift::Span<CoreAudioTypes::AudioStreamPacketDescription>? {
+    @lifetime(borrow self)
+    get
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  public var packetDependencies: Swift::Span<CoreAudioTypes::AudioStreamPacketDependencyDescription>? {
+    @_lifetime(borrow self)
+    get
+  }
+  #else
+  public var packetDependencies: Swift::Span<CoreAudioTypes::AudioStreamPacketDependencyDescription>? {
+    @lifetime(borrow self)
+    get
+  }
+  #endif
+  #endif
+}
+@available(macOS, unavailable)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension AVFAudio::AVAudioCompressedBuffer {
+  convenience public init(copying readOnlyBuffer: AVFAudio::AVReadOnlyAudioCompressedBuffer)
+  convenience public init(copying source: AVFAudio::AVAudioCompressedBuffer)
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @unsafe public var dataSpan: Swift::Span<Swift::UInt8> {
+    @_lifetime(borrow self)
+    get
+  }
+  #else
+  @unsafe public var dataSpan: Swift::Span<Swift::UInt8> {
+    @lifetime(borrow self)
+    get
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @unsafe public var mutableDataSpan: Swift::MutableSpan<Swift::UInt8> {
+    @_lifetime(borrow self)
+    get
+  }
+  #else
+  @unsafe public var mutableDataSpan: Swift::MutableSpan<Swift::UInt8> {
+    @lifetime(borrow self)
+    get
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @unsafe public var packetDescriptionsSpan: Swift::Span<CoreAudioTypes::AudioStreamPacketDescription>? {
+    @_lifetime(borrow self)
+    get
+  }
+  #else
+  @unsafe public var packetDescriptionsSpan: Swift::Span<CoreAudioTypes::AudioStreamPacketDescription>? {
+    @lifetime(borrow self)
+    get
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @unsafe public var mutablePacketDescriptionsSpan: Swift::MutableSpan<CoreAudioTypes::AudioStreamPacketDescription>? {
+    @_lifetime(borrow self)
+    get
+  }
+  #else
+  @unsafe public var mutablePacketDescriptionsSpan: Swift::MutableSpan<CoreAudioTypes::AudioStreamPacketDescription>? {
+    @lifetime(borrow self)
+    get
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @unsafe public var packetDependencySpan: Swift::Span<CoreAudioTypes::AudioStreamPacketDependencyDescription>? {
+    @_lifetime(borrow self)
+    get
+  }
+  #else
+  @unsafe public var packetDependencySpan: Swift::Span<CoreAudioTypes::AudioStreamPacketDependencyDescription>? {
+    @lifetime(borrow self)
+    get
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @unsafe public var mutablePacketDependencySpan: Swift::MutableSpan<CoreAudioTypes::AudioStreamPacketDependencyDescription>? {
+    @_lifetime(borrow self)
+    get
+  }
+  #else
+  @unsafe public var mutablePacketDependencySpan: Swift::MutableSpan<CoreAudioTypes::AudioStreamPacketDependencyDescription>? {
+    @lifetime(borrow self)
+    get
+  }
+  #endif
+  #endif
+}

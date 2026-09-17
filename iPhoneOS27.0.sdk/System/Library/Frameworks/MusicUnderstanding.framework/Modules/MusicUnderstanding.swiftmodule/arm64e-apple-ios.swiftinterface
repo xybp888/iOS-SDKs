@@ -1,0 +1,236 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -Osize -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 13 -module-name MusicUnderstanding
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@preconcurrency public import AVFAudio
+@preconcurrency public import AVFoundation
+@preconcurrency public import CoreML
+public import CoreMedia
+public import Foundation
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct AnalysisType : Swift::Hashable, Swift::Sendable, Swift::Codable {
+  public let rawValue: Swift::String
+  public static func == (a: MusicUnderstanding::AnalysisType, b: MusicUnderstanding::AnalysisType) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension MusicUnderstanding::AnalysisType {
+  public static let instrumentActivity: MusicUnderstanding::AnalysisType
+  public static let loudness: MusicUnderstanding::AnalysisType
+  public static let pace: MusicUnderstanding::AnalysisType
+  public static let rhythm: MusicUnderstanding::AnalysisType
+  public static let structure: MusicUnderstanding::AnalysisType
+  public static let key: MusicUnderstanding::AnalysisType
+}
+extension MusicUnderstanding::MusicUnderstandingSession {
+  @available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public struct SessionResult : Swift::Codable, Swift::Sendable {
+    public let instrumentActivity: MusicUnderstanding::InstrumentActivityResult?
+    public let key: MusicUnderstanding::KeyResult?
+    public let loudness: MusicUnderstanding::LoudnessResult?
+    public let pace: MusicUnderstanding::PaceResult?
+    public let rhythm: MusicUnderstanding::RhythmResult?
+    public let structure: MusicUnderstanding::StructureResult?
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct StructureResult : Swift::Codable, Swift::Sendable {
+  public let sections: [CoreMedia::CMTimeRange]
+  public let segments: [CoreMedia::CMTimeRange]
+  public let phrases: [CoreMedia::CMTimeRange]
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct PaceResult : Swift::Codable, Swift::Sendable {
+  public let ranges: [MusicUnderstanding::MusicUnderstandingSession.MusicUnderstanding::RangedValue<Swift::Double>]
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct LoudnessResult : Swift::Codable, Swift::Sendable {
+  public let integrated: MusicUnderstanding::MusicUnderstandingSession.MusicUnderstanding::TimedValue<Swift::Float>
+  public let momentary: [MusicUnderstanding::MusicUnderstandingSession.MusicUnderstanding::TimedValue<Swift::Float>]
+  public let shortTerm: [MusicUnderstanding::MusicUnderstandingSession.MusicUnderstanding::TimedValue<Swift::Float>]
+  public let peak: MusicUnderstanding::MusicUnderstandingSession.MusicUnderstanding::TimedValue<Swift::Float>
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+extension MusicUnderstanding::MusicUnderstandingSession {
+  @available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public struct RangedValue<Value> : Swift::Codable, Swift::Equatable, Swift::Sendable where Value : Swift::Decodable, Value : Swift::Encodable, Value : Swift::Equatable, Value : Swift::Sendable {
+    public let range: CoreMedia::CMTimeRange
+    public let value: Value
+    public init(from decoder: any Swift::Decoder) throws
+    public func encode(to encoder: any Swift::Encoder) throws
+    public static func == (a: MusicUnderstanding::MusicUnderstandingSession.MusicUnderstanding::RangedValue<Value>, b: MusicUnderstanding::MusicUnderstandingSession.MusicUnderstanding::RangedValue<Value>) -> Swift::Bool
+  }
+}
+extension MusicUnderstanding::MusicUnderstandingSession {
+  @available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public struct TimedValue<Value> : Swift::Codable, Swift::Equatable, Swift::Sendable where Value : Swift::Decodable, Value : Swift::Encodable, Value : Swift::Equatable, Value : Swift::Sendable {
+    public let time: CoreMedia::CMTime
+    public let value: Value
+    public init(from decoder: any Swift::Decoder) throws
+    public func encode(to encoder: any Swift::Encoder) throws
+    public static func == (a: MusicUnderstanding::MusicUnderstandingSession.MusicUnderstanding::TimedValue<Value>, b: MusicUnderstanding::MusicUnderstandingSession.MusicUnderstanding::TimedValue<Value>) -> Swift::Bool
+  }
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public enum MusicUnderstandingError : Swift::Error {
+  case sessionInProgress
+  case emptyAnalysisSet
+  case invalidAsset
+  case hasProtectedContent
+  case internalError
+  public static func == (a: MusicUnderstanding::MusicUnderstandingError, b: MusicUnderstanding::MusicUnderstandingError) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct RhythmResult : Swift::Codable, Swift::Sendable {
+  public let beats: [CoreMedia::CMTime]
+  public let bars: [CoreMedia::CMTime]
+  public let beatsPerMinute: Swift::Float?
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct KeyResult : Swift::Codable, Swift::Sendable {
+  public let ranges: [MusicUnderstanding::MusicUnderstandingSession.MusicUnderstanding::RangedValue<MusicUnderstanding::KeyResult.MusicUnderstanding::KeySignature>]
+  public struct KeySignature : Swift::Codable, Swift::Hashable, Swift::Sendable {
+    public let tonic: MusicUnderstanding::KeyResult.MusicUnderstanding::Tonic
+    public let mode: MusicUnderstanding::KeyResult.MusicUnderstanding::Mode
+    public static func == (a: MusicUnderstanding::KeyResult.MusicUnderstanding::KeySignature, b: MusicUnderstanding::KeyResult.MusicUnderstanding::KeySignature) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension MusicUnderstanding::KeyResult {
+  @frozen public enum Tonic : Swift::String, Swift::Codable, Swift::Hashable, Swift::Sendable {
+    case aFlat
+    case aSharp
+    case a
+    case bFlat
+    case b
+    case c
+    case cSharp
+    case d
+    case dFlat
+    case dSharp
+    case eFlat
+    case e
+    case f
+    case fSharp
+    case g
+    case gFlat
+    case gSharp
+    public init?(rawValue: Swift::String)
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+    public typealias RawValue = Swift::String
+    public var rawValue: Swift::String {
+      get
+    }
+  }
+  public enum Mode : Swift::String, Swift::Codable, Swift::Hashable, Swift::Sendable {
+    case major, minor
+    public init?(rawValue: Swift::String)
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+    public typealias RawValue = Swift::String
+    public var rawValue: Swift::String {
+      get
+    }
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public actor MusicUnderstandingSession : Swift::Sendable {
+  nonisolated public var loudnessResults: some Swift::Sendable & _Concurrency::AsyncSequence<MusicUnderstanding::LoudnessResult, any Swift::Error> {
+    get
+  }
+  public convenience init<Provider>(audioProvider: Provider) where Provider : _Concurrency::AsyncSequence, Provider.Element == AVFAudio::AVReadOnlyAudioPCMBuffer, Provider.Failure == Swift::Never
+  public convenience init(asset: any AVFoundation::AVAsset & Swift::Sendable) async throws
+  @discardableResult
+  public func analyze(for analysisTypes: Swift::Set<MusicUnderstanding::AnalysisType>) async throws -> MusicUnderstanding::MusicUnderstandingSession.MusicUnderstanding::SessionResult
+  @discardableResult
+  public func analyze() async throws -> MusicUnderstanding::MusicUnderstandingSession.MusicUnderstanding::SessionResult
+  public func cancel() async
+  @objc deinit
+  @_semantics("defaultActor") nonisolated final public var unownedExecutor: _Concurrency::UnownedSerialExecutor {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct InstrumentActivityResult : Swift::Codable, Swift::Sendable {
+  public let ranges: [MusicUnderstanding::InstrumentActivityResult.MusicUnderstanding::Instrument : [CoreMedia::CMTimeRange]]
+  public let activity: [MusicUnderstanding::InstrumentActivityResult.MusicUnderstanding::Instrument : [MusicUnderstanding::MusicUnderstandingSession.MusicUnderstanding::TimedValue<Swift::Float>]]
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+extension MusicUnderstanding::InstrumentActivityResult {
+  @available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public struct Instrument : Swift::Hashable, Swift::Sendable, Swift::Codable {
+    public let rawValue: Swift::String
+    public func encode(to encoder: any Swift::Encoder) throws
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension MusicUnderstanding::InstrumentActivityResult.MusicUnderstanding::Instrument : Swift::Equatable {
+  @available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public static func == (lhs: MusicUnderstanding::InstrumentActivityResult.MusicUnderstanding::Instrument, rhs: MusicUnderstanding::InstrumentActivityResult.MusicUnderstanding::Instrument) -> Swift::Bool
+  @available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public func hash(into hasher: inout Swift::Hasher)
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension MusicUnderstanding::InstrumentActivityResult.MusicUnderstanding::Instrument {
+  @available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public static let vocal: MusicUnderstanding::InstrumentActivityResult.MusicUnderstanding::Instrument
+  @available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public static let drum: MusicUnderstanding::InstrumentActivityResult.MusicUnderstanding::Instrument
+  @available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public static let bass: MusicUnderstanding::InstrumentActivityResult.MusicUnderstanding::Instrument
+  @available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public static let other: MusicUnderstanding::InstrumentActivityResult.MusicUnderstanding::Instrument
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension MusicUnderstanding::InstrumentActivityResult.MusicUnderstanding::Instrument : Swift::CodingKeyRepresentable {
+  @available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public var codingKey: any Swift::CodingKey {
+    get
+  }
+  @available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public init?<T>(codingKey: T) where T : Swift::CodingKey
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension MusicUnderstanding::MusicUnderstandingError : Swift::Equatable {}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension MusicUnderstanding::MusicUnderstandingError : Swift::Hashable {}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension MusicUnderstanding::KeyResult.MusicUnderstanding::Tonic : Swift::RawRepresentable {}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension MusicUnderstanding::KeyResult.MusicUnderstanding::Tonic : Swift::BitwiseCopyable {}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension MusicUnderstanding::KeyResult.MusicUnderstanding::Mode : Swift::RawRepresentable {}

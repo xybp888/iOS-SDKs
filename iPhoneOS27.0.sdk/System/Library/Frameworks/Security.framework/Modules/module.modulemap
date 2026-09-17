@@ -1,0 +1,26 @@
+framework module Security [system] {
+  umbrella header "Security.h"
+
+  export *
+  module * { 
+    export *
+  }
+
+  // These must all be set in the GCC_PREPROCESSOR_DEFINITIONS Xcode build
+  // setting, or passed on the command line with -D in order to have an
+  // effect. #define won't do anything for any of these. config_macros
+  // communicates this
+  config_macros
+    ADOPT_NEW_SecIdentityCreate
+
+  explicit module CipherSuite { 
+    header "CipherSuite.h" 
+    export *
+  }
+  explicit module SecureTransport { 
+    header "SecureTransport.h" 
+    export *
+  }  
+
+}
+

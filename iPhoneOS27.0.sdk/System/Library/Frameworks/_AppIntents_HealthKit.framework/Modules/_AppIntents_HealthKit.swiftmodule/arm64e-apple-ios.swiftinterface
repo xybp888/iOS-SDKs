@@ -1,0 +1,31 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -Osize -library-level api -target-min-inlining-version min -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 301.0.51.1.104 -module-name _AppIntents_HealthKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported public import AppIntents
+public import HealthKit
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(anyAppleOS 27.0, *)
+extension AppIntents::AudioContext {
+  public static var workout: AppIntents::AudioContext {
+    get
+  }
+  public static func workout(activityType: HealthKit::HKWorkoutActivityType) -> AppIntents::AudioContext
+  public static func workout(intensityLevel: AppIntents::AudioContext._AppIntents_HealthKit::WorkoutIntensityLevel) -> AppIntents::AudioContext
+  public struct WorkoutIntensityLevel : Swift::Hashable, Swift::Sendable {
+    public let rawValue: Swift::UInt
+    public init(rawValue: Swift::UInt)
+    public init(_ workoutActivityType: HealthKit::HKWorkoutActivityType)
+    public static let low: AppIntents::AudioContext._AppIntents_HealthKit::WorkoutIntensityLevel
+    public static let medium: AppIntents::AudioContext._AppIntents_HealthKit::WorkoutIntensityLevel
+    public static let high: AppIntents::AudioContext._AppIntents_HealthKit::WorkoutIntensityLevel
+    public static func == (a: AppIntents::AudioContext._AppIntents_HealthKit::WorkoutIntensityLevel, b: AppIntents::AudioContext._AppIntents_HealthKit::WorkoutIntensityLevel) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}

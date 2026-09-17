@@ -1,0 +1,152 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 46.0.15 -module-name AppManagedFeatures
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported import AppManagedFeatures
+import Distributed
+import ExtensionFoundation
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@preconcurrency import os.activity
+@preconcurrency import os
+@available(iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+public protocol AppManagedFeaturesExtension : ExtensionFoundation::AppExtension, Swift::Sendable {
+  func willActivate(serialNumber: Swift::String, imei: Swift::String, organizationID: Swift::String) async throws
+  func didDeactivate() async
+  func checkIn() async
+}
+@available(iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension AppManagedFeatures::AppManagedFeaturesExtension {
+  @_Concurrency::MainActor public var configuration: some AppManagedFeatures::AppManagedFeaturesExtensionConfiguration {
+    get
+  }
+}
+@available(iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@_Concurrency::MainActor @preconcurrency public protocol AppManagedFeaturesExtensionConfiguration : ExtensionFoundation::AppExtensionConfiguration {
+}
+@_hasMissingDesignatedInitializers @available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+public actor FeatureManager {
+  public static let shared: AppManagedFeatures::FeatureManager
+  public var isLocked: Swift::Bool {
+    get async throws
+  }
+  public func lock(_ configuration: AppManagedFeatures::LockConfiguration) async throws
+  @available(*, deprecated, renamed: "lock(_:)")
+  public func lock(restrictions: AppManagedFeatures::Restrictions) async throws
+  public func unlock() async throws
+  public func setSoftwareUpdateRequirement(_ requirement: AppManagedFeatures::SoftwareUpdateRequirement?) async throws
+  public var softwareUpdateRequirement: AppManagedFeatures::SoftwareUpdateRequirement? {
+    get async throws
+  }
+  @objc deinit
+  @_semantics("defaultActor") nonisolated final public var unownedExecutor: _Concurrency::UnownedSerialExecutor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension AppManagedFeatures::FeatureManager {
+  public enum Error : Swift::Error {
+    case noManagementProviderConfiguration
+    case notAuthorized
+    case unknownError
+    public static func == (a: AppManagedFeatures::FeatureManager.AppManagedFeatures::Error, b: AppManagedFeatures::FeatureManager.AppManagedFeatures::Error) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+@available(iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+public struct LockConfiguration : Swift::Codable, Swift::Sendable, Swift::Equatable, Swift::Hashable, Swift::CustomStringConvertible {
+  public let excludingAppBundleIdentifiers: [Swift::String]
+  public let includingAppBundleIdentifiers: [Swift::String]
+  public let excludingWebDomains: [Swift::String]
+  public init(excludingAppBundleIdentifiers: [Swift::String] = [], includingAppBundleIdentifiers: [Swift::String] = [], excludingWebDomains: [Swift::String] = [])
+  public var description: Swift::String {
+    get
+  }
+  public static func == (a: AppManagedFeatures::LockConfiguration, b: AppManagedFeatures::LockConfiguration) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(*, deprecated, renamed: "LockConfiguration")
+public struct Restrictions : Swift::Codable, Swift::Sendable, Swift::Equatable, Swift::Hashable, Swift::CustomStringConvertible {
+  public let excludingApps: [Swift::String]
+  public let includingApps: [Swift::String]
+  public let excludingWebDomains: [Swift::String]
+  public init(excludingApps: [Swift::String] = [], includingApps: [Swift::String] = [], excludingWebDomains: [Swift::String] = [])
+  public var description: Swift::String {
+    get
+  }
+  public static func == (a: AppManagedFeatures::Restrictions, b: AppManagedFeatures::Restrictions) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+public struct SoftwareUpdateRequirement : Swift::Codable, Swift::Sendable, Swift::Hashable, Swift::CustomStringConvertible {
+  public let targetOSVersion: Swift::String
+  public let targetBuildVersion: Swift::String?
+  public let deadline: Foundation::Date
+  public init(targetOSVersion: Swift::String, targetBuildVersion: Swift::String?, deadline: Foundation::Date)
+  public var description: Swift::String {
+    get
+  }
+  public static func == (a: AppManagedFeatures::SoftwareUpdateRequirement, b: AppManagedFeatures::SoftwareUpdateRequirement) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension AppManagedFeatures::FeatureManager.AppManagedFeatures::Error : Swift::Equatable {}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension AppManagedFeatures::FeatureManager.AppManagedFeatures::Error : Swift::Hashable {}

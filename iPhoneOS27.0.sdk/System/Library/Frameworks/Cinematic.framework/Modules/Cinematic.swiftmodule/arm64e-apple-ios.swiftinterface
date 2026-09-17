@@ -1,0 +1,366 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 560.22.2 -module-name Cinematic
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import AVFoundation
+@_exported import Cinematic
+import CoreMedia
+import Foundation
+import Metal
+import Swift
+import Synchronization
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_hasMissingDesignatedInitializers @available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+public class CNDetectionTrack {
+  public var detectionType: Cinematic::CNDetectionType {
+    get
+  }
+  public var detectionID: Cinematic::CNDetectionID {
+    get
+  }
+  public var detectionGroupID: Cinematic::CNDetectionGroupID {
+    get
+  }
+  public var isUserCreated: Swift::Bool {
+    get
+  }
+  public var isDiscrete: Swift::Bool {
+    get
+  }
+  public func detection(atOrBefore time: CoreMedia::CMTime) -> Cinematic::CNDetection?
+  public func detection(nearest time: CoreMedia::CMTime) -> Cinematic::CNDetection?
+  public func detections(in timeRange: CoreMedia::CMTimeRange) -> [Cinematic::CNDetection]
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+public class CNFixedDetectionTrack : Cinematic::CNDetectionTrack {
+  public init(focusDisparity: Swift::Float)
+  public init(originalDetection: Cinematic::CNDetection)
+  public var focusDisparity: Swift::Float {
+    get
+  }
+  public var originalDetection: Cinematic::CNDetection? {
+    get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+public class CNCustomDetectionTrack : Cinematic::CNDetectionTrack {
+  public init(detections: [Cinematic::CNDetection], smooth applySmoothing: Swift::Bool)
+  public var allDetections: [Cinematic::CNDetection] {
+    get
+  }
+  @objc deinit
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+public class CNRenderingSession {
+  public struct Attributes {
+    public init(asset: AVFoundation::AVAsset) async throws
+    public let renderingVersion: Swift::Int
+  }
+  @available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+  public struct FrameAttributes {
+    public init?(sampleBuffer: CoreMedia::CMSampleBuffer, sessionAttributes: Cinematic::CNRenderingSession.Cinematic::Attributes)
+    public init?(timedMetadataGroup metadataGroup: AVFoundation::AVTimedMetadataGroup, sessionAttributes: Cinematic::CNRenderingSession.Cinematic::Attributes)
+    public var focusDisparity: Swift::Float
+    public var fNumber: Swift::Float
+  }
+  public init(commandQueue: any Metal::MTLCommandQueue, sessionAttributes: Cinematic::CNRenderingSession.Cinematic::Attributes, preferredTransform: CoreFoundation::CGAffineTransform, quality: Cinematic::CNRenderingQuality)
+  final public let commandQueue: any Metal::MTLCommandQueue
+  final public let sessionAttributes: Cinematic::CNRenderingSession.Cinematic::Attributes
+  final public let preferredTransform: CoreFoundation::CGAffineTransform
+  final public let quality: Cinematic::CNRenderingQuality
+  @available(iOS 17.0, macOS 14.0, tvOS 17.0, *)
+  @available(anyAppleOS, deprecated: 27.0, message: "Use method using CVReadOnlyPixelBuffer: encodeRender(to:frameAttributes:sourceImage:sourceDisparity:destinationImage:)")
+  public func encodeRender(to commandBuffer: any Metal::MTLCommandBuffer, frameAttributes: Cinematic::CNRenderingSession.Cinematic::FrameAttributes, sourceImage: CoreVideo::CVPixelBuffer, sourceDisparity: CoreVideo::CVPixelBuffer, destinationImage: CoreVideo::CVPixelBuffer) -> Swift::Bool
+  @available(iOS 17.0, macOS 14.0, tvOS 17.0, *)
+  @available(anyAppleOS, deprecated: 27.0, message: "Use method using CVReadOnlyPixelBuffer: encodeRender(to:frameAttributes:sourceImage:sourceDisparity:destinationRGBA:)")
+  public func encodeRender(to commandBuffer: any Metal::MTLCommandBuffer, frameAttributes: Cinematic::CNRenderingSession.Cinematic::FrameAttributes, sourceImage: CoreVideo::CVPixelBuffer, sourceDisparity: CoreVideo::CVPixelBuffer, destinationRGBA: any Metal::MTLTexture) -> Swift::Bool
+  @available(iOS 17.0, macOS 14.0, tvOS 17.0, *)
+  @available(anyAppleOS, deprecated: 27.0, message: "Use method using CVReadOnlyPixelBuffer: encodeRender(to:frameAttributes:sourceImage:sourceDisparity:destinationLuma:destinationChroma:)")
+  public func encodeRender(to commandBuffer: any Metal::MTLCommandBuffer, frameAttributes: Cinematic::CNRenderingSession.Cinematic::FrameAttributes, sourceImage: CoreVideo::CVPixelBuffer, sourceDisparity: CoreVideo::CVPixelBuffer, destinationLuma: any Metal::MTLTexture, destinationChroma: any Metal::MTLTexture) -> Swift::Bool
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, *)
+  public func encodeRender(to commandBuffer: any Metal::MTLCommandBuffer, frameAttributes: Cinematic::CNRenderingSession.Cinematic::FrameAttributes, sourceImage: CoreVideo::CVReadOnlyPixelBuffer, sourceDisparity: CoreVideo::CVReadOnlyPixelBuffer? = nil, destinationImage: CoreVideo::CVPixelBuffer) -> Swift::Bool
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, *)
+  public func encodeRender(to commandBuffer: any Metal::MTLCommandBuffer, frameAttributes: Cinematic::CNRenderingSession.Cinematic::FrameAttributes, sourceImage: CoreVideo::CVReadOnlyPixelBuffer, sourceDisparity: CoreVideo::CVReadOnlyPixelBuffer? = nil, destinationRGBA: any Metal::MTLTexture) -> Swift::Bool
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, *)
+  public func encodeRender(to commandBuffer: any Metal::MTLCommandBuffer, frameAttributes: Cinematic::CNRenderingSession.Cinematic::FrameAttributes, sourceImage: CoreVideo::CVReadOnlyPixelBuffer, sourceDisparity: CoreVideo::CVReadOnlyPixelBuffer? = nil, destinationLuma: any Metal::MTLTexture, destinationChroma: any Metal::MTLTexture) -> Swift::Bool
+  public static var sourcePixelFormatTypes: [Darwin::OSType] {
+    get
+  }
+  public static var destinationPixelFormatTypes: [Darwin::OSType] {
+    get
+  }
+  @objc deinit
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+public struct CNDetection : Swift::Sendable {
+  public init(time: CoreMedia::CMTime, detectionType: Cinematic::CNDetectionType, normalizedRect: CoreFoundation::CGRect, focusDisparity: Swift::Float)
+  public var time: CoreMedia::CMTime {
+    get
+  }
+  public var detectionType: Cinematic::CNDetectionType {
+    get
+  }
+  public var normalizedRect: CoreFoundation::CGRect {
+    get
+  }
+  public var focusDisparity: Swift::Float {
+    get
+  }
+  public var detectionID: Cinematic::CNDetectionID? {
+    get
+  }
+  public var detectionGroupID: Cinematic::CNDetectionGroupID? {
+    get
+  }
+  public static func accessibilityLabel(for detectionType: Cinematic::CNDetectionType) -> Swift::String
+  public static func disparity(in normalizedRect: CoreFoundation::CGRect, sourceDisparity: CoreVideo::CVPixelBuffer, detectionType: Cinematic::CNDetectionType, priorDisparity: Swift::Float? = nil) -> Swift::Float
+}
+@available(macOS 27.0, iOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public class CNAssetPreprocessConfiguration {
+  public init(destinationAssetURL: Foundation::URL)
+  public var referenceSourceAssetTracks: Swift::Bool {
+    get
+    set
+  }
+  public var destinationAssetURL: Foundation::URL {
+    get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+public class CNAssetInfo {
+  @available(iOS, introduced: 17.0, deprecated: 27.0, renamed: "cinematicCapability(for:)")
+  @available(macOS, introduced: 14.0, deprecated: 27.0, renamed: "cinematicCapability(for:)")
+  @available(tvOS, introduced: 17.0, deprecated: 27.0, renamed: "cinematicCapability(for:)")
+  public class func isCinematic(asset: AVFoundation::AVAsset) async -> Swift::Bool
+  public init(asset: AVFoundation::AVAsset) async throws
+  final public let asset: AVFoundation::AVAsset
+  public var allCinematicTracks: [AVFoundation::AVAssetTrack] {
+    get
+  }
+  public var cinematicVideoTrack: AVFoundation::AVAssetTrack {
+    get
+  }
+  public var cinematicDisparityTrack: AVFoundation::AVAssetTrack {
+    get
+  }
+  public var cinematicMetadataTrack: AVFoundation::AVAssetTrack {
+    get
+  }
+  public var timeRange: CoreMedia::CMTimeRange {
+    get
+  }
+  public var naturalSize: CoreFoundation::CGSize {
+    get
+  }
+  public var preferredSize: CoreFoundation::CGSize {
+    get
+  }
+  public var preferredTransform: CoreFoundation::CGAffineTransform {
+    get
+  }
+  @objc deinit
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+extension Cinematic::CNAssetInfo {
+  public var frameTimingTrack: AVFoundation::AVAssetTrack {
+    get
+  }
+  public var videoCompositionTracks: [AVFoundation::AVAssetTrack] {
+    get
+  }
+  public var videoCompositionTrackIDs: [CoreMedia::CMPersistentTrackID] {
+    get
+  }
+  public var sampleDataTrackIDs: [CoreMedia::CMPersistentTrackID] {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, *)
+extension Cinematic::CNAssetInfo {
+  @available(macOS 27.0, iOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public static var defaultResourceDownloadTimeout: Foundation::TimeInterval {
+    get
+  }
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, *)
+  public class func cinematicCapability(for asset: AVFoundation::AVAsset) async -> Cinematic::CNCinematicCapability
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, *)
+  public static func resourceStatus(for versions: Swift::Set<Cinematic::CNCinematicResourceVersion> = []) -> Cinematic::CNResourceStatus
+  @available(macOS 27.0, iOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public static func downloadResources(versions: Swift::Set<Cinematic::CNCinematicResourceVersion> = [], timeout: Foundation::TimeInterval = defaultResourceDownloadTimeout, subprogress: consuming Foundation::Subprogress? = nil) async throws
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, *)
+  public var isPreprocessed: Swift::Bool {
+    get
+  }
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, *)
+  public var cinematicCapability: Cinematic::CNCinematicCapability {
+    get
+  }
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, *)
+  public var resourceStatus: Cinematic::CNResourceStatus {
+    get
+  }
+  @available(macOS 27.0, iOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @discardableResult
+  public func downloadResources(timeout: Foundation::TimeInterval = defaultResourceDownloadTimeout, subprogress: consuming Foundation::Subprogress? = nil) async throws -> Cinematic::CNAssetInfo
+  @available(macOS 27.0, iOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public func preprocessAsset(configuration: Cinematic::CNAssetPreprocessConfiguration, subprogress: consuming Foundation::Subprogress? = nil) async throws -> Cinematic::CNAssetInfo
+}
+@_hasMissingDesignatedInitializers @available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+public class CNCompositionInfo : Cinematic::CNAssetInfo {
+  public func insertTimeRange(_ timeRange: CoreMedia::CMTimeRange, of cinematicAssetInfo: Cinematic::CNAssetInfo, at startTime: CoreMedia::CMTime) throws
+  @objc deinit
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+extension AVFoundation::AVMutableComposition {
+  public func addTracks(for cinematicAssetInfo: Cinematic::CNAssetInfo, preferredStartingTrackID: CoreMedia::CMPersistentTrackID) -> Cinematic::CNCompositionInfo
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+public struct CNDecision : Swift::Sendable, Swift::Equatable {
+  public enum FocusDetectionID : Swift::Equatable {
+    case single(Cinematic::CNDetectionID)
+    case group(Cinematic::CNDetectionGroupID)
+    public static func == (a: Cinematic::CNDecision.Cinematic::FocusDetectionID, b: Cinematic::CNDecision.Cinematic::FocusDetectionID) -> Swift::Bool
+  }
+  public init(time: CoreMedia::CMTime, detectionID: Cinematic::CNDetectionID, strong isStrong: Swift::Bool)
+  public init(time: CoreMedia::CMTime, detectionGroupID: Cinematic::CNDetectionGroupID, strong isStrong: Swift::Bool)
+  public var time: CoreMedia::CMTime {
+    get
+  }
+  public var focusDetectionID: Cinematic::CNDecision.Cinematic::FocusDetectionID {
+    get
+  }
+  public var isUserDecision: Swift::Bool {
+    get
+  }
+  public var isStrongDecision: Swift::Bool {
+    get
+  }
+  public static func == (a: Cinematic::CNDecision, b: Cinematic::CNDecision) -> Swift::Bool
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+public struct CNBoundsPrediction : Swift::Sendable {
+  public var normalizedBounds: CoreFoundation::CGRect
+  public var confidence: Swift::Float
+}
+@_hasMissingDesignatedInitializers @available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+public class CNObjectTracker {
+  public static var isSupported: Swift::Bool {
+    get
+  }
+  public init(commandQueue: any Metal::MTLCommandQueue)
+  public func findObject(at point: CoreFoundation::CGPoint, sourceImage: CoreVideo::CVPixelBuffer) -> Cinematic::CNBoundsPrediction?
+  public func startTracking(at time: CoreMedia::CMTime, within normalizedBounds: CoreFoundation::CGRect, sourceImage: CoreVideo::CVPixelBuffer, sourceDisparity: CoreVideo::CVPixelBuffer) -> Swift::Bool
+  public func continueTracking(at time: CoreMedia::CMTime, sourceImage: CoreVideo::CVPixelBuffer, sourceDisparity: CoreVideo::CVPixelBuffer) -> Cinematic::CNBoundsPrediction?
+  public func finishDetectionTrack() -> Cinematic::CNDetectionTrack
+  public func resetDetectionTrack()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(macOS 26.0, iOS 26.0, tvOS 26.0, *)
+public class CNAssetSpatialAudioInfo {
+  public static var isSupported: Swift::Bool {
+    get
+  }
+  public class func assetContainsSpatialAudio(asset: AVFoundation::AVAsset) async -> Swift::Bool
+  public class func checkIfContainsSpatialAudio(asset: AVFoundation::AVAsset, completionHandler: @escaping (Swift::Bool) -> Swift::Void)
+  public init(asset: AVFoundation::AVAsset) async throws
+  public var defaultSpatialAudioTrack: AVFoundation::AVAssetTrack {
+    get
+  }
+  public var defaultRenderingStyle: Cinematic::CNSpatialAudioRenderingStyle {
+    get
+  }
+  public var defaultEffectIntensity: Swift::Float32 {
+    get
+  }
+  public var spatialAudioMixMetadata: Foundation::Data {
+    get
+  }
+  public func audioMix(effectIntensity: Swift::Float32, renderingStyle: Cinematic::CNSpatialAudioRenderingStyle) -> AVFoundation::AVAudioMix
+  public func assetReaderOutputSettings(for contentType: Cinematic::CNSpatialAudioContentType) -> Swift::Dictionary<Swift::String, Any>
+  public func assetWriterInputSettings(for contentType: Cinematic::CNSpatialAudioContentType) -> Swift::Dictionary<Swift::String, Any>
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+final public class CNScript : Swift::Sendable {
+  @available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+  public struct Frame : Swift::Sendable {
+    public var time: CoreMedia::CMTime {
+      get
+    }
+    public var focusDisparity: Swift::Float {
+      get
+    }
+    public var focusDetection: Cinematic::CNDetection {
+      get
+    }
+    public var allDetections: [Cinematic::CNDetection] {
+      get
+    }
+    public func detection(for detectionID: Cinematic::CNDetectionID) -> Cinematic::CNDetection?
+    public func bestDetection(for detectionGroupID: Cinematic::CNDetectionGroupID) -> Cinematic::CNDetection?
+  }
+  public init(asset: AVFoundation::AVAsset, changes: Cinematic::CNScript.Cinematic::Changes? = nil, progress: Foundation::Progress? = nil) async throws
+  final public func reload(changes: Cinematic::CNScript.Cinematic::Changes?)
+  final public func changes() -> Cinematic::CNScript.Cinematic::Changes
+  final public func changes(trimmedBy timeRange: CoreMedia::CMTimeRange) -> Cinematic::CNScript.Cinematic::Changes
+  final public var timeRange: CoreMedia::CMTimeRange {
+    get
+  }
+  final public func frame(at time: CoreMedia::CMTime, tolerance: CoreMedia::CMTime) -> Cinematic::CNScript.Cinematic::Frame?
+  final public func frames(in timeRange: CoreMedia::CMTimeRange) -> [Cinematic::CNScript.Cinematic::Frame]
+  final public func decision(at time: CoreMedia::CMTime, tolerance: CoreMedia::CMTime) -> Cinematic::CNDecision?
+  final public func decisions(in timeRange: CoreMedia::CMTimeRange) -> [Cinematic::CNDecision]
+  final public func decision(after time: CoreMedia::CMTime) -> Cinematic::CNDecision?
+  final public func decision(before time: CoreMedia::CMTime) -> Cinematic::CNDecision?
+  final public func primaryDecision(at time: CoreMedia::CMTime) -> Cinematic::CNDecision?
+  final public func secondaryDecision(at time: CoreMedia::CMTime) -> Cinematic::CNDecision?
+  final public func timeRangeOfTransition(after decision: Cinematic::CNDecision) -> CoreMedia::CMTimeRange
+  final public func timeRangeOfTransition(before decision: Cinematic::CNDecision) -> CoreMedia::CMTimeRange
+  final public func userDecisions(in timeRange: CoreMedia::CMTimeRange) -> [Cinematic::CNDecision]
+  final public func baseDecisions(in timeRange: CoreMedia::CMTimeRange) -> [Cinematic::CNDecision]
+  final public func detectionTrack(for detectionID: Cinematic::CNDetectionID) -> Cinematic::CNDetectionTrack?
+  final public func detectionTrack(for decision: Cinematic::CNDecision) -> Cinematic::CNDetectionTrack?
+  final public var fNumber: Swift::Float {
+    get
+    set
+  }
+  final public func addUserDecision(_ decision: Cinematic::CNDecision) -> Swift::Bool
+  final public func removeUserDecision(_ decision: Cinematic::CNDecision) -> Swift::Bool
+  final public func removeAllUserDecisions()
+  final public func addDetectionTrack(_ detectionTrack: Cinematic::CNDetectionTrack) -> Cinematic::CNDetectionID
+  final public func removeDetectionTrack(_ detectionTrack: Cinematic::CNDetectionTrack) -> Swift::Bool
+  final public var addedDetectionTracks: [Cinematic::CNDetectionTrack] {
+    get
+  }
+  public struct Changes {
+    public init?(dataRepresentation: Foundation::Data)
+    public var dataRepresentation: Foundation::Data {
+      get
+    }
+    public var fNumber: Swift::Float {
+      get
+    }
+    public var userDecisions: [Cinematic::CNDecision] {
+      get
+    }
+    public var addedDetectionTracks: [Cinematic::CNDetectionTrack] {
+      get
+    }
+  }
+  @objc deinit
+}

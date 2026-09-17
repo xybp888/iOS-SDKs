@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RelevanceServices.framework/RelevanceServices
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _RSDeviceSupportsAudioIntelligence,
+                            _RSDeviceSupportsContextualVolume, _RSInternalBuild,
+                            _RSIsRelevanceDaemon, _RSSendableDictionary,
+                            _RelevanceServicesVersionNumber,
+                            _RelevanceServicesVersionString ]
+    objc-classes:         [ RSConsiderateVolumeContext,
+                            RSConsiderateVolumeSettingsController,
+                            _TtC17RelevanceServices24ConsiderateVolumeContext,
+                            _TtC17RelevanceServices33ConsiderateVolumeAdjustmentResult,
+                            _TtC17RelevanceServices35ConsiderateVolumeSettingsController ]
+...

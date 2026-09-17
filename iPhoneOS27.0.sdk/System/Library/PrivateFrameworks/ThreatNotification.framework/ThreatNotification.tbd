@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ThreatNotification.framework/ThreatNotification
+current-version:       0
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ThreatNotificationVersionNumber,
+                            _ThreatNotificationVersionString ]
+    objc-classes:         [ TNController, TNFollowUpItemConfiguration ]
+    objc-ivars:           [ TNFollowUpItemConfiguration._expirationDate,
+                            TNFollowUpItemConfiguration._primaryAccountAltDSID ]
+...

@@ -1,0 +1,189 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-experimental-feature DebugDescriptionMacro -user-module-version 360.75.1.2 -module-name AVSystemRouting
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import AVFoundation.AVError
+import AVFoundation
+import AVKit
+@_exported import AVSystemRouting
+import Foundation
+import Swift
+import Synchronization
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_hasMissingDesignatedInitializers @available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+final public class AVSystemRoute : Swift::Sendable {
+  @objc deinit
+  final public var protocolType: UniformTypeIdentifiers::UTType {
+    get
+  }
+  final public var routeSymbolName: Swift::String {
+    get
+  }
+  final public var routeDisplayName: Swift::String {
+    get
+  }
+  final public func addSession(_ session: AVSystemRouting::AVSystemRouteSession) -> Swift::Bool
+  final public func removeSession(_ session: AVSystemRouting::AVSystemRouteSession)
+  final public var routeDataChannel: AVSystemRouting::AVSystemRoute.AVSystemRouting::DataChannel {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+final public class AVSystemRouteSession : Swift::Sendable {
+  public init(url: Foundation::URL, mode: AVSystemRouting::AVSystemRoute.AVSystemRouting::LaunchMode)
+  final public func start() async throws -> AVSystemRouting::AVSystemRouteMediaSession
+  final public func stop()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+final public class AVSystemRouteMediaSession : Swift::Sendable {
+  final public var playbackControl: (any AVKit::AVPlaybackUserInterfaceControllable)? {
+    get
+  }
+  final public var dataChannel: AVSystemRouting::AVSystemRoute.AVSystemRouting::DataChannel? {
+    get
+  }
+  @objc deinit
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+public protocol AVSystemRouteDataDelegate : AnyObject {
+  func receive(_ data: Foundation::Data) async throws
+}
+extension AVSystemRouting::AVSystemRoute {
+  @_hasMissingDesignatedInitializers @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable)
+  final public class DataChannel : Swift::Sendable {
+    final public func send(_ data: Foundation::Data) async throws
+    weak final public var dataDelegate: (any AVSystemRouting::AVSystemRouteDataDelegate)? {
+      get
+      set
+    }
+    @objc deinit
+  }
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable)
+  public enum LaunchMode : Swift::Sendable {
+    case application
+    case player
+    public static func == (a: AVSystemRouting::AVSystemRoute.AVSystemRouting::LaunchMode, b: AVSystemRouting::AVSystemRoute.AVSystemRouting::LaunchMode) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+final public class AVSystemRouteController : Swift::Sendable {
+  final public class var shared: AVSystemRouting::AVSystemRouteController {
+    get
+  }
+  final public class var supportedExtensionAvailable: Swift::Bool {
+    get
+  }
+  final public func addObserver(_ observer: any AVSystemRouting::AVSystemRouteControllerObserver) -> Swift::Bool
+  final public func removeObserver(_ observer: any AVSystemRouting::AVSystemRouteControllerObserver)
+  @objc deinit
+}
+extension AVSystemRouting::AVSystemRouteEvent {
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable)
+  public enum Reason : Swift::Sendable {
+    case activate
+    case deactivate
+    public static func == (a: AVSystemRouting::AVSystemRouteEvent.AVSystemRouting::Reason, b: AVSystemRouting::AVSystemRouteEvent.AVSystemRouting::Reason) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+final public class AVSystemRouteEvent : Swift::Sendable {
+  final public var reason: AVSystemRouting::AVSystemRouteEvent.AVSystemRouting::Reason {
+    get
+  }
+  final public var route: AVSystemRouting::AVSystemRoute {
+    get
+  }
+  @objc deinit
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+public protocol AVSystemRouteControllerObserver : AnyObject {
+  func systemRouteController(_ controller: AVSystemRouting::AVSystemRouteController, handle event: AVSystemRouting::AVSystemRouteEvent) async -> Swift::Bool
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension AVSystemRouting::AVSystemRouteControllerObserver {
+  public func systemRouteController(_ controller: AVSystemRouting::AVSystemRouteController, handle event: AVSystemRouting::AVSystemRouteEvent) async -> Swift::Bool
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+public struct AVSystemRoutingError : Foundation::LocalizedError, Swift::Sendable {
+  public enum Code : Swift::Sendable {
+    case connectionFailed
+    public static func == (a: AVSystemRouting::AVSystemRoutingError.AVSystemRouting::Code, b: AVSystemRouting::AVSystemRoutingError.AVSystemRouting::Code) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public let code: AVSystemRouting::AVSystemRoutingError.AVSystemRouting::Code
+  public init(_ code: AVSystemRouting::AVSystemRoutingError.AVSystemRouting::Code)
+  public var errorDescription: Swift::String? {
+    get
+  }
+  public var failureReason: Swift::String? {
+    get
+  }
+  public var recoverySuggestion: Swift::String? {
+    get
+  }
+  public var helpAnchor: Swift::String? {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension AVSystemRouting::AVSystemRoute.AVSystemRouting::LaunchMode : Swift::Equatable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension AVSystemRouting::AVSystemRoute.AVSystemRouting::LaunchMode : Swift::Hashable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension AVSystemRouting::AVSystemRouteEvent.AVSystemRouting::Reason : Swift::Equatable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension AVSystemRouting::AVSystemRouteEvent.AVSystemRouting::Reason : Swift::Hashable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension AVSystemRouting::AVSystemRoutingError.AVSystemRouting::Code : Swift::Equatable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension AVSystemRouting::AVSystemRoutingError.AVSystemRouting::Code : Swift::Hashable {}

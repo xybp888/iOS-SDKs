@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-ios, arm64e.x1-ios ]
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/SharedUtils.framework/SharedUtils'
+current-version: 2319.0.63
+allowable-clients:
+  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+    clients:         [ '-allowable_client', DaemonUtils, LARecoveryUITest, LATester, 
+                       LATester macOS, LATesterAHP, LocalAuthentication, LocalAuthenticationAutomation, 
+                       LocalAuthenticationBinTests, LocalAuthenticationCoreTests, 
+                       LocalAuthenticationCoreUI, LocalAuthenticationCoreUITests, 
+                       LocalAuthenticationCredentialServicesTests, LocalAuthenticationEmbeddedUI, 
+                       LocalAuthenticationPreboard, LocalAuthenticationPreboardTests, 
+                       LocalAuthenticationPrivateUI, LocalAuthenticationRecoveryUI, 
+                       LocalAuthenticationRemoteService, LocalAuthenticationTestSupport, 
+                       LocalAuthenticationTests, LocalAuthenticationUI, LocalAuthenticationUIService, 
+                       LocalAuthenticationUserTests, LocalAuthorizationTests, MechOyster, 
+                       MechPasscode, MechPearl, MechPushButton, MechTouchId, MechWatch, 
+                       MechanismBase, ModuleACM, ModuleBase, SecurityAgentPlugin, 
+                       SharedUtils, _LocalAuthentication_SwiftUI, coreautha, coreauthd, 
+                       latool, userauthd ]
+exports:
+  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+    symbols:         [ _LAAssertionsProxyFactory, _LAFeatureFlagOysterSkipSDKVerification, 
+                       _LALogCategoryForOptions, _LALogCategoryForPolicy, _LALogForCategory, 
+                       _LALogForPolicy, _LALogSetProcessCategory, _LASerialScheduler ]
+    objc-classes:    [ LAACMBiometricAttemptNotifier, LAAssertionsProxy, LADFR, LADecriptionBuilder, 
+                       LAErrorHelper, LAErrorOysterRedactor, LAErrorRedactor, LAInternalProtocols, 
+                       LAPasscodeHelper, LAUtils ]
+...

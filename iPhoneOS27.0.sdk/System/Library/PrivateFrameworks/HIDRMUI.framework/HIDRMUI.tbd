@@ -1,0 +1,65 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HIDRMUI.framework/HIDRMUI
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _HIDRMUIErrorDomain, _HIDRMUIErrorStringFromCode,
+                            _HIDRMUIVersionNumber, _HIDRMUIVersionString,
+                            _IOUserNotificationErrorDomain ]
+    objc-classes:         [ AuthRequestWrapper, HIDRMUIUserAuthorizationManager,
+                            HIDRMUIUserAuthorizationRequest, IOThread,
+                            IOUserNotification, IOUserNotificationButton,
+                            IOUserNotificationOption ]
+    objc-ivars:           [ AuthRequestWrapper._characterLockoutExpirationTimestamp,
+                            AuthRequestWrapper._completionHandler,
+                            AuthRequestWrapper._pairingCodeDigits,
+                            AuthRequestWrapper._pairingCodeDigitsEntered,
+                            AuthRequestWrapper._pairingFailureCount,
+                            AuthRequestWrapper._pairingStatus,
+                            AuthRequestWrapper._userNotification,
+                            HIDRMUIUserAuthorizationManager._authRequests,
+                            HIDRMUIUserAuthorizationManager._completionQueue,
+                            HIDRMUIUserAuthorizationRequest._deviceName,
+                            HIDRMUIUserAuthorizationRequest._requestedFromSettings,
+                            HIDRMUIUserAuthorizationRequest._requiresPairing,
+                            IOUserNotification._additionalConfiguration,
+                            IOUserNotification._buttonsMutable,
+                            IOUserNotification._extensionIdentifier,
+                            IOUserNotification._extensionItems,
+                            IOUserNotification._header,
+                            IOUserNotification._iconConfiguration,
+                            IOUserNotification._iconURL,
+                            IOUserNotification._lockScreenHeader,
+                            IOUserNotification._lockScreenMessage,
+                            IOUserNotification._message,
+                            IOUserNotification._noDefaultButton,
+                            IOUserNotification._notificationCancelled,
+                            IOUserNotification._notificationDismissed,
+                            IOUserNotification._notificationLevel,
+                            IOUserNotification._optionsMutable,
+                            IOUserNotification._queue,
+                            IOUserNotification._responseHandler,
+                            IOUserNotification._responseReceived,
+                            IOUserNotification._shouldAllowLockScreenDismissal,
+                            IOUserNotification._shouldDismissOnLock,
+                            IOUserNotification._shouldDismissOnUnlock,
+                            IOUserNotification._shouldDisplayOnTop,
+                            IOUserNotification._shouldHideOnMirroredDisplay,
+                            IOUserNotification._shouldIgnoreQuietMode,
+                            IOUserNotification._shouldPresentViaSystemAperture,
+                            IOUserNotification._systemSoundID,
+                            IOUserNotification._thread,
+                            IOUserNotification._timeout,
+                            IOUserNotification._updateCount,
+                            IOUserNotification._useRadioOptions,
+                            IOUserNotification._visible,
+                            IOUserNotificationButton._identifier,
+                            IOUserNotificationButton._selected,
+                            IOUserNotificationButton._title,
+                            IOUserNotificationOption._selected,
+                            IOUserNotificationOption._title ]
+...

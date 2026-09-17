@@ -1,0 +1,1108 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-experimental-feature Lifetimes -enable-experimental-feature LifetimeDependence -enable-experimental-feature BuiltinModule -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature ExistentialAny -enable-experimental-feature DebugDescriptionMacro -user-module-version 30 -module-name ComputeGraph -package-name ComputeGraph
+// swift-module-flags-ignorable: -strict-memory-safety -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported public import ComputeGraph
+public import Foundation
+@preconcurrency public import Metal
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+public import simd
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::StateType {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public func loadBuffer(from data: Foundation::Data) throws -> (data: Foundation::Data, elementCount: Swift::Int)
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::Sorting : Swift::Codable {
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::SwizzleChannels : Swift::Codable {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::SamplerSettings : Swift::Codable {
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public enum AddressSpace : Swift::Equatable, Swift::Sendable, Swift::Codable {
+  case constant
+  case device
+  case threadgroup
+  case thread
+  public static func == (a: ComputeGraph::AddressSpace, b: ComputeGraph::AddressSpace) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public enum BinaryOperation : Swift::String, Swift::Codable, Swift::CaseIterable, Swift::Sendable {
+  case add
+  case sub
+  case mul
+  case div
+  case modulus
+  case greaterThan
+  case lessThan
+  case greaterThanOrEqual
+  case lessThanOrEqual
+  case equalTo
+  case notEqualTo
+  case bitwiseAnd
+  case bitwiseOr
+  case bitwiseXor
+  case logicalAnd
+  case logicalOr
+  case shiftRight
+  case shiftLeft
+  public init?(rawValue: Swift::String)
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias AllCases = [ComputeGraph::BinaryOperation]
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias RawValue = Swift::String
+  nonisolated public static var allCases: [ComputeGraph::BinaryOperation] {
+    get
+  }
+  public var rawValue: Swift::String {
+    get
+  }
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct SwizzleChannels : Swift::Equatable, Swift::Sendable {
+    public enum Swizzle : Swift::UInt8, Swift::Sendable {
+      case zero
+      case one
+      case red
+      case green
+      case blue
+      case alpha
+      public init?(rawValue: Swift::UInt8)
+      @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+      public typealias RawValue = Swift::UInt8
+      public var rawValue: Swift::UInt8 {
+        get
+      }
+    }
+    public var red: ComputeGraph::ComputeNodeGraph.ComputeGraph::SwizzleChannels.ComputeGraph::Swizzle
+    public var green: ComputeGraph::ComputeNodeGraph.ComputeGraph::SwizzleChannels.ComputeGraph::Swizzle
+    public var blue: ComputeGraph::ComputeNodeGraph.ComputeGraph::SwizzleChannels.ComputeGraph::Swizzle
+    public var alpha: ComputeGraph::ComputeNodeGraph.ComputeGraph::SwizzleChannels.ComputeGraph::Swizzle
+    public init(red: ComputeGraph::ComputeNodeGraph.ComputeGraph::SwizzleChannels.ComputeGraph::Swizzle = .red, green: ComputeGraph::ComputeNodeGraph.ComputeGraph::SwizzleChannels.ComputeGraph::Swizzle = .green, blue: ComputeGraph::ComputeNodeGraph.ComputeGraph::SwizzleChannels.ComputeGraph::Swizzle = .blue, alpha: ComputeGraph::ComputeNodeGraph.ComputeGraph::SwizzleChannels.ComputeGraph::Swizzle = .alpha)
+    public init()
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::SwizzleChannels, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::SwizzleChannels) -> Swift::Bool
+  }
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct SamplerSettings : Swift::Equatable, Swift::Sendable {
+    public var texture: Metal::MTLTextureType
+    public var address: Metal::MTLSamplerAddressMode
+    public var filter: Metal::MTLSamplerMinMagFilter
+    public init(texture: Metal::MTLTextureType, address: Metal::MTLSamplerAddressMode, filter: Metal::MTLSamplerMinMagFilter)
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::SamplerSettings, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::SamplerSettings) -> Swift::Bool
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public enum UnaryOperation : Swift::String, Swift::Codable, Swift::CaseIterable, Swift::Sendable {
+  case negate
+  case logicalNot
+  case bitwiseNot
+  case oneMinus
+  public init?(rawValue: Swift::String)
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias AllCases = [ComputeGraph::UnaryOperation]
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias RawValue = Swift::String
+  nonisolated public static var allCases: [ComputeGraph::UnaryOperation] {
+    get
+  }
+  public var rawValue: Swift::String {
+    get
+  }
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public subscript(node: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeID) -> ComputeGraph::ComputeNodeGraph.ComputeGraph::Node? {
+    get
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public func canAddNode(_ node: ComputeGraph::ComputeNodeGraph.ComputeGraph::Node) -> Swift::Bool
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public mutating func addNode(_ node: ComputeGraph::ComputeNodeGraph.ComputeGraph::Node) throws -> ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeID
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public mutating func updateNode(_ node: ComputeGraph::ComputeNodeGraph.ComputeGraph::Node, forKey nodeID: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeID) throws
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public mutating func removeNode(_ node: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeID) throws
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public func contains(node: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeID) -> Swift::Bool
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public func canAddEdge(_ edge: ComputeGraph::ComputeNodeGraph.ComputeGraph::Edge) -> Swift::Bool
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public mutating func addEdge(_ edge: ComputeGraph::ComputeNodeGraph.ComputeGraph::Edge) throws
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  @discardableResult
+  public mutating func removeEdge(_ edge: ComputeGraph::ComputeNodeGraph.ComputeGraph::Edge) -> Swift::Bool
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public func contains(edge: ComputeGraph::ComputeNodeGraph.ComputeGraph::Edge) -> Swift::Bool
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public mutating func replaceAll(nodes: [ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeID : ComputeGraph::ComputeNodeGraph.ComputeGraph::Node], edges: [ComputeGraph::ComputeNodeGraph.ComputeGraph::Edge]) throws
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct Assembly : Swift::Sendable, Swift::Equatable {
+    public var uniforms: [ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Address : ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::Location] {
+      get
+    }
+    public var sharedUniforms: [Swift::String : ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::UniformBinding] {
+      get
+    }
+    public var namedUniforms: [Swift::String : ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::UniformBinding] {
+      get
+    }
+    public var constantBuffers: [ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::BufferBinding] {
+      get
+    }
+    public var deviceBuffers: [ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::BufferBinding] {
+      get
+    }
+    public var textures: [ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::TextureBinding] {
+      get
+    }
+    public var uniformBufferSize: Swift::Int {
+      get
+    }
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly) -> Swift::Bool
+  }
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly {
+  public init(_ graph: ComputeGraph::ComputeNodeGraph) throws
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public enum Location : Swift::Sendable, Swift::Equatable {
+    case context
+    case uniform(offset: Swift::Int, length: Swift::Int)
+    case texture(index: Swift::Int)
+    case buffer(index: Swift::Int, sizeOffset: Swift::Int)
+    case port(node: Swift::Int, index: Swift::Int)
+    case deviceBuffer(index: Swift::Int, offset: Swift::Int)
+    case constantBuffer(index: Swift::Int, offset: Swift::Int)
+    case constant(value: Swift::Int64)
+    case state(index: Swift::Int, offset: Swift::Int, length: Swift::Int)
+    case unbound
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::Location, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::Location) -> Swift::Bool
+  }
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public enum Attachment : Swift::Sendable, Swift::Equatable {
+    case graph
+    case input(ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Address)
+    case output(ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Address)
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::Attachment, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::Attachment) -> Swift::Bool
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct BufferBinding : Swift::Sendable, Swift::Equatable {
+    public var attachment: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::Attachment
+    public var type: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateType?
+    public init(attachment: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::Attachment, type: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateType? = nil)
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::BufferBinding, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::BufferBinding) -> Swift::Bool
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct TextureBinding : Swift::Sendable, Swift::Equatable {
+    public var attachment: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::Attachment
+    public var type: Metal::MTLTextureType?
+    public init(attachment: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::Attachment, type: Metal::MTLTextureType? = nil)
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::TextureBinding, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::TextureBinding) -> Swift::Bool
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct UniformBinding : Swift::Sendable, Swift::Equatable {
+    public var location: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::Location
+    public var type: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateType
+    public init(location: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::Location, type: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateType)
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::UniformBinding, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::UniformBinding) -> Swift::Bool
+  }
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct Pipelines : Swift::Sendable {
+    public var options: ComputeGraph::ComputeNodeGraph.ComputeGraph::Pipelines.ComputeGraph::Options {
+      get
+    }
+    public var assembly: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly {
+      get
+    }
+  }
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Pipelines {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct Options : Swift::Equatable, Swift::Sendable {
+    public var debugDraw: Swift::Bool
+    public init()
+    public init(debugDraw: Swift::Bool = false)
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::Pipelines.ComputeGraph::Options, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::Pipelines.ComputeGraph::Options) -> Swift::Bool
+  }
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Pipelines {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public init(descriptor: ComputeGraph::ComputeNodeGraph.ComputeGraph::PipelinesDescriptor) async throws
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  @available(*, noasync)
+  public init(descriptor: ComputeGraph::ComputeNodeGraph.ComputeGraph::PipelinesDescriptor) throws
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public init(_ graph: ComputeGraph::ComputeNodeGraph) async throws
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  @available(*, noasync)
+  public init(_ graph: ComputeGraph::ComputeNodeGraph) throws
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct PipelinesDescriptor : Swift::Sendable {
+    public var assembly: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly
+    public var options: ComputeGraph::ComputeNodeGraph.ComputeGraph::Pipelines.ComputeGraph::Options
+    public var libraries: [ComputeGraph::ComputeNodeGraph.ComputeGraph::LibraryReference]
+    public init(assembly: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly)
+  }
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::PipelinesDescriptor {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public mutating func addLibrary(_ library: any Metal::MTLLibrary, bundle: Swift::String?)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public mutating func setLibrary(_ library: ComputeGraph::ComputeNodeGraph.ComputeGraph::Library)
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct LibraryReference : Swift::Sendable {
+    public var library: any Metal::MTLLibrary
+    public var bundle: Swift::String?
+    public init(library: any Metal::MTLLibrary, bundle: Swift::String? = nil)
+  }
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public class Library : Swift::Sendable {
+    public init()
+    @objc deinit
+  }
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Library {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public static let shared: ComputeGraph::ComputeNodeGraph.ComputeGraph::Library
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public var definitions: [ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition] {
+    get
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  convenience public init(from library: any Metal::MTLLibrary, bundleIdentifier: Swift::String?)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  convenience public init?(bundle: Foundation::Bundle)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func merge(contentsOf library: ComputeGraph::ComputeNodeGraph.ComputeGraph::Library)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func definition(named name: Swift::String, in bundle: Swift::String? = nil) -> ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition?
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func definition(stage: ComputeGraph::ComputeNodeGraph.ComputeGraph::Stage) -> ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition?
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func definitionsMatching(input type: ComputeGraph::ComputeNodeGraph.ComputeGraph::ValueType) -> [ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition]
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func definitionsMatching(inputs inputTypes: [ComputeGraph::ComputeNodeGraph.ComputeGraph::ValueType]) -> [ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition]
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func definitionsMatching(output type: ComputeGraph::ComputeNodeGraph.ComputeGraph::ValueType) -> [ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition]
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::DataType : Swift::CustomDebugStringConvertible {
+  public var debugDescription: Swift::String {
+    get
+  }
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::DataType {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public var gpuType: Metal::MTLDataType {
+    get
+  }
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public enum Format : Swift::Hashable, Swift::Sendable, Swift::CaseIterable {
+    case json
+    case propertyList
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::Format, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::Format) -> Swift::Bool
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias AllCases = [ComputeGraph::ComputeNodeGraph.ComputeGraph::Format]
+    nonisolated public static var allCases: [ComputeGraph::ComputeNodeGraph.ComputeGraph::Format] {
+      get
+    }
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public func data(using format: ComputeGraph::ComputeNodeGraph.ComputeGraph::Format) throws -> Foundation::Data
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public init(data: Foundation::Data) throws
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Node {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public init(definition: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition, label: Swift::String? = nil)
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Node {
+  public func input<V>(at index: Swift::Int) -> V? where V : Swift::BitwiseCopyable
+  public func inputData(named name: Swift::String) -> Foundation::Data?
+  public func input<V>(named name: Swift::String) -> V? where V : Swift::BitwiseCopyable
+  public mutating func setInput(at index: Swift::Int, _ value: Foundation::Data?)
+  public mutating func setInput<V>(at index: Swift::Int, _ value: V) where V : Swift::BitwiseCopyable
+  @discardableResult
+  public mutating func setInput(_ name: Swift::String, _ value: Swift::Bool) -> Swift::Bool
+  @discardableResult
+  public mutating func setInput<V>(_ name: Swift::String, _ value: V) -> Swift::Bool where V : Swift::BitwiseCopyable
+  @discardableResult
+  public mutating func setInput(_ name: Swift::String, _ value: Foundation::Data) -> Swift::Bool
+  @discardableResult
+  public mutating func setInput(_ name: Swift::String, _ value: Swift::String) -> Swift::Bool
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Options : Swift::CustomDebugStringConvertible, Swift::CustomStringConvertible {
+  public var debugDescription: Swift::String {
+    get
+  }
+  public var description: Swift::String {
+    get
+  }
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct Scope : Swift::Sendable, Swift::Equatable, Swift::Codable {
+    public let name: Swift::String
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::Scope, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::Scope) -> Swift::Bool
+  }
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Scope {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public init(_ name: Swift::String)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public init(from decoder: any Swift::Decoder) throws
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeNodeGraph {
+  public struct Stage : Swift::Sendable, Swift::Hashable, Swift::Codable {
+    public let name: Swift::String
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::Stage, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::Stage) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Stage {
+  public static let emission: ComputeGraph::ComputeNodeGraph.ComputeGraph::Stage
+  public static let initialize: ComputeGraph::ComputeNodeGraph.ComputeGraph::Stage
+  public static let eventSource: ComputeGraph::ComputeNodeGraph.ComputeGraph::Stage
+  public static let simulate: ComputeGraph::ComputeNodeGraph.ComputeGraph::Stage
+  public static let output: ComputeGraph::ComputeNodeGraph.ComputeGraph::Stage
+  public static let compute: ComputeGraph::ComputeNodeGraph.ComputeGraph::Stage
+  public static let texture: ComputeGraph::ComputeNodeGraph.ComputeGraph::Stage
+  public init(_ name: Swift::String)
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func canAddNode(with definition: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition) -> Swift::Bool
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition {
+  public static func stage(_ stage: ComputeGraph::ComputeNodeGraph.ComputeGraph::Stage) -> ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition?
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::ValueType {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public static func primitive(_ type: Metal::MTLDataType) -> ComputeGraph::ComputeNodeGraph.ComputeGraph::ValueType
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  @available(*, deprecated, renamed: "structure(definition:)")
+  public static func structure(typeName: Swift::String, layout: ComputeGraph::ComputeNodeGraph.ComputeGraph::StructureLayout) -> ComputeGraph::ComputeNodeGraph.ComputeGraph::ValueType
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public struct ComputeNodeGraph : Swift::Sendable, Swift::Equatable {
+  public typealias NodeID = Swift::Int
+  public var nodes: [ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeID : ComputeGraph::ComputeNodeGraph.ComputeGraph::Node]
+  public var edges: [ComputeGraph::ComputeNodeGraph.ComputeGraph::Edge] {
+    get
+  }
+  public init()
+  public static func == (a: ComputeGraph::ComputeNodeGraph, b: ComputeGraph::ComputeNodeGraph) -> Swift::Bool
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public enum Port {
+    @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+    public struct Address : Swift::Sendable, Swift::Equatable, Swift::Hashable {
+      public var node: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeID
+      public var index: Swift::Int
+      public init(node: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeID, index: Swift::Int)
+      public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Address, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Address) -> Swift::Bool
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+    }
+    @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+    public enum Kind : Swift::String, Swift::Sendable, Swift::Equatable {
+      case context
+      case value
+      case state
+      case event
+      case flow
+      case dependency
+      public init?(rawValue: Swift::String)
+      @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+      public typealias RawValue = Swift::String
+      public var rawValue: Swift::String {
+        get
+      }
+    }
+    @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+    public struct Options : Swift::OptionSet, Swift::Sendable, Swift::Equatable {
+      public let rawValue: Swift::UInt
+      public init(rawValue: Swift::UInt)
+      public static let compile: ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Options
+      public static let constant: ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Options
+      public static let argument: ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Options
+      public static let optional: ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Options
+      public static let externalReference: ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Options
+      @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+      public typealias ArrayLiteralElement = ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Options
+      @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+      public typealias Element = ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Options
+      @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+      public typealias RawValue = Swift::UInt
+    }
+  }
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct Edge : Swift::Sendable, Swift::Equatable, Swift::Hashable {
+    public var source: ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Address
+    public var target: ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Address
+    public init(source: ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Address, target: ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Address)
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::Edge, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::Edge) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct Node : Swift::Sendable, Swift::Equatable {
+    public var kind: ComputeGraph::ComputeNodeGraph.ComputeGraph::Node.ComputeGraph::Kind
+    public var label: Swift::String?
+    public var definition: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition
+    public var uniforms: [Foundation::Data?]
+    public var metadata: ComputeGraph::ComputeNodeGraph.ComputeGraph::Metadata?
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::Node, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::Node) -> Swift::Bool
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct NodeDefinition : Swift::Sendable, Swift::Equatable {
+    public var name: Swift::String
+    public var kind: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition.ComputeGraph::Kind
+    public var inputs: [ComputeGraph::ComputeNodeGraph.ComputeGraph::PortDefinition]
+    public var outputs: [ComputeGraph::ComputeNodeGraph.ComputeGraph::PortDefinition]
+    @available(*, deprecated, message: "Only valid for function nodes. Use kind .function(name:bundle:) instead.")
+    public var bundle: Swift::String? {
+      get
+    }
+    public init(name: Swift::String, inputs: [ComputeGraph::ComputeNodeGraph.ComputeGraph::PortDefinition] = [], outputs: [ComputeGraph::ComputeNodeGraph.ComputeGraph::PortDefinition] = [], kind: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition.ComputeGraph::Kind)
+    @available(*, deprecated, renamed: "init(name:inputs:outputs:kind:)")
+    public init(name: Swift::String, bundle: Swift::String? = nil, inputs: [ComputeGraph::ComputeNodeGraph.ComputeGraph::PortDefinition] = [], outputs: [ComputeGraph::ComputeNodeGraph.ComputeGraph::PortDefinition] = [], kind: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition.ComputeGraph::Kind)
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition) -> Swift::Bool
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct PortDefinition : Swift::Sendable, Swift::Equatable {
+    public var name: Swift::String
+    public var kind: ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Kind
+    public var type: ComputeGraph::ComputeNodeGraph.ComputeGraph::ValueType
+    public var options: ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Options
+    public init(name: Swift::String, kind: ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Kind, type: ComputeGraph::ComputeNodeGraph.ComputeGraph::ValueType, options: ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Options = [])
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::PortDefinition, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::PortDefinition) -> Swift::Bool
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct Metadata : Swift::Sendable, Swift::Equatable, Swift::ExpressibleByDictionaryLiteral {
+    public var values: [Swift::String : Swift::String]
+    public init(values: [Swift::String : Swift::String] = [String: String]())
+    public init(dictionaryLiteral elements: (Swift::String, Swift::String)...)
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::Metadata, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::Metadata) -> Swift::Bool
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias Key = Swift::String
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias Value = Swift::String
+  }
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Node {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public enum Kind : Swift::Sendable, Swift::Equatable {
+    case primitive
+    case sequence(nodes: [ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeID])
+    case grouping(nodes: [ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeID])
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::Node.ComputeGraph::Kind, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::Node.ComputeGraph::Kind) -> Swift::Bool
+  }
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct DataType : Swift::Sendable, Swift::Equatable {
+    public init(_ dataType: Metal::MTLDataType)
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::DataType, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::DataType) -> Swift::Bool
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public enum StateType : Swift::Sendable, Swift::Equatable {
+    @available(*, deprecated, renamed: "primitive(_:)")
+    case dataType(type: Metal::MTLDataType)
+    case primitive(type: ComputeGraph::ComputeNodeGraph.ComputeGraph::DataType)
+    case data(length: Swift::Int)
+    case structure(definition: ComputeGraph::ComputeNodeGraph.ComputeGraph::StructureDefinition)
+    case array(definition: ComputeGraph::ComputeNodeGraph.ComputeGraph::ArrayDefinition)
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateType, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateType) -> Swift::Bool
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct StructureDefinition : Swift::Sendable, Swift::Equatable {
+    public var typeName: Swift::String
+    public var layout: ComputeGraph::ComputeNodeGraph.ComputeGraph::StructureLayout
+    public init(typeName: Swift::String, layout: ComputeGraph::ComputeNodeGraph.ComputeGraph::StructureLayout)
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::StructureDefinition, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::StructureDefinition) -> Swift::Bool
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct StateDefinition : Swift::Sendable, Swift::Equatable {
+    public var scope: ComputeGraph::ComputeNodeGraph.ComputeGraph::Scope
+    public var options: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateDefinition.ComputeGraph::Options
+    public var type: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateType
+    public init(scope: ComputeGraph::ComputeNodeGraph.ComputeGraph::Scope, options: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateDefinition.ComputeGraph::Options, type: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateType)
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateDefinition, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateDefinition) -> Swift::Bool
+  }
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::StateDefinition {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct Options : Swift::OptionSet, Swift::Sendable, Swift::Equatable {
+    public let rawValue: Swift::UInt
+    public init(rawValue: Swift::UInt)
+    public static let read: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateDefinition.ComputeGraph::Options
+    public static let write: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateDefinition.ComputeGraph::Options
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias ArrayLiteralElement = ComputeGraph::ComputeNodeGraph.ComputeGraph::StateDefinition.ComputeGraph::Options
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias Element = ComputeGraph::ComputeNodeGraph.ComputeGraph::StateDefinition.ComputeGraph::Options
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias RawValue = Swift::UInt
+  }
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public enum Kind : Swift::Sendable, Swift::Equatable {
+    case function(name: Swift::String, bundle: Swift::String?)
+    case stage(type: ComputeGraph::ComputeNodeGraph.ComputeGraph::Stage)
+    case loadState(definition: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateDefinition)
+    case storeState(definition: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateDefinition)
+    case fieldReference(type: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateType)
+    case textureReference(port: ComputeGraph::PortReference)
+    case unaryArithmetic(type: ComputeGraph::ComputeNodeGraph.ComputeGraph::DataType, operation: ComputeGraph::UnaryOperation)
+    case binaryArithmetic(a: ComputeGraph::ComputeNodeGraph.ComputeGraph::DataType, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::DataType, operation: ComputeGraph::BinaryOperation)
+    case standardLibrary(type: ComputeGraph::ComputeNodeGraph.ComputeGraph::DataType, function: ComputeGraph::StandardLibraryFunction)
+    case swizzle(type: ComputeGraph::ComputeNodeGraph.ComputeGraph::DataType, channels: ComputeGraph::ComputeNodeGraph.ComputeGraph::SwizzleChannels)
+    case sampleTexture(sampler: ComputeGraph::ComputeNodeGraph.ComputeGraph::SamplerSettings)
+    case compose(type: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateType)
+    case decompose(type: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateType)
+    case convert(from: ComputeGraph::ComputeNodeGraph.ComputeGraph::DataType, to: ComputeGraph::ComputeNodeGraph.ComputeGraph::DataType)
+    case reinterpret(from: ComputeGraph::ComputeNodeGraph.ComputeGraph::DataType, to: ComputeGraph::ComputeNodeGraph.ComputeGraph::DataType)
+    case graphInput
+    case graphGlobal
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition.ComputeGraph::Kind, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::NodeDefinition.ComputeGraph::Kind) -> Swift::Bool
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeNodeGraph {
+  public enum ValueType : Swift::Sendable, Swift::Equatable {
+    case none
+    @available(*, deprecated, renamed: "primitive(_:)")
+    case dataType(type: Metal::MTLDataType)
+    case primitive(type: ComputeGraph::ComputeNodeGraph.ComputeGraph::DataType)
+    case data(length: Swift::Int)
+    case opaque(typeName: Swift::String)
+    case texture(typeName: Swift::String)
+    case pointer(type: ComputeGraph::ComputeNodeGraph.ComputeGraph::PointerDefinition)
+    case structure(definition: ComputeGraph::ComputeNodeGraph.ComputeGraph::StructureDefinition)
+    case enumeration(typeName: Swift::String)
+    case state(definition: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateDefinition)
+    case string
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::ValueType, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::ValueType) -> Swift::Bool
+  }
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct PointerDefinition : Swift::Sendable, Swift::Equatable {
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::PointerDefinition, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::PointerDefinition) -> Swift::Bool
+  }
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct ArrayDefinition : Swift::Sendable, Swift::Equatable {
+    public var count: Swift::Int
+    public var element: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateType {
+      get
+      set
+    }
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::ArrayDefinition, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::ArrayDefinition) -> Swift::Bool
+  }
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public enum Topology : Swift::String, Swift::CaseIterable, Swift::Sendable {
+    case point
+    case triangle
+    case quad
+    case octagon
+    case strip
+    case instances
+    public init?(rawValue: Swift::String)
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias AllCases = [ComputeGraph::ComputeNodeGraph.ComputeGraph::Topology]
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    public typealias RawValue = Swift::String
+    nonisolated public static var allCases: [ComputeGraph::ComputeNodeGraph.ComputeGraph::Topology] {
+      get
+    }
+    public var rawValue: Swift::String {
+      get
+    }
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class ComputeGraphSimulation {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct AdvanceParams {
+    public var deltaTime: Swift::Float
+    public var maxSteps: Swift::Int
+    public var commandBuffer: any Metal::MTLCommandBuffer
+    public var computeEncoder: any Metal::MTLComputeCommandEncoder
+    public var localToWorld: simd::simd_float4x4
+    public var worldToLocal: simd::simd_float4x4
+    public var viewPosition: Swift::SIMD3<Swift::Float>?
+    public var viewDirection: Swift::SIMD3<Swift::Float>?
+    public init(deltaTime: Swift::Float, commandBuffer: any Metal::MTLCommandBuffer, computeEncoder: any Metal::MTLComputeCommandEncoder)
+  }
+  @objc deinit
+}
+extension ComputeGraph::ComputeGraphSimulation {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public var commandQueue: any Metal::MTLCommandQueue {
+    get
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public var simulationRate: ComputeGraph::ComputeGraphSimulation.ComputeGraph::SimulationRate {
+    get
+    set
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public var pipelines: ComputeGraph::ComputeNodeGraph.ComputeGraph::Pipelines {
+    get
+    set
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  convenience public init(pipelines: ComputeGraph::ComputeNodeGraph.ComputeGraph::Pipelines, commandQueue: any Metal::MTLCommandQueue)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  convenience public init(pipelines: ComputeGraph::ComputeNodeGraph.ComputeGraph::Pipelines?)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func resetRandomSeeds(using randomness: () -> Swift::UInt32)
+}
+extension ComputeGraph::ComputeGraphSimulation {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public var graphUniforms: any Metal::MTLBuffer {
+    get
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func modifyUniforms<E, R>(_ body: (Swift::UnsafeMutableRawBufferPointer) throws(E) -> R) throws(E) -> R where E : Swift::Error, R : ~Copyable
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  @discardableResult
+  final public func setUniform<V>(_ value: V, named name: Swift::String) -> Swift::Bool where V : Swift::BitwiseCopyable
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func setUniformValue<V>(_ value: V, at location: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::Location) where V : Swift::BitwiseCopyable
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func setUniformData(_ data: Foundation::Data, at location: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::Location)
+}
+extension ComputeGraph::ComputeGraphSimulation {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func setTextures(_ textures: [(any Metal::MTLTexture)?])
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func setTexture(_ texture: (any Metal::MTLTexture)?, at index: Swift::Int)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func texture(at index: Swift::Int) -> (any Metal::MTLTexture)?
+}
+extension ComputeGraph::ComputeGraphSimulation {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func setBuffer(_ buffer: any Metal::MTLBuffer, bufferOffset: Swift::Int = 0, elementCount: Swift::Int, at location: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::Location)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func setBuffers(_ buffers: [(any Metal::MTLBuffer)?], bufferOffsets: [Swift::Int]? = nil)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func setBuffer(_ buffer: (any Metal::MTLBuffer)?, bufferOffset: Swift::Int = 0, at index: Swift::Int)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func setBuffer(_ buffer: (any Metal::MTLBuffer)?, bufferOffset: Swift::Int = 0, at location: ComputeGraph::ComputeNodeGraph.ComputeGraph::Assembly.ComputeGraph::Location)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func buffer(at index: Swift::Int) -> (any Metal::MTLBuffer, bufferOffset: Swift::Int)?
+}
+extension ComputeGraph::ComputeGraphSimulation {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func setUserResources(_ resources: [any Metal::MTLResource])
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func addUserResource(_ resource: any Metal::MTLResource)
+}
+extension ComputeGraph::ComputeGraphSimulation {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func setOutputEnabled(_ outputID: Swift::Int, enabled: Swift::Bool)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func isOutputEnabled(_ outputID: Swift::Int) -> Swift::Bool
+}
+extension ComputeGraph::ComputeGraphSimulation {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func advance(_ params: ComputeGraph::ComputeGraphSimulation.ComputeGraph::AdvanceParams)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func fastForward(stepCount: Swift::Int, stepDeltaTime: Swift::Float)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func fastForward()
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func reset(encoder: any Metal::MTLComputeCommandEncoder)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  final public func spawn(elements: borrowing [ComputeGraph::ElementSpawnParameters], in systemID: Swift::Int?, using encoder: any Metal::MTLComputeCommandEncoder)
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeGraphSimulation.ComputeGraph::AdvanceParams {
+  public init(deltaTime: Swift::Float, commandBuffer: any Metal::MTLCommandBuffer, computeEncoder: any Metal::MTLComputeCommandEncoder, localToWorld: simd::simd_float4x4, worldToLocal: simd::simd_float4x4, viewPosition: Swift::SIMD3<Swift::Float>? = nil, viewDirection: Swift::SIMD3<Swift::Float>? = nil)
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public struct ElementSpawnParameters : Swift::Sendable {
+  public var position: Swift::SIMD3<Swift::Float> {
+    get
+    set
+  }
+  public var velocity: Swift::SIMD3<Swift::Float> {
+    get
+    set
+  }
+  public var size: Swift::SIMD2<Swift::Float> {
+    get
+    set
+  }
+  public var color: Swift::SIMD4<Swift::Float> {
+    get
+    set
+  }
+  public var lifetime: Swift::Float {
+    get
+    set
+  }
+  public init(position: Swift::SIMD3<Swift::Float>, velocity: Swift::SIMD3<Swift::Float> = .zero, size: Swift::SIMD2<Swift::Float> = .init(0.01, 0.01), color: Swift::SIMD4<Swift::Float> = .init(1, 1, 1, 1), lifetime: Swift::Float = 1.0)
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public enum Sorting : Swift::String, Swift::CaseIterable, Swift::Sendable {
+  case none
+  case age
+  case timeToLive
+  case frontToBack
+  case backToFront
+  public init?(rawValue: Swift::String)
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias AllCases = [ComputeGraph::Sorting]
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias RawValue = Swift::String
+  nonisolated public static var allCases: [ComputeGraph::Sorting] {
+    get
+  }
+  public var rawValue: Swift::String {
+    get
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public enum ElementGrouping : Swift::String, Swift::CaseIterable, Swift::Sendable, Swift::Codable {
+  case ungrouped
+  case strips
+  case grouped
+  public init?(rawValue: Swift::String)
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias AllCases = [ComputeGraph::ElementGrouping]
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias RawValue = Swift::String
+  nonisolated public static var allCases: [ComputeGraph::ElementGrouping] {
+    get
+  }
+  public var rawValue: Swift::String {
+    get
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public enum CoordinateSpace : Swift::String, Swift::CaseIterable, Swift::Sendable, Swift::Codable {
+  case local
+  case world
+  public init?(rawValue: Swift::String)
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias AllCases = [ComputeGraph::CoordinateSpace]
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias RawValue = Swift::String
+  nonisolated public static var allCases: [ComputeGraph::CoordinateSpace] {
+    get
+  }
+  public var rawValue: Swift::String {
+    get
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public struct PortReference : Swift::Equatable, Swift::Sendable, Swift::Codable {
+  public var group: Swift::Int
+  public var port: Swift::Int
+  public init(group: Swift::Int, port: Swift::Int)
+  public static func == (a: ComputeGraph::PortReference, b: ComputeGraph::PortReference) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+extension ComputeGraph::ComputeGraphSimulation {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct SimulationRate : Swift::Equatable, Swift::Sendable {
+    public enum Mode : Swift::String, Swift::Sendable, Swift::Codable, Swift::CaseIterable {
+      case variable
+      case fixedFrequency
+      case fixedTime
+      public init?(rawValue: Swift::String)
+      @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+      public typealias AllCases = [ComputeGraph::ComputeGraphSimulation.ComputeGraph::SimulationRate.ComputeGraph::Mode]
+      @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+      public typealias RawValue = Swift::String
+      nonisolated public static var allCases: [ComputeGraph::ComputeGraphSimulation.ComputeGraph::SimulationRate.ComputeGraph::Mode] {
+        get
+      }
+      public var rawValue: Swift::String {
+        get
+      }
+    }
+    public var mode: ComputeGraph::ComputeGraphSimulation.ComputeGraph::SimulationRate.ComputeGraph::Mode
+    public var frequency: Swift::Float
+    public var timeDelta: Swift::Float
+    public init()
+    public static var `default`: ComputeGraph::ComputeGraphSimulation.ComputeGraph::SimulationRate {
+      get
+    }
+    public static func == (a: ComputeGraph::ComputeGraphSimulation.ComputeGraph::SimulationRate, b: ComputeGraph::ComputeGraphSimulation.ComputeGraph::SimulationRate) -> Swift::Bool
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public enum StandardLibraryFunction : Swift::String, Swift::Codable, Swift::CaseIterable, Swift::Sendable {
+  case clamp
+  case mix
+  case saturate
+  case sign
+  case smoothstep
+  case step
+  case all
+  case any
+  case isFinite
+  case isInfinite
+  case isNaN
+  case isNormal
+  case isOrdered
+  case isUnordered
+  case not
+  case select
+  case signbit
+  case acos
+  case acosh
+  case asin
+  case asinh
+  case atan
+  case atan2
+  case atanh
+  case ceil
+  case copySign
+  case cos
+  case cosh
+  case cospi
+  case divide
+  case exp
+  case exp2
+  case exp10
+  case abs
+  case fdim
+  case floor
+  case fma
+  case max
+  case max3
+  case median3
+  case min
+  case min3
+  case fmod
+  case fract
+  case ilogb
+  case ldexp
+  case log
+  case log2
+  case log10
+  case nextAfter
+  case pow
+  case powr
+  case rint
+  case round
+  case rsqrt
+  case sin
+  case sinh
+  case sinpi
+  case sqrt
+  case tan
+  case tanh
+  case tanpi
+  case trunc
+  case determinant
+  case transpose
+  case cross
+  case distance
+  case distanceSquared
+  case dot
+  case faceForward
+  case length
+  case lengthSquared
+  case normalize
+  case reflect
+  case refract
+  public init?(rawValue: Swift::String)
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias AllCases = [ComputeGraph::StandardLibraryFunction]
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias RawValue = Swift::String
+  nonisolated public static var allCases: [ComputeGraph::StandardLibraryFunction] {
+    get
+  }
+  public var rawValue: Swift::String {
+    get
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public enum StripOrientation : Swift::String, Swift::Equatable, Swift::Sendable, Swift::Codable, Swift::CaseIterable {
+  case auto
+  case deriveFromYAxis
+  case deriveFromZAxis
+  case useZAxis
+  case frenet
+  case planar
+  public init?(rawValue: Swift::String)
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias AllCases = [ComputeGraph::StripOrientation]
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+  public typealias RawValue = Swift::String
+  nonisolated public static var allCases: [ComputeGraph::StripOrientation] {
+    get
+  }
+  public var rawValue: Swift::String {
+    get
+  }
+}
+extension ComputeGraph::ComputeNodeGraph {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct StructureLayout : Swift::Equatable, Swift::Sendable {
+    public var members: [ComputeGraph::ComputeNodeGraph.ComputeGraph::StructureLayout.ComputeGraph::Member]
+    public var size: Swift::Int
+    public var stride: Swift::Int
+    public init()
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::StructureLayout, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::StructureLayout) -> Swift::Bool
+  }
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::StructureLayout {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public struct Member : Swift::Equatable, Swift::Sendable {
+    public var name: Swift::String
+    public var offset: Swift::Int
+    public var type: ComputeGraph::ComputeNodeGraph.ComputeGraph::StateType
+    public static func == (a: ComputeGraph::ComputeNodeGraph.ComputeGraph::StructureLayout.ComputeGraph::Member, b: ComputeGraph::ComputeNodeGraph.ComputeGraph::StructureLayout.ComputeGraph::Member) -> Swift::Bool
+  }
+}
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::StructureLayout.ComputeGraph::Member {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public init(name: Swift::String, type: Metal::MTLDataType, offset: Swift::Int)
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public var dataType: Metal::MTLDataType? {
+    get
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public var typeName: Swift::String? {
+    get
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public var lengthInBytes: Swift::Int {
+    get
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+  public var members: [ComputeGraph::ComputeNodeGraph.ComputeGraph::StructureLayout.ComputeGraph::Member]? {
+    get
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::Sorting : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::Sorting : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::Sorting : Swift::RawRepresentable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::SwizzleChannels.ComputeGraph::Swizzle : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::SwizzleChannels.ComputeGraph::Swizzle : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::SwizzleChannels.ComputeGraph::Swizzle : Swift::RawRepresentable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::AddressSpace : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::BinaryOperation : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::BinaryOperation : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::BinaryOperation : Swift::RawRepresentable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::UnaryOperation : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::UnaryOperation : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::UnaryOperation : Swift::RawRepresentable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Kind : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Port.ComputeGraph::Kind : Swift::RawRepresentable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::CoordinateSpace : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::CoordinateSpace : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::CoordinateSpace : Swift::RawRepresentable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Topology : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Topology : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeNodeGraph.ComputeGraph::Topology : Swift::RawRepresentable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ElementGrouping : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ElementGrouping : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ElementGrouping : Swift::RawRepresentable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::StripOrientation : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::StripOrientation : Swift::RawRepresentable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeGraphSimulation.ComputeGraph::SimulationRate.ComputeGraph::Mode : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeGraphSimulation.ComputeGraph::SimulationRate.ComputeGraph::Mode : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::ComputeGraphSimulation.ComputeGraph::SimulationRate.ComputeGraph::Mode : Swift::RawRepresentable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::StandardLibraryFunction : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::StandardLibraryFunction : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension ComputeGraph::StandardLibraryFunction : Swift::RawRepresentable {}

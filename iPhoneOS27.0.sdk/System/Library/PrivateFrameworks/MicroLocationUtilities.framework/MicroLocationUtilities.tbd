@@ -1,0 +1,42 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MicroLocationUtilities.framework/MicroLocationUtilities
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ULLeftBudYawFromQuaternion,
+                            _ULQuaternionFromTransform, _ULQuaternionFromYaw,
+                            _ULRightBudYawFromQuaternion,
+                            _ULRotationNotAvailable, _ULYawFromQuaternion,
+                            _ULYawNotAvailable ]
+    objc-classes:         [ ULBidirectionalDictionary,
+                            ULDarwinNotificationHelper,
+                            ULDarwinNotificationRecord, ULEvent, ULEventMonitor,
+                            ULFeatureFlags, ULFuture, ULImmediateScheduler,
+                            ULMemoryLoadHelper, ULNumericUtilities,
+                            ULObjectCacheNSString, ULObserverRecord, ULPair,
+                            ULPlatform, ULPromise, ULQueueScheduler,
+                            ULRotationMatrixUtils, ULSameSpaceUtilities,
+                            ULScheduler, ULTapToRadar, ULTimer, ULTimerFactory,
+                            ULUserNotification, ULWeakProxy ]
+    objc-ivars:           [ ULBidirectionalDictionary._keyToValueMap,
+                            ULBidirectionalDictionary._valueToKeyMap,
+                            ULDarwinNotificationHelper._queue,
+                            ULDarwinNotificationHelper._registrations,
+                            ULDarwinNotificationRecord._handler,
+                            ULDarwinNotificationRecord._notificationName,
+                            ULDarwinNotificationRecord._registrationToken,
+                            ULEventMonitor._observersMap, ULEventMonitor._queue,
+                            ULFuture._completionBlocks, ULFuture._error,
+                            ULFuture._result, ULFuture._stateLock,
+                            ULMemoryLoadHelper._pid, ULMemoryLoadHelper._rusage,
+                            ULObserverRecord._handler,
+                            ULObserverRecord._observer, ULPair._first,
+                            ULPair._second, ULPromise._future,
+                            ULQueueScheduler._queue, ULTimer._timerSource,
+                            ULTimerFactory._primaryQueue, ULWeakProxy._class,
+                            ULWeakProxy._object ]
+...

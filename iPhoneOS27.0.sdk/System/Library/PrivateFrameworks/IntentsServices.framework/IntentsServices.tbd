@@ -1,0 +1,36 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IntentsServices.framework/IntentsServices
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _INSAssistantErrorDomain,
+                            _INSExtensionServiceTraceCompletionHandlerWithCode,
+                            _INSGetAceVersionNumberFromString,
+                            _INSJSONEncodedIntent, _INSJSONEncodedIntentResponse,
+                            _INSJSONEncodedSlotResolutionResult,
+                            _INSSiriAceErrorDomain,
+                            _INSSiriSerializedUserActivityKey,
+                            _IntentsServicesVersionNumber,
+                            _IntentsServicesVersionString ]
+    objc-classes:         [ INSAnalytics, INSDeviceInfo, INSExtensionService,
+                            INSExtensionServiceIntentExecutor ]
+    objc-ivars:           [ INSAnalytics._dataSource,
+                            INSAnalytics._observerQueue, INSAnalytics._observers,
+                            INSDeviceInfo._aceVersion,
+                            INSDeviceInfo._mutableAceVersion,
+                            INSExtensionService._currentBundleIdForDisplay,
+                            INSExtensionService._currentConnection,
+                            INSExtensionService._delegate,
+                            INSExtensionService._extensionContext,
+                            INSExtensionService._options,
+                            INSExtensionService._queue,
+                            INSExtensionService._requestDelegateQueue,
+                            INSExtensionServiceIntentExecutor._extensionProxy,
+                            INSExtensionServiceIntentExecutor._intent,
+                            INSExtensionServiceIntentExecutor._queue,
+                            INSExtensionServiceIntentExecutor._voiceShortcutClient ]
+...

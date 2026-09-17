@@ -1,0 +1,338 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-experimental-feature LifetimeDependence -enable-experimental-feature NonescapableTypes -enable-experimental-feature SourceWarningControl -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature ExistentialAny -enable-experimental-feature DebugDescriptionMacro -user-module-version 279.0.5 -module-name BackgroundAssets
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported public import BackgroundAssets
+public import ExtensionFoundation
+public import Foundation
+public import OSLog
+public import Swift
+public import System
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 26, macOS 26, tvOS 26, visionOS 26, *)
+@available(watchOS, unavailable)
+public protocol ManagedDownloaderExtension : BackgroundAssets::BADownloaderExtension where Self.Configuration : BackgroundAssets::ManagedDownloaderExtensionConfiguration {
+  func shouldDownload(_ assetPack: BackgroundAssets::AssetPack) -> Swift::Bool
+}
+extension BackgroundAssets::ManagedDownloaderExtension {
+  @available(iOS 26, macOS 26, tvOS 26, visionOS 26, *)
+  @available(watchOS, unavailable)
+  public var configuration: some BackgroundAssets::ManagedDownloaderExtensionConfiguration {
+    get
+  }
+  @available(iOS 26, macOS 26, tvOS 26, visionOS 26, *)
+  @available(watchOS, unavailable)
+  public func shouldDownload(_ assetPack: BackgroundAssets::AssetPack) -> Swift::Bool
+  @available(iOS 26, macOS 26, tvOS 26, visionOS 26, *)
+  @available(watchOS, unavailable)
+  public func downloads(for request: BackgroundAssets::BAContentRequest, manifestURL: Foundation::URL, extensionInfo: BackgroundAssets::BAAppExtensionInfo) -> Swift::Set<BackgroundAssets::BADownload>
+  @available(iOS 26, macOS 26, tvOS 26, visionOS 26, *)
+  @available(watchOS, unavailable)
+  public func backgroundDownload(_ download: BackgroundAssets::BADownload, didReceive challenge: Foundation::URLAuthenticationChallenge) async -> (Foundation::URLSession.Foundation::AuthChallengeDisposition, Foundation::URLCredential?)
+  @available(iOS 26, macOS 26, tvOS 26, visionOS 26, *)
+  @available(watchOS, unavailable)
+  public func backgroundDownload(_ failedDownload: BackgroundAssets::BADownload, failedWithError error: any Swift::Error)
+  @available(iOS 26, macOS 26, tvOS 26, visionOS 26, *)
+  @available(watchOS, unavailable)
+  public func backgroundDownload(_ finishedDownload: BackgroundAssets::BADownload, finishedWithFileURL fileURL: Foundation::URL)
+}
+@available(iOS 16.1, macOS 13.0, visionOS 2.4, tvOS 18.4, *)
+@available(watchOS, unavailable)
+public protocol BADownloaderExtension : ExtensionFoundation::AppExtension {
+  func downloads(for request: BackgroundAssets::BAContentRequest, manifestURL: Foundation::URL, extensionInfo: BackgroundAssets::BAAppExtensionInfo) -> Swift::Set<BackgroundAssets::BADownload>
+  func backgroundDownload(_ download: BackgroundAssets::BADownload, didReceive challenge: Foundation::URLAuthenticationChallenge) async -> (Foundation::URLSession.Foundation::AuthChallengeDisposition, Foundation::URLCredential?)
+  func backgroundDownload(_ failedDownload: BackgroundAssets::BADownload, failedWithError error: any Swift::Error)
+  func backgroundDownload(_ finishedDownload: BackgroundAssets::BADownload, finishedWithFileURL fileURL: Foundation::URL)
+  @available(iOS, introduced: 16.1, deprecated: 16.4, message: "extensionWillTerminate will not be invoked in all applicable circumstances and should not be relied upon.")
+  @available(macOS, introduced: 13.0, deprecated: 13.3, message: "extensionWillTerminate will not be invoked in all applicable circumstances and should not be relied upon.")
+  @available(visionOS, introduced: 2.4, deprecated: 2.4, message: "extensionWillTerminate will not be invoked in all applicable circumstances and should not be relied upon.")
+  func extensionWillTerminate()
+}
+@available(iOS 16.1, macOS 13.0, visionOS 2.4, tvOS 18.4, *)
+@available(watchOS, unavailable)
+@_Concurrency::MainActor @preconcurrency public protocol BADownloaderExtensionConfiguration : ExtensionFoundation::AppExtensionConfiguration {
+}
+@available(iOS 16.1, macOS 13.0, visionOS 2.4, tvOS 18.4, *)
+extension BackgroundAssets::BADownloaderExtension {
+  public func downloads(for request: BackgroundAssets::BAContentRequest, manifestURL: Foundation::URL, extensionInfo: BackgroundAssets::BAAppExtensionInfo) -> Swift::Set<BackgroundAssets::BADownload>
+  public func backgroundDownload(_ download: BackgroundAssets::BADownload, didReceive challenge: Foundation::URLAuthenticationChallenge) async -> (Foundation::URLSession.Foundation::AuthChallengeDisposition, Foundation::URLCredential?)
+  public func backgroundDownload(_ failedDownload: BackgroundAssets::BADownload, failedWithError error: any Swift::Error)
+  public func backgroundDownload(_ finishedDownload: BackgroundAssets::BADownload, finishedWithFileURL fileURL: Foundation::URL)
+  public func extensionWillTerminate()
+}
+@available(iOS 16.1, macOS 13.0, visionOS 2.4, tvOS 18.4, *)
+extension BackgroundAssets::BADownloaderExtension {
+  public var configuration: some BackgroundAssets::BADownloaderExtensionConfiguration {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 26, macOS 26, tvOS 26, visionOS 26, *)
+@available(watchOS, unavailable)
+public actor AssetPackManager {
+  public enum DownloadStatusUpdate : Swift::CustomStringConvertible, Swift::Sendable {
+    case began(BackgroundAssets::AssetPack)
+    case paused(BackgroundAssets::AssetPack)
+    case downloading(BackgroundAssets::AssetPack, Foundation::Progress)
+    case finished(BackgroundAssets::AssetPack)
+    case failed(BackgroundAssets::AssetPack, any Swift::Error)
+    public var description: Swift::String {
+      get
+    }
+  }
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  public struct LocalAvailabilityError : Swift::CustomStringConvertible, Foundation::LocalizedError {
+    public let successes: Swift::Set<BackgroundAssets::AssetPack>
+    public let failures: [BackgroundAssets::AssetPack : any Swift::Error]
+    public var description: Swift::String {
+      get
+    }
+    public var errorDescription: Swift::String? {
+      get
+    }
+  }
+  public static let shared: BackgroundAssets::AssetPackManager
+  final public let statusUpdates: some Swift::Sendable & _Concurrency::AsyncSequence<BackgroundAssets::AssetPackManager.BackgroundAssets::DownloadStatusUpdate, Swift::Never>
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  public var manifest: BackgroundAssets::AssetPackManifest {
+    get async throws
+  }
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  nonisolated public var resolvedLanguage: Foundation::Locale.Foundation::Language? {
+    get
+    set
+  }
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  public var locallyAvailableLanguages: [Foundation::Locale.Foundation::Language] {
+    get async
+  }
+  @available(iOS 26.4, macOS 26.4, tvOS 26.4, visionOS 26.4, *)
+  public func status(relativeTo assetPack: BackgroundAssets::AssetPack) async throws -> BackgroundAssets::AssetPack.BackgroundAssets::Status
+  @available(iOS 26.4, macOS 26.4, tvOS 26.4, visionOS 26.4, *)
+  public func localStatus(ofAssetPackWithID assetPackID: Swift::String) async -> BackgroundAssets::AssetPack.BackgroundAssets::Status
+  @available(iOS 26.4, macOS 26.4, tvOS 26.4, visionOS 26.4, *)
+  nonisolated public func assetPackIsAvailableLocally(withID assetPackID: Swift::String) -> Swift::Bool
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  public func reconcilePreferredLanguages() async throws
+  @available(iOS 26.4, macOS 26.4, tvOS 26.4, visionOS 26.4, *)
+  public func ensureLocalAvailability(of assetPack: BackgroundAssets::AssetPack, requireLatestVersion shouldUpdate: Swift::Bool = false) async throws
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  public func ensureLocalAvailability(of assetPacks: Swift::Set<BackgroundAssets::AssetPack>, requireLatestVersions shouldUpdate: Swift::Bool = false) async throws
+  @discardableResult
+  public func checkForUpdates() async throws -> (updatingIDs: Swift::Set<Swift::String>, removedIDs: Swift::Set<Swift::String>)
+  nonisolated public func statusUpdates(forAssetPackWithID assetPackID: Swift::String) -> some Swift::Sendable & _Concurrency::AsyncSequence<BackgroundAssets::AssetPackManager.BackgroundAssets::DownloadStatusUpdate, Swift::Never>
+  
+  nonisolated public func contents(at path: System::FilePath, searchingInAssetPackWithID assetPackID: Swift::String? = nil, options: Foundation::Data.Foundation::ReadingOptions = .mappedIfSafe) throws -> Foundation::Data
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  nonisolated public func contents(at path: System::FilePath, asLocalizedFor language: Foundation::Locale.Foundation::Language, options: Foundation::Data.Foundation::ReadingOptions = .mappedIfSafe) throws -> Foundation::Data
+  nonisolated public func descriptor(for path: System::FilePath, searchingInAssetPackWithID assetPackID: Swift::String? = nil) throws -> System::FileDescriptor
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  nonisolated public func descriptor(for path: System::FilePath, asLocalizedFor language: Foundation::Locale.Foundation::Language) throws -> System::FileDescriptor
+  nonisolated public func url(for path: System::FilePath) throws -> Foundation::URL
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  nonisolated public func url(for path: System::FilePath, asLocalizedFor language: Foundation::Locale.Foundation::Language) throws -> Foundation::URL
+  public func remove(assetPackWithID assetPackID: Swift::String) async throws
+  @available(iOS, introduced: 26, deprecated: 27, message: "Use the manager’s manifest property’s value’s assetPacks property.")
+  @available(macOS, introduced: 26, deprecated: 27, message: "Use the manager’s manifest property’s value’s assetPacks property.")
+  @available(tvOS, introduced: 26, deprecated: 27, message: "Use the manager’s manifest property’s value’s assetPacks property.")
+  @available(visionOS, introduced: 26, deprecated: 27, message: "Use the manager’s manifest property’s value’s assetPacks property.")
+  public var allAssetPacks: Swift::Set<BackgroundAssets::AssetPack> {
+    get async throws
+  }
+  @available(iOS, introduced: 26, deprecated: 27, message: "Call assetPack(withID:) on the manager’s manifest property’s value.")
+  @available(macOS, introduced: 26, deprecated: 27, message: "Call assetPack(withID:) on the manager’s manifest property’s value.")
+  @available(tvOS, introduced: 26, deprecated: 27, message: "Call assetPack(withID:) on the manager’s manifest property’s value.")
+  @available(visionOS, introduced: 26, deprecated: 27, message: "Call assetPack(withID:) on the manager’s manifest property’s value.")
+  public func assetPack(withID id: Swift::String) async throws -> BackgroundAssets::AssetPack
+  @available(iOS, introduced: 26, deprecated: 26.4, message: "Use status(relativeTo:) instead.")
+  @available(macOS, introduced: 26, deprecated: 26.4, message: "Use status(relativeTo:) instead.")
+  @available(tvOS, introduced: 26, deprecated: 26.4, message: "Use status(relativeTo:) instead.")
+  @available(visionOS, introduced: 26, deprecated: 26.4, message: "Use status(relativeTo:) instead.")
+  public func status(ofAssetPackWithID assetPackID: Swift::String) async throws -> BackgroundAssets::AssetPack.BackgroundAssets::Status
+  @available(iOS, introduced: 26, deprecated: 26.4, renamed: "ensureLocalAvailability(of:requireLatestVersion:)")
+  @available(macOS, introduced: 26, deprecated: 26.4, renamed: "ensureLocalAvailability(of:requireLatestVersion:)")
+  @available(tvOS, introduced: 26, deprecated: 26.4, renamed: "ensureLocalAvailability(of:requireLatestVersion:)")
+  @available(visionOS, introduced: 26, deprecated: 26.4, renamed: "ensureLocalAvailability(of:requireLatestVersion:)")
+  @_disfavoredOverload public func ensureLocalAvailability(of assetPack: BackgroundAssets::AssetPack) async throws
+  @objc deinit
+  @_semantics("defaultActor") nonisolated final public var unownedExecutor: _Concurrency::UnownedSerialExecutor {
+    get
+  }
+}
+@available(iOS 26, macOS 26, tvOS 26, visionOS 26, *)
+@available(watchOS, unavailable)
+public enum ManagedBackgroundAssetsError : Swift::CustomStringConvertible, Foundation::LocalizedError {
+  case assetPackNotFound(withID: Swift::String)
+  case fileNotFound(at: System::FilePath)
+  public var description: Swift::String {
+    get
+  }
+  public var errorDescription: Swift::String? {
+    get
+  }
+}
+extension BackgroundAssets::BADownloadManager {
+  @export(implementation) private static var logger: os::Logger {
+    get {
+		Logger(subsystem: "com.apple.backgroundassets", category: "BADownloadManager")
+	}
+  }
+  @available(iOS 16.1, macOS 13, tvOS 18.4, visionOS 2.4, *)
+  @backDeployed(before: iOS 27, macOS 27, tvOS 27, visionOS 27)
+  final public func withExclusiveControl<ReturnType>(_ body: @escaping () throws -> sending ReturnType) async throws -> sending ReturnType {
+		Self.logger.log(level: .debug, "With exclusive control: \(String(describing: body), privacy: .public)")
+		return try await withCheckedThrowingContinuation { (continuation) in
+			self.withExclusiveControl { (controlWasAcquired, acquisitionError) in
+				guard controlWasAcquired else {
+					if let acquisitionError {
+						Self.logger.log(level: .error, "Exclusive control over the download manager couldn’t be acquired: \(acquisitionError, privacy: .public)")
+						continuation.resume(throwing: acquisitionError)
+					} else {
+						Self.logger.log(level: .fault, "Exclusive control over the download manager couldn’t be acquired.")
+						continuation.resume(throwing: MachError(.failure))  
+					}
+					return
+				}
+				defer {
+					Self.logger.log("Relinquishing exclusive control over the download manager…")
+				}
+				Self.logger.log("Exclusive control over the download manager was acquired.")
+				do {
+					continuation.resume(returning: try body())
+				} catch {
+					continuation.resume(throwing: error)
+				}
+			}
+		}
+	}
+  @available(iOS 16.1, macOS 13, tvOS 18.4, visionOS 2.4, *)
+  @backDeployed(before: iOS 27, macOS 27, tvOS 27, visionOS 27)
+  final public func withExclusiveControl<ReturnType>(before date: Foundation::Date, _ body: @escaping () throws -> sending ReturnType) async throws -> sending ReturnType {
+		Self.logger.log(level: .debug, "With exclusive control before: \(date, privacy: .public) \(String(describing: body), privacy: .public)")
+		return try await withCheckedThrowingContinuation { (continuation) in
+			Self.logger.log("Attempting to acquire exclusive control over the download manager before \(date.formatted(), privacy: .public)…")
+			self.withExclusiveControl(beforeDate: date) { (controlWasAcquired, acquisitionError) in
+				guard controlWasAcquired else {
+					if let acquisitionError {
+						Self.logger.log(level: .error, "Exclusive control over the download manager couldn’t be acquired before \(date.formatted(), privacy: .public): \(acquisitionError, privacy: .public)")
+						continuation.resume(throwing: acquisitionError)
+					} else {
+						Self.logger.log(level: .fault, "Exclusive control over the download manager couldn’t be acquired before \(date.formatted(), privacy: .public).")
+						continuation.resume(throwing: MachError(.failure))  
+					}
+					return
+				}
+				defer {
+					Self.logger.log("Relinquishing exclusive control over the download manager…")
+				}
+				Self.logger.log("Exclusive control over the download manager was acquired.")
+				do {
+					continuation.resume(returning: try body())
+				} catch {
+					continuation.resume(throwing: error)
+				}
+			}
+		}
+	}
+}
+@available(iOS 26, macOS 26, tvOS 26, visionOS 26, *)
+@available(watchOS, unavailable)
+@_documentation(visibility: internal) @_Concurrency::MainActor @preconcurrency public protocol ManagedDownloaderExtensionConfiguration : BackgroundAssets::BADownloaderExtensionConfiguration {
+  associatedtype DownloadManagerDelegateType : BackgroundAssets::BADownloadManagerDelegate, Swift::Sendable
+  nonisolated static var downloadManagerDelegate: Self.DownloadManagerDelegateType { get }
+}
+@available(iOS 16.1, macOS 13.0, visionOS 2.4, tvOS 18.4, *)
+@available(watchOS, unavailable)
+extension BackgroundAssets::BAAppExtensionInfo {
+  @available(iOS 16.4, macOS 13.3, visionOS 2.4, tvOS 18.4, *)
+  public var restrictedEssentialDownloadSizeRemaining: Swift::Int? {
+    get
+  }
+  public var restrictedDownloadSizeRemaining: Swift::Int? {
+    get
+  }
+}
+@available(iOS 26, macOS 26, tvOS 26, visionOS 26, *)
+@available(watchOS, unavailable)
+public struct AssetPack : Swift::CustomStringConvertible, Foundation::DecodableWithConfiguration, Swift::Encodable, Swift::Hashable, Swift::Identifiable, Swift::Sendable {
+  public struct Status : Swift::OptionSet, Swift::Sendable {
+    public static let downloadAvailable: BackgroundAssets::AssetPack.BackgroundAssets::Status
+    public static let updateAvailable: BackgroundAssets::AssetPack.BackgroundAssets::Status
+    public static let upToDate: BackgroundAssets::AssetPack.BackgroundAssets::Status
+    public static let outOfDate: BackgroundAssets::AssetPack.BackgroundAssets::Status
+    public static let obsolete: BackgroundAssets::AssetPack.BackgroundAssets::Status
+    public static let downloading: BackgroundAssets::AssetPack.BackgroundAssets::Status
+    public static let downloaded: BackgroundAssets::AssetPack.BackgroundAssets::Status
+    public let rawValue: Swift::Int
+    public init(rawValue: Swift::Int)
+    @available(macOS 26, iOS 26, tvOS 26, visionOS 26, *)
+    @available(watchOS, unavailable)
+    public typealias ArrayLiteralElement = BackgroundAssets::AssetPack.BackgroundAssets::Status
+    @available(macOS 26, iOS 26, tvOS 26, visionOS 26, *)
+    @available(watchOS, unavailable)
+    public typealias Element = BackgroundAssets::AssetPack.BackgroundAssets::Status
+    @available(macOS 26, iOS 26, tvOS 26, visionOS 26, *)
+    @available(watchOS, unavailable)
+    public typealias RawValue = Swift::Int
+  }
+  public let id: Swift::String
+  public let downloadSize: Swift::Int
+  public let version: Swift::Int
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  public let language: Foundation::Locale.Foundation::Language?
+  public let userInfo: Foundation::Data?
+  public var description: Swift::String {
+    get
+  }
+  public func hash(into hasher: inout Swift::Hasher)
+  public static func == (lhs: BackgroundAssets::AssetPack, rhs: BackgroundAssets::AssetPack) -> Swift::Bool
+  public func download(for contentRequest: BackgroundAssets::BAContentRequest?) -> BackgroundAssets::BADownload
+  public typealias DecodingConfiguration = BackgroundAssets::AssetPackManifest.BackgroundAssets::DecodingConfiguration
+  public init(from decoder: any Swift::Decoder, configuration: BackgroundAssets::AssetPack.BackgroundAssets::DecodingConfiguration) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+  @available(macOS 26, iOS 26, tvOS 26, visionOS 26, *)
+  @available(watchOS, unavailable)
+  public typealias ID = Swift::String
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 26, macOS 26, tvOS 26, visionOS 26, *)
+@available(watchOS, unavailable)
+public struct AssetPackManifest : Swift::CustomStringConvertible, Foundation::DecodableWithConfiguration, Swift::Encodable, Swift::Sendable {
+  public let assetPacks: Swift::Set<BackgroundAssets::AssetPack>
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  public var localizedAssetPacks: Swift::Set<BackgroundAssets::AssetPack> {
+    get
+  }
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  public var primaryLanguage: Foundation::Locale.Foundation::Language? {
+    get
+  }
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  public var availableLanguages: [Foundation::Locale.Foundation::Language] {
+    get
+  }
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  public var resolvedLanguage: Foundation::Locale.Foundation::Language? {
+    get
+  }
+  public var description: Swift::String {
+    get
+  }
+  public init(contentsOf url: Foundation::URL, appGroupID: Swift::String) throws
+  public init(from data: Foundation::Data, appGroupID: Swift::String) throws
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  public func assetPack(withID id: Swift::String) -> BackgroundAssets::AssetPack?
+  @available(iOS 27, macOS 27, tvOS 27, visionOS 27, *)
+  public func localizedAssetPacks(for language: Foundation::Locale.Foundation::Language) -> Swift::Set<BackgroundAssets::AssetPack>
+  public func allDownloads(for contentRequest: BackgroundAssets::BAContentRequest?) -> Swift::Set<BackgroundAssets::BADownload>
+  public struct DecodingConfiguration : Swift::CustomStringConvertible {
+    public var description: Swift::String {
+      get
+    }
+  }
+  public init(from decoder: any Swift::Decoder, configuration: BackgroundAssets::AssetPackManifest.BackgroundAssets::DecodingConfiguration) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}

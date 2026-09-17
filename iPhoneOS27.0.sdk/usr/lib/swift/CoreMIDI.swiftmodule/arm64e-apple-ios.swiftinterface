@@ -1,0 +1,371 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -autolink-force-load -enable-library-evolution -module-link-name swiftCoreMIDI -language-mode 5 -O -library-level api -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 6 -module-name CoreMIDI
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported import CoreMIDI
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 11.0, iOS 14.0, *)
+public struct UnsafeMutableMIDIEventPacketPointer {
+  public init(_ p: Swift::UnsafeMutablePointer<CoreMIDI::MIDIEventPacket>)
+  public init?(_ p: Swift::UnsafeMutablePointer<CoreMIDI::MIDIEventPacket>?)
+  public var count: Swift::Int {
+    get
+    nonmutating set(newValue)
+  }
+  public var timeStamp: Swift::Int {
+    get
+    nonmutating set(newValue)
+  }
+}
+@available(macOS 11.0, iOS 14.0, *)
+extension CoreMIDI::UnsafeMutableMIDIEventPacketPointer : Swift::MutableCollection, Swift::RandomAccessCollection {
+  @available(macOS 11.0, iOS 14.0, *)
+  public typealias Element = Swift::UInt32
+  @available(macOS 11.0, iOS 14.0, *)
+  public typealias Index = Swift::Int
+  @available(macOS 11.0, iOS 14.0, *)
+  public typealias Indices = Swift::Range<Swift::Int>
+  @available(macOS 11.0, iOS 14.0, *)
+  public var startIndex: Swift::Int {
+    get
+  }
+  @available(macOS 11.0, iOS 14.0, *)
+  public var endIndex: Swift::Int {
+    get
+  }
+  @available(macOS 11.0, iOS 14.0, *)
+  public subscript(index: CoreMIDI::UnsafeMutableMIDIEventPacketPointer.CoreMIDI::Index) -> CoreMIDI::UnsafeMutableMIDIEventPacketPointer.CoreMIDI::Element {
+    get
+    nonmutating set(newValue)
+  }
+  @available(macOS 11.0, iOS 14.0, *)
+  public typealias Iterator = CoreMIDI::MIDIEventPacket.CoreMIDI::WordSequence.CoreMIDI::Iterator
+  @available(macOS 11.0, iOS 14.0, *)
+  public typealias SubSequence = Swift::Slice<CoreMIDI::UnsafeMutableMIDIEventPacketPointer>
+}
+extension CoreMIDI::MIDIEventPacket {
+  @available(macOS 11.0, iOS 14.0, *)
+  public struct WordSequence : Swift::Sequence {
+    public func makeIterator() -> CoreMIDI::MIDIEventPacket.CoreMIDI::WordSequence.CoreMIDI::Iterator
+    public var count: Swift::Int {
+      get
+    }
+    public struct Iterator : Swift::IteratorProtocol {
+      public init(_ s: CoreMIDI::MIDIEventPacket.CoreMIDI::WordSequence)
+      public mutating func next() -> Swift::UInt32?
+      @available(macOS 11.0, iOS 14.0, *)
+      public typealias Element = Swift::UInt32
+    }
+    @available(macOS 11.0, iOS 14.0, *)
+    public typealias Element = Swift::UInt32
+  }
+  @available(macOS 11.0, iOS 14.0, *)
+  public struct WordCollection : Swift::RandomAccessCollection {
+    public typealias Element = Swift::UInt32
+    public typealias Index = Swift::Int
+    public typealias Indices = Swift::Range<Swift::Int>
+    public init(_ p: Swift::UnsafePointer<CoreMIDI::MIDIEventPacket>)
+    public init?(_ p: Swift::UnsafePointer<CoreMIDI::MIDIEventPacket>?)
+    public var count: Swift::Int {
+      get
+    }
+    public var startIndex: Swift::Int {
+      get
+    }
+    public var endIndex: Swift::Int {
+      get
+    }
+    public subscript(index: CoreMIDI::MIDIEventPacket.CoreMIDI::WordCollection.CoreMIDI::Index) -> CoreMIDI::MIDIEventPacket.CoreMIDI::WordCollection.CoreMIDI::Element {
+      get
+    }
+    @available(macOS 11.0, iOS 14.0, *)
+    public typealias Iterator = Swift::IndexingIterator<CoreMIDI::MIDIEventPacket.CoreMIDI::WordCollection>
+    @available(macOS 11.0, iOS 14.0, *)
+    public typealias SubSequence = Swift::Slice<CoreMIDI::MIDIEventPacket.CoreMIDI::WordCollection>
+  }
+}
+@available(macOS 11.0, iOS 14.0, *)
+extension CoreMIDI::UnsafeMutableMIDIEventPacketPointer : Swift::Sequence {
+  @available(macOS 11.0, iOS 14.0, *)
+  public func makeIterator() -> CoreMIDI::MIDIEventPacket.CoreMIDI::WordSequence.CoreMIDI::Iterator
+}
+extension Swift::UnsafePointer where Pointee == CoreMIDI::MIDIEventPacket {
+  @available(macOS 11.0, iOS 14.0, *)
+  public func sequence() -> CoreMIDI::MIDIEventPacket.CoreMIDI::WordSequence
+  @available(macOS 11.0, iOS 14.0, *)
+  public func words() -> CoreMIDI::MIDIEventPacket.CoreMIDI::WordCollection
+}
+extension CoreMIDI::MIDIEventPacket {
+  @available(macOS 11.0, iOS 14.0, *)
+  public class Builder {
+    public var capacity: Swift::Int {
+      get
+    }
+    public init(maximumNumberMIDIWords: Swift::Int)
+    @objc deinit
+    public var count: Swift::Int {
+      get
+    }
+    public var timeStamp: Swift::Int {
+      get
+      set(newValue)
+    }
+    public func append(_ midiWords: Swift::UInt32...)
+    public func withUnsafePointer<Result>(_ body: (Swift::UnsafePointer<CoreMIDI::MIDIEventPacket>) -> Result) -> Result
+    public func withUnsafeMutableMIDIEventPacketPointer<Result>(_ body: (inout CoreMIDI::UnsafeMutableMIDIEventPacketPointer) -> Result) -> Result
+  }
+}
+extension Swift::UnsafePointer where Pointee == CoreMIDI::MIDIEventList {
+  @available(macOS 11.0, iOS 14.0, *)
+  public func unsafeSequence() -> CoreMIDI::MIDIEventList.CoreMIDI::UnsafeSequence
+}
+extension CoreMIDI::MIDIEventList {
+  @available(macOS 11.0, iOS 14.0, *)
+  public static func sizeInBytes(pktList: Swift::UnsafePointer<CoreMIDI::MIDIEventList>) -> Swift::Int
+  @available(macOS 11.0, iOS 14.0, *)
+  public struct UnsafeSequence : Swift::Sequence {
+    public func makeIterator() -> CoreMIDI::MIDIEventList.CoreMIDI::UnsafeSequence.CoreMIDI::Iterator
+    public var count: Swift::Int {
+      get
+    }
+    public struct Iterator : Swift::IteratorProtocol {
+      public init(_ s: CoreMIDI::MIDIEventList.CoreMIDI::UnsafeSequence)
+      public mutating func next() -> Swift::UnsafePointer<CoreMIDI::MIDIEventPacket>?
+      @available(macOS 11.0, iOS 14.0, *)
+      public typealias Element = Swift::UnsafePointer<CoreMIDI::MIDIEventPacket>
+    }
+    @available(macOS 11.0, iOS 14.0, *)
+    public typealias Element = Swift::UnsafePointer<CoreMIDI::MIDIEventPacket>
+  }
+}
+@available(macOS 11.0, iOS 14.0, *)
+public struct UnsafeMutableMIDIEventListPointer : Swift::Sequence {
+  public var listSizeInBytes: Swift::Int {
+    get
+  }
+  public var lastPacket: Swift::UnsafeMutablePointer<CoreMIDI::MIDIEventPacket>? {
+    get
+  }
+  public var midiProtocol: CoreMIDI::MIDIProtocolID {
+    get
+  }
+  public init(_ p: Swift::UnsafeMutablePointer<CoreMIDI::MIDIEventList>, wordSize: Swift::Int, inProtocol: CoreMIDI::MIDIProtocolID)
+  public init?(_ p: Swift::UnsafeMutablePointer<CoreMIDI::MIDIEventList>?, wordSize: Swift::Int)
+  public var count: Swift::Int {
+    get
+  }
+  public mutating func clear()
+  @discardableResult
+  public mutating func append(timestamp: CoreMIDI::MIDITimeStamp, words: [Swift::UInt32]) -> Swift::UnsafePointer<CoreMIDI::MIDIEventPacket>?
+  public func makeIterator() -> CoreMIDI::MIDIEventList.CoreMIDI::UnsafeSequence.CoreMIDI::Iterator
+  @available(macOS 11.0, iOS 14.0, *)
+  public typealias Element = Swift::UnsafePointer<CoreMIDI::MIDIEventPacket>
+  @available(macOS 11.0, iOS 14.0, *)
+  public typealias Iterator = CoreMIDI::MIDIEventList.CoreMIDI::UnsafeSequence.CoreMIDI::Iterator
+}
+extension CoreMIDI::MIDIEventList {
+  @available(macOS 11.0, iOS 14.0, *)
+  public class Builder {
+    public init(inProtocol: CoreMIDI::MIDIProtocolID, wordSize: Swift::Int)
+    @objc deinit
+    @discardableResult
+    public func append(timestamp: CoreMIDI::MIDITimeStamp, words: [Swift::UInt32]) -> Swift::UnsafePointer<CoreMIDI::MIDIEventPacket>?
+    public func clear()
+    public var count: Swift::Int {
+      get
+    }
+    public func withUnsafePointer<Result>(_ body: (Swift::UnsafePointer<CoreMIDI::MIDIEventList>) -> Result) -> Result
+    public func withUnsafeMutableMIDIEventListPointer<Result>(_ body: (inout CoreMIDI::UnsafeMutableMIDIEventListPointer) -> Result) -> Result
+  }
+}
+@available(macOS 10.15, iOS 13.0, *)
+public struct UnsafeMutableMIDIPacketPointer {
+  public init(_ p: Swift::UnsafeMutablePointer<CoreMIDI::MIDIPacket>)
+  public init?(_ p: Swift::UnsafeMutablePointer<CoreMIDI::MIDIPacket>?)
+  public var count: Swift::Int {
+    get
+    nonmutating set(newValue)
+  }
+  public var timeStamp: Swift::Int {
+    get
+    nonmutating set(newValue)
+  }
+}
+@available(macOS 10.15, iOS 13.0, *)
+extension CoreMIDI::UnsafeMutableMIDIPacketPointer : Swift::MutableCollection, Swift::RandomAccessCollection {
+  @available(macOS 10.15, iOS 13.0, *)
+  public typealias Element = Swift::UInt8
+  @available(macOS 10.15, iOS 13.0, *)
+  public typealias Index = Swift::Int
+  @available(macOS 10.15, iOS 13.0, *)
+  public typealias Indices = Swift::Range<Swift::Int>
+  @available(macOS 10.15, iOS 13.0, *)
+  public var startIndex: Swift::Int {
+    get
+  }
+  @available(macOS 10.15, iOS 13.0, *)
+  public var endIndex: Swift::Int {
+    get
+  }
+  @available(macOS 10.15, iOS 13.0, *)
+  public subscript(index: CoreMIDI::UnsafeMutableMIDIPacketPointer.CoreMIDI::Index) -> CoreMIDI::UnsafeMutableMIDIPacketPointer.CoreMIDI::Element {
+    get
+    nonmutating set(newValue)
+  }
+  @available(macOS 10.15, iOS 13.0, *)
+  public typealias Iterator = CoreMIDI::MIDIPacket.CoreMIDI::ByteSequence.CoreMIDI::Iterator
+  @available(macOS 10.15, iOS 13.0, *)
+  public typealias SubSequence = Swift::Slice<CoreMIDI::UnsafeMutableMIDIPacketPointer>
+}
+extension CoreMIDI::MIDIPacket {
+  @available(macOS 10.15, iOS 13.0, *)
+  public struct ByteSequence : Swift::Sequence {
+    public func makeIterator() -> CoreMIDI::MIDIPacket.CoreMIDI::ByteSequence.CoreMIDI::Iterator
+    public var count: Swift::Int {
+      get
+    }
+    public struct Iterator : Swift::IteratorProtocol {
+      public init(_ s: CoreMIDI::MIDIPacket.CoreMIDI::ByteSequence)
+      public mutating func next() -> Swift::UInt8?
+      @available(macOS 10.15, iOS 13.0, *)
+      public typealias Element = Swift::UInt8
+    }
+    @available(macOS 10.15, iOS 13.0, *)
+    public typealias Element = Swift::UInt8
+  }
+  @available(macOS 10.15, iOS 13.0, *)
+  public struct ByteCollection : Swift::RandomAccessCollection {
+    public typealias Element = Swift::UInt8
+    public typealias Index = Swift::Int
+    public typealias Indices = Swift::Range<Swift::Int>
+    public init(_ p: Swift::UnsafePointer<CoreMIDI::MIDIPacket>)
+    public init?(_ p: Swift::UnsafePointer<CoreMIDI::MIDIPacket>?)
+    public var count: Swift::Int {
+      get
+    }
+    public var startIndex: Swift::Int {
+      get
+    }
+    public var endIndex: Swift::Int {
+      get
+    }
+    public subscript(index: CoreMIDI::MIDIPacket.CoreMIDI::ByteCollection.CoreMIDI::Index) -> CoreMIDI::MIDIPacket.CoreMIDI::ByteCollection.CoreMIDI::Element {
+      get
+    }
+    @available(macOS 10.15, iOS 13.0, *)
+    public typealias Iterator = Swift::IndexingIterator<CoreMIDI::MIDIPacket.CoreMIDI::ByteCollection>
+    @available(macOS 10.15, iOS 13.0, *)
+    public typealias SubSequence = Swift::Slice<CoreMIDI::MIDIPacket.CoreMIDI::ByteCollection>
+  }
+}
+@available(macOS 10.15, iOS 13.0, *)
+extension CoreMIDI::UnsafeMutableMIDIPacketPointer : Swift::Sequence {
+  @available(macOS 10.15, iOS 13.0, *)
+  public func makeIterator() -> CoreMIDI::MIDIPacket.CoreMIDI::ByteSequence.CoreMIDI::Iterator
+}
+extension Swift::UnsafePointer where Pointee == CoreMIDI::MIDIPacket {
+  @available(macOS 10.15, iOS 13.0, *)
+  public func sequence() -> CoreMIDI::MIDIPacket.CoreMIDI::ByteSequence
+  @available(macOS 10.15, iOS 13.0, *)
+  public func bytes() -> CoreMIDI::MIDIPacket.CoreMIDI::ByteCollection
+}
+extension CoreMIDI::MIDIPacket {
+  @available(macOS 10.15, iOS 13.0, *)
+  public class Builder {
+    public var capacity: Swift::Int {
+      get
+    }
+    public init(maximumNumberMIDIBytes: Swift::Int)
+    @objc deinit
+    public var count: Swift::Int {
+      get
+    }
+    public var timeStamp: Swift::Int {
+      get
+      set(newValue)
+    }
+    public func append(_ midiBytes: Swift::UInt8...)
+    public func withUnsafePointer<Result>(_ body: (Swift::UnsafePointer<CoreMIDI::MIDIPacket>) -> Result) -> Result
+    public func withUnsafeMutableMIDIPacketPointer<Result>(_ body: (inout CoreMIDI::UnsafeMutableMIDIPacketPointer) -> Result) -> Result
+  }
+}
+extension Swift::UnsafePointer where Pointee == CoreMIDI::MIDIPacketList {
+  @available(macOS 10.15, iOS 13.0, *)
+  public func unsafeSequence() -> CoreMIDI::MIDIPacketList.CoreMIDI::UnsafeSequence
+}
+extension CoreMIDI::MIDIPacketList {
+  @available(macOS 10.15, iOS 13.0, *)
+  public static func sizeInBytes(pktList: Swift::UnsafePointer<CoreMIDI::MIDIPacketList>) -> Swift::Int
+  @available(macOS 10.15, iOS 13.0, *)
+  public struct UnsafeSequence : Swift::Sequence {
+    public func makeIterator() -> CoreMIDI::MIDIPacketList.CoreMIDI::UnsafeSequence.CoreMIDI::Iterator
+    public var count: Swift::Int {
+      get
+    }
+    public struct Iterator : Swift::IteratorProtocol {
+      public init(_ s: CoreMIDI::MIDIPacketList.CoreMIDI::UnsafeSequence)
+      public mutating func next() -> Swift::UnsafePointer<CoreMIDI::MIDIPacket>?
+      @available(macOS 10.15, iOS 13.0, *)
+      public typealias Element = Swift::UnsafePointer<CoreMIDI::MIDIPacket>
+    }
+    @available(macOS 10.15, iOS 13.0, *)
+    public typealias Element = Swift::UnsafePointer<CoreMIDI::MIDIPacket>
+  }
+}
+@available(macOS 10.15, iOS 13.0, *)
+public struct UnsafeMutableMIDIPacketListPointer : Swift::Sequence {
+  public var listSizeInBytes: Swift::Int {
+    get
+  }
+  public var lastPacket: Swift::UnsafeMutablePointer<CoreMIDI::MIDIPacket>? {
+    get
+  }
+  public init(_ p: Swift::UnsafeMutablePointer<CoreMIDI::MIDIPacketList>, byteSize: Swift::Int)
+  public init?(_ p: Swift::UnsafeMutablePointer<CoreMIDI::MIDIPacketList>?, byteSize: Swift::Int)
+  public var count: Swift::Int {
+    get
+  }
+  public mutating func clear()
+  @discardableResult
+  public mutating func append(timestamp: CoreMIDI::MIDITimeStamp, data: [Swift::UInt8]) -> Swift::UnsafePointer<CoreMIDI::MIDIPacket>?
+  public func makeIterator() -> CoreMIDI::MIDIPacketList.CoreMIDI::UnsafeSequence.CoreMIDI::Iterator
+  @available(macOS 10.15, iOS 13.0, *)
+  public typealias Element = Swift::UnsafePointer<CoreMIDI::MIDIPacket>
+  @available(macOS 10.15, iOS 13.0, *)
+  public typealias Iterator = CoreMIDI::MIDIPacketList.CoreMIDI::UnsafeSequence.CoreMIDI::Iterator
+}
+extension CoreMIDI::MIDIPacketList {
+  @available(macOS 10.15, iOS 13.0, *)
+  public class Builder {
+    public init(byteSize: Swift::Int)
+    @objc deinit
+    @discardableResult
+    public func append(timestamp: CoreMIDI::MIDITimeStamp, data: [Swift::UInt8]) -> Swift::UnsafePointer<CoreMIDI::MIDIPacket>?
+    public func clear()
+    public var count: Swift::Int {
+      get
+    }
+    public func withUnsafePointer<Result>(_ body: (Swift::UnsafePointer<CoreMIDI::MIDIPacketList>) -> Result) -> Result
+    public func withUnsafeMutableMIDIPacketListPointer<Result>(_ body: (inout CoreMIDI::UnsafeMutableMIDIPacketListPointer) -> Result) -> Result
+  }
+}
+@available(*, deprecated, renamed: "MIDINoteAttribute.none")
+@_alwaysEmitIntoClient public var kMIDINoteAttributeNone: Swift::Int {
+  get { 0x0 }
+}
+@available(*, deprecated, renamed: "MIDINoteAttribute.manufacturerSpecific")
+@_alwaysEmitIntoClient public var kMIDINoteAttributeManufacturerSpecific: Swift::Int {
+  get { 0x1 }
+}
+@available(*, deprecated, renamed: "MIDINoteAttribute.profileSpecific")
+@_alwaysEmitIntoClient public var kMIDINoteAttributeProfileSpecific: Swift::Int {
+  get { 0x2 }
+}
+@available(*, deprecated, renamed: "MIDINoteAttribute.pitch")
+@_alwaysEmitIntoClient public var kMIDINoteAttributePitch: Swift::Int {
+  get { 0x3 }
+}

@@ -1,0 +1,1299 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 1629.1 -module-name CoreData
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import Combine
+@_exported import CoreData
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.lock
+import os
+@available(macOS 15, iOS 18, tvOS 18, watchOS 11, visionOS 2, *)
+extension CoreData::NSPersistentStoreCoordinator {
+  public func managedObjectID(for string: Swift::String) -> CoreData::NSManagedObjectID?
+}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension CoreData::NSPersistentStoreCoordinator {
+  public func addPersistentStore(type: CoreData::NSPersistentStore.CoreData::StoreType, configuration: Swift::String? = nil, at storeURL: Foundation::URL, options: [Swift::AnyHashable : Any]? = nil) throws -> CoreData::NSPersistentStore
+  public class func registerStoreClass(_ storeClass: Swift::AnyClass?, type: CoreData::NSPersistentStore.CoreData::StoreType)
+  public class func metadataForPersistentStore(type storeType: CoreData::NSPersistentStore.CoreData::StoreType, at storeURL: Foundation::URL, options: [Swift::AnyHashable : Any]? = nil) throws -> [Swift::String : Any]
+  public class func setMetadata(_ metadata: [Swift::String : Any]?, type storeType: CoreData::NSPersistentStore.CoreData::StoreType, at storeURL: Foundation::URL, options: [Swift::AnyHashable : Any]? = nil) throws
+  public func migratePersistentStore(_ store: CoreData::NSPersistentStore, to storeURL: Foundation::URL, options: [Swift::AnyHashable : Any]? = nil, type storeType: CoreData::NSPersistentStore.CoreData::StoreType) throws -> CoreData::NSPersistentStore
+  public func destroyPersistentStore(at url: Foundation::URL, type storeType: CoreData::NSPersistentStore.CoreData::StoreType, options: [Swift::AnyHashable : Any]? = nil) throws
+  public func replacePersistentStore(at destinationURL: Foundation::URL, destinationOptions: [Swift::AnyHashable : Any]? = nil, withPersistentStoreFrom sourceURL: Foundation::URL, sourceOptions: [Swift::AnyHashable : Any]? = nil, type sourceType: CoreData::NSPersistentStore.CoreData::StoreType) throws
+}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension CoreData::NSPersistentStoreCoordinator {
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func performAndWait<T>(_ block: @Sendable () throws -> T) rethrows -> T
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func perform<T>(_ block: @escaping @Sendable () throws -> T) async rethrows -> T
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreData::NSPersistentStoreCoordinator {
+  public struct StoresDidChangeMessage : Foundation::NotificationCenter.Foundation::MainActorMessage {
+    public typealias Subject = CoreData::NSPersistentStoreCoordinator
+    public static let name: Foundation::Notification.Foundation::Name
+    public let persistentStoreCoordinator: CoreData::NSPersistentStoreCoordinator
+    public var addedStores: [CoreData::NSPersistentStore] {
+      get
+    }
+    public var removedStores: [CoreData::NSPersistentStore] {
+      get
+    }
+    public var uuidChangedStores: (oldValue: CoreData::NSPersistentStore, newValue: CoreData::NSPersistentStore)? {
+      get
+    }
+    @_Concurrency::MainActor public static func makeMessage(_ notification: Foundation::Notification) -> CoreData::NSPersistentStoreCoordinator.CoreData::StoresDidChangeMessage?
+    @_Concurrency::MainActor public static func makeNotification(_ message: CoreData::NSPersistentStoreCoordinator.CoreData::StoresDidChangeMessage) -> Foundation::Notification
+  }
+  public struct StoresDidChangeAsyncMessage : Foundation::NotificationCenter.Foundation::AsyncMessage {
+    public typealias Subject = CoreData::NSPersistentStoreCoordinator
+    public static let name: Foundation::Notification.Foundation::Name
+    public let persistentStoreCoordinator: CoreData::NSPersistentStoreCoordinator
+    public var addedStores: [CoreData::NSPersistentStore] {
+      get
+    }
+    public var removedStores: [CoreData::NSPersistentStore] {
+      get
+    }
+    public var uuidChangedStores: (oldValue: CoreData::NSPersistentStore, newValue: CoreData::NSPersistentStore)? {
+      get
+    }
+    public static func makeMessage(_ notification: Foundation::Notification) -> CoreData::NSPersistentStoreCoordinator.CoreData::StoresDidChangeAsyncMessage?
+    public static func makeNotification(_ message: CoreData::NSPersistentStoreCoordinator.CoreData::StoresDidChangeAsyncMessage) -> Foundation::Notification
+  }
+  public struct RemoteChangeMessage : Foundation::NotificationCenter.Foundation::AsyncMessage {
+    public typealias Subject = CoreData::NSPersistentStoreCoordinator
+    public static let name: Foundation::Notification.Foundation::Name
+    public let persistentStoreCoordinator: CoreData::NSPersistentStoreCoordinator
+    public let storeUUID: Swift::String
+    public let storeURL: Foundation::URL
+    public let historyToken: CoreData::NSPersistentHistoryToken?
+    public static func makeMessage(_ notification: Foundation::Notification) -> CoreData::NSPersistentStoreCoordinator.CoreData::RemoteChangeMessage?
+    public static func makeNotification(_ message: CoreData::NSPersistentStoreCoordinator.CoreData::RemoteChangeMessage) -> Foundation::Notification
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSPersistentStoreCoordinator.CoreData::StoresDidChangeMessage> {
+  public static var storesDidChange: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSPersistentStoreCoordinator.CoreData::StoresDidChangeMessage> {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSPersistentStoreCoordinator.CoreData::StoresDidChangeAsyncMessage> {
+  public static var storesDidChangeAsync: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSPersistentStoreCoordinator.CoreData::StoresDidChangeAsyncMessage> {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSPersistentStoreCoordinator.CoreData::RemoteChangeMessage> {
+  public static var remoteChange: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSPersistentStoreCoordinator.CoreData::RemoteChangeMessage> {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreData::NSPersistentCloudKitContainer {
+  public struct EventChangedMessage : Foundation::NotificationCenter.Foundation::AsyncMessage {
+    public typealias Subject = CoreData::NSPersistentCloudKitContainer
+    public static let name: Foundation::NSNotification.Foundation::Name
+    public let event: CoreData::NSPersistentCloudKitContainer.CoreData::Event
+    public static func makeMessage(_ notification: Foundation::Notification) -> CoreData::NSPersistentCloudKitContainer.CoreData::EventChangedMessage?
+    public static func makeNotification(_ message: CoreData::NSPersistentCloudKitContainer.CoreData::EventChangedMessage) -> Foundation::Notification
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSPersistentCloudKitContainer.CoreData::EventChangedMessage> {
+  public static var eventChanged: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSPersistentCloudKitContainer.CoreData::EventChangedMessage> {
+    get
+  }
+}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension CoreData::NSMigrationManager {
+  public func migrateStore(from sourceURL: Foundation::URL, type sourceType: CoreData::NSPersistentStore.CoreData::StoreType, options sourceOptions: [Swift::AnyHashable : Any]? = nil, mapping: CoreData::NSMappingModel, to destinationURL: Foundation::URL, type destinationType: CoreData::NSPersistentStore.CoreData::StoreType, options destinationOptions: [Swift::AnyHashable : Any]? = nil) throws
+}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension CoreData::NSExpressionDescription {
+  public var resultType: CoreData::NSAttributeDescription.CoreData::AttributeType {
+    get
+    set
+  }
+}
+@available(swift 5.8)
+@available(macOS 14, iOS 17, tvOS 17, watchOS 10, *)
+extension CoreData::NSLightweightMigrationStage {
+  @available(swift 5.8)
+  @available(macOS 14, iOS 17, tvOS 17, watchOS 10, *)
+  convenience public init(_ checksums: [Swift::String])
+}
+@available(swift 5.8)
+@available(macOS 14, iOS 17, tvOS 17, watchOS 10, *)
+extension CoreData::NSStagedMigrationManager {
+  @available(swift 5.8)
+  @available(macOS 14, iOS 17, tvOS 17, watchOS 10, *)
+  convenience public init(_ stages: [CoreData::NSMigrationStage])
+}
+@available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+extension CoreData::NSManagedObjectContext {
+  @available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+  nonisolated public func fetch<T>(_ request: CoreData::NSFetchRequest<T>) throws -> [T] where T : CoreData::NSFetchRequestResult
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @_disfavoredOverload nonisolated public func fetch(_ request: CoreData::NSFetchRequest<any CoreData::NSFetchRequestResult>) throws -> [Any]
+  @available(macOS 10.5, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+  nonisolated public func count<T>(for request: CoreData::NSFetchRequest<T>) throws -> Swift::Int where T : CoreData::NSFetchRequestResult
+}
+@available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+extension CoreData::NSManagedObjectContext {
+  @available(macOS 10.5, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+  public static let willSaveObjectsNotification: Foundation::Notification.Foundation::Name
+  @available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+  public static let didSaveObjectsNotification: Foundation::Notification.Foundation::Name
+  @available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+  public static let didChangeObjectsNotification: Foundation::Notification.Foundation::Name
+  @available(macOS 10.12, iOS 10.3, tvOS 10.2, watchOS 3.2, *)
+  public static let didSaveObjectIDsNotification: Foundation::Notification.Foundation::Name
+  @available(macOS 10.12, iOS 10.3, tvOS 10.2, watchOS 3.2, *)
+  public static let didMergeChangesObjectIDsNotification: Foundation::Notification.Foundation::Name
+  @available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+  public enum NotificationKey : Swift::String {
+    @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+    case queryGeneration
+    @available(macOS 10.5, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+    case invalidatedAllObjects
+    @available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+    case insertedObjects
+    @available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+    case updatedObjects
+    @available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+    case deletedObjects
+    @available(macOS 10.5, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+    case refreshedObjects
+    @available(macOS 10.5, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+    case invalidatedObjects
+    @available(macOS 10.12, iOS 10.3, tvOS 10.2, watchOS 3.2, *)
+    case insertedObjectIDs
+    @available(macOS 10.12, iOS 10.3, tvOS 10.2, watchOS 3.2, *)
+    case updatedObjectIDs
+    @available(macOS 10.12, iOS 10.3, tvOS 10.2, watchOS 3.2, *)
+    case deletedObjectIDs
+    @available(macOS 10.12, iOS 10.3, tvOS 10.2, watchOS 3.2, *)
+    case refreshedObjectIDs
+    @available(macOS 10.12, iOS 10.3, tvOS 10.2, watchOS 3.2, *)
+    case invalidatedObjectIDs
+    public init?(rawValue: Swift::String)
+    @available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+    public typealias RawValue = Swift::String
+    public var rawValue: Swift::String {
+      get
+    }
+  }
+}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension CoreData::NSManagedObjectContext.CoreData::ConcurrencyType {
+  public static let privateQueue: CoreData::NSManagedObjectContext.CoreData::ConcurrencyType
+  public static let mainQueue: CoreData::NSManagedObjectContext.CoreData::ConcurrencyType
+}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension CoreData::NSManagedObjectContext {
+  public struct ConcurrencyType : Swift::Hashable, Swift::Equatable, Swift::RawRepresentable {
+    public var rawValue: CoreData::NSManagedObjectContextConcurrencyType
+    public init(rawValue: CoreData::NSManagedObjectContextConcurrencyType)
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    public typealias RawValue = CoreData::NSManagedObjectContextConcurrencyType
+  }
+  public enum ScheduledTaskType {
+    case immediate
+    case enqueued
+    public static func == (a: CoreData::NSManagedObjectContext.CoreData::ScheduledTaskType, b: CoreData::NSManagedObjectContext.CoreData::ScheduledTaskType) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  convenience nonisolated public init(_ type: CoreData::NSManagedObjectContext.CoreData::ConcurrencyType)
+}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension CoreData::NSManagedObjectContext {
+  @preconcurrency nonisolated public func performAndWait<T>(_ block: @Sendable () throws -> T) rethrows -> T
+  @preconcurrency nonisolated public func perform<T>(schedule: CoreData::NSManagedObjectContext.CoreData::ScheduledTaskType = .immediate, _ block: @escaping @Sendable () throws -> T) async rethrows -> T
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreData::NSManagedObjectContext {
+  public struct WillSaveMessage : Foundation::NotificationCenter.Foundation::MainActorMessage {
+    public typealias Subject = CoreData::NSManagedObjectContext
+    public static let name: Foundation::Notification.Foundation::Name
+    public let context: CoreData::NSManagedObjectContext
+    @_Concurrency::MainActor public static func makeMessage(_ notification: Foundation::Notification) -> CoreData::NSManagedObjectContext.CoreData::WillSaveMessage?
+    @_Concurrency::MainActor public static func makeNotification(_ message: CoreData::NSManagedObjectContext.CoreData::WillSaveMessage) -> Foundation::Notification
+  }
+  public struct DidSaveMessage : Foundation::NotificationCenter.Foundation::MainActorMessage {
+    public typealias Subject = CoreData::NSManagedObjectContext
+    public static let name: Foundation::Notification.Foundation::Name
+    public let context: CoreData::NSManagedObjectContext
+    public var inserted: Swift::Set<CoreData::NSManagedObject> {
+      get
+    }
+    public var updated: Swift::Set<CoreData::NSManagedObject> {
+      get
+    }
+    public var deleted: Swift::Set<CoreData::NSManagedObject> {
+      get
+    }
+    public let queryGeneration: CoreData::NSQueryGenerationToken?
+    public let historyToken: CoreData::NSPersistentHistoryToken?
+    @_Concurrency::MainActor public static func makeMessage(_ notification: Foundation::Notification) -> CoreData::NSManagedObjectContext.CoreData::DidSaveMessage?
+    @_Concurrency::MainActor public static func makeNotification(_ message: CoreData::NSManagedObjectContext.CoreData::DidSaveMessage) -> Foundation::Notification
+  }
+  public struct ObjectsDidChangeMessage : Foundation::NotificationCenter.Foundation::MainActorMessage {
+    public typealias Subject = CoreData::NSManagedObjectContext
+    public static let name: Foundation::Notification.Foundation::Name
+    public let context: CoreData::NSManagedObjectContext
+    public var inserted: Swift::Set<CoreData::NSManagedObject> {
+      get
+    }
+    public var updated: Swift::Set<CoreData::NSManagedObject> {
+      get
+    }
+    public var deleted: Swift::Set<CoreData::NSManagedObject> {
+      get
+    }
+    public var refreshed: Swift::Set<CoreData::NSManagedObject> {
+      get
+    }
+    public var invalidated: Swift::Set<CoreData::NSManagedObject> {
+      get
+    }
+    public let invalidatedAll: Swift::Bool?
+    @_Concurrency::MainActor public static func makeMessage(_ notification: Foundation::Notification) -> CoreData::NSManagedObjectContext.CoreData::ObjectsDidChangeMessage?
+    @_Concurrency::MainActor public static func makeNotification(_ message: CoreData::NSManagedObjectContext.CoreData::ObjectsDidChangeMessage) -> Foundation::Notification
+  }
+  public struct DidSaveObjectIDsMessage : Foundation::NotificationCenter.Foundation::MainActorMessage {
+    public typealias Subject = CoreData::NSManagedObjectContext
+    public static let name: Foundation::Notification.Foundation::Name
+    public let context: CoreData::NSManagedObjectContext
+    public let insertedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let updatedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let deletedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let refreshedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let invalidatedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let queryGeneration: CoreData::NSQueryGenerationToken?
+    public let historyToken: CoreData::NSPersistentHistoryToken?
+    @_Concurrency::MainActor public static func makeMessage(_ notification: Foundation::Notification) -> CoreData::NSManagedObjectContext.CoreData::DidSaveObjectIDsMessage?
+    @_Concurrency::MainActor public static func makeNotification(_ message: CoreData::NSManagedObjectContext.CoreData::DidSaveObjectIDsMessage) -> Foundation::Notification
+  }
+  public struct DidSaveObjectIDsAsyncMessage : Foundation::NotificationCenter.Foundation::AsyncMessage {
+    public typealias Subject = CoreData::NSManagedObjectContext
+    public static let name: Foundation::Notification.Foundation::Name
+    public let context: CoreData::NSManagedObjectContext
+    public let insertedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let updatedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let deletedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let refreshedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let invalidatedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let queryGeneration: CoreData::NSQueryGenerationToken?
+    public let historyToken: CoreData::NSPersistentHistoryToken?
+    public static func makeMessage(_ notification: Foundation::Notification) -> CoreData::NSManagedObjectContext.CoreData::DidSaveObjectIDsAsyncMessage?
+    public static func makeNotification(_ message: CoreData::NSManagedObjectContext.CoreData::DidSaveObjectIDsAsyncMessage) -> Foundation::Notification
+  }
+  public struct DidMergeChangesMessage : Foundation::NotificationCenter.Foundation::MainActorMessage {
+    public typealias Subject = CoreData::NSManagedObjectContext
+    public static let name: Foundation::Notification.Foundation::Name
+    public let context: CoreData::NSManagedObjectContext
+    public let insertedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let updatedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let deletedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let refreshedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let invalidatedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let queryGeneration: CoreData::NSQueryGenerationToken?
+    public let historyToken: CoreData::NSPersistentHistoryToken?
+    @_Concurrency::MainActor public static func makeMessage(_ notification: Foundation::Notification) -> CoreData::NSManagedObjectContext.CoreData::DidMergeChangesMessage?
+    @_Concurrency::MainActor public static func makeNotification(_ message: CoreData::NSManagedObjectContext.CoreData::DidMergeChangesMessage) -> Foundation::Notification
+  }
+  public struct DidMergeChangesAsyncMessage : Foundation::NotificationCenter.Foundation::AsyncMessage {
+    public typealias Subject = CoreData::NSManagedObjectContext
+    public static let name: Foundation::Notification.Foundation::Name
+    public let context: CoreData::NSManagedObjectContext
+    public let insertedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let updatedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let deletedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let refreshedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let invalidatedIDs: Swift::Set<CoreData::NSManagedObjectID>
+    public let queryGeneration: CoreData::NSQueryGenerationToken?
+    public let historyToken: CoreData::NSPersistentHistoryToken?
+    public static func makeMessage(_ notification: Foundation::Notification) -> CoreData::NSManagedObjectContext.CoreData::DidMergeChangesAsyncMessage?
+    public static func makeNotification(_ message: CoreData::NSManagedObjectContext.CoreData::DidMergeChangesAsyncMessage) -> Foundation::Notification
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSManagedObjectContext.CoreData::WillSaveMessage> {
+  public static var willSave: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSManagedObjectContext.CoreData::WillSaveMessage> {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSManagedObjectContext.CoreData::DidSaveMessage> {
+  public static var didSave: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSManagedObjectContext.CoreData::DidSaveMessage> {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSManagedObjectContext.CoreData::ObjectsDidChangeMessage> {
+  public static var objectsDidChange: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSManagedObjectContext.CoreData::ObjectsDidChangeMessage> {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSManagedObjectContext.CoreData::DidSaveObjectIDsMessage> {
+  public static var didSaveObjectIDs: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSManagedObjectContext.CoreData::DidSaveObjectIDsMessage> {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSManagedObjectContext.CoreData::DidSaveObjectIDsAsyncMessage> {
+  public static var didSaveObjectIDsAsync: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSManagedObjectContext.CoreData::DidSaveObjectIDsAsyncMessage> {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSManagedObjectContext.CoreData::DidMergeChangesMessage> {
+  public static var didMergeChanges: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSManagedObjectContext.CoreData::DidMergeChangesMessage> {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSManagedObjectContext.CoreData::DidMergeChangesAsyncMessage> {
+  public static var didMergeChangesAsync: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSManagedObjectContext.CoreData::DidMergeChangesAsyncMessage> {
+    get
+  }
+}
+@available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+extension Foundation::CocoaError.Foundation::Code {
+  public static var managedObjectValidation: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationMultipleErrors: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationMissingMandatoryProperty: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationRelationshipLacksMinimumCount: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationRelationshipExceedsMaximumCount: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationRelationshipDeniedDelete: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationNumberTooLarge: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationNumberTooSmall: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationDateTooLate: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationDateTooSoon: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationInvalidDate: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationStringTooLong: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationStringTooShort: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationStringPatternMatching: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var managedObjectContextLocking: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreCoordinatorLocking: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var managedObjectReferentialIntegrity: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var managedObjectExternalRelationship: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var managedObjectMerge: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var managedObjectConstraintMerge: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreInvalidType: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreTypeMismatch: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreIncompatibleSchema: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreSave: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreIncompleteSave: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreSaveConflicts: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var coreData: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreOperation: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreOpen: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreTimeout: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreUnsupportedRequestType: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreIncompatibleVersionHash: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var migration: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var migrationCancelled: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var migrationMissingSourceModel: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var migrationMissingMappingModel: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var migrationManagerSourceStore: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var migrationManagerDestinationStore: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var entityMigrationPolicy: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var sqlite: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var inferredMappingModel: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var externalRecordImport: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+}
+@available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+extension Foundation::CocoaError.Foundation::Code {
+  @available(*, deprecated, renamed: "managedObjectValidation")
+  public static var managedObjectValidationError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationMultipleErrors")
+  public static var validationMultipleErrorsError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationMissingMandatoryProperty")
+  public static var validationMissingMandatoryPropertyError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationRelationshipLacksMinimumCount")
+  public static var validationRelationshipLacksMinimumCountError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationRelationshipExceedsMaximumCount")
+  public static var validationRelationshipExceedsMaximumCountError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationRelationshipDeniedDelete")
+  public static var validationRelationshipDeniedDeleteError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationNumberTooLarge")
+  public static var validationNumberTooLargeError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationNumberTooSmall")
+  public static var validationNumberTooSmallError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationDateTooLate")
+  public static var validationDateTooLateError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationDateTooSoon")
+  public static var validationDateTooSoonError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationInvalidDate")
+  public static var validationInvalidDateError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationStringTooLong")
+  public static var validationStringTooLongError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationStringTooShort")
+  public static var validationStringTooShortError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationStringPatternMatching")
+  public static var validationStringPatternMatchingError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectContextLocking")
+  public static var managedObjectContextLockingError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreCoordinatorLocking")
+  public static var persistentStoreCoordinatorLockingError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectReferentialIntegrity")
+  public static var managedObjectReferentialIntegrityError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectExternalRelationship")
+  public static var managedObjectExternalRelationshipError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectMerge")
+  public static var managedObjectMergeError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectConstraintMerge")
+  public static var managedObjectConstraintMergeError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreInvalidType")
+  public static var persistentStoreInvalidTypeError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreTypeMismatch")
+  public static var persistentStoreTypeMismatchError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreIncompatibleSchema")
+  public static var persistentStoreIncompatibleSchemaError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreSave")
+  public static var persistentStoreSaveError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreIncompleteSave")
+  public static var persistentStoreIncompleteSaveError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreSaveConflicts")
+  public static var persistentStoreSaveConflictsError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "coreData")
+  public static var coreDataError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreOperation")
+  public static var persistentStoreOperationError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreOpen")
+  public static var persistentStoreOpenError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreTimeout")
+  public static var persistentStoreTimeoutError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreUnsupportedRequestType")
+  public static var persistentStoreUnsupportedRequestTypeError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreIncompatibleVersionHash")
+  public static var persistentStoreIncompatibleVersionHashError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migration")
+  public static var migrationError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationCancelled")
+  public static var migrationCancelledError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationMissingSourceModel")
+  public static var migrationMissingSourceModelError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationMissingMappingModel")
+  public static var migrationMissingMappingModelError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationManagerSourceStore")
+  public static var migrationManagerSourceStoreError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationManagerDestinationStore")
+  public static var migrationManagerDestinationStoreError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "entityMigrationPolicy")
+  public static var entityMigrationPolicyError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "sqlite")
+  public static var sqliteError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "inferredMappingModel")
+  public static var inferredMappingModelError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "externalRecordImport")
+  public static var externalRecordImportError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+}
+@available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+extension Foundation::CocoaError {
+  public static var managedObjectValidation: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationMultipleErrors: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationMissingMandatoryProperty: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationRelationshipLacksMinimumCount: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationRelationshipExceedsMaximumCount: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationRelationshipDeniedDelete: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationNumberTooLarge: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationNumberTooSmall: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationDateTooLate: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationDateTooSoon: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationInvalidDate: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationStringTooLong: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationStringTooShort: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var validationStringPatternMatching: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var managedObjectContextLocking: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreCoordinatorLocking: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var managedObjectReferentialIntegrity: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var managedObjectExternalRelationship: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var managedObjectMerge: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var managedObjectConstraintMerge: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreInvalidType: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreTypeMismatch: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreIncompatibleSchema: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreSave: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreIncompleteSave: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreSaveConflicts: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var coreData: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreOperation: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreOpen: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreTimeout: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreUnsupportedRequestType: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var persistentStoreIncompatibleVersionHash: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var migration: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var migrationCancelled: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var migrationMissingSourceModel: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var migrationMissingMappingModel: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var migrationManagerSourceStore: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var migrationManagerDestinationStore: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var entityMigrationPolicy: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var sqlite: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var inferredMappingModel: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  public static var externalRecordImport: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+}
+@available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+extension Foundation::CocoaError {
+  @available(*, deprecated, renamed: "managedObjectValidation")
+  public static var managedObjectValidationError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationMultipleErrors")
+  public static var validationMultipleErrorsError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationMissingMandatoryProperty")
+  public static var validationMissingMandatoryPropertyError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationRelationshipLacksMinimumCount")
+  public static var validationRelationshipLacksMinimumCountError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationRelationshipExceedsMaximumCount")
+  public static var validationRelationshipExceedsMaximumCountError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationRelationshipDeniedDelete")
+  public static var validationRelationshipDeniedDeleteError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationNumberTooLarge")
+  public static var validationNumberTooLargeError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationNumberTooSmall")
+  public static var validationNumberTooSmallError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationDateTooLate")
+  public static var validationDateTooLateError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationDateTooSoon")
+  public static var validationDateTooSoonError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationInvalidDate")
+  public static var validationInvalidDateError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationStringTooLong")
+  public static var validationStringTooLongError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationStringTooShort")
+  public static var validationStringTooShortError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationStringPatternMatching")
+  public static var validationStringPatternMatchingError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectContextLocking")
+  public static var managedObjectContextLockingError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreCoordinatorLocking")
+  public static var persistentStoreCoordinatorLockingError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectReferentialIntegrity")
+  public static var managedObjectReferentialIntegrityError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectExternalRelationship")
+  public static var managedObjectExternalRelationshipError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectMerge")
+  public static var managedObjectMergeError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectConstraintMerge")
+  public static var managedObjectConstraintMergeError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreInvalidType")
+  public static var persistentStoreInvalidTypeError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreTypeMismatch")
+  public static var persistentStoreTypeMismatchError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreIncompatibleSchema")
+  public static var persistentStoreIncompatibleSchemaError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreSave")
+  public static var persistentStoreSaveError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreIncompleteSave")
+  public static var persistentStoreIncompleteSaveError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreSaveConflicts")
+  public static var persistentStoreSaveConflictsError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "coreData")
+  public static var coreDataError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreOperation")
+  public static var persistentStoreOperationError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreOpen")
+  public static var persistentStoreOpenError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreTimeout")
+  public static var persistentStoreTimeoutError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreUnsupportedRequestType")
+  public static var persistentStoreUnsupportedRequestTypeError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreIncompatibleVersionHash")
+  public static var persistentStoreIncompatibleVersionHashError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migration")
+  public static var migrationError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationCancelled")
+  public static var migrationCancelledError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationMissingSourceModel")
+  public static var migrationMissingSourceModelError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationMissingMappingModel")
+  public static var migrationMissingMappingModelError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationManagerSourceStore")
+  public static var migrationManagerSourceStoreError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationManagerDestinationStore")
+  public static var migrationManagerDestinationStoreError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "entityMigrationPolicy")
+  public static var entityMigrationPolicyError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "sqlite")
+  public static var sqliteError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "inferredMappingModel")
+  public static var inferredMappingModelError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, deprecated, renamed: "externalRecordImport")
+  public static var externalRecordImportError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+}
+@available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+extension Foundation::CocoaError {
+  public var validationObject: Any? {
+    get
+  }
+  public var validationKey: Swift::String? {
+    get
+  }
+  public var validationPredicate: Foundation::NSPredicate? {
+    get
+  }
+  public var validationValue: Any? {
+    get
+  }
+  public var affectedStores: [Swift::AnyObject]? {
+    get
+  }
+  public var affectedObjects: [Swift::AnyObject]? {
+    get
+  }
+  public var persistentStoreSaveConflicts: [CoreData::NSMergeConflict]? {
+    get
+  }
+}
+extension Foundation::CocoaError {
+  @available(*, unavailable, renamed: "managedObjectValidation")
+  public static var ManagedObjectValidationError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationMultipleErrors")
+  public static var ValidationMultipleErrorsError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationMissingMandatoryProperty")
+  public static var ValidationMissingMandatoryPropertyError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationRelationshipLacksMinimumCount")
+  public static var ValidationRelationshipLacksMinimumCountError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationRelationshipExceedsMaximumCount")
+  public static var ValidationRelationshipExceedsMaximumCountError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationRelationshipDeniedDelete")
+  public static var ValidationRelationshipDeniedDeleteError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationNumberTooLarge")
+  public static var ValidationNumberTooLargeError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationNumberTooSmall")
+  public static var ValidationNumberTooSmallError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationDateTooLate")
+  public static var ValidationDateTooLateError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationDateTooSoon")
+  public static var ValidationDateTooSoonError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationInvalidDate")
+  public static var ValidationInvalidDateError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationStringTooLong")
+  public static var ValidationStringTooLongError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationStringTooShort")
+  public static var ValidationStringTooShortError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationStringPatternMatching")
+  public static var ValidationStringPatternMatchingError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "managedObjectContextLocking")
+  public static var ManagedObjectContextLockingError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreCoordinatorLocking")
+  public static var PersistentStoreCoordinatorLockingError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "managedObjectReferentialIntegrity")
+  public static var ManagedObjectReferentialIntegrityError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "managedObjectExternalRelationship")
+  public static var ManagedObjectExternalRelationshipError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "managedObjectMerge")
+  public static var ManagedObjectMergeError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "managedObjectConstraintMerge")
+  public static var ManagedObjectConstraintMergeError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreInvalidType")
+  public static var PersistentStoreInvalidTypeError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreTypeMismatch")
+  public static var PersistentStoreTypeMismatchError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreIncompatibleSchema")
+  public static var PersistentStoreIncompatibleSchemaError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreSave")
+  public static var PersistentStoreSaveError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreIncompleteSave")
+  public static var PersistentStoreIncompleteSaveError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreSaveConflicts")
+  public static var PersistentStoreSaveConflictsError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "coreData")
+  public static var CoreDataError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreOperation")
+  public static var PersistentStoreOperationError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreOpen")
+  public static var PersistentStoreOpenError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreTimeout")
+  public static var PersistentStoreTimeoutError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreUnsupportedRequestType")
+  public static var PersistentStoreUnsupportedRequestTypeError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreIncompatibleVersionHash")
+  public static var PersistentStoreIncompatibleVersionHashError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "migration")
+  public static var MigrationError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "migrationCancelled")
+  public static var MigrationCancelledError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "migrationMissingSourceModel")
+  public static var MigrationMissingSourceModelError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "migrationMissingMappingModel")
+  public static var MigrationMissingMappingModelError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "migrationManagerSourceStore")
+  public static var MigrationManagerSourceStoreError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "migrationManagerDestinationStore")
+  public static var MigrationManagerDestinationStoreError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "entityMigrationPolicy")
+  public static var EntityMigrationPolicyError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "sqlite")
+  public static var SQLiteError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "inferredMappingModel")
+  public static var InferredMappingModelError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+  @available(*, unavailable, renamed: "externalRecordImport")
+  public static var ExternalRecordImportError: Foundation::CocoaError.Foundation::Code {
+    get
+  }
+}
+@available(iOS 15.0, macOS 12.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension CoreData::NSCoreDataCoreSpotlightDelegate {
+  public static let indexDidUpdateNotification: Foundation::Notification.Foundation::Name
+}
+@available(macOS 27.0, iOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension CoreData::NSCoreDataCoreSpotlightDelegate {
+  public struct IndexDidUpdateMessage : Foundation::NotificationCenter.Foundation::AsyncMessage {
+    public typealias Subject = CoreData::NSCoreDataCoreSpotlightDelegate
+    public static let name: Foundation::Notification.Foundation::Name
+    public let storeUUID: Swift::String
+    public let historyToken: CoreData::NSPersistentHistoryToken?
+    public static func makeMessage(_ notification: Foundation::Notification) -> CoreData::NSCoreDataCoreSpotlightDelegate.CoreData::IndexDidUpdateMessage?
+    public static func makeNotification(_ message: CoreData::NSCoreDataCoreSpotlightDelegate.CoreData::IndexDidUpdateMessage) -> Foundation::Notification
+  }
+}
+@available(macOS 27.0, iOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSCoreDataCoreSpotlightDelegate.CoreData::IndexDidUpdateMessage> {
+  public static var indexDidUpdate: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreData::NSCoreDataCoreSpotlightDelegate.CoreData::IndexDidUpdateMessage> {
+    get
+  }
+}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension CoreData::NSPersistentStore {
+  public struct StoreType : Swift::Hashable, Swift::Equatable, Swift::RawRepresentable {
+    public var rawValue: Swift::String
+    public init(rawValue: Swift::String)
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    public typealias RawValue = Swift::String
+  }
+}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension CoreData::NSPersistentStore.CoreData::StoreType {
+  public static let sqlite: CoreData::NSPersistentStore.CoreData::StoreType
+  public static let binary: CoreData::NSPersistentStore.CoreData::StoreType
+  public static let inMemory: CoreData::NSPersistentStore.CoreData::StoreType
+}
+@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension CoreData::NSManagedObject {
+  @_disfavoredOverload @objc dynamic public class func fetchRequest() -> CoreData::NSFetchRequest<any CoreData::NSFetchRequestResult>
+}
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CoreData::NSManagedObject : Foundation::ObservableObject {
+  nonisolated public var objectWillChange: Combine::ObservableObjectPublisher {
+    get
+  }
+  @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public typealias ObjectWillChangePublisher = Combine::ObservableObjectPublisher
+}
+@available(macOS 15.0, iOS 18.0, tvOS 18.0, watchOS 11.0, *)
+extension CoreData::NSManagedObject {
+  nonisolated public subscript(key: Swift::String) -> Any? {
+    get
+    set
+  }
+}
+@available(swift 5.8)
+@available(macOS 14, iOS 17, tvOS 17, watchOS 10, *)
+extension CoreData::NSCustomMigrationStage {
+  @available(swift 5.8)
+  @available(macOS 14, iOS 17, tvOS 17, watchOS 10, *)
+  convenience public init(migratingFrom currentModel: CoreData::NSManagedObjectModelReference, to nextModel: CoreData::NSManagedObjectModelReference)
+  @available(swift 5.8)
+  @available(macOS 14, iOS 17, tvOS 17, watchOS 10, *)
+  public var willMigrateHandler: ((_ migrationManager: CoreData::NSStagedMigrationManager, _ migrationStage: CoreData::NSCustomMigrationStage) throws -> Swift::Void)? {
+    get
+    set
+  }
+  @available(swift 5.8)
+  @available(macOS 14, iOS 17, tvOS 17, watchOS 10, *)
+  public var didMigrateHandler: ((_ migrationManager: CoreData::NSStagedMigrationManager, _ migrationStage: CoreData::NSCustomMigrationStage) throws -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension CoreData::NSPersistentContainer {
+  public class var defaultDirectoryURL: Foundation::URL {
+    get
+  }
+}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension CoreData::NSPersistentContainer {
+  @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func performBackgroundTask<T>(_ block: @escaping (CoreData::NSManagedObjectContext) throws -> T) async rethrows -> T
+}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension CoreData::NSAttributeDescription {
+  public struct AttributeType : Swift::Hashable, Swift::Equatable, Swift::RawRepresentable {
+    public var rawValue: CoreData::NSAttributeType
+    public init(rawValue: CoreData::NSAttributeType)
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    public typealias RawValue = CoreData::NSAttributeType
+  }
+  public var type: CoreData::NSAttributeDescription.CoreData::AttributeType {
+    get
+    set
+  }
+}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension CoreData::NSAttributeDescription.CoreData::AttributeType {
+  public static let undefined: CoreData::NSAttributeDescription.CoreData::AttributeType
+  public static let integer16: CoreData::NSAttributeDescription.CoreData::AttributeType
+  public static let integer32: CoreData::NSAttributeDescription.CoreData::AttributeType
+  public static let integer64: CoreData::NSAttributeDescription.CoreData::AttributeType
+  public static let decimal: CoreData::NSAttributeDescription.CoreData::AttributeType
+  public static let double: CoreData::NSAttributeDescription.CoreData::AttributeType
+  public static let float: CoreData::NSAttributeDescription.CoreData::AttributeType
+  public static let string: CoreData::NSAttributeDescription.CoreData::AttributeType
+  public static let boolean: CoreData::NSAttributeDescription.CoreData::AttributeType
+  public static let date: CoreData::NSAttributeDescription.CoreData::AttributeType
+  public static let binaryData: CoreData::NSAttributeDescription.CoreData::AttributeType
+  public static let uuid: CoreData::NSAttributeDescription.CoreData::AttributeType
+  public static let uri: CoreData::NSAttributeDescription.CoreData::AttributeType
+  public static let transformable: CoreData::NSAttributeDescription.CoreData::AttributeType
+  public static let objectID: CoreData::NSAttributeDescription.CoreData::AttributeType
+  @available(macOS 14.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+  public static let composite: CoreData::NSAttributeDescription.CoreData::AttributeType
+}
+@available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+extension CoreData::NSManagedObjectContext.CoreData::NotificationKey : Swift::Equatable {}
+@available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+extension CoreData::NSManagedObjectContext.CoreData::NotificationKey : Swift::Hashable {}
+@available(macOS 10.4, iOS 3.0, tvOS 3.0, watchOS 1.0, *)
+extension CoreData::NSManagedObjectContext.CoreData::NotificationKey : Swift::RawRepresentable {}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension CoreData::NSManagedObjectContext.CoreData::ScheduledTaskType : Swift::Equatable {}
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension CoreData::NSManagedObjectContext.CoreData::ScheduledTaskType : Swift::Hashable {}

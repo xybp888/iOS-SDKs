@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AccessoryAssistiveTouch.framework/AccessoryAssistiveTouch
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AccessoryAssistiveTouchVersionNumber,
+                            _AccessoryAssistiveTouchVersionString,
+                            _init_logging_signposts ]
+    objc-classes:         [ ACCAssistiveTouchAccessory,
+                            ACCAssistiveTouchProvider ]
+    objc-ivars:           [ ACCAssistiveTouchAccessory._accessoryUID,
+                            ACCAssistiveTouchAccessory._desiredAssistiveTouchState,
+                            ACCAssistiveTouchProvider._accessories,
+                            ACCAssistiveTouchProvider._cachedState,
+                            ACCAssistiveTouchProvider._delegate,
+                            ACCAssistiveTouchProvider._providerUID,
+                            ACCAssistiveTouchProvider._remoteObject,
+                            ACCAssistiveTouchProvider._serverConnection ]
+...

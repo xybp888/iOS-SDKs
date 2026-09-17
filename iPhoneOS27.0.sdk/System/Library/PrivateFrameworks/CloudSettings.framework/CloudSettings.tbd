@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CloudSettings.framework/CloudSettings
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CloudSettingsVersionNumber,
+                            _CloudSettingsVersionString ]
+    objc-classes:         [ CloudSettingsDispatchingMediator,
+                            CloudSettingsManager, CloudSettingsService,
+                            CloudSettingsServiceDelegate, CloudSettingsStore ]
+    objc-ivars:           [ CloudSettingsDispatchingMediator._dispatchSettersOnMain,
+                            CloudSettingsDispatchingMediator._keysMap,
+                            CloudSettingsService._identifier,
+                            CloudSettingsService._mediator,
+                            CloudSettingsService._store,
+                            CloudSettingsServiceDelegate._service,
+                            CloudSettingsStore._kvsStore,
+                            CloudSettingsStore._serviceIdentifier ]
+...

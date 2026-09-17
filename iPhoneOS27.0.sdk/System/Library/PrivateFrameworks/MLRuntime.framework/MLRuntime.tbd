@@ -1,0 +1,41 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MLRuntime.framework/MLRuntime
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _MLRSanitizeError ]
+    objc-classes:         [ MLRDonationManager, MLRExtensionPrincipalClass,
+                            MLRExtensionRemoteContext,
+                            MLRExtensionService_Subsystem,
+                            MLROnDemandConnectionHandler, MLROnDemandPlugin,
+                            MLRSandboxExtensionRequest, MLRServiceClient, MLRTask,
+                            MLRTaskAttachments, MLRTaskParameters, MLRTaskResult,
+                            MLRTrialDediscoRecipe, MLRTrialDediscoTaskResult,
+                            MLRTrialTask, MLRTrialTaskResult ]
+    objc-ivars:           [ MLRDonationManager._queue,
+                            MLRExtensionRemoteContext._stopQueue,
+                            MLRExtensionRemoteContext._taskExecutionQueue,
+                            MLROnDemandConnectionHandler._pluginPrincipal,
+                            MLROnDemandConnectionHandler._xpcConnection,
+                            MLRSandboxExtensionRequest._URLs,
+                            MLRSandboxExtensionRequest._requireWrite,
+                            MLRServiceClient._connection, MLRTask._attachments,
+                            MLRTask._parameters,
+                            MLRTaskAttachments._attachmentURLs,
+                            MLRTaskAttachments._count, MLRTaskParameters._count,
+                            MLRTaskParameters._recipeUserInfo,
+                            MLRTaskResult._JSONResult, MLRTaskResult._vector,
+                            MLRTrialDediscoRecipe._baseKeyFormat,
+                            MLRTrialDediscoRecipe._dediscoTaskConfig,
+                            MLRTrialDediscoRecipe._dpConfig,
+                            MLRTrialDediscoRecipe._encodingSchema,
+                            MLRTrialDediscoTaskResult._additionalKeyVariables,
+                            MLRTrialDediscoTaskResult._namespaceName,
+                            MLRTrialDediscoTaskResult._recipeFactorName,
+                            MLRTrialTask._triClient,
+                            MLRTrialTaskResult._JSONResult ]
+...

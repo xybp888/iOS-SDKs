@@ -1,0 +1,1274 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-experimental-feature Lifetimes -enable-experimental-feature Lifetimes -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 758.27 -module-name CoreVideo
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+public import CoreGraphics
+@_exported public import CoreVideo
+public import Foundation
+public import IOSurface
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+public protocol CVImageBufferRepresentable : CoreVideo::CVBufferRepresentable, ~Copyable {
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+extension CoreVideo::CVImageBufferRepresentable where Self : ~Copyable {
+  public var encodedSize: CoreFoundation::CGSize {
+    get
+  }
+  public var displaySize: CoreFoundation::CGSize {
+    get
+  }
+  public var cleanRect: CoreFoundation::CGRect {
+    get
+  }
+  public var originPosition: CoreVideo::CVImageBufferOriginPosition {
+    get
+  }
+  public var colorSpace: CoreGraphics::CGColorSpace? {
+    get
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+public enum CVImageBufferOriginPosition : Swift::Hashable, Swift::Sendable {
+  case topLeft
+  case bottomLeft
+  public static func == (a: CoreVideo::CVImageBufferOriginPosition, b: CoreVideo::CVImageBufferOriginPosition) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+public struct CVImageSize : Swift::Hashable, Swift::Sendable {
+  public var width: Swift::Int
+  public var height: Swift::Int
+  public init(width: Swift::Int, height: Swift::Int)
+  public static let zero: CoreVideo::CVImageSize
+  public static func == (a: CoreVideo::CVImageSize, b: CoreVideo::CVImageSize) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+extension CoreVideo::CVBuffer {
+  @available(*, deprecated, renamed: "CVImageBufferOriginPosition")
+  public typealias OriginPosition = CoreVideo::CVImageBufferOriginPosition
+  @available(*, deprecated, renamed: "CVImageSize")
+  public typealias Size = CoreVideo::CVImageSize
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+extension CoreFoundation::CGSize {
+  public init(_ size: CoreVideo::CVImageSize)
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+extension CoreVideo::CVImageSize {
+  public init(_ size: CoreFoundation::CGSize, rounded rule: Swift::FloatingPointRoundingRule = .down)
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+@frozen public struct CVImageCleanAperture : Swift::Sendable, Swift::Hashable, CoreVideo::CVAttachmentValueRepresentable {
+  public var width: Swift::Float
+  public var height: Swift::Float
+  public var horizontalOffset: Swift::Float
+  public var verticalOffset: Swift::Float
+  public init(width: Swift::Float, height: Swift::Float, horizontalOffset: Swift::Float, verticalOffset: Swift::Float)
+  public static func makeFromRawAttachmentValue(_ repr: CoreVideo::CVAttachmentRawValue) -> CoreVideo::CVImageCleanAperture?
+  public var rawAttachmentValueRepresentation: CoreVideo::CVAttachmentRawValue {
+    get
+  }
+  public static func == (a: CoreVideo::CVImageCleanAperture, b: CoreVideo::CVImageCleanAperture) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public enum CVImageFieldDetail : Swift::String, Swift::Sendable, Swift::Hashable, CoreVideo::CVAttachmentValueRepresentable {
+  case temporalTopFirst
+  case temporalBottomFirst
+  case spatialFirstLineEarly
+  case spatialFirstLineLate
+  public init?(rawValue: Swift::String)
+  public var rawValue: Swift::String {
+    get
+  }
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public typealias RawValue = Swift::String
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+@frozen public struct CVImagePixelAspectRatio : Swift::Sendable, Swift::Hashable, CoreVideo::CVAttachmentValueRepresentable {
+  public var horizontalSpacing: Swift::Float
+  public var verticalSpacing: Swift::Float
+  public init(horizontalSpacing: Swift::Float, verticalSpacing: Swift::Float)
+  public static func makeFromRawAttachmentValue(_ repr: CoreVideo::CVAttachmentRawValue) -> CoreVideo::CVImagePixelAspectRatio?
+  public var rawAttachmentValueRepresentation: CoreVideo::CVAttachmentRawValue {
+    get
+  }
+  public static func == (a: CoreVideo::CVImagePixelAspectRatio, b: CoreVideo::CVImagePixelAspectRatio) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public enum CVImageYCbCrMatrix : Swift::String, Swift::Sendable, Swift::Hashable, CoreVideo::CVAttachmentValueRepresentable {
+  case smpte_240M_1995
+  case itu_R_709_2
+  case itu_R_601_4
+  case itu_R_2020
+  public init?(rawValue: Swift::String)
+  public var rawValue: Swift::String {
+    get
+  }
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public typealias RawValue = Swift::String
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public enum CVImageColorPrimaries : Swift::String, Swift::Sendable, Swift::Hashable, CoreVideo::CVAttachmentValueRepresentable {
+  case itu_R_709_2
+  case ebu_3213
+  case smpte_C
+  case p22
+  case dci_P3
+  case p3_D65
+  case itu_R_2020
+  public init?(rawValue: Swift::String)
+  public var rawValue: Swift::String {
+    get
+  }
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public typealias RawValue = Swift::String
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public enum CVImageTransferFunction : Swift::String, Swift::Sendable, Swift::Hashable, CoreVideo::CVAttachmentValueRepresentable {
+  case linear
+  case sRGB
+  case useGamma
+  case smpte_240M_1995
+  case smpte_ST_428_1
+  case smpte_ST_2084_PQ
+  case itu_R_709_2
+  case itu_R_2020
+  case itu_R_2100_HLG
+  public init?(rawValue: Swift::String)
+  public var rawValue: Swift::String {
+    get
+  }
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public typealias RawValue = Swift::String
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct CVImageChromaField : Swift::Sendable, CoreVideo::CVAttachmentValueRepresentable {
+  public enum SampleLocation : Swift::String, Swift::Sendable, Swift::Hashable, CoreVideo::CVAttachmentValueRepresentable {
+    case left
+    case center
+    case topLeft
+    case top
+    case bottomLeft
+    case bottom
+    case dv420
+    public init?(rawValue: Swift::String)
+    public var rawValue: Swift::String {
+      get
+    }
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+    public typealias RawValue = Swift::String
+  }
+  public enum FieldLocation : Swift::Sendable, CoreVideo::CVAttachmentValueRepresentable {
+    case progressive(CoreVideo::CVImageChromaField.CoreVideo::SampleLocation)
+    case interlaced(top: CoreVideo::CVImageChromaField.CoreVideo::SampleLocation, bottom: CoreVideo::CVImageChromaField.CoreVideo::SampleLocation)
+    public static func makeFromRawAttachmentValue(_ repr: CoreVideo::CVAttachmentRawValue) -> CoreVideo::CVImageChromaField.CoreVideo::FieldLocation?
+    public var rawAttachmentValueRepresentation: CoreVideo::CVAttachmentRawValue {
+      get
+    }
+  }
+  public enum ChromaSubsampling : Swift::String, Swift::Sendable, Swift::Hashable, CoreVideo::CVAttachmentValueRepresentable {
+    case `4:2:0`
+    case `4:2:2`
+    case `4:1:1`
+    public init?(rawValue: Swift::String)
+    public var rawValue: Swift::String {
+      get
+    }
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+    public typealias RawValue = Swift::String
+  }
+  public var fieldLocation: CoreVideo::CVImageChromaField.CoreVideo::FieldLocation
+  public var subsampling: CoreVideo::CVImageChromaField.CoreVideo::ChromaSubsampling
+  public init(fieldLocation: CoreVideo::CVImageChromaField.CoreVideo::FieldLocation, subsampling: CoreVideo::CVImageChromaField.CoreVideo::ChromaSubsampling)
+  public static func makeFromRawAttachmentValue(_ repr: CoreVideo::CVAttachmentRawValue) -> CoreVideo::CVImageChromaField?
+  public var rawAttachmentValueRepresentation: CoreVideo::CVAttachmentRawValue {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public enum CVImageAlphaChannelMode : Swift::String, Swift::Sendable, Swift::Hashable, CoreVideo::CVAttachmentValueRepresentable {
+  case straightAlpha
+  case premultipliedAlpha
+  public init?(rawValue: Swift::String)
+  public var rawValue: Swift::String {
+    get
+  }
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public typealias RawValue = Swift::String
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public enum CVImageLogTransferFunction : Swift::String, Swift::Sendable, Swift::Hashable, CoreVideo::CVAttachmentValueRepresentable {
+  case appleLog
+  case appleLog2
+  public init?(rawValue: Swift::String)
+  public var rawValue: Swift::String {
+    get
+  }
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public typealias RawValue = Swift::String
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct CVImageDisplayMaskRectangle : Swift::Sendable, Swift::Hashable, CoreVideo::CVAttachmentValueRepresentable {
+  public var left: Swift::UInt16
+  public var top: Swift::UInt16
+  public var width: Swift::UInt16
+  public var height: Swift::UInt16
+  public var referenceRasterWidth: Swift::UInt16
+  public var referenceRasterHeight: Swift::UInt16
+  public init(left: Swift::UInt16, top: Swift::UInt16, width: Swift::UInt16, height: Swift::UInt16, referenceRasterWidth: Swift::UInt16, referenceRasterHeight: Swift::UInt16)
+  public static func makeFromRawAttachmentValue(_ repr: CoreVideo::CVAttachmentRawValue) -> CoreVideo::CVImageDisplayMaskRectangle?
+  public var rawAttachmentValueRepresentation: CoreVideo::CVAttachmentRawValue {
+    get
+  }
+  public static func == (a: CoreVideo::CVImageDisplayMaskRectangle, b: CoreVideo::CVImageDisplayMaskRectangle) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct CVImageStereoDisplayMaskRectangle : Swift::Sendable, Swift::Hashable, CoreVideo::CVAttachmentValueRepresentable {
+  public struct EdgePoint : Swift::Sendable, Swift::Hashable {
+    public var x: Swift::UInt16
+    public var y: Swift::UInt16
+    public init(x: Swift::UInt16, y: Swift::UInt16)
+    public static func == (a: CoreVideo::CVImageStereoDisplayMaskRectangle.CoreVideo::EdgePoint, b: CoreVideo::CVImageStereoDisplayMaskRectangle.CoreVideo::EdgePoint) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public var maskRectangle: CoreVideo::CVImageDisplayMaskRectangle
+  public var leftEdgePoints: [CoreVideo::CVImageStereoDisplayMaskRectangle.CoreVideo::EdgePoint]
+  public var rightEdgePoints: [CoreVideo::CVImageStereoDisplayMaskRectangle.CoreVideo::EdgePoint]
+  public init(maskRectangle: CoreVideo::CVImageDisplayMaskRectangle, leftEdgePoints: [CoreVideo::CVImageStereoDisplayMaskRectangle.CoreVideo::EdgePoint], rightEdgePoints: [CoreVideo::CVImageStereoDisplayMaskRectangle.CoreVideo::EdgePoint])
+  public static func makeFromRawAttachmentValue(_ repr: CoreVideo::CVAttachmentRawValue) -> CoreVideo::CVImageStereoDisplayMaskRectangle?
+  public var rawAttachmentValueRepresentation: CoreVideo::CVAttachmentRawValue {
+    get
+  }
+  public static func == (a: CoreVideo::CVImageStereoDisplayMaskRectangle, b: CoreVideo::CVImageStereoDisplayMaskRectangle) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public protocol CVImageBufferAttachmentKeyDefinitions : CoreVideo::CVAttachmentKeyDefinitions {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVImageBufferAttachmentKeyDefinitions {
+  @inlinable public static var colorSpace: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, CoreGraphics::CGColorSpace> {
+    get {
+		.init(kCVImageBufferCGColorSpaceKey as String)
+	}
+  }
+  @inlinable public static var cleanAperture: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, CoreVideo::CVImageCleanAperture> {
+    get {
+		.init(kCVImageBufferCleanApertureKey as String)
+	}
+  }
+  @inlinable public static var fieldDetail: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, CoreVideo::CVImageFieldDetail> {
+    get {
+		.init(kCVImageBufferFieldDetailKey as String)
+	}
+  }
+  @inlinable public static var pixelAspectRatio: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, CoreVideo::CVImagePixelAspectRatio> {
+    get {
+		.init(kCVImageBufferPixelAspectRatioKey as String)
+	}
+  }
+  @inlinable public static var displayDimensions: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, CoreFoundation::CGSize> {
+    get {
+		.init(kCVImageBufferDisplayDimensionsKey as String)
+	}
+  }
+  @inlinable public static var gammaLevel: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, Swift::Double> {
+    get {
+		.init(kCVImageBufferGammaLevelKey as String)
+	}
+  }
+  @inlinable public static var iccProfile: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, Foundation::Data> {
+    get {
+		.init(kCVImageBufferICCProfileKey as String)
+	}
+  }
+  @inlinable public static var yCbCrMatrix: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, CoreVideo::CVImageYCbCrMatrix> {
+    get {
+		.init(kCVImageBufferYCbCrMatrixKey as String)
+	}
+  }
+  @inlinable public static var colorPrimaries: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, CoreVideo::CVImageColorPrimaries> {
+    get {
+		.init(kCVImageBufferColorPrimariesKey as String)
+	}
+  }
+  @inlinable public static var transferFunction: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, CoreVideo::CVImageTransferFunction> {
+    get {
+		.init(kCVImageBufferTransferFunctionKey as String)
+	}
+  }
+  @inlinable public static var chromaField: CoreVideo::CVAttachmentCompositeKeyDefinition<Self.ShouldPropagate, CoreVideo::CVImageChromaField> {
+    get {
+		[
+			kCVImageBufferFieldCountKey as String,
+			kCVImageBufferChromaLocationTopFieldKey as String,
+			kCVImageBufferChromaLocationBottomFieldKey as String,
+			kCVImageBufferChromaSubsamplingKey as String,
+		]
+	}
+  }
+  @inlinable public static var alphaChannelIsOpaque: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, Swift::Bool> {
+    get {
+		.init(kCVImageBufferAlphaChannelIsOpaque as String)
+	}
+  }
+  public static var alphaChannelMode: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, CoreVideo::CVImageAlphaChannelMode> {
+    get
+  }
+  @inlinable public static var masteringDisplayColorVolume: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, Foundation::Data> {
+    get {
+		.init(kCVImageBufferMasteringDisplayColorVolumeKey as String)
+	}
+  }
+  @inlinable public static var contentLightLevelInfo: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, Foundation::Data> {
+    get {
+		.init(kCVImageBufferContentLightLevelInfoKey as String)
+	}
+  }
+  @inlinable public static var ambientViewingEnvironment: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, Foundation::Data> {
+    get {
+		.init(kCVImageBufferAmbientViewingEnvironmentKey as String)
+	}
+  }
+  @inlinable public static var sceneIllumination: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, Swift::Int> {
+    get {
+		.init(kCVImageBufferSceneIlluminationKey as String)
+	}
+  }
+  @inlinable public static var regionOfInterest: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, CoreFoundation::CGRect> {
+    get {
+		.init(kCVImageBufferRegionOfInterestKey as String)
+	}
+  }
+  @inlinable public static var logTransferFunction: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, CoreVideo::CVImageLogTransferFunction> {
+    get {
+		.init(kCVImageBufferLogTransferFunctionKey as String)
+	}
+  }
+  @inlinable public static var displayMaskRectangle: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, CoreVideo::CVImageDisplayMaskRectangle> {
+    get {
+		.init(kCVImageBufferDisplayMaskRectangleKey as String)
+	}
+  }
+  @inlinable public static var leftStereoDisplayMaskRectangle: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, CoreVideo::CVImageStereoDisplayMaskRectangle> {
+    get {
+		.init(kCVImageBufferDisplayMaskRectangleStereoLeftKey as String)
+	}
+  }
+  @inlinable public static var rightStereoDisplayMaskRectangle: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, CoreVideo::CVImageStereoDisplayMaskRectangle> {
+    get {
+		.init(kCVImageBufferDisplayMaskRectangleStereoRightKey as String)
+	}
+  }
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  @inlinable public static var postDecodeProcessingSequenceMetadata: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, Foundation::Data> {
+    get {
+		.init(kCVImageBufferPostDecodeProcessingSequenceMetadataKey as String)
+	}
+  }
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  @inlinable public static var postDecodeProcessingFrameMetadata: CoreVideo::CVAttachmentKeyDefinition<Self.ShouldPropagate, Foundation::Data> {
+    get {
+		.init(kCVImageBufferPostDecodeProcessingFrameMetadataKey as String)
+	}
+  }
+  @inlinable public static var horizontalDisparityAdjustment: CoreVideo::CVAttachmentKeyDefinitionWithDefault<Self.ShouldPropagate, Swift::Int32> {
+    get {
+		.init(kCVImageBufferHorizontalDisparityAdjustmentKey as String, default: 0)
+	}
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+extension CoreVideo::CVMutablePixelBuffer {
+  final public class Pool : Swift::Sendable {
+    public struct Configuration : Swift::Equatable, Swift::Sendable {
+      public var ageOutDuration: Foundation::TimeInterval
+      public var minimumBufferCount: Swift::Int
+      public init(ageOutDuration: Foundation::TimeInterval = 1, minimumBufferCount: Swift::Int = 0)
+      public static func == (a: CoreVideo::CVMutablePixelBuffer.CoreVideo::Pool.CoreVideo::Configuration, b: CoreVideo::CVMutablePixelBuffer.CoreVideo::Pool.CoreVideo::Configuration) -> Swift::Bool
+    }
+    public struct AllocationAttributes : Swift::Equatable, Swift::Sendable {
+      public var allocationThreshold: Swift::Int?
+      public init(allocationThreshold: Swift::Int? = nil)
+      public static func == (a: CoreVideo::CVMutablePixelBuffer.CoreVideo::Pool.CoreVideo::AllocationAttributes, b: CoreVideo::CVMutablePixelBuffer.CoreVideo::Pool.CoreVideo::AllocationAttributes) -> Swift::Bool
+    }
+    public init(unsafePool: sending CoreVideo::CVPixelBufferPool)
+    public init(pixelBufferAttributes attributes: CoreVideo::CVPixelBufferCreationAttributes, configuration: CoreVideo::CVMutablePixelBuffer.CoreVideo::Pool.CoreVideo::Configuration = .init()) throws
+    final public var pixelBufferAttributes: CoreVideo::CVPixelBufferCreationAttributes {
+      get
+    }
+    final public func makeMutablePixelBuffer(_ attributes: CoreVideo::CVMutablePixelBuffer.CoreVideo::Pool.CoreVideo::AllocationAttributes = .init()) throws -> CoreVideo::CVMutablePixelBuffer
+    final public func flush(agedOutOnly: Swift::Bool = true)
+    @objc deinit
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+public protocol CVBufferRepresentable<Buffer> : ~Copyable {
+  associatedtype Buffer : CoreVideo::CVBuffer
+  @inlinable func withUnsafeBuffer<R>(_ body: (Self.Buffer) throws -> sending R) rethrows -> sending R where R : ~Copyable
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+extension CoreVideo::CVBufferRepresentable where Self : ~Copyable {
+  @inlinable @inline(__always) internal var unsafeBuffer: Self.Buffer {
+    get {
+		 
+		 
+		self.withUnsafeBuffer(\.self)
+	}
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+@frozen public struct CVError : Swift::Error, Swift::RawRepresentable, Swift::Hashable, Swift::CustomStringConvertible {
+  public var rawValue: CoreVideo::CVReturn
+  public init?(rawValue: CoreVideo::CVReturn)
+  public static func check(_ status: CoreVideo::CVReturn) throws(CoreVideo::CVError)
+  public var description: Swift::String {
+    get
+  }
+  public var errorDescription: Swift::String? {
+    get
+  }
+  public static let internalError: CoreVideo::CVError
+  public static let invalidArgument: CoreVideo::CVError
+  public static let allocationFailed: CoreVideo::CVError
+  public static let unsupported: CoreVideo::CVError
+  public static let invalidPixelFormat: CoreVideo::CVError
+  public static let invalidSize: CoreVideo::CVError
+  public static let invalidPixelBufferAttributes: CoreVideo::CVError
+  public static let pixelBufferNotMetalCompatible: CoreVideo::CVError
+  public static let wouldExceedAllocationThreshold: CoreVideo::CVError
+  public static let poolAllocationFailed: CoreVideo::CVError
+  public static let invalidPoolAttributes: CoreVideo::CVError
+  public static let retry: CoreVideo::CVError
+  @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+  public typealias RawValue = CoreVideo::CVReturn
+}
+extension CoreVideo::CVTime {
+  @available(macOS 10.4, iOS 4.0, tvOS 9.0, watchOS 4.0, visionOS 1.0, *)
+  @backDeployed(before: macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0)
+  public init(timeValue: Swift::Int64, timeScale: Swift::Int32) {
+		precondition(timeValue == 0 || timeScale > 0)
+		self.init(timeValue: timeValue, timeScale: timeScale, flags: 0)
+	}
+  @available(macOS 10.4, iOS 4.0, tvOS 9.0, watchOS 4.0, visionOS 1.0, *)
+  @backDeployed(before: macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0)
+  public var flagOptions: CoreVideo::CVTimeFlags {
+    get { .init(rawValue: self.flags) }
+    set { self.flags = newValue.rawValue }
+  }
+  @available(macOS 10.4, iOS 4.0, tvOS 9.0, watchOS 4.0, visionOS 1.0, *)
+  @backDeployed(before: macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0)
+  public static var zero: CoreVideo::CVTime {
+    get { kCVZeroTime }
+  }
+  @available(macOS 10.4, iOS 4.0, tvOS 9.0, watchOS 4.0, visionOS 1.0, *)
+  @backDeployed(before: macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0)
+  public static var indefinite: CoreVideo::CVTime {
+    get { kCVIndefiniteTime }
+  }
+}
+extension CoreVideo::CVSMPTETime {
+  @available(macOS 10.4, iOS 4.0, tvOS 9.0, watchOS 4.0, visionOS 1.0, *)
+  @backDeployed(before: macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0)
+  public init(subframes: Swift::Int16, subframeDivisor: Swift::Int16, counter: Swift::UInt32, type: CoreVideo::CVSMPTETimeType, flags: CoreVideo::CVSMPTETimeFlags = .valid, hours: Swift::Int16, minutes: Swift::Int16, seconds: Swift::Int16, frames: Swift::Int16) {
+		self.init(subframes: subframes, subframeDivisor: subframeDivisor, counter: counter, type: type.rawValue, flags: flags.rawValue, hours: hours, minutes: minutes, seconds: seconds, frames: frames)
+	}
+  @available(macOS 10.4, iOS 4.0, tvOS 9.0, watchOS 4.0, visionOS 1.0, *)
+  @backDeployed(before: macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0)
+  public var typeOptions: CoreVideo::CVSMPTETimeType {
+    get { .init(rawValue: self.type)! }
+    set { self.type = newValue.rawValue }
+  }
+  @available(macOS 10.4, iOS 4.0, tvOS 9.0, watchOS 4.0, visionOS 1.0, *)
+  @backDeployed(before: macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0)
+  public var flagOptions: CoreVideo::CVSMPTETimeFlags {
+    get { .init(rawValue: self.flags) }
+    set { self.flags = newValue.rawValue }
+  }
+}
+extension CoreVideo::CVTimeStamp {
+  @available(macOS 10.4, iOS 4.0, tvOS 9.0, watchOS 4.0, visionOS 1.0, *)
+  @backDeployed(before: macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0)
+  public init(videoTime: CoreVideo::CVTime? = nil, hostTime: Swift::UInt64? = nil, rateScaler: Swift::Double? = nil, videoRefreshPeriod: Swift::Int64? = nil, smpteTime: CoreVideo::CVSMPTETime? = nil, topField: Swift::Bool = false, bottomField: Swift::Bool = false) {
+		self.init(version: 0, videoTimeScale: 0, videoTime: 0, hostTime: 0, rateScalar: 0, videoRefreshPeriod: 0, smpteTime: .init(subframes: 0, subframeDivisor: 0, counter: 0, type: 0, flags: 0, hours: 0, minutes: 0, seconds: 0, frames: 0), flags: 0, reserved: 0)
+		var flags: CVTimeStampFlags = []
+		if let videoTime {
+			self.videoTime = videoTime.timeValue
+			self.videoTimeScale = videoTime.timeScale
+			flags.insert(.videoTimeValid)
+		}
+		if let hostTime {
+			self.hostTime = hostTime
+			flags.insert(.hostTimeValid)
+		}
+		if let rateScaler {
+			self.rateScalar = rateScaler
+			flags.insert(.rateScalarValid)
+		}
+		if let videoRefreshPeriod {
+			self.videoRefreshPeriod = videoRefreshPeriod
+			flags.insert(.videoRefreshPeriodValid)
+		}
+		if let smpteTime {
+			self.smpteTime = smpteTime
+			flags.insert(.smpteTimeValid)
+		}
+		if topField {
+			flags.insert(.topField)
+		}
+		if bottomField {
+			flags.insert(.bottomField)
+		}
+		self.flags = flags.rawValue
+	}
+  @available(macOS 10.4, iOS 4.0, tvOS 9.0, watchOS 4.0, visionOS 1.0, *)
+  @backDeployed(before: macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0)
+  public var flagOptions: CoreVideo::CVTimeStampFlags {
+    get { .init(rawValue: self.flags) }
+    set { self.flags = newValue.rawValue }
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+final public class CVReadOnlyPixelBuffer : CoreVideo::CVPixelBufferRepresentable, Swift::Sendable {
+  public init(_ mutableBuffer: consuming CoreVideo::CVMutablePixelBuffer)
+  public init(unsafeBuffer: sending CoreVideo::CVPixelBuffer)
+  final public func withUnsafeBuffer<R>(_ body: (CoreVideo::CVPixelBuffer) throws -> sending R) rethrows -> sending R where R : ~Copyable
+  @_disfavoredOverload final public func withUnsafeBuffer<R>(_ body: (CoreVideo::CVPixelBuffer) throws -> sending R) rethrows -> sending R
+  @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+  public typealias Buffer = CoreVideo::CVPixelBuffer
+  @objc deinit
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+public struct CVPixelFormatType : Swift::RawRepresentable, Swift::Sendable, Swift::Hashable {
+  public var rawValue: Darwin::OSType
+  public init(rawValue: Darwin::OSType)
+  public var isCompressionAvailable: Swift::Bool {
+    get
+  }
+  @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+  public typealias RawValue = Darwin::OSType
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+public struct CVPixelFormatDescription : Swift::Sendable, Swift::Equatable {
+  @_hasMissingDesignatedInitializers final public class Registry : Swift::Sendable {
+    public static let shared: CoreVideo::CVPixelFormatDescription.CoreVideo::Registry
+    final public func register(_ formatDescription: CoreVideo::CVPixelFormatDescription)
+    final public var formatDescriptions: [CoreVideo::CVPixelFormatDescription] {
+      get
+    }
+    final public subscript(pixelFormatType: CoreVideo::CVPixelFormatType) -> CoreVideo::CVPixelFormatDescription? {
+      get
+    }
+    @objc deinit
+  }
+  public struct Dimensions : Swift::Hashable, Swift::Sendable {
+    public var horizontal: Swift::Int
+    public var vertical: Swift::Int
+    public init(horizontal: Swift::Int, vertical: Swift::Int)
+    public static func == (a: CoreVideo::CVPixelFormatDescription.CoreVideo::Dimensions, b: CoreVideo::CVPixelFormatDescription.CoreVideo::Dimensions) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public struct Components : Swift::OptionSet, Swift::Hashable, Swift::Sendable {
+    public var rawValue: Swift::Int
+    public init(rawValue: Swift::Int)
+    public static let rgb: CoreVideo::CVPixelFormatDescription.CoreVideo::Components
+    public static let yCbCr: CoreVideo::CVPixelFormatDescription.CoreVideo::Components
+    public static let grayscale: CoreVideo::CVPixelFormatDescription.CoreVideo::Components
+    public static let alpha: CoreVideo::CVPixelFormatDescription.CoreVideo::Components
+    public static let senselArray: CoreVideo::CVPixelFormatDescription.CoreVideo::Components
+    @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+    public typealias ArrayLiteralElement = CoreVideo::CVPixelFormatDescription.CoreVideo::Components
+    @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+    public typealias Element = CoreVideo::CVPixelFormatDescription.CoreVideo::Components
+    @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+    public typealias RawValue = Swift::Int
+  }
+  public struct Compatibility : Swift::OptionSet, Swift::Hashable, Swift::Sendable {
+    public var rawValue: Swift::Int
+    public init(rawValue: Swift::Int)
+    public static let metalTexture: CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility
+    public static let cgBitmapContext: CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility
+    public static let cgImage: CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility
+    public static let ioSurfaceCoreAnimation: CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility
+    @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+    public typealias ArrayLiteralElement = CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility
+    @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+    public typealias Element = CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility
+    @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+    public typealias RawValue = Swift::Int
+  }
+  public enum ComponentRange : Swift::Hashable, Swift::Sendable {
+    case video
+    case full
+    case wide
+    public static func == (a: CoreVideo::CVPixelFormatDescription.CoreVideo::ComponentRange, b: CoreVideo::CVPixelFormatDescription.CoreVideo::ComponentRange) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public struct PixelLayout : Swift::Sendable, Swift::Equatable {
+    public var blockSize: CoreVideo::CVImageSize
+    public var bitsPerBlock: Swift::Int
+    public var bitsPerComponent: Swift::Int?
+    public var blockAlignment: CoreVideo::CVPixelFormatDescription.CoreVideo::Dimensions
+    public var subsampling: CoreVideo::CVPixelFormatDescription.CoreVideo::Dimensions
+    public var blackBlock: Foundation::Data?
+    public var fillExtendedPixels: (@Sendable (inout CoreVideo::CVMutablePixelBuffer) -> Swift::Void)?
+    public var cgBitmapInfo: CoreGraphics::CGBitmapInfo?
+    public init(blockSize: CoreVideo::CVImageSize = .init(width: 1, height: 1), bitsPerBlock: Swift::Int, bitsPerComponent: Swift::Int? = nil, blockAlignment: CoreVideo::CVPixelFormatDescription.CoreVideo::Dimensions = .init(horizontal: 1, vertical: 1), subsampling: CoreVideo::CVPixelFormatDescription.CoreVideo::Dimensions = .init(horizontal: 1, vertical: 1), blackBlock: Foundation::Data? = nil, fillExtendedPixels: (@Sendable (inout CoreVideo::CVMutablePixelBuffer) -> Swift::Void)? = nil, cgBitmapInfo: CoreGraphics::CGBitmapInfo? = nil)
+    public static func == (lhs: CoreVideo::CVPixelFormatDescription.CoreVideo::PixelLayout, rhs: CoreVideo::CVPixelFormatDescription.CoreVideo::PixelLayout) -> Swift::Bool
+  }
+  public enum PlaneConfiguration : Swift::Sendable, Swift::Equatable {
+    case nonPlanar(CoreVideo::CVPixelFormatDescription.CoreVideo::PixelLayout)
+    case planar([CoreVideo::CVPixelFormatDescription.CoreVideo::PixelLayout])
+    public static func == (a: CoreVideo::CVPixelFormatDescription.CoreVideo::PlaneConfiguration, b: CoreVideo::CVPixelFormatDescription.CoreVideo::PlaneConfiguration) -> Swift::Bool
+  }
+  public var pixelFormatType: CoreVideo::CVPixelFormatType
+  public var name: Swift::String
+  public var components: CoreVideo::CVPixelFormatDescription.CoreVideo::Components
+  public var componentRange: CoreVideo::CVPixelFormatDescription.CoreVideo::ComponentRange?
+  public var planeConfiguration: CoreVideo::CVPixelFormatDescription.CoreVideo::PlaneConfiguration
+  public init(pixelFormatType: CoreVideo::CVPixelFormatType, name: Swift::String, components: CoreVideo::CVPixelFormatDescription.CoreVideo::Components, componentRange: CoreVideo::CVPixelFormatDescription.CoreVideo::ComponentRange? = nil, planeConfiguration: CoreVideo::CVPixelFormatDescription.CoreVideo::PlaneConfiguration)
+  public static func == (a: CoreVideo::CVPixelFormatDescription, b: CoreVideo::CVPixelFormatDescription) -> Swift::Bool
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+public struct CVMutablePixelBuffer : ~Swift::Copyable, Swift::Sendable, CoreVideo::CVPixelBufferRepresentable {
+  public init(unsafeBuffer: sending CoreVideo::CVPixelBuffer)
+  public init(_ attributes: CoreVideo::CVPixelBufferCreationAttributes) throws
+  public init(unsafeBacking ioSurface: IOSurface::IOSurface, matching attributes: CoreVideo::CVPixelBufferCreationAttributes) throws
+  public func withUnsafeBuffer<R>(_ body: (CoreVideo::CVPixelBuffer) throws -> sending R) rethrows -> sending R where R : ~Copyable
+  @_disfavoredOverload public func withUnsafeBuffer<R>(_ body: (CoreVideo::CVPixelBuffer) throws -> sending R) rethrows -> sending R
+  public mutating func accessUnsafeMutableRawPlaneBytes<R>(_ block: ([(properties: CoreVideo::CVPixelBufferPlaneProperties, bytes: Swift::UnsafeMutableRawBufferPointer)]) throws -> sending R) rethrows -> sending R
+  @discardableResult
+  public mutating func fillExtendedPixels() -> Swift::Bool
+  @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+  public typealias Buffer = CoreVideo::CVPixelBuffer
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVMutablePixelBuffer {
+  #if compiler(>=5.3) && $Lifetimes
+  public var attachments: CoreVideo::CVMutablePixelBuffer.CoreVideo::Attachments {
+    _read
+    _modify
+  }
+  #else
+  public var attachments: CoreVideo::CVMutablePixelBuffer.CoreVideo::Attachments {
+    _read
+    _modify
+  }
+  #endif
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public protocol CVAttachmentValueRepresentable {
+  static func makeFromRawAttachmentValue(_ repr: CoreVideo::CVAttachmentRawValue) -> Self?
+  var rawAttachmentValueRepresentation: CoreVideo::CVAttachmentRawValue { get }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct CVAttachmentRawValue : Swift::Equatable, Swift::ExpressibleByDictionaryLiteral {
+  public init()
+  public init(dictionaryLiteral elements: (Swift::String, (any CoreVideo::CVAttachmentValueRepresentable)?)...)
+  public subscript<Value>(key: Swift::String, as type: Value.Type = Value.self) -> Value? where Value : CoreVideo::CVAttachmentValueRepresentable {
+    get
+    set
+  }
+  public static func == (a: CoreVideo::CVAttachmentRawValue, b: CoreVideo::CVAttachmentRawValue) -> Swift::Bool
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public typealias Key = Swift::String
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public typealias Value = (any CoreVideo::CVAttachmentValueRepresentable)?
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::RawRepresentable where Self.RawValue : CoreVideo::CVAttachmentValueRepresentable {
+  public static func makeFromRawAttachmentValue(_ repr: CoreVideo::CVAttachmentRawValue) -> Self?
+  public var rawAttachmentValueRepresentation: CoreVideo::CVAttachmentRawValue {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreGraphics::CGColorSpace : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreFoundation::CGSize : CoreVideo::CVAttachmentValueRepresentable {
+  public static func makeFromRawAttachmentValue(_ repr: CoreVideo::CVAttachmentRawValue) -> CoreFoundation::CGSize?
+  public var rawAttachmentValueRepresentation: CoreVideo::CVAttachmentRawValue {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreFoundation::CGRect : CoreVideo::CVAttachmentValueRepresentable {
+  public static func makeFromRawAttachmentValue(_ repr: CoreVideo::CVAttachmentRawValue) -> CoreFoundation::CGRect?
+  public var rawAttachmentValueRepresentation: CoreVideo::CVAttachmentRawValue {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::Array : CoreVideo::CVAttachmentValueRepresentable where Element : CoreVideo::CVAttachmentValueRepresentable {
+  public static func makeFromRawAttachmentValue(_ repr: CoreVideo::CVAttachmentRawValue) -> Swift::Array<Element>?
+  public var rawAttachmentValueRepresentation: CoreVideo::CVAttachmentRawValue {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::Set : CoreVideo::CVAttachmentValueRepresentable where Element : CoreVideo::CVAttachmentValueRepresentable {
+  public static func makeFromRawAttachmentValue(_ repr: CoreVideo::CVAttachmentRawValue) -> Swift::Set<Element>?
+  public var rawAttachmentValueRepresentation: CoreVideo::CVAttachmentRawValue {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::Dictionary : CoreVideo::CVAttachmentValueRepresentable where Key : CoreVideo::CVAttachmentValueRepresentable, Value : CoreVideo::CVAttachmentValueRepresentable {
+  public static func makeFromRawAttachmentValue(_ repr: CoreVideo::CVAttachmentRawValue) -> Swift::Dictionary<Key, Value>?
+  public var rawAttachmentValueRepresentation: CoreVideo::CVAttachmentRawValue {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::Bool : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::Int : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::Int8 : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::Int16 : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::Int32 : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::Int64 : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::UInt : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::UInt8 : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::UInt16 : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::UInt32 : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::UInt64 : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::Float : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::Double : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreFoundation::CGFloat : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Foundation::URL : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Foundation::Date : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Swift::String : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Foundation::Data : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension Foundation::UUID : CoreVideo::CVAttachmentValueRepresentable {
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+public struct CVPixelBufferCreationAttributes : Swift::Sendable, Swift::Equatable {
+  public enum Backing : Swift::Sendable, Swift::Equatable {
+    case memory
+    case ioSurface
+    case ioSurfaceWithProperties([Swift::String : any Swift::Sendable])
+    public static func == (lhs: CoreVideo::CVPixelBufferCreationAttributes.CoreVideo::Backing, rhs: CoreVideo::CVPixelBufferCreationAttributes.CoreVideo::Backing) -> Swift::Bool
+  }
+  public var pixelFormatType: CoreVideo::CVPixelFormatType
+  public var size: CoreVideo::CVImageSize
+  public var backing: CoreVideo::CVPixelBufferCreationAttributes.CoreVideo::Backing
+  public var compatibility: CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility
+  public var planeAlignment: Swift::Int?
+  public var bytesPerRowAlignment: Swift::Int?
+  public var extendedPixels: CoreVideo::CVPixelBufferPadding?
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public var attachments: CoreVideo::CVAttachmentContainer<CoreVideo::CVPixelBufferAttachmentKeyDefinitions>?
+  public init(pixelFormatType: CoreVideo::CVPixelFormatType, size: CoreVideo::CVImageSize, compatibility: CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility = [], bytesPerRowAlignment: Swift::Int? = nil, planeAlignment: Swift::Int? = nil, extendedPixels: CoreVideo::CVPixelBufferPadding? = nil)
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public init(pixelFormatType: CoreVideo::CVPixelFormatType, size: CoreVideo::CVImageSize, compatibility: CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility = [], bytesPerRowAlignment: Swift::Int? = nil, planeAlignment: Swift::Int? = nil, extendedPixels: CoreVideo::CVPixelBufferPadding? = nil, attachments: CoreVideo::CVAttachmentContainer<CoreVideo::CVPixelBufferAttachmentKeyDefinitions>? = nil)
+  public init?(_ attributes: CoreVideo::CVPixelBufferAttributes)
+  public static func == (a: CoreVideo::CVPixelBufferCreationAttributes, b: CoreVideo::CVPixelBufferCreationAttributes) -> Swift::Bool
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+@dynamicMemberLookup public struct CVPixelBufferAttributes : Swift::Sendable {
+  public var rawAttributes: [Swift::String : any Swift::Sendable] {
+    get
+  }
+  public init(rawAttributes: [Swift::String : any Swift::Sendable])
+  public init(_ attributes: CoreVideo::CVPixelBufferCreationAttributes)
+  public init(pixelFormatTypes: [CoreVideo::CVPixelFormatType]? = nil, size: CoreVideo::CVImageSize? = nil, compatibility: CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility = [], bytesPerRowAlignment: Swift::Int? = nil, planeAlignment: Swift::Int? = nil, extendedPixels: CoreVideo::CVPixelBufferPadding? = nil)
+  public init?(merging values: [CoreVideo::CVPixelBufferAttributes])
+  public var pixelFormatTypes: [CoreVideo::CVPixelFormatType]? {
+    get
+    set
+  }
+  public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVPixelBufferCreationAttributes, CoreVideo::CVPixelFormatType>) -> CoreVideo::CVPixelFormatType? {
+    get
+    set
+  }
+  public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVPixelBufferCreationAttributes, CoreVideo::CVImageSize>) -> CoreVideo::CVImageSize? {
+    get
+    set
+  }
+  public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVPixelBufferCreationAttributes, CoreVideo::CVPixelBufferCreationAttributes.CoreVideo::Backing>) -> CoreVideo::CVPixelBufferCreationAttributes.CoreVideo::Backing {
+    get
+    set
+  }
+  public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVPixelBufferCreationAttributes, CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility>) -> CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility {
+    get
+    set
+  }
+  public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVPixelBufferCreationAttributes, CoreVideo::CVPixelBufferPadding?>) -> CoreVideo::CVPixelBufferPadding? {
+    get
+    set
+  }
+  public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVPixelBufferCreationAttributes, CoreVideo::CVPixelFormatDescription?>) -> CoreVideo::CVPixelFormatDescription? {
+    get
+    set
+  }
+  public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVPixelBufferCreationAttributes, Swift::Int?>) -> Swift::Int? {
+    get
+    set
+  }
+  public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVPixelBufferCreationAttributes, Swift::Bool>) -> Swift::Bool? {
+    get
+    set
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+extension CoreVideo::CVBuffer {
+  @available(*, deprecated, renamed: "CVPixelBufferCreationAttributes")
+  public struct CreationAttributes : Swift::Sendable, Swift::Equatable {
+    public enum Backing : Swift::Sendable, Swift::Equatable {
+      case memory
+      case ioSurface
+      case ioSurfaceWithProperties([Swift::String : any Swift::Sendable])
+      public static func == (lhs: CoreVideo::CVBuffer.CoreVideo::CreationAttributes.CoreVideo::Backing, rhs: CoreVideo::CVBuffer.CoreVideo::CreationAttributes.CoreVideo::Backing) -> Swift::Bool
+    }
+    public var pixelFormatType: CoreVideo::CVPixelFormatType
+    public var size: CoreVideo::CVImageSize
+    public var backing: CoreVideo::CVBuffer.CoreVideo::CreationAttributes.CoreVideo::Backing
+    public var compatibility: CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility
+    public var planeAlignment: Swift::Int?
+    public var bytesPerRowAlignment: Swift::Int?
+    public var extendedPixels: CoreVideo::CVPixelBufferPadding?
+    public init(pixelFormatType: CoreVideo::CVPixelFormatType, size: CoreVideo::CVImageSize, compatibility: CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility = [], bytesPerRowAlignment: Swift::Int? = nil, planeAlignment: Swift::Int? = nil, extendedPixels: CoreVideo::CVPixelBufferPadding? = nil)
+    public init?(_ attributes: CoreVideo::CVBuffer.CoreVideo::Attributes)
+    public static func == (a: CoreVideo::CVBuffer.CoreVideo::CreationAttributes, b: CoreVideo::CVBuffer.CoreVideo::CreationAttributes) -> Swift::Bool
+  }
+  @available(*, deprecated, renamed: "CVPixelBufferAttributes")
+  @dynamicMemberLookup public struct Attributes : Swift::Sendable {
+    public var rawAttributes: [Swift::String : any Swift::Sendable] {
+      get
+    }
+    public init(rawAttributes: [Swift::String : any Swift::Sendable])
+    public init(_ attributes: CoreVideo::CVBuffer.CoreVideo::CreationAttributes)
+    public init(pixelFormatTypes: [CoreVideo::CVPixelFormatType]? = nil, size: CoreVideo::CVImageSize? = nil, compatibility: CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility = [], bytesPerRowAlignment: Swift::Int? = nil, planeAlignment: Swift::Int? = nil, extendedPixels: CoreVideo::CVPixelBufferPadding? = nil)
+    public init?(merging values: [CoreVideo::CVBuffer.CoreVideo::Attributes])
+    public var pixelFormatTypes: [CoreVideo::CVPixelFormatType]? {
+      get
+      set
+    }
+    public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVBuffer.CoreVideo::CreationAttributes, CoreVideo::CVPixelFormatType>) -> CoreVideo::CVPixelFormatType? {
+      get
+      set
+    }
+    public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVBuffer.CoreVideo::CreationAttributes, CoreVideo::CVImageSize>) -> CoreVideo::CVImageSize? {
+      get
+      set
+    }
+    public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVBuffer.CoreVideo::CreationAttributes, CoreVideo::CVBuffer.CoreVideo::CreationAttributes.CoreVideo::Backing>) -> CoreVideo::CVBuffer.CoreVideo::CreationAttributes.CoreVideo::Backing {
+      get
+      set
+    }
+    public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVBuffer.CoreVideo::CreationAttributes, CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility>) -> CoreVideo::CVPixelFormatDescription.CoreVideo::Compatibility {
+      get
+      set
+    }
+    public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVBuffer.CoreVideo::CreationAttributes, CoreVideo::CVPixelBufferPadding?>) -> CoreVideo::CVPixelBufferPadding? {
+      get
+      set
+    }
+    public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVBuffer.CoreVideo::CreationAttributes, CoreVideo::CVPixelFormatDescription?>) -> CoreVideo::CVPixelFormatDescription? {
+      get
+      set
+    }
+    public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVBuffer.CoreVideo::CreationAttributes, Swift::Int?>) -> Swift::Int? {
+      get
+      set
+    }
+    public subscript(dynamicMember keyPath: Swift::WritableKeyPath<CoreVideo::CVBuffer.CoreVideo::CreationAttributes, Swift::Bool>) -> Swift::Bool? {
+      get
+      set
+    }
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVPixelBufferAttributes {
+  public var attachments: CoreVideo::CVAttachmentContainer<CoreVideo::CVPixelBufferAttachmentKeyDefinitions>? {
+    get
+    set
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public protocol CVAttachmentModePreference : Swift::Sendable {
+  @inlinable static var preferredMode: CoreVideo::CVAttachmentMode { get }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public enum CVAttachmentModePreferenceShouldPropagate : CoreVideo::CVAttachmentModePreference {
+  @inlinable public static var preferredMode: CoreVideo::CVAttachmentMode {
+    get { .shouldPropagate }
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public enum CVAttachmentModePreferenceShouldNotPropagate : CoreVideo::CVAttachmentModePreference {
+  @inlinable public static var preferredMode: CoreVideo::CVAttachmentMode {
+    get { .shouldNotPropagate }
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct CVAttachmentKeyDefinition<ModePreference, Value> : Swift::Hashable, Swift::Sendable, Swift::ExpressibleByStringLiteral where ModePreference : CoreVideo::CVAttachmentModePreference, Value : CoreVideo::CVAttachmentValueRepresentable {
+  public var rawValue: Swift::String
+  public init(_ rawValue: Swift::String)
+  public init(stringLiteral rawValue: Swift::String)
+  public static func == (a: CoreVideo::CVAttachmentKeyDefinition<ModePreference, Value>, b: CoreVideo::CVAttachmentKeyDefinition<ModePreference, Value>) -> Swift::Bool
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public typealias ExtendedGraphemeClusterLiteralType = Swift::String
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public typealias StringLiteralType = Swift::String
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public typealias UnicodeScalarLiteralType = Swift::String
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct CVAttachmentKeyDefinitionWithDefault<ModePreference, Value> : Swift::Sendable, Swift::Equatable where ModePreference : CoreVideo::CVAttachmentModePreference, Value : CoreVideo::CVAttachmentValueRepresentable, Value : Swift::Equatable, Value : Swift::Sendable {
+  public var rawValue: Swift::String
+  public var defaultValue: Value
+  public init(_ rawValue: Swift::String, default defaultValue: Value)
+  public static func == (a: CoreVideo::CVAttachmentKeyDefinitionWithDefault<ModePreference, Value>, b: CoreVideo::CVAttachmentKeyDefinitionWithDefault<ModePreference, Value>) -> Swift::Bool
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVAttachmentKeyDefinitionWithDefault : Swift::Hashable where Value : Swift::Hashable {
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct CVAttachmentCompositeKeyDefinition<ModePreference, Value> : Swift::Hashable, Swift::Sendable, Swift::ExpressibleByArrayLiteral where ModePreference : CoreVideo::CVAttachmentModePreference, Value : CoreVideo::CVAttachmentValueRepresentable {
+  public var rawValues: [Swift::String]
+  public init(_ rawValues: Swift::String...)
+  public init(arrayLiteral rawValues: Swift::String...)
+  public static func == (a: CoreVideo::CVAttachmentCompositeKeyDefinition<ModePreference, Value>, b: CoreVideo::CVAttachmentCompositeKeyDefinition<ModePreference, Value>) -> Swift::Bool
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public typealias ArrayLiteralElement = Swift::String
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public protocol CVAttachmentKeyDefinitions {
+  typealias ShouldPropagate = CoreVideo::CVAttachmentModePreferenceShouldPropagate
+  typealias ShouldNotPropagate = CoreVideo::CVAttachmentModePreferenceShouldNotPropagate
+  typealias Key = CoreVideo::CVAttachmentKeyDefinition
+  typealias KeyWithDefault = CoreVideo::CVAttachmentKeyDefinitionWithDefault
+  typealias CompositeKey = CoreVideo::CVAttachmentCompositeKeyDefinition
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+@dynamicMemberLookup public struct CVAttachmentAccess<Keys> : ~Swift::Escapable, ~Swift::Copyable where Keys : CoreVideo::CVAttachmentKeyDefinitions {
+  public subscript<ModePreference, Value>(dynamicMember keyPath: Swift::KeyPath<Keys.Type, CoreVideo::CVAttachmentKeyDefinition<ModePreference, Value>>) -> Value? where ModePreference : CoreVideo::CVAttachmentModePreference, Value : CoreVideo::CVAttachmentValueRepresentable {
+    get
+    set
+  }
+  public subscript<ModePreference, Value>(dynamicMember keyPath: Swift::KeyPath<Keys.Type, CoreVideo::CVAttachmentKeyDefinitionWithDefault<ModePreference, Value>>) -> Value where ModePreference : CoreVideo::CVAttachmentModePreference, Value : CoreVideo::CVAttachmentValueRepresentable, Value : Swift::Equatable, Value : Swift::Sendable {
+    get
+    set
+  }
+  public subscript<ModePreference, Value>(dynamicMember keyPath: Swift::KeyPath<Keys.Type, CoreVideo::CVAttachmentCompositeKeyDefinition<ModePreference, Value>>) -> Value? where ModePreference : CoreVideo::CVAttachmentModePreference, Value : CoreVideo::CVAttachmentValueRepresentable {
+    get
+    set
+  }
+  public subscript<Value>(rawKey: Swift::String, as type: Value.Type = Value.self) -> (value: Value, mode: CoreVideo::CVAttachmentMode)? where Value : CoreVideo::CVAttachmentValueRepresentable {
+    get
+    set
+  }
+  public func copy() -> CoreVideo::CVAttachmentContainer<Keys>
+  #if compiler(>=5.3) && $Lifetimes
+  public mutating func propagate(from other: borrowing CoreVideo::CVAttachmentAccess<Keys>)
+  #else
+  public mutating func propagate(from other: borrowing CoreVideo::CVAttachmentAccess<Keys>)
+  #endif
+  #if compiler(>=5.3) && $Lifetimes
+  public mutating func update(from store: CoreVideo::CVAttachmentContainer<Keys>)
+  #else
+  public mutating func update(from store: CoreVideo::CVAttachmentContainer<Keys>)
+  #endif
+  #if compiler(>=5.3) && $Lifetimes
+  public mutating func removeAll()
+  #else
+  public mutating func removeAll()
+  #endif
+  public func attachedMode(of key: Swift::String) -> CoreVideo::CVAttachmentMode?
+  public func attachedMode(of keyPath: Swift::KeyPath<Keys.Type, CoreVideo::CVAttachmentKeyDefinition<some CVAttachmentModePreference, some CVAttachmentValueRepresentable>>) -> CoreVideo::CVAttachmentMode?
+  public func attachedMode(of keyPath: Swift::KeyPath<Keys.Type, CoreVideo::CVAttachmentKeyDefinitionWithDefault<some CVAttachmentModePreference, some CVAttachmentValueRepresentable & Equatable & Sendable>>) -> CoreVideo::CVAttachmentMode?
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+@dynamicMemberLookup public struct CVAttachmentContainer<Keys> : Swift::Sendable, Swift::Equatable where Keys : CoreVideo::CVAttachmentKeyDefinitions {
+  public init(propagated: [Swift::String : any CoreVideo::CVAttachmentValueRepresentable] = [:], nonPropagated: [Swift::String : any CoreVideo::CVAttachmentValueRepresentable] = [:])
+  public subscript<ModePreference, Value>(dynamicMember keyPath: Swift::KeyPath<Keys.Type, CoreVideo::CVAttachmentKeyDefinition<ModePreference, Value>>) -> Value? where ModePreference : CoreVideo::CVAttachmentModePreference, Value : CoreVideo::CVAttachmentValueRepresentable {
+    get
+    set
+  }
+  public subscript<ModePreference, Value>(dynamicMember keyPath: Swift::KeyPath<Keys.Type, CoreVideo::CVAttachmentKeyDefinitionWithDefault<ModePreference, Value>>) -> Value where ModePreference : CoreVideo::CVAttachmentModePreference, Value : CoreVideo::CVAttachmentValueRepresentable, Value : Swift::Equatable, Value : Swift::Sendable {
+    get
+    set
+  }
+  public subscript<ModePreference, Value>(dynamicMember keyPath: Swift::KeyPath<Keys.Type, CoreVideo::CVAttachmentCompositeKeyDefinition<ModePreference, Value>>) -> Value? where ModePreference : CoreVideo::CVAttachmentModePreference, Value : CoreVideo::CVAttachmentValueRepresentable {
+    get
+    set
+  }
+  public subscript<Value>(rawKey: Swift::String, as type: Value.Type = Value.self) -> (value: Value, mode: CoreVideo::CVAttachmentMode)? where Value : CoreVideo::CVAttachmentValueRepresentable {
+    get
+    set
+  }
+  public mutating func update(from other: CoreVideo::CVAttachmentContainer<Keys>)
+  public mutating func removeAll()
+  public func attachedMode(of key: Swift::String) -> CoreVideo::CVAttachmentMode?
+  public func attachedMode(of keyPath: Swift::KeyPath<Keys.Type, CoreVideo::CVAttachmentKeyDefinition<some CVAttachmentModePreference, some CVAttachmentValueRepresentable>>) -> CoreVideo::CVAttachmentMode?
+  public func attachedMode(of keyPath: Swift::KeyPath<Keys.Type, CoreVideo::CVAttachmentKeyDefinitionWithDefault<some CVAttachmentModePreference, some CVAttachmentValueRepresentable & Equatable & Sendable>>) -> CoreVideo::CVAttachmentMode?
+  public static func == (a: CoreVideo::CVAttachmentContainer<Keys>, b: CoreVideo::CVAttachmentContainer<Keys>) -> Swift::Bool
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+public protocol CVPixelBufferRepresentable : CoreVideo::CVImageBufferRepresentable, ~Copyable {
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+@frozen public struct CVPixelBufferPlaneProperties : Swift::Hashable, Swift::Sendable {
+  public var size: CoreVideo::CVImageSize
+  public var bytesPerRow: Swift::Int
+  public init(size: CoreVideo::CVImageSize, bytesPerRow: Swift::Int)
+  public static func == (a: CoreVideo::CVPixelBufferPlaneProperties, b: CoreVideo::CVPixelBufferPlaneProperties) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+@frozen public struct CVPixelBufferPadding : Swift::Hashable, Swift::Sendable {
+  public var left: Swift::Int
+  public var right: Swift::Int
+  public var top: Swift::Int
+  public var bottom: Swift::Int
+  public init(left: Swift::Int = 0, right: Swift::Int = 0, top: Swift::Int = 0, bottom: Swift::Int = 0)
+  public static let zero: CoreVideo::CVPixelBufferPadding
+  public static func == (a: CoreVideo::CVPixelBufferPadding, b: CoreVideo::CVPixelBufferPadding) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+extension CoreVideo::CVPixelBufferRepresentable where Self : ~Copyable {
+  public var creationAttributes: CoreVideo::CVPixelBufferCreationAttributes {
+    get
+  }
+  public var pixelFormatType: CoreVideo::CVPixelFormatType {
+    get
+  }
+  public var size: CoreVideo::CVImageSize {
+    get
+  }
+  public var extendedPixels: CoreVideo::CVPixelBufferPadding {
+    get
+  }
+  public var planeCount: Swift::Int {
+    get
+  }
+  public var isPlanar: Swift::Bool {
+    get
+  }
+  public var planeProperties: [CoreVideo::CVPixelBufferPlaneProperties] {
+    get
+  }
+  public func accessUnsafeRawPlaneBytes<R>(_ block: ([(properties: CoreVideo::CVPixelBufferPlaneProperties, bytes: Swift::UnsafeRawBufferPointer)]) throws -> sending R) rethrows -> sending R
+  public func isCompatibleWith(_ attributes: CoreVideo::CVPixelBufferCreationAttributes) -> Swift::Bool
+  public func isCompatibleWith(_ attributes: CoreVideo::CVPixelBufferAttributes) -> Swift::Bool
+  public func withUnsafeBackingIOSurfaceIfPresent<R>(_ block: (IOSurface::IOSurface) throws -> sending R) rethrows -> sending R?
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVPixelBufferRepresentable where Self : ~Copyable {
+  public typealias Attachments = CoreVideo::CVAttachmentAccess<CoreVideo::CVPixelBufferAttachmentKeyDefinitions>
+  #if compiler(>=5.3) && $Lifetimes
+  public var attachments: Self.Attachments {
+    get
+  }
+  #else
+  public var attachments: Self.Attachments {
+    get
+  }
+  #endif
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+extension CoreVideo::CVBuffer {
+  @available(*, deprecated, renamed: "CVPixelBufferPlaneProperties")
+  public typealias PlaneProperties = CoreVideo::CVPixelBufferPlaneProperties
+  @available(*, deprecated, renamed: "CVPixelBufferPadding")
+  public typealias Padding = CoreVideo::CVPixelBufferPadding
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public enum CVSenselArrayPattern : Swift::Int, Swift::Sendable, Swift::Hashable, CoreVideo::CVAttachmentValueRepresentable {
+  case bayerRGGB
+  case bayerGRBG
+  case bayerGBRG
+  case bayerBGGR
+  public init?(rawValue: Swift::Int)
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public typealias RawValue = Swift::Int
+  public var rawValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct CVSenselSitingOffsets : Swift::RawRepresentable, Swift::Sendable, Swift::Hashable, CoreVideo::CVAttachmentValueRepresentable {
+  public struct Offset : Swift::Sendable, Swift::Hashable {
+    public var horizontal: Swift::Float32
+    public var vertical: Swift::Float32
+    public init(horizontal: Swift::Float32, vertical: Swift::Float32)
+    public static let zero: CoreVideo::CVSenselSitingOffsets.CoreVideo::Offset
+    public static func == (a: CoreVideo::CVSenselSitingOffsets.CoreVideo::Offset, b: CoreVideo::CVSenselSitingOffsets.CoreVideo::Offset) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public var red: CoreVideo::CVSenselSitingOffsets.CoreVideo::Offset
+  public var green: CoreVideo::CVSenselSitingOffsets.CoreVideo::Offset
+  public var blue: CoreVideo::CVSenselSitingOffsets.CoreVideo::Offset
+  public var alpha: CoreVideo::CVSenselSitingOffsets.CoreVideo::Offset
+  public init(red: CoreVideo::CVSenselSitingOffsets.CoreVideo::Offset, green: CoreVideo::CVSenselSitingOffsets.CoreVideo::Offset, blue: CoreVideo::CVSenselSitingOffsets.CoreVideo::Offset, alpha: CoreVideo::CVSenselSitingOffsets.CoreVideo::Offset)
+  public static let zero: CoreVideo::CVSenselSitingOffsets
+  public init?(rawValue: Foundation::Data)
+  public var rawValue: Foundation::Data {
+    get
+  }
+  @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public typealias RawValue = Foundation::Data
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public struct CVProResRawMetadata : Swift::Sendable, CoreVideo::CVAttachmentValueRepresentable {
+  public var senselSitingOffsets: CoreVideo::CVSenselSitingOffsets
+  public var blackLevel: Swift::Int32
+  public var whiteLevel: Swift::Int32
+  public var whiteBalanceCCT: Swift::Float32?
+  public var whiteBalanceRedFactor: Swift::Float32
+  public var whiteBalanceBlueFactor: Swift::Float32
+  public var colorMatrix: Swift::InlineArray<9, Swift::Float32>
+  public var gainFactor: Swift::Float32
+  public var recommendedCrop: CoreVideo::CVProResRawMetadata.CoreVideo::RecommendedCrop
+  public var extensions: Foundation::Data?
+  public init(senselSitingOffsets: CoreVideo::CVSenselSitingOffsets = .zero, blackLevel: Swift::Int32, whiteLevel: Swift::Int32, whiteBalanceCCT: Swift::Float32? = nil, whiteBalanceRedFactor: Swift::Float32, whiteBalanceBlueFactor: Swift::Float32, colorMatrix: Swift::InlineArray<9, Swift::Float32>, gainFactor: Swift::Float32, recommendedCrop: CoreVideo::CVProResRawMetadata.CoreVideo::RecommendedCrop = .zero, extensions: Foundation::Data? = nil)
+  public static func makeFromRawAttachmentValue(_ repr: CoreVideo::CVAttachmentRawValue) -> CoreVideo::CVProResRawMetadata?
+  public var rawAttachmentValueRepresentation: CoreVideo::CVAttachmentRawValue {
+    get
+  }
+  public struct RecommendedCrop : Swift::RawRepresentable, Swift::Sendable, Swift::Hashable, CoreVideo::CVAttachmentValueRepresentable {
+    public var pixelsToDiscardAtStartOfEachRow: Swift::Float32
+    public var pixelsToDiscardAtEndOfEachRow: Swift::Float32
+    public var rowsOfPixelsToDiscardAtTop: Swift::Float32
+    public var rowsOfPixelsToDiscardAtBottom: Swift::Float32
+    public init(pixelsToDiscardAtStartOfEachRow: Swift::Float32, pixelsToDiscardAtEndOfEachRow: Swift::Float32, rowsOfPixelsToDiscardAtTop: Swift::Float32, rowsOfPixelsToDiscardAtBottom: Swift::Float32)
+    public static let zero: CoreVideo::CVProResRawMetadata.CoreVideo::RecommendedCrop
+    public init?(rawValue: Foundation::Data)
+    public var rawValue: Foundation::Data {
+      get
+    }
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+    public typealias RawValue = Foundation::Data
+  }
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+public enum CVPixelBufferAttachmentKeyDefinitions : CoreVideo::CVImageBufferAttachmentKeyDefinitions {
+  public static let senselArrayPattern: CoreVideo::CVAttachmentKeyDefinition<CoreVideo::CVPixelBufferAttachmentKeyDefinitions.CoreVideo::ShouldNotPropagate, CoreVideo::CVSenselArrayPattern>
+  public static let proResRawMetadata: CoreVideo::CVAttachmentCompositeKeyDefinition<CoreVideo::CVPixelBufferAttachmentKeyDefinitions.CoreVideo::ShouldPropagate, CoreVideo::CVProResRawMetadata>
+}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVImageCleanAperture : Swift::BitwiseCopyable {}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVImageFieldDetail : Swift::RawRepresentable {}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVImagePixelAspectRatio : Swift::BitwiseCopyable {}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVImageYCbCrMatrix : Swift::RawRepresentable {}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVImageColorPrimaries : Swift::RawRepresentable {}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVImageTransferFunction : Swift::RawRepresentable {}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVImageChromaField.CoreVideo::SampleLocation : Swift::RawRepresentable {}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVImageChromaField.CoreVideo::ChromaSubsampling : Swift::RawRepresentable {}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVImageAlphaChannelMode : Swift::RawRepresentable {}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVImageLogTransferFunction : Swift::RawRepresentable {}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+extension CoreVideo::CVError : Swift::BitwiseCopyable {}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+extension CoreVideo::CVPixelBufferPadding : Swift::BitwiseCopyable {}
+@available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVSenselArrayPattern : Swift::RawRepresentable {}

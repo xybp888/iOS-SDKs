@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/TextToSpeechBundleSupport.framework/TextToSpeechBundleSupport
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _TextToSpeechBundleSupportVersionNumber,
+                            _TextToSpeechBundleSupportVersionString,
+                            __TTSSystemFocusedPid ]
+    objc-classes:         [ TTSNeuralStyle, TTSSiriDynamicPrompts, TTSSiriMarker,
+                            TTSSiriSpeakingStyle, TTSSynthesizerWrapper,
+                            _TtC25TextToSpeechBundleSupport21TTSSiriSynthAudioUnit ]
+    objc-ivars:           [ TTSNeuralStyle._key, TTSNeuralStyle._name,
+                            TTSNeuralStyle._styleVector,
+                            TTSSiriDynamicPrompts._stylePrompts,
+                            TTSSiriDynamicPrompts._voicePrompts,
+                            TTSSiriMarker._length, TTSSiriMarker._location,
+                            TTSSiriMarker._name, TTSSiriMarker._sampleIndex,
+                            TTSSiriMarker._type, TTSSiriSpeakingStyle._key,
+                            TTSSiriSpeakingStyle._localizedName,
+                            TTSSiriSpeakingStyle._styleVector,
+                            TTSSynthesizerWrapper._loadedResources,
+                            TTSSynthesizerWrapper._phonemeSequenceCallback,
+                            TTSSynthesizerWrapper._speaking,
+                            TTSSynthesizerWrapper._synthesisQueue,
+                            TTSSynthesizerWrapper._synthesizer ]
+...

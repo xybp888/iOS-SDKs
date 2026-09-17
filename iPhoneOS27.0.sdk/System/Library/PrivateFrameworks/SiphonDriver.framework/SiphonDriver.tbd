@@ -1,0 +1,66 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiphonDriver.framework/SiphonDriver
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SiphonDriverLoad, _SiphonDriverVersionNumber,
+                            _SiphonDriverVersionString,
+                            __ZN11InputReader10readFramesEPvjdy,
+                            __ZN11InputReader14refillIfNeededEy,
+                            __ZN11InputReader4stopEv, __ZN11InputReader5startEy,
+                            __ZN11InputReaderC1EP9AOESiphon,
+                            __ZN11InputReaderC2EP9AOESiphon,
+                            __ZN12SiphonReader11startAtTimeEy,
+                            __ZN12SiphonReader5resetEv,
+                            __ZN12SiphonReader9fetchNextEPvP32RequestIsolatedAudioBufferHeaderPjy,
+                            __ZN12SiphonReaderC1EP9AOESiphon,
+                            __ZN12SiphonReaderC2EP9AOESiphon,
+                            __ZN13MockAOESiphon11startAtTimeEy,
+                            __ZN13MockAOESiphon12fillSineWaveEPfjy,
+                            __ZN13MockAOESiphon13waitForSignalE13mach_timespec,
+                            __ZN13MockAOESiphon16signalTimerFiredEv,
+                            __ZN13MockAOESiphon20availableSampleRatesEv,
+                            __ZN13MockAOESiphon20requestIsolatedAudioEP32RequestIsolatedAudioBufferHeaderPv,
+                            __ZN13MockAOESiphon4stopEv, __ZN13MockAOESiphonC1Ev,
+                            __ZN13MockAOESiphonC2Ev, __ZN13MockAOESiphonD0Ev,
+                            __ZN13MockAOESiphonD1Ev, __ZN13MockAOESiphonD2Ev,
+                            __ZN14CAHostTimeBase10InitializeEv,
+                            __ZN14CAHostTimeBase10sFrequencyE,
+                            __ZN14CAHostTimeBase17sInverseFrequencyE,
+                            __ZN14CAHostTimeBase17sToNanosNumeratorE,
+                            __ZN14CAHostTimeBase19sToNanosDenominatorE,
+                            __ZN14CAHostTimeBase9sIsInitedE,
+                            __ZN14CAHostTimeBase9sMinDeltaE,
+                            __ZN16HWBufferConsumer10feedFramesEPvj,
+                            __ZN16HWBufferConsumer10skipFramesEj,
+                            __ZN16HWBufferConsumer12refillBufferEv,
+                            __ZN16HWBufferConsumer5resetEv,
+                            __ZN16HWBufferConsumer6refillERK32RequestIsolatedAudioBufferHeaderj,
+                            __ZN16HWBufferConsumerC1Ejjd,
+                            __ZN16HWBufferConsumerC2Ejjd,
+                            __ZNK13MockAOESiphon13getSampleRateEv,
+                            __ZNK13MockAOESiphon14getNumChannelsEv,
+                            __ZNK13MockAOESiphon16getBytesPerFrameEv,
+                            __ZNK13MockAOESiphon21getHWBufferSizeFramesEv,
+                            __ZNK13MockAOESiphon23getAvailableSampleRatesEv,
+                            __ZNK16HWBufferConsumer11needsRefillEv,
+                            __ZNK16HWBufferConsumer16currentTimestampEv,
+                            __ZTI13MockAOESiphon, __ZTS13MockAOESiphon,
+                            __ZTV13MockAOESiphon, __sharedPlugin ]
+    objc-classes:         [ SiphonDevice, SiphonDeviceBooleanControl,
+                            SiphonDeviceExternallyTimedIOProperty,
+                            SiphonDeviceLevelControl, SiphonDeviceStream,
+                            SiphonPlugIn ]
+    objc-ivars:           [ SiphonDevice._aoeSiphon, SiphonDevice._currentSeed,
+                            SiphonDevice._inputStream, SiphonDevice._masterMute,
+                            SiphonDevice._timeQueue, SiphonDevice._timestamp,
+                            SiphonDevice._volumeLevel,
+                            SiphonDeviceLevelControl._setterBlock,
+                            SiphonDeviceStream._aoeSiphon,
+                            SiphonDeviceStream._inputReader,
+                            SiphonPlugIn._device ]
+...

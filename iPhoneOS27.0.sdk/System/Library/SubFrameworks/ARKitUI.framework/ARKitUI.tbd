@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-ios, arm64e.x1-ios ]
+install-name:    '/System/Library/SubFrameworks/ARKitUI.framework/ARKitUI'
+allowable-clients:
+  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+    clients:         [ ARKit ]
+exports:
+  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+    symbols:         [ _ARCoachingDeviceGlyphName, _ARCoachingDeviceGlyphNameForDisplayRegion, 
+                       _ARCoachingLoadDeviceGlyph, _ARCoachingLoadDeviceGlyphWithName, 
+                       _ARCoachingResetButtonLandscapeVerticalOffset, _ARCoachingResetButtonPortraitVerticalOffset, 
+                       _ARSCNDebugOptionShowFeaturePoints, _ARSCNDebugOptionShowOcclusionGeometry, 
+                       _ARSCNDebugOptionShowWorldOrigin ]
+    objc-classes:    [ ARCoachingOverlayView, ARSCNCompositor, ARSCNFaceGeometry, 
+                       ARSCNPlaneGeometry, ARSCNView, ARSCNVisualizationHelper, ARSKView ]
+...

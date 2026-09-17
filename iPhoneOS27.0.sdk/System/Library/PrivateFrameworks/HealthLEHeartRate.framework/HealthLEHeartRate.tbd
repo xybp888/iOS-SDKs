@@ -1,0 +1,45 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HealthLEHeartRate.framework/HealthLEHeartRate
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ HLEBLESource, HLEBLESourceServiceInfo,
+                            HLECollectionObserverClient, HLEConnectionManager,
+                            HLEHeartRateCollectionObserver,
+                            HLEHeartRateRequestor ]
+    objc-ivars:           [ HLEBLESource._client, HLEBLESource._delegate,
+                            HLEBLESource._queue, HLEBLESource._services,
+                            HLEBLESourceServiceInfo._delegate,
+                            HLEBLESourceServiceInfo._device,
+                            HLEBLESourceServiceInfo._initialEventReceived,
+                            HLEBLESourceServiceInfo._lock,
+                            HLEBLESourceServiceInfo._manualConnection,
+                            HLECollectionObserverClient._processName,
+                            HLECollectionObserverClient._remoteObjectProxy,
+                            HLECollectionObserverClient._requestor,
+                            HLEConnectionManager._lock,
+                            HLEConnectionManager._lock_connections,
+                            HLEConnectionManager._requestor,
+                            HLEConnectionManager._serviceListener,
+                            HLEHeartRateCollectionObserver._connection,
+                            HLEHeartRateCollectionObserver._delegate,
+                            HLEHeartRateCollectionObserver._heartRateCollectionNotifyToken,
+                            HLEHeartRateCollectionObserver._lock,
+                            HLEHeartRateCollectionObserver._processName,
+                            HLEHeartRateCollectionObserver._shouldCollectHeartRate,
+                            HLEHeartRateRequestor._HLECollectionObserverListener,
+                            HLEHeartRateRequestor._bleSource,
+                            HLEHeartRateRequestor._clientQueue,
+                            HLEHeartRateRequestor._configurationStateDidChange,
+                            HLEHeartRateRequestor._connectionManager,
+                            HLEHeartRateRequestor._connectionStateDidChange,
+                            HLEHeartRateRequestor._delegate,
+                            HLEHeartRateRequestor._lock,
+                            HLEHeartRateRequestor._lock_connectionEnabled,
+                            HLEHeartRateRequestor._lock_devices,
+                            HLEHeartRateRequestor._lock_heartRateState ]
+...

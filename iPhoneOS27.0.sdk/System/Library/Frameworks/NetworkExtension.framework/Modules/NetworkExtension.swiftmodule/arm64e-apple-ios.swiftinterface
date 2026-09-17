@@ -1,0 +1,501 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 2340.0.0.0.4 -module-name NetworkExtension
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+public import ExtensionFoundation
+public import Network
+@_exported public import NetworkExtension
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 26.0, macCatalyst 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEURLFilter {
+  public class func verdict(for url: Foundation::URL) async -> NetworkExtension::NEURLFilter.NetworkExtension::Verdict
+}
+@available(iOS 26.0, macCatalyst 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+public struct NEURLFilterPrefilter {
+  public enum PrefilterData {
+    case smallFilter(Foundation::Data)
+    case temporaryFilepath(Foundation::URL)
+  }
+  public let tag: Swift::String
+  public let data: NetworkExtension::NEURLFilterPrefilter.NetworkExtension::PrefilterData
+  public let bitCount: Swift::Int
+  public let hashCount: Swift::Int
+  public let murmurSeed: Swift::UInt32
+  public init(data: NetworkExtension::NEURLFilterPrefilter.NetworkExtension::PrefilterData, tag: Swift::String, bitCount: Swift::Int, hashCount: Swift::Int, murmurSeed: Swift::UInt32)
+}
+@available(iOS 26.0, macCatalyst 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+public protocol NEURLFilterControlProvider : ExtensionFoundation::AppExtension {
+  func start() async throws
+  func stop(reason: NetworkExtension::NEProviderStopReason) async throws
+  func fetchPrefilter(existingPrefilterTag: Swift::String?) async throws -> NetworkExtension::NEURLFilterPrefilter?
+}
+@available(iOS 26.0, macCatalyst 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEURLFilterControlProvider {
+  public var configuration: some NetworkExtension::NEAppExtensionConfiguration {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 26.0, macCatalyst 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@_Concurrency::MainActor @preconcurrency public class NEURLFilterControlProviderConfiguration : NetworkExtension::NEAppExtensionConfiguration {
+  @objc deinit
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension Foundation::NSNotification.Foundation::Name {
+  public static let NEURLFilterConfigurationDidChange: Foundation::Notification.Foundation::Name
+  public static let NEURLFilterStatusDidChange: Foundation::Notification.Foundation::Name
+}
+@_hasMissingDesignatedInitializers @available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+public class NEURLFilterManager : @unchecked Swift::Sendable {
+  public enum Status : Swift::Int, @unchecked Swift::Sendable {
+    case invalid
+    case stopped
+    case starting
+    case running
+    case stopping
+    public init?(rawValue: Swift::Int)
+    @available(macOS 26.0, iOS 26.0, *)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias RawValue = Swift::Int
+    public var rawValue: Swift::Int {
+      get
+    }
+  }
+  @available(iOS 27.0, macOS 27.0, *)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(tvOS, unavailable)
+  public struct ParsingConfiguration : Swift::Sendable {
+    public init(excludeScheme: Swift::Bool = true, domain: NetworkExtension::NEURLFilterManager.NetworkExtension::ParsingConfiguration.NetworkExtension::DomainOptions = DomainOptions(), path: NetworkExtension::NEURLFilterManager.NetworkExtension::ParsingConfiguration.NetworkExtension::PathOptions = PathOptions(), query: NetworkExtension::NEURLFilterManager.NetworkExtension::ParsingConfiguration.NetworkExtension::QueryOptions = QueryOptions(), excludeFragment: Swift::Bool = false, excludeIntermediates: Swift::Bool = false, caseSensitive: Swift::Bool = false)
+    public var excludeScheme: Swift::Bool
+    public var domain: NetworkExtension::NEURLFilterManager.NetworkExtension::ParsingConfiguration.NetworkExtension::DomainOptions
+    public var path: NetworkExtension::NEURLFilterManager.NetworkExtension::ParsingConfiguration.NetworkExtension::PathOptions
+    public var query: NetworkExtension::NEURLFilterManager.NetworkExtension::ParsingConfiguration.NetworkExtension::QueryOptions
+    public var excludeFragment: Swift::Bool
+    public var excludeIntermediates: Swift::Bool
+    public var caseSensitive: Swift::Bool
+    public struct DomainOptions : Swift::Sendable {
+      public init(excluded: Swift::Bool = false, stripWWW: Swift::Bool = true, levels: Swift::UInt = 0, enumerateHierarchy: Swift::Bool = true)
+      public var excluded: Swift::Bool
+      public var stripWWW: Swift::Bool
+      public var levels: Swift::UInt
+      public var enumerateHierarchy: Swift::Bool
+    }
+    public struct PathOptions : Swift::Sendable {
+      public init(excluded: Swift::Bool = false, segments: Swift::UInt = 0, enumerateHierarchy: Swift::Bool = true)
+      public var excluded: Swift::Bool
+      public var segments: Swift::UInt
+      public var enumerateHierarchy: Swift::Bool
+    }
+    public struct QueryOptions : Swift::Sendable {
+      public init(excluded: Swift::Bool = false, parameters: [Swift::String]? = nil)
+      public var excluded: Swift::Bool
+      public var parameters: [Swift::String]?
+    }
+  }
+  @available(iOS 27.0, macOS 27.0, *)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(tvOS, unavailable)
+  public enum ReportFormat : Swift::Sendable {
+    case json
+    case protobuf
+    public static func == (a: NetworkExtension::NEURLFilterManager.NetworkExtension::ReportFormat, b: NetworkExtension::NEURLFilterManager.NetworkExtension::ReportFormat) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public enum Error : Swift::Int, Foundation::LocalizedError {
+    case configurationUnchanged
+    case configurationInvalid
+    case configurationDisabled
+    case configurationStale
+    case configurationCannotBeRemoved
+    case configurationPermissionDenied
+    case configurationInternalError
+    case configurationNotLoaded
+    case serverSetupIncomplete
+    case internalError
+    case extensionCancelled
+    case extensionNotFound
+    case extensionFailedToLoad
+    case unknown
+    public init?(rawValue: Swift::Int)
+    @available(macOS 26.0, iOS 26.0, *)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias RawValue = Swift::Int
+    public var rawValue: Swift::Int {
+      get
+    }
+  }
+  public static var shared: NetworkExtension::NEURLFilterManager {
+    get
+  }
+  @objc deinit
+  public var isEnabled: Swift::Bool {
+    get
+    set
+  }
+  public var shouldFailClosed: Swift::Bool {
+    get
+    set
+  }
+  public var prefilterFetchInterval: Foundation::TimeInterval {
+    get
+    set
+  }
+  @available(iOS 27.0, macOS 27.0, *)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(tvOS, unavailable)
+  public var reportEndpoint: Swift::String? {
+    get
+    set
+  }
+  @available(iOS 27.0, macOS 27.0, *)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(tvOS, unavailable)
+  public var reportInterval: Foundation::TimeInterval {
+    get
+    set
+  }
+  @available(iOS 27.0, macOS 27.0, *)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(tvOS, unavailable)
+  public var reportFormat: NetworkExtension::NEURLFilterManager.NetworkExtension::ReportFormat {
+    get
+    set
+  }
+  public var localizedDescription: Foundation::LocalizedStringResource?
+  public var appBundleIdentifier: Swift::String? {
+    get
+  }
+  public var controlProviderBundleIdentifier: Swift::String? {
+    get
+  }
+  public var pirServerURL: Foundation::URL? {
+    get
+  }
+  public var pirPrivacyPassIssuerURL: Foundation::URL? {
+    get
+  }
+  public var pirAuthenticationToken: Swift::String? {
+    get
+  }
+  @available(iOS 27.0, macOS 27.0, *)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(tvOS, unavailable)
+  public var urlParsingConfiguration: NetworkExtension::NEURLFilterManager.NetworkExtension::ParsingConfiguration {
+    get
+    set
+  }
+  @available(iOS 27.0, macOS 27.0, *)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(tvOS, unavailable)
+  public var urlParsingRegularExpression: Swift::String? {
+    get
+  }
+  @available(iOS 27.0, macOS 27.0, *)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(tvOS, unavailable)
+  public func setURLParsingRegularExpression(_ pattern: Swift::String?) throws
+  public func setConfiguration(pirServerURL: Foundation::URL, pirPrivacyPassIssuerURL: Foundation::URL?, pirAuthenticationToken: Swift::String, controlProviderBundleIdentifier: Swift::String) throws
+  public func loadFromPreferences() async throws
+  public func saveToPreferences() async throws
+  public func removeFromPreferences() async throws
+  public func resetPIRCache() async throws
+  public func refreshPIRParameters() async throws
+  public var status: NetworkExtension::NEURLFilterManager.NetworkExtension::Status {
+    get async
+  }
+  public func handleStatusChange() -> any _Concurrency::AsyncSequence<NetworkExtension::NEURLFilterManager.NetworkExtension::Status, Swift::Never>
+  public func handleConfigChange() -> any _Concurrency::AsyncSequence<Swift::Bool, Swift::Never>
+  public var lastDisconnectError: NetworkExtension::NEURLFilterManager.NetworkExtension::Error? {
+    get async
+  }
+}
+@available(iOS 26.0, visionOS 26.0, macCatalyst 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+public protocol NEHotspotEvaluationProvider : ExtensionFoundation::AppExtension {
+  var localizedDisplayName: Swift::String { get }
+  func start() async -> Swift::Bool
+  func stop(reason: NetworkExtension::NEProviderStopReason) async
+  func handleCommand(_ command: NetworkExtension::NEHotspotHelperCommand) async -> NetworkExtension::NEHotspotHelperResponse
+}
+@available(iOS 26.0, visionOS 26.0, macCatalyst 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEHotspotEvaluationProvider {
+  public var configuration: some NetworkExtension::NEAppExtensionConfiguration {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 26.0, visionOS 26.0, macCatalyst 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@_Concurrency::MainActor @preconcurrency public class NEHotspotEvaluationProviderConfiguration : NetworkExtension::NEAppExtensionConfiguration {
+  @objc deinit
+}
+@available(macOS 15.0, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension NetworkExtension::NENetworkRule {
+  convenience public init(destinationNetworkEndpoint networkEndpoint: Network::NWEndpoint, prefix destinationPrefix: Swift::Int, protocol: NetworkExtension::NENetworkRule.NetworkExtension::`Protocol`)
+  convenience public init(destinationHostEndpoint hostEndpoint: Network::NWEndpoint, protocol: NetworkExtension::NENetworkRule.NetworkExtension::`Protocol`)
+  convenience public init(remoteNetworkEndpoint: Network::NWEndpoint?, remotePrefix: Swift::Int, localNetworkEndpoint: Network::NWEndpoint?, localPrefix: Swift::Int, protocol: NetworkExtension::NENetworkRule.NetworkExtension::`Protocol`, direction: NetworkExtension::NETrafficDirection)
+  public var matchRemoteHostOrNetworkEndpoint: Network::NWEndpoint? {
+    get
+  }
+  public var matchLocalNetworkEndpoint: Network::NWEndpoint? {
+    get
+  }
+}
+@available(iOS 18.0, visionOS 2.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEHotspotHelperCommand {
+  public var interface: Network::NWInterface {
+    get
+  }
+}
+@available(macOS 15.0, *)
+@available(iOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension NetworkExtension::NEFilterPacketProvider {
+  public var handler: ((NetworkExtension::NEFilterPacketContext, Network::NWInterface, NetworkExtension::NETrafficDirection, Swift::UnsafeRawBufferPointer) -> NetworkExtension::NEFilterPacketProvider.NetworkExtension::Verdict)? {
+    get
+    set
+  }
+}
+@available(macOS 15.0, iOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEAppProxyTCPFlow {
+  public var remoteFlowEndpoint: Network::NWEndpoint {
+    get
+  }
+}
+@available(macOS 15.0, iOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEFilterSocketFlow {
+  public var remoteFlowEndpoint: Network::NWEndpoint? {
+    get
+  }
+  public var localFlowEndpoint: Network::NWEndpoint? {
+    get
+  }
+}
+@available(macOS 15.0, iOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEAppProxyUDPFlow {
+  public func readDatagrams(completionHandler: @escaping ([(Foundation::Data, Network::NWEndpoint)]?, (any Swift::Error)?) -> Swift::Void)
+  public func readDatagrams() async -> ([(Foundation::Data, Network::NWEndpoint)]?, (any Swift::Error)?)
+  public func writeDatagrams(_ array: [(Foundation::Data, Network::NWEndpoint)], completionHandler: @escaping ((any Swift::Error)?) -> Swift::Void)
+  public func writeDatagrams(_ array: [(Foundation::Data, Network::NWEndpoint)]) async throws
+  public var localFlowEndpoint: Network::NWEndpoint? {
+    get
+  }
+}
+@available(macOS 15.0, iOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+public protocol NEAppProxyUDPFlowHandling {
+  func handleNewUDPFlow(_ flow: NetworkExtension::NEAppProxyUDPFlow, initialRemoteFlowEndpoint remoteEndpoint: Network::NWEndpoint) -> Swift::Bool
+}
+@available(iOS 26.0, visionOS 26.0, macCatalyst 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+public protocol NEHotspotAuthenticationProvider : ExtensionFoundation::AppExtension {
+  func start() async -> Swift::Bool
+  func stop(reason: NetworkExtension::NEProviderStopReason) async
+  func handleCommand(_ command: NetworkExtension::NEHotspotHelperCommand) async -> NetworkExtension::NEHotspotHelperResponse
+}
+@available(iOS 26.0, visionOS 26.0, macCatalyst 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEHotspotAuthenticationProvider {
+  public var configuration: some NetworkExtension::NEAppExtensionConfiguration {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 26.0, visionOS 26.0, macCatalyst 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@_Concurrency::MainActor @preconcurrency public class NEHotspotAuthenticationProviderConfiguration : NetworkExtension::NEAppExtensionConfiguration {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 26.0, visionOS 26.0, macCatalyst 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@_Concurrency::MainActor @preconcurrency public class NEAppExtensionConfiguration : ExtensionFoundation::AppExtensionConfiguration {
+  nonisolated public func accept(connection: Foundation::NSXPCConnection) -> Swift::Bool
+  @objc deinit
+}
+prefix operator >>
+@_hasMissingDesignatedInitializers @available(iOS 26.0, visionOS 26.0, macCatalyst 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+final public class NEHotspotManager : @unchecked Swift::Sendable {
+  public static var shared: NetworkExtension::NEHotspotManager {
+    get
+  }
+  public enum Error : Swift::Error {
+    case internalError
+    case configurationNotLoaded
+    case configurationInvalid
+    public static func == (a: NetworkExtension::NEHotspotManager.NetworkExtension::Error, b: NetworkExtension::NEHotspotManager.NetworkExtension::Error) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  final public var isEnabled: Swift::Bool {
+    get
+    set
+  }
+  final public var evaluationProviderBundleIdentifier: Swift::String? {
+    get
+    set
+  }
+  final public var authenticationProviderBundleIdentifier: Swift::String? {
+    get
+    set
+  }
+  final public var safariDomains: [Swift::String] {
+    get
+    set
+  }
+  final public var evaluatedSSIDs: [Swift::String] {
+    get
+    set
+  }
+  final public func loadFromPreferences() async throws
+  final public func saveToPreferences() async throws
+  final public func removeFromPreferences() async throws
+  @objc deinit
+}
+@available(macOS 15.0, iOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEAppProxyFlow {
+  public func open(withLocalFlowEndpoint localEndpoint: Network::NWEndpoint?, completionHandler: @escaping ((any Swift::Error)?) -> Swift::Void)
+  public func open(withLocalFlowEndpoint localEndpoint: Network::NWEndpoint?) async throws
+  public func setMetadata(on parameters: Network::NWParameters)
+  public var interface: Network::NWInterface? {
+    get
+    set
+  }
+}
+@available(macOS 26.0, iOS 26.0, tvOS 26.0, visionOS 26.0, *)
+@available(watchOS, unavailable)
+extension NetworkExtension::NEVPNIKEv2SecurityAssociationParameters {
+  public var postQuantumKeyExchangeMethods: [NetworkExtension::NEVPNIKEv2PostQuantumKeyExchangeMethod] {
+    get
+    set(postQuantumKeyExchangeMethods)
+  }
+}
+@available(macOS 15.0, iOS 18.0, tvOS 18.0, visionOS 2.0, *)
+@available(watchOS, unavailable)
+extension NetworkExtension::NEPacketTunnelProvider {
+  public var virtualInterface: Network::NWInterface? {
+    get
+  }
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEURLFilterManager.NetworkExtension::Status : Swift::Equatable {}
+@available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEURLFilterManager.NetworkExtension::Status : Swift::Hashable {}
+@available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEURLFilterManager.NetworkExtension::Status : Swift::RawRepresentable {}
+@available(iOS 27.0, macOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEURLFilterManager.NetworkExtension::ReportFormat : Swift::Equatable {}
+@available(iOS 27.0, macOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEURLFilterManager.NetworkExtension::ReportFormat : Swift::Hashable {}
+@available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEURLFilterManager.NetworkExtension::Error : Swift::Equatable {}
+@available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEURLFilterManager.NetworkExtension::Error : Swift::Hashable {}
+@available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEURLFilterManager.NetworkExtension::Error : Swift::RawRepresentable {}
+@available(iOS 26.0, visionOS 26.0, macCatalyst 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEHotspotManager.NetworkExtension::Error : Swift::Equatable {}
+@available(iOS 26.0, visionOS 26.0, macCatalyst 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension NetworkExtension::NEHotspotManager.NetworkExtension::Error : Swift::Hashable {}

@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SoftwareUpdateUIKit.framework/SoftwareUpdateUIKit
+current-version:       772.0.20
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SUUIResolveOSName, _SUUIResolveProductFamilyName,
+                            _SoftwareUpdateUIKitVersionNumber,
+                            _SoftwareUpdateUIKitVersionString, _kSUUIOSNameToken,
+                            _kSUUIProductFamilyNameToken ]
+    objc-classes:         [ SUUITermsConditionsInterop,
+                            _SUUITargetDeviceLocalizationBundleLookup,
+                            _TtC19SoftwareUpdateUIKit11TipsManager,
+                            _TtC19SoftwareUpdateUIKit25StatefulUIDelegateHandler ]
+    objc-ivars:           [ SUUITermsConditionsInterop._device,
+                            SUUITermsConditionsInterop._hostViewController,
+                            SUUITermsConditionsInterop._presentationAccount,
+                            SUUITermsConditionsInterop._presentationCompletion,
+                            SUUITermsConditionsInterop._remoteUIController,
+                            SUUITermsConditionsInterop._workQueue ]
+...

@@ -1,0 +1,59 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Leo.framework/Leo
+current-version:       912.0.235
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _LEOEnumerateLexemeCategories,
+                            _LEOItemTypeIsCollection,
+                            _LEOLexemeCategoryFromInteger, _LEOLexemeIDMax,
+                            _LEOStringForLeoItemType,
+                            _LEOStringForLexemeCategory, _LEOStringForLexemeType ]
+    objc-classes:         [ LEOAttributeContext, LEOAttributeStore, LEODate,
+                            LEOGeoRect, LEOGeoRegion, LEOGeohash, LEOItem,
+                            LEOItemLexemeDetails, LEOItemQuery, LEOItemQueryResult,
+                            LEOItemQueryToken, LEOLexeme, LEONLTokenizer,
+                            LEOQueryOptions, LEOWritableAttributeContext,
+                            _LEOIndexedItem ]
+    objc-ivars:           [ LEOGeoRect._lat1, LEOGeoRect._lat2, LEOGeoRect._lon1,
+                            LEOGeoRect._lon2, LEOGeoRegion._geometry,
+                            LEOGeoRegion._index, LEOGeoRegion._indexGenerated,
+                            LEOGeohash._geohashString, LEOGeohash._precision,
+                            LEOItem._dateCreated, LEOItem._identifier,
+                            LEOItem._thumbnailData, LEOItem._type,
+                            LEOItemLexemeDetails._isMatch,
+                            LEOItemLexemeDetails._lexemeID,
+                            LEOItemLexemeDetails._score,
+                            LEOItemQuery._computeMatchedLexemeCounts,
+                            LEOItemQuery._fetchedDetails,
+                            LEOItemQuery._fetchedLexemeIDsBitset,
+                            LEOItemQuery._includeFetchedLexemeDetails,
+                            LEOItemQuery._lexemeIDToLexemeSetMatchCounterIndexes,
+                            LEOItemQuery._lexemeIDtoMatchedCount,
+                            LEOItemQuery._lexemeSetMatchCounters,
+                            LEOItemQuery._lexemeSetMaxMatchCounts,
+                            LEOItemQuery._lexemeSetMinMatchCounts,
+                            LEOItemQuery._operands, LEOItemQuery._options,
+                            LEOItemQuery._queryBitset, LEOItemQuery._queryID,
+                            LEOItemQuery._queryOperandsCount,
+                            LEOItemQuery._queryTokens, LEOItemQuery._stack,
+                            LEOItemQuery._tokens,
+                            LEOItemQueryResult._matchedLexemeIDCounts,
+                            LEOItemQueryResult._resultItems,
+                            LEOItemQueryToken._lexemeIDs,
+                            LEOItemQueryToken._maxCount,
+                            LEOItemQueryToken._minCount, LEOItemQueryToken._op,
+                            LEOItemQueryToken._type,
+                            LEONLTokenizer._apostrophesToStrip,
+                            LEONLTokenizer._tokenizer,
+                            LEOQueryOptions._computeMatchedLexemeCounts,
+                            LEOQueryOptions._fetchedLexemeIDs,
+                            LEOQueryOptions._includeContextualThumbnailData,
+                            LEOQueryOptions._includeScores,
+                            LEOQueryOptions._itemTypes,
+                            LEOQueryOptions._logIdentifier,
+                            LEOQueryOptions._sortDescriptor ]
+...

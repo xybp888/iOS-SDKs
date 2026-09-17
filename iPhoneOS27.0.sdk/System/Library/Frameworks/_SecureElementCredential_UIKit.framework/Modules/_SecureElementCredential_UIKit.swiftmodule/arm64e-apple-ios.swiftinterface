@@ -1,0 +1,64 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 70.39.1 -module-name _SecureElementCredential_UIKit -package-name com.apple.seservice
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported public import SecureElementCredential
+public import Swift
+public import UIKit
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession {
+  public func performTransaction(using credential: SecureElementCredential::CredentialSession.SecureElementCredential::Credential, over scene: UIKit::UIScene, options: SecureElementCredential::CredentialSession.SecureElementCredential::CardEmulationOptions = .init()) async throws
+  public func endCardEmulation() async throws
+}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession {
+  public func performCardEmulationTransactionWithCurrentCredential(over scene: UIKit::UIScene, options: SecureElementCredential::CredentialSession.SecureElementCredential::CardEmulationOptions = .init()) async throws
+  public func performWiredTransaction(using credential: SecureElementCredential::CredentialSession.SecureElementCredential::Credential, over scene: UIKit::UIScene, instanceAID: Foundation::Data) async throws
+}
+@available(iOS 17.4, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+public enum CredentialSessionWindowSceneEvent : Swift::Hashable, Swift::Codable, Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+  case readerDetected
+  case presentation
+  public static func == (a: _SecureElementCredential_UIKit::CredentialSessionWindowSceneEvent, b: _SecureElementCredential_UIKit::CredentialSessionWindowSceneEvent) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 17.4, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+public protocol CredentialSessionWindowSceneDelegate {
+  func windowScene(_ windowScene: UIKit::UIWindowScene, didReceiveCredentialSessionWindowSceneEvent event: _SecureElementCredential_UIKit::CredentialSessionWindowSceneEvent)
+}
+@available(iOS 17.4, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+extension UIKit::UIScene.UIKit::ConnectionOptions {
+  @_Concurrency::MainActor @preconcurrency public var credentialSessionEvent: _SecureElementCredential_UIKit::CredentialSessionWindowSceneEvent? {
+    get
+  }
+}

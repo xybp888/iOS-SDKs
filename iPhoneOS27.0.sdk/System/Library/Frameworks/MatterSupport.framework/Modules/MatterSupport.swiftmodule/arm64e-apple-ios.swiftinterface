@@ -1,0 +1,247 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature ExistentialAny -enable-upcoming-feature InferIsolatedConformances -enable-experimental-feature DebugDescriptionMacro -user-module-version 1493.1.5.1.1 -module-name MatterSupport
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+public import Matter
+@_exported public import MatterSupport
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MatterSupport::MatterAddDeviceExtensionRequestHandler {
+  public struct WiFiNetworkAssociation : Swift::Hashable, Swift::Codable, Swift::Sendable {
+    public static var defaultSystemNetwork: MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::WiFiNetworkAssociation {
+      get
+    }
+    public static func network(ssid: Foundation::Data, credentials: Foundation::Data) -> MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::WiFiNetworkAssociation
+    public static func == (a: MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::WiFiNetworkAssociation, b: MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::WiFiNetworkAssociation) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct MatterAddDeviceRequest {
+  @available(iOS 17, *)
+  public static var isSupported: Swift::Bool {
+    get
+  }
+  public var topology: MatterSupport::MatterAddDeviceRequest.MatterSupport::Topology
+  public var setupPayload: Matter::MTRSetupPayload?
+  public var showDeviceCriteria: MatterSupport::MatterAddDeviceRequest.MatterSupport::DeviceCriteria
+  @available(iOS 16.4, *)
+  public var shouldScanNetworks: Swift::Bool
+  public init(topology: MatterSupport::MatterAddDeviceRequest.MatterSupport::Topology, setupPayload: Matter::MTRSetupPayload? = nil, showing deviceCriteria: MatterSupport::MatterAddDeviceRequest.MatterSupport::DeviceCriteria = .allDevices)
+  @available(iOS 16.4, *)
+  public init(topology: MatterSupport::MatterAddDeviceRequest.MatterSupport::Topology, setupPayload: Matter::MTRSetupPayload? = nil, showing deviceCriteria: MatterSupport::MatterAddDeviceRequest.MatterSupport::DeviceCriteria = .allDevices, shouldScanNetworks: Swift::Bool = true)
+  public func perform() async throws
+}
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MatterSupport::MatterAddDeviceRequest : Swift::Hashable {
+  public static func == (a: MatterSupport::MatterAddDeviceRequest, b: MatterSupport::MatterAddDeviceRequest) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MatterSupport::MatterAddDeviceRequest : @unchecked Swift::Sendable {
+}
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MatterSupport::MatterAddDeviceRequest : Swift::Codable {
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MatterSupport::MatterAddDeviceRequest {
+  public struct Room : Swift::Hashable, Swift::Codable, Swift::Sendable {
+    public var displayName: Swift::String
+    public init(displayName: Swift::String)
+    public static func == (a: MatterSupport::MatterAddDeviceRequest.MatterSupport::Room, b: MatterSupport::MatterAddDeviceRequest.MatterSupport::Room) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MatterSupport::MatterAddDeviceExtensionRequestHandler {
+  public struct ThreadScanResult : Swift::Hashable, Swift::Codable, Swift::Sendable {
+    public var networkName: Swift::String
+    public var panID: Swift::UInt16
+    public var extendedPANID: Swift::UInt64
+    public var channel: Swift::UInt16
+    public var extendedAddress: Foundation::Data
+    public var rssi: Swift::Int8
+    public var version: Swift::UInt8
+    public var linkQualityIndicator: Swift::UInt8
+    public init(networkName: Swift::String, panID: Swift::UInt16, extendedPANID: Swift::UInt64, channel: Swift::UInt16, extendedAddress: Foundation::Data, rssi: Swift::Int8, version: Swift::UInt8, linkQualityIndicator: Swift::UInt8)
+    public static func == (a: MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::ThreadScanResult, b: MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::ThreadScanResult) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MatterSupport::MatterAddDeviceRequest {
+  public struct Topology : Swift::Hashable, Swift::Codable, Swift::Sendable {
+    public var ecosystemName: Swift::String
+    public var homes: [MatterSupport::MatterAddDeviceRequest.MatterSupport::Home]
+    public init(ecosystemName: Swift::String, homes: [MatterSupport::MatterAddDeviceRequest.MatterSupport::Home])
+    public static func == (a: MatterSupport::MatterAddDeviceRequest.MatterSupport::Topology, b: MatterSupport::MatterAddDeviceRequest.MatterSupport::Topology) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MatterSupport::MatterAddDeviceRequest {
+  public enum DeviceCriteria : Swift::Hashable, Swift::Codable, Swift::Sendable {
+    case allDevices
+    indirect case any(_: [MatterSupport::MatterAddDeviceRequest.MatterSupport::DeviceCriteria])
+    indirect case all(_: [MatterSupport::MatterAddDeviceRequest.MatterSupport::DeviceCriteria])
+    indirect case not(_: MatterSupport::MatterAddDeviceRequest.MatterSupport::DeviceCriteria)
+    case commissioningID(_: Foundation::UUID)
+    case vendorID(_: Swift::Int)
+    case productID(_: Swift::Int)
+    case serialNumber(_: Swift::String)
+    case fabricNode(rootPublicKey: Foundation::Data, nodeID: Swift::UInt64)
+    public static func == (a: MatterSupport::MatterAddDeviceRequest.MatterSupport::DeviceCriteria, b: MatterSupport::MatterAddDeviceRequest.MatterSupport::DeviceCriteria) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MatterSupport::MatterAddDeviceExtensionRequestHandler {
+  public struct ThreadNetworkAssociation : Swift::Hashable, Swift::Codable, Swift::Sendable {
+    public static var defaultSystemNetwork: MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::ThreadNetworkAssociation {
+      get
+    }
+    public static func network(extendedPANID: Swift::UInt64) -> MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::ThreadNetworkAssociation
+    public static func == (a: MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::ThreadNetworkAssociation, b: MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::ThreadNetworkAssociation) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MatterSupport::MatterAddDeviceExtensionRequestHandler {
+  public struct WiFiScanResult {
+    public var ssid: Foundation::Data
+    public var rssi: Swift::Int8
+    public var security: Matter::MTRNetworkCommissioningWiFiSecurity
+    public var band: Matter::MTRNetworkCommissioningWiFiBand
+    public init(ssid: Foundation::Data, rssi: Swift::Int8, security: Matter::MTRNetworkCommissioningWiFiSecurity, band: Matter::MTRNetworkCommissioningWiFiBand)
+  }
+}
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::WiFiScanResult : Swift::Hashable {
+  public func hash(into hasher: inout Swift::Hasher)
+  public static func == (a: MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::WiFiScanResult, b: MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::WiFiScanResult) -> Swift::Bool
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::WiFiScanResult : Swift::Sendable {
+}
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::WiFiScanResult : Swift::Codable {
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MatterSupport::MatterAddDeviceRequest {
+  public struct Home : Swift::Hashable, Swift::Codable, Swift::Sendable {
+    public var displayName: Swift::String
+    public init(displayName: Swift::String)
+    public static func == (a: MatterSupport::MatterAddDeviceRequest.MatterSupport::Home, b: MatterSupport::MatterAddDeviceRequest.MatterSupport::Home) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@objc @_inheritsConvenienceInitializers @available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+open class MatterAddDeviceExtensionRequestHandler : ObjectiveC::NSObject {
+  open func validateDeviceCredential(_ deviceCredential: MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::DeviceCredential) async throws
+  open func selectWiFiNetwork(from wifiScanResults: [MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::WiFiScanResult]) async throws -> MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::WiFiNetworkAssociation
+  open func selectThreadNetwork(from threadScanResults: [MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::ThreadScanResult]) async throws -> MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::ThreadNetworkAssociation
+  open func commissionDevice(in home: MatterSupport::MatterAddDeviceRequest.MatterSupport::Home?, onboardingPayload: Swift::String, commissioningID: Foundation::UUID) async throws
+  open func rooms(in home: MatterSupport::MatterAddDeviceRequest.MatterSupport::Home?) async -> [MatterSupport::MatterAddDeviceRequest.MatterSupport::Room]
+  open func configureDevice(named name: Swift::String, in room: MatterSupport::MatterAddDeviceRequest.MatterSupport::Room?) async
+  @objc override dynamic public init()
+  @objc deinit
+}
+prefix operator >>
+@available(iOS 16.1, macOS 14, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MatterSupport::MatterAddDeviceExtensionRequestHandler {
+  public struct DeviceCredential : Swift::Hashable, Swift::Codable, Swift::Sendable {
+    public var certificationDeclaration: Foundation::Data
+    public var deviceAttestationCertificate: Foundation::Data
+    public var productAttestationIntermediateCertificate: Foundation::Data
+    public init(certificationDeclaration: Foundation::Data, deviceAttestationCertificate: Foundation::Data, productAttestationIntermediateCertificate: Foundation::Data)
+    public static func == (a: MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::DeviceCredential, b: MatterSupport::MatterAddDeviceExtensionRequestHandler.MatterSupport::DeviceCredential) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}

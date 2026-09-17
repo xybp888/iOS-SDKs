@@ -1,0 +1,175 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 376.0.1 -module-name FinanceKitUI
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+public import ExtensionKit
+public import FinanceKit
+@_exported public import FinanceKitUI
+public import Foundation
+public import Swift
+public import SwiftUI
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+
+@available(iOS 18, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
+@_Concurrency::MainActor @preconcurrency public struct TransactionPicker<Label> : SwiftUICore::View where Label : SwiftUICore::View {
+  @_Concurrency::MainActor @preconcurrency public init(selection: SwiftUICore::Binding<[FinanceKit::Transaction]>, @SwiftUICore::ViewBuilder label: () -> Label)
+  @_Concurrency::MainActor @preconcurrency public var body: some SwiftUICore::View {
+    get
+  }
+  @available(iOS 18, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable)
+  public typealias Body = @_opaqueReturnTypeOf("$s12FinanceKitUI17TransactionPickerV4bodyQrvp", 0) __<Label>
+}
+@available(iOS 18, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
+extension SwiftUICore::View {
+  @_Concurrency::MainActor @preconcurrency public func transactionPicker(isPresented: SwiftUICore::Binding<Swift::Bool>, selection: SwiftUICore::Binding<[FinanceKit::Transaction]>) -> some SwiftUICore::View
+  
+}
+@available(iOS 17, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@_Concurrency::MainActor @preconcurrency public struct AddOrderToWalletButton : SwiftUICore::View {
+  @_Concurrency::MainActor @preconcurrency public init(signedArchive: Foundation::Data, onCompletion: @escaping (Swift::Result<FinanceKit::FinanceStore.FinanceKit::SaveOrderResult, any Swift::Error>) -> Swift::Void)
+  @_Concurrency::MainActor @preconcurrency public var body: some SwiftUICore::View {
+    get
+  }
+  @available(iOS 17, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public typealias Body = @_opaqueReturnTypeOf("$s12FinanceKitUI22AddOrderToWalletButtonV4bodyQrvp", 0) __
+}
+@available(iOS 17, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct AddOrderToWalletButtonStyle : Swift::Sendable {
+  public static let black: FinanceKitUI::AddOrderToWalletButtonStyle
+  public static let blackOutline: FinanceKitUI::AddOrderToWalletButtonStyle
+}
+@available(iOS 17.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUICore::View {
+  @_Concurrency::MainActor @preconcurrency public func addOrderToWalletButtonStyle(_ style: FinanceKitUI::AddOrderToWalletButtonStyle) -> some SwiftUICore::View
+  
+}
+
+
+
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+public protocol FinancialConnectionUIExtension : ExtensionFoundation::AppExtension, FinanceKitUI::FinancialConnectionUIExtensionProviding {
+  associatedtype Body : FinanceKitUI::FinancialConnectionUIExtensionScene
+  @_Concurrency::MainActor var body: Self.Body { get }
+}
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+extension FinanceKitUI::FinancialConnectionUIExtension {
+  @_Concurrency::MainActor public var configuration: ExtensionKit::AppExtensionSceneConfiguration {
+    get
+  }
+}
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@_Concurrency::MainActor @preconcurrency public protocol FinancialConnectionUIExtensionScene : ExtensionKit::AppExtensionScene {
+}
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@_Concurrency::MainActor @preconcurrency public struct FinancialConnectionUIExtensionAuthorizationScene<Content> : FinanceKitUI::FinancialConnectionUIExtensionScene where Content : SwiftUICore::View {
+  @_Concurrency::MainActor @preconcurrency public init(content: @escaping () -> Content)
+  @_Concurrency::MainActor @preconcurrency public var body: some ExtensionKit::AppExtensionScene {
+    get
+  }
+  @available(iOS 17, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public typealias Body = @_opaqueReturnTypeOf("$s12FinanceKitUI48FinancialConnectionUIExtensionAuthorizationSceneV4bodyQrvp", 0) __<Content>
+}
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+public protocol FinancialConnectionUIExtensionProviding {
+  func authorize(_ request: FinanceKitUI::FinancialConnectionExtensionAuthorizationRequest)
+}
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+public typealias FinancialConnectionExtensionAuthorizationParams = [Swift::String : Swift::String]
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+public struct FinancialConnectionExtensionAuthorizationRequest {
+  public var params: FinanceKitUI::FinancialConnectionExtensionAuthorizationParams
+  public typealias CompletionHandlerResult = Swift::Result<FinanceKitUI::FinancialConnectionExtensionAuthorizationResult, any Swift::Error>
+  public typealias CompletionHandler = @Sendable (FinanceKitUI::FinancialConnectionExtensionAuthorizationRequest.FinanceKitUI::CompletionHandlerResult) -> Swift::Void
+  public func complete(authorizationResult: FinanceKitUI::FinancialConnectionExtensionAuthorizationResult)
+  public func complete(error: any Swift::Error)
+}
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+public struct FinancialConnectionExtensionAuthorizationResult : Swift::Codable, Swift::Sendable {
+  public let params: FinanceKitUI::FinancialConnectionExtensionAuthorizationParams
+  public init(params: FinanceKitUI::FinancialConnectionExtensionAuthorizationParams)
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+
+
+
+
+
+
+
+
+@available(iOS 18, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
+extension FinanceKitUI::TransactionPicker : Swift::Sendable {}
+@available(iOS 17, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension FinanceKitUI::AddOrderToWalletButton : Swift::Sendable {}
+@available(iOS 17, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+extension FinanceKitUI::FinancialConnectionUIExtensionAuthorizationScene : Swift::Sendable {}

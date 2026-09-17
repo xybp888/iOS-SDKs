@@ -1,0 +1,47 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RemoteHID.framework/RemoteHID
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _RemoteHIDLog, _RemoteHIDLogPackets,
+                            _RemoteHIDVersionNumber, _RemoteHIDVersionString ]
+    objc-classes:         [ HIDAACPRemoteEndpoint, HIDRemoteDevice,
+                            HIDRemoteDeviceAACPServer, HIDRemoteDeviceServer,
+                            HIDRemoteEndpoint ]
+    objc-ivars:           [ HIDAACPRemoteEndpoint._server,
+                            HIDRemoteDevice._cancelled,
+                            HIDRemoteDevice._deviceID, HIDRemoteDevice._enableTS,
+                            HIDRemoteDevice._endpoint,
+                            HIDRemoteDevice._endpointID,
+                            HIDRemoteDevice._handleReportCount,
+                            HIDRemoteDevice._handleReportError,
+                            HIDRemoteDevice._lastGetReport,
+                            HIDRemoteDevice._lastSetReportStatus,
+                            HIDRemoteDevice._propertyNotify,
+                            HIDRemoteDevice._propertyPort,
+                            HIDRemoteDevice._semaphore, HIDRemoteDevice._side,
+                            HIDRemoteDevice._transportVersion,
+                            HIDRemoteDevice._waitForReport,
+                            HIDRemoteDeviceAACPServer._btQueue,
+                            HIDRemoteDeviceAACPServer._decodeBuff,
+                            HIDRemoteDeviceAACPServer._manager,
+                            HIDRemoteDeviceAACPServer._mb,
+                            HIDRemoteDeviceAACPServer._me,
+                            HIDRemoteDeviceAACPServer._session,
+                            HIDRemoteDeviceAACPServer._stateHandler,
+                            HIDRemoteDeviceAACPServer._tsID,
+                            HIDRemoteDeviceServer._asyncQueue,
+                            HIDRemoteDeviceServer._endpoints,
+                            HIDRemoteDeviceServer._lock,
+                            HIDRemoteDeviceServer._queue,
+                            HIDRemoteDeviceServer._refreshCounts,
+                            HIDRemoteEndpoint._devices,
+                            HIDRemoteEndpoint._endpointID,
+                            HIDRemoteEndpoint._lock,
+                            HIDRemoteEndpoint._prevDeviceLog,
+                            HIDRemoteEndpoint._primarySide ]
+...

@@ -1,0 +1,62 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HeartRateCoordinator.framework/HeartRateCoordinator
+current-version:       0
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ HRCBluetoothLESourceObserver,
+                            HRCBluetoothLESourceObserverXPCHelper, HRCDevice,
+                            HRCHeartRateData, HRCHeartRateRequestor,
+                            HRCHeartRateRequestorXPCHelper,
+                            HRCPrivacyToggleMonitor ]
+    objc-ivars:           [ HRCBluetoothLESourceObserver._connectionHelper,
+                            HRCBluetoothLESourceObserver._delegate,
+                            HRCBluetoothLESourceObserver._delegateQueue,
+                            HRCBluetoothLESourceObserver._primaryQueue,
+                            HRCBluetoothLESourceObserverXPCHelper._connection,
+                            HRCBluetoothLESourceObserverXPCHelper._delegate,
+                            HRCBluetoothLESourceObserverXPCHelper._primaryQueue,
+                            HRCDevice._UDIDeviceIdentifier,
+                            HRCDevice._bluetoothIdentifier,
+                            HRCDevice._firmwareVersion,
+                            HRCDevice._hardwareVersion,
+                            HRCDevice._localIdentifier, HRCDevice._manufacturer,
+                            HRCDevice._model, HRCDevice._name,
+                            HRCDevice._softwareVersion,
+                            HRCHeartRateData._arbitrationStatus,
+                            HRCHeartRateData._confidence,
+                            HRCHeartRateData._confidenceLevel,
+                            HRCHeartRateData._context,
+                            HRCHeartRateData._deliveryMode,
+                            HRCHeartRateData._device,
+                            HRCHeartRateData._deviceUuid,
+                            HRCHeartRateData._flags, HRCHeartRateData._heartRate,
+                            HRCHeartRateData._hrContext,
+                            HRCHeartRateData._machContinuousTimestamp,
+                            HRCHeartRateData._sensorLocation,
+                            HRCHeartRateData._sourceType,
+                            HRCHeartRateData._streamingThrottleStatus,
+                            HRCHeartRateData._timestamp, HRCHeartRateData._uuid,
+                            HRCHeartRateRequestor._activityType,
+                            HRCHeartRateRequestor._clientQueue,
+                            HRCHeartRateRequestor._connectionHelper,
+                            HRCHeartRateRequestor._delegate,
+                            HRCHeartRateRequestor._heartRatePrivacyToggleEnabled,
+                            HRCHeartRateRequestor._locationType,
+                            HRCHeartRateRequestor._mostRecentHighConfidenceHeartRateRequested,
+                            HRCHeartRateRequestor._opportunisticUpdatesEnabled,
+                            HRCHeartRateRequestor._primaryQueue,
+                            HRCHeartRateRequestor._privacyToggleMonitor,
+                            HRCHeartRateRequestor._recentHighConfidenceHeartRatesRequested,
+                            HRCHeartRateRequestor._requestedStreamingMode,
+                            HRCHeartRateRequestorXPCHelper._connected,
+                            HRCHeartRateRequestorXPCHelper._connection,
+                            HRCHeartRateRequestorXPCHelper._delegate,
+                            HRCHeartRateRequestorXPCHelper._primaryQueue,
+                            HRCPrivacyToggleMonitor._center,
+                            HRCPrivacyToggleMonitor._delegate,
+                            HRCPrivacyToggleMonitor._delegateQueue ]
+...

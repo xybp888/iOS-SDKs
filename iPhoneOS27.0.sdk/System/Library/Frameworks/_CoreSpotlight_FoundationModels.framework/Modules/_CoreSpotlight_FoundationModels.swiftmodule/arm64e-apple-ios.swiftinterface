@@ -1,0 +1,512 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature ConciseMagicFile -enable-upcoming-feature ForwardTrailingClosures -enable-upcoming-feature StrictConcurrency -enable-upcoming-feature DeprecateApplicationMain -enable-upcoming-feature ImportObjcForwardDeclarations -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature IsolatedDefaultValues -enable-upcoming-feature GlobalConcurrency -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature ImplicitOpenExistentials -enable-upcoming-feature RegionBasedIsolation -enable-upcoming-feature DynamicActorIsolation -enable-upcoming-feature NonfrozenEnumExhaustivity -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature ExistentialAny -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 2459.105 -module-name _CoreSpotlight_FoundationModels
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+public import Combine
+@_exported @preconcurrency public import CoreSpotlight
+@_exported public import FoundationModels
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct CoreSpotlightSource : @unchecked Swift::Sendable {
+  public var fetchAttributes: [CoreSpotlight::SearchableItemAttribute]
+  public var maximumResultCount: Swift::Int?
+  public var searchableIndexDelegate: (any CoreSpotlight::CSSearchableIndexDelegate)?
+  public init(searchableIndexDelegate: (any CoreSpotlight::CSSearchableIndexDelegate)? = nil, fetchAttributes: [CoreSpotlight::SearchableItemAttribute] = [])
+  public init(fetchAttributes: [CoreSpotlight::SearchableItemAttribute] = [])
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct FileSource : Swift::Sendable {
+  public var fetchAttributes: [CoreSpotlight::SearchableItemAttribute]
+  public var maximumResultCount: Swift::Int?
+  public var scopes: [Foundation::URL]
+  public init(fetchAttributes: [CoreSpotlight::SearchableItemAttribute] = [])
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct SearchSource : Swift::Sendable {
+  public static var coreSpotlight: _CoreSpotlight_FoundationModels::SearchSource {
+    get
+  }
+  public static func coreSpotlight(_ source: _CoreSpotlight_FoundationModels::CoreSpotlightSource) -> _CoreSpotlight_FoundationModels::SearchSource
+  public static var files: _CoreSpotlight_FoundationModels::SearchSource {
+    get
+  }
+  public static func files(_ source: _CoreSpotlight_FoundationModels::FileSource) -> _CoreSpotlight_FoundationModels::SearchSource
+}
+extension _CoreSpotlight_FoundationModels::SpotlightSearchTool {
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public struct Configuration : Swift::Sendable {
+    public var sources: [_CoreSpotlight_FoundationModels::SearchSource]
+    public var guide: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::Guide?
+    public var contactResolver: (any _CoreSpotlight_FoundationModels::ContactResolver)?
+    public var customStages: [any _CoreSpotlight_FoundationModels::CustomStage] {
+      get
+      set
+    }
+    public var maximumResponseSize: Swift::Int?
+    public init(sources: [_CoreSpotlight_FoundationModels::SearchSource] = [], guide: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::Guide? = nil, contactResolver: (any _CoreSpotlight_FoundationModels::ContactResolver)? = nil, customStages: [any _CoreSpotlight_FoundationModels::CustomStage] = [], maximumResponseSize: Swift::Int? = nil)
+  }
+}
+extension _CoreSpotlight_FoundationModels::SpotlightSearchTool {
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public struct Guide : Swift::Sendable {
+    public let level: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::GuidanceLevel
+    public let format: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::FormatLevel
+    public init(level: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::GuidanceLevel = .complete, format: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::FormatLevel = .structured)
+  }
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::Guide {
+  public static var complete: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::Guide {
+    get
+  }
+  public static func focused(_ domain: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain = .items) -> _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::Guide
+  public static func dynamic(_ profile: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::GuidanceProfile) -> _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::Guide
+}
+extension _CoreSpotlight_FoundationModels::SpotlightSearchTool {
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public enum FormatLevel : Swift::Sendable {
+    case structured
+    case compact
+    public static func == (a: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::FormatLevel, b: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::FormatLevel) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+extension _CoreSpotlight_FoundationModels::SpotlightSearchTool {
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public enum GuidanceLevel : Swift::Sendable {
+    case complete
+    case focused(_: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain = .items)
+    case dynamic(_CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::GuidanceProfile)
+  }
+}
+extension _CoreSpotlight_FoundationModels::SpotlightSearchTool {
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public struct ContentDomain : Swift::Sendable {
+    public static var audio: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain {
+      get
+    }
+    public static func audio(_ config: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain._CoreSpotlight_FoundationModels::Audio) -> _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain
+    public static var calendar: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain {
+      get
+    }
+    public static func calendar(_ config: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain._CoreSpotlight_FoundationModels::Calendar) -> _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain
+    public static var communications: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain {
+      get
+    }
+    public static func communications(_ config: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain._CoreSpotlight_FoundationModels::Communications) -> _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain
+    public static var documents: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain {
+      get
+    }
+    public static func documents(_ config: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain._CoreSpotlight_FoundationModels::Documents) -> _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain
+    public static var items: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain {
+      get
+    }
+    public static func items(_ config: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain._CoreSpotlight_FoundationModels::Items) -> _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain
+    public static var visualMedia: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain {
+      get
+    }
+    public static func visualMedia(_ config: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain._CoreSpotlight_FoundationModels::VisualMedia) -> _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain
+  }
+}
+extension _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::ContentDomain {
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public struct Audio : Swift::Sendable {
+    public var artist: [CoreSpotlight::SearchableItemAttribute]?
+    public var album: [CoreSpotlight::SearchableItemAttribute]?
+    public var transcription: [CoreSpotlight::SearchableItemAttribute]?
+    public var date: [CoreSpotlight::SearchableItemAttribute]?
+    public init(artist: [CoreSpotlight::SearchableItemAttribute]? = nil, album: [CoreSpotlight::SearchableItemAttribute]? = nil, transcription: [CoreSpotlight::SearchableItemAttribute]? = nil, date: [CoreSpotlight::SearchableItemAttribute]? = nil)
+  }
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public struct Calendar : Swift::Sendable {
+    public var organizer: [CoreSpotlight::SearchableItemAttribute]?
+    public var attendees: [CoreSpotlight::SearchableItemAttribute]?
+    public var location: [CoreSpotlight::SearchableItemAttribute]?
+    public var date: [CoreSpotlight::SearchableItemAttribute]?
+    public init(organizer: [CoreSpotlight::SearchableItemAttribute]? = nil, attendees: [CoreSpotlight::SearchableItemAttribute]? = nil, location: [CoreSpotlight::SearchableItemAttribute]? = nil, date: [CoreSpotlight::SearchableItemAttribute]? = nil)
+  }
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public struct Communications : Swift::Sendable {
+    public var authors: [CoreSpotlight::SearchableItemAttribute]?
+    public var recipients: [CoreSpotlight::SearchableItemAttribute]?
+    public var sent: [CoreSpotlight::SearchableItemAttribute]?
+    public var received: [CoreSpotlight::SearchableItemAttribute]?
+    public var topic: [CoreSpotlight::SearchableItemAttribute]?
+    public init(authors: [CoreSpotlight::SearchableItemAttribute]? = nil, recipients: [CoreSpotlight::SearchableItemAttribute]? = nil, sent: [CoreSpotlight::SearchableItemAttribute]? = nil, received: [CoreSpotlight::SearchableItemAttribute]? = nil, topic: [CoreSpotlight::SearchableItemAttribute]? = nil)
+  }
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public struct Documents : Swift::Sendable {
+    public var authors: [CoreSpotlight::SearchableItemAttribute]?
+    public var keywords: [CoreSpotlight::SearchableItemAttribute]?
+    public var created: [CoreSpotlight::SearchableItemAttribute]?
+    public var modified: [CoreSpotlight::SearchableItemAttribute]?
+    public init(authors: [CoreSpotlight::SearchableItemAttribute]? = nil, keywords: [CoreSpotlight::SearchableItemAttribute]? = nil, created: [CoreSpotlight::SearchableItemAttribute]? = nil, modified: [CoreSpotlight::SearchableItemAttribute]? = nil)
+  }
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public struct Items : Swift::Sendable {
+    public var title: [CoreSpotlight::SearchableItemAttribute]?
+    public var text: [CoreSpotlight::SearchableItemAttribute]?
+    public var created: [CoreSpotlight::SearchableItemAttribute]?
+    public var modified: [CoreSpotlight::SearchableItemAttribute]?
+    public init(title: [CoreSpotlight::SearchableItemAttribute]? = nil, text: [CoreSpotlight::SearchableItemAttribute]? = nil, created: [CoreSpotlight::SearchableItemAttribute]? = nil, modified: [CoreSpotlight::SearchableItemAttribute]? = nil)
+  }
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public struct VisualMedia : Swift::Sendable {
+    public var people: [CoreSpotlight::SearchableItemAttribute]?
+    public var description: [CoreSpotlight::SearchableItemAttribute]?
+    public var location: [CoreSpotlight::SearchableItemAttribute]?
+    public var date: [CoreSpotlight::SearchableItemAttribute]?
+    public init(people: [CoreSpotlight::SearchableItemAttribute]? = nil, description: [CoreSpotlight::SearchableItemAttribute]? = nil, location: [CoreSpotlight::SearchableItemAttribute]? = nil, date: [CoreSpotlight::SearchableItemAttribute]? = nil)
+  }
+}
+extension _CoreSpotlight_FoundationModels::SpotlightSearchTool {
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public struct GuidanceProfile : Swift::Sendable {
+    public var textMatch: Swift::Bool?
+    public var similarityMatch: Swift::Bool?
+    public var numericMatch: Swift::Bool?
+    public var dates: Swift::Bool?
+    public var people: Swift::Bool?
+    public var contentType: Swift::Bool?
+    public var attributes: [CoreSpotlight::SearchableItemAttribute]?
+    public init(textMatch: Swift::Bool? = nil, similarityMatch: Swift::Bool? = nil, numericMatch: Swift::Bool? = nil, dates: Swift::Bool? = nil, people: Swift::Bool? = nil, contentType: Swift::Bool? = nil, attributes: [CoreSpotlight::SearchableItemAttribute]? = nil)
+  }
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public protocol CustomStage : FoundationModels::Generable, Swift::Decodable, Swift::Encodable, Swift::Sendable {
+  static var name: Swift::String { get }
+  static var description: Swift::String { get }
+  static var inputTypes: [_CoreSpotlight_FoundationModels::SearchPipelineDataType] { get }
+  static var outputType: _CoreSpotlight_FoundationModels::SearchPipelineDataType { get }
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) func execute(items: [CoreSpotlight::SearchableItem]) async throws -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) func execute(scoredItems: [_CoreSpotlight_FoundationModels::ScoredSearchableItem]) async throws -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) func execute(groupedItems: [CoreSpotlight::SearchableItemAttribute : [CoreSpotlight::SearchableItem]]) async throws -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) func execute(count: Swift::Int) async throws -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) func execute(table: _CoreSpotlight_FoundationModels::SearchResultsTable) async throws -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) func execute(statistic: Swift::String, value: Swift::Double) async throws -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) func execute(text: Swift::String) async throws -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  #endif
+}
+extension _CoreSpotlight_FoundationModels::CustomStage {
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) public func execute(items: [CoreSpotlight::SearchableItem]) async throws -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) public func execute(scoredItems: [_CoreSpotlight_FoundationModels::ScoredSearchableItem]) async throws -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) public func execute(groupedItems: [CoreSpotlight::SearchableItemAttribute : [CoreSpotlight::SearchableItem]]) async throws -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) public func execute(count: Swift::Int) async throws -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) public func execute(table: _CoreSpotlight_FoundationModels::SearchResultsTable) async throws -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) public func execute(statistic: Swift::String, value: Swift::Double) async throws -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) public func execute(text: Swift::String) async throws -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  #endif
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct SearchPipelineData : Swift::Sendable {
+  public let payload: _CoreSpotlight_FoundationModels::SearchPipelineData._CoreSpotlight_FoundationModels::Payload
+  public init(payload: _CoreSpotlight_FoundationModels::SearchPipelineData._CoreSpotlight_FoundationModels::Payload)
+  public enum Payload : @unchecked Swift::Sendable {
+    case items([CoreSpotlight::SearchableItem])
+    case scoredItems([_CoreSpotlight_FoundationModels::ScoredSearchableItem])
+    case groupedItems([CoreSpotlight::SearchableItemAttribute : [CoreSpotlight::SearchableItem]])
+    case count(Swift::Int)
+    case table(_CoreSpotlight_FoundationModels::SearchResultsTable)
+    case statistic(name: Swift::String, value: Swift::Double)
+    case text(Swift::String)
+  }
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public enum SearchPipelineDataType : Swift::String, Swift::Codable, Swift::CaseIterable, Swift::Sendable {
+  case items
+  case scoredItems
+  case groupedItems
+  case count
+  case table
+  case statistic
+  case text
+  public init?(rawValue: Swift::String)
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public typealias AllCases = [_CoreSpotlight_FoundationModels::SearchPipelineDataType]
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public typealias RawValue = Swift::String
+  nonisolated public static var allCases: [_CoreSpotlight_FoundationModels::SearchPipelineDataType] {
+    get
+  }
+  public var rawValue: Swift::String {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public protocol ContactResolver : Swift::Sendable {
+  func userIdentity() -> _CoreSpotlight_FoundationModels::ResolvedContact
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct ResolvedContact : Swift::Sendable {
+  public var displayName: Swift::String
+  public var names: [Swift::String]
+  public var nameComponents: [Foundation::PersonNameComponents]
+  public var emailAddresses: [Swift::String]
+  public var phoneNumbers: [Swift::String]
+  public init(displayName: Swift::String)
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct SpotlightSearchTool : FoundationModels::Tool, Swift::Sendable {
+  public var name: Swift::String
+  public var description: Swift::String {
+    get
+  }
+  public var parameters: FoundationModels::GenerationSchema {
+    get
+  }
+  public var includesSchemaInInstructions: Swift::Bool {
+    get
+  }
+  public struct SearchReply : Swift::Sendable {
+    public enum Content : @unchecked Swift::Sendable {
+      case items([CoreSpotlight::SearchableItem])
+      case groupedItems([CoreSpotlight::SearchableItemAttribute : [CoreSpotlight::SearchableItem]])
+      case scoredItems([_CoreSpotlight_FoundationModels::ScoredSearchableItem])
+      case count(_CoreSpotlight_FoundationModels::SearchCount)
+      case table(_CoreSpotlight_FoundationModels::SearchResultsTable)
+      case statistic(_CoreSpotlight_FoundationModels::SearchStatistic)
+      case text(_CoreSpotlight_FoundationModels::SearchTextResult)
+    }
+    public let content: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::SearchReply._CoreSpotlight_FoundationModels::Content
+    public let label: Swift::String?
+    public let queryToken: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::SearchReply._CoreSpotlight_FoundationModels::QueryToken
+    public let stageToken: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::SearchReply._CoreSpotlight_FoundationModels::StageToken
+    public let status: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::SearchReply._CoreSpotlight_FoundationModels::Status
+    public enum Status : Swift::Sendable {
+      case partial
+      case complete
+      public static func == (a: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::SearchReply._CoreSpotlight_FoundationModels::Status, b: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::SearchReply._CoreSpotlight_FoundationModels::Status) -> Swift::Bool
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+    }
+    public struct QueryToken : Swift::Sendable, Swift::Hashable {
+      public static func == (a: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::SearchReply._CoreSpotlight_FoundationModels::QueryToken, b: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::SearchReply._CoreSpotlight_FoundationModels::QueryToken) -> Swift::Bool
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+    }
+    public struct StageToken : Swift::Sendable, Swift::Hashable {
+      public static func == (a: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::SearchReply._CoreSpotlight_FoundationModels::StageToken, b: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::SearchReply._CoreSpotlight_FoundationModels::StageToken) -> Swift::Bool
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+    }
+  }
+  public let configuration: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::Configuration
+  public var searchResults: some _Concurrency::AsyncSequence<_CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::SearchReply, Swift::Never> {
+    get
+  }
+  public init(configuration: _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::Configuration = Configuration(sources: [.coreSpotlight]))
+  public typealias Arguments = FoundationModels::GeneratedContent
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) public func call(arguments: FoundationModels::GeneratedContent) async throws -> some FoundationModels::PromptRepresentable
+  
+  #endif
+  @available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public typealias Output = @_opaqueReturnTypeOf("$s31_CoreSpotlight_FoundationModels0B10SearchToolV4call9argumentsQr0cD016GeneratedContentV_tYaKF", 0) __
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _CoreSpotlight_FoundationModels::SearchPipelineData {
+  public static func items(_ items: [CoreSpotlight::SearchableItem]) -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  public static func scoredItems(_ items: [_CoreSpotlight_FoundationModels::ScoredSearchableItem]) -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  public static func groupedItems(_ groups: [CoreSpotlight::SearchableItemAttribute : [CoreSpotlight::SearchableItem]]) -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  public static func count(_ n: Swift::Int) -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  public static func table(_ t: _CoreSpotlight_FoundationModels::SearchResultsTable) -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  public static func statistic(name: Swift::String, value: Swift::Double) -> _CoreSpotlight_FoundationModels::SearchPipelineData
+  public static func text(_ s: Swift::String) -> _CoreSpotlight_FoundationModels::SearchPipelineData
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct ScoredSearchableItem : Swift::Sendable {
+  public let item: CoreSpotlight::SearchableItem
+  public let score: Swift::Double
+  public init(item: CoreSpotlight::SearchableItem, score: Swift::Double)
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct SearchResultsTable : Swift::Sendable {
+  public let header: Swift::String?
+  public let columns: [_CoreSpotlight_FoundationModels::SearchResultsTable._CoreSpotlight_FoundationModels::Column]
+  public let rows: [_CoreSpotlight_FoundationModels::SearchResultsTable._CoreSpotlight_FoundationModels::Row]
+  public init(header: Swift::String? = nil, columns: [_CoreSpotlight_FoundationModels::SearchResultsTable._CoreSpotlight_FoundationModels::Column], rows: [_CoreSpotlight_FoundationModels::SearchResultsTable._CoreSpotlight_FoundationModels::Row])
+  public struct Column : Swift::Sendable {
+    public let name: Swift::String
+    public let type: _CoreSpotlight_FoundationModels::SearchResultsTable._CoreSpotlight_FoundationModels::ValueType
+    public init(name: Swift::String, type: _CoreSpotlight_FoundationModels::SearchResultsTable._CoreSpotlight_FoundationModels::ValueType)
+  }
+  public enum ValueType : Swift::Sendable {
+    case string
+    case integer
+    case double
+    case date
+    case boolean
+    public static func == (a: _CoreSpotlight_FoundationModels::SearchResultsTable._CoreSpotlight_FoundationModels::ValueType, b: _CoreSpotlight_FoundationModels::SearchResultsTable._CoreSpotlight_FoundationModels::ValueType) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public struct Row : Swift::Sendable {
+    public let values: [_CoreSpotlight_FoundationModels::SearchResultsTable._CoreSpotlight_FoundationModels::Value]
+    public init(values: [_CoreSpotlight_FoundationModels::SearchResultsTable._CoreSpotlight_FoundationModels::Value])
+  }
+  public enum Value : Swift::Sendable {
+    case string(Swift::String)
+    case integer(Swift::Int)
+    case double(Swift::Double)
+    case date(Foundation::Date)
+    case boolean(Swift::Bool)
+    case none
+  }
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct SearchCount : Swift::Sendable {
+  public let value: Swift::Int
+  public let header: Swift::String?
+  public init(value: Swift::Int, header: Swift::String? = nil)
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct SearchStatistic : Swift::Sendable {
+  public let name: Swift::String
+  public let value: Swift::Double
+  public let header: Swift::String?
+  public init(name: Swift::String, value: Swift::Double, header: Swift::String? = nil)
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct SearchTextResult : Swift::Sendable {
+  public let body: Swift::String
+  public let header: Swift::String?
+  public init(body: Swift::String, header: Swift::String? = nil)
+}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::FormatLevel : Swift::Equatable {}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::FormatLevel : Swift::Hashable {}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _CoreSpotlight_FoundationModels::SearchPipelineDataType : Swift::Equatable {}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _CoreSpotlight_FoundationModels::SearchPipelineDataType : Swift::Hashable {}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _CoreSpotlight_FoundationModels::SearchPipelineDataType : Swift::RawRepresentable {}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::SearchReply._CoreSpotlight_FoundationModels::Status : Swift::Equatable {}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _CoreSpotlight_FoundationModels::SpotlightSearchTool._CoreSpotlight_FoundationModels::SearchReply._CoreSpotlight_FoundationModels::Status : Swift::Hashable {}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _CoreSpotlight_FoundationModels::SearchResultsTable._CoreSpotlight_FoundationModels::ValueType : Swift::Equatable {}
+@available(macOS 27.0, iOS 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _CoreSpotlight_FoundationModels::SearchResultsTable._CoreSpotlight_FoundationModels::ValueType : Swift::Hashable {}

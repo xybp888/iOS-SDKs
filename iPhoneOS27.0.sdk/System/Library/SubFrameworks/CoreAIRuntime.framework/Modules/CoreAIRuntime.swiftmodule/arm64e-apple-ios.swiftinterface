@@ -1,0 +1,1428 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-experimental-feature Span -enable-experimental-feature LifetimeDependence -enable-experimental-feature Lifetimes -enable-experimental-feature InoutLifetimeDependence -enable-experimental-feature AddressableParameters -enable-experimental-feature AddressableTypes -enable-experimental-feature UnderscoreOwned -enable-experimental-feature SuppressedAssociatedTypesWithDefaults -package-name CoreAI -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature ExistentialAny -enable-experimental-feature DebugDescriptionMacro -user-module-version 3600.83.2.11.1 -enable-builtin-module -module-name CoreAIRuntime
+// swift-module-flags-ignorable: -public-module-name CoreAI -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+public import CoreAICommon
+public import CoreVideo
+public import Foundation
+public import IOSurface
+@preconcurrency public import Metal
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+public struct AIModel : Swift::Sendable {
+  public var functionNames: [Swift::String] {
+    get
+  }
+  public func functionDescriptor(for functionName: Swift::String) -> CoreAIRuntime::InferenceFunctionDescriptor?
+}
+extension CoreAIRuntime::InferenceFunction {
+  @_hasMissingDesignatedInitializers @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  final public class AsyncValue : @unchecked Swift::Sendable {
+    public init(_ ndArray: consuming CoreAIRuntime::NDArray)
+    public init(_ pixelBuffer: CoreVideo::CVReadOnlyPixelBuffer)
+    @unsafe public init(unsafeBuffer: consuming any Metal::MTLBuffer, byteOffset: Swift::Int = 0, scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, shape: [Swift::Int], strides: [Swift::Int] = [], interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? = nil)
+    public init(_ mutableValue: consuming CoreAIRuntime::InferenceFunction.CoreAIRuntime::AsyncMutableValue)
+    final public var kind: CoreAIRuntime::InferenceValue.CoreAIRuntime::Kind {
+      get
+    }
+    final public var ndArray: CoreAIRuntime::NDArray? {
+      get async throws
+    }
+    final public var pixelBuffer: CoreVideo::CVReadOnlyPixelBuffer? {
+      get async throws
+    }
+    @objc deinit
+  }
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+final public class ComputeStream {
+  public init(commandQueue: any Metal::MTLCommandQueue)
+  convenience public init()
+  @objc deinit
+}
+extension CoreAIRuntime::ComputeStream {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  final public func currentWorkCompleted() async
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+public struct InferenceFunction : Swift::Sendable {
+  public let descriptor: CoreAIRuntime::InferenceFunctionDescriptor
+}
+extension CoreAIRuntime::InferenceFunction {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public struct AsyncMutableValue : ~Swift::Copyable {
+    public init(_ ndArray: consuming CoreAIRuntime::NDArray)
+    public init(_ pixelBuffer: consuming CoreVideo::CVMutablePixelBuffer)
+    @unsafe public init(unsafeBuffer: consuming any Metal::MTLBuffer, byteOffset: Swift::Int = 0, scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, shape: [Swift::Int], strides: [Swift::Int] = [], interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? = nil)
+    public init(descriptor: consuming CoreAIRuntime::InferenceValue.CoreAIRuntime::Descriptor)
+    #if compiler(>=5.3) && $UnderscoreOwned
+    @_owned public var pixelBuffer: CoreVideo::CVMutablePixelBuffer? {
+      consuming get async throws
+    }
+    #endif
+    public var ndArray: CoreAIRuntime::NDArray? {
+      consuming get async throws
+    }
+  }
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public struct AsyncMutableViews : ~Swift::Copyable, ~Swift::Escapable {
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @_lifetime(immortal)
+    public init()
+    #else
+    @lifetime(immortal)
+    public init()
+    #endif
+    #endif
+    #if compiler(>=5.3) && $InoutLifetimeDependence && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @_lifetime(self: &mutableValue)
+    public mutating func insert(_ mutableValue: inout CoreAIRuntime::InferenceFunction.CoreAIRuntime::AsyncMutableValue, for name: Swift::String)
+    #else
+    @lifetime(self: &mutableValue)
+    public mutating func insert(_ mutableValue: inout CoreAIRuntime::InferenceFunction.CoreAIRuntime::AsyncMutableValue, for name: Swift::String)
+    #endif
+    #endif
+  }
+}
+extension CoreAIRuntime::InferenceFunction {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public func encode(inputs: [Swift::String : CoreAIRuntime::InferenceFunction.CoreAIRuntime::AsyncValue], states: consuming CoreAIRuntime::InferenceFunction.CoreAIRuntime::AsyncMutableViews = AsyncMutableViews(), outputViews: consuming CoreAIRuntime::InferenceFunction.CoreAIRuntime::AsyncMutableViews = AsyncMutableViews(), to stream: CoreAIRuntime::ComputeStream) throws -> [Swift::String : CoreAIRuntime::InferenceFunction.CoreAIRuntime::AsyncValue]
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::InferenceFunction {
+  public func run(inputs: borrowing CoreAIRuntime::InferenceFunction.CoreAIRuntime::Inputs, states: consuming CoreAIRuntime::InferenceFunction.CoreAIRuntime::MutableViews = MutableViews(), outputViews: consuming CoreAIRuntime::InferenceFunction.CoreAIRuntime::MutableViews = MutableViews()) async throws -> CoreAIRuntime::InferenceFunction.CoreAIRuntime::Outputs
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::InferenceFunction {
+  public func run(inputs: [Swift::String : CoreAIRuntime::NDArray], states: consuming CoreAIRuntime::InferenceFunction.CoreAIRuntime::MutableViews = MutableViews(), outputViews: consuming CoreAIRuntime::InferenceFunction.CoreAIRuntime::MutableViews = MutableViews()) async throws -> CoreAIRuntime::InferenceFunction.CoreAIRuntime::Outputs
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+public struct InferenceFunctionDescriptor : Swift::Sendable {
+  public var name: Swift::String {
+    get
+  }
+  public var inputCount: Swift::Int {
+    get
+  }
+  public var outputCount: Swift::Int {
+    get
+  }
+  public var inputNames: [Swift::String] {
+    get
+  }
+  public var stateNames: [Swift::String] {
+    get
+  }
+  public var outputNames: [Swift::String] {
+    get
+  }
+  public func inputDescriptor(of inputName: Swift::String) -> CoreAIRuntime::InferenceValue.CoreAIRuntime::Descriptor?
+  public func stateDescriptor(of stateName: Swift::String) -> CoreAIRuntime::InferenceValue.CoreAIRuntime::Descriptor?
+  public func outputDescriptor(of outputName: Swift::String) -> CoreAIRuntime::InferenceValue.CoreAIRuntime::Descriptor?
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+public struct InferenceValue : ~Swift::Copyable {
+}
+extension CoreAIRuntime::InferenceValue {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public init(_ pixelBuffer: consuming CoreVideo::CVMutablePixelBuffer)
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::InferenceValue {
+  public var ndArray: CoreAIRuntime::NDArray? {
+    consuming get
+  }
+  #if compiler(>=5.3) && $UnderscoreOwned
+  @_owned public var pixelBuffer: CoreVideo::CVMutablePixelBuffer? {
+    consuming get
+  }
+  #endif
+  public var kind: CoreAIRuntime::InferenceValue.CoreAIRuntime::Kind {
+    get
+  }
+}
+extension CoreAIRuntime::InferenceValue {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public enum Descriptor : Swift::Sendable {
+    case ndArray(CoreAIRuntime::NDArrayDescriptor)
+    case image(CoreAIRuntime::ImageDescriptor)
+  }
+}
+extension CoreAIRuntime::InferenceValue {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public enum Kind : Swift::Sendable, Swift::Hashable {
+    case ndArray
+    case image
+    public static func == (a: CoreAIRuntime::InferenceValue.CoreAIRuntime::Kind, b: CoreAIRuntime::InferenceValue.CoreAIRuntime::Kind) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+extension CoreAIRuntime::InferenceValue {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public struct MutableView : ~Swift::Copyable, ~Swift::Escapable {
+  }
+}
+extension CoreAIRuntime::InferenceValue {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public struct NamedMutableViews : ~Swift::Escapable, ~Swift::Copyable {
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @_lifetime(copy self)
+    public mutating func take(_ valueName: Swift::String) -> CoreAIRuntime::InferenceValue.CoreAIRuntime::MutableView?
+    #else
+    @lifetime(copy self)
+    public mutating func take(_ valueName: Swift::String) -> CoreAIRuntime::InferenceValue.CoreAIRuntime::MutableView?
+    #endif
+    #endif
+  }
+}
+extension CoreAIRuntime::InferenceValue {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public protocol ViewRepresentable : ~Copyable {
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @_lifetime(borrow self)
+    func view() -> CoreAIRuntime::InferenceValue.CoreAIRuntime::View
+    #else
+    @lifetime(borrow self)
+    func view() -> CoreAIRuntime::InferenceValue.CoreAIRuntime::View
+    #endif
+    #endif
+  }
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public protocol MutableViewRepresentable : ~Copyable {
+    #if compiler(>=5.3) && $InoutLifetimeDependence && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @_lifetime(&self)
+    mutating func mutableView() -> CoreAIRuntime::InferenceValue.CoreAIRuntime::MutableView
+    #else
+    @lifetime(&self)
+    mutating func mutableView() -> CoreAIRuntime::InferenceValue.CoreAIRuntime::MutableView
+    #endif
+    #endif
+  }
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::NDArray : CoreAIRuntime::InferenceValue.CoreAIRuntime::ViewRepresentable, CoreAIRuntime::InferenceValue.CoreAIRuntime::MutableViewRepresentable {
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(borrow self)
+  public func view() -> CoreAIRuntime::InferenceValue.CoreAIRuntime::View
+  #else
+  @lifetime(borrow self)
+  public func view() -> CoreAIRuntime::InferenceValue.CoreAIRuntime::View
+  #endif
+  #endif
+  #if compiler(>=5.3) && $InoutLifetimeDependence && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(&self)
+  public mutating func mutableView() -> CoreAIRuntime::InferenceValue.CoreAIRuntime::MutableView
+  #else
+  @lifetime(&self)
+  public mutating func mutableView() -> CoreAIRuntime::InferenceValue.CoreAIRuntime::MutableView
+  #endif
+  #endif
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVMutablePixelBuffer : CoreAIRuntime::InferenceValue.CoreAIRuntime::ViewRepresentable, CoreAIRuntime::InferenceValue.CoreAIRuntime::MutableViewRepresentable {
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(borrow self)
+  public func view() -> CoreAIRuntime::InferenceValue.CoreAIRuntime::View
+  #else
+  @lifetime(borrow self)
+  public func view() -> CoreAIRuntime::InferenceValue.CoreAIRuntime::View
+  #endif
+  #endif
+  #if compiler(>=5.3) && $InoutLifetimeDependence && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(&self)
+  public mutating func mutableView() -> CoreAIRuntime::InferenceValue.CoreAIRuntime::MutableView
+  #else
+  @lifetime(&self)
+  public mutating func mutableView() -> CoreAIRuntime::InferenceValue.CoreAIRuntime::MutableView
+  #endif
+  #endif
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreVideo::CVReadOnlyPixelBuffer : CoreAIRuntime::InferenceValue.CoreAIRuntime::ViewRepresentable {
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(borrow self)
+  final public func view() -> CoreAIRuntime::InferenceValue.CoreAIRuntime::View
+  #else
+  @lifetime(borrow self)
+  final public func view() -> CoreAIRuntime::InferenceValue.CoreAIRuntime::View
+  #endif
+  #endif
+}
+extension CoreAIRuntime::InferenceValue {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public struct View : ~Swift::Escapable {
+  }
+}
+extension CoreAIRuntime::InferenceFunction {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public struct Inputs : ~Swift::Escapable {
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @_lifetime(immortal)
+    public init()
+    #else
+    @lifetime(immortal)
+    public init()
+    #endif
+    #endif
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @_lifetime(self: borrow value)
+    public mutating func insert(_ value: borrowing some InferenceValue.ViewRepresentable & ~Copyable, for inputName: Swift::String)
+    #else
+    @lifetime(self: borrow value)
+    public mutating func insert(_ value: borrowing some InferenceValue.ViewRepresentable & ~Copyable, for inputName: Swift::String)
+    #endif
+    #endif
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @_lifetime(self: copy rawView)
+    public mutating func insert(_ rawView: consuming CoreAIRuntime::NDArray.CoreAIRuntime::RawView, for inputName: Swift::String)
+    #else
+    @lifetime(self: copy rawView)
+    public mutating func insert(_ rawView: consuming CoreAIRuntime::NDArray.CoreAIRuntime::RawView, for inputName: Swift::String)
+    #endif
+    #endif
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @_lifetime(self: copy view)
+    public mutating func insert<Element>(_ view: consuming CoreAIRuntime::NDArray.CoreAIRuntime::View<Element>, for inputName: Swift::String) where Element : Swift::BitwiseCopyable
+    #else
+    @lifetime(self: copy view)
+    public mutating func insert<Element>(_ view: consuming CoreAIRuntime::NDArray.CoreAIRuntime::View<Element>, for inputName: Swift::String) where Element : Swift::BitwiseCopyable
+    #endif
+    #endif
+  }
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView {
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(copy self)
+  @_disfavoredOverload @export(implementation) public consuming func slice(at ranges: [any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #else
+  @lifetime(copy self)
+  @_disfavoredOverload @export(implementation) public consuming func slice(at ranges: [any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $InlineArrayTypeSugar && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(copy self)
+  @export(implementation) public consuming func slice<let indexRank : Swift::Int>(at ranges: [indexRank of any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #else
+  @lifetime(copy self)
+  @export(implementation) public consuming func slice<let indexRank : Swift::Int>(at ranges: [indexRank of any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $InoutLifetimeDependence && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(&self)
+  @_disfavoredOverload @export(implementation) public mutating func mutatingSlice(at ranges: [any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), mutating: &self)
+  }
+  #else
+  @lifetime(&self)
+  @_disfavoredOverload @export(implementation) public mutating func mutatingSlice(at ranges: [any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), mutating: &self)
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $InlineArrayTypeSugar && $InoutLifetimeDependence && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(&self)
+  @export(implementation) public mutating func mutatingSlice<let indexRank : Swift::Int>(at ranges: [indexRank of any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), mutating: &self)
+  }
+  #else
+  @lifetime(&self)
+  @export(implementation) public mutating func mutatingSlice<let indexRank : Swift::Int>(at ranges: [indexRank of any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), mutating: &self)
+  }
+  #endif
+  #endif
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::NDArray.CoreAIRuntime::MutableView {
+  public subscript<let rank : Swift::Int>(scalarAt index: Swift::InlineArray<rank, Swift::Int>) -> Element {
+    get
+    @_lifetime(self: copy self)
+    @export(implementation) set {
+      _setValue(at: index.span, newValue: newValue)
+    }
+  }
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @usableFromInline
+  internal mutating func _setValue(at index: [Swift::Int], newValue: Element)
+  #else
+  @usableFromInline
+  internal mutating func _setValue(at index: [Swift::Int], newValue: Element)
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @usableFromInline
+  internal mutating func _setValue(at index: Swift::Span<Swift::Int>, newValue: Element)
+  #else
+  @usableFromInline
+  internal mutating func _setValue(at index: Swift::Span<Swift::Int>, newValue: Element)
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @usableFromInline
+  @_lifetime(self: copy self)
+  internal mutating func _copyElements(from sequence: some Sequence<Element>)
+  #else
+  @usableFromInline
+  @lifetime(self: copy self)
+  internal mutating func _copyElements(from sequence: some Sequence<Element>)
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(self: copy self)
+  @export(implementation) public mutating func copyElements(from sequence: some Sequence<Element>) {
+    _copyElements(from: sequence)
+  }
+  #else
+  @lifetime(self: copy self)
+  @export(implementation) public mutating func copyElements(from sequence: some Sequence<Element>) {
+    _copyElements(from: sequence)
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @usableFromInline
+  internal mutating func _copyElements(fromContentsOf collection: some Collection<Element>)
+  #else
+  @usableFromInline
+  internal mutating func _copyElements(fromContentsOf collection: some Collection<Element>)
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(self: copy self)
+  @export(implementation) public mutating func copyElements(fromContentsOf collection: some Collection<Element>) {
+    self._copyElements(fromContentsOf: collection)
+  }
+  #else
+  @lifetime(self: copy self)
+  @export(implementation) public mutating func copyElements(fromContentsOf collection: some Collection<Element>) {
+    self._copyElements(fromContentsOf: collection)
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(copy self)
+  @_disfavoredOverload @export(implementation) public consuming func slice(at ranges: [any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableView<Element> {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #else
+  @lifetime(copy self)
+  @_disfavoredOverload @export(implementation) public consuming func slice(at ranges: [any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableView<Element> {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $InlineArrayTypeSugar && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(copy self)
+  @export(implementation) public consuming func slice<let indexRank : Swift::Int>(at ranges: [indexRank of any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableView<Element> {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #else
+  @lifetime(copy self)
+  @export(implementation) public consuming func slice<let indexRank : Swift::Int>(at ranges: [indexRank of any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableView<Element> {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $InoutLifetimeDependence && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(&self)
+  @_disfavoredOverload @export(implementation) public mutating func mutatingSlice(at ranges: [any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableView<Element> {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), mutating: &self)
+  }
+  #else
+  @lifetime(&self)
+  @_disfavoredOverload @export(implementation) public mutating func mutatingSlice(at ranges: [any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableView<Element> {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), mutating: &self)
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $InlineArrayTypeSugar && $InoutLifetimeDependence && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(&self)
+  @export(implementation) public mutating func mutatingSlice<let indexRank : Swift::Int>(at ranges: [indexRank of any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableView<Element> {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), mutating: &self)
+  }
+  #else
+  @lifetime(&self)
+  @export(implementation) public mutating func mutatingSlice<let indexRank : Swift::Int>(at ranges: [indexRank of any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableView<Element> {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), mutating: &self)
+  }
+  #endif
+  #endif
+}
+extension CoreAIRuntime::InferenceFunction {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public struct MutableViews : ~Swift::Copyable, ~Swift::Escapable {
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @_lifetime(immortal)
+    public init()
+    #else
+    @lifetime(immortal)
+    public init()
+    #endif
+    #endif
+    #if compiler(>=5.3) && $InoutLifetimeDependence && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @_lifetime(self: &value)
+    public mutating func insert(_ value: inout some InferenceValue.MutableViewRepresentable & ~Copyable, for name: Swift::String)
+    #else
+    @lifetime(self: &value)
+    public mutating func insert(_ value: inout some InferenceValue.MutableViewRepresentable & ~Copyable, for name: Swift::String)
+    #endif
+    #endif
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @_lifetime(self: copy mutableRawView)
+    public mutating func insert(_ mutableRawView: consuming CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView, for name: Swift::String)
+    #else
+    @lifetime(self: copy mutableRawView)
+    public mutating func insert(_ mutableRawView: consuming CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView, for name: Swift::String)
+    #endif
+    #endif
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @_lifetime(self: copy mutableView)
+    public mutating func insert<Element>(_ mutableView: consuming CoreAIRuntime::NDArray.CoreAIRuntime::MutableView<Element>, for name: Swift::String) where Element : Swift::BitwiseCopyable
+    #else
+    @lifetime(self: copy mutableView)
+    public mutating func insert<Element>(_ mutableView: consuming CoreAIRuntime::NDArray.CoreAIRuntime::MutableView<Element>, for name: Swift::String) where Element : Swift::BitwiseCopyable
+    #endif
+    #endif
+  }
+}
+#if compiler(>=5.3) && $AddressableTypes
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+@_addressableForDependencies public struct NDArray : @unchecked Swift::Sendable {
+}
+#else
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+public struct NDArray : @unchecked Swift::Sendable {
+}
+#endif
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::NDArray {
+  public var scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType {
+    get
+  }
+  public var shape: [Swift::Int] {
+    get
+  }
+  public var strides: [Swift::Int] {
+    get
+  }
+  public var interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? {
+    get
+  }
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::NDArray {
+  public init(descriptor: consuming CoreAIRuntime::NDArrayDescriptor)
+  public init(shape: [Swift::Int], scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType)
+  public init(shape: [Swift::Int], scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, strides: [Swift::Int])
+  public init(shape: [Swift::Int], scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, strides: [Swift::Int], interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout)
+  public init<Scalar>(scalars: some Sequence<Scalar>, shape: [Swift::Int]) where Scalar : Swift::BitwiseCopyable
+  #if compiler(>=5.3) && $InoutLifetimeDependence && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(&self)
+  public mutating func mutableView<T>(as type: T.Type = T.self) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableView<T> where T : Swift::BitwiseCopyable
+  #else
+  @lifetime(&self)
+  public mutating func mutableView<T>(as type: T.Type = T.self) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableView<T> where T : Swift::BitwiseCopyable
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence && $AddressableParameters
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(borrow self)
+  @_addressableSelf public func view<T>(as type: T.Type = T.self) -> CoreAIRuntime::NDArray.CoreAIRuntime::View<T> where T : Swift::BitwiseCopyable
+  #else
+  @lifetime(borrow self)
+  @_addressableSelf public func view<T>(as type: T.Type = T.self) -> CoreAIRuntime::NDArray.CoreAIRuntime::View<T> where T : Swift::BitwiseCopyable
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence && $AddressableParameters
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(borrow self)
+  @_addressableSelf public func rawView() -> CoreAIRuntime::NDArray.CoreAIRuntime::RawView
+  #else
+  @lifetime(borrow self)
+  @_addressableSelf public func rawView() -> CoreAIRuntime::NDArray.CoreAIRuntime::RawView
+  #endif
+  #endif
+  #if compiler(>=5.3) && $InoutLifetimeDependence && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(&self)
+  public mutating func mutableRawView() -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView
+  #else
+  @lifetime(&self)
+  public mutating func mutableRawView() -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView
+  #endif
+  #endif
+}
+extension CoreAIRuntime::NDArray {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public struct InterleaveLayout : Swift::Sendable, Swift::Equatable {
+    public var dimension: Swift::Int {
+      get
+    }
+    public var factor: Swift::Int {
+      get
+    }
+    public init(dimension: Swift::Int, factor: Swift::Int)
+    public static func == (a: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout, b: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout) -> Swift::Bool
+  }
+}
+extension CoreAIRuntime::NDArray {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public struct MutableRawView : ~Swift::Copyable, ~Swift::Escapable {
+    @usableFromInline
+    internal let _view: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @usableFromInline
+    @_lifetime(immortal)
+    @_unsafeNonescapableResult internal init(unownedView: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView)
+    #else
+    @usableFromInline
+    @lifetime(immortal)
+    @_unsafeNonescapableResult internal init(unownedView: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView)
+    #endif
+    #endif
+    @usableFromInline
+    internal func _start() -> Swift::UnsafeMutableRawPointer
+    @usableFromInline
+    internal func storageByteCount() -> Swift::Int
+  }
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView {
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(copy self)
+  public consuming func view<T>(as type: T.Type = T.self) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableView<T> where T : Swift::BitwiseCopyable
+  #else
+  @lifetime(copy self)
+  public consuming func view<T>(as type: T.Type = T.self) -> CoreAIRuntime::NDArray.CoreAIRuntime::MutableView<T> where T : Swift::BitwiseCopyable
+  #endif
+  #endif
+  @export(implementation) public consuming func withUnsafeMutableBytes<R, E>(_ body: (Swift::UnsafeMutableRawPointer, _ shape: Swift::Span<Swift::Int>, _ strides: Swift::Span<Swift::Int>) throws(E) -> R) throws(E) -> R where E : Swift::Error {
+    try body(_start(), shape, strides)
+  }
+  #if compiler(>=5.3) && $LifetimeDependence && $UnderscoreOwned
+  #if compiler(>=5.3) && $Lifetimes
+  @export(implementation) @_owned public var rawView: CoreAIRuntime::NDArray.CoreAIRuntime::RawView {
+    @_lifetime(borrow self)
+    borrowing get {
+      .init(unownedView: self._view)
+    }
+  }
+  #else
+  @export(implementation) @_owned public var rawView: CoreAIRuntime::NDArray.CoreAIRuntime::RawView {
+    @lifetime(borrow self)
+    borrowing get {
+      .init(unownedView: self._view)
+    }
+  }
+  #endif
+  #endif
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView {
+  public var scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType {
+    get
+  }
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  public var shape: Swift::Span<Swift::Int> {
+    @_lifetime(borrow self)
+    borrowing get
+  }
+  #else
+  public var shape: Swift::Span<Swift::Int> {
+    @lifetime(borrow self)
+    borrowing get
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  public var strides: Swift::Span<Swift::Int> {
+    @_lifetime(borrow self)
+    borrowing get
+  }
+  #else
+  public var strides: Swift::Span<Swift::Int> {
+    @lifetime(borrow self)
+    borrowing get
+  }
+  #endif
+  #endif
+  public var interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? {
+    get
+  }
+  #if compiler(>=5.3) && $LifetimeDependence && $UnderscoreOwned
+  #if compiler(>=5.3) && $Lifetimes
+  @export(implementation) @_owned public var mutableBytes: Swift::MutableRawSpan {
+    @_lifetime(copy self)
+    consuming get {
+      _overrideLifetime(
+        MutableRawSpan(_unsafeStart: _start(), byteCount: storageByteCount()), copying: self)
+    }
+  }
+  #else
+  @export(implementation) @_owned public var mutableBytes: Swift::MutableRawSpan {
+    @lifetime(copy self)
+    consuming get {
+      _overrideLifetime(
+        MutableRawSpan(_unsafeStart: _start(), byteCount: storageByteCount()), copying: self)
+    }
+  }
+  #endif
+  #endif
+}
+extension CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView {
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @_lifetime(copy mutableBytes)
+  public init(mutableBytes: consuming Swift::MutableRawSpan, byteOffset: Swift::Int = 0, scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, shape: [Swift::Int], strides: [Swift::Int] = [], interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? = nil)
+  #else
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @lifetime(copy mutableBytes)
+  public init(mutableBytes: consuming Swift::MutableRawSpan, byteOffset: Swift::Int = 0, scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, shape: [Swift::Int], strides: [Swift::Int] = [], interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? = nil)
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @_lifetime(borrow metalBuffer)
+  @unsafe public init(metalBuffer: borrowing any Metal::MTLBuffer, byteOffset: Swift::Int = 0, scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, shape: [Swift::Int], strides: [Swift::Int] = [], interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? = nil)
+  #else
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @lifetime(borrow metalBuffer)
+  @unsafe public init(metalBuffer: borrowing any Metal::MTLBuffer, byteOffset: Swift::Int = 0, scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, shape: [Swift::Int], strides: [Swift::Int] = [], interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? = nil)
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @_lifetime(borrow ioSurface)
+  @unsafe public init(ioSurface: borrowing IOSurface::IOSurface, byteOffset: Swift::Int = 0, scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, shape: [Swift::Int], strides: [Swift::Int] = [], interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? = nil)
+  #else
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @lifetime(borrow ioSurface)
+  @unsafe public init(ioSurface: borrowing IOSurface::IOSurface, byteOffset: Swift::Int = 0, scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, shape: [Swift::Int], strides: [Swift::Int] = [], interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? = nil)
+  #endif
+  #endif
+}
+extension CoreAIRuntime::NDArray {
+  #if compiler(>=5.3) && $AddressableTypes
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @_addressableForDependencies public struct MutableView<Element> : ~Swift::Escapable, ~Swift::Copyable where Element : Swift::BitwiseCopyable {
+    @usableFromInline
+    internal let _view: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView
+    @usableFromInline
+    internal func _start() -> Swift::UnsafeMutablePointer<Element>
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @usableFromInline
+    @_lifetime(immortal)
+    @_unsafeNonescapableResult internal init(unownedView: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView)
+    #else
+    @usableFromInline
+    @lifetime(immortal)
+    @_unsafeNonescapableResult internal init(unownedView: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView)
+    #endif
+    #endif
+  }
+  #else
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public struct MutableView<Element> : ~Swift::Escapable, ~Swift::Copyable where Element : Swift::BitwiseCopyable {
+    @usableFromInline
+    internal let _view: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView
+    @usableFromInline
+    internal func _start() -> Swift::UnsafeMutablePointer<Element>
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @usableFromInline
+    @_lifetime(immortal)
+    @_unsafeNonescapableResult internal init(unownedView: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView)
+    #else
+    @usableFromInline
+    @lifetime(immortal)
+    @_unsafeNonescapableResult internal init(unownedView: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView)
+    #endif
+    #endif
+  }
+  #endif
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::NDArray.CoreAIRuntime::MutableView {
+  public var rank: Swift::Int {
+    get
+  }
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  public var shape: Swift::Span<Swift::Int> {
+    @_lifetime(borrow self)
+    borrowing get
+  }
+  #else
+  public var shape: Swift::Span<Swift::Int> {
+    @lifetime(borrow self)
+    borrowing get
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  public var strides: Swift::Span<Swift::Int> {
+    @_lifetime(borrow self)
+    borrowing get
+  }
+  #else
+  public var strides: Swift::Span<Swift::Int> {
+    @lifetime(borrow self)
+    borrowing get
+  }
+  #endif
+  #endif
+  public var interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? {
+    get
+  }
+  public var isContiguous: Swift::Bool {
+    get
+  }
+  @usableFromInline
+  internal func _contiguousElements() -> Swift::UnsafeMutableBufferPointer<Element>?
+  #if compiler(>=5.3) && $LifetimeDependence && $UnderscoreOwned
+  #if compiler(>=5.3) && $Lifetimes
+  @export(implementation) @_owned public var contiguousElements: Swift::MutableSpan<Element>? {
+    @_lifetime(copy self)
+    consuming get {
+      guard let buffer = _view.contiguousElements() else { return nil }
+      return _overrideLifetime(MutableSpan(_unsafeBytes: buffer), copying: self)
+    }
+  }
+  #else
+  @export(implementation) @_owned public var contiguousElements: Swift::MutableSpan<Element>? {
+    @lifetime(copy self)
+    consuming get {
+      guard let buffer = _view.contiguousElements() else { return nil }
+      return _overrideLifetime(MutableSpan(_unsafeBytes: buffer), copying: self)
+    }
+  }
+  #endif
+  #endif
+  @export(implementation) public consuming func withUnsafeMutablePointer<R, E>(_ body: (Swift::UnsafeMutablePointer<Element>, _ shape: Swift::Span<Swift::Int>, _ strides: Swift::Span<Swift::Int>) throws(E) -> R) throws(E) -> R where E : Swift::Error {
+    try body(_start(), shape, strides)
+  }
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @export(implementation) public var view: CoreAIRuntime::NDArray.CoreAIRuntime::View<Element> {
+    @_lifetime(borrow self)
+    borrowing get {
+      return NDArray.View(unownedView: self._view)
+    }
+  }
+  #else
+  @export(implementation) public var view: CoreAIRuntime::NDArray.CoreAIRuntime::View<Element> {
+    @lifetime(borrow self)
+    borrowing get {
+      return NDArray.View(unownedView: self._view)
+    }
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence && $UnderscoreOwned
+  #if compiler(>=5.3) && $Lifetimes
+  @export(implementation) @_owned public var mutableRawView: CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView {
+    @_lifetime(copy self)
+    consuming get {
+      return NDArray.MutableRawView(unownedView: self._view)
+    }
+  }
+  #else
+  @export(implementation) @_owned public var mutableRawView: CoreAIRuntime::NDArray.CoreAIRuntime::MutableRawView {
+    @lifetime(copy self)
+    consuming get {
+      return NDArray.MutableRawView(unownedView: self._view)
+    }
+  }
+  #endif
+  #endif
+}
+extension CoreAIRuntime::NDArray.CoreAIRuntime::MutableView {
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @_lifetime(copy mutableSpan)
+  public init(mutableSpan: consuming Swift::MutableSpan<Element>, shape: [Swift::Int], strides: [Swift::Int] = [])
+  #else
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @lifetime(copy mutableSpan)
+  public init(mutableSpan: consuming Swift::MutableSpan<Element>, shape: [Swift::Int], strides: [Swift::Int] = [])
+  #endif
+  #endif
+}
+extension CoreAIRuntime::NDArray {
+  #if compiler(>=5.3) && $AddressableTypes
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @_addressableForDependencies public struct RawView : ~Swift::Escapable {
+    @usableFromInline
+    internal let _view: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @usableFromInline
+    @_lifetime(immortal)
+    @_unsafeNonescapableResult internal init(unownedView: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView)
+    #else
+    @usableFromInline
+    @lifetime(immortal)
+    @_unsafeNonescapableResult internal init(unownedView: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView)
+    #endif
+    #endif
+  }
+  #else
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public struct RawView : ~Swift::Escapable {
+    @usableFromInline
+    internal let _view: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @usableFromInline
+    @_lifetime(immortal)
+    @_unsafeNonescapableResult internal init(unownedView: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView)
+    #else
+    @usableFromInline
+    @lifetime(immortal)
+    @_unsafeNonescapableResult internal init(unownedView: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView)
+    #endif
+    #endif
+  }
+  #endif
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::NDArray.CoreAIRuntime::RawView {
+  public var scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType {
+    get
+  }
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  public var shape: Swift::Span<Swift::Int> {
+    @_lifetime(borrow self)
+    borrowing get
+  }
+  #else
+  public var shape: Swift::Span<Swift::Int> {
+    @lifetime(borrow self)
+    borrowing get
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  public var strides: Swift::Span<Swift::Int> {
+    @_lifetime(borrow self)
+    borrowing get
+  }
+  #else
+  public var strides: Swift::Span<Swift::Int> {
+    @lifetime(borrow self)
+    borrowing get
+  }
+  #endif
+  #endif
+  public var interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? {
+    get
+  }
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  public var bytes: Swift::RawSpan {
+    @_lifetime(copy self)
+    get
+  }
+  #else
+  public var bytes: Swift::RawSpan {
+    @lifetime(copy self)
+    get
+  }
+  #endif
+  #endif
+  public func withUnsafeBytes<R, E>(_ body: (Swift::UnsafeRawPointer, _ shape: Swift::Span<Swift::Int>, _ strides: Swift::Span<Swift::Int>) throws(E) -> R) throws(E) -> R where E : Swift::Error
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(copy self)
+  public consuming func view<T>(as: T.Type = T.self) -> CoreAIRuntime::NDArray.CoreAIRuntime::View<T> where T : Swift::BitwiseCopyable
+  #else
+  @lifetime(copy self)
+  public consuming func view<T>(as: T.Type = T.self) -> CoreAIRuntime::NDArray.CoreAIRuntime::View<T> where T : Swift::BitwiseCopyable
+  #endif
+  #endif
+}
+extension CoreAIRuntime::NDArray.CoreAIRuntime::RawView {
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @_lifetime(copy bytes)
+  public init(bytes: Swift::RawSpan, byteOffset: Swift::Int = 0, scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, shape: [Swift::Int], strides: [Swift::Int] = [], interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? = nil)
+  #else
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @lifetime(copy bytes)
+  public init(bytes: Swift::RawSpan, byteOffset: Swift::Int = 0, scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, shape: [Swift::Int], strides: [Swift::Int] = [], interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? = nil)
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @_lifetime(borrow metalBuffer)
+  @unsafe public init(metalBuffer: borrowing any Metal::MTLBuffer, byteOffset: Swift::Int = 0, scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, shape: [Swift::Int], strides: [Swift::Int] = [], interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? = nil)
+  #else
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @lifetime(borrow metalBuffer)
+  @unsafe public init(metalBuffer: borrowing any Metal::MTLBuffer, byteOffset: Swift::Int = 0, scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, shape: [Swift::Int], strides: [Swift::Int] = [], interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? = nil)
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @_lifetime(borrow ioSurface)
+  @unsafe public init(ioSurface: borrowing IOSurface::IOSurface, byteOffset: Swift::Int = 0, scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, shape: [Swift::Int], strides: [Swift::Int] = [], interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? = nil)
+  #else
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @lifetime(borrow ioSurface)
+  @unsafe public init(ioSurface: borrowing IOSurface::IOSurface, byteOffset: Swift::Int = 0, scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, shape: [Swift::Int], strides: [Swift::Int] = [], interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? = nil)
+  #endif
+  #endif
+}
+extension CoreAIRuntime::NDArray {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @usableFromInline
+  internal struct UnownedView {
+  }
+}
+extension CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @usableFromInline
+  internal func contiguousElements() -> Swift::UnsafeMutableRawBufferPointer?
+}
+extension CoreAIRuntime::NDArray {
+  #if compiler(>=5.3) && $AddressableTypes
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @_addressableForDependencies public struct View<Element> : ~Swift::Escapable where Element : Swift::BitwiseCopyable {
+    @usableFromInline
+    internal let _view: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @usableFromInline
+    @_lifetime(immortal)
+    @_unsafeNonescapableResult internal init(unownedView: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView)
+    #else
+    @usableFromInline
+    @lifetime(immortal)
+    @_unsafeNonescapableResult internal init(unownedView: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView)
+    #endif
+    #endif
+  }
+  #else
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public struct View<Element> : ~Swift::Escapable where Element : Swift::BitwiseCopyable {
+    @usableFromInline
+    internal let _view: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView
+    #if compiler(>=5.3) && $LifetimeDependence
+    #if compiler(>=5.3) && $Lifetimes
+    @usableFromInline
+    @_lifetime(immortal)
+    @_unsafeNonescapableResult internal init(unownedView: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView)
+    #else
+    @usableFromInline
+    @lifetime(immortal)
+    @_unsafeNonescapableResult internal init(unownedView: CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView)
+    #endif
+    #endif
+  }
+  #endif
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::NDArray.CoreAIRuntime::View {
+  public var rank: Swift::Int {
+    get
+  }
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  public var shape: Swift::Span<Swift::Int> {
+    @_lifetime(borrow self)
+    borrowing get
+  }
+  #else
+  public var shape: Swift::Span<Swift::Int> {
+    @lifetime(borrow self)
+    borrowing get
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  public var strides: Swift::Span<Swift::Int> {
+    @_lifetime(borrow self)
+    borrowing get
+  }
+  #else
+  public var strides: Swift::Span<Swift::Int> {
+    @lifetime(borrow self)
+    borrowing get
+  }
+  #endif
+  #endif
+  public var interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? {
+    get
+  }
+  public var isContiguous: Swift::Bool {
+    get
+  }
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  public var contiguousElements: Swift::Span<Element>? {
+    @_lifetime(copy self)
+    borrowing get
+  }
+  #else
+  public var contiguousElements: Swift::Span<Element>? {
+    @lifetime(copy self)
+    borrowing get
+  }
+  #endif
+  #endif
+  public func withUnsafePointer<R, E>(_ body: (Swift::UnsafePointer<Element>, _ shape: Swift::Span<Swift::Int>, _ strides: Swift::Span<Swift::Int>) throws(E) -> R) throws(E) -> R where E : Swift::Error
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @export(implementation) public var rawView: CoreAIRuntime::NDArray.CoreAIRuntime::RawView {
+    @_lifetime(copy self)
+    borrowing get {
+      NDArray.RawView(unownedView: _view)
+    }
+  }
+  #else
+  @export(implementation) public var rawView: CoreAIRuntime::NDArray.CoreAIRuntime::RawView {
+    @lifetime(copy self)
+    borrowing get {
+      NDArray.RawView(unownedView: _view)
+    }
+  }
+  #endif
+  #endif
+}
+extension CoreAIRuntime::NDArray.CoreAIRuntime::View {
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @_lifetime(copy span)
+  public init(span: Swift::Span<Element>, shape: [Swift::Int], strides: [Swift::Int] = [])
+  #else
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @lifetime(copy span)
+  public init(span: Swift::Span<Element>, shape: [Swift::Int], strides: [Swift::Int] = [])
+  #endif
+  #endif
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+public struct NDArrayDescriptor : Swift::Sendable, Swift::Equatable {
+  public var scalarType: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType {
+    get
+  }
+  public var shape: [Swift::Int] {
+    get
+  }
+  public var rank: Swift::Int {
+    get
+  }
+  public var hasDynamicShape: Swift::Bool {
+    get
+  }
+  public var interleaveLayout: CoreAIRuntime::NDArray.CoreAIRuntime::InterleaveLayout? {
+    get
+  }
+  public func resolvingDynamicDimensions(_ newShape: [Swift::Int]) -> CoreAIRuntime::NDArrayDescriptor
+  public var preferredStrides: [Swift::Int] {
+    get
+  }
+  public var minimumByteCount: Swift::Int {
+    get
+  }
+  public static func == (a: CoreAIRuntime::NDArrayDescriptor, b: CoreAIRuntime::NDArrayDescriptor) -> Swift::Bool
+}
+extension CoreAIRuntime::NDArray {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public protocol RangeExpression : Swift::Sendable {
+    func relative(to dimension: Swift::Range<Swift::Int>) -> Swift::Range<Swift::Int>
+  }
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension Swift::Range : CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression where Bound == Swift::Int {
+  @export(implementation) public func relative(to dimension: Swift::Range<Swift::Int>) -> Swift::Range<Swift::Int> {
+    self
+  }
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension Swift::ClosedRange : CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression where Bound == Swift::Int {
+  @export(implementation) public func relative(to dimension: Swift::Range<Swift::Int>) -> Swift::Range<Swift::Int> {
+    self.lowerBound..<self.upperBound + 1
+  }
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension Swift::PartialRangeUpTo : CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression where Bound == Swift::Int {
+  @export(implementation) public func relative(to dimension: Swift::Range<Swift::Int>) -> Swift::Range<Swift::Int> {
+    dimension.lowerBound..<self.upperBound
+  }
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension Swift::PartialRangeThrough : CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression where Bound == Swift::Int {
+  @export(implementation) public func relative(to dimension: Swift::Range<Swift::Int>) -> Swift::Range<Swift::Int> {
+    dimension.lowerBound..<self.upperBound + 1
+  }
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension Swift::PartialRangeFrom : CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression where Bound == Swift::Int {
+  @export(implementation) public func relative(to dimension: Swift::Range<Swift::Int>) -> Swift::Range<Swift::Int> {
+    self.lowerBound..<dimension.upperBound
+  }
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension Swift::Int : CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression {
+  @export(implementation) public func relative(to dimension: Swift::Range<Swift::Int>) -> Swift::Range<Swift::Int> {
+    self..<self + 1
+  }
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+@frozen public struct _AllRange : CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression {
+  @export(implementation) public init() {}
+  @export(implementation) public func relative(to dimension: Swift::Range<Swift::Int>) -> Swift::Range<Swift::Int> {
+    dimension
+  }
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression where Self == CoreAIRuntime::_AllRange {
+  @inlinable public static var all: CoreAIRuntime::_AllRange {
+    get { _AllRange() }
+  }
+}
+extension CoreAIRuntime::InferenceFunction {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public struct Outputs : ~Swift::Copyable {
+    public var count: Swift::Int {
+      get
+    }
+    public var names: some Swift::Collection<Swift::String> {
+      get
+    }
+    public mutating func remove(_ outputName: Swift::String) -> CoreAIRuntime::InferenceValue?
+  }
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::NDArray.CoreAIRuntime::RawView {
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(copy self)
+  @_disfavoredOverload @export(implementation) public func slice(at ranges: [any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::RawView {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #else
+  @lifetime(copy self)
+  @_disfavoredOverload @export(implementation) public func slice(at ranges: [any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::RawView {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $InlineArrayTypeSugar && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(copy self)
+  @export(implementation) public func slice<let indexRank : Swift::Int>(at ranges: [indexRank of any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::RawView {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #else
+  @lifetime(copy self)
+  @export(implementation) public func slice<let indexRank : Swift::Int>(at ranges: [indexRank of any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::RawView {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #endif
+  #endif
+}
+extension CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  @usableFromInline
+  internal func slice(at ranges: Swift::Span<any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression>) -> CoreAIRuntime::NDArray.CoreAIRuntime::UnownedView
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::NDArray.CoreAIRuntime::View {
+  public subscript<let rank : Swift::Int>(scalarAt index: Swift::InlineArray<rank, Swift::Int>) -> Element {
+    get
+  }
+  #if compiler(>=5.3) && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(copy self)
+  @_disfavoredOverload @export(implementation) public func slice(at ranges: [any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::View<Element> {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #else
+  @lifetime(copy self)
+  @_disfavoredOverload @export(implementation) public func slice(at ranges: [any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::View<Element> {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #endif
+  #endif
+  #if compiler(>=5.3) && $InlineArrayTypeSugar && $LifetimeDependence
+  #if compiler(>=5.3) && $Lifetimes
+  @_lifetime(copy self)
+  @export(implementation) public func slice<let indexRank : Swift::Int>(at ranges: [indexRank of any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::View<Element> {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #else
+  @lifetime(copy self)
+  @export(implementation) public func slice<let indexRank : Swift::Int>(at ranges: [indexRank of any CoreAIRuntime::NDArray.CoreAIRuntime::RangeExpression]) -> CoreAIRuntime::NDArray.CoreAIRuntime::View<Element> {
+    let sliced = self._view.slice(at: ranges.span)
+    return _overrideLifetime(Self(unownedView: sliced), copying: self)
+  }
+  #endif
+  #endif
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+public struct ImageDescriptor : Swift::Sendable, Swift::Equatable {
+  public let height: Swift::Int
+  public let width: Swift::Int
+  public let pixelFormatType: Darwin::OSType
+  public static func == (a: CoreAIRuntime::ImageDescriptor, b: CoreAIRuntime::ImageDescriptor) -> Swift::Bool
+}
+extension CoreAIRuntime::NDArray {
+  @available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+  public enum ScalarType : Swift::Hashable, Swift::Sendable, Swift::CaseIterable {
+    case bool
+    case int2
+    case int3
+    case int4
+    case int5
+    case int6
+    case int7
+    case int8
+    case int16
+    case int32
+    case int64
+    case int128
+    case uint1
+    case uint2
+    case uint3
+    case uint4
+    case uint5
+    case uint6
+    case uint7
+    case uint8
+    case uint16
+    case uint32
+    case uint64
+    case uint128
+    case float8e5m2
+    case float8e4m3fn
+    case float8e8m0fn
+    case float4e2m1fn
+    case float16
+    case float32
+    case float64
+    case bfloat16
+    case cfloat16
+    case cfloat32
+    case cfloat64
+    public static func == (a: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType, b: CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType) -> Swift::Bool
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+    public typealias AllCases = [CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType]
+    nonisolated public static var allCases: [CoreAIRuntime::NDArray.CoreAIRuntime::ScalarType] {
+      get
+    }
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+@available(macOS 26.0, iOS 26.0, watchOS 26.0, tvOS 26.0, visionOS 26.0, *)
+extension Swift::AdditiveArithmetic {
+  @inlinable internal func isApproximatelyEqual<Magnitude>(to other: Self, absoluteTolerance: Magnitude, relativeTolerance: Magnitude = 0, norm: (Self) -> Magnitude) -> Swift::Bool where Magnitude : Swift::FloatingPoint {
+    assert(
+      absoluteTolerance >= 0 && absoluteTolerance.isFinite,
+      "absoluteTolerance should be non-negative and finite, " + "but is \(absoluteTolerance)."
+    )
+    assert(
+      relativeTolerance >= 0 && relativeTolerance <= 1,
+      "relativeTolerance should be non-negative and <= 1, " + "but is \(relativeTolerance)."
+    )
+    if self == other { return true }
+    let delta = norm(self - other)
+    let scale = max(norm(self), norm(other))
+    let bound = max(absoluteTolerance, scale * relativeTolerance)
+    return delta.isFinite && delta <= bound
+  }
+}
+@available(macOS 27.0, iOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension CoreAIRuntime::_AllRange : Swift::BitwiseCopyable {}

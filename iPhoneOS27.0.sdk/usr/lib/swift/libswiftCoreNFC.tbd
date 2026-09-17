@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-ios, arm64e.x1-ios ]
+install-name:    '/usr/lib/swift/libswiftCoreNFC.dylib'
+current-version: 3.3
+swift-abi-version: 7
+reexported-libraries:
+  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+    libraries:       [ '/System/Library/Frameworks/CoreNFC.framework/CoreNFC' ]
+exports:
+  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+    symbols:         [ '__swift_FORCE_LOAD_$_swiftCoreNFC' ]
+...

@@ -1,0 +1,2026 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -autolink-force-load -enable-library-evolution -language-mode 6 -Osize -library-level api -target-min-inlining-version min -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature ExistentialAny -enable-experimental-feature DebugDescriptionMacro -user-module-version 2710.120 -module-name CloudKit -package-name com.apple.cloudkit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported public import CloudKit
+public import CoreTransferable
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+@nonobjc extension CloudKit::CKAsset : @unchecked Swift::Sendable {
+}
+extension CloudKit::CKAsset {
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  public struct ExportedAssetID : Swift::Codable, Swift::Sendable {
+    public init(from decoder: any Swift::Decoder) throws
+    public func encode(to encoder: any Swift::Encoder) throws
+  }
+  @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, tvOS 27.0, watchOS 27.0, visionOS 27.0, *)
+  convenience public init(importing exportedAssetID: CloudKit::CKAsset.CloudKit::ExportedAssetID)
+}
+@available(macOS 13.3, macCatalyst 16.4, iOS 16.4, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@nonobjc extension CloudKit::CKAllowedSharingOptions : @unchecked Swift::Sendable {
+}
+@available(macOS 10.12, macCatalyst 13.1, iOS 9.3, tvOS 9.2, watchOS 3.0, *)
+extension CloudKit::CKContainer {
+  @available(swift 4.2)
+  @preconcurrency public func fetchAllLongLivedOperationIDs(completionHandler: @escaping @Sendable ([CloudKit::CKOperation.CloudKit::ID]?, (any Swift::Error)?) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func allLongLivedOperationIDs() async throws -> [CloudKit::CKOperation.CloudKit::ID]
+  @available(swift 4.2)
+  @preconcurrency public func fetchLongLivedOperation(withID operationID: CloudKit::CKOperation.CloudKit::ID, completionHandler: @escaping @Sendable (CloudKit::CKOperation?, (any Swift::Error)?) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func longLivedOperation(for operationID: CloudKit::CKOperation.CloudKit::ID) async throws -> CloudKit::CKOperation?
+}
+@available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+@nonobjc extension CloudKit::CKContainer {
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @discardableResult
+  public func configuredWith<R>(configuration: CloudKit::CKOperation.CloudKit::Configuration? = nil, group: CloudKit::CKOperationGroup? = nil, body: (_ configuredContainer: CloudKit::CKContainer) throws -> R) rethrows -> R
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @discardableResult
+  @preconcurrency public func configuredWith<R>(configuration: CloudKit::CKOperation.CloudKit::Configuration? = nil, group: CloudKit::CKOperationGroup? = nil, body: @Sendable (_ configuredContainer: CloudKit::CKContainer) async throws -> R) async rethrows -> R
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(tvOS, unavailable)
+  @_alwaysEmitIntoClient public func allUserIdentitiesFromContacts() async throws -> [CloudKit::CKUserIdentity] {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._allUserIdentitiesFromContacts()
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.discoverAllIdentities { identities, error in
+                    if let identities {
+                        continuation.resume(returning: identities)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(tvOS, unavailable)
+  @usableFromInline
+  internal func _allUserIdentitiesFromContacts() async throws -> [CloudKit::CKUserIdentity]
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(tvOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @preconcurrency public func discoverUserIdentities(forEmailAddresses emails: [Swift::String], completionHandler: @escaping @Sendable (Swift::Result<[Swift::String : CloudKit::CKUserIdentity], any Swift::Error>) -> Swift::Void)
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(tvOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @_alwaysEmitIntoClient public func userIdentity(forEmailAddress email: Swift::String) async throws -> CloudKit::CKUserIdentity? {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._userIdentity(forEmailAddress: email)
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.discoverUserIdentity(withEmailAddress: email) { identity, error in
+                    if let identity {
+                        continuation.resume(returning: identity)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(tvOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @usableFromInline
+  internal func _userIdentity(forEmailAddress email: Swift::String) async throws -> CloudKit::CKUserIdentity?
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(tvOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  public func userIdentities(forEmailAddresses emails: [Swift::String]) async throws -> [Swift::String : CloudKit::CKUserIdentity]
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(tvOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @_alwaysEmitIntoClient public func userIdentity(forPhoneNumber phoneNumber: Swift::String) async throws -> CloudKit::CKUserIdentity? {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._userIdentity(forPhoneNumber: phoneNumber)
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.discoverUserIdentity(withPhoneNumber: phoneNumber) { identity, error in
+                    if let identity {
+                        continuation.resume(returning: identity)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(tvOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @usableFromInline
+  internal func _userIdentity(forPhoneNumber phoneNumber: Swift::String) async throws -> CloudKit::CKUserIdentity?
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(tvOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @preconcurrency public func discoverUserIdentities(forPhoneNumbers phoneNumbers: [Swift::String], completionHandler: @escaping @Sendable (Swift::Result<[Swift::String : CloudKit::CKUserIdentity], any Swift::Error>) -> Swift::Void)
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(tvOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  public func userIdentities(forPhoneNumbers phoneNumbers: [Swift::String]) async throws -> [Swift::String : CloudKit::CKUserIdentity]
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(tvOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @_alwaysEmitIntoClient public func userIdentity(forUserRecordID userRecordID: CloudKit::CKRecord.CloudKit::ID) async throws -> CloudKit::CKUserIdentity? {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._userIdentity(forUserRecordID: userRecordID)
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.discoverUserIdentity(withUserRecordID: userRecordID) { identity, error in
+                    if let identity {
+                        continuation.resume(returning: identity)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(tvOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @usableFromInline
+  internal func _userIdentity(forUserRecordID userRecordID: CloudKit::CKRecord.CloudKit::ID) async throws -> CloudKit::CKUserIdentity?
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(tvOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @preconcurrency public func discoverUserIdentities(forUserRecordIDs userRecordIDs: [CloudKit::CKRecord.CloudKit::ID], completionHandler: @escaping @Sendable (Swift::Result<[CloudKit::CKRecord.CloudKit::ID : CloudKit::CKUserIdentity], any Swift::Error>) -> Swift::Void)
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(tvOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  public func userIdentities(forUserRecordIDs userRecordIDs: [CloudKit::CKRecord.CloudKit::ID]) async throws -> [CloudKit::CKRecord.CloudKit::ID : CloudKit::CKUserIdentity]
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @_alwaysEmitIntoClient public func shareParticipant(forEmailAddress email: Swift::String) async throws -> CloudKit::CKShare.CloudKit::Participant {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._shareParticipant(forEmailAddress: email)
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.fetchShareParticipant(withEmailAddress: email) { participant, error in
+                    if let participant {
+                        continuation.resume(returning: participant)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(anyAppleOS 27.0, *)
+  @usableFromInline
+  internal func _shareParticipant(forEmailAddress email: Swift::String) async throws -> CloudKit::CKShare.CloudKit::Participant
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func fetchShareParticipants(forEmailAddresses emails: [Swift::String], completionHandler: @escaping @Sendable (Swift::Result<[Swift::String : Swift::Result<CloudKit::CKShare.CloudKit::Participant, any Swift::Error>], any Swift::Error>) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func shareParticipants(forEmailAddresses emails: [Swift::String]) async throws -> [Swift::String : Swift::Result<CloudKit::CKShare.CloudKit::Participant, any Swift::Error>]
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @_alwaysEmitIntoClient public func shareParticipant(forPhoneNumber phoneNumber: Swift::String) async throws -> CloudKit::CKShare.CloudKit::Participant {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._shareParticipant(forPhoneNumber: phoneNumber)
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.fetchShareParticipant(withPhoneNumber: phoneNumber) { participant, error in
+                    if let participant {
+                        continuation.resume(returning: participant)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(anyAppleOS 27.0, *)
+  @usableFromInline
+  internal func _shareParticipant(forPhoneNumber phoneNumber: Swift::String) async throws -> CloudKit::CKShare.CloudKit::Participant
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func fetchShareParticipants(forPhoneNumbers phoneNumbers: [Swift::String], completionHandler: @escaping @Sendable (Swift::Result<[Swift::String : Swift::Result<CloudKit::CKShare.CloudKit::Participant, any Swift::Error>], any Swift::Error>) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func shareParticipants(forPhoneNumbers phoneNumbers: [Swift::String]) async throws -> [Swift::String : Swift::Result<CloudKit::CKShare.CloudKit::Participant, any Swift::Error>]
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @_alwaysEmitIntoClient public func shareParticipant(forUserRecordID userRecordID: CloudKit::CKRecord.CloudKit::ID) async throws -> CloudKit::CKShare.CloudKit::Participant {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._shareParticipant(forUserRecordID: userRecordID)
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.fetchShareParticipant(withUserRecordID: userRecordID) { participant, error in
+                    if let participant {
+                        continuation.resume(returning: participant)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(anyAppleOS 27.0, *)
+  @usableFromInline
+  internal func _shareParticipant(forUserRecordID userRecordID: CloudKit::CKRecord.CloudKit::ID) async throws -> CloudKit::CKShare.CloudKit::Participant
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func fetchShareParticipants(forUserRecordIDs userRecordIDs: [CloudKit::CKRecord.CloudKit::ID], completionHandler: @escaping @Sendable (Swift::Result<[CloudKit::CKRecord.CloudKit::ID : Swift::Result<CloudKit::CKShare.CloudKit::Participant, any Swift::Error>], any Swift::Error>) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func shareParticipants(forUserRecordIDs userRecordIDs: [CloudKit::CKRecord.CloudKit::ID]) async throws -> [CloudKit::CKRecord.CloudKit::ID : Swift::Result<CloudKit::CKShare.CloudKit::Participant, any Swift::Error>]
+  @available(anyAppleOS 26.0, *)
+  public func shareParticipants(for lookupInfos: [CloudKit::CKUserIdentity.CloudKit::LookupInfo]) async throws -> [CloudKit::CKUserIdentity.CloudKit::LookupInfo : Swift::Result<CloudKit::CKShare.CloudKit::Participant, any Swift::Error>]
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @_alwaysEmitIntoClient public func shareMetadata(for url: Foundation::URL) async throws -> CloudKit::CKShare.CloudKit::Metadata {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._shareMetadata(for: url)
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.fetchShareMetadata(with: url) { metadata, error in
+                    if let metadata {
+                        continuation.resume(returning: metadata)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(anyAppleOS 27.0, *)
+  @usableFromInline
+  internal func _shareMetadata(for url: Foundation::URL) async throws -> CloudKit::CKShare.CloudKit::Metadata
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func fetchShareMetadatas(for urls: [Foundation::URL], completionHandler: @escaping @Sendable (Swift::Result<[Foundation::URL : Swift::Result<CloudKit::CKShare.CloudKit::Metadata, any Swift::Error>], any Swift::Error>) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func shareMetadatas(for urls: [Foundation::URL]) async throws -> [Foundation::URL : Swift::Result<CloudKit::CKShare.CloudKit::Metadata, any Swift::Error>]
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @_alwaysEmitIntoClient public func accept(_ metadata: CloudKit::CKShare.CloudKit::Metadata) async throws -> CloudKit::CKShare {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._accept(metadata)
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.accept(metadata) { share, error in
+                    if let share {
+                        continuation.resume(returning: share)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(anyAppleOS 27.0, *)
+  @usableFromInline
+  internal func _accept(_ metadata: CloudKit::CKShare.CloudKit::Metadata) async throws -> CloudKit::CKShare
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func accept(_ metadatas: [CloudKit::CKShare.CloudKit::Metadata], completionHandler: @escaping @Sendable (Swift::Result<[CloudKit::CKShare.CloudKit::Metadata : Swift::Result<CloudKit::CKShare, any Swift::Error>], any Swift::Error>) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func accept(_ metadatas: [CloudKit::CKShare.CloudKit::Metadata]) async throws -> [CloudKit::CKShare.CloudKit::Metadata : Swift::Result<CloudKit::CKShare, any Swift::Error>]
+  @available(anyAppleOS 26.0, *)
+  public func requestShareAccess(for urls: [Foundation::URL]) async throws -> [Foundation::URL : Swift::Result<Swift::Void, any Swift::Error>]
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKContainer {
+  @available(swift 4.2)
+  public enum Application {
+    @available(swift 4.2)
+    @available(macOS, deprecated, introduced: 10.10, message: "renamed to CKContainer.ApplicationPermissions")
+    @available(macCatalyst, deprecated, introduced: 13.1, message: "renamed to CKContainer.ApplicationPermissions")
+    @available(iOS, deprecated, introduced: 8.0, message: "renamed to CKContainer.ApplicationPermissions")
+    @available(tvOS, deprecated, introduced: 9.0, message: "renamed to CKContainer.ApplicationPermissions")
+    @available(watchOS, deprecated, introduced: 3.0, message: "renamed to CKContainer.ApplicationPermissions")
+    @available(visionOS, deprecated, message: "renamed to CKContainer.ApplicationPermissions")
+    public typealias Permissions = CloudKit::CKContainer.CloudKit::ApplicationPermissions
+    @available(swift 4.2)
+    @available(macOS, deprecated, introduced: 10.10, message: "renamed to CKContainer.ApplicationPermissionStatus")
+    @available(macCatalyst, deprecated, introduced: 13.1, message: "renamed to CKContainer.ApplicationPermissionStatus")
+    @available(iOS, deprecated, introduced: 8.0, message: "renamed to CKContainer.ApplicationPermissionStatus")
+    @available(tvOS, deprecated, introduced: 9.0, message: "renamed to CKContainer.ApplicationPermissionStatus")
+    @available(watchOS, deprecated, introduced: 3.0, message: "renamed to CKContainer.ApplicationPermissionStatus")
+    @available(visionOS, deprecated, message: "renamed to CKContainer.ApplicationPermissionStatus")
+    public typealias PermissionStatus = CloudKit::CKContainer.CloudKit::ApplicationPermissionStatus
+    @available(swift 4.2)
+    @available(macOS, deprecated, introduced: 10.10, message: "renamed to CKContainer.ApplicationPermissionBlock")
+    @available(macCatalyst, deprecated, introduced: 13.1, message: "renamed to CKContainer.ApplicationPermissionBlock")
+    @available(iOS, deprecated, introduced: 8.0, message: "renamed to CKContainer.ApplicationPermissionBlock")
+    @available(tvOS, deprecated, introduced: 9.0, message: "renamed to CKContainer.ApplicationPermissionBlock")
+    @available(watchOS, deprecated, introduced: 3.0, message: "renamed to CKContainer.ApplicationPermissionBlock")
+    @available(visionOS, deprecated, message: "renamed to CKContainer.ApplicationPermissionBlock")
+    public typealias PermissionBlock = CloudKit::CKContainer.CloudKit::ApplicationPermissionBlock
+  }
+}
+@available(*, unavailable)
+extension CloudKit::CKContainer.CloudKit::Application : Swift::Sendable {
+}
+@available(swift 4.2)
+@available(macOS, deprecated, introduced: 10.10, message: "renamed to CKContainer.ApplicationPermissions")
+@available(macCatalyst, deprecated, introduced: 13.1, message: "renamed to CKContainer.ApplicationPermissions")
+@available(iOS, deprecated, introduced: 8.0, message: "renamed to CKContainer.ApplicationPermissions")
+@available(tvOS, deprecated, introduced: 9.0, message: "renamed to CKContainer.ApplicationPermissions")
+@available(watchOS, deprecated, introduced: 3.0, message: "renamed to CKContainer.ApplicationPermissions")
+@available(visionOS, deprecated, message: "renamed to CKContainer.ApplicationPermissions")
+public typealias CKContainer_Application_Permissions = CloudKit::CKContainer.CloudKit::ApplicationPermissions
+@available(swift 4.2)
+@available(macOS, deprecated, introduced: 10.10, message: "renamed to CKContainer.ApplicationPermissionStatus")
+@available(macCatalyst, deprecated, introduced: 13.1, message: "renamed to CKContainer.ApplicationPermissionStatus")
+@available(iOS, deprecated, introduced: 8.0, message: "renamed to CKContainer.ApplicationPermissionStatus")
+@available(tvOS, deprecated, introduced: 9.0, message: "renamed to CKContainer.ApplicationPermissionStatus")
+@available(watchOS, deprecated, introduced: 3.0, message: "renamed to CKContainer.ApplicationPermissionStatus")
+@available(visionOS, deprecated, message: "renamed to CKContainer.ApplicationPermissionStatus")
+public typealias CKContainer_Application_PermissionStatus = CloudKit::CKContainer.CloudKit::ApplicationPermissionStatus
+@available(swift 4.2)
+@available(macOS, deprecated, introduced: 10.10, message: "renamed to CKContainer.ApplicationPermissionBlock")
+@available(macCatalyst, deprecated, introduced: 13.1, message: "renamed to CKContainer.ApplicationPermissionBlock")
+@available(iOS, deprecated, introduced: 8.0, message: "renamed to CKContainer.ApplicationPermissionBlock")
+@available(tvOS, deprecated, introduced: 9.0, message: "renamed to CKContainer.ApplicationPermissionBlock")
+@available(watchOS, deprecated, introduced: 3.0, message: "renamed to CKContainer.ApplicationPermissionBlock")
+@available(visionOS, deprecated, message: "renamed to CKContainer.ApplicationPermissionBlock")
+public typealias CKContainer_Application_PermissionBlock = CloudKit::CKContainer.CloudKit::ApplicationPermissionBlock
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKDatabase {
+  @available(macOS, introduced: 12.0, deprecated: 12.0, message: "renamed to records(matching:inZoneWith:desiredKeys:resultsLimit:)")
+  @available(macCatalyst, introduced: 15.0, deprecated: 15.0, message: "renamed to records(matching:inZoneWith:desiredKeys:resultsLimit:)")
+  @available(iOS, introduced: 15.0, deprecated: 15.0, message: "renamed to records(matching:inZoneWith:desiredKeys:resultsLimit:)")
+  @available(tvOS, introduced: 15.0, deprecated: 15.0, message: "renamed to records(matching:inZoneWith:desiredKeys:resultsLimit:)")
+  @available(watchOS, introduced: 8.0, deprecated: 8.0, message: "renamed to records(matching:inZoneWith:desiredKeys:resultsLimit:)")
+  @available(visionOS, deprecated, message: "renamed to records(matching:inZoneWith:desiredKeys:resultsLimit:)")
+  @_disfavoredOverload public func records(matching query: CloudKit::CKQuery, inZoneWith zoneID: CloudKit::CKRecordZone.CloudKit::ID?) async throws -> [CloudKit::CKRecord]
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 6.0, *)
+extension CloudKit::CKDatabase {
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @_alwaysEmitIntoClient public func allSubscriptions() async throws -> [CloudKit::CKSubscription] {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._allSubscriptions()
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.fetchAllSubscriptions { subscriptions, error in
+                    if let subscriptions {
+                        continuation.resume(returning: subscriptions)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(anyAppleOS 27.0, *)
+  @usableFromInline
+  internal func _allSubscriptions() async throws -> [CloudKit::CKSubscription]
+  @available(swift 4.2)
+  @preconcurrency public func fetch(withSubscriptionID subscriptionID: CloudKit::CKSubscription.CloudKit::ID, completionHandler: @escaping @Sendable (CloudKit::CKSubscription?, (any Swift::Error)?) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func subscription(for subscriptionID: CloudKit::CKSubscription.CloudKit::ID) async throws -> CloudKit::CKSubscription
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @_alwaysEmitIntoClient public func save(_ subscription: CloudKit::CKSubscription) async throws -> CloudKit::CKSubscription {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._save(subscription)
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.save(subscription) { subscription, error in
+                    if let subscription {
+                        continuation.resume(returning: subscription)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(anyAppleOS 27.0, *)
+  @usableFromInline
+  internal func _save(_ subscription: CloudKit::CKSubscription) async throws -> CloudKit::CKSubscription
+  @available(swift 4.2)
+  @preconcurrency public func delete(withSubscriptionID subscriptionID: CloudKit::CKSubscription.CloudKit::ID, completionHandler: @escaping @Sendable (Swift::String?, (any Swift::Error)?) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @discardableResult
+  public func deleteSubscription(withID subscriptionID: CloudKit::CKSubscription.CloudKit::ID) async throws -> CloudKit::CKSubscription.CloudKit::ID
+}
+@available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+@nonobjc extension CloudKit::CKDatabase {
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @discardableResult
+  public func configuredWith<R>(configuration: CloudKit::CKOperation.CloudKit::Configuration? = nil, group: CloudKit::CKOperationGroup? = nil, body: (_ configuredDatabase: CloudKit::CKDatabase) throws -> R) rethrows -> R
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @discardableResult
+  @preconcurrency public func configuredWith<R>(configuration: CloudKit::CKOperation.CloudKit::Configuration? = nil, group: CloudKit::CKOperationGroup? = nil, body: @Sendable (_ configuredDatabase: CloudKit::CKDatabase) async throws -> R) async rethrows -> R
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @_alwaysEmitIntoClient public func record(for recordID: CloudKit::CKRecord.CloudKit::ID) async throws -> CloudKit::CKRecord {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._record(for: recordID)
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.fetch(withRecordID: recordID) { record, error in
+                    if let record {
+                        continuation.resume(returning: record)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(anyAppleOS 27.0, *)
+  @usableFromInline
+  internal func _record(for recordID: CloudKit::CKRecord.CloudKit::ID) async throws -> CloudKit::CKRecord
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func fetch(withRecordIDs recordIDs: [CloudKit::CKRecord.CloudKit::ID], desiredKeys: [CloudKit::CKRecord.CloudKit::FieldKey]? = nil, completionHandler: @escaping @Sendable (Swift::Result<[CloudKit::CKRecord.CloudKit::ID : Swift::Result<CloudKit::CKRecord, any Swift::Error>], any Swift::Error>) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func records(for ids: [CloudKit::CKRecord.CloudKit::ID], desiredKeys: [CloudKit::CKRecord.CloudKit::FieldKey]? = nil) async throws -> [CloudKit::CKRecord.CloudKit::ID : Swift::Result<CloudKit::CKRecord, any Swift::Error>]
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @_alwaysEmitIntoClient public func save(_ record: CloudKit::CKRecord) async throws -> CloudKit::CKRecord {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._save(record)
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.save(record) { record, error in
+                    if let record {
+                        continuation.resume(returning: record)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(anyAppleOS 27.0, *)
+  @usableFromInline
+  internal func _save(_ record: CloudKit::CKRecord) async throws -> CloudKit::CKRecord
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @discardableResult
+  @_alwaysEmitIntoClient public func deleteRecord(withID recordID: CloudKit::CKRecord.CloudKit::ID) async throws -> CloudKit::CKRecord.CloudKit::ID {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._deleteRecord(withID: recordID)
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.delete(withRecordID: recordID) { recordID, error in
+                    if let recordID {
+                        continuation.resume(returning: recordID)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(anyAppleOS 27.0, *)
+  @usableFromInline
+  internal func _deleteRecord(withID recordID: CloudKit::CKRecord.CloudKit::ID) async throws -> CloudKit::CKRecord.CloudKit::ID
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func modifyRecords(saving recordsToSave: [CloudKit::CKRecord], deleting recordIDsToDelete: [CloudKit::CKRecord.CloudKit::ID], savePolicy: CloudKit::CKModifyRecordsOperation.CloudKit::RecordSavePolicy = .ifServerRecordUnchanged, atomically: Swift::Bool = true, completionHandler: @escaping @Sendable (Swift::Result<(saveResults: [CloudKit::CKRecord.CloudKit::ID : Swift::Result<CloudKit::CKRecord, any Swift::Error>], deleteResults: [CloudKit::CKRecord.CloudKit::ID : Swift::Result<Swift::Void, any Swift::Error>]), any Swift::Error>) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func modifyRecords(saving recordsToSave: [CloudKit::CKRecord], deleting recordIDsToDelete: [CloudKit::CKRecord.CloudKit::ID], savePolicy: CloudKit::CKModifyRecordsOperation.CloudKit::RecordSavePolicy = .ifServerRecordUnchanged, atomically: Swift::Bool = true) async throws -> (saveResults: [CloudKit::CKRecord.CloudKit::ID : Swift::Result<CloudKit::CKRecord, any Swift::Error>], deleteResults: [CloudKit::CKRecord.CloudKit::ID : Swift::Result<Swift::Void, any Swift::Error>])
+  @available(macOS, introduced: 12.0, deprecated: 12.0, renamed: "CKDatabase.records(matching:inZoneWith:desiredKeys:resultsLimit:)")
+  @available(macCatalyst, introduced: 15.0, deprecated: 15.0, renamed: "CKDatabase.records(matching:inZoneWith:desiredKeys:resultsLimit:)")
+  @available(iOS, introduced: 15.0, deprecated: 15.0, renamed: "CKDatabase.records(matching:inZoneWith:desiredKeys:resultsLimit:)")
+  @available(tvOS, introduced: 15.0, deprecated: 15.0, renamed: "CKDatabase.records(matching:inZoneWith:desiredKeys:resultsLimit:)")
+  @available(watchOS, introduced: 8.0, deprecated: 8.0, renamed: "CKDatabase.records(matching:inZoneWith:desiredKeys:resultsLimit:)")
+  @available(visionOS, deprecated, renamed: "CKDatabase.records(matching:inZoneWith:desiredKeys:resultsLimit:)")
+  @_alwaysEmitIntoClient public func perform(_ query: CloudKit::CKQuery, inZoneWith zoneID: CloudKit::CKRecordZone.CloudKit::ID?) async throws -> [CloudKit::CKRecord] {
+        try await records(matching: query, inZoneWith: zoneID)
+    }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func fetch(withQuery query: CloudKit::CKQuery, inZoneWith zoneID: CloudKit::CKRecordZone.CloudKit::ID? = nil, desiredKeys: [CloudKit::CKRecord.CloudKit::FieldKey]? = nil, resultsLimit: Swift::Int = CKQueryOperation.maximumResults, completionHandler: @escaping @Sendable (Swift::Result<(matchResults: [(CloudKit::CKRecord.CloudKit::ID, Swift::Result<CloudKit::CKRecord, any Swift::Error>)], queryCursor: CloudKit::CKQueryOperation.CloudKit::Cursor?), any Swift::Error>) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func fetch(withCursor queryCursor: CloudKit::CKQueryOperation.CloudKit::Cursor, desiredKeys: [CloudKit::CKRecord.CloudKit::FieldKey]? = nil, resultsLimit: Swift::Int = CKQueryOperation.maximumResults, completionHandler: @escaping @Sendable (Swift::Result<(matchResults: [(CloudKit::CKRecord.CloudKit::ID, Swift::Result<CloudKit::CKRecord, any Swift::Error>)], queryCursor: CloudKit::CKQueryOperation.CloudKit::Cursor?), any Swift::Error>) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func records(matching query: CloudKit::CKQuery, inZoneWith zoneID: CloudKit::CKRecordZone.CloudKit::ID? = nil, desiredKeys: [CloudKit::CKRecord.CloudKit::FieldKey]? = nil, resultsLimit: Swift::Int = CKQueryOperation.maximumResults) async throws -> (matchResults: [(CloudKit::CKRecord.CloudKit::ID, Swift::Result<CloudKit::CKRecord, any Swift::Error>)], queryCursor: CloudKit::CKQueryOperation.CloudKit::Cursor?)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func records(continuingMatchFrom queryCursor: CloudKit::CKQueryOperation.CloudKit::Cursor, desiredKeys: [CloudKit::CKRecord.CloudKit::FieldKey]? = nil, resultsLimit: Swift::Int = CKQueryOperation.maximumResults) async throws -> (matchResults: [(CloudKit::CKRecord.CloudKit::ID, Swift::Result<CloudKit::CKRecord, any Swift::Error>)], queryCursor: CloudKit::CKQueryOperation.CloudKit::Cursor?)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @_alwaysEmitIntoClient public func allRecordZones() async throws -> [CloudKit::CKRecordZone] {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._allRecordZones()
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.fetchAllRecordZones { recordZone, error in
+                    if let recordZone {
+                        continuation.resume(returning: recordZone)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(anyAppleOS 27.0, *)
+  @usableFromInline
+  internal func _allRecordZones() async throws -> [CloudKit::CKRecordZone]
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @_alwaysEmitIntoClient public func recordZone(for zoneID: CloudKit::CKRecordZone.CloudKit::ID) async throws -> CloudKit::CKRecordZone {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._recordZone(for: zoneID)
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.fetch(withRecordZoneID: zoneID) { recordZone, error in
+                    if let recordZone {
+                        continuation.resume(returning: recordZone)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(anyAppleOS 27.0, *)
+  @usableFromInline
+  internal func _recordZone(for zoneID: CloudKit::CKRecordZone.CloudKit::ID) async throws -> CloudKit::CKRecordZone
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func fetch(withRecordZoneIDs zoneIDs: [CloudKit::CKRecordZone.CloudKit::ID], completionHandler: @escaping @Sendable (Swift::Result<[CloudKit::CKRecordZone.CloudKit::ID : Swift::Result<CloudKit::CKRecordZone, any Swift::Error>], any Swift::Error>) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func recordZones(for ids: [CloudKit::CKRecordZone.CloudKit::ID]) async throws -> [CloudKit::CKRecordZone.CloudKit::ID : Swift::Result<CloudKit::CKRecordZone, any Swift::Error>]
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @_alwaysEmitIntoClient public func save(_ zone: CloudKit::CKRecordZone) async throws -> CloudKit::CKRecordZone {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._save(zone)
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.save(zone) { recordZone, error in
+                    if let recordZone {
+                        continuation.resume(returning: recordZone)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(anyAppleOS 27.0, *)
+  @usableFromInline
+  internal func _save(_ zone: CloudKit::CKRecordZone) async throws -> CloudKit::CKRecordZone
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @discardableResult
+  @_alwaysEmitIntoClient public func deleteRecordZone(withID zoneID: CloudKit::CKRecordZone.CloudKit::ID) async throws -> CloudKit::CKRecordZone.CloudKit::ID {
+        if #available(macOS 27.0, macCatalyst 27.0, iOS 27.0, watchOS 27.0, visionOS 27.0, tvOS 27.0, *) {
+            try await self._deleteRecordZone(withID: zoneID)
+        } else {
+            try await withCheckedThrowingContinuation { continuation in
+                self.delete(withRecordZoneID: zoneID) { recordZoneID, error in
+                    if let recordZoneID {
+                        continuation.resume(returning: recordZoneID)
+                    } else {
+                        continuation.resume(throwing: error ?? CKError(.internalError))
+                    }
+                }
+            }
+        }
+    }
+  @available(anyAppleOS 27.0, *)
+  @usableFromInline
+  internal func _deleteRecordZone(withID zoneID: CloudKit::CKRecordZone.CloudKit::ID) async throws -> CloudKit::CKRecordZone.CloudKit::ID
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func modifyRecordZones(saving recordZonesToSave: [CloudKit::CKRecordZone], deleting recordZoneIDsToDelete: [CloudKit::CKRecordZone.CloudKit::ID], completionHandler: @escaping @Sendable (Swift::Result<(saveResults: [CloudKit::CKRecordZone.CloudKit::ID : Swift::Result<CloudKit::CKRecordZone, any Swift::Error>], deleteResults: [CloudKit::CKRecordZone.CloudKit::ID : Swift::Result<Swift::Void, any Swift::Error>]), any Swift::Error>) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func modifyRecordZones(saving recordZonesToSave: [CloudKit::CKRecordZone], deleting recordZoneIDsToDelete: [CloudKit::CKRecordZone.CloudKit::ID]) async throws -> (saveResults: [CloudKit::CKRecordZone.CloudKit::ID : Swift::Result<CloudKit::CKRecordZone, any Swift::Error>], deleteResults: [CloudKit::CKRecordZone.CloudKit::ID : Swift::Result<Swift::Void, any Swift::Error>])
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func fetch(withSubscriptionIDs subscriptionIDs: [CloudKit::CKSubscription.CloudKit::ID], completionHandler: @escaping @Sendable (Swift::Result<[CloudKit::CKSubscription.CloudKit::ID : Swift::Result<CloudKit::CKSubscription, any Swift::Error>], any Swift::Error>) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func subscriptions(for ids: [CloudKit::CKSubscription.CloudKit::ID]) async throws -> [CloudKit::CKSubscription.CloudKit::ID : Swift::Result<CloudKit::CKSubscription, any Swift::Error>]
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func modifySubscriptions(saving subscriptionsToSave: [CloudKit::CKSubscription], deleting subscriptionIDsToDelete: [CloudKit::CKSubscription.CloudKit::ID], completionHandler: @escaping @Sendable (Swift::Result<(saveResults: [CloudKit::CKSubscription.CloudKit::ID : Swift::Result<CloudKit::CKSubscription, any Swift::Error>], deleteResults: [CloudKit::CKSubscription.CloudKit::ID : Swift::Result<Swift::Void, any Swift::Error>]), any Swift::Error>) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func modifySubscriptions(saving subscriptionsToSave: [CloudKit::CKSubscription], deleting subscriptionIDsToDelete: [CloudKit::CKSubscription.CloudKit::ID]) async throws -> (saveResults: [CloudKit::CKSubscription.CloudKit::ID : Swift::Result<CloudKit::CKSubscription, any Swift::Error>], deleteResults: [CloudKit::CKSubscription.CloudKit::ID : Swift::Result<Swift::Void, any Swift::Error>])
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public enum DatabaseChange {
+    public struct Modification : Swift::Sendable {
+      public var zoneID: CloudKit::CKRecordZone.CloudKit::ID {
+        get
+      }
+    }
+    public struct Deletion : Swift::Sendable {
+      public var zoneID: CloudKit::CKRecordZone.CloudKit::ID {
+        get
+      }
+      @available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+      public var reason: CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Deletion.CloudKit::Reason {
+        get
+      }
+      @available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+      public enum Reason : Swift::Sendable, Swift::Equatable {
+        case deleted
+        case purged
+        case encryptedDataReset
+        public static func == (a: CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Deletion.CloudKit::Reason, b: CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Deletion.CloudKit::Reason) -> Swift::Bool
+        public func hash(into hasher: inout Swift::Hasher)
+        public var hashValue: Swift::Int {
+          get
+        }
+      }
+      @available(macOS, introduced: 12.0, deprecated: 14.0, message: "now surfaced as Reason.purged")
+      @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "now surfaced as Reason.purged")
+      @available(iOS, introduced: 15.0, deprecated: 17.0, message: "now surfaced as Reason.purged")
+      @available(tvOS, introduced: 15.0, deprecated: 17.0, message: "now surfaced as Reason.purged")
+      @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "now surfaced as Reason.purged")
+      @available(visionOS, deprecated, message: "now surfaced as Reason.purged")
+      public var purged: Swift::Bool {
+        get
+      }
+    }
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func fetchDatabaseChanges(since changeToken: CloudKit::CKServerChangeToken?, resultsLimit: Swift::Int? = nil, completionHandler: @escaping @Sendable (Swift::Result<(modifications: [CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Modification], deletions: [CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Deletion], changeToken: CloudKit::CKServerChangeToken, moreComing: Swift::Bool), any Swift::Error>) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func databaseChanges(since changeToken: CloudKit::CKServerChangeToken?, resultsLimit: Swift::Int? = nil) async throws -> (modifications: [CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Modification], deletions: [CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Deletion], changeToken: CloudKit::CKServerChangeToken, moreComing: Swift::Bool)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public enum RecordZoneChange {
+    public struct Modification : Swift::Sendable {
+      public var record: CloudKit::CKRecord {
+        get
+      }
+    }
+    public struct Deletion : Swift::Sendable {
+      public var recordID: CloudKit::CKRecord.CloudKit::ID {
+        get
+      }
+      public var recordType: CloudKit::CKRecord.CloudKit::RecordType {
+        get
+      }
+    }
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  @preconcurrency public func fetchRecordZoneChanges(inZoneWith zoneID: CloudKit::CKRecordZone.CloudKit::ID, since changeToken: CloudKit::CKServerChangeToken?, desiredKeys: [CloudKit::CKRecord.CloudKit::FieldKey]? = nil, resultsLimit: Swift::Int? = nil, completionHandler: @escaping @Sendable (Swift::Result<(modificationResultsByID: [CloudKit::CKRecord.CloudKit::ID : Swift::Result<CloudKit::CKDatabase.CloudKit::RecordZoneChange.CloudKit::Modification, any Swift::Error>], deletions: [CloudKit::CKDatabase.CloudKit::RecordZoneChange.CloudKit::Deletion], changeToken: CloudKit::CKServerChangeToken, moreComing: Swift::Bool), any Swift::Error>) -> Swift::Void)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public func recordZoneChanges(inZoneWith zoneID: CloudKit::CKRecordZone.CloudKit::ID, since changeToken: CloudKit::CKServerChangeToken?, desiredKeys: [CloudKit::CKRecord.CloudKit::FieldKey]? = nil, resultsLimit: Swift::Int? = nil) async throws -> (modificationResultsByID: [CloudKit::CKRecord.CloudKit::ID : Swift::Result<CloudKit::CKDatabase.CloudKit::RecordZoneChange.CloudKit::Modification, any Swift::Error>], deletions: [CloudKit::CKDatabase.CloudKit::RecordZoneChange.CloudKit::Deletion], changeToken: CloudKit::CKServerChangeToken, moreComing: Swift::Bool)
+}
+@available(*, unavailable)
+extension CloudKit::CKDatabase.CloudKit::DatabaseChange : Swift::Sendable {
+}
+@available(*, unavailable)
+extension CloudKit::CKDatabase.CloudKit::RecordZoneChange : Swift::Sendable {
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Modification : Swift::Equatable, Swift::Hashable {
+  public static func == (a: CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Modification, b: CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Modification) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Deletion : Swift::Equatable, Swift::Hashable {
+  public static func == (a: CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Deletion, b: CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Deletion) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKDatabase.CloudKit::RecordZoneChange.CloudKit::Modification : Swift::Equatable, Swift::Hashable {
+  public static func == (a: CloudKit::CKDatabase.CloudKit::RecordZoneChange.CloudKit::Modification, b: CloudKit::CKDatabase.CloudKit::RecordZoneChange.CloudKit::Modification) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKDatabase.CloudKit::RecordZoneChange.CloudKit::Deletion : Swift::Equatable, Swift::Hashable {
+  public static func == (a: CloudKit::CKDatabase.CloudKit::RecordZoneChange.CloudKit::Deletion, b: CloudKit::CKDatabase.CloudKit::RecordZoneChange.CloudKit::Deletion) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 6.0, *)
+@nonobjc extension CloudKit::CKDatabaseSubscription {
+  @available(swift 4.2)
+  convenience public init(subscriptionID: CloudKit::CKSubscription.CloudKit::ID)
+  @available(swift 4.2)
+  public var recordType: CloudKit::CKRecord.CloudKit::RecordType? {
+    get
+    set
+  }
+}
+@available(macOS 13.3, macCatalyst 16.4, iOS 16.4, tvOS 16.4, watchOS 9.4, *)
+@nonobjc extension CloudKit::CKDatabaseSubscription : @unchecked Swift::Sendable {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension CloudKit::CKError {
+  public var partialErrorsByItemID: [Swift::AnyHashable : any Swift::Error]? {
+    get
+  }
+  public var ancestorRecord: CloudKit::CKRecord? {
+    get
+  }
+  public var serverRecord: CloudKit::CKRecord? {
+    get
+  }
+  public var clientRecord: CloudKit::CKRecord? {
+    get
+  }
+  public var retryAfterSeconds: Swift::Double? {
+    get
+  }
+}
+@available(macOS 10.11, macCatalyst 13.1, iOS 9.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKNotification {
+  @available(swift 4.2)
+  public var subscriptionID: CloudKit::CKSubscription.CloudKit::ID? {
+    get
+  }
+}
+@available(swift 4.2)
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKNotification.CloudKit::ID : @unchecked Swift::Sendable {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKQuery {
+  @available(swift 4.2)
+  convenience public init(recordType: CloudKit::CKRecord.CloudKit::RecordType, predicate: Foundation::NSPredicate)
+  @available(swift 4.2)
+  public var recordType: CloudKit::CKRecord.CloudKit::RecordType {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKQuery : @unchecked Swift::Sendable {
+}
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 6.0, *)
+@nonobjc extension CloudKit::CKQuerySubscription {
+  @available(swift 4.2)
+  @available(macOS, introduced: 10.12, deprecated: 10.12, message: "Provide an explicit CKSubscription.ID at CKSubscription-init time")
+  @available(macCatalyst, introduced: 13.1, deprecated: 13.1, message: "Provide an explicit CKSubscription.ID at CKSubscription-init time")
+  @available(iOS, introduced: 10.0, deprecated: 10.0, message: "Provide an explicit CKSubscription.ID at CKSubscription-init time")
+  @available(tvOS, introduced: 10.0, deprecated: 10.0, message: "Provide an explicit CKSubscription.ID at CKSubscription-init time")
+  @available(watchOS, introduced: 6.0, deprecated: 6.0, message: "Provide an explicit CKSubscription.ID at CKSubscription-init time")
+  @available(visionOS, deprecated, message: "Provide an explicit CKSubscription.ID at CKSubscription-init time")
+  @_alwaysEmitIntoClient convenience public init(recordType: CloudKit::CKRecord.CloudKit::RecordType, predicate: Foundation::NSPredicate, options querySubscriptionOptions: CloudKit::CKQuerySubscription.CloudKit::Options = [.firesOnRecordCreation, .firesOnRecordUpdate, .firesOnRecordDeletion]) {
+        self.init(__recordType: recordType, predicate: predicate, subscriptionID: UUID().uuidString, options: querySubscriptionOptions)
+    }
+  convenience public init(recordType: CloudKit::CKRecord.CloudKit::RecordType, predicate: Foundation::NSPredicate, subscriptionID: CloudKit::CKSubscription.CloudKit::ID, options querySubscriptionOptions: CloudKit::CKQuerySubscription.CloudKit::Options = [.firesOnRecordCreation, .firesOnRecordUpdate, .firesOnRecordDeletion])
+  @available(swift 4.2)
+  public var recordType: CloudKit::CKRecord.CloudKit::RecordType? {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+@nonobjc extension CloudKit::CKQuerySubscription : @unchecked Swift::Sendable {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+public struct CKRecordKeyValueIterator : Swift::IteratorProtocol {
+  public mutating func next() -> (CloudKit::CKRecord.CloudKit::FieldKey, any CloudKit::CKRecordValueProtocol)?
+  @available(macOS 10.10, iOS 8.0, tvOS 9.0, watchOS 3.0, macCatalyst 13.1, *)
+  public typealias Element = (CloudKit::CKRecord.CloudKit::FieldKey, any CloudKit::CKRecordValueProtocol)
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+@nonobjc extension CloudKit::CKRecord : @unchecked Swift::Sendable {
+}
+@available(*, unavailable)
+extension CloudKit::CKRecordKeyValueIterator : Swift::Sendable {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKRecord : Swift::Sequence {
+  public func makeIterator() -> CloudKit::CKRecordKeyValueIterator
+  @available(macOS 10.10, iOS 8.0, tvOS 9.0, watchOS 3.0, macCatalyst 13.1, *)
+  public typealias Element = (CloudKit::CKRecord.CloudKit::FieldKey, any CloudKit::CKRecordValueProtocol)
+  @available(macOS 10.10, iOS 8.0, tvOS 9.0, watchOS 3.0, macCatalyst 13.1, *)
+  public typealias Iterator = CloudKit::CKRecordKeyValueIterator
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKRecord {
+  public typealias RecordType = Swift::String
+  public typealias FieldKey = Swift::String
+  @available(swift 4.2)
+  @available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+  public enum SystemType {
+    @available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+    public static let userRecord: CloudKit::CKRecord.CloudKit::RecordType
+    @available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+    public static let share: CloudKit::CKRecord.CloudKit::RecordType
+  }
+  @available(swift 4.2)
+  @available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+  public enum SystemFieldKey {
+    @available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+    @backDeployed(before: macOS 14.0, iOS 17.0, tvOS 17.0, watchOS 10.0)
+    public static var recordID: CloudKit::CKRecord.CloudKit::FieldKey {
+      get { __CKRecordRecordIDKey as CKRecord.FieldKey }
+    }
+    @available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+    @backDeployed(before: macOS 14.0, iOS 17.0, tvOS 17.0, watchOS 10.0)
+    public static var creatorUserRecordID: CloudKit::CKRecord.CloudKit::FieldKey {
+      get { __CKRecordCreatorUserRecordIDKey as CKRecord.FieldKey }
+    }
+    @available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+    @backDeployed(before: macOS 14.0, iOS 17.0, tvOS 17.0, watchOS 10.0)
+    public static var creationDate: CloudKit::CKRecord.CloudKit::FieldKey {
+      get { __CKRecordCreationDateKey as CKRecord.FieldKey }
+    }
+    @available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+    @backDeployed(before: macOS 14.0, iOS 17.0, tvOS 17.0, watchOS 10.0)
+    public static var lastModifiedUserRecordID: CloudKit::CKRecord.CloudKit::FieldKey {
+      get { __CKRecordLastModifiedUserRecordIDKey as CKRecord.FieldKey }
+    }
+    @available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+    @backDeployed(before: macOS 14.0, iOS 17.0, tvOS 17.0, watchOS 10.0)
+    public static var modificationDate: CloudKit::CKRecord.CloudKit::FieldKey {
+      get { __CKRecordModificationDateKey as CKRecord.FieldKey }
+    }
+    @available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+    public static let parent: CloudKit::CKRecord.CloudKit::FieldKey
+    @available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+    public static let share: CloudKit::CKRecord.CloudKit::FieldKey
+  }
+  @available(swift, introduced: 4.2, deprecated: 4.2, message: "Use init(recordType:recordID:) + CKRecord.ID(zoneID:) instead")
+  @available(*, deprecated, message: "Use init(recordType:recordID:) + CKRecord.ID(zoneID:) instead")
+  convenience public init(recordType: CloudKit::CKRecord.CloudKit::RecordType, zoneID: CloudKit::CKRecordZone.CloudKit::ID)
+  @available(swift 4.2)
+  convenience public init(recordType: CloudKit::CKRecord.CloudKit::RecordType, recordID: CloudKit::CKRecord.CloudKit::ID = CKRecord.ID())
+  @available(swift 4.2)
+  public var recordType: CloudKit::CKRecord.CloudKit::RecordType {
+    get
+  }
+  @available(swift 4.2)
+  public func object(forKey key: CloudKit::CKRecord.CloudKit::FieldKey) -> (any CloudKit::__CKRecordObjCValue)?
+  @available(swift 4.2)
+  public func setObject(_ object: (any CloudKit::__CKRecordObjCValue)?, forKey key: CloudKit::CKRecord.CloudKit::FieldKey)
+  @available(swift 4.2)
+  public subscript(key: CloudKit::CKRecord.CloudKit::FieldKey) -> (any CloudKit::__CKRecordObjCValue)? {
+    get
+    set
+  }
+  @available(swift 4.2)
+  public func allKeys() -> [CloudKit::CKRecord.CloudKit::FieldKey]
+  @available(swift 4.2)
+  public func changedKeys() -> [CloudKit::CKRecord.CloudKit::FieldKey]
+}
+@available(*, unavailable)
+extension CloudKit::CKRecord.CloudKit::SystemType : Swift::Sendable {
+}
+@available(*, unavailable)
+extension CloudKit::CKRecord.CloudKit::SystemFieldKey : Swift::Sendable {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKRecord.SystemType.userRecord")
+@nonobjc public let CKRecordTypeUserRecord: Swift::String
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKRecord.SystemFieldKey.parent")
+@nonobjc public let CKRecordParentKey: Swift::String
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKRecord.SystemFieldKey.share")
+@nonobjc public let CKRecordShareKey: Swift::String
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKRecord.CloudKit::ID {
+  @available(swift 4.2)
+  convenience public init(recordName: Swift::String = UUID().uuidString, zoneID: CloudKit::CKRecordZone.CloudKit::ID = CKRecordZone.ID.default)
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKRecord.CloudKit::Reference {
+  @available(swift 4.2)
+  @available(macOS, deprecated, introduced: 10.10, message: "renamed to CKRecord.ReferenceAction")
+  @available(macCatalyst, deprecated, introduced: 13.1, message: "renamed to CKRecord.ReferenceAction")
+  @available(iOS, deprecated, introduced: 8.0, message: "renamed to CKRecord.ReferenceAction")
+  @available(tvOS, deprecated, introduced: 9.0, message: "renamed to CKRecord.ReferenceAction")
+  @available(watchOS, deprecated, introduced: 3.0, message: "renamed to CKRecord.ReferenceAction")
+  @available(visionOS, deprecated, message: "renamed to CKRecord.ReferenceAction")
+  public typealias Action = CloudKit::CKRecord.CloudKit::ReferenceAction
+}
+@available(swift 4.2)
+@available(macOS, deprecated, introduced: 10.10, message: "renamed to CKRecord.ReferenceAction")
+@available(macCatalyst, deprecated, introduced: 13.1, message: "renamed to CKRecord.ReferenceAction")
+@available(iOS, deprecated, introduced: 8.0, message: "renamed to CKRecord.ReferenceAction")
+@available(tvOS, deprecated, introduced: 9.0, message: "renamed to CKRecord.ReferenceAction")
+@available(watchOS, deprecated, introduced: 3.0, message: "renamed to CKRecord.ReferenceAction")
+@available(visionOS, deprecated, message: "renamed to CKRecord.ReferenceAction")
+public typealias CKRecord_Reference_Action = CloudKit::CKRecord.CloudKit::ReferenceAction
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+public protocol CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+public typealias CKRecordValue = CloudKit::__CKRecordObjCValue
+@available(macOS 10.11, macCatalyst 13.1, iOS 9.0, tvOS 9.0, watchOS 3.0, *)
+extension CloudKit::CKRecordKeyValueSetting {
+  @nonobjc public subscript<T>(key: CloudKit::CKRecord.CloudKit::FieldKey) -> T? where T : CloudKit::CKRecordValueProtocol {
+    get
+    set
+  }
+  @nonobjc public subscript(key: CloudKit::CKRecord.CloudKit::FieldKey) -> (any CloudKit::CKRecordValueProtocol)? {
+    get
+    set
+  }
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Swift::String : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Foundation::Date : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Foundation::Data : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Swift::Bool : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Swift::Double : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Swift::Int : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Swift::UInt : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Swift::Int8 : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Swift::UInt8 : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Swift::Int16 : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Swift::UInt16 : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Swift::Int32 : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Swift::UInt32 : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Swift::Int64 : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Swift::UInt64 : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Swift::Float : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension Swift::Array : CloudKit::CKRecordValueProtocol where Element : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension Foundation::NSString : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension Foundation::NSDate : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension Foundation::NSData : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension Foundation::NSNumber : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension Foundation::NSArray : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKRecord.CloudKit::Reference : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKAsset : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension _LocationEssentials::CLLocation : CloudKit::CKRecordValueProtocol {
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+@nonobjc extension CloudKit::CKRecordZone : @unchecked Swift::Sendable {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKRecordZone.CloudKit::ID {
+  @available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  convenience public init(zoneName: Swift::String = CKRecordZone.ID.defaultZoneName, ownerName: Swift::String = CKCurrentUserDefaultName)
+  @available(macOS, introduced: 10.10, deprecated: 10.12)
+  @available(macCatalyst, introduced: 13.1, deprecated: 13.1)
+  @available(iOS, introduced: 8.0, deprecated: 10.0)
+  @available(tvOS, introduced: 9.0, deprecated: 10.0)
+  @available(watchOS, introduced: 3.0, deprecated: 3.0)
+  @available(visionOS, deprecated)
+  @_alwaysEmitIntoClient @_disfavoredOverload convenience public init(zoneName: Swift::String = CKRecordZone.ID.defaultZoneName, ownerName: Swift::String? = CKOwnerDefaultName) {
+        self.init(__zoneName: zoneName, ownerName: ownerName ?? CKOwnerDefaultName)
+    }
+  @available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+  public static let `default`: CloudKit::CKRecordZone.CloudKit::ID
+  @available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+  public static let defaultZoneName: Swift::String
+}
+@available(macOS 13.3, macCatalyst 16.4, iOS 16.4, tvOS 16.4, watchOS 9.4, *)
+@nonobjc extension CloudKit::CKRecordZone.CloudKit::ID : @unchecked Swift::Sendable {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKRecordZone.ID.defaultZoneName")
+@nonobjc public let CKRecordZoneDefaultName: Swift::String
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 6.0, *)
+@nonobjc extension CloudKit::CKRecordZoneSubscription {
+  @available(swift 4.2)
+  convenience public init(zoneID: CloudKit::CKRecordZone.CloudKit::ID, subscriptionID: CloudKit::CKSubscription.CloudKit::ID)
+  @available(swift 4.2)
+  public var recordType: CloudKit::CKRecord.CloudKit::RecordType? {
+    get
+    set
+  }
+}
+@available(macOS 13.3, macCatalyst 16.4, iOS 16.4, tvOS 16.4, watchOS 9.4, *)
+@nonobjc extension CloudKit::CKRecordZoneSubscription : @unchecked Swift::Sendable {
+}
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKShare {
+  @available(swift 4.2)
+  public enum SystemFieldKey {
+    @available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+    public static let title: CloudKit::CKRecord.CloudKit::FieldKey
+    @available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+    public static let thumbnailImageData: CloudKit::CKRecord.CloudKit::FieldKey
+    @available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+    public static let shareType: CloudKit::CKRecord.CloudKit::FieldKey
+  }
+}
+@available(*, unavailable)
+extension CloudKit::CKShare.CloudKit::SystemFieldKey : Swift::Sendable {
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+@nonobjc extension CloudKit::CKShare : @unchecked Swift::Sendable {
+}
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKRecord.SystemType.share")
+@nonobjc public let CKRecordTypeShare: Swift::String
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKShare.SystemFieldKey.title")
+@nonobjc public let CKShareTitleKey: Swift::String
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKShare.SystemFieldKey.thumbnailImageData")
+@nonobjc public let CKShareThumbnailImageDataKey: Swift::String
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKShare.SystemFieldKey.shareType")
+@nonobjc public let CKShareTypeKey: Swift::String
+@available(macOS 15.0, macCatalyst 18.0, iOS 18.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, *)
+@nonobjc extension CloudKit::CKShare {
+  @available(swift 4.2)
+  @available(anyAppleOS 26.0, *)
+  public func oneTimeURL(for participantID: CloudKit::CKShare.CloudKit::Participant.CloudKit::ID) -> Foundation::URL?
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+@nonobjc extension CloudKit::CKShare.CloudKit::Metadata : @unchecked Swift::Sendable {
+}
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKShare.CloudKit::Participant {
+  @available(swift 4.2)
+  @available(macOS, deprecated, introduced: 10.12, message: "renamed to CKShare.ParticipantAcceptanceStatus")
+  @available(macCatalyst, deprecated, introduced: 13.1, message: "renamed to CKShare.ParticipantAcceptanceStatus")
+  @available(iOS, deprecated, introduced: 10.0, message: "renamed to CKShare.ParticipantAcceptanceStatus")
+  @available(tvOS, deprecated, introduced: 10.0, message: "renamed to CKShare.ParticipantAcceptanceStatus")
+  @available(watchOS, deprecated, introduced: 3.0, message: "renamed to CKShare.ParticipantAcceptanceStatus")
+  @available(visionOS, deprecated, message: "renamed to CKShare.ParticipantAcceptanceStatus")
+  public typealias AcceptanceStatus = CloudKit::CKShare.CloudKit::ParticipantAcceptanceStatus
+  @available(swift 4.2)
+  @available(macOS, deprecated, introduced: 10.12, message: "renamed to CKShare.ParticipantPermission")
+  @available(macCatalyst, deprecated, introduced: 13.1, message: "renamed to CKShare.ParticipantPermission")
+  @available(iOS, deprecated, introduced: 10.0, message: "renamed to CKShare.ParticipantPermission")
+  @available(tvOS, deprecated, introduced: 10.0, message: "renamed to CKShare.ParticipantPermission")
+  @available(watchOS, deprecated, introduced: 3.0, message: "renamed to CKShare.ParticipantPermission")
+  @available(visionOS, deprecated, message: "renamed to CKShare.ParticipantPermission")
+  public typealias Permission = CloudKit::CKShare.CloudKit::ParticipantPermission
+  @available(swift 4.2)
+  @available(macOS, deprecated, introduced: 10.14, message: "renamed to CKShare.ParticipantRole")
+  @available(macCatalyst, deprecated, introduced: 13.1, message: "renamed to CKShare.ParticipantRole")
+  @available(iOS, deprecated, introduced: 12.0, message: "renamed to CKShare.ParticipantRole")
+  @available(tvOS, deprecated, introduced: 12.0, message: "renamed to CKShare.ParticipantRole")
+  @available(watchOS, deprecated, introduced: 5.0, message: "renamed to CKShare.ParticipantRole")
+  @available(visionOS, deprecated, message: "renamed to CKShare.ParticipantRole")
+  public typealias Role = CloudKit::CKShare.CloudKit::ParticipantRole
+  @available(swift 4.2)
+  @available(macOS, deprecated, introduced: 10.12, obsoleted: 26.0, message: "Use CKShare.ParticipantRole")
+  @available(macCatalyst, deprecated, introduced: 13.1, obsoleted: 26.0, message: "Use CKShare.ParticipantRole")
+  @available(iOS, deprecated, introduced: 10.0, obsoleted: 26.0, message: "Use CKShare.ParticipantRole")
+  @available(tvOS, deprecated, introduced: 10.0, obsoleted: 26.0, message: "Use CKShare.ParticipantRole")
+  @available(watchOS, deprecated, introduced: 3.0, obsoleted: 26.0, message: "Use CKShare.ParticipantRole")
+  @available(visionOS, deprecated, obsoleted: 26.0, message: "Use CKShare.ParticipantRole")
+  public typealias ParticipantType = CloudKit::CKShare.CloudKit::ParticipantType
+}
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension CloudKit::CKShare.CloudKit::Participant {
+  @available(swift 4.2)
+  public typealias ID = Swift::String
+}
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKShare.CloudKit::Participant {
+  @available(swift 4.2)
+  @available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  @backDeployed(before: macOS 15.0, iOS 18.0, tvOS 18.0, watchOS 11.0, visionOS 2.0)
+  final public var participantID: CloudKit::CKShare.CloudKit::Participant.CloudKit::ID {
+    get { __participantID }
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+@nonobjc extension CloudKit::CKShare.CloudKit::Participant : @unchecked Swift::Sendable {
+}
+@available(swift 4.2)
+@available(macOS, deprecated, introduced: 10.12, message: "renamed to CKShare.ParticipantAcceptanceStatus")
+@available(macCatalyst, deprecated, introduced: 13.1, message: "renamed to CKShare.ParticipantAcceptanceStatus")
+@available(iOS, deprecated, introduced: 10.0, message: "renamed to CKShare.ParticipantAcceptanceStatus")
+@available(tvOS, deprecated, introduced: 10.0, message: "renamed to CKShare.ParticipantAcceptanceStatus")
+@available(watchOS, deprecated, introduced: 3.0, message: "renamed to CKShare.ParticipantAcceptanceStatus")
+@available(visionOS, deprecated, message: "renamed to CKShare.ParticipantAcceptanceStatus")
+public typealias CKShare_Participant_AcceptanceStatus = CloudKit::CKShare.CloudKit::ParticipantAcceptanceStatus
+@available(swift 4.2)
+@available(macOS, deprecated, introduced: 10.12, message: "renamed to CKShare.ParticipantPermission")
+@available(macCatalyst, deprecated, introduced: 13.1, message: "renamed to CKShare.ParticipantPermission")
+@available(iOS, deprecated, introduced: 10.0, message: "renamed to CKShare.ParticipantPermission")
+@available(tvOS, deprecated, introduced: 10.0, message: "renamed to CKShare.ParticipantPermission")
+@available(watchOS, deprecated, introduced: 3.0, message: "renamed to CKShare.ParticipantPermission")
+@available(visionOS, deprecated, message: "renamed to CKShare.ParticipantPermission")
+public typealias CKShare_Participant_Permission = CloudKit::CKShare.CloudKit::ParticipantPermission
+@available(swift 4.2)
+@available(macOS, deprecated, introduced: 10.14, message: "renamed to CKShare.ParticipantRole")
+@available(macCatalyst, deprecated, introduced: 13.1, message: "renamed to CKShare.ParticipantRole")
+@available(iOS, deprecated, introduced: 12.0, message: "renamed to CKShare.ParticipantRole")
+@available(tvOS, deprecated, introduced: 12.0, message: "renamed to CKShare.ParticipantRole")
+@available(watchOS, deprecated, introduced: 5.0, message: "renamed to CKShare.ParticipantRole")
+@available(visionOS, deprecated, message: "renamed to CKShare.ParticipantRole")
+public typealias CKShare_Participant_Role = CloudKit::CKShare.CloudKit::ParticipantRole
+@available(swift 4.2)
+@available(macOS, deprecated, introduced: 10.12, obsoleted: 26.0, message: "Use CKShare.ParticipantRole")
+@available(macCatalyst, deprecated, introduced: 13.1, obsoleted: 26.0, message: "Use CKShare.ParticipantRole")
+@available(iOS, deprecated, introduced: 10.0, obsoleted: 26.0, message: "Use CKShare.ParticipantRole")
+@available(tvOS, deprecated, introduced: 10.0, obsoleted: 26.0, message: "Use CKShare.ParticipantRole")
+@available(watchOS, deprecated, introduced: 3.0, obsoleted: 26.0, message: "Use CKShare.ParticipantRole")
+@available(visionOS, deprecated, obsoleted: 26.0, message: "Use CKShare.ParticipantRole")
+public typealias CKShare_Participant_ParticipantType = CloudKit::CKShare.CloudKit::ParticipantType
+@available(macOS 13.0, macCatalyst 16.0, iOS 16.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+public struct CKShareTransferRepresentation<Item> : CoreTransferable::TransferRepresentation where Item : CoreTransferable::Transferable {
+  public init(exporter: @escaping @Sendable (Item) throws -> CloudKit::CKShareTransferRepresentation<Item>.CloudKit::ExportedShare)
+  public var body: some CoreTransferable::TransferRepresentation {
+    get
+  }
+  public struct ExportedShare : CoreTransferable::Transferable, Swift::Sendable {
+    public static func prepareShare(container: CloudKit::CKContainer, allowedSharingOptions: CloudKit::CKAllowedSharingOptions = CKAllowedSharingOptions.standard, preparationHandler: @escaping @Sendable () async throws -> CloudKit::CKShare) -> CloudKit::CKShareTransferRepresentation<Item>.CloudKit::ExportedShare
+    public static func existing(_ share: CloudKit::CKShare, container: CloudKit::CKContainer, allowedSharingOptions: CloudKit::CKAllowedSharingOptions = CKAllowedSharingOptions.standard) -> CloudKit::CKShareTransferRepresentation<Item>.CloudKit::ExportedShare
+    public static var transferRepresentation: some CoreTransferable::TransferRepresentation {
+      get
+    }
+    @available(macOS 13.0, iOS 16.0, macCatalyst 16.0, *)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    public typealias Representation = @_opaqueReturnTypeOf("$s8CloudKit29CKShareTransferRepresentationV13ExportedShareV08transferE0QrvpZ", 0) __<Item>
+  }
+  @available(macOS 13.0, iOS 16.0, macCatalyst 16.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public typealias Body = @_opaqueReturnTypeOf("$s8CloudKit29CKShareTransferRepresentationV4bodyQrvp", 0) __<Item>
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+extension CloudKit::CKSubscription {
+  @available(swift 4.2)
+  public typealias ID = Swift::String
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 6.0, *)
+@nonobjc extension CloudKit::CKSubscription {
+  @available(swift 4.2)
+  public var subscriptionID: CloudKit::CKSubscription.CloudKit::ID {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+@nonobjc extension CloudKit::CKSubscription : @unchecked Swift::Sendable {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 6.0, *)
+@nonobjc extension CloudKit::CKSubscription.CloudKit::NotificationInfo {
+  @available(swift 4.2)
+  @available(tvOS, unavailable)
+  public var alertLocalizationArgs: [CloudKit::CKRecord.CloudKit::FieldKey]? {
+    get
+    set
+  }
+  @available(swift 4.2)
+  @available(macOS 10.13, macCatalyst 13.1, iOS 11.0, *)
+  @available(tvOS, unavailable)
+  public var titleLocalizationArgs: [CloudKit::CKRecord.CloudKit::FieldKey]? {
+    get
+    set
+  }
+  @available(swift 4.2)
+  @available(macOS 10.13, macCatalyst 13.1, iOS 11.0, *)
+  @available(tvOS, unavailable)
+  public var subtitleLocalizationArgs: [CloudKit::CKRecord.CloudKit::FieldKey]? {
+    get
+    set
+  }
+  @available(swift 4.2)
+  public var desiredKeys: [CloudKit::CKRecord.CloudKit::FieldKey]? {
+    get
+    set
+  }
+  convenience public init(alertBody: Swift::String? = nil, alertLocalizationKey: Swift::String? = nil, alertLocalizationArgs: [CloudKit::CKRecord.CloudKit::FieldKey] = [], title: Swift::String? = nil, titleLocalizationKey: Swift::String? = nil, titleLocalizationArgs: [CloudKit::CKRecord.CloudKit::FieldKey] = [], subtitle: Swift::String? = nil, subtitleLocalizationKey: Swift::String? = nil, subtitleLocalizationArgs: [CloudKit::CKRecord.CloudKit::FieldKey] = [], alertActionLocalizationKey: Swift::String? = nil, alertLaunchImage: Swift::String? = nil, soundName: Swift::String? = nil, desiredKeys: [CloudKit::CKRecord.CloudKit::FieldKey] = [], shouldBadge: Swift::Bool = false, shouldSendContentAvailable: Swift::Bool = false, shouldSendMutableContent: Swift::Bool = false, category: Swift::String? = nil, collapseIDKey: Swift::String? = nil)
+}
+@available(macOS 13.3, macCatalyst 16.4, iOS 16.4, tvOS 16.4, watchOS 9.4, *)
+@nonobjc extension CloudKit::CKSubscription.CloudKit::NotificationInfo : @unchecked Swift::Sendable {
+}
+@available(macOS 13.0, macCatalyst 16.0, iOS 16.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@nonobjc extension CloudKit::CKSystemSharingUIObserver {
+  @available(macOS 13.0, macCatalyst 16.0, iOS 16.0, *)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @preconcurrency public var systemSharingUIDidSaveShareBlock: (@Sendable (_ recordID: CloudKit::CKRecord.CloudKit::ID, _ saveResult: Swift::Result<CloudKit::CKShare, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 13.0, macCatalyst 16.0, iOS 16.0, *)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @preconcurrency public var systemSharingUIDidStopSharingBlock: (@Sendable (_ recordID: CloudKit::CKRecord.CloudKit::ID, _ deleteResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS 13.3, macCatalyst 16.4, iOS 16.4, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@nonobjc extension CloudKit::CKSystemSharingUIObserver : @unchecked Swift::Sendable {
+}
+@available(macOS 13.3, macCatalyst 16.4, iOS 16.4, tvOS 16.4, watchOS 9.4, *)
+@nonobjc extension CloudKit::CKUserIdentity : @unchecked Swift::Sendable {
+}
+@available(macOS 13.3, macCatalyst 16.4, iOS 16.4, tvOS 16.4, watchOS 9.4, *)
+@nonobjc extension CloudKit::CKUserIdentity.CloudKit::LookupInfo : @unchecked Swift::Sendable {
+}
+@available(macOS 13.0, macCatalyst 16.0, iOS 16.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension Foundation::NSItemProvider {
+  @available(macOS 13.0, macCatalyst 16.0, iOS 16.0, *)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  public func registerCKShare(container: CloudKit::CKContainer, allowedSharingOptions: CloudKit::CKAllowedSharingOptions = CKAllowedSharingOptions.standard, preparationHandler: @escaping @Sendable () async throws -> CloudKit::CKShare)
+  @available(macOS 13.0, macCatalyst 16.0, iOS 16.0, *)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  public func registerCKShare(_ share: CloudKit::CKShare, container: CloudKit::CKContainer, allowedSharingOptions: CloudKit::CKAllowedSharingOptions = CKAllowedSharingOptions.standard)
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKQueryOperation {
+  @available(swift 4.2)
+  public var desiredKeys: [CloudKit::CKRecord.CloudKit::FieldKey]? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var recordMatchedBlock: ((_ recordID: CloudKit::CKRecord.CloudKit::ID, _ recordResult: Swift::Result<CloudKit::CKRecord, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var queryResultBlock: ((_ operationResult: Swift::Result<CloudKit::CKQueryOperation.CloudKit::Cursor?, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS 13.3, macCatalyst 16.4, iOS 16.4, tvOS 16.4, watchOS 9.4, *)
+@nonobjc extension CloudKit::CKQueryOperation.CloudKit::Cursor : @unchecked Swift::Sendable {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKFetchRecordsOperation {
+  @available(swift 4.2)
+  public var desiredKeys: [CloudKit::CKRecord.CloudKit::FieldKey]? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var perRecordResultBlock: ((_ recordID: CloudKit::CKRecord.CloudKit::ID, _ recordResult: Swift::Result<CloudKit::CKRecord, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var fetchRecordsResultBlock: ((_ operationResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKFetchRecordZoneChangesOperation {
+  @available(swift 4.2)
+  @available(macOS 10.14, macCatalyst 13.1, iOS 12.0, tvOS 12.0, watchOS 5.0, *)
+  convenience public init(recordZoneIDs: [CloudKit::CKRecordZone.CloudKit::ID]? = nil, configurationsByRecordZoneID: [CloudKit::CKRecordZone.CloudKit::ID : CloudKit::CKFetchRecordZoneChangesOperation.CloudKit::ZoneConfiguration]? = nil)
+  @available(swift 4.2)
+  public var recordWithIDWasDeletedBlock: ((_ recordID: CloudKit::CKRecord.CloudKit::ID, _ recordType: CloudKit::CKRecord.CloudKit::RecordType) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var recordWasChangedBlock: ((_ recordID: CloudKit::CKRecord.CloudKit::ID, _ recordResult: Swift::Result<CloudKit::CKRecord, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var recordZoneFetchResultBlock: ((_ recordZoneID: CloudKit::CKRecordZone.CloudKit::ID, _ fetchChangesResult: Swift::Result<(serverChangeToken: CloudKit::CKServerChangeToken, clientChangeTokenData: Foundation::Data?, moreComing: Swift::Bool), any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var fetchRecordZoneChangesResultBlock: ((_ operationResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS 10.14, macCatalyst 13.1, iOS 12.0, tvOS 12.0, watchOS 5.0, *)
+@nonobjc extension CloudKit::CKFetchRecordZoneChangesOperation.CloudKit::ZoneConfiguration {
+  @available(swift 4.2)
+  public var desiredKeys: [CloudKit::CKRecord.CloudKit::FieldKey]? {
+    get
+    set
+  }
+  @available(swift 4.2)
+  convenience public init(previousServerChangeToken: CloudKit::CKServerChangeToken? = nil, resultsLimit: Swift::Int? = nil, desiredKeys: [CloudKit::CKRecord.CloudKit::FieldKey]? = nil)
+}
+@available(macOS 13.3, macCatalyst 16.4, iOS 16.4, tvOS 16.4, watchOS 9.4, *)
+@nonobjc extension CloudKit::CKFetchRecordZoneChangesOperation.CloudKit::ZoneConfiguration : @unchecked Swift::Sendable {
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKModifyRecordsOperation {
+  @available(swift 4.2)
+  convenience public init(recordsToSave: [CloudKit::CKRecord]? = nil, recordIDsToDelete: [CloudKit::CKRecord.CloudKit::ID]? = nil)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var perRecordSaveBlock: ((_ recordID: CloudKit::CKRecord.CloudKit::ID, _ saveResult: Swift::Result<CloudKit::CKRecord, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var perRecordDeleteBlock: ((_ recordID: CloudKit::CKRecord.CloudKit::ID, _ deleteResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var modifyRecordsResultBlock: ((_ operationResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKAcceptSharesOperation {
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var perShareResultBlock: ((_ metadata: CloudKit::CKShare.CloudKit::Metadata, _ metadataResult: Swift::Result<CloudKit::CKShare, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var acceptSharesResultBlock: ((_ operationResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKFetchShareMetadataOperation {
+  @available(swift 4.2)
+  public var rootRecordDesiredKeys: [CloudKit::CKRecord.CloudKit::FieldKey]? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var perShareMetadataResultBlock: ((_ shareURL: Foundation::URL, _ shareMetadataResult: Swift::Result<CloudKit::CKShare.CloudKit::Metadata, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var fetchShareMetadataResultBlock: ((_ operationResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(anyAppleOS 26.0, *)
+@nonobjc extension CloudKit::CKShareRequestAccessOperation {
+  @available(anyAppleOS 26.0, *)
+  public var perShareAccessRequestResultBlock: ((Foundation::URL, Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(anyAppleOS 26.0, *)
+  public var shareAccessRequestResultBlock: ((Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 6.0, *)
+@nonobjc extension CloudKit::CKFetchSubscriptionsOperation {
+  @available(swift 4.2)
+  convenience public init(subscriptionIDs: [CloudKit::CKSubscription.CloudKit::ID])
+  @available(swift 4.2)
+  public var subscriptionIDs: [CloudKit::CKSubscription.CloudKit::ID]? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var perSubscriptionResultBlock: ((_ subscriptionID: CloudKit::CKSubscription.CloudKit::ID, _ subscriptionResult: Swift::Result<CloudKit::CKSubscription, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(swift 4.2)
+  @available(macOS, introduced: 10.10, deprecated: 12.0, message: "Use fetchSubscriptionsResultBlock instead")
+  @available(macCatalyst, introduced: 13.1, deprecated: 15.0, message: "Use fetchSubscriptionsResultBlock instead")
+  @available(iOS, introduced: 8.0, deprecated: 15.0, message: "Use fetchSubscriptionsResultBlock instead")
+  @available(tvOS, introduced: 9.0, deprecated: 15.0, message: "Use fetchSubscriptionsResultBlock instead")
+  @available(watchOS, introduced: 6.0, deprecated: 8.0, message: "Use fetchSubscriptionsResultBlock instead")
+  @available(visionOS, deprecated, message: "Use fetchSubscriptionsResultBlock instead")
+  public var fetchSubscriptionCompletionBlock: ((_ subscriptionsBySubscriptionID: [CloudKit::CKSubscription.CloudKit::ID : CloudKit::CKSubscription]?, _ operationError: (any Swift::Error)?) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var fetchSubscriptionsResultBlock: ((_ operationResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 6.0, *)
+@nonobjc extension CloudKit::CKModifySubscriptionsOperation {
+  @available(swift 4.2)
+  convenience public init(subscriptionsToSave: [CloudKit::CKSubscription]? = nil, subscriptionIDsToDelete: [CloudKit::CKSubscription.CloudKit::ID]? = nil)
+  @available(swift 4.2)
+  public var subscriptionIDsToDelete: [CloudKit::CKSubscription.CloudKit::ID]? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var perSubscriptionSaveBlock: ((_ subscriptionID: CloudKit::CKSubscription.CloudKit::ID, _ saveResult: Swift::Result<CloudKit::CKSubscription, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var perSubscriptionDeleteBlock: ((_ subscriptionID: CloudKit::CKSubscription.CloudKit::ID, _ deleteResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS, introduced: 10.10, deprecated: 12.0, message: "Use modifySubscriptionsResultBlock instead")
+  @available(macCatalyst, introduced: 13.1, deprecated: 15.0, message: "Use modifySubscriptionsResultBlock instead")
+  @available(iOS, introduced: 8.0, deprecated: 15.0, message: "Use modifySubscriptionsResultBlock instead")
+  @available(tvOS, introduced: 9.0, deprecated: 15.0, message: "Use modifySubscriptionsResultBlock instead")
+  @available(watchOS, introduced: 6.0, deprecated: 8.0, message: "Use modifySubscriptionsResultBlock instead")
+  @available(visionOS, deprecated, message: "Use modifySubscriptionsResultBlock instead")
+  public var modifySubscriptionsCompletionBlock: ((_ savedSubscriptions: [CloudKit::CKSubscription]?, _ deletedSubscriptionIDs: [CloudKit::CKSubscription.CloudKit::ID]?, _ operationError: (any Swift::Error)?) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var modifySubscriptionsResultBlock: ((_ operationResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKFetchDatabaseChangesOperation {
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var fetchDatabaseChangesResultBlock: ((_ operationResult: Swift::Result<(serverChangeToken: CloudKit::CKServerChangeToken, moreComing: Swift::Bool), any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKFetchRecordZonesOperation {
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var perRecordZoneResultBlock: ((_ recordZoneID: CloudKit::CKRecordZone.CloudKit::ID, _ recordZoneResult: Swift::Result<CloudKit::CKRecordZone, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var fetchRecordZonesResultBlock: ((_ operationResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKModifyRecordZonesOperation {
+  @available(swift 4.2)
+  convenience public init(recordZonesToSave: [CloudKit::CKRecordZone]? = nil, recordZoneIDsToDelete: [CloudKit::CKRecordZone.CloudKit::ID]? = nil)
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var perRecordZoneSaveBlock: ((_ recordZoneID: CloudKit::CKRecordZone.CloudKit::ID, _ saveResult: Swift::Result<CloudKit::CKRecordZone, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var perRecordZoneDeleteBlock: ((_ recordZoneID: CloudKit::CKRecordZone.CloudKit::ID, _ deleteResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var modifyRecordZonesResultBlock: ((_ operationResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS 10.11, macCatalyst 13.1, iOS 9.2, tvOS 9.1, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKFetchWebAuthTokenOperation {
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var fetchWebAuthTokenResultBlock: ((_ operationResult: Swift::Result<Swift::String, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS, introduced: 10.12, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+@available(macCatalyst, introduced: 13.1, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+@available(iOS, introduced: 10.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+@available(watchOS, introduced: 3.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+@available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+@available(tvOS, unavailable)
+@nonobjc extension CloudKit::CKDiscoverAllUserIdentitiesOperation {
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  public var discoverAllUserIdentitiesResultBlock: ((_ operationResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS, introduced: 10.12, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+@available(macCatalyst, introduced: 13.1, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+@available(iOS, introduced: 10.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+@available(tvOS, introduced: 10.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+@available(watchOS, introduced: 3.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+@available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+@nonobjc extension CloudKit::CKDiscoverUserIdentitiesOperation {
+  @available(macOS, introduced: 12.0, deprecated: 14.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(macCatalyst, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(iOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(tvOS, introduced: 15.0, deprecated: 17.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(watchOS, introduced: 8.0, deprecated: 10.0, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  @available(visionOS, deprecated, message: "No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.")
+  public var discoverUserIdentitiesResultBlock: ((_ operationResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS 10.12, macCatalyst 13.1, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKFetchShareParticipantsOperation {
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var perShareParticipantResultBlock: ((_ lookupInfo: CloudKit::CKUserIdentity.CloudKit::LookupInfo, _ shareParticipantResult: Swift::Result<CloudKit::CKShare.CloudKit::Participant, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+  @available(macOS 12.0, macCatalyst 15.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+  public var fetchShareParticipantsResultBlock: ((_ operationResult: Swift::Result<Swift::Void, any Swift::Error>) -> Swift::Void)? {
+    get
+    set
+  }
+}
+@available(macOS 10.10, macCatalyst 13.1, iOS 8.0, tvOS 9.0, watchOS 3.0, *)
+@nonobjc extension CloudKit::CKOperation {
+  public typealias ID = Swift::String
+  @available(swift 4.2)
+  @available(macOS 10.12, macCatalyst 13.1, iOS 9.3, tvOS 9.2, watchOS 3.0, *)
+  public var operationID: CloudKit::CKOperation.CloudKit::ID {
+    get
+  }
+}
+@available(macOS 13.3, macCatalyst 16.4, iOS 16.4, tvOS 16.4, watchOS 9.4, *)
+@nonobjc extension CloudKit::CKOperation.CloudKit::Configuration : @unchecked Swift::Sendable {
+}
+@available(macOS 13.3, macCatalyst 16.4, iOS 16.4, tvOS 16.4, watchOS 9.4, *)
+@nonobjc extension CloudKit::CKOperationGroup : @unchecked Swift::Sendable {
+}
+@_hasMissingDesignatedInitializers @available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+final public class CKSyncEngine : Swift::Sendable {
+  public init(_ configuration: CloudKit::CKSyncEngine.CloudKit::Configuration)
+  final public var database: CloudKit::CKDatabase {
+    get
+  }
+  final public var state: CloudKit::CKSyncEngine.CloudKit::State {
+    get
+  }
+  @objc deinit
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine {
+  final public func fetchChanges(_ options: CloudKit::CKSyncEngine.CloudKit::FetchChangesOptions = .init()) async throws
+  final public func sendChanges(_ options: CloudKit::CKSyncEngine.CloudKit::SendChangesOptions = .init()) async throws
+  final public func cancelOperations() async
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine : Swift::CustomStringConvertible {
+  final public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine {
+  public struct Configuration : Swift::Sendable {
+    public var database: CloudKit::CKDatabase
+    public var stateSerialization: CloudKit::CKSyncEngine.CloudKit::State.CloudKit::Serialization?
+    public var delegate: any CloudKit::CKSyncEngineDelegate
+    public var automaticallySync: Swift::Bool
+    public var subscriptionID: CloudKit::CKSubscription.CloudKit::ID?
+    public init(database: CloudKit::CKDatabase, stateSerialization: CloudKit::CKSyncEngine.CloudKit::State.CloudKit::Serialization?, delegate: any CloudKit::CKSyncEngineDelegate)
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Configuration : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+public protocol CKSyncEngineDelegate : AnyObject, Swift::Sendable {
+  func handleEvent(_ event: CloudKit::CKSyncEngine.CloudKit::Event, syncEngine: CloudKit::CKSyncEngine) async
+  func nextRecordZoneChangeBatch(_ context: CloudKit::CKSyncEngine.CloudKit::SendChangesContext, syncEngine: CloudKit::CKSyncEngine) async -> CloudKit::CKSyncEngine.CloudKit::RecordZoneChangeBatch?
+  func nextFetchChangesOptions(_ context: CloudKit::CKSyncEngine.CloudKit::FetchChangesContext, syncEngine: CloudKit::CKSyncEngine) async -> CloudKit::CKSyncEngine.CloudKit::FetchChangesOptions
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngineDelegate {
+  public func nextFetchChangesOptions(_ context: CloudKit::CKSyncEngine.CloudKit::FetchChangesContext, syncEngine: CloudKit::CKSyncEngine) async -> CloudKit::CKSyncEngine.CloudKit::FetchChangesOptions
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine {
+  public enum Event : Swift::Sendable {
+    case stateUpdate(CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::StateUpdate)
+    case accountChange(CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::AccountChange)
+    case fetchedDatabaseChanges(CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::FetchedDatabaseChanges)
+    case fetchedRecordZoneChanges(CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::FetchedRecordZoneChanges)
+    case sentDatabaseChanges(CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::SentDatabaseChanges)
+    case sentRecordZoneChanges(CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::SentRecordZoneChanges)
+    case willFetchChanges(CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::WillFetchChanges)
+    case willFetchRecordZoneChanges(CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::WillFetchRecordZoneChanges)
+    case didFetchRecordZoneChanges(CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::DidFetchRecordZoneChanges)
+    case didFetchChanges(CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::DidFetchChanges)
+    case willSendChanges(CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::WillSendChanges)
+    case didSendChanges(CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::DidSendChanges)
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event {
+  public struct StateUpdate : Swift::Sendable {
+    public let stateSerialization: CloudKit::CKSyncEngine.CloudKit::State.CloudKit::Serialization
+  }
+  public struct AccountChange : Swift::Sendable {
+    public let changeType: CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::AccountChange.CloudKit::ChangeType
+    public enum ChangeType : Swift::Sendable {
+      case signIn(currentUser: CloudKit::CKRecord.CloudKit::ID)
+      case signOut(previousUser: CloudKit::CKRecord.CloudKit::ID)
+      case switchAccounts(previousUser: CloudKit::CKRecord.CloudKit::ID, currentUser: CloudKit::CKRecord.CloudKit::ID)
+    }
+  }
+  public struct FetchedDatabaseChanges : Swift::Sendable {
+    public let modifications: [CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Modification]
+    public let deletions: [CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Deletion]
+  }
+  public struct FetchedRecordZoneChanges : Swift::Sendable {
+    public let modifications: [CloudKit::CKDatabase.CloudKit::RecordZoneChange.CloudKit::Modification]
+    public let deletions: [CloudKit::CKDatabase.CloudKit::RecordZoneChange.CloudKit::Deletion]
+  }
+  public struct SentDatabaseChanges : Swift::Sendable {
+    public let savedZones: [CloudKit::CKRecordZone]
+    public let failedZoneSaves: [CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::SentDatabaseChanges.CloudKit::FailedZoneSave]
+    public let deletedZoneIDs: [CloudKit::CKRecordZone.CloudKit::ID]
+    public let failedZoneDeletes: [CloudKit::CKRecordZone.CloudKit::ID : CloudKit::CKError]
+    public struct FailedZoneSave : Swift::Sendable {
+      public let zone: CloudKit::CKRecordZone
+      public let error: CloudKit::CKError
+    }
+  }
+  public struct SentRecordZoneChanges : Swift::Sendable {
+    public let savedRecords: [CloudKit::CKRecord]
+    public let failedRecordSaves: [CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::SentRecordZoneChanges.CloudKit::FailedRecordSave]
+    public let deletedRecordIDs: [CloudKit::CKRecord.CloudKit::ID]
+    public let failedRecordDeletes: [CloudKit::CKRecord.CloudKit::ID : CloudKit::CKError]
+    public struct FailedRecordSave : Swift::Sendable {
+      public let record: CloudKit::CKRecord
+      public let error: CloudKit::CKError
+    }
+  }
+  public struct WillFetchChanges : Swift::Sendable {
+    @available(macOS 14.2, macCatalyst 17.2, iOS 17.2, tvOS 17.2, watchOS 10.2, *)
+    public let context: CloudKit::CKSyncEngine.CloudKit::FetchChangesContext
+  }
+  public struct WillFetchRecordZoneChanges : Swift::Sendable {
+    public let zoneID: CloudKit::CKRecordZone.CloudKit::ID
+  }
+  public struct DidFetchRecordZoneChanges : Swift::Sendable {
+    public let zoneID: CloudKit::CKRecordZone.CloudKit::ID
+    public let error: CloudKit::CKError?
+  }
+  public struct DidFetchChanges : Swift::Sendable {
+    @available(macOS 14.2, macCatalyst 17.2, iOS 17.2, tvOS 17.2, watchOS 10.2, *)
+    public let context: CloudKit::CKSyncEngine.CloudKit::FetchChangesContext
+  }
+  public struct WillSendChanges : Swift::Sendable {
+    public let context: CloudKit::CKSyncEngine.CloudKit::SendChangesContext
+  }
+  public struct DidSendChanges : Swift::Sendable {
+    public let context: CloudKit::CKSyncEngine.CloudKit::SendChangesContext
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::StateUpdate : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::AccountChange : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::AccountChange.CloudKit::ChangeType : Swift::Equatable {
+  public static func == (a: CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::AccountChange.CloudKit::ChangeType, b: CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::AccountChange.CloudKit::ChangeType) -> Swift::Bool
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::FetchedDatabaseChanges : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::FetchedRecordZoneChanges : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::SentDatabaseChanges : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::SentDatabaseChanges.CloudKit::FailedZoneSave : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::SentRecordZoneChanges : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::SentRecordZoneChanges.CloudKit::FailedRecordSave : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::WillFetchChanges : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::WillFetchRecordZoneChanges : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::DidFetchRecordZoneChanges : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::DidFetchChanges : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::WillSendChanges : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::Event.CloudKit::DidSendChanges : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine {
+  public struct RecordZoneChangeBatch : Swift::Sendable {
+    public var recordsToSave: [CloudKit::CKRecord]
+    public var recordIDsToDelete: [CloudKit::CKRecord.CloudKit::ID]
+    public var atomicByZone: Swift::Bool
+    public init?(pendingChanges: [CloudKit::CKSyncEngine.CloudKit::PendingRecordZoneChange], recordProvider: @Sendable (CloudKit::CKRecord.CloudKit::ID) async -> CloudKit::CKRecord?) async
+    public init(recordsToSave: [CloudKit::CKRecord] = [], recordIDsToDelete: [CloudKit::CKRecord.CloudKit::ID] = [], atomicByZone: Swift::Bool = false)
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::RecordZoneChangeBatch : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine {
+  @_hasMissingDesignatedInitializers final public class State : Swift::Sendable {
+    final public var pendingRecordZoneChanges: [CloudKit::CKSyncEngine.CloudKit::PendingRecordZoneChange] {
+      get
+    }
+    final public var pendingDatabaseChanges: [CloudKit::CKSyncEngine.CloudKit::PendingDatabaseChange] {
+      get
+    }
+    final public var hasPendingUntrackedChanges: Swift::Bool {
+      get
+      set
+    }
+    final public var zoneIDsWithUnfetchedServerChanges: [CloudKit::CKRecordZone.CloudKit::ID] {
+      get
+    }
+    final public func add(pendingRecordZoneChanges: [CloudKit::CKSyncEngine.CloudKit::PendingRecordZoneChange])
+    final public func remove(pendingRecordZoneChanges: [CloudKit::CKSyncEngine.CloudKit::PendingRecordZoneChange])
+    final public func add(pendingDatabaseChanges: [CloudKit::CKSyncEngine.CloudKit::PendingDatabaseChange])
+    final public func remove(pendingDatabaseChanges: [CloudKit::CKSyncEngine.CloudKit::PendingDatabaseChange])
+    public struct Serialization : Swift::Codable, Swift::Sendable {
+      public func encode(to encoder: any Swift::Encoder) throws
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    @objc deinit
+  }
+  public enum PendingRecordZoneChange : Swift::Sendable {
+    case saveRecord(CloudKit::CKRecord.CloudKit::ID)
+    case deleteRecord(CloudKit::CKRecord.CloudKit::ID)
+  }
+  public enum PendingDatabaseChange : Swift::Sendable {
+    case saveZone(CloudKit::CKRecordZone)
+    case deleteZone(CloudKit::CKRecordZone.CloudKit::ID)
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::PendingRecordZoneChange : Swift::Hashable, Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+  public static func == (a: CloudKit::CKSyncEngine.CloudKit::PendingRecordZoneChange, b: CloudKit::CKSyncEngine.CloudKit::PendingRecordZoneChange) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::PendingDatabaseChange : Swift::Hashable, Swift::CustomStringConvertible {
+  public static func == (lhs: CloudKit::CKSyncEngine.CloudKit::PendingDatabaseChange, rhs: CloudKit::CKSyncEngine.CloudKit::PendingDatabaseChange) -> Swift::Bool
+  public var description: Swift::String {
+    get
+  }
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine {
+  public struct FetchChangesOptions : Swift::Sendable {
+    public var scope: CloudKit::CKSyncEngine.CloudKit::FetchChangesOptions.CloudKit::Scope {
+      get
+      set
+    }
+    public var operationGroup: CloudKit::CKOperationGroup {
+      get
+      set
+    }
+    public var prioritizedZoneIDs: [CloudKit::CKRecordZone.CloudKit::ID]
+    public enum Scope : Swift::Sendable {
+      case all
+      case allExcluding([CloudKit::CKRecordZone.CloudKit::ID])
+      case zoneIDs([CloudKit::CKRecordZone.CloudKit::ID])
+      public func contains(_ zoneID: CloudKit::CKRecordZone.CloudKit::ID) -> Swift::Bool
+    }
+    public init(scope: CloudKit::CKSyncEngine.CloudKit::FetchChangesOptions.CloudKit::Scope = .all, operationGroup: CloudKit::CKOperationGroup? = nil)
+  }
+  public struct FetchChangesContext : Swift::Sendable {
+    public let reason: CloudKit::CKSyncEngine.CloudKit::SyncReason
+    public let options: CloudKit::CKSyncEngine.CloudKit::FetchChangesOptions
+  }
+  public struct SendChangesOptions : Swift::Sendable {
+    public var scope: CloudKit::CKSyncEngine.CloudKit::SendChangesOptions.CloudKit::Scope {
+      get
+      set
+    }
+    public var operationGroup: CloudKit::CKOperationGroup {
+      get
+      set
+    }
+    public enum Scope : Swift::Sendable {
+      case all
+      case allExcluding([CloudKit::CKRecordZone.CloudKit::ID])
+      case zoneIDs([CloudKit::CKRecordZone.CloudKit::ID])
+      case recordIDs([CloudKit::CKRecord.CloudKit::ID])
+      public func contains(_ recordID: CloudKit::CKRecord.CloudKit::ID) -> Swift::Bool
+      public func contains(_ pendingChange: CloudKit::CKSyncEngine.CloudKit::PendingRecordZoneChange) -> Swift::Bool
+    }
+    public init(scope: CloudKit::CKSyncEngine.CloudKit::SendChangesOptions.CloudKit::Scope = .all, operationGroup: CloudKit::CKOperationGroup? = nil)
+  }
+  public struct SendChangesContext : Swift::Sendable {
+    public let reason: CloudKit::CKSyncEngine.CloudKit::SyncReason
+    public let options: CloudKit::CKSyncEngine.CloudKit::SendChangesOptions
+  }
+  public enum SyncReason : Swift::Sendable {
+    case scheduled
+    case manual
+    public static func == (a: CloudKit::CKSyncEngine.CloudKit::SyncReason, b: CloudKit::CKSyncEngine.CloudKit::SyncReason) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::FetchChangesOptions : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::FetchChangesOptions.CloudKit::Scope : Swift::Equatable {
+  public static func == (a: CloudKit::CKSyncEngine.CloudKit::FetchChangesOptions.CloudKit::Scope, b: CloudKit::CKSyncEngine.CloudKit::FetchChangesOptions.CloudKit::Scope) -> Swift::Bool
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::SendChangesOptions : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::SendChangesOptions.CloudKit::Scope : Swift::Equatable {
+  public static func == (a: CloudKit::CKSyncEngine.CloudKit::SendChangesOptions.CloudKit::Scope, b: CloudKit::CKSyncEngine.CloudKit::SendChangesOptions.CloudKit::Scope) -> Swift::Bool
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::SendChangesContext : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.2, macCatalyst 17.2, iOS 17.2, tvOS 17.2, watchOS 10.2, *)
+extension CloudKit::CKSyncEngine.CloudKit::FetchChangesContext : Swift::CustomStringConvertible {
+  @available(macOS 14.2, macCatalyst 17.2, iOS 17.2, tvOS 17.2, watchOS 10.2, *)
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::SyncReason : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::SendChangesOptions.CloudKit::Scope : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::FetchChangesOptions.CloudKit::Scope : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKDatabase.CloudKit::DatabaseChange.CloudKit::Deletion.CloudKit::Reason : Swift::Hashable {}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::SyncReason : Swift::Equatable {}
+@available(macOS 14.0, macCatalyst 17.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension CloudKit::CKSyncEngine.CloudKit::SyncReason : Swift::Hashable {}

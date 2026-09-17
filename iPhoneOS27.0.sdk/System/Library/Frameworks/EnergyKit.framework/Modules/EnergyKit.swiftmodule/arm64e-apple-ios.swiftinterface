@@ -1,0 +1,645 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature ExistentialAny -enable-experimental-feature DebugDescriptionMacro -user-module-version 490.1.4 -module-name EnergyKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+public import CoreLocation
+@preconcurrency public import Foundation
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 27.0, macOS 27.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct ElectricalLoadDevice : Swift::Codable, Swift::Sendable, Swift::Hashable {
+  public enum DeviceType : Swift::String, Swift::Codable, Swift::Equatable, Swift::Hashable, Swift::Sendable {
+    case hvac
+    case electricVehicle
+    public init?(rawValue: Swift::String)
+    @available(macOS 27.0, iOS 27.0, *)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias RawValue = Swift::String
+    public var rawValue: Swift::String {
+      get
+    }
+  }
+  public let id: Swift::String
+  public let name: Swift::String
+  public let type: EnergyKit::ElectricalLoadDevice.EnergyKit::DeviceType
+  public init(id: Swift::String, name: Swift::String, type: EnergyKit::ElectricalLoadDevice.EnergyKit::DeviceType)
+  public static func == (a: EnergyKit::ElectricalLoadDevice, b: EnergyKit::ElectricalLoadDevice) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+public protocol ElectricalLoadEventProtocol : Swift::Decodable, Swift::Encodable, Swift::Identifiable, Swift::Sendable {
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+public struct ElectricHVACLoadEvent : EnergyKit::ElectricalLoadEventProtocol {
+  public struct ElectricalMeasurement : Swift::Codable, Swift::Sendable {
+    public let stage: Swift::Int
+    public init(stage: Swift::Int)
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct Session : Swift::Codable, Swift::Sendable {
+    public enum State : Swift::Codable, Swift::Equatable, Swift::Sendable {
+      case begin
+      case end
+      case active
+      public static func == (a: EnergyKit::ElectricHVACLoadEvent.EnergyKit::Session.EnergyKit::State, b: EnergyKit::ElectricHVACLoadEvent.EnergyKit::Session.EnergyKit::State) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public struct GuidanceState : Swift::Codable, Swift::Sendable {
+      public let wasFollowingGuidance: Swift::Bool
+      public var guidanceToken: Foundation::UUID
+      public init(wasFollowingGuidance: Swift::Bool, guidanceToken: Foundation::UUID)
+      public func encode(to encoder: any Swift::Encoder) throws
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public let id: Foundation::UUID
+    public let state: EnergyKit::ElectricHVACLoadEvent.EnergyKit::Session.EnergyKit::State
+    public let guidanceState: EnergyKit::ElectricHVACLoadEvent.EnergyKit::Session.EnergyKit::GuidanceState
+    public init(id: Foundation::UUID, state: EnergyKit::ElectricHVACLoadEvent.EnergyKit::Session.EnergyKit::State, guidanceState: EnergyKit::ElectricHVACLoadEvent.EnergyKit::Session.EnergyKit::GuidanceState)
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public let id: Foundation::UUID
+  public let timestamp: Foundation::Date
+  public let session: EnergyKit::ElectricHVACLoadEvent.EnergyKit::Session
+  public let measurement: EnergyKit::ElectricHVACLoadEvent.EnergyKit::ElectricalMeasurement
+  public let deviceID: Swift::String
+  @available(iOS 27.0, macOS 27.0, *)
+  @available(tvOS, unavailable)
+  public var deviceName: Swift::String {
+    get
+  }
+  @available(iOS, deprecated: 27.0, message: "Use init(timestamp:measurement:session:device:) instead")
+  @available(macOS, deprecated: 27.0, message: "Use init(timestamp:measurement:session:device:) instead")
+  public init(timestamp: Foundation::Date, measurement: EnergyKit::ElectricHVACLoadEvent.EnergyKit::ElectricalMeasurement, session: EnergyKit::ElectricHVACLoadEvent.EnergyKit::Session, deviceID: Swift::String)
+  @available(iOS 27.0, macOS 27.0, *)
+  @available(tvOS, unavailable)
+  public init(timestamp: Foundation::Date, measurement: EnergyKit::ElectricHVACLoadEvent.EnergyKit::ElectricalMeasurement, session: EnergyKit::ElectricHVACLoadEvent.EnergyKit::Session, device: EnergyKit::ElectricalLoadDevice)
+  @available(macOS 26.0, iOS 26.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias ID = Foundation::UUID
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+public enum ElectricVehicleChargingReason {
+  public enum ActiveReason : Swift::Codable, Swift::Equatable, Swift::Hashable, Swift::Sendable, Swift::CaseIterable {
+    case cleanerEnergyAvailable
+    case lowerElectricityRatesAvailable
+    case userInitiated
+    case scheduledStart
+    case userResumed
+    case scheduledResume
+    case demandResponseEnded
+    case batteryThermalManagementCompleted
+    case batteryHealthManagementCompleted
+    case chargerFaultCleared
+    case sufficientPowerRestored
+    case loadBalancingCompleted
+    case unknown
+    public static func == (a: EnergyKit::ElectricVehicleChargingReason.EnergyKit::ActiveReason, b: EnergyKit::ElectricVehicleChargingReason.EnergyKit::ActiveReason) -> Swift::Bool
+    @available(macOS 27.0, iOS 27.0, *)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias AllCases = [EnergyKit::ElectricVehicleChargingReason.EnergyKit::ActiveReason]
+    nonisolated public static var allCases: [EnergyKit::ElectricVehicleChargingReason.EnergyKit::ActiveReason] {
+      get
+    }
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public enum IdleReason : Swift::Codable, Swift::Equatable, Swift::Hashable, Swift::Sendable, Swift::CaseIterable {
+    case targetStateOfChargeReached
+    case batteryFull
+    case scheduledEnd
+    case targetAlreadyReached
+    case waitingForCleanerEnergy
+    case waitingForLowerElectricityRates
+    case userPaused
+    case scheduledPause
+    case userStopped
+    case chargerFault
+    case demandResponseActive
+    case batteryThermalManagement
+    case batteryHealthManagement
+    case insufficientPower
+    case loadBalancing
+    case unknown
+    public static func == (a: EnergyKit::ElectricVehicleChargingReason.EnergyKit::IdleReason, b: EnergyKit::ElectricVehicleChargingReason.EnergyKit::IdleReason) -> Swift::Bool
+    @available(macOS 27.0, iOS 27.0, *)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias AllCases = [EnergyKit::ElectricVehicleChargingReason.EnergyKit::IdleReason]
+    nonisolated public static var allCases: [EnergyKit::ElectricVehicleChargingReason.EnergyKit::IdleReason] {
+      get
+    }
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+public struct ElectricVehicleLoadEvent : EnergyKit::ElectricalLoadEventProtocol {
+  public struct ElectricalMeasurement : Swift::Codable, Swift::Sendable {
+    public let stateOfCharge: Swift::Int
+    public let power: Foundation::Measurement<Foundation::UnitPower>
+    public let energy: Foundation::Measurement<Foundation::UnitEnergy>
+    public let direction: EnergyKit::ElectricityFlowDirection
+    @available(iOS 27.0, macOS 27.0, *)
+    @available(tvOS, unavailable)
+    public struct PerformanceMetrics : Swift::Codable, Swift::Sendable, Swift::Hashable {
+      public let estimatedRange: Foundation::Measurement<Foundation::UnitLength>?
+      public let batteryTemperature: Foundation::Measurement<Foundation::UnitTemperature>?
+      public init(estimatedRange: Foundation::Measurement<Foundation::UnitLength>? = nil, batteryTemperature: Foundation::Measurement<Foundation::UnitTemperature>? = nil)
+      public static func == (a: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::ElectricalMeasurement.EnergyKit::PerformanceMetrics, b: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::ElectricalMeasurement.EnergyKit::PerformanceMetrics) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    @available(iOS 27.0, macOS 27.0, *)
+    @available(tvOS, unavailable)
+    public var performanceMetrics: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::ElectricalMeasurement.EnergyKit::PerformanceMetrics? {
+      get
+    }
+    @available(iOS, deprecated: 27.0, message: "Use init(stateOfCharge:direction:power:energy:performanceMetrics:) instead")
+    @available(macOS, deprecated: 27.0, message: "Use init(stateOfCharge:direction:power:energy:performanceMetrics:) instead")
+    public init(stateOfCharge: Swift::Int, direction: EnergyKit::ElectricityFlowDirection, power: Foundation::Measurement<Foundation::UnitPower>, energy: Foundation::Measurement<Foundation::UnitEnergy>)
+    @available(iOS 27.0, macOS 27.0, *)
+    @available(tvOS, unavailable)
+    public init(stateOfCharge: Swift::Int, direction: EnergyKit::ElectricityFlowDirection, power: Foundation::Measurement<Foundation::UnitPower>, energy: Foundation::Measurement<Foundation::UnitEnergy>, performanceMetrics: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::ElectricalMeasurement.EnergyKit::PerformanceMetrics?)
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct Session : Swift::Codable, Swift::Sendable {
+    public enum State : Swift::Codable, Swift::Equatable, Swift::Sendable {
+      case begin
+      case end
+      case active
+      public static func == (a: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::Session.EnergyKit::State, b: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::Session.EnergyKit::State) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public struct GuidanceState : Swift::Codable, Swift::Sendable {
+      public let wasFollowingGuidance: Swift::Bool
+      public var guidanceToken: Foundation::UUID
+      public init(wasFollowingGuidance: Swift::Bool, guidanceToken: Foundation::UUID)
+      public func encode(to encoder: any Swift::Encoder) throws
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public let id: Foundation::UUID
+    public let state: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::Session.EnergyKit::State
+    public let guidanceState: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::Session.EnergyKit::GuidanceState
+    public init(id: Foundation::UUID, state: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::Session.EnergyKit::State, guidanceState: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::Session.EnergyKit::GuidanceState)
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public let id: Foundation::UUID
+  public let timestamp: Foundation::Date
+  public let session: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::Session
+  public let measurement: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::ElectricalMeasurement
+  public let deviceID: Swift::String
+  @available(iOS 27.0, macOS 27.0, *)
+  @available(tvOS, unavailable)
+  public var deviceName: Swift::String {
+    get
+  }
+  @available(iOS, deprecated: 27.0, message: "Use init(timestamp:measurement:session:device:) instead")
+  @available(macOS, deprecated: 27.0, message: "Use init(timestamp:measurement:session:device:) instead")
+  public init(timestamp: Foundation::Date, measurement: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::ElectricalMeasurement, session: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::Session, deviceID: Swift::String)
+  @available(iOS 27.0, macOS 27.0, *)
+  @available(tvOS, unavailable)
+  public init(timestamp: Foundation::Date, measurement: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::ElectricalMeasurement, session: EnergyKit::ElectricVehicleLoadEvent.EnergyKit::Session, device: EnergyKit::ElectricalLoadDevice)
+  @available(macOS 26.0, iOS 26.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias ID = Foundation::UUID
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+public struct ElectricVehicleStatusEvent : EnergyKit::ElectricalLoadEventProtocol, Swift::Hashable {
+  public enum Status : Swift::Codable, Swift::Equatable, Swift::Hashable, Swift::Sendable {
+    case chargerPluggedIn
+    case chargingActive(EnergyKit::ElectricVehicleChargingReason.EnergyKit::ActiveReason)
+    case chargingIdle(EnergyKit::ElectricVehicleChargingReason.EnergyKit::IdleReason)
+    case chargerUnplugged
+    public static func == (a: EnergyKit::ElectricVehicleStatusEvent.EnergyKit::Status, b: EnergyKit::ElectricVehicleStatusEvent.EnergyKit::Status) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct ChargingTarget : Swift::Codable, Swift::Sendable, Swift::Hashable {
+    public let stateOfCharge: Swift::Int
+    public let estimatedCompletionTime: Foundation::Date
+    public let scheduledStartTime: Foundation::Date
+    public let estimatedRangeAtTarget: Foundation::Measurement<Foundation::UnitLength>?
+    public init(stateOfCharge: Swift::Int, estimatedCompletionTime: Foundation::Date, scheduledStartTime: Foundation::Date, estimatedRangeAtTarget: Foundation::Measurement<Foundation::UnitLength>? = nil)
+    public static func == (a: EnergyKit::ElectricVehicleStatusEvent.EnergyKit::ChargingTarget, b: EnergyKit::ElectricVehicleStatusEvent.EnergyKit::ChargingTarget) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public let id: Foundation::UUID
+  public let timestamp: Foundation::Date
+  public let deviceID: Swift::String
+  public let deviceName: Swift::String
+  public let venueID: Foundation::UUID
+  public let status: EnergyKit::ElectricVehicleStatusEvent.EnergyKit::Status
+  public let stateOfCharge: Swift::Int
+  public let energy: Foundation::Measurement<Foundation::UnitEnergy>
+  public let estimatedRange: Foundation::Measurement<Foundation::UnitLength>?
+  public let chargingTarget: EnergyKit::ElectricVehicleStatusEvent.EnergyKit::ChargingTarget?
+  public let sessionIdentifier: Foundation::UUID?
+  public init(timestamp: Foundation::Date, device: EnergyKit::ElectricalLoadDevice, venueID: Foundation::UUID, status: EnergyKit::ElectricVehicleStatusEvent.EnergyKit::Status, stateOfCharge: Swift::Int, energy: Foundation::Measurement<Foundation::UnitEnergy>, estimatedRange: Foundation::Measurement<Foundation::UnitLength>? = nil, chargingTarget: EnergyKit::ElectricVehicleStatusEvent.EnergyKit::ChargingTarget? = nil, sessionIdentifier: Foundation::UUID? = nil)
+  public static func == (a: EnergyKit::ElectricVehicleStatusEvent, b: EnergyKit::ElectricVehicleStatusEvent) -> Swift::Bool
+  @available(macOS 27.0, iOS 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias ID = Foundation::UUID
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension Foundation::UnitEnergy {
+  @objc @_inheritsConvenienceInitializers public class EnergyKit : Foundation::Unit, @unchecked Swift::Sendable {
+    public static let milliwattHours: Foundation::UnitEnergy
+    @objc override dynamic public init(symbol: Swift::String)
+    @objc required dynamic public init?(coder: Foundation::NSCoder)
+    @objc deinit
+  }
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct ElectricityGuidance : Swift::Codable, Swift::Sendable {
+  @_hasMissingDesignatedInitializers final public class Service : Swift::Sendable {
+    @objc deinit
+    final public func guidance(using query: EnergyKit::ElectricityGuidance.EnergyKit::Query, at energyVenueID: Foundation::UUID) -> some _Concurrency::AsyncSequence<EnergyKit::ElectricityGuidance, any Swift::Error>
+    
+  }
+  public struct Query : Swift::Codable, Swift::Sendable {
+    public init(suggestedAction: EnergyKit::ElectricityGuidance.EnergyKit::SuggestedAction)
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public enum SuggestedAction : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    case shift
+    case reduce
+    public static func == (a: EnergyKit::ElectricityGuidance.EnergyKit::SuggestedAction, b: EnergyKit::ElectricityGuidance.EnergyKit::SuggestedAction) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct Value : Swift::Codable, Swift::Sendable {
+    public let interval: Foundation::DateInterval
+    public let rating: Swift::Double
+    public init(interval: Foundation::DateInterval, rating: Swift::Double)
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public enum Options : Swift::Codable, Swift::Hashable, Swift::Sendable, Swift::CaseIterable {
+    case locationHasRatePlan
+    case guidanceIncorporatesRatePlan
+    public static func == (a: EnergyKit::ElectricityGuidance.EnergyKit::Options, b: EnergyKit::ElectricityGuidance.EnergyKit::Options) -> Swift::Bool
+    @available(macOS 26.0, iOS 26.0, *)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias AllCases = [EnergyKit::ElectricityGuidance.EnergyKit::Options]
+    nonisolated public static var allCases: [EnergyKit::ElectricityGuidance.EnergyKit::Options] {
+      get
+    }
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public let guidanceToken: Foundation::UUID
+  public let energyVenueID: Foundation::UUID
+  public let suggestedAction: EnergyKit::ElectricityGuidance.EnergyKit::SuggestedAction
+  public let interval: Foundation::DateInterval
+  public let values: [EnergyKit::ElectricityGuidance.EnergyKit::Value]
+  public let options: Swift::Set<EnergyKit::ElectricityGuidance.EnergyKit::Options>
+  public static let sharedService: EnergyKit::ElectricityGuidance.EnergyKit::Service
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+public protocol ElectricityInsightMeasure {
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension Swift::Duration : EnergyKit::ElectricityInsightMeasure {
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension Foundation::Measurement : EnergyKit::ElectricityInsightMeasure where UnitType == Foundation::UnitEnergy {
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+public struct ElectricityInsightQuery : Swift::Codable, Swift::Sendable {
+  public struct Options : Swift::OptionSet, Swift::Codable, Swift::Hashable, Swift::Sendable {
+    public let rawValue: Swift::UInt
+    public static let cleanliness: EnergyKit::ElectricityInsightQuery.EnergyKit::Options
+    public static let tariff: EnergyKit::ElectricityInsightQuery.EnergyKit::Options
+    public init(rawValue: Swift::UInt)
+    @available(macOS 26.0, iOS 26.0, *)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias ArrayLiteralElement = EnergyKit::ElectricityInsightQuery.EnergyKit::Options
+    @available(macOS 26.0, iOS 26.0, *)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias Element = EnergyKit::ElectricityInsightQuery.EnergyKit::Options
+    @available(macOS 26.0, iOS 26.0, *)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias RawValue = Swift::UInt
+  }
+  public enum Granularity : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    case hourly
+    case daily
+    case weekly
+    case monthly
+    case yearly
+    public static func == (a: EnergyKit::ElectricityInsightQuery.EnergyKit::Granularity, b: EnergyKit::ElectricityInsightQuery.EnergyKit::Granularity) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public let range: Foundation::DateInterval
+  public let options: EnergyKit::ElectricityInsightQuery.EnergyKit::Options
+  public let granularity: EnergyKit::ElectricityInsightQuery.EnergyKit::Granularity
+  public let flowDirection: EnergyKit::ElectricityFlowDirection
+  public init(options: EnergyKit::ElectricityInsightQuery.EnergyKit::Options, range: Foundation::DateInterval, granularity: EnergyKit::ElectricityInsightQuery.EnergyKit::Granularity, flowDirection: EnergyKit::ElectricityFlowDirection)
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+public struct ElectricityInsightRecord<Measure> where Measure : EnergyKit::ElectricityInsightMeasure {
+  public let range: Foundation::DateInterval
+  public var totalEnergy: Foundation::Measurement<Foundation::UnitEnergy>?
+  public var totalRuntime: Swift::Duration?
+  @available(iOS 26.1, macOS 26.1, *)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(tvOS, unavailable)
+  public var dataByGridCleanliness: EnergyKit::ElectricityInsightRecord<Measure>.EnergyKit::GridCleanliness?
+  public var dataByTariffPeak: EnergyKit::ElectricityInsightRecord<Measure>.EnergyKit::TariffPeak?
+  @available(iOS 26.1, macOS 26.1, *)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(tvOS, unavailable)
+  public struct GridCleanliness {
+    public var cleaner: Measure?
+    public var lessClean: Measure?
+    public var avoid: Measure?
+    public var unknown: Measure?
+    public init(cleaner: Measure?, lessClean: Measure?, avoid: Measure?, unknown: Measure?)
+  }
+  public struct TariffPeak {
+    public var superOffPeak: Measure?
+    public var offPeak: Measure?
+    public var partialPeak: Measure?
+    public var onPeak: Measure?
+    public var criticalPeak: Measure?
+    public var unknown: Measure?
+    public init(superOffPeak: Measure?, offPeak: Measure?, partialPeak: Measure?, onPeak: Measure?, criticalPeak: Measure?, unknown: Measure?)
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+final public actor ElectricityInsightService {
+  public static let shared: EnergyKit::ElectricityInsightService
+  @available(watchOS, unavailable)
+  final public func energyInsights(forDeviceID deviceID: Swift::String, using query: EnergyKit::ElectricityInsightQuery, atVenue energyVenueID: Foundation::UUID) async throws -> _Concurrency::AsyncStream<EnergyKit::ElectricityInsightRecord<Foundation::Measurement<Foundation::UnitEnergy>>>
+  @available(watchOS, unavailable)
+  final public func runtimeInsights(forDeviceID deviceID: Swift::String, using query: EnergyKit::ElectricityInsightQuery, atVenue energyVenueID: Foundation::UUID) async throws -> _Concurrency::AsyncStream<EnergyKit::ElectricityInsightRecord<Swift::Duration>>
+  @objc deinit
+  @_semantics("defaultActor") nonisolated final public var unownedExecutor: _Concurrency::UnownedSerialExecutor {
+    get
+  }
+}
+extension Foundation::NSXPCListener : @unchecked @retroactive Swift::Sendable {
+}
+extension Foundation::NSXPCConnection : @unchecked @retroactive Swift::Sendable {
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public enum ElectricityFlowDirection : Swift::Codable, Swift::Equatable, Swift::Sendable {
+  case imported
+  case exported
+  public static func == (a: EnergyKit::ElectricityFlowDirection, b: EnergyKit::ElectricityFlowDirection) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public enum EnergyKitError : Foundation::LocalizedError {
+  case guidanceUnavailable
+  case inProgress
+  case invalidLoadEvent
+  @available(iOS 26.1, macOS 26.1, *)
+  @available(visionOS, unavailable)
+  case locationServicesDenied
+  case permissionDenied
+  @available(iOS 26.1, macOS 26.1, *)
+  @available(visionOS, unavailable)
+  case rateLimitExceeded
+  case serviceUnavailable
+  @available(iOS 26.1, macOS 26.1, *)
+  @available(visionOS, unavailable)
+  case unsupportedRegion
+  case venueUnavailable
+  public var errorDescription: Swift::String? {
+    get
+  }
+  public var failureReason: Swift::String? {
+    get
+  }
+  public var helpAnchor: Swift::String? {
+    get
+  }
+  public var recoverySuggestion: Swift::String? {
+    get
+  }
+  public static func == (a: EnergyKit::EnergyKitError, b: EnergyKit::EnergyKitError) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct EnergyVenue : Swift::Codable, Swift::Identifiable, Swift::Sendable {
+  public let name: Swift::String
+  public let id: Foundation::UUID
+  @available(iOS 26.1, macOS 26.1, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public static func venues() async throws -> [EnergyKit::EnergyVenue]
+  @available(iOS 26.0, macOS 26.0, *)
+  @available(tvOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(watchOS, unavailable)
+  public func submitEvents<Event>(_ events: [Event]) async throws where Event : EnergyKit::ElectricalLoadEventProtocol
+  @available(iOS 26.1, macOS 26.1, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public static func venue(for id: Foundation::UUID) async throws -> EnergyKit::EnergyVenue
+  @available(iOS 26.1, macOS 26.1, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public static func venue(matchingHomeUniqueIdentifier: Foundation::UUID) async throws -> EnergyKit::EnergyVenue
+  @available(macOS 26.0, iOS 26.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias ID = Foundation::UUID
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension EnergyKit::ElectricalLoadDevice.EnergyKit::DeviceType : Swift::RawRepresentable {}
+@available(iOS 26.0, macOS 26.0, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+extension EnergyKit::ElectricHVACLoadEvent.EnergyKit::Session.EnergyKit::State : Swift::Hashable {}
+@available(iOS 26.0, macOS 26.0, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+extension EnergyKit::ElectricVehicleLoadEvent.EnergyKit::Session.EnergyKit::State : Swift::Hashable {}
+@available(iOS 26.0, macOS 26.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension EnergyKit::ElectricityGuidance.EnergyKit::SuggestedAction : Swift::Hashable {}
+@available(iOS 26.0, macOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+extension EnergyKit::ElectricityInsightQuery.EnergyKit::Granularity : Swift::Hashable {}
+@available(iOS 26.0, macOS 26.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension EnergyKit::ElectricityFlowDirection : Swift::Hashable {}
+@available(iOS 26.0, macOS 26.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension EnergyKit::EnergyKitError : Swift::Equatable {}
+@available(iOS 26.0, macOS 26.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension EnergyKit::EnergyKitError : Swift::Hashable {}

@@ -1,0 +1,524 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature StrictConcurrency -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 124.0.4 -module-name ImmersiveMediaSupport
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@preconcurrency import AVFoundation
+import AudioToolbox
+import CoreImage
+import CoreMedia
+@preconcurrency import CoreVideo
+import Foundation
+@_exported import ImmersiveMediaSupport
+@preconcurrency import Metal
+import MetalKit
+@preconcurrency import ModelIO
+import Network
+import Observation
+@preconcurrency import QuartzCore
+import Spatial
+import Swift
+import Synchronization
+import VideoToolbox
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+import simd
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public struct ImmersiveVideoMask : Swift::Equatable, Swift::Sendable {
+  public enum Layout : Swift::Sendable {
+    case sideBySide
+    case overUnder
+    case separate
+    case mono
+    public static func == (a: ImmersiveMediaSupport::ImmersiveVideoMask.ImmersiveMediaSupport::Layout, b: ImmersiveMediaSupport::ImmersiveVideoMask.ImmersiveMediaSupport::Layout) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public static func == (lhs: ImmersiveMediaSupport::ImmersiveVideoMask, rhs: ImmersiveMediaSupport::ImmersiveVideoMask) -> Swift::Bool
+  public var layout: ImmersiveMediaSupport::ImmersiveVideoMask.ImmersiveMediaSupport::Layout {
+    get
+  }
+  public var isInEquirectangularProjection: Swift::Bool {
+    get
+  }
+  public var texture: any Metal::MTLTexture {
+    get
+  }
+  public init(layout: ImmersiveMediaSupport::ImmersiveVideoMask.ImmersiveMediaSupport::Layout, isInEquirectangularProjection: Swift::Bool, texture: any Metal::MTLTexture)
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public struct ImmersiveCameraViewModel : Swift::Sendable {
+  public var cameraID: Swift::String {
+    get
+  }
+  public var leftEye: ModelIO::MDLMesh {
+    get
+  }
+  public var rightEye: ModelIO::MDLMesh {
+    get
+  }
+  public var mask: ImmersiveMediaSupport::ImmersiveVideoMask? {
+    get
+  }
+  public var environmentBackdrop: ModelIO::MDLAsset? {
+    get
+  }
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+final public actor VenueDescriptor {
+  final public var cameras: [ImmersiveMediaSupport::ImmersiveCamera] {
+    get
+  }
+  public init(device: (any Metal::MTLDevice)? = nil)
+  public convenience init(aimeURL: Foundation::URL, device: (any Metal::MTLDevice)? = nil) async throws
+  public init(aimeData: Foundation::Data, device: (any Metal::MTLDevice)? = nil) async throws
+  final public func addCamera(_ camera: ImmersiveMediaSupport::ImmersiveCamera) throws
+  final public func removeCamera(id: Swift::String) throws
+  final public func cameraViewModel(for id: Swift::String) -> ImmersiveMediaSupport::ImmersiveCameraViewModel?
+  @available(macOS 26.0, visionOS 26.4, iOS 26.4, *)
+  final public func save(to aimeURL: Foundation::URL) throws
+  @objc deinit
+  @_semantics("defaultActor") nonisolated final public var unownedExecutor: _Concurrency::UnownedSerialExecutor {
+    get
+  }
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public struct FadeCommand {
+  public enum FadeDirection : Swift::Codable, Swift::CodingKey {
+    case `in`
+    case out
+    public init(from decoder: any Swift::Decoder) throws
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init?(stringValue: Swift::String)
+    public init?(intValue: Swift::Int)
+    public static func == (a: ImmersiveMediaSupport::FadeCommand.ImmersiveMediaSupport::FadeDirection, b: ImmersiveMediaSupport::FadeCommand.ImmersiveMediaSupport::FadeDirection) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public var intValue: Swift::Int? {
+      get
+    }
+    public var stringValue: Swift::String {
+      get
+    }
+  }
+  public var id: Swift::Int {
+    get
+  }
+  public var time: CoreMedia::CMTime
+  public var duration: CoreMedia::CMTime
+  public var offset: CoreMedia::CMTime?
+  public var direction: ImmersiveMediaSupport::FadeCommand.ImmersiveMediaSupport::FadeDirection
+  public var color: simd::simd_float3
+  public init(id: Swift::Int, time: CoreMedia::CMTime, duration: CoreMedia::CMTime, direction: ImmersiveMediaSupport::FadeCommand.ImmersiveMediaSupport::FadeDirection, color: simd::simd_float3, offset: CoreMedia::CMTime? = nil)
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public struct FadeEnvironmentCommand {
+  public enum FadeDirection : Swift::Codable, Swift::CodingKey {
+    case `in`
+    case out
+    public init(from decoder: any Swift::Decoder) throws
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init?(stringValue: Swift::String)
+    public init?(intValue: Swift::Int)
+    public static func == (a: ImmersiveMediaSupport::FadeEnvironmentCommand.ImmersiveMediaSupport::FadeDirection, b: ImmersiveMediaSupport::FadeEnvironmentCommand.ImmersiveMediaSupport::FadeDirection) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public var intValue: Swift::Int? {
+      get
+    }
+    public var stringValue: Swift::String {
+      get
+    }
+  }
+  public var id: Swift::Int {
+    get
+  }
+  public var time: CoreMedia::CMTime
+  public var duration: CoreMedia::CMTime
+  public var offset: CoreMedia::CMTime?
+  public var direction: ImmersiveMediaSupport::FadeEnvironmentCommand.ImmersiveMediaSupport::FadeDirection
+  public var opacity: Swift::Float
+  public init(id: Swift::Int, time: CoreMedia::CMTime, duration: CoreMedia::CMTime, direction: ImmersiveMediaSupport::FadeEnvironmentCommand.ImmersiveMediaSupport::FadeDirection, opacity: Swift::Float, offset: CoreMedia::CMTime? = nil)
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public enum PresentationCommand : Swift::Codable, Swift::Sendable {
+  case setCamera(ImmersiveMediaSupport::SetCameraCommand)
+  case fade(ImmersiveMediaSupport::FadeCommand)
+  case shotFlop(ImmersiveMediaSupport::ShotFlopCommand)
+  case fadeEnvironment(ImmersiveMediaSupport::FadeEnvironmentCommand)
+  @available(macOS 27.0, visionOS 27.0, iOS 27.0, *)
+  case shotFlip(ImmersiveMediaSupport::ShotFlipCommand)
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+  public var id: Swift::Int {
+    get
+  }
+  public var time: CoreMedia::CMTime {
+    get
+    set
+  }
+  public var duration: CoreMedia::CMTime {
+    get
+  }
+  public var offset: CoreMedia::CMTime? {
+    get
+  }
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public struct SetCameraCommand {
+  @available(macOS 27.0, visionOS 27.0, iOS 27.0, *)
+  public struct Overrides : Swift::Codable, Swift::Sendable {
+    public var rotation: Spatial::Rotation3DFloat? {
+      get
+      set
+    }
+    public var lensDefinitionData: ImmersiveMediaSupport::ImmersiveCameraLensDefinition?
+    public var maskData: ImmersiveMediaSupport::ImmersiveDynamicMask?
+    public init(rotation: Spatial::Rotation3DFloat? = nil, lensDefinitionData: ImmersiveMediaSupport::ImmersiveCameraLensDefinition? = nil, maskData: ImmersiveMediaSupport::ImmersiveDynamicMask? = nil)
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public var id: Swift::Int {
+    get
+  }
+  public var time: CoreMedia::CMTime
+  public var duration: CoreMedia::CMTime
+  public var offset: CoreMedia::CMTime?
+  public var cameraID: Swift::String
+  @available(macOS 27.0, visionOS 27.0, iOS 27.0, *)
+  public var overrides: ImmersiveMediaSupport::SetCameraCommand.ImmersiveMediaSupport::Overrides?
+  @available(macOS 27.0, visionOS 27.0, iOS 27.0, *)
+  public init(id: Swift::Int, time: CoreMedia::CMTime, cameraID: Swift::String, overrides: ImmersiveMediaSupport::SetCameraCommand.ImmersiveMediaSupport::Overrides?)
+  public init(id: Swift::Int, time: CoreMedia::CMTime, cameraID: Swift::String)
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public struct ShotFlopCommand {
+  public var id: Swift::Int {
+    get
+  }
+  public var time: CoreMedia::CMTime
+  public var duration: CoreMedia::CMTime
+  public var offset: CoreMedia::CMTime?
+  public init(id: Swift::Int, time: CoreMedia::CMTime, duration: CoreMedia::CMTime, offset: CoreMedia::CMTime? = nil)
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public struct PresentationDescriptor : Swift::Sendable {
+  public var duration: CoreMedia::CMTime?
+  public var commands: [ImmersiveMediaSupport::PresentationCommand]
+  public init(duration: CoreMedia::CMTime? = nil, commands: [ImmersiveMediaSupport::PresentationCommand] = [])
+  public init(commands: [ImmersiveMediaSupport::PresentationCommand] = [])
+}
+@_hasMissingDesignatedInitializers @available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+final public class ImmersiveCameraMeshCalibration : Swift::Codable, Swift::Sendable {
+  final public let name: Swift::String
+  final public let usdzData: Foundation::Data
+  public init(name: Swift::String, usdzData: Foundation::Data)
+  @objc deinit
+  final public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public struct ImmersiveCameraCalibration : Swift::Codable, Swift::Sendable {
+  public enum CalibrationType : Swift::Codable, Swift::Sendable {
+    case usdzMesh(ImmersiveMediaSupport::ImmersiveCameraMeshCalibration)
+    case immersiveCameraLensDefinition(ImmersiveMediaSupport::ImmersiveCameraLensDefinition)
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct CameraOrigin : Swift::Codable, Swift::Sendable {
+    public static let zero: ImmersiveMediaSupport::ImmersiveCameraCalibration.ImmersiveMediaSupport::CameraOrigin
+    public init(left: Spatial::Point3DFloat = .zero, right: Spatial::Point3DFloat = .zero)
+    public init(from decoder: any Swift::Decoder) throws
+    public func encode(to encoder: any Swift::Encoder) throws
+  }
+  public struct CameraTextureMapping : Swift::Codable, Swift::Sendable {
+    public static let identity: ImmersiveMediaSupport::ImmersiveCameraCalibration.ImmersiveMediaSupport::CameraTextureMapping
+    public init(left: simd::matrix_float3x3 = matrix_identity_float3x3, right: simd::matrix_float3x3 = matrix_identity_float3x3)
+    public init(from decoder: any Swift::Decoder) throws
+    public func encode(to encoder: any Swift::Encoder) throws
+  }
+  public var type: ImmersiveMediaSupport::ImmersiveCameraCalibration.ImmersiveMediaSupport::CalibrationType {
+    get
+  }
+  public var name: Swift::String
+  public var mask: ImmersiveMediaSupport::ImmersiveCameraMask?
+  public var positionable: Swift::Bool
+  public var origin: ImmersiveMediaSupport::ImmersiveCameraCalibration.ImmersiveMediaSupport::CameraOrigin
+  public var textureMapping: ImmersiveMediaSupport::ImmersiveCameraCalibration.ImmersiveMediaSupport::CameraTextureMapping
+  public var environmentFilename: Swift::String?
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(name: Swift::String, type: ImmersiveMediaSupport::ImmersiveCameraCalibration.ImmersiveMediaSupport::CalibrationType, mask: ImmersiveMediaSupport::ImmersiveCameraMask? = nil, positionable: Swift::Bool = false, origin: ImmersiveMediaSupport::ImmersiveCameraCalibration.ImmersiveMediaSupport::CameraOrigin = .zero, textureMapping: ImmersiveMediaSupport::ImmersiveCameraCalibration.ImmersiveMediaSupport::CameraTextureMapping = .identity, environmentFilename: Swift::String? = nil)
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public struct ImmersiveCamera : Swift::Codable, Swift::Identifiable, Swift::Sendable {
+  public enum CameraType : Swift::Codable, Swift::Sendable {
+    case stereoCamera
+    public init(from decoder: any Swift::Decoder) throws
+    public func encode(to encoder: any Swift::Encoder) throws
+    public static func == (a: ImmersiveMediaSupport::ImmersiveCamera.ImmersiveMediaSupport::CameraType, b: ImmersiveMediaSupport::ImmersiveCamera.ImmersiveMediaSupport::CameraType) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public var id: Swift::String
+  public var type: ImmersiveMediaSupport::ImmersiveCamera.ImmersiveMediaSupport::CameraType
+  public var presentationFrameRate: Swift::Int
+  public var pose: Spatial::Pose3DFloat
+  public var calibration: ImmersiveMediaSupport::ImmersiveCameraCalibration
+  public static let defaultPresentationFrameRate: Swift::Int
+  public init(id: Swift::String, calibration: ImmersiveMediaSupport::ImmersiveCameraCalibration, type: ImmersiveMediaSupport::ImmersiveCamera.ImmersiveMediaSupport::CameraType = .stereoCamera, presentationFrameRate: Swift::Int = defaultPresentationFrameRate, pose: Spatial::Pose3DFloat = .identity)
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+  @available(macOS 26.0, iOS 26.4, visionOS 26.0, *)
+  public typealias ID = Swift::String
+}
+@_hasMissingDesignatedInitializers @available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+final public class ImmersiveImageMask : Swift::Codable, Swift::Sendable {
+  final public let name: Swift::String
+  final public let maskData: Foundation::Data?
+  public init(name: Swift::String, maskURL: Foundation::URL)
+  public init(name: Swift::String, maskData: Foundation::Data? = nil)
+  @objc deinit
+  final public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public struct ImmersiveDynamicMask : Swift::Codable, Swift::Sendable {
+  public enum EdgeTreatment : Swift::Codable, Swift::Sendable {
+    case linear
+    case easeInOut
+    public init(from decoder: any Swift::Decoder) throws
+    public func encode(to encoder: any Swift::Encoder) throws
+    public static func == (a: ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::EdgeTreatment, b: ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::EdgeTreatment) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public enum StereoRelation : Swift::Codable, Swift::Sendable {
+    case separate
+    case mirror
+    case identical
+    public init(from decoder: any Swift::Decoder) throws
+    public func encode(to encoder: any Swift::Encoder) throws
+    public static func == (a: ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::StereoRelation, b: ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::StereoRelation) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public enum ControlPointInterpolation : Swift::Codable, Swift::Sendable {
+    case linear
+    case cubicHermite
+    public init(from decoder: any Swift::Decoder) throws
+    public func encode(to encoder: any Swift::Encoder) throws
+    public static func == (a: ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::ControlPointInterpolation, b: ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::ControlPointInterpolation) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public var name: Swift::String
+  public var stereoRelation: ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::StereoRelation
+  public var edgeTreatment: ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::EdgeTreatment
+  public var controlPointInterpolation: ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::ControlPointInterpolation
+  public var leftControlPoints: [Spatial::Point3DFloat]
+  public var rightControlPoints: [Spatial::Point3DFloat]
+  public var edgeWidthInDegrees: Swift::Float
+  public init(name: Swift::String, stereoRelation: ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::StereoRelation, edgeTreatment: ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::EdgeTreatment, controlPointInterpolation: ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::ControlPointInterpolation, leftControlPoints: [Spatial::Point3DFloat], rightControlPoints: [Spatial::Point3DFloat], edgeWidthInDegrees: Swift::Float)
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public enum ImmersiveCameraMask : Swift::Codable, Swift::Sendable {
+  case image(ImmersiveMediaSupport::ImmersiveImageMask)
+  case dynamic(ImmersiveMediaSupport::ImmersiveDynamicMask)
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(macOS 27.0, visionOS 27.0, iOS 27.0, *)
+public struct ShotFlipCommand {
+  public var id: Swift::Int {
+    get
+  }
+  public var time: CoreMedia::CMTime
+  public var duration: CoreMedia::CMTime
+  public var offset: CoreMedia::CMTime?
+  public init(id: Swift::Int, time: CoreMedia::CMTime, duration: CoreMedia::CMTime, offset: CoreMedia::CMTime? = nil)
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public struct AIVUValidator {
+  public static func validate(url: Foundation::URL) async throws -> Swift::Bool
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public class ParametricImmersiveAssetInfo {
+  public struct Error : Foundation::LocalizedError {
+    public enum ErrorType : Swift::Sendable {
+      case isAlreadyConverted
+      case unconvertibleAsset
+      case unsupportedAsset
+      public static func == (a: ImmersiveMediaSupport::ParametricImmersiveAssetInfo.ImmersiveMediaSupport::Error.ImmersiveMediaSupport::ErrorType, b: ImmersiveMediaSupport::ParametricImmersiveAssetInfo.ImmersiveMediaSupport::Error.ImmersiveMediaSupport::ErrorType) -> Swift::Bool
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+    }
+    public let errorType: ImmersiveMediaSupport::ParametricImmersiveAssetInfo.ImmersiveMediaSupport::Error.ImmersiveMediaSupport::ErrorType
+    public var errorDescription: Swift::String? {
+      get
+    }
+  }
+  public var isAssetConvertible: Swift::Bool {
+    get
+  }
+  public var requiredFormatDescription: CoreMedia::CMFormatDescription? {
+    get
+  }
+  public var conversionResult: Swift::Result<CoreMedia::CMFormatDescription, ImmersiveMediaSupport::ParametricImmersiveAssetInfo.ImmersiveMediaSupport::Error>? {
+    get
+  }
+  public init(asset: AVFoundation::AVURLAsset, computeFormatDescription: Swift::Bool = true) async throws
+  public class func isParametricImmersive(asset: AVFoundation::AVURLAsset) async -> Swift::Bool
+  @objc deinit
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public struct ImmersiveCameraLensDefinition : Swift::Codable, Swift::Sendable {
+  public enum STMapType {
+    case equirectangular
+    case equidistant
+    public static func == (a: ImmersiveMediaSupport::ImmersiveCameraLensDefinition.ImmersiveMediaSupport::STMapType, b: ImmersiveMediaSupport::ImmersiveCameraLensDefinition.ImmersiveMediaSupport::STMapType) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public enum Eye {
+    case left
+    case right
+    public static func == (a: ImmersiveMediaSupport::ImmersiveCameraLensDefinition.ImmersiveMediaSupport::Eye, b: ImmersiveMediaSupport::ImmersiveCameraLensDefinition.ImmersiveMediaSupport::Eye) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public var cameraID: Swift::String
+  public init(from data: Foundation::Data) throws
+  public func generateSTMap(device: any Metal::MTLDevice, cameraEye: ImmersiveMediaSupport::ImmersiveCameraLensDefinition.ImmersiveMediaSupport::Eye, stmapType: ImmersiveMediaSupport::ImmersiveCameraLensDefinition.ImmersiveMediaSupport::STMapType, into texture: any Metal::MTLTexture) async throws
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@_hasMissingDesignatedInitializers @available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+public class PresentationDescriptorReader : @unchecked Swift::Sendable {
+  public var cameraID: Swift::String? {
+    get
+  }
+  public var colorFadeOpacity: Swift::Float {
+    get
+  }
+  public var colorFade: simd::simd_float3 {
+    get
+  }
+  public var environmentFadeOpacity: Swift::Float {
+    get
+  }
+  public var isShotFlopped: Swift::Bool {
+    get
+  }
+  @available(macOS 27.0, visionOS 27.0, iOS 27.0, *)
+  public var isShotFlipped: Swift::Bool {
+    get
+  }
+  public var presentationCommands: [ImmersiveMediaSupport::PresentationCommand] {
+    get
+  }
+  public var isSideloaded: Swift::Bool {
+    get
+  }
+  @available(macOS 27.0, visionOS 27.0, iOS 27.0, *)
+  public var cameraOverrides: ImmersiveMediaSupport::SetCameraCommand.ImmersiveMediaSupport::Overrides? {
+    get
+  }
+  public var presentationDescriptor: ImmersiveMediaSupport::PresentationDescriptor {
+    get
+  }
+  public init(presentationDescriptor: ImmersiveMediaSupport::PresentationDescriptor, isSideloaded: Swift::Bool = false)
+  public func processPresentationCommands(for presentationTimeStamp: CoreMedia::CMTime)
+  @available(macOS 27.0, visionOS 27.0, iOS 27.0, *)
+  public func metadataItem(frameTimeRange: CoreMedia::CMTimeRange) throws -> AVFoundation::AVMetadataItem?
+  @available(macOS 27.0, visionOS 27.0, iOS 27.0, *)
+  public func metadataTrack(timeRange: CoreMedia::CMTimeRange? = nil) throws -> [AVFoundation::AVMetadataItem]
+  public func outputPresentationCommands(for time: CoreMedia::CMTime) -> [ImmersiveMediaSupport::PresentationCommand]?
+  @objc deinit
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::PresentationDescriptorReader : nonisolated Observation::Observable {
+}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ImmersiveVideoMask.ImmersiveMediaSupport::Layout : Swift::Equatable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ImmersiveVideoMask.ImmersiveMediaSupport::Layout : Swift::Hashable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::FadeCommand : Swift::Sendable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::FadeCommand.ImmersiveMediaSupport::FadeDirection : Swift::Equatable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::FadeCommand.ImmersiveMediaSupport::FadeDirection : Swift::Hashable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::FadeEnvironmentCommand : Swift::Sendable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::FadeEnvironmentCommand.ImmersiveMediaSupport::FadeDirection : Swift::Equatable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::FadeEnvironmentCommand.ImmersiveMediaSupport::FadeDirection : Swift::Hashable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::SetCameraCommand : Swift::Sendable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ShotFlopCommand : Swift::Sendable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ImmersiveCamera.ImmersiveMediaSupport::CameraType : Swift::Equatable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ImmersiveCamera.ImmersiveMediaSupport::CameraType : Swift::Hashable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::EdgeTreatment : Swift::Equatable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::EdgeTreatment : Swift::Hashable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::StereoRelation : Swift::Equatable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::StereoRelation : Swift::Hashable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::ControlPointInterpolation : Swift::Equatable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ImmersiveDynamicMask.ImmersiveMediaSupport::ControlPointInterpolation : Swift::Hashable {}
+@available(macOS 27.0, visionOS 27.0, iOS 27.0, *)
+extension ImmersiveMediaSupport::ShotFlipCommand : Swift::Sendable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ParametricImmersiveAssetInfo.ImmersiveMediaSupport::Error.ImmersiveMediaSupport::ErrorType : Swift::Equatable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ParametricImmersiveAssetInfo.ImmersiveMediaSupport::Error.ImmersiveMediaSupport::ErrorType : Swift::Hashable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ImmersiveCameraLensDefinition.ImmersiveMediaSupport::STMapType : Swift::Equatable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ImmersiveCameraLensDefinition.ImmersiveMediaSupport::STMapType : Swift::Hashable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ImmersiveCameraLensDefinition.ImmersiveMediaSupport::Eye : Swift::Equatable {}
+@available(macOS 26.0, visionOS 26.0, iOS 26.4, *)
+extension ImmersiveMediaSupport::ImmersiveCameraLensDefinition.ImmersiveMediaSupport::Eye : Swift::Hashable {}

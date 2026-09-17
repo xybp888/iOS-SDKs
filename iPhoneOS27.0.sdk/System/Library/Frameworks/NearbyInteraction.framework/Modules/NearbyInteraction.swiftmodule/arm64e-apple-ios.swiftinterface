@@ -1,0 +1,89 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 569 -module-name NearbyInteraction
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import Foundation
+@_exported import NearbyInteraction
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 14.0, watchOS 7.3, tvOS 14.4, *)
+@available(macOS, unavailable)
+extension NearbyInteraction::NINearbyObject {
+  public var distance: Swift::Float? {
+    get
+  }
+  public var direction: simd::simd_float3? {
+    get
+  }
+  @available(iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+  @available(macOS, unavailable)
+  public var horizontalAngle: Swift::Float? {
+    get
+  }
+}
+@available(iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+@available(macOS, unavailable)
+public enum NIAlgorithmConvergenceStatus : Swift::Equatable {
+  case unknown
+  case notConverged([NearbyInteraction::NIAlgorithmConvergenceStatus.NearbyInteraction::Reason])
+  case converged
+  public static func == (lhs: NearbyInteraction::NIAlgorithmConvergenceStatus, rhs: NearbyInteraction::NIAlgorithmConvergenceStatus) -> Swift::Bool
+}
+@available(iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+@available(macOS, unavailable)
+extension NearbyInteraction::NIAlgorithmConvergenceStatus {
+  @available(iOS 16.0, *)
+  public struct Reason : Swift::Hashable, Swift::Equatable, Swift::RawRepresentable {
+    public var rawValue: Swift::String
+    public init(rawValue: Swift::String)
+    public var localizedDescription: Swift::String? {
+      get
+    }
+    @available(iOS 16.0, tvOS 16.0, watchOS 9.0, *)
+    @available(macOS, unavailable)
+    public typealias RawValue = Swift::String
+  }
+}
+@available(iOS 26.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@available(macCatalyst, unavailable)
+extension NearbyInteraction::NIDLTDOAMeasurement {
+  @available(iOS 27.0, *)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(macOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(macCatalyst, unavailable)
+  public var responderClockFrequencyOffset: Swift::Double? {
+    get
+  }
+}
+@available(iOS 16.0, watchOS 9.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+extension NearbyInteraction::NIAlgorithmConvergenceStatus.NearbyInteraction::Reason {
+  public static let insufficientSignalStrength: NearbyInteraction::NIAlgorithmConvergenceStatus.NearbyInteraction::Reason
+  public static let insufficientHorizontalSweep: NearbyInteraction::NIAlgorithmConvergenceStatus.NearbyInteraction::Reason
+  public static let insufficientVerticalSweep: NearbyInteraction::NIAlgorithmConvergenceStatus.NearbyInteraction::Reason
+  public static let insufficientMovement: NearbyInteraction::NIAlgorithmConvergenceStatus.NearbyInteraction::Reason
+  public static let insufficientLighting: NearbyInteraction::NIAlgorithmConvergenceStatus.NearbyInteraction::Reason
+}
+@available(iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+@available(macOS, unavailable)
+extension NearbyInteraction::NIAlgorithmConvergence {
+  public var status: NearbyInteraction::NIAlgorithmConvergenceStatus {
+    get
+  }
+}
+@available(iOS 16.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension NearbyInteraction::NISession {
+  public func worldTransform(for object: NearbyInteraction::NINearbyObject) -> simd::simd_float4x4?
+}

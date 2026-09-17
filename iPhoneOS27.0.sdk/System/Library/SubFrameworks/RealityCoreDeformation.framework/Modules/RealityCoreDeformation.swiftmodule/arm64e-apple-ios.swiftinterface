@@ -1,0 +1,189 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-experimental-feature Lifetimes -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 23.0.5 -module-name RealityCoreDeformation
+// swift-module-flags-ignorable: -strict-memory-safety -public-module-name RealityKit -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+public import Metal
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+public import simd
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class LowLevelDeformation {
+  public struct Error : Swift::Error, Foundation::LocalizedError, Swift::Sendable {
+    public var errorDescription: Swift::String? {
+      get
+    }
+  }
+  public enum VertexSemantic : Swift::Sendable {
+    case position
+    case normal
+    case tangent
+    case bitangent
+    case uv
+    public static func == (a: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::VertexSemantic, b: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::VertexSemantic) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public struct VertexAttribute : Swift::Sendable, Swift::Equatable {
+    public var semantic: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::VertexSemantic
+    public var format: Metal::MTLVertexFormat
+    public var stride: Swift::Int
+    public init(semantic: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::VertexSemantic, format: Metal::MTLVertexFormat, stride: Swift::Int)
+    public static func == (a: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::VertexAttribute, b: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::VertexAttribute) -> Swift::Bool
+  }
+  public struct Mesh : ~Swift::Copyable {
+  }
+  @_hasMissingDesignatedInitializers final public class Pipeline {
+    public struct Descriptor : Swift::Sendable {
+      public struct BlendShape : Swift::Sendable {
+        public struct VertexSemanticOutputs : Swift::OptionSet, Swift::Sendable {
+          public static let normal: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::BlendShape.RealityCoreDeformation::VertexSemanticOutputs
+          public static let tangent: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::BlendShape.RealityCoreDeformation::VertexSemanticOutputs
+          public let rawValue: Swift::Int
+          public init(rawValue: Swift::Int)
+          @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+          public typealias ArrayLiteralElement = RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::BlendShape.RealityCoreDeformation::VertexSemanticOutputs
+          @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+          public typealias Element = RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::BlendShape.RealityCoreDeformation::VertexSemanticOutputs
+          @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+          public typealias RawValue = Swift::Int
+        }
+        public var blendsOutputs: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::BlendShape.RealityCoreDeformation::VertexSemanticOutputs
+        public var computesBitangent: Swift::Bool
+        public init(blendsOutputs: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::BlendShape.RealityCoreDeformation::VertexSemanticOutputs, computesBitangent: Swift::Bool = false)
+      }
+      public struct Skinning : Swift::Sendable {
+        public var jointIndexType: Metal::MTLIndexType
+        public init(jointIndexType: Metal::MTLIndexType = .uint32)
+      }
+      public struct Renormalization : Swift::Sendable {
+        public struct VertexSemanticOutputs : Swift::OptionSet, Swift::Sendable {
+          public static let normal: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::Renormalization.RealityCoreDeformation::VertexSemanticOutputs
+          public static let tangent: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::Renormalization.RealityCoreDeformation::VertexSemanticOutputs
+          public static let bitangent: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::Renormalization.RealityCoreDeformation::VertexSemanticOutputs
+          public let rawValue: Swift::Int
+          public init(rawValue: Swift::Int)
+          @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+          public typealias ArrayLiteralElement = RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::Renormalization.RealityCoreDeformation::VertexSemanticOutputs
+          @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+          public typealias Element = RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::Renormalization.RealityCoreDeformation::VertexSemanticOutputs
+          @available(macOS 27.0, iOS 27.0, tvOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+          public typealias RawValue = Swift::Int
+        }
+        public var outputs: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::Renormalization.RealityCoreDeformation::VertexSemanticOutputs
+        public var triangleIndexType: Metal::MTLIndexType
+        public var adjacencyIndexType: Metal::MTLIndexType
+        public var adjacencyEndIndexType: Metal::MTLIndexType
+        public init(outputs: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::Renormalization.RealityCoreDeformation::VertexSemanticOutputs, triangleIndexType: Metal::MTLIndexType = .uint32, adjacencyIndexType: Metal::MTLIndexType = .uint32, adjacencyEndIndexType: Metal::MTLIndexType = .uint32)
+      }
+      public var blendShape: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::BlendShape?
+      public var skinning: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::Skinning?
+      public var renormalization: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::Renormalization?
+      public var inputAttributes: [RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::VertexAttribute]
+      public var outputAttributes: [RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::VertexAttribute]
+      public init(inputAttributes: [RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::VertexAttribute] = [], outputAttributes: [RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::VertexAttribute] = [], blendShape: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::BlendShape? = nil, skinning: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::Skinning? = nil, renormalization: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor.RealityCoreDeformation::Renormalization? = nil)
+    }
+    @objc deinit
+  }
+  public struct Descriptor : Swift::Sendable {
+    public struct BlendShape : Swift::Sendable {
+      public var targetCount: Swift::Int
+      public init(targetCount: Swift::Int)
+    }
+    public struct Skinning : Swift::Sendable {
+      public var jointTransformCount: Swift::Int
+      public var influencesPerVertex: Swift::Int
+      public init(jointTransformCount: Swift::Int, influencesPerVertex: Swift::Int)
+    }
+    public struct Renormalization : Swift::Sendable {
+      public var adjacenciesCount: Swift::Int
+      public var indexCount: Swift::Int
+      public init(adjacenciesCount: Swift::Int, indexCount: Swift::Int)
+    }
+    public var vertexCount: Swift::Int
+    public var blendShape: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Descriptor.RealityCoreDeformation::BlendShape?
+    public var skinning: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Descriptor.RealityCoreDeformation::Skinning?
+    public var renormalization: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Descriptor.RealityCoreDeformation::Renormalization?
+    public init(vertexCount: Swift::Int, blendShape: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Descriptor.RealityCoreDeformation::BlendShape?, skinning: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Descriptor.RealityCoreDeformation::Skinning?, renormalization: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Descriptor.RealityCoreDeformation::Renormalization?)
+  }
+  final public let descriptor: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Descriptor
+  final public var vertexCount: Swift::Int {
+    get
+  }
+  final public var input: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Mesh {
+    get
+  }
+  final public var output: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Mesh {
+    get
+  }
+  final public var blendShape: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::BlendShape {
+    get
+  }
+  final public var skinning: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Skinning {
+    get
+  }
+  final public var renormalization: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Renormalization {
+    get
+  }
+  public struct BlendShape : ~Swift::Copyable {
+  }
+  public struct Skinning : ~Swift::Copyable {
+  }
+  public struct Renormalization : ~Swift::Copyable {
+  }
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class LowLevelDeformationContext {
+  final public let device: any Metal::MTLDevice
+  public init(_ device: any Metal::MTLDevice) throws
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Mesh {
+  public func setVertices(_ buffer: any Metal::MTLBuffer, offset: Swift::Int, semantic: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::VertexSemantic) throws
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::BlendShape {
+  public func setPositionOffsets(_ buffer: any Metal::MTLBuffer, offset: Swift::Int) throws
+  public func setNormalOffsets(_ buffer: any Metal::MTLBuffer, offset: Swift::Int) throws
+  public func setTangentOffsets(_ buffer: any Metal::MTLBuffer, offset: Swift::Int) throws
+  public func setWeights(_ buffer: any Metal::MTLBuffer, offset: Swift::Int) throws
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Skinning {
+  public func setJointTransforms(_ buffer: any Metal::MTLBuffer, offset: Swift::Int) throws
+  public func setInverseBindPoses(_ buffer: any Metal::MTLBuffer, offset: Swift::Int) throws
+  public func setInfluenceWeights(_ buffer: any Metal::MTLBuffer, offset: Swift::Int) throws
+  public var geometryBindTransform: simd::simd_float4x4 {
+    get
+    nonmutating set
+  }
+  public func replaceInfluenceJointIndices<R>(_ body: (inout Swift::MutableRawSpan) -> R) throws -> R where R : ~Copyable
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Renormalization {
+  public func replaceAdjacencies<R>(_ body: (inout Swift::MutableRawSpan) -> R) throws -> R where R : ~Copyable
+  public func replaceAdjacencyEndIndices<R>(_ body: (inout Swift::MutableRawSpan) -> R) throws -> R where R : ~Copyable
+  public func replaceTriangleIndices<R>(_ body: (inout Swift::MutableRawSpan) -> R) throws -> R where R : ~Copyable
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreDeformation::LowLevelDeformation {
+  final public func encode(into encoder: any Metal::MTLComputeCommandEncoder) throws
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreDeformation::LowLevelDeformationContext {
+  @available(*, noasync)
+  final public func makePipeline(_ descriptor: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor) throws -> RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) final public func makePipeline(_ descriptor: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline.RealityCoreDeformation::Descriptor) async throws -> RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline
+  #endif
+  final public func makeDeformation(pipeline: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Pipeline, descriptor: RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::Descriptor) throws -> RealityCoreDeformation::LowLevelDeformation
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::VertexSemantic : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension RealityCoreDeformation::LowLevelDeformation.RealityCoreDeformation::VertexSemantic : Swift::Hashable {}

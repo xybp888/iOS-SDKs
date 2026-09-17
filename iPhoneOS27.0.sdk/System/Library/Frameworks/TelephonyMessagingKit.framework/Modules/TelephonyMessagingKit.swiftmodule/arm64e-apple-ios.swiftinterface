@@ -1,0 +1,1907 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-experimental-feature DebugDescriptionMacro -user-module-version 13487.6 -module-name TelephonyMessagingKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import CoreGraphics
+import CoreLocation
+import Foundation
+import Swift
+import UniformTypeIdentifiers
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct CellularServiceState : Swift::Identifiable, Swift::Codable, Swift::Hashable, Swift::Sendable {
+  public let id: TelephonyMessagingKit::CellularServiceID
+  public let label: Swift::String
+  public static func == (a: TelephonyMessagingKit::CellularServiceState, b: TelephonyMessagingKit::CellularServiceState) -> Swift::Bool
+  @available(iOS 26.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias ID = TelephonyMessagingKit::CellularServiceID
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService {
+  public struct RemoteCapabilitiesRequest : Swift::Sendable {
+    public enum CachePolicy : Swift::Codable, Swift::Sendable, Swift::Equatable {
+      case cacheOnly
+      case cacheOrRemote
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilitiesRequest.TelephonyMessagingKit::CachePolicy, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilitiesRequest.TelephonyMessagingKit::CachePolicy) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public var cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public var handle: TelephonyMessagingKit::RCSHandle
+    public var cachePolicy: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilitiesRequest.TelephonyMessagingKit::CachePolicy
+    public init(cellularServiceID: TelephonyMessagingKit::CellularServiceID, handle: TelephonyMessagingKit::RCSHandle, cachePolicy: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilitiesRequest.TelephonyMessagingKit::CachePolicy = .cacheOnly)
+  }
+  public struct RemoteCapabilities : Swift::Codable, Swift::Sendable, Swift::Equatable {
+    public enum Availability : Swift::Codable, Swift::Sendable {
+      case available
+      case unavailable
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilities.TelephonyMessagingKit::Availability, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilities.TelephonyMessagingKit::Availability) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public let alternativeHandles: [TelephonyMessagingKit::RCSHandle]
+    public let supportsChat: Swift::Bool
+    public let supportsFileTransfer: Swift::Bool
+    public let supportsGeolocation: Swift::Bool
+    public let isBusinessHandle: Swift::Bool
+    public let validUntil: Foundation::Date?
+    public let availability: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilities.TelephonyMessagingKit::Availability?
+    @available(iOS 26.5, *)
+    public let supportsEndToEndEncryption: Swift::Bool
+    @available(iOS 27.0, *)
+    public let supportsExtendedMessagingReply: Swift::Bool
+    @available(iOS 27.0, *)
+    public let supportsExtendedMessagingReaction: Swift::Bool
+    @available(iOS 27.0, *)
+    public let supportsExtendedMessagingCustomReaction: Swift::Bool
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilities, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilities) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilitiesRequest.TelephonyMessagingKit::CachePolicy : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService {
+  @available(iOS 26.0, *)
+  public struct ReportSpamRequest : Swift::Sendable {
+    @available(iOS 26.0, *)
+    public enum Category : Swift::Codable, Swift::Equatable, Swift::Sendable {
+      case invalid
+      case spam
+      case fraud
+      case inappropriateContent
+      case other
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::ReportSpamRequest.TelephonyMessagingKit::Category, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::ReportSpamRequest.TelephonyMessagingKit::Category) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public var message: TelephonyMessagingKit::RCSMessage
+    public var fileContent: Foundation::Data?
+    public var category: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::ReportSpamRequest.TelephonyMessagingKit::Category?
+    public var reason: Swift::String?
+    public init(message: TelephonyMessagingKit::RCSMessage, fileContent: Foundation::Data? = nil, category: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::ReportSpamRequest.TelephonyMessagingKit::Category? = nil, reason: Swift::String? = nil)
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public enum RCSHandle : Swift::Hashable, Swift::Codable, Swift::Sendable, Swift::CustomStringConvertible {
+  case uri(TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI)
+  case group(TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group)
+  public static func phoneNumber(_ phoneNumber: Swift::String) -> TelephonyMessagingKit::RCSHandle?
+  public var description: Swift::String {
+    get
+  }
+  public static func == (a: TelephonyMessagingKit::RCSHandle, b: TelephonyMessagingKit::RCSHandle) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSHandle {
+  public struct URI : Swift::ExpressibleByStringLiteral, Swift::RawRepresentable, Swift::Hashable, Swift::Codable, Swift::Sendable {
+    public let rawValue: Swift::String
+    public init(rawValue: Swift::String)
+    public init(stringLiteral value: Swift::String)
+    @available(iOS 26.0, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias ExtendedGraphemeClusterLiteralType = Swift::String
+    @available(iOS 26.0, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias RawValue = Swift::String
+    @available(iOS 26.0, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias StringLiteralType = Swift::String
+    @available(iOS 26.0, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias UnicodeScalarLiteralType = Swift::String
+  }
+  public struct Group : Swift::Hashable, Swift::Codable, Swift::Sendable {
+    public let focus: Swift::String
+    public let conversationID: Swift::String
+    public static func == (a: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group, b: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business {
+  public struct Menu : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public enum Content : Swift::Codable, Swift::Equatable, Swift::Sendable {
+      case suggestion(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Suggestion)
+      case submenu(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Menu)
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Menu.TelephonyMessagingKit::Content, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Menu.TelephonyMessagingKit::Content) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public let title: Swift::String?
+    public let contents: [TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Menu.TelephonyMessagingKit::Content]
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Menu, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Menu) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct MMSHandle : Swift::Codable, Swift::Sendable {
+  public init(phoneNumber: Swift::String)
+  public var phoneNumber: Swift::String
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct MMSPartContent : Swift::Codable, Swift::Sendable {
+  public var data: Foundation::Data
+  public var disposition: TelephonyMessagingKit::MMSPartContent.TelephonyMessagingKit::MMSDispositionType
+  public var filename: Swift::String
+  public var contentID: Swift::String
+  public var contentType: UniformTypeIdentifiers::UTType?
+  public var customHeaders: [TelephonyMessagingKit::MMSPartContent.TelephonyMessagingKit::MMSCustomHeader]
+  public init(data: Foundation::Data, contentType: UniformTypeIdentifiers::UTType?, contentID: Swift::String, disposition: TelephonyMessagingKit::MMSPartContent.TelephonyMessagingKit::MMSDispositionType, fileName: Swift::String)
+  public mutating func addCustomHeader(_ header: TelephonyMessagingKit::MMSPartContent.TelephonyMessagingKit::MMSCustomHeader)
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::MMSPartContent {
+  @available(iOS 26.0, *)
+  public enum MMSDispositionType : Swift::Codable, Swift::Sendable {
+    case attachment
+    case inline
+    public static func == (a: TelephonyMessagingKit::MMSPartContent.TelephonyMessagingKit::MMSDispositionType, b: TelephonyMessagingKit::MMSPartContent.TelephonyMessagingKit::MMSDispositionType) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  @available(iOS 26.0, *)
+  public struct MMSCustomHeader : Swift::Codable, Swift::Sendable {
+    public let key: Swift::String
+    public let value: Swift::String
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct MMSContent : Swift::Codable, Swift::Sendable {
+  public var parts: [TelephonyMessagingKit::MMSPartContent]
+  public var recipients: [TelephonyMessagingKit::MMSHandle]
+  public var subject: Swift::String?
+  public var from: TelephonyMessagingKit::MMSHandle?
+  public var headers: [Swift::String : Swift::String]
+  public init()
+  public init(parts: [TelephonyMessagingKit::MMSPartContent], recipients: [TelephonyMessagingKit::MMSHandle], subject: Swift::String? = nil)
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct MMSMessageID : Swift::RawRepresentable, Swift::Codable, Swift::Sendable, Swift::Hashable, Swift::CustomStringConvertible {
+  public init(rawValue: Swift::UInt32)
+  public let rawValue: Swift::UInt32
+  public var description: Swift::String {
+    get
+  }
+  @available(iOS 26.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias RawValue = Swift::UInt32
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct MMSMessage : Swift::Equatable, Swift::Codable, Swift::Sendable, Swift::CustomStringConvertible {
+  public var cellularServiceID: TelephonyMessagingKit::CellularServiceID
+  public var messageID: TelephonyMessagingKit::MMSMessageID
+  public var content: TelephonyMessagingKit::MMSContent
+  public init(cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::MMSMessageID, content: TelephonyMessagingKit::MMSContent)
+  public var description: Swift::String {
+    get
+  }
+  public static func == (lhs: TelephonyMessagingKit::MMSMessage, rhs: TelephonyMessagingKit::MMSMessage) -> Swift::Bool
+  public var totalSize: Foundation::Measurement<Foundation::UnitInformationStorage> {
+    get
+  }
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::MMSService {
+  public struct Configuration : Swift::Codable, Swift::Sendable {
+    public var maximumMessageSize: Foundation::Measurement<Foundation::UnitInformationStorage>?
+    public var maximumRecipients: Swift::Int?
+    public var maximumSubjectSize: Foundation::Measurement<Foundation::UnitInformationStorage>?
+    public var maximumImageSize: Foundation::Measurement<Foundation::UnitInformationStorage>?
+    public var smsSizeToBeSentAsMMSInstead: Foundation::Measurement<Foundation::UnitInformationStorage>?
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService {
+  public struct Business : Swift::Codable, Swift::Sendable {
+    public let communicationAddress: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::CommunicationAddress?
+    public let mediaEntries: [TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::MediaEntry]
+    public let organizationNames: [TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OrganizationName]
+    public let description: Swift::String?
+    public let categoryNames: [Swift::String]
+    public let version: Swift::String?
+    public let providerName: Swift::String?
+    public let emailAddress: Swift::String?
+    public let backgroundImageURL: Foundation::URL?
+    public let websiteURL: Foundation::URL?
+    public let termsAndConditionsURL: Foundation::URL?
+    public let addressEntries: [TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::AddressEntry]
+    public let persistentMenu: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Menu?
+    public let styleSheetTemplateURL: Foundation::URL?
+    public let verificationDetails: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::VerificationDetails?
+    public var themeColor: CoreGraphics::CGColor? {
+      get
+    }
+    @available(iOS 27.0, *)
+    public let capabilities: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Capabilities?
+    @available(iOS 27.0, *)
+    public let welcomeMessage: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::WelcomeMessage?
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business {
+  public struct TelephoneDetails : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public let label: Swift::String
+    public let phoneNumber: Swift::String
+    public let phoneNumberType: Swift::String
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::TelephoneDetails, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::TelephoneDetails) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct URIEntry : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public enum URIType : Swift::Codable, Swift::Equatable, Swift::Sendable {
+      case sip
+      case other
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::URIEntry.TelephonyMessagingKit::URIType, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::URIEntry.TelephonyMessagingKit::URIType) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public enum Label : Swift::Codable, Swift::Equatable, Swift::Sendable {
+      case serviceID
+      case sms
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::URIEntry.TelephonyMessagingKit::Label, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::URIEntry.TelephonyMessagingKit::Label) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public let uri: Foundation::URL
+    public let type: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::URIEntry.TelephonyMessagingKit::URIType
+    public let label: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::URIEntry.TelephonyMessagingKit::Label
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::URIEntry, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::URIEntry) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct CommunicationAddress : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public let telephoneDetails: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::TelephoneDetails
+    public let uriEntries: [TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::URIEntry]
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::CommunicationAddress, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::CommunicationAddress) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct Media : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public let url: Foundation::URL
+    public let sha256Digest: Swift::String?
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Media, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Media) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct MediaEntry : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public enum Label : Swift::Codable, Swift::Equatable, Swift::Sendable {
+      case icon
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::MediaEntry.TelephonyMessagingKit::Label, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::MediaEntry.TelephonyMessagingKit::Label) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public enum ContentType : Swift::Codable, Swift::Equatable, Swift::Sendable {
+      case logo
+      case other
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::MediaEntry.TelephonyMessagingKit::ContentType, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::MediaEntry.TelephonyMessagingKit::ContentType) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public let label: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::MediaEntry.TelephonyMessagingKit::Label
+    public let media: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Media
+    public let contentType: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::MediaEntry.TelephonyMessagingKit::ContentType
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::MediaEntry, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::MediaEntry) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct OrganizationName : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public enum NameType : Swift::Codable, Swift::Equatable, Swift::Sendable {
+      case officialName
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OrganizationName.TelephonyMessagingKit::NameType, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OrganizationName.TelephonyMessagingKit::NameType) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public let displayName: Swift::String
+    public let nameType: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OrganizationName.TelephonyMessagingKit::NameType
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OrganizationName, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OrganizationName) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct AddressEntry : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public let address: Swift::String
+    public let label: Swift::String
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::AddressEntry, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::AddressEntry) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct VerificationDetails : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public let isVerified: Swift::Bool
+    public let verifiedBy: Swift::String?
+    public let expirationDate: Foundation::Date?
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::VerificationDetails, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::VerificationDetails) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  @available(iOS 27.0, *)
+  public enum Feature : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    case business
+    case businessStandalone
+    case fileTransfer
+    case chat
+    case geoPush
+    case reply
+    case reaction
+    case customReaction
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Feature, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Feature) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  @available(iOS 27.0, *)
+  public struct Capabilities : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public let versionID: Swift::String
+    public let supportedFeatures: [TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Feature]
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Capabilities, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Capabilities) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  @available(iOS 27.0, *)
+  public struct WelcomeMessage : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public enum Content : Swift::Codable, Swift::Equatable, Swift::Sendable {
+      case prefilledText(Swift::String)
+      case card(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card)
+      case cardCarousel(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::CardCarousel)
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::WelcomeMessage.TelephonyMessagingKit::Content, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::WelcomeMessage.TelephonyMessagingKit::Content) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public let content: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::WelcomeMessage.TelephonyMessagingKit::Content
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::WelcomeMessage, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::WelcomeMessage) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct RCSMessageID : Swift::RawRepresentable, Swift::Codable, Swift::Sendable, Swift::Hashable, Swift::CustomStringConvertible {
+  public let rawValue: Swift::String
+  public init(rawValue: Swift::String)
+  public var description: Swift::String {
+    get
+  }
+  @available(iOS 26.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias RawValue = Swift::String
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct RCSMessage : Swift::Identifiable, Swift::Equatable, Swift::Codable, Swift::Sendable {
+  public let id: TelephonyMessagingKit::RCSMessageID
+  public let cellularServiceID: TelephonyMessagingKit::CellularServiceID
+  public let content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Content
+  public let handle: TelephonyMessagingKit::RCSHandle
+  @available(iOS 26.5, *)
+  public let originalID: TelephonyMessagingKit::RCSMessageID?
+  public static func == (a: TelephonyMessagingKit::RCSMessage, b: TelephonyMessagingKit::RCSMessage) -> Swift::Bool
+  @available(iOS 26.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias ID = TelephonyMessagingKit::RCSMessageID
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSMessage {
+  public enum Content : Swift::Equatable, Swift::Codable, Swift::Sendable {
+    case text(TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Text)
+    case fileTransfer(TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::FileTransfer)
+    case geolocationPush(TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::GeolocationPush)
+    case dispositionNotification(TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::DispositionNotification)
+    case composingIndicator(TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::ComposingIndicator)
+    case businessCard(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card)
+    case businessCardCarousel(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::CardCarousel)
+    @available(iOS 27.0, *)
+    case reply(TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reply)
+    @available(iOS 27.0, *)
+    case reaction(TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reaction)
+    @available(iOS 27.0, *)
+    case customReaction(TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::CustomReaction)
+    public static func == (a: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Content, b: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Content) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSMessage {
+  public struct Text : Swift::ExpressibleByStringLiteral, Swift::Equatable, Swift::Codable, Swift::Sendable {
+    public var body: Swift::String
+    @available(iOS 26.5, *)
+    public var isEndToEndEncrypted: Swift::Bool
+    public init(body: Swift::String)
+    public init(stringLiteral value: Swift::String)
+    public static func == (a: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Text, b: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Text) -> Swift::Bool
+    @available(iOS 26.0, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias ExtendedGraphemeClusterLiteralType = Swift::String
+    @available(iOS 26.0, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias StringLiteralType = Swift::String
+    @available(iOS 26.0, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias UnicodeScalarLiteralType = Swift::String
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct FileTransfer : Swift::Equatable, Swift::Codable, Swift::Sendable {
+    public var fileMetadata: TelephonyMessagingKit::RCSFileTransferMetadata
+    public var thumbnailMetadata: TelephonyMessagingKit::RCSFileTransferMetadata?
+    @available(iOS 26.5, *)
+    public var isEndToEndEncrypted: Swift::Bool
+    public init(fileMetadata: TelephonyMessagingKit::RCSFileTransferMetadata, thumbnailMetadata: TelephonyMessagingKit::RCSFileTransferMetadata? = nil)
+    public static func == (a: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::FileTransfer, b: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::FileTransfer) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct GeolocationPush : Swift::Equatable, Swift::Codable, Swift::Sendable {
+    public var latitude: Swift::Double
+    public var longitude: Swift::Double
+    public var description: Swift::String?
+    @available(iOS 26.5, *)
+    public var isEndToEndEncrypted: Swift::Bool
+    public init(latitude: Swift::Double, longitude: Swift::Double, description: Swift::String? = nil)
+    public static func == (a: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::GeolocationPush, b: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::GeolocationPush) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct DispositionNotification : Swift::Equatable, Swift::Codable, Swift::Sendable {
+    public let disposition: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Disposition
+    public let disposedMessageID: TelephonyMessagingKit::RCSMessageID
+    @available(iOS 26.5, *)
+    public var isEndToEndEncrypted: Swift::Bool
+    public init(disposition: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Disposition, disposedMessageID: TelephonyMessagingKit::RCSMessageID)
+    public static func == (a: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::DispositionNotification, b: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::DispositionNotification) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct ComposingIndicator : Swift::Equatable, Swift::Codable, Swift::Sendable {
+    public enum State : Swift::Equatable, Swift::Codable, Swift::Sendable {
+      case idle
+      case active
+      public static func == (a: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::ComposingIndicator.TelephonyMessagingKit::State, b: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::ComposingIndicator.TelephonyMessagingKit::State) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public var state: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::ComposingIndicator.TelephonyMessagingKit::State
+    public var lastActive: Foundation::Date?
+    public var contentType: UniformTypeIdentifiers::UTType?
+    public var refreshInterval: Swift::Duration?
+    @available(iOS 26.5, *)
+    public var isEndToEndEncrypted: Swift::Bool
+    public init(state: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::ComposingIndicator.TelephonyMessagingKit::State, lastActive: Foundation::Date? = nil, contentType: UniformTypeIdentifiers::UTType? = nil, refreshInterval: Swift::Duration? = nil)
+    public static func == (a: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::ComposingIndicator, b: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::ComposingIndicator) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct RCSFileTransferMetadata : Swift::Equatable, Swift::Codable, Swift::Sendable {
+  public enum Disposition : Swift::Equatable, Swift::Codable, Swift::Sendable {
+    case attachment
+    case render
+    public static func == (a: TelephonyMessagingKit::RCSFileTransferMetadata.TelephonyMessagingKit::Disposition, b: TelephonyMessagingKit::RCSFileTransferMetadata.TelephonyMessagingKit::Disposition) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public let url: Foundation::URL
+  public let fileName: Swift::String?
+  public let fileSize: Swift::Int
+  public let contentType: UniformTypeIdentifiers::UTType?
+  public let expirationDate: Foundation::Date
+  public var disposition: TelephonyMessagingKit::RCSFileTransferMetadata.TelephonyMessagingKit::Disposition?
+  public var playbackLength: Swift::Duration?
+  public static func == (a: TelephonyMessagingKit::RCSFileTransferMetadata, b: TelephonyMessagingKit::RCSFileTransferMetadata) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@_hasMissingDesignatedInitializers @available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+final public class MMSService : Swift::Sendable {
+  public enum Error : Foundation::LocalizedError, Swift::Codable, Swift::Sendable {
+    case unknown
+    case notSupported
+    case invalidRecipient
+    case invalidMessageParts
+    case internalError
+    case mmsNotReady
+    case mmsNotConfiguredForCarrier
+    case maximumSizeExceeded
+    public static func == (a: TelephonyMessagingKit::MMSService.TelephonyMessagingKit::Error, b: TelephonyMessagingKit::MMSService.TelephonyMessagingKit::Error) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct IncomingMessageNotification : Swift::Equatable, Swift::Sendable {
+    @available(iOS, introduced: 26.0, deprecated: 26.1, message: "Use message.cellularServiceID instead.")
+    public var cellularServiceID: TelephonyMessagingKit::CellularServiceID {
+      get
+    }
+    @available(iOS, introduced: 26.0, deprecated: 26.1, message: "Use message.messageID instead.")
+    public var messageID: TelephonyMessagingKit::MMSMessageID {
+      get
+    }
+    @available(iOS 26.1, *)
+    public var message: TelephonyMessagingKit::MMSMessage {
+      get
+    }
+    public static func == (lhs: TelephonyMessagingKit::MMSService.TelephonyMessagingKit::IncomingMessageNotification, rhs: TelephonyMessagingKit::MMSService.TelephonyMessagingKit::IncomingMessageNotification) -> Swift::Bool
+  }
+  public struct ViabilityNotification : Swift::Equatable, Swift::Sendable {
+    public let cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public let isViable: Swift::Bool
+    public static func == (a: TelephonyMessagingKit::MMSService.TelephonyMessagingKit::ViabilityNotification, b: TelephonyMessagingKit::MMSService.TelephonyMessagingKit::ViabilityNotification) -> Swift::Bool
+  }
+  final public func sendMessage(_ message: TelephonyMessagingKit::MMSMessage) async throws
+  final public func isViable(for cellularServiceID: TelephonyMessagingKit::CellularServiceID) -> Swift::Bool
+  @available(iOS, introduced: 26.0, deprecated: 26.1, message: "Use IncomingMessageNotification.message instead.")
+  final public func receiveMessage(using cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::MMSMessageID) async throws -> TelephonyMessagingKit::MMSMessage
+  final public func reportSpam(_ message: TelephonyMessagingKit::MMSMessage) async throws
+  final public func configuration(for cellularServiceID: TelephonyMessagingKit::CellularServiceID) async throws -> TelephonyMessagingKit::MMSService.TelephonyMessagingKit::Configuration
+  final public var viabilityNotifications: some _Concurrency::AsyncSequence<TelephonyMessagingKit::MMSService.TelephonyMessagingKit::ViabilityNotification, Swift::Never> {
+    get throws
+  }
+  final public var incomingMessageNotifications: some _Concurrency::AsyncSequence<TelephonyMessagingKit::MMSService.TelephonyMessagingKit::IncomingMessageNotification, Swift::Never> {
+    get throws
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+final public class TelephonyMessagingSession : Swift::Identifiable, Swift::Sendable {
+  public enum Error : Foundation::LocalizedError, Swift::Sendable {
+    case serviceUnavailable
+    case invalidSession
+    case invalidArgument
+    case internalError
+    public static func == (a: TelephonyMessagingKit::TelephonyMessagingSession.TelephonyMessagingKit::Error, b: TelephonyMessagingKit::TelephonyMessagingSession.TelephonyMessagingKit::Error) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  final public let id: Foundation::UUID
+  public static let shared: TelephonyMessagingKit::TelephonyMessagingSession
+  final public var cellularServices: [TelephonyMessagingKit::CellularServiceState] {
+    get throws
+  }
+  final public var cellularServiceStateUpdates: some _Concurrency::AsyncSequence<TelephonyMessagingKit::CellularServiceState, Swift::Never> {
+    get
+  }
+  final public var smsService: TelephonyMessagingKit::SMSService {
+    get
+  }
+  final public var mmsService: TelephonyMessagingKit::MMSService {
+    get
+  }
+  final public var rcsService: TelephonyMessagingKit::RCSService {
+    get
+  }
+  final public var isConfiguredForCarrierMessaging: Swift::Bool {
+    get
+  }
+  @available(iOS 26.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias ID = Foundation::UUID
+  @objc deinit
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::TelephonyMessagingSession.TelephonyMessagingKit::Error {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService {
+  public struct FileDownloadRequest : Swift::Sendable {
+    public var cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public var fileURL: Foundation::URL
+    public var destinationFileURL: Foundation::URL
+    public init(cellularServiceID: TelephonyMessagingKit::CellularServiceID, fileURL: Foundation::URL, destinationFileURL: Foundation::URL)
+    @available(iOS 26.5, *)
+    public init(cellularServiceID: TelephonyMessagingKit::CellularServiceID, fileMetadata: TelephonyMessagingKit::RCSFileTransferMetadata, destinationFileURL: Foundation::URL)
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::FileDownloadRequest {
+  public struct Metadata : Swift::Sendable {
+    public let suggestedFileName: Swift::String?
+    public let contentType: UniformTypeIdentifiers::UTType?
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService {
+  public struct SuggestionResponse : Swift::Sendable {
+    public var cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public var destination: TelephonyMessagingKit::RCSHandle
+    public var messageID: TelephonyMessagingKit::RCSMessageID
+    public var originatingMessageID: TelephonyMessagingKit::RCSMessageID
+    public var suggestion: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Suggestion
+    public init(cellularServiceID: TelephonyMessagingKit::CellularServiceID, destination: TelephonyMessagingKit::RCSHandle, messageID: TelephonyMessagingKit::RCSMessageID, originatingMessageID: TelephonyMessagingKit::RCSMessageID, suggestion: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Suggestion)
+  }
+  public struct BusinessInformationRequest : Swift::Sendable {
+    public enum CachePolicy : Swift::Codable, Swift::Sendable, Swift::Equatable {
+      case cacheOnly
+      case remoteOnly
+      case cacheOrRemote
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::BusinessInformationRequest.TelephonyMessagingKit::CachePolicy, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::BusinessInformationRequest.TelephonyMessagingKit::CachePolicy) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public var cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public var handle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI
+    public var cachePolicy: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::BusinessInformationRequest.TelephonyMessagingKit::CachePolicy
+    @available(iOS 27.0, *)
+    public struct WelcomeMessageInformation : Swift::Sendable {
+      public var identifier: Swift::String
+      public var contextualInformation: Swift::String?
+      public init(identifier: Swift::String, contextualInformation: Swift::String? = nil)
+    }
+    @available(iOS 27.0, *)
+    public var welcomeMessageInformation: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::BusinessInformationRequest.TelephonyMessagingKit::WelcomeMessageInformation?
+    public init(cellularServiceID: TelephonyMessagingKit::CellularServiceID, handle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI, cachePolicy: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::BusinessInformationRequest.TelephonyMessagingKit::CachePolicy = .cacheOrRemote)
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business {
+  public struct SuggestedReply : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public let displayText: Swift::String
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::SuggestedReply, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::SuggestedReply) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct OpenURLAction : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public enum Detent : Swift::Codable, Swift::Sendable {
+      case large
+      case medium
+      case mediumLarge
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OpenURLAction.TelephonyMessagingKit::Detent, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OpenURLAction.TelephonyMessagingKit::Detent) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public enum Target : Swift::Codable, Swift::Equatable, Swift::Sendable {
+      case defaultBrowser
+      case inApp(detent: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OpenURLAction.TelephonyMessagingKit::Detent)
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OpenURLAction.TelephonyMessagingKit::Target, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OpenURLAction.TelephonyMessagingKit::Target) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public let url: Foundation::URL
+    public let target: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OpenURLAction.TelephonyMessagingKit::Target
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OpenURLAction, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OpenURLAction) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct DialPhoneNumberAction : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public let phoneNumber: Swift::String
+    public let fallbackURL: Foundation::URL?
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::DialPhoneNumberAction, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::DialPhoneNumberAction) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct ShowLocationAction : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public enum Method : Swift::Sendable {
+      case coordinates(_LocationEssentials::CLLocationCoordinate2D)
+      case query(Swift::String)
+    }
+    public let method: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ShowLocationAction.TelephonyMessagingKit::Method
+    public let label: Swift::String?
+    public let fallbackURL: Foundation::URL?
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ShowLocationAction, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ShowLocationAction) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct CreateCalendarEventAction : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public let startTime: Foundation::Date
+    public let endTime: Foundation::Date
+    public let title: Swift::String
+    public let description: Swift::String?
+    public let fallbackURL: Foundation::URL?
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::CreateCalendarEventAction, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::CreateCalendarEventAction) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct ComposeTextAction : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public let phoneNumber: Swift::String
+    public let text: Swift::String
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ComposeTextAction, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ComposeTextAction) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct ComposeRecordingAction : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public enum MediaType : Swift::Codable, Swift::Equatable, Swift::Sendable {
+      case audio
+      case video
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ComposeRecordingAction.TelephonyMessagingKit::MediaType, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ComposeRecordingAction.TelephonyMessagingKit::MediaType) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public let phoneNumber: Swift::String
+    public let mediaType: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ComposeRecordingAction.TelephonyMessagingKit::MediaType
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ComposeRecordingAction, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ComposeRecordingAction) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct SuggestedAction : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public enum Action : Swift::Codable, Swift::Equatable, Swift::Sendable {
+      case openURL(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OpenURLAction)
+      case dialPhoneNumber(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::DialPhoneNumberAction)
+      case showLocation(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ShowLocationAction)
+      case sendLocation
+      case createCalendarEvent(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::CreateCalendarEventAction)
+      case composeRecording(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ComposeRecordingAction)
+      case composeText(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ComposeTextAction)
+      case sendDeviceSpecifics
+      case enableDisplayedNotifications
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::SuggestedAction.TelephonyMessagingKit::Action, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::SuggestedAction.TelephonyMessagingKit::Action) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public let displayText: Swift::String
+    public let action: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::SuggestedAction.TelephonyMessagingKit::Action
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::SuggestedAction, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::SuggestedAction) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct Card : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public let orientation: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Orientation
+    public let titleFontStyle: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::FontStyle
+    public let descriptionFontStyle: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::FontStyle
+    public let styleSheetURL: Foundation::URL?
+    public let imageAlignment: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::ImageAlignment?
+    public let content: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Content
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct CardCarousel : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public let width: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Width
+    public let titleFontStyle: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::FontStyle
+    public let descriptionFontStyle: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::FontStyle
+    public let styleSheetURL: Foundation::URL?
+    public let contents: [TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Content]
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::CardCarousel, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::CardCarousel) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public enum Suggestion : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    case reply(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::SuggestedReply)
+    case action(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::SuggestedAction)
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Suggestion, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Suggestion) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card {
+  public enum Orientation : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    case vertical
+    case horizontal
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Orientation, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Orientation) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct FontStyle : Swift::OptionSet, Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public let rawValue: Swift::Int
+    public init(rawValue: Swift::Int)
+    public static let italics: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::FontStyle
+    public static let bold: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::FontStyle
+    public static let underline: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::FontStyle
+    @available(iOS 26.0, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias ArrayLiteralElement = TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::FontStyle
+    @available(iOS 26.0, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias Element = TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::FontStyle
+    @available(iOS 26.0, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias RawValue = Swift::Int
+  }
+  public struct Media : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public enum Height : Swift::Codable, Swift::Equatable, Swift::Sendable {
+      case short
+      case medium
+      case tall
+      public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Media.TelephonyMessagingKit::Height, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Media.TelephonyMessagingKit::Height) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public let url: Foundation::URL
+    public let contentType: UniformTypeIdentifiers::UTType?
+    public let fileSize: Foundation::Measurement<Foundation::UnitInformationStorage>
+    public let thumbnailURL: Foundation::URL?
+    public let thumbnailContentType: UniformTypeIdentifiers::UTType?
+    public let thumbnailFileSize: Foundation::Measurement<Foundation::UnitInformationStorage>?
+    public let displayHeight: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Media.TelephonyMessagingKit::Height
+    public let description: Swift::String?
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Media, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Media) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public enum ImageAlignment : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    case left
+    case right
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::ImageAlignment, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::ImageAlignment) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct Content : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    public let media: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Media?
+    public let title: Swift::String?
+    public let description: Swift::String?
+    public let suggestions: [TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Suggestion]
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Content, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Content) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public enum Width : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    case small
+    case medium
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Width, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Width) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ShowLocationAction.TelephonyMessagingKit::Method : Swift::Equatable, Swift::Codable {
+  public static func == (lhs: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ShowLocationAction.TelephonyMessagingKit::Method, rhs: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ShowLocationAction.TelephonyMessagingKit::Method) -> Swift::Bool
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService {
+  public struct AddGroupChatParticipantsRequest : Swift::Sendable {
+    public struct Result : Swift::Sendable {
+      public let added: [TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI]
+    }
+    public var cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public var groupHandle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group
+    public var participants: [TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI]
+    @available(iOS 26.5, *)
+    public var isEndToEndEncrypted: Swift::Bool
+    public init(cellularServiceID: TelephonyMessagingKit::CellularServiceID, groupHandle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group, participants: [TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI])
+  }
+  public struct RemoveGroupChatParticipantsRequest : Swift::Sendable {
+    public struct Result : Swift::Sendable {
+      public let removed: [TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI]
+    }
+    public var cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public var groupHandle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group
+    public var participants: [TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI]
+    @available(iOS 26.5, *)
+    public var isEndToEndEncrypted: Swift::Bool
+    public init(cellularServiceID: TelephonyMessagingKit::CellularServiceID, groupHandle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group, participants: [TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI])
+  }
+  public struct ChangeGroupChatSubjectRequest : Swift::Sendable {
+    public var cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public var groupHandle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group
+    public var newSubject: Swift::String
+    @available(iOS 26.5, *)
+    public var isEndToEndEncrypted: Swift::Bool
+    public init(cellularServiceID: TelephonyMessagingKit::CellularServiceID, groupHandle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group, newSubject: Swift::String)
+  }
+  public struct LeaveGroupChatRequest : Swift::Sendable {
+    public var cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public var groupHandle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group
+    public init(cellularServiceID: TelephonyMessagingKit::CellularServiceID, groupHandle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group)
+  }
+  public struct CreateGroupChatRequest : Swift::Sendable {
+    public struct Result : Swift::Sendable {
+      public let groupHandle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group
+      public let participants: [TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI]
+      public let subject: Swift::String?
+      @available(iOS 26.5, *)
+      public let isEndToEndEncrypted: Swift::Bool
+    }
+    public var cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public var participants: [TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI]
+    public var subject: Swift::String
+    @available(iOS 26.5, *)
+    public var isEndToEndEncrypted: Swift::Bool
+    public init(cellularServiceID: TelephonyMessagingKit::CellularServiceID, participants: [TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI], subject: Swift::String)
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSMessage {
+  public struct CustomReaction : Swift::Equatable, Swift::Codable, Swift::Sendable {
+    public enum Operation : Swift::Equatable, Swift::Codable, Swift::Sendable {
+      case add(TelephonyMessagingKit::RCSFileTransferMetadata)
+      case remove
+      public static func == (a: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::CustomReaction.TelephonyMessagingKit::Operation, b: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::CustomReaction.TelephonyMessagingKit::Operation) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public var targetMessageID: TelephonyMessagingKit::RCSMessageID
+    public var operation: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::CustomReaction.TelephonyMessagingKit::Operation
+    public var isEndToEndEncrypted: Swift::Bool
+    public init(targetMessageID: TelephonyMessagingKit::RCSMessageID, operation: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::CustomReaction.TelephonyMessagingKit::Operation)
+    public init(targetMessageID: TelephonyMessagingKit::RCSMessageID, operation: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::CustomReaction.TelephonyMessagingKit::Operation, isEndToEndEncrypted: Swift::Bool)
+    public static func == (a: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::CustomReaction, b: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::CustomReaction) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct RCSGroupContext : Swift::Equatable, Swift::Codable, Swift::Sendable {
+  public let handle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group
+  @available(iOS 26.5, *)
+  public let isEndToEndEncrypted: Swift::Bool
+  public static func == (a: TelephonyMessagingKit::RCSGroupContext, b: TelephonyMessagingKit::RCSGroupContext) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService {
+  public struct Configuration : Swift::Sendable {
+    public let chatRevokeTimeout: Swift::Duration?
+    public var maximumTextMessageSize: Foundation::Measurement<Foundation::UnitInformationStorage>? {
+      get
+    }
+    public var maximumGroupSize: Swift::Int? {
+      get
+    }
+    public var maximumFileTransferSize: Foundation::Measurement<Foundation::UnitInformationStorage>? {
+      get
+    }
+    public let fileTransferWarningSize: Foundation::Measurement<Foundation::UnitInformationStorage>?
+    @available(iOS 26.5, *)
+    public let supportsEndToEndEncryption: Swift::Bool
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSMessage {
+  public enum Disposition : Swift::Equatable, Swift::Codable, Swift::Sendable {
+    case delivered
+    case deliveryFailed
+    case displayed
+    case interworkingDelivered
+    case interworkingFailed
+    @available(iOS 26.5, *)
+    case deliveryFailedDueToDecryptionFailure
+    public static func == (a: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Disposition, b: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Disposition) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSMessage {
+  public struct Reaction : Swift::Equatable, Swift::Codable, Swift::Sendable {
+    public enum Operation : Swift::Equatable, Swift::Codable, Swift::Sendable {
+      case addEmoji(Swift::String)
+      case removeEmoji(Swift::String)
+      public static func == (a: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reaction.TelephonyMessagingKit::Operation, b: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reaction.TelephonyMessagingKit::Operation) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public var targetMessageID: TelephonyMessagingKit::RCSMessageID
+    public var operation: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reaction.TelephonyMessagingKit::Operation
+    public var isEndToEndEncrypted: Swift::Bool
+    public init(targetMessageID: TelephonyMessagingKit::RCSMessageID, operation: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reaction.TelephonyMessagingKit::Operation)
+    public init(targetMessageID: TelephonyMessagingKit::RCSMessageID, operation: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reaction.TelephonyMessagingKit::Operation, isEndToEndEncrypted: Swift::Bool)
+    public static func == (a: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reaction, b: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reaction) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSMessage {
+  public struct Reply : Swift::Equatable, Swift::Codable, Swift::Sendable {
+    public enum Content : Swift::Equatable, Swift::Codable, Swift::Sendable {
+      case text(TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Text)
+      case fileTransfer(TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::FileTransfer)
+      case geolocationPush(TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::GeolocationPush)
+      public static func == (a: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reply.TelephonyMessagingKit::Content, b: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reply.TelephonyMessagingKit::Content) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public var targetMessageID: TelephonyMessagingKit::RCSMessageID
+    public var content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reply.TelephonyMessagingKit::Content
+    public init(targetMessageID: TelephonyMessagingKit::RCSMessageID, content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reply.TelephonyMessagingKit::Content)
+    public static func == (a: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reply, b: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reply) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct CellularServiceID : Swift::Codable, Swift::Sendable, Swift::Hashable {
+  public static func == (lhs: TelephonyMessagingKit::CellularServiceID, rhs: TelephonyMessagingKit::CellularServiceID) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public func encode(to encoder: any Swift::Encoder) throws
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::CellularServiceID : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct SMSHandle : Swift::Codable, Swift::Sendable {
+  public init(phoneNumber: Swift::String)
+  public let phoneNumber: Swift::String
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct SMSContent : Swift::Codable, Swift::Sendable {
+  public init(body: Swift::String)
+  public let body: Swift::String
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct SMSMessageID : Swift::RawRepresentable, Swift::Codable, Swift::Sendable, Swift::Hashable, Swift::CustomStringConvertible {
+  public init(rawValue: Swift::UInt32)
+  public let rawValue: Swift::UInt32
+  public var description: Swift::String {
+    get
+  }
+  @available(iOS 26.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias RawValue = Swift::UInt32
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct SMSMessage : Swift::Codable, Swift::Sendable {
+  public let cellularServiceID: TelephonyMessagingKit::CellularServiceID
+  public let handle: TelephonyMessagingKit::SMSHandle
+  public let messageID: TelephonyMessagingKit::SMSMessageID
+  public let content: TelephonyMessagingKit::SMSContent
+  public init(cellularServiceID: TelephonyMessagingKit::CellularServiceID, handle: TelephonyMessagingKit::SMSHandle, messageID: TelephonyMessagingKit::SMSMessageID, content: TelephonyMessagingKit::SMSContent)
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService {
+  public struct RevokeMessageRequest : Swift::Sendable {
+    public var cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public var handle: TelephonyMessagingKit::RCSHandle
+    public var messageID: TelephonyMessagingKit::RCSMessageID
+    public init(cellularServiceID: TelephonyMessagingKit::CellularServiceID, handle: TelephonyMessagingKit::RCSHandle, messageID: TelephonyMessagingKit::RCSMessageID)
+  }
+}
+@available(iOS 26.5, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService {
+  public struct SendEncryptedMessageRequest : Swift::Sendable {
+    public struct Result : Swift::Sendable {
+      public let secureSendReceipt: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::SecureSendReceipt?
+    }
+    public var secureSendReceipt: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::SecureSendReceipt?
+    public init(content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Text, destination: TelephonyMessagingKit::RCSHandle, cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::RCSMessageID)
+    public init(content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::FileTransfer, destination: TelephonyMessagingKit::RCSHandle, cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::RCSMessageID)
+    public init(content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::GeolocationPush, destination: TelephonyMessagingKit::RCSHandle, cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::RCSMessageID)
+    @available(iOS 27.0, *)
+    public init(content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reply, destination: TelephonyMessagingKit::RCSHandle, cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::RCSMessageID)
+    @available(iOS 27.0, *)
+    public init(content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reaction, destination: TelephonyMessagingKit::RCSHandle, cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::RCSMessageID)
+    @available(iOS 27.0, *)
+    public init(content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::CustomReaction, destination: TelephonyMessagingKit::RCSHandle, cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::RCSMessageID)
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService {
+  public struct FileUploadRequest : Swift::Sendable {
+    public var cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public var fileURL: Foundation::URL
+    public var contentType: UniformTypeIdentifiers::UTType?
+    public var thumbnailURL: Foundation::URL?
+    public var thumbnailContentType: UniformTypeIdentifiers::UTType?
+    @available(iOS 26.5, *)
+    public var isEndToEndEncrypted: Swift::Bool
+    public init(cellularServiceID: TelephonyMessagingKit::CellularServiceID, fileURL: Foundation::URL, contentType: UniformTypeIdentifiers::UTType? = nil, thumbnailURL: Foundation::URL? = nil, thumbnailContentType: UniformTypeIdentifiers::UTType? = nil)
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::FileUploadRequest {
+  public struct Metadata : Swift::Sendable {
+    public let transactionID: Foundation::UUID
+    public let fileMetadata: TelephonyMessagingKit::RCSFileTransferMetadata
+    public let thumbnailMetadata: TelephonyMessagingKit::RCSFileTransferMetadata?
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+final public class SMSService : Swift::Sendable {
+  public enum Error : Foundation::LocalizedError, Swift::Codable, Swift::Sendable {
+    case temporaryFailure
+    case permanentFailure
+    case notSupported
+    case unknown
+    public static func == (a: TelephonyMessagingKit::SMSService.TelephonyMessagingKit::Error, b: TelephonyMessagingKit::SMSService.TelephonyMessagingKit::Error) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct IncomingMessageNotification : Swift::Sendable {
+    public let message: TelephonyMessagingKit::SMSMessage
+  }
+  public struct ViabilityNotification : Swift::Equatable, Swift::Sendable {
+    public let cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public let isViable: Swift::Bool
+    public static func == (a: TelephonyMessagingKit::SMSService.TelephonyMessagingKit::ViabilityNotification, b: TelephonyMessagingKit::SMSService.TelephonyMessagingKit::ViabilityNotification) -> Swift::Bool
+  }
+  public struct CriticalMessageStateNotification : Swift::Equatable, Swift::Sendable {
+    public enum State : Swift::Equatable, Swift::Sendable {
+      case sent
+      public static func == (a: TelephonyMessagingKit::SMSService.TelephonyMessagingKit::CriticalMessageStateNotification.TelephonyMessagingKit::State, b: TelephonyMessagingKit::SMSService.TelephonyMessagingKit::CriticalMessageStateNotification.TelephonyMessagingKit::State) -> Swift::Bool
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+    }
+    public let cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public let messageID: TelephonyMessagingKit::SMSMessageID
+    public let state: TelephonyMessagingKit::SMSService.TelephonyMessagingKit::CriticalMessageStateNotification.TelephonyMessagingKit::State
+    public static func == (a: TelephonyMessagingKit::SMSService.TelephonyMessagingKit::CriticalMessageStateNotification, b: TelephonyMessagingKit::SMSService.TelephonyMessagingKit::CriticalMessageStateNotification) -> Swift::Bool
+  }
+  final public func isViable(for cellularServiceID: TelephonyMessagingKit::CellularServiceID) -> Swift::Bool
+  final public var viabilityNotifications: some _Concurrency::AsyncSequence<TelephonyMessagingKit::SMSService.TelephonyMessagingKit::ViabilityNotification, Swift::Never> {
+    get throws
+  }
+  final public func sendMessage(_ message: TelephonyMessagingKit::SMSMessage) async throws
+  final public func reportSpam(_ message: TelephonyMessagingKit::SMSMessage) async throws
+  final public var incomingMessageNotifications: some _Concurrency::AsyncSequence<TelephonyMessagingKit::SMSService.TelephonyMessagingKit::IncomingMessageNotification, Swift::Never> {
+    get throws
+  }
+  final public var criticalMessageStateNotifications: some _Concurrency::AsyncSequence<TelephonyMessagingKit::SMSService.TelephonyMessagingKit::CriticalMessageStateNotification, Swift::Never> {
+    get throws
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+final public class RCSService : Swift::Sendable {
+  public enum Error : Foundation::LocalizedError, Swift::Sendable, Swift::Codable {
+    case serviceUnavailable
+    case invalidArgument
+    case decodingFailed
+    case notSupported
+    case unknown
+    case temporaryError
+    case permanentError
+    case internalError
+    case notFound
+    case maximumSizeExceeded
+    @available(iOS 26.5, *)
+    case endToEndEncryptionNotSupported
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Error, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Error) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct IncomingMessageNotification : Swift::Equatable, Swift::Sendable {
+    public let message: TelephonyMessagingKit::RCSMessage
+    public let groupContext: TelephonyMessagingKit::RCSGroupContext?
+    public let suggestions: [TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Suggestion]
+    @available(iOS 27.0, *)
+    public let requestedDispositions: [TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Disposition]
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::IncomingMessageNotification, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::IncomingMessageNotification) -> Swift::Bool
+  }
+  public struct ViabilityNotification : Swift::Equatable, Swift::Sendable {
+    public let cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public let isViable: Swift::Bool
+    public static func == (a: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::ViabilityNotification, b: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::ViabilityNotification) -> Swift::Bool
+  }
+  public enum GroupChatEvent : Swift::Sendable {
+    case started(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::GroupChatStartedEvent)
+    case ended(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::GroupChatEndedEvent)
+    case participantsAdded(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::GroupChatParticipantsAddedEvent)
+    case participantsRemoved(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::GroupChatParticipantsRemovedEvent)
+    case subjectUpdated(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::GroupChatSubjectUpdatedEvent)
+    @available(iOS 26.5, *)
+    case subjectInvalidated(TelephonyMessagingKit::RCSService.TelephonyMessagingKit::GroupChatSubjectInvalidatedEvent)
+  }
+  public struct RemoteHandleUpdate : Swift::Sendable {
+    public let cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public let handle: TelephonyMessagingKit::RCSHandle
+    public let newHandle: TelephonyMessagingKit::RCSHandle?
+    public let isBusinessHandle: Swift::Bool
+    public let capabilities: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilities?
+  }
+  final public func isViable(for cellularServiceID: TelephonyMessagingKit::CellularServiceID) -> Swift::Bool
+  final public var viabilityNotifications: some _Concurrency::AsyncSequence<TelephonyMessagingKit::RCSService.TelephonyMessagingKit::ViabilityNotification, Swift::Never> {
+    get throws
+  }
+  final public func configuration(for cellularServiceID: TelephonyMessagingKit::CellularServiceID) throws -> TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Configuration
+  final public func upload(_ uploadRequest: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::FileUploadRequest) async throws -> TelephonyMessagingKit::RCSService.TelephonyMessagingKit::FileUploadRequest.TelephonyMessagingKit::Metadata
+  final public func download(_ downloadRequest: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::FileDownloadRequest) async throws -> TelephonyMessagingKit::RCSService.TelephonyMessagingKit::FileDownloadRequest.TelephonyMessagingKit::Metadata
+  final public func sendMessage(_ content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Text, to destination: TelephonyMessagingKit::RCSHandle, using cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::RCSMessageID) async throws
+  final public func sendMessage(_ content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::FileTransfer, to destination: TelephonyMessagingKit::RCSHandle, using cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::RCSMessageID) async throws
+  final public func sendMessage(_ content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::GeolocationPush, to destination: TelephonyMessagingKit::RCSHandle, using cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::RCSMessageID) async throws
+  final public func sendMessage(_ content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::ComposingIndicator, to destination: TelephonyMessagingKit::RCSHandle, using cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::RCSMessageID) async throws
+  final public func sendMessage(_ content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::DispositionNotification, to destination: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI, using cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::RCSMessageID, group: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group? = nil) async throws
+  @available(iOS 26.5, *)
+  final public func sendEncryptedMessageRequest(_ request: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::SendEncryptedMessageRequest) async throws -> TelephonyMessagingKit::RCSService.TelephonyMessagingKit::SendEncryptedMessageRequest.TelephonyMessagingKit::Result
+  final public func remoteCapabilities(for request: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilitiesRequest) async throws -> TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilities?
+  final public var remoteHandleUpdates: some _Concurrency::AsyncSequence<TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteHandleUpdate, Swift::Never> {
+    get throws
+  }
+  final public func sendSuggestionResponse(_ response: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::SuggestionResponse) async throws
+  final public func sendDeviceSpecifics(to destination: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI, using cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::RCSMessageID) async throws
+  final public func businessInformation(for request: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::BusinessInformationRequest) async throws -> TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business?
+  final public func createGroupChat(_ request: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::CreateGroupChatRequest) async throws -> TelephonyMessagingKit::RCSService.TelephonyMessagingKit::CreateGroupChatRequest.TelephonyMessagingKit::Result
+  final public func leaveGroupChat(_ request: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::LeaveGroupChatRequest) async throws
+  final public func addGroupChatParticipants(_ request: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::AddGroupChatParticipantsRequest) async throws -> TelephonyMessagingKit::RCSService.TelephonyMessagingKit::AddGroupChatParticipantsRequest.TelephonyMessagingKit::Result
+  final public func removeGroupChatParticipants(_ request: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoveGroupChatParticipantsRequest) async throws -> TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoveGroupChatParticipantsRequest.TelephonyMessagingKit::Result
+  final public func changeGroupChatSubject(_ request: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::ChangeGroupChatSubjectRequest) async throws
+  final public var incomingMessageNotifications: some _Concurrency::AsyncSequence<TelephonyMessagingKit::RCSService.TelephonyMessagingKit::IncomingMessageNotification, Swift::Never> {
+    get throws
+  }
+  final public var groupChatEvents: some _Concurrency::AsyncSequence<TelephonyMessagingKit::RCSService.TelephonyMessagingKit::GroupChatEvent, Swift::Never> {
+    get throws
+  }
+  final public func reportSpam(_ request: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::ReportSpamRequest) async throws
+  final public func revokeMessage(_ request: TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RevokeMessageRequest) async throws -> Swift::Bool
+  @objc deinit
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService {
+  final public func sendMessage(_ content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reply, to destination: TelephonyMessagingKit::RCSHandle, using cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::RCSMessageID) async throws
+  final public func sendMessage(_ content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Reaction, to destination: TelephonyMessagingKit::RCSHandle, using cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::RCSMessageID) async throws
+  final public func sendMessage(_ content: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::CustomReaction, to destination: TelephonyMessagingKit::RCSHandle, using cellularServiceID: TelephonyMessagingKit::CellularServiceID, messageID: TelephonyMessagingKit::RCSMessageID) async throws
+}
+@available(iOS 26.5, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSMessage {
+  public struct SecureSendReceipt : Swift::Identifiable, Swift::Equatable, Swift::Codable, Swift::Sendable {
+    public let id: Foundation::UUID
+    public static func == (a: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::SecureSendReceipt, b: TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::SecureSendReceipt) -> Swift::Bool
+    @available(iOS 26.5, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias ID = Foundation::UUID
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService {
+  public struct GroupChatEndedEvent : Swift::Sendable {
+    public let cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public let groupHandle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group
+    public let endedBy: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI
+    @available(iOS 26.5, *)
+    public let isEndToEndEncrypted: Swift::Bool
+  }
+  public struct GroupChatParticipantsAddedEvent : Swift::Sendable {
+    public let cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public let groupHandle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group
+    public let addedParticipants: [TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI]
+    public let addedBy: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI
+    @available(iOS 26.5, *)
+    public let isEndToEndEncrypted: Swift::Bool
+  }
+  public struct GroupChatParticipantsRemovedEvent : Swift::Sendable {
+    public let cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public let groupHandle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group
+    public let removedParticipants: [TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI]
+    public let removedBy: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI
+    public let removedCurrentUser: Swift::Bool
+    @available(iOS 26.5, *)
+    public let isEndToEndEncrypted: Swift::Bool
+  }
+  public struct GroupChatSubjectUpdatedEvent : Swift::Sendable {
+    public let cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public let groupHandle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group
+    public let newSubject: Swift::String
+    public let changedBy: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI
+    @available(iOS 26.5, *)
+    public let isEndToEndEncrypted: Swift::Bool
+  }
+  @available(iOS 26.5, *)
+  public struct GroupChatSubjectInvalidatedEvent : Swift::Sendable {
+    public let cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public let groupHandle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group
+  }
+  public struct GroupChatStartedEvent : Swift::Sendable {
+    public let cellularServiceID: TelephonyMessagingKit::CellularServiceID
+    public let groupHandle: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::Group
+    public let participants: [TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI]
+    public let subject: Swift::String
+    public let creator: TelephonyMessagingKit::RCSHandle.TelephonyMessagingKit::URI
+    @available(iOS 26.5, *)
+    public let isEndToEndEncrypted: Swift::Bool
+  }
+}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilitiesRequest.TelephonyMessagingKit::CachePolicy : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilities.TelephonyMessagingKit::Availability : Swift::Equatable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::RemoteCapabilities.TelephonyMessagingKit::Availability : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::ReportSpamRequest.TelephonyMessagingKit::Category : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::MMSPartContent.TelephonyMessagingKit::MMSDispositionType : Swift::Equatable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::MMSPartContent.TelephonyMessagingKit::MMSDispositionType : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::URIEntry.TelephonyMessagingKit::URIType : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::URIEntry.TelephonyMessagingKit::Label : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::MediaEntry.TelephonyMessagingKit::Label : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::MediaEntry.TelephonyMessagingKit::ContentType : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OrganizationName.TelephonyMessagingKit::NameType : Swift::Hashable {}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Feature : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::ComposingIndicator.TelephonyMessagingKit::State : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSFileTransferMetadata.TelephonyMessagingKit::Disposition : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::MMSService.TelephonyMessagingKit::Error : Swift::Equatable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::MMSService.TelephonyMessagingKit::Error : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::TelephonyMessagingSession.TelephonyMessagingKit::Error : Swift::Equatable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::TelephonyMessagingSession.TelephonyMessagingKit::Error : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::TelephonyMessagingSession.TelephonyMessagingKit::Error : Swift::Encodable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::TelephonyMessagingSession.TelephonyMessagingKit::Error : Swift::Decodable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::BusinessInformationRequest.TelephonyMessagingKit::CachePolicy : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OpenURLAction.TelephonyMessagingKit::Detent : Swift::Equatable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::OpenURLAction.TelephonyMessagingKit::Detent : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::ComposeRecordingAction.TelephonyMessagingKit::MediaType : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Orientation : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Media.TelephonyMessagingKit::Height : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::ImageAlignment : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Business.TelephonyMessagingKit::Card.TelephonyMessagingKit::Width : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSMessage.TelephonyMessagingKit::Disposition : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::SMSService.TelephonyMessagingKit::Error : Swift::Equatable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::SMSService.TelephonyMessagingKit::Error : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::SMSService.TelephonyMessagingKit::CriticalMessageStateNotification.TelephonyMessagingKit::State : Swift::Hashable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Error : Swift::Equatable {}
+@available(iOS 26.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension TelephonyMessagingKit::RCSService.TelephonyMessagingKit::Error : Swift::Hashable {}

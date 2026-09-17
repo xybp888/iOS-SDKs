@@ -1,0 +1,53 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PowerExceptions_ClientFramework.framework/PowerExceptions_ClientFramework
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CSManagingServiceName, _CSViolationServiceName,
+                            _PowerExceptions_ClientFrameworkVersionNumber,
+                            _PowerExceptions_ClientFrameworkVersionString ]
+    objc-classes:         [ ComputeSafeguardsClient,
+                            ComputeSafeguardsManagingClient,
+                            PEMitigationNotification, PENotificationManager,
+                            PEProcessRegistration, PEXPCConnectionInfo,
+                            PEXPCService ]
+    objc-ivars:           [ ComputeSafeguardsClient._connection,
+                            ComputeSafeguardsClient._featureEnabled,
+                            ComputeSafeguardsClient._interrupted,
+                            ComputeSafeguardsClient._logger,
+                            ComputeSafeguardsManagingClient._connection,
+                            ComputeSafeguardsManagingClient._featureEnabled,
+                            ComputeSafeguardsManagingClient._interrupted,
+                            ComputeSafeguardsManagingClient._logger,
+                            PEMitigationNotification._gracePeriod,
+                            PEMitigationNotification._notificationID,
+                            PEMitigationNotification._processInfo,
+                            PEMitigationNotification._reason,
+                            PEMitigationNotification._warningType,
+                            PENotificationManager._currentNotificationID,
+                            PENotificationManager._delegate,
+                            PENotificationManager._logger,
+                            PENotificationManager._notificationQueue,
+                            PENotificationManager._notifyToken,
+                            PENotificationManager._processPID,
+                            PENotificationManager._registered,
+                            PENotificationManager._registeredWarningTypes,
+                            PENotificationManager._temporaryConnection,
+                            PEProcessRegistration._pendingNotification,
+                            PEProcessRegistration._pendingNotificationID,
+                            PEProcessRegistration._pid,
+                            PEProcessRegistration._registrationTime,
+                            PEProcessRegistration._warningTypes,
+                            PEXPCConnectionInfo._connection,
+                            PEXPCConnectionInfo._connectionTime,
+                            PEXPCConnectionInfo._pid,
+                            PEXPCService._activeConnections,
+                            PEXPCService._cleanupTimer, PEXPCService._listener,
+                            PEXPCService._logger,
+                            PEXPCService._registeredProcesses,
+                            PEXPCService._registryQueue ]
+...

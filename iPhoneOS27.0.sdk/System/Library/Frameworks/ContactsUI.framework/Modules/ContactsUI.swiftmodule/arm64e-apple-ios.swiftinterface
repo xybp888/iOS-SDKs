@@ -1,0 +1,115 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 1461.100.1 -module-name ContactsUI
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import AppIntents
+import Contacts.CNContact
+import Contacts
+@_exported import ContactsUI
+import DeveloperToolsSupport
+import Foundation
+import Swift
+import SwiftUI
+import TipKit
+import UIKit.UIColor
+import UIKit.UIFont
+import UIKit
+import _AppIntents_UIKit
+import _Concurrency
+import _Contacts_AppIntents
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+extension Contacts::CNMutableContact {
+  @available(iOS 16, *)
+  @objc override dynamic public var id: Foundation::UUID {
+    @objc get
+  }
+}
+@available(iOS 18.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor @preconcurrency public struct ContactAccessButton : SwiftUICore::View {
+  public enum Caption : Swift::String {
+    case email
+    case phone
+    case defaultText
+    public init?(rawValue: Swift::String)
+    @available(iOS 18.0, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias RawValue = Swift::String
+    public var rawValue: Swift::String {
+      get
+    }
+  }
+  public struct Style {
+    public static let automatic: ContactsUI::ContactAccessButton.ContactsUI::Style
+    public init(imageTrailingEdgePadding: CoreFoundation::CGFloat? = nil, imageWidth: CoreFoundation::CGFloat? = nil, imageColor: SwiftUICore::Color? = nil)
+  }
+  @_Concurrency::MainActor @preconcurrency public init(queryString query: Swift::String, ignoredEmails: Swift::Set<Swift::String>? = nil, ignoredPhoneNumbers: Swift::Set<Swift::String>? = nil, approvalCallback: (([Swift::String]) -> Swift::Void)? = nil)
+  @_Concurrency::MainActor public var body: some SwiftUICore::View {
+    get
+  }
+  @available(iOS 18.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias Body = @_opaqueReturnTypeOf("$s10ContactsUI19ContactAccessButtonV4bodyQrvp", 0) __
+}
+@available(iOS 18.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SwiftUICore::View {
+  @_Concurrency::MainActor @preconcurrency public func contactAccessButtonStyle(_ style: ContactsUI::ContactAccessButton.ContactsUI::Style) -> some SwiftUICore::View
+  
+}
+@available(iOS 18.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SwiftUICore::View {
+  @_Concurrency::MainActor @preconcurrency public func contactAccessButtonCaption(_ caption: ContactsUI::ContactAccessButton.ContactsUI::Caption) -> some SwiftUICore::View
+  
+}
+extension SwiftUICore::View {
+  @available(iOS 18.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(watchOS, unavailable)
+  @_Concurrency::MainActor @preconcurrency public func contactAccessPicker(isPresented: SwiftUICore::Binding<Swift::Bool>, completionHandler: @escaping ([Swift::String]) -> Swift::Void = { _ in }) -> some SwiftUICore::View
+  
+}
+@available(iOS 18.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension ContactsUI::ContactAccessButton : Swift::Sendable {}
+@available(iOS 18.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension ContactsUI::ContactAccessButton.ContactsUI::Caption : Swift::Equatable {}
+@available(iOS 18.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension ContactsUI::ContactAccessButton.ContactsUI::Caption : Swift::Hashable {}
+@available(iOS 18.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension ContactsUI::ContactAccessButton.ContactsUI::Caption : Swift::RawRepresentable {}

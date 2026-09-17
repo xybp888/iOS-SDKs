@@ -1,0 +1,39 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AfibBurden.framework/AfibBurden
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ABMinimumNumberOfDaysWithMinimumNumberOfTachogramsPerDay,
+                            _ABMinimumNumberOfTachogramsPerDay,
+                            _ABMinimumReportedBurdenPercentage,
+                            _ABMinimumTotalNumberOfTachogramsForSevenDayBurden,
+                            _AfibBurdenVersionNumber, _AfibBurdenVersionString,
+                            __ZN9beryllium18BerylliumProcessor13TachAFdensityERKNS_7input_tERKNS_8output_tE,
+                            __ZN9beryllium18BerylliumProcessor17beryllium_processERKNS_7input_tERNS_16core_analytics_tE,
+                            __ZN9beryllium18BerylliumProcessor18calculateAFdensityERNSt3__16vectorIdNS1_9allocatorIdEEEENS2_IbNS3_IbEEEE,
+                            __ZN9beryllium18BerylliumProcessor19calc_timezone_shiftERKNS_7input_tERNS_16core_analytics_tE,
+                            __ZN9beryllium18BerylliumProcessor20check_input_validityERKNS_7input_tE,
+                            __ZN9beryllium18BerylliumProcessor25check_min_tacho_conditionERKNS_7input_tE,
+                            __ZN9beryllium18BerylliumProcessor28calc_tacho_times_diff_medianERKNS_7input_tE,
+                            __ZN9beryllium18BerylliumProcessor42interpolate_Tachograms_and_calc_AFibBurdenERKNS_7input_tERNS_8output_tE,
+                            __ZN9beryllium18BerylliumProcessor6medianEPKdi,
+                            __ZN9beryllium18BerylliumProcessorC1Ev,
+                            __ZN9beryllium18BerylliumProcessorC2Ev,
+                            __ZN9beryllium7processERKNS_7input_tERNS_16core_analytics_tE ]
+    objc-classes:         [ ABAfibBurdenAnalyzer, ABBurdenResult,
+                            ABTachogramClassification, ABTachogramClassifier ]
+    objc-ivars:           [ ABAfibBurdenAnalyzer._rawBurdenValue,
+                            ABAfibBurdenAnalyzer._segmentsCount,
+                            ABAfibBurdenAnalyzer._segmentsWith5TachCount,
+                            ABBurdenResult._burdenPercentage,
+                            ABBurdenResult._metricsForCoreAnalytics,
+                            ABBurdenResult._unavailabilityReason,
+                            ABTachogramClassification._aFibDetected,
+                            ABTachogramClassification._date,
+                            ABTachogramClassification._uuid,
+                            ABTachogramClassifier._connection ]
+...

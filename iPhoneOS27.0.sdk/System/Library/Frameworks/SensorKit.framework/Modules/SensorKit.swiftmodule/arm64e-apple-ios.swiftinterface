@@ -1,0 +1,722 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-experimental-feature DebugDescriptionMacro -user-module-version 1039.0.1 -module-name SensorKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+public import CoreMotion
+public import Foundation
+@_exported public import SensorKit
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRAuthorizationStatus {
+  public static func requestAuthorization(for sensors: [any SensorKit::SRDataSensor]) async throws
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+final public class SRReader<Sensor> : Swift::Sendable where Sensor : SensorKit::SRDataSensor {
+  final public let sensor: Sensor
+  final public var authorizationStatus: SensorKit::SRAuthorizationStatus {
+    get
+  }
+  public init(sensor: Sensor) throws
+  final public func startRecording() async throws
+  final public func stopRecording() async throws
+  final public func samples(matching request: SensorKit::SRFetchRequest) -> some _Concurrency::AsyncSequence<SensorKit::SRFetchResponse<Sensor.Sample>, any Swift::Error>
+  
+  final public func deletionRecords(matching request: SensorKit::SRFetchRequest) -> some _Concurrency::AsyncSequence<SensorKit::SRFetchResponse<SensorKit::SRDeletionRecord>, any Swift::Error>
+  
+  final public var devices: [SensorKit::SRDevice] {
+    get async throws
+  }
+  @objc deinit
+}
+@available(iOS 27.0, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRReader : nonisolated Observation::Observable {
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+public struct SRFetchResponse<Sample> : Swift::Sendable {
+  public var sample: Swift::Result<Sample, any Swift::Error> {
+    get
+  }
+  public var timestamp: SensorKit::SRAbsoluteTime {
+    get
+  }
+  public var sourceDevice: SensorKit::SRSourceDevice? {
+    get
+  }
+}
+@available(iOS 17.4, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+extension SensorKit::SRPhotoplethysmogramOpticalSample {
+  @available(iOS 17.4, *)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  public struct NoiseTerms {
+    public let whiteNoise: Swift::Double
+    public let pinkNoise: Swift::Double
+    public let backgroundNoise: Swift::Double
+    public let backgroundNoiseOffset: Swift::Double
+  }
+  public var noiseTerms: SensorKit::SRPhotoplethysmogramOpticalSample.SensorKit::NoiseTerms? {
+    get
+  }
+  public var normalizedReflectance: Swift::Double? {
+    get
+  }
+}
+@available(iOS 17.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+extension SensorKit::SRWristTemperatureSession {
+  public var temperatures: some Swift::Sequence<SensorKit::SRWristTemperature> {
+    get
+  }
+}
+@available(iOS 26.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRAcousticSettings {
+  public var headphoneSafetyAudioLevel: Swift::Double? {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public protocol SRDataSensor : Swift::Hashable, Swift::Sendable {
+  associatedtype Sample
+  var _profile: SensorKit::_SRDataSensorProfile<Self> { get }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct _SRDataSensorProfile<Sensor> : Swift::Sendable where Sensor : SensorKit::SRDataSensor {
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRAmbientLightSensor {
+  public static var ambientLight: SensorKit::SRAmbientLightSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRAmbientLightSensor : SensorKit::SRDataSensor {
+  public typealias Sample = SensorKit::SRAmbientLightSample
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRAmbientLightSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRAmbientLightSensor, rhs: SensorKit::SRAmbientLightSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRVisitsSensor {
+  public static var visits: SensorKit::SRVisitsSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRVisitsSensor : SensorKit::SRDataSensor {
+  public typealias Sample = SensorKit::SRVisit
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRVisitsSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRVisitsSensor, rhs: SensorKit::SRVisitsSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRDeviceUsageSensor {
+  public static var deviceUsage: SensorKit::SRDeviceUsageSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRDeviceUsageSensor : SensorKit::SRDataSensor {
+  public typealias Sample = SensorKit::SRDeviceUsageReport
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRDeviceUsageSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRDeviceUsageSensor, rhs: SensorKit::SRDeviceUsageSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRMessagesUsageSensor {
+  public static var messagesUsage: SensorKit::SRMessagesUsageSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRMessagesUsageSensor : SensorKit::SRDataSensor {
+  public typealias Sample = SensorKit::SRMessagesUsageReport
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRMessagesUsageSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRMessagesUsageSensor, rhs: SensorKit::SRMessagesUsageSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRPhoneUsageSensor {
+  public static var phoneUsage: SensorKit::SRPhoneUsageSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRPhoneUsageSensor : SensorKit::SRDataSensor {
+  public typealias Sample = SensorKit::SRPhoneUsageReport
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRPhoneUsageSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRPhoneUsageSensor, rhs: SensorKit::SRPhoneUsageSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SROnWristStateSensor {
+  public static var onWristState: SensorKit::SROnWristStateSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SROnWristStateSensor : SensorKit::SRDataSensor {
+  public typealias Sample = SensorKit::SRWristDetection
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SROnWristStateSensor>
+  public init()
+  public static func == (lhs: SensorKit::SROnWristStateSensor, rhs: SensorKit::SROnWristStateSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRKeyboardMetricsSensor {
+  public static var keyboardMetrics: SensorKit::SRKeyboardMetricsSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRKeyboardMetricsSensor : SensorKit::SRDataSensor {
+  public typealias Sample = SensorKit::SRKeyboardMetrics
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRKeyboardMetricsSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRKeyboardMetricsSensor, rhs: SensorKit::SRKeyboardMetricsSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRSiriSpeechMetricsSensor {
+  public static var siriSpeechMetrics: SensorKit::SRSiriSpeechMetricsSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRSiriSpeechMetricsSensor : SensorKit::SRDataSensor {
+  public typealias Sample = SensorKit::SRSpeechMetrics
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRSiriSpeechMetricsSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRSiriSpeechMetricsSensor, rhs: SensorKit::SRSiriSpeechMetricsSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRTelephonySpeechMetricsSensor {
+  public static var telephonySpeechMetrics: SensorKit::SRTelephonySpeechMetricsSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRTelephonySpeechMetricsSensor : SensorKit::SRDataSensor {
+  public typealias Sample = SensorKit::SRSpeechMetrics
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRTelephonySpeechMetricsSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRTelephonySpeechMetricsSensor, rhs: SensorKit::SRTelephonySpeechMetricsSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRMediaEventsSensor {
+  public static var mediaEvents: SensorKit::SRMediaEventsSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRMediaEventsSensor : SensorKit::SRDataSensor {
+  public typealias Sample = SensorKit::SRMediaEvent
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRMediaEventsSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRMediaEventsSensor, rhs: SensorKit::SRMediaEventsSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRWristTemperatureSensor {
+  public static var wristTemperature: SensorKit::SRWristTemperatureSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRWristTemperatureSensor : SensorKit::SRDataSensor {
+  public typealias Sample = SensorKit::SRWristTemperatureSession
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRWristTemperatureSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRWristTemperatureSensor, rhs: SensorKit::SRWristTemperatureSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRFaceMetricsSensor {
+  public static var faceMetrics: SensorKit::SRFaceMetricsSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRFaceMetricsSensor : SensorKit::SRDataSensor {
+  public typealias Sample = SensorKit::SRFaceMetrics
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRFaceMetricsSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRFaceMetricsSensor, rhs: SensorKit::SRFaceMetricsSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRAcousticSettingsSensor {
+  public static var acousticSettings: SensorKit::SRAcousticSettingsSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRAcousticSettingsSensor : SensorKit::SRDataSensor {
+  public typealias Sample = SensorKit::SRAcousticSettings
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRAcousticSettingsSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRAcousticSettingsSensor, rhs: SensorKit::SRAcousticSettingsSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRSleepSessionsSensor {
+  public static var sleepSessions: SensorKit::SRSleepSessionsSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRSleepSessionsSensor : SensorKit::SRDataSensor {
+  public typealias Sample = SensorKit::SRSleepSession
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRSleepSessionsSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRSleepSessionsSensor, rhs: SensorKit::SRSleepSessionsSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRPedometerDataSensor {
+  public static var pedometerData: SensorKit::SRPedometerDataSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRPedometerDataSensor : SensorKit::SRDataSensor {
+  public typealias Sample = CoreMotion::CMPedometerData
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRPedometerDataSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRPedometerDataSensor, rhs: SensorKit::SRPedometerDataSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRHeartRateSensor {
+  public static var heartRate: SensorKit::SRHeartRateSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRHeartRateSensor : SensorKit::SRDataSensor {
+  public typealias Sample = CoreMotion::CMHighFrequencyHeartRateData
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRHeartRateSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRHeartRateSensor, rhs: SensorKit::SRHeartRateSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SROdometerSensor {
+  public static var odometer: SensorKit::SROdometerSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SROdometerSensor : SensorKit::SRDataSensor {
+  public typealias Sample = CoreMotion::CMOdometerData
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SROdometerSensor>
+  public init()
+  public static func == (lhs: SensorKit::SROdometerSensor, rhs: SensorKit::SROdometerSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRRotationRateSensor {
+  public static var rotationRate: SensorKit::SRRotationRateSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRRotationRateSensor : SensorKit::SRDataSensor {
+  public typealias Sample = [CoreMotion::CMRecordedRotationRateData]
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRRotationRateSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRRotationRateSensor, rhs: SensorKit::SRRotationRateSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRAccelerometerSensor {
+  public static var accelerometer: SensorKit::SRAccelerometerSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRAccelerometerSensor : SensorKit::SRDataSensor {
+  public typealias Sample = [CoreMotion::CMRecordedAccelerometerData]
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRAccelerometerSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRAccelerometerSensor, rhs: SensorKit::SRAccelerometerSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRAmbientPressureSensor {
+  public static var ambientPressure: SensorKit::SRAmbientPressureSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRAmbientPressureSensor : SensorKit::SRDataSensor {
+  public typealias Sample = [CoreMotion::CMRecordedPressureData]
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRAmbientPressureSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRAmbientPressureSensor, rhs: SensorKit::SRAmbientPressureSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRElectrocardiogramSensor {
+  public static var electrocardiogram: SensorKit::SRElectrocardiogramSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRElectrocardiogramSensor : SensorKit::SRDataSensor {
+  public typealias Sample = [SensorKit::SRElectrocardiogramSample]
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRElectrocardiogramSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRElectrocardiogramSensor, rhs: SensorKit::SRElectrocardiogramSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRPhotoplethysmogramSensor {
+  public static var photoplethysmogram: SensorKit::SRPhotoplethysmogramSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRPhotoplethysmogramSensor : SensorKit::SRDataSensor {
+  public typealias Sample = [SensorKit::SRPhotoplethysmogramSample]
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRPhotoplethysmogramSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRPhotoplethysmogramSensor, rhs: SensorKit::SRPhotoplethysmogramSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRHeadphoneMotionSensor {
+  public static var headphoneMotion: SensorKit::SRHeadphoneMotionSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRHeadphoneMotionSensor : SensorKit::SRDataSensor {
+  public typealias Sample = [CoreMotion::CMRecordedDeviceMotion]
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRHeadphoneMotionSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRHeadphoneMotionSensor, rhs: SensorKit::SRHeadphoneMotionSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+extension SensorKit::SRDataSensor where Self == SensorKit::SRHeadphoneSettingsSensor {
+  public static var headphoneSettings: SensorKit::SRHeadphoneSettingsSensor {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+public struct SRHeadphoneSettingsSensor : SensorKit::SRDataSensor {
+  public typealias Sample = SensorKit::SRHeadphoneSettings
+  public var _profile: SensorKit::_SRDataSensorProfile<SensorKit::SRHeadphoneSettingsSensor>
+  public init()
+  public static func == (lhs: SensorKit::SRHeadphoneSettingsSensor, rhs: SensorKit::SRHeadphoneSettingsSensor) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}

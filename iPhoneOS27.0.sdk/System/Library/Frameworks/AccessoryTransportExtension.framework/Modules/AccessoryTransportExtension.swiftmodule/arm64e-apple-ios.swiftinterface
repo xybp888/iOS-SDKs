@@ -1,0 +1,329 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 2700.34 -module-name AccessoryTransportExtension
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import AccessorySetupKit.ASAccessory
+import AccessorySetupKit
+import CryptoKit
+import ExtensionFoundation
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+@available(iOS 26.2, *)
+@available(visionOS, unavailable)
+public protocol AccessoryTransportAppExtension : ExtensionFoundation::AppExtension {
+  func accept(sessionRequest: AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::Request) -> AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::Request.AccessoryTransportExtension::Decision
+}
+@available(iOS 26.2, *)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor extension AccessoryTransportExtension::AccessoryTransportAppExtension {
+  @_Concurrency::MainActor public var configuration: some AccessoryTransportExtension::AccessoryTransportExtensionConfiguration {
+    get
+  }
+}
+@available(iOS 26.2, *)
+@available(visionOS, unavailable)
+public protocol AccessoryTransportExtensionConfiguration : ExtensionFoundation::AppExtensionConfiguration {
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+public struct AccessoryMessage : Swift::Identifiable, Swift::Sendable {
+  public let id: Foundation::UUID
+  public let payloads: [AccessoryTransportExtension::AccessoryMessage.AccessoryTransportExtension::Payload]
+  public init(@AccessoryTransportExtension::AccessoryMessage.AccessoryTransportExtension::Builder _ builder: () -> AccessoryTransportExtension::AccessoryMessage)
+  @_functionBuilder public struct Builder {
+    public static func buildBlock(_ components: AccessoryTransportExtension::AccessoryMessage...) -> AccessoryTransportExtension::AccessoryMessage
+    public static func buildOptional(_ component: AccessoryTransportExtension::AccessoryMessage?) -> AccessoryTransportExtension::AccessoryMessage
+    public static func buildEither(first component: AccessoryTransportExtension::AccessoryMessage) -> AccessoryTransportExtension::AccessoryMessage
+    public static func buildEither(second component: AccessoryTransportExtension::AccessoryMessage) -> AccessoryTransportExtension::AccessoryMessage
+    public static func buildExpression(_ expression: AccessoryTransportExtension::AccessoryMessage.AccessoryTransportExtension::Payload) -> AccessoryTransportExtension::AccessoryMessage
+  }
+  @available(iOS 26.5, *)
+  @available(visionOS, unavailable)
+  public typealias ID = Foundation::UUID
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::AccessoryMessage {
+  public struct Payload : Swift::Sendable {
+    public let data: Foundation::Data
+    public let transport: AccessoryTransportExtension::AccessoryTransport
+    public init(transport: AccessoryTransportExtension::AccessoryTransport = .bluetooth, data: Foundation::Data)
+  }
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::AccessoryMessage {
+  public enum Result {
+    case success
+    case failure(AccessoryTransportExtension::AccessoryMessage.AccessoryTransportExtension::Error)
+  }
+  public enum Error : Swift::Error {
+    case transportFailed
+    case transportUnavailable
+  }
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+public protocol AccessoryDataProvider : ExtensionFoundation::AppExtension, Swift::Sendable where Self.Configuration : AccessoryTransportExtension::AccessoryDataProviderConfiguration {
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor extension AccessoryTransportExtension::AccessoryDataProvider {
+  @_Concurrency::MainActor public var configuration: some AccessoryTransportExtension::AccessoryDataProviderConfiguration {
+    get
+  }
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+public protocol AccessoryDataProviderConfiguration : ExtensionFoundation::AppExtensionConfiguration {
+}
+@_hasMissingDesignatedInitializers @available(iOS 26.2, *)
+@available(visionOS, unavailable)
+public class AccessoryTransportSession : Swift::CustomStringConvertible {
+  @available(iOS 26.5, *)
+  public var pushToken: Foundation::Data?
+  @available(iOS 26.5, *)
+  public var transport: AccessoryTransportExtension::AccessoryTransport?
+  @available(iOS 26.5, *)
+  public var transportStateRestoreIdentifier: Swift::String?
+  public var description: Swift::String {
+    get
+  }
+  public func cancel(error: AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::Error?)
+  @available(iOS 26.5, *)
+  public func sendMessageToDataProvider(_ message: AccessoryTransportExtension::TransportMessage) throws(AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::Error)
+  @objc deinit
+}
+@available(iOS 26.2, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::AccessoryTransportSession {
+  @available(iOS, introduced: 26.4, deprecated: 26.5, message: "TransportMessage")
+  public enum DataEvent {
+  }
+  public protocol EventHandler {
+    @available(iOS, introduced: 26.4, deprecated: 26.5, renamed: "messageReceived(_:completion:)")
+    func dataEventHandler(event: AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::DataEvent)
+    @available(iOS, introduced: 26.2, deprecated: 26.5, renamed: "sessionInvalidated(error:)")
+    func invalidationHandler(error: AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::Error?)
+    @available(iOS 26.5, *)
+    func sessionInvalidated(error: AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::Error?)
+    @available(iOS 26.5, *)
+    func messageReceived(_ message: AccessoryTransportExtension::TransportMessage, completion: @escaping @Sendable (AccessoryTransportExtension::AccessoryMessage.AccessoryTransportExtension::Result) -> Swift::Void)
+  }
+}
+@available(iOS 26.2, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::EventHandler {
+  @available(iOS 26.4, *)
+  public func dataEventHandler(event: AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::DataEvent)
+  public func invalidationHandler(error: AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::Error?)
+}
+@available(iOS 26.2, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::AccessoryTransportSession {
+  @_hasMissingDesignatedInitializers final public class Request {
+    public struct Decision {
+    }
+    final public let session: AccessoryTransportExtension::AccessoryTransportSession
+    final public func accept<Handler>(_ sessionRequestHandler: () -> Handler) -> AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::Request.AccessoryTransportExtension::Decision where Handler : AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::EventHandler
+    final public func reject(error: AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::Error?) -> AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::Request.AccessoryTransportExtension::Decision
+    @objc deinit
+  }
+}
+@available(iOS 26.2, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::AccessoryTransportSession {
+  public enum Error : Swift::Error, Swift::CustomStringConvertible {
+    case unknown
+    case invalidated
+    case unsupported
+    public var description: Swift::String {
+      get
+    }
+    public static func == (a: AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::Error, b: AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::Error) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+public protocol AccessoryFeature : Swift::Sendable, ExtensionFoundation::AppExtensionPoint.ExtensionFoundation::Capability {
+  static var featureID: Swift::String { get }
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::AccessoryFeature {
+  public var id: Swift::String {
+    get
+  }
+}
+@available(iOS 26.5, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+public protocol AccessoryFeatureSession : Swift::Sendable {
+  @available(iOS 27.0, *)
+  var accessory: AccessorySetupKit::ASAccessory { get }
+  @available(iOS 27.0, *)
+  var sessionID: Foundation::UUID { get }
+  func send(message: AccessoryTransportExtension::AccessoryMessage) async throws
+}
+@available(iOS 26.5, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::AccessoryFeatureSession {
+  @available(iOS 27.0, *)
+  public var accessory: AccessorySetupKit::ASAccessory {
+    get
+  }
+  @available(iOS 27.0, *)
+  public var sessionID: Foundation::UUID {
+    get
+  }
+  public func send(message: AccessoryTransportExtension::AccessoryMessage) async throws
+}
+@_hasMissingDesignatedInitializers @available(iOS 26.5, *)
+@available(visionOS, unavailable)
+public class AccessorySecuritySession : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
+  public func cancel(error: AccessoryTransportExtension::AccessorySecuritySession.AccessoryTransportExtension::Error?)
+  @available(iOS 26.5, *)
+  public func sendSecurityMessage(_ message: AccessoryTransportExtension::SecurityMessage) throws(AccessoryTransportExtension::AccessorySecuritySession.AccessoryTransportExtension::Error)
+  @objc deinit
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::AccessorySecuritySession {
+  public protocol EventHandler {
+    @available(iOS 26.5, *)
+    func messageReceived(_ message: AccessoryTransportExtension::SecurityMessage, completion: @escaping @Sendable (AccessoryTransportExtension::AccessoryMessage.AccessoryTransportExtension::Result) -> Swift::Void)
+    func sessionInvalidated(error: AccessoryTransportExtension::AccessorySecuritySession.AccessoryTransportExtension::Error?)
+  }
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::AccessorySecuritySession {
+  @_hasMissingDesignatedInitializers final public class Request {
+    public struct Decision {
+    }
+    final public let session: AccessoryTransportExtension::AccessorySecuritySession
+    final public func accept<Handler>(_ sessionRequestHandler: () -> Handler) -> AccessoryTransportExtension::AccessorySecuritySession.AccessoryTransportExtension::Request.AccessoryTransportExtension::Decision where Handler : AccessoryTransportExtension::AccessorySecuritySession.AccessoryTransportExtension::EventHandler
+    final public func reject(error: AccessoryTransportExtension::AccessorySecuritySession.AccessoryTransportExtension::Error?) -> AccessoryTransportExtension::AccessorySecuritySession.AccessoryTransportExtension::Request.AccessoryTransportExtension::Decision
+    @objc deinit
+  }
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::AccessorySecuritySession {
+  public enum Error : Swift::Error, Swift::CustomStringConvertible {
+    case unknown
+    case invalidated
+    case unsupported
+    public var description: Swift::String {
+      get
+    }
+    public static func == (a: AccessoryTransportExtension::AccessorySecuritySession.AccessoryTransportExtension::Error, b: AccessoryTransportExtension::AccessorySecuritySession.AccessoryTransportExtension::Error) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+public protocol AccessoryTransportSecurity : ExtensionFoundation::AppExtension {
+  func accept(sessionRequest: AccessoryTransportExtension::AccessorySecuritySession.AccessoryTransportExtension::Request) -> AccessoryTransportExtension::AccessorySecuritySession.AccessoryTransportExtension::Request.AccessoryTransportExtension::Decision
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor extension AccessoryTransportExtension::AccessoryTransportSecurity {
+  @_Concurrency::MainActor public var configuration: some AccessoryTransportExtension::AccessoryTransportSecurityConfiguration {
+    get
+  }
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+public protocol AccessoryTransportSecurityConfiguration : ExtensionFoundation::AppExtensionConfiguration {
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+public struct SecurityMessage : Swift::CustomStringConvertible, Swift::Sendable {
+  public enum KeyType : Swift::String, Swift::Sendable {
+    case publicKey
+    case encapsulatedKey
+    public init?(rawValue: Swift::String)
+    @available(iOS 26.5, *)
+    @available(visionOS, unavailable)
+    public typealias RawValue = Swift::String
+    public var rawValue: Swift::String {
+      get
+    }
+  }
+  public let identifier: Swift::String?
+  public let cipherSuite: AccessoryTransportExtension::SecurityMessage.AccessoryTransportExtension::CipherSuite
+  public let version: AccessoryTransportExtension::SecurityMessage.AccessoryTransportExtension::CipherSuite.AccessoryTransportExtension::Version
+  public let key: Foundation::Data
+  public let keyType: AccessoryTransportExtension::SecurityMessage.AccessoryTransportExtension::KeyType
+  public let supportedTransports: [AccessoryTransportExtension::AccessoryTransport]
+  public var description: Swift::String {
+    get
+  }
+  public init(keyType: AccessoryTransportExtension::SecurityMessage.AccessoryTransportExtension::KeyType, cipherSuite: AccessoryTransportExtension::SecurityMessage.AccessoryTransportExtension::CipherSuite, version: AccessoryTransportExtension::SecurityMessage.AccessoryTransportExtension::CipherSuite.AccessoryTransportExtension::Version, key: Foundation::Data, supportedTransports: [AccessoryTransportExtension::AccessoryTransport] = [.bluetooth], identifier: Swift::String? = nil)
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::SecurityMessage {
+  public enum CipherSuite : Swift::CustomStringConvertible, Swift::Sendable {
+    case p256
+    case xWing
+    public var description: Swift::String {
+      get
+    }
+    public enum Version : Swift::CustomStringConvertible, Swift::Sendable {
+      case version1
+      public var description: Swift::String {
+        get
+      }
+    }
+  }
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+public enum AccessoryTransport : Swift::Sendable {
+  case bluetooth
+  case internet
+  case localNetwork
+}
+@available(iOS 26.5, *)
+extension Foundation::NSXPCConnection : @unchecked @retroactive Swift::Sendable {
+}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+public struct TransportMessage : Swift::Sendable {
+  public let data: Foundation::Data
+  public let sessionID: Foundation::UUID
+  public init(sessionID: Foundation::UUID, data: Foundation::Data)
+}
+@available(iOS 26.2, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::Error : Swift::Equatable {}
+@available(iOS 26.2, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::AccessoryTransportSession.AccessoryTransportExtension::Error : Swift::Hashable {}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::AccessorySecuritySession.AccessoryTransportExtension::Error : Swift::Equatable {}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::AccessorySecuritySession.AccessoryTransportExtension::Error : Swift::Hashable {}
+@available(iOS 26.5, *)
+@available(visionOS, unavailable)
+extension AccessoryTransportExtension::SecurityMessage.AccessoryTransportExtension::KeyType : Swift::RawRepresentable {}

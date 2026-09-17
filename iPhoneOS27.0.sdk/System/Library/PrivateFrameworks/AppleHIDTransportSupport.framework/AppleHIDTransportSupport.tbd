@@ -1,0 +1,30 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppleHIDTransportSupport.framework/AppleHIDTransportSupport
+current-version:       10100.41
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ AHTBootLoader, AHTCommon, AHTDevice, AHTInterface,
+                            AHTLoader ]
+    objc-ivars:           [ AHTBootLoader._connect, AHTBootLoader._device,
+                            AHTBootLoader._imageTag, AHTBootLoader._interface,
+                            AHTBootLoader._machPort,
+                            AHTBootLoader._needsRestoreUpdate,
+                            AHTBootLoader._personality, AHTBootLoader._service,
+                            AHTBootLoader._supportsMemoryDump,
+                            AHTBootLoader._type, AHTCommon._connect,
+                            AHTCommon._name, AHTCommon._service,
+                            AHTDevice._cfMachPort, AHTDevice._cfRunLoopSource,
+                            AHTDevice._dispatchQueue, AHTDevice._dispatchSource,
+                            AHTDevice._machPort, AHTDevice._pollingBuffer,
+                            AHTDevice._pollingEnabled,
+                            AHTDevice._pollingFifoName,
+                            AHTDevice._pollingParsedAction,
+                            AHTDevice._pollingRawAction, AHTDevice._runLoop,
+                            AHTInterface._interfaceID, AHTLoader._connect,
+                            AHTLoader._imageTag, AHTLoader._loadingGroup,
+                            AHTLoader._name, AHTLoader._service ]
+...

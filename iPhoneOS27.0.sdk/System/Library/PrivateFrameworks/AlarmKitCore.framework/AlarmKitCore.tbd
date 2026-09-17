@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AlarmKitCore.framework/AlarmKitCore
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AlarmKitCoreVersionNumber,
+                            _AlarmKitCoreVersionString ]
+    objc-classes:         [ AKCDaemon, _TtC12AlarmKitCore11AlarmServer,
+                            _TtC12AlarmKitCore16AppEventObserver,
+                            _TtC12AlarmKitCore16ExecutorDelegate,
+                            _TtC12AlarmKitCore18StateCaptureServer,
+                            _TtC12AlarmKitCore19AuthorizationServer,
+                            _TtC12AlarmKitCore6Daemon ]
+    objc-ivars:           [ AKCDaemon._daemon, AKCDaemon._delegate,
+                            AKCDaemon._persistence ]
+...

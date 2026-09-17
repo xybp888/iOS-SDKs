@@ -1,0 +1,194 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 435.79.1.5 -module-name MediaIntelligence
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import CoreData
+import CoreImage
+import CoreMedia
+import CoreVideo
+import Foundation
+import ImageIO
+import Swift
+import UniformTypeIdentifiers
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, visionOS 27.0, *)
+public enum MediaIntelligenceError : Foundation::LocalizedError {
+  case workingDirectory
+  case mediaProcessing
+  case faceGroupProcessing
+  case resultFetching
+  public var errorDescription: Swift::String? {
+    get
+  }
+  public static func == (a: MediaIntelligence::MediaIntelligenceError, b: MediaIntelligence::MediaIntelligenceError) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, visionOS 27.0, *)
+public struct MediaIntelligenceImageAsset : Swift::Sendable {
+  public struct ID : Swift::Hashable, Swift::RawRepresentable, Swift::Codable, Swift::Sendable {
+    public let rawValue: Swift::String
+    public init(rawValue: Swift::String)
+    public init(_ rawValue: Swift::String)
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, visionOS 27.0, *)
+    public typealias RawValue = Swift::String
+  }
+  public enum Kind : Swift::Sendable {
+    case url(Foundation::URL)
+  }
+  public let id: MediaIntelligence::MediaIntelligenceImageAsset.MediaIntelligence::ID
+  public let kind: MediaIntelligence::MediaIntelligenceImageAsset.MediaIntelligence::Kind
+  public init(id: MediaIntelligence::MediaIntelligenceImageAsset.MediaIntelligence::ID, kind: MediaIntelligence::MediaIntelligenceImageAsset.MediaIntelligence::Kind)
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, visionOS 27.0, *)
+final public class FaceGroupAnalyzer : Swift::Sendable {
+  public struct Face : Swift::Codable, Swift::Sendable {
+    public struct ID : Swift::Hashable, Swift::RawRepresentable, Swift::Codable, Swift::Sendable {
+      public let rawValue: Swift::String
+      public init(rawValue: Swift::String)
+      public init(_ rawValue: Swift::String)
+      @available(macOS 27.0, iOS 27.0, tvOS 27.0, visionOS 27.0, *)
+      public typealias RawValue = Swift::String
+    }
+    public let id: MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Face.MediaIntelligence::ID
+    public let bounds: CoreFoundation::CGRect
+    public let assetID: MediaIntelligence::MediaIntelligenceImageAsset.MediaIntelligence::ID
+    public let entityID: MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Entity.MediaIntelligence::ID?
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct Entity : Swift::Sendable {
+    public struct ID : Swift::Hashable, Swift::RawRepresentable, Swift::Codable, Swift::Sendable {
+      public let rawValue: Swift::String
+      public init(rawValue: Swift::String)
+      public init(_ rawValue: Swift::String)
+      @available(macOS 27.0, iOS 27.0, tvOS 27.0, visionOS 27.0, *)
+      public typealias RawValue = Swift::String
+    }
+    public let id: MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Entity.MediaIntelligence::ID
+  }
+  public enum State : Swift::Int, Swift::Codable, Swift::Sendable {
+    case ready
+    case stale
+    case updating
+    public init?(rawValue: Swift::Int)
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, visionOS 27.0, *)
+    public typealias RawValue = Swift::Int
+    public var rawValue: Swift::Int {
+      get
+    }
+  }
+  final public let workingDirectory: Foundation::URL
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) final public var state: MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::State {
+    get async
+  }
+  #endif
+  public init(workingDirectory: Foundation::URL) throws
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) public static func purge(workingDirectory: Foundation::URL) async throws
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  final nonisolated(nonsending) public func insertOrUpdateAssets(_ assets: [MediaIntelligence::MediaIntelligenceImageAsset]) async throws -> some _Concurrency::AsyncSequence<(assetID: MediaIntelligence::MediaIntelligenceImageAsset.MediaIntelligence::ID, faces: Swift::Array<MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Face>), any Swift::Error>
+  
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  final nonisolated(nonsending) public func deleteAssets(_ assetIDs: [MediaIntelligence::MediaIntelligenceImageAsset.MediaIntelligence::ID]) async throws
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  final nonisolated(nonsending) public func deleteAllAssets() async throws
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) final public func update(subprogress: consuming Foundation::Subprogress? = nil) async throws
+  #endif
+  final public var allEntities: some _Concurrency::AsyncSequence<MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Entity, any Swift::Error> {
+    get
+  }
+  final public var allAssetIDs: some _Concurrency::AsyncSequence<MediaIntelligence::MediaIntelligenceImageAsset.MediaIntelligence::ID, any Swift::Error> {
+    get
+  }
+  final public var allFaces: some _Concurrency::AsyncSequence<MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Face, any Swift::Error> {
+    get
+  }
+  final public var allAssetIDsByEntityID: some _Concurrency::AsyncSequence<(entityID: MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Entity.MediaIntelligence::ID, assetIDs: Swift::Array<MediaIntelligence::MediaIntelligenceImageAsset.MediaIntelligence::ID>), any Swift::Error> {
+    get
+  }
+  final public var allFacesByEntityID: some _Concurrency::AsyncSequence<(entityID: MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Entity.MediaIntelligence::ID, faces: Swift::Array<MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Face>), any Swift::Error> {
+    get
+  }
+  final public func fetchFaces(_ faceIDs: [MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Face.MediaIntelligence::ID]) throws -> some _Concurrency::AsyncSequence<MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Face, any Swift::Error>
+  
+  final public func fetchFaces(for entityIDs: [MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Entity.MediaIntelligence::ID]) throws -> some _Concurrency::AsyncSequence<(entityID: MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Entity.MediaIntelligence::ID, faces: Swift::Array<MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Face>), any Swift::Error>
+  
+  final public func fetchFaces(in assetIDs: [MediaIntelligence::MediaIntelligenceImageAsset.MediaIntelligence::ID]) throws -> some _Concurrency::AsyncSequence<(assetID: MediaIntelligence::MediaIntelligenceImageAsset.MediaIntelligence::ID, faces: Swift::Array<MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Face>), any Swift::Error>
+  
+  final public func fetchAssetIDs(for entityIDs: [MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Entity.MediaIntelligence::ID]) throws -> some _Concurrency::AsyncSequence<(entityID: MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Entity.MediaIntelligence::ID, assetIDs: Swift::Array<MediaIntelligence::MediaIntelligenceImageAsset.MediaIntelligence::ID>), any Swift::Error>
+  
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  final nonisolated(nonsending) public func identifyFaces(in assets: [MediaIntelligence::MediaIntelligenceImageAsset]) async throws -> some _Concurrency::AsyncSequence<(assetID: MediaIntelligence::MediaIntelligenceImageAsset.MediaIntelligence::ID, faces: Swift::Array<MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::Face>), any Swift::Error>
+  
+  #endif
+  @objc deinit
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, visionOS 27.0, *)
+public struct MediaIntelligenceVideoAsset : Swift::Sendable {
+  public struct ID : Swift::Hashable, Swift::RawRepresentable, Swift::Codable, Swift::Sendable {
+    public let rawValue: Swift::String
+    public init(rawValue: Swift::String)
+    public init(_ rawValue: Swift::String)
+    @available(macOS 27.0, iOS 27.0, tvOS 27.0, visionOS 27.0, *)
+    public typealias RawValue = Swift::String
+  }
+  public enum Kind : Swift::Sendable {
+    case url(Foundation::URL)
+  }
+  public let id: MediaIntelligence::MediaIntelligenceVideoAsset.MediaIntelligence::ID
+  public let kind: MediaIntelligence::MediaIntelligenceVideoAsset.MediaIntelligence::Kind
+  public init(id: MediaIntelligence::MediaIntelligenceVideoAsset.MediaIntelligence::ID, kind: MediaIntelligence::MediaIntelligenceVideoAsset.MediaIntelligence::Kind)
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, visionOS 27.0, *)
+final public class HighlightAnalysisRequest : MediaIntelligence::VideoAnalyzer.MediaIntelligence::Request {
+  public struct Result : MediaIntelligence::VideoAnalyzer.MediaIntelligence::Result {
+    public let highlights: [CoreMedia::CMTimeRange]
+    public let levels: [(timeRange: CoreMedia::CMTimeRange, level: Swift::Float)]
+  }
+  public init()
+  @objc deinit
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, visionOS 27.0, *)
+final public class KeyFrameAnalysisRequest : MediaIntelligence::VideoAnalyzer.MediaIntelligence::Request {
+  public struct Result : MediaIntelligence::VideoAnalyzer.MediaIntelligence::Result {
+    public let timestamp: CoreMedia::CMTime
+  }
+  public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 27.0, macOS 27.0, tvOS 27.0, visionOS 27.0, *)
+final public class VideoAnalyzer : Swift::Sendable {
+  public protocol Result : Swift::Sendable {
+  }
+  public protocol Request : Swift::Sendable {
+    associatedtype Result : MediaIntelligence::VideoAnalyzer.MediaIntelligence::Result
+  }
+  public static let shared: MediaIntelligence::VideoAnalyzer
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  final nonisolated(nonsending) public func analyze<each T>(_ asset: MediaIntelligence::MediaIntelligenceVideoAsset, for request: repeat each T) async throws -> (repeat Swift::Result<(each T).Result, any Swift::Error>) where repeat each T : MediaIntelligence::VideoAnalyzer.MediaIntelligence::Request
+  #endif
+  @objc deinit
+}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension MediaIntelligence::MediaIntelligenceError : Swift::Equatable {}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension MediaIntelligence::MediaIntelligenceError : Swift::Hashable {}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::State : Swift::Equatable {}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::State : Swift::Hashable {}
+@available(iOS 27.0, macOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension MediaIntelligence::FaceGroupAnalyzer.MediaIntelligence::State : Swift::RawRepresentable {}

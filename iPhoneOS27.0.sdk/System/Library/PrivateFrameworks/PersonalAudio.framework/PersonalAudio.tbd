@@ -1,0 +1,57 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PersonalAudio.framework/PersonalAudio
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PAConfigurationWildcard,
+                            _PAPresetAdjustmentSpeechModeKey,
+                            _PARegionSupportsHearingAid, _PAYodelConfigDidUpdate,
+                            _PersonalAudioVersionNumber,
+                            _PersonalAudioVersionString, _paBundle,
+                            _paDescriptionForLevel, _paDescriptionForShape,
+                            _paKeyFromNodeParameters, _paLocString,
+                            _paSupportedWiredRoutes ]
+    objc-classes:         [ PAAccessoryManager, PAAudiogramUtilities,
+                            PAConfiguration, PADatabaseManager, PAEnrollment,
+                            PAEnrollmentNode, PAHMSManager, PASettings, PAStimulus,
+                            PersonalAudioSettings ]
+    objc-ivars:           [ PAAccessoryManager._foundDeviceAddresses,
+                            PAAccessoryManager._pmeHysteresisTimer,
+                            PAAccessoryManager._shouldSendUpdate,
+                            PAConfiguration._audiogramSettings,
+                            PAConfiguration._audiogramValidForPSE,
+                            PAConfiguration._level, PAConfiguration._preset,
+                            PAConfiguration._presetAdjustments,
+                            PAConfiguration._shape,
+                            PAEnrollment._audiogramPreset,
+                            PAEnrollment._currentDevicePSEVersion,
+                            PAEnrollment._enrollmentHandlers,
+                            PAEnrollment._progress, PAEnrollment._selectedLevel,
+                            PAEnrollmentNode._configuration,
+                            PAEnrollmentNode._heading,
+                            PAEnrollmentNode._hideVisualizer,
+                            PAEnrollmentNode._index,
+                            PAEnrollmentNode._instructions,
+                            PAEnrollmentNode._isEnrollingPSE,
+                            PAEnrollmentNode._name, PAEnrollmentNode._options,
+                            PAEnrollmentNode._section,
+                            PAEnrollmentNode._selected,
+                            PAEnrollmentNode._stimuli,
+                            PAEnrollmentNode._totalSteps,
+                            PAEnrollmentNode._tuningDescription,
+                            PAEnrollmentNode._type,
+                            PAHMSManager._hearingAidEnabledByAddress,
+                            PAHMSManager._hmsClient, PAHMSManager._hmsQueue,
+                            PAHMSManager._yodelDeviceRecordByAddress,
+                            PAStimulus._audioFile, PAStimulus._audioPCMBuffer,
+                            PAStimulus._audioPlayerNode, PAStimulus._bucketCount,
+                            PAStimulus._engine, PAStimulus._filePath,
+                            PAStimulus._levelMultiplier, PAStimulus._rampStep,
+                            PAStimulus._state,
+                            PAStimulus._stimulusMagnitudesCallback,
+                            PAStimulus._timer ]
+...

@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SpatialAudioProfile.framework/SpatialAudioProfile
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ SpatialAudioProfileClient, SpatialAudioProfileRecord ]
+    objc-ivars:           [ SpatialAudioProfileClient._dispatchQueue,
+                            SpatialAudioProfileClient._interruptionHandler,
+                            SpatialAudioProfileClient._invalidateCalled,
+                            SpatialAudioProfileClient._invalidateDone,
+                            SpatialAudioProfileClient._invalidationHandler,
+                            SpatialAudioProfileClient._xpcCnx,
+                            SpatialAudioProfileRecord._profileData,
+                            SpatialAudioProfileRecord._profileURL ]
+...

@@ -1,0 +1,36 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NanoControlCenter.framework/NanoControlCenter
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _NPRFGlanceActivePairedDeviceChanged,
+                            _NanoControlCenterVersionNumber,
+                            _NanoControlCenterVersionString ]
+    objc-classes:         [ NCCGlanceUtility, NCCLogging,
+                            NCCSensorStatusViewModelHelper,
+                            _TtC17NanoControlCenter11GlanceModel,
+                            _TtC17NanoControlCenter13ControlsModel,
+                            _TtC17NanoControlCenter16GlanceFocusModel,
+                            _TtC17NanoControlCenter16LegacyAudioModel,
+                            _TtC17NanoControlCenter18EllipticAttributes,
+                            _TtC17NanoControlCenter21ButtonsAvailableModel,
+                            _TtC17NanoControlCenter21InternalSettingsModel,
+                            _TtC17NanoControlCenter21SensorStatusViewModel,
+                            _TtC17NanoControlCenter25ProfileConnectionObserver ]
+    objc-ivars:           [ NCCGlanceUtility._UDID,
+                            NCCGlanceUtility._companionProductType,
+                            NCCGlanceUtility._companionSupportsGreyMatter,
+                            NCCGlanceUtility._companionSupportsR2,
+                            NCCGlanceUtility._didPair,
+                            NCCGlanceUtility._isEitherDeviceGreenTea,
+                            NCCGlanceUtility._isTinkerPairedDevice,
+                            NCCGlanceUtility._onFirstUnlockActions,
+                            NCCGlanceUtility._onPairedActions,
+                            NCCGlanceUtility._propertyLock,
+                            NCCGlanceUtility._unlockNotifyToken,
+                            NCCGlanceUtility._workQueue ]
+...

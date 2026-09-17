@@ -1,0 +1,266 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-experimental-feature BorrowingSequence -enable-experimental-feature Lifetimes -enable-experimental-feature NonEscapableTypes -enable-experimental-feature BorrowingSequence -enable-experimental-feature Lifetimes -enable-experimental-feature NonEscapableTypes -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 106.0.10.0.1 -module-name _USDKit_RealityKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=swift-6 -interface-compiler-version 6.4
+public import Foundation
+public import Metal
+public import RealityKit
+public import Spatial
+public import Swift
+public import SwiftUI
+@_exported public import USDKit
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+public import simd
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public struct USDStageComponent : RealityFoundation::Component {
+  public struct RenderResult : Swift::Sendable {
+    public enum Status : Swift::Sendable {
+      case completed
+      case failed
+      public static func == (a: _USDKit_RealityKit::USDStageComponent._USDKit_RealityKit::RenderResult._USDKit_RealityKit::Status, b: _USDKit_RealityKit::USDStageComponent._USDKit_RealityKit::RenderResult._USDKit_RealityKit::Status) -> Swift::Bool
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+    }
+    public let status: _USDKit_RealityKit::USDStageComponent._USDKit_RealityKit::RenderResult._USDKit_RealityKit::Status
+    public let errors: [_USDKit_RealityKit::USDRenderError]
+  }
+  public let allowsHitTesting: Swift::Bool
+  public let rendersAutomatically: Swift::Bool
+  public var stage: USDKit::USDStage? {
+    get
+  }
+  public var timeCode: USDKit::USDStage.USDKit::TimeCode {
+    get
+    set
+  }
+  @_Concurrency::MainActor public init(allowsHitTesting: Swift::Bool = true)
+  @_Concurrency::MainActor public init(_ stage: USDKit::USDStage, timeCode: USDKit::USDStage.USDKit::TimeCode = .default, allowsHitTesting: Swift::Bool = true) async
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) public static func render(_ stage: USDKit::USDStage, to entity: RealityFoundation::Entity, at timeCode: USDKit::USDStage.USDKit::TimeCode = .default) async -> _USDKit_RealityKit::USDStageComponent._USDKit_RealityKit::RenderResult
+  #endif
+  @_Concurrency::MainActor public static func waitForRenderCompletion(on entity: RealityFoundation::Entity) async -> _USDKit_RealityKit::USDStageComponent._USDKit_RealityKit::RenderResult
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDStageComponent : Swift::Equatable {
+  nonisolated public static func == (lhs: _USDKit_RealityKit::USDStageComponent, rhs: _USDKit_RealityKit::USDStageComponent) -> Swift::Bool
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDStageComponent : Swift::Codable {
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+}
+@available(visionOS 27.0, *)
+@available(macOS, unavailable)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+extension _USDKit_RealityKit::USDStageComponent {
+  @_Concurrency::MainActor public static func coordinateSpace(on root: RealityFoundation::Entity, at path: USDKit::USDLayer.USDKit::Path, timeCode: USDKit::USDStage.USDKit::TimeCode? = nil) -> some Spatial::CoordinateSpace3DFloat
+  
+}
+@_hasMissingDesignatedInitializers @available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+final public class USDPlayer {
+  convenience public init(stage: USDKit::USDStage)
+  convenience public init(stage: USDKit::USDStage, gpuFamily: Metal::MTLGPUFamily)
+  public struct FrameUpdate : ~Swift::Copyable {
+    public let timeCode: USDKit::USDStage.USDKit::TimeCode
+    public let meshAdditions: [_USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshID]
+    public let materialAdditions: [_USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialID]
+    public let textureAdditions: [_USDKit_RealityKit::USDPlayer._USDKit_RealityKit::TextureID]
+    public let deformationAdditions: [_USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationID]
+    public let meshUpdates: [_USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshID]
+    public let materialUpdates: [_USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialID]
+    public let deformationUpdates: [_USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationID]
+    public let meshRemovals: [_USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshID]
+    public let materialRemovals: [_USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialID]
+    public let textureRemovals: [_USDKit_RealityKit::USDPlayer._USDKit_RealityKit::TextureID]
+    public let deformationRemovals: [_USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationID]
+    public let errors: [_USDKit_RealityKit::USDRenderError]
+    public mutating func takeMeshAddition(id: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshID) -> _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshData?
+    public mutating func takeMeshUpdate(id: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshID) -> _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshData._USDKit_RealityKit::Update?
+    public mutating func takeMaterialAddition(id: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialID) -> _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialData?
+    public mutating func takeMaterialUpdate(id: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialID) -> _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialData._USDKit_RealityKit::Update?
+    public mutating func takeTextureAddition(id: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::TextureID) -> _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::TextureData?
+    public mutating func takeDeformationAddition(id: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationID) -> _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationData?
+    public mutating func takeDeformationUpdate(id: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationID) -> _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationData._USDKit_RealityKit::Update?
+  }
+  final public func update(timeCode: USDKit::USDStage.USDKit::TimeCode) -> sending _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::FrameUpdate?
+  final public func importCustomIBLTexture(data: Foundation::Data) throws -> _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::TextureData
+  @objc deinit
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDPlayer {
+  public struct DeformationData : Swift::Sendable {
+    public let id: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationID
+    public struct SkinningData : Swift::Sendable {
+      public let influencePerVertexCount: Swift::UInt8
+      public let jointTransforms: [simd::float4x4]
+      public let inverseBindPoses: [simd::float4x4]
+      public let influenceJointIndices: [Swift::UInt32]
+      public let influenceWeights: [Swift::Float]
+      public let geometryBindTransform: simd::float4x4
+      public struct Update : Swift::Sendable {
+        public let jointTransforms: [simd::float4x4]?
+        public let inverseBindPoses: [simd::float4x4]?
+        public let influenceJointIndices: [Swift::UInt32]?
+        public let influenceWeights: [Swift::Float]?
+        public let geometryBindTransform: simd::float4x4?
+      }
+    }
+    public struct BlendShapeData : Swift::Sendable {
+      public let weights: [Swift::Float]
+      public let positionOffsets: [[Swift::SIMD3<Swift::Float>]]
+      public struct Update : Swift::Sendable {
+        public let weights: [Swift::Float]?
+        public let positionOffsets: [[Swift::SIMD3<Swift::Float>]]?
+      }
+    }
+    public struct RenormalizationData : Swift::Sendable {
+      public let vertexIndicesPerTriangle: [Swift::UInt32]
+      public let vertexAdjacencies: [Swift::UInt32]
+      public let vertexAdjacencyEndIndices: [Swift::UInt32]
+      public struct Update : Swift::Sendable {
+        public let vertexIndicesPerTriangle: [Swift::UInt32]?
+        public let vertexAdjacencies: [Swift::UInt32]?
+        public let vertexAdjacencyEndIndices: [Swift::UInt32]?
+      }
+    }
+    public let skinning: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationData._USDKit_RealityKit::SkinningData?
+    public let blendShapes: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationData._USDKit_RealityKit::BlendShapeData?
+    public let renormalization: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationData._USDKit_RealityKit::RenormalizationData?
+    public struct Update : Swift::Sendable {
+      public let id: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationID
+      public let skinning: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationData._USDKit_RealityKit::SkinningData._USDKit_RealityKit::Update?
+      public let blendShapes: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationData._USDKit_RealityKit::BlendShapeData._USDKit_RealityKit::Update?
+      public let renormalization: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationData._USDKit_RealityKit::RenormalizationData._USDKit_RealityKit::Update?
+    }
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDPlayer {
+  public struct MeshID {
+    public var description: Swift::String {
+      get
+    }
+    public static func == (a: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshID, b: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshID) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public struct MaterialID {
+    public var description: Swift::String {
+      get
+    }
+    public static func == (a: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialID, b: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialID) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public struct TextureID {
+    public var description: Swift::String {
+      get
+    }
+    public static func == (a: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::TextureID, b: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::TextureID) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public struct DeformationID {
+    public var description: Swift::String {
+      get
+    }
+    public static func == (a: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationID, b: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationID) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public struct MeshData : Swift::Sendable {
+    public let id: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshID
+    public let primPath: Swift::String
+    public let descriptor: RealityFoundation::LowLevelMesh.RealityFoundation::Descriptor
+    public let parts: [RealityFoundation::LowLevelMesh.RealityFoundation::Part]
+    public let indexData: Foundation::Data
+    public let vertexData: [Foundation::Data]
+    public let instanceTransforms: [simd::float4x4]
+    public let assignedMaterials: [_USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialID]
+    public let meshType: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshData._USDKit_RealityKit::MeshType
+    public enum MeshType : Swift::Sendable {
+      case rigid
+      case deformable(_USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationID)
+    }
+    public struct Update : Swift::Sendable {
+      public let id: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshID
+      public let parts: [RealityFoundation::LowLevelMesh.RealityFoundation::Part]?
+      public let indexData: Foundation::Data?
+      public let vertexData: [Foundation::Data]?
+      public let instanceTransforms: [simd::float4x4]?
+      public let assignedMaterials: [_USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialID]?
+      public let meshType: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshData._USDKit_RealityKit::MeshType?
+    }
+  }
+  public struct MaterialData : Swift::Sendable {
+    public let id: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialID
+    public let primPath: Swift::String
+    public let assignedTextures: [Swift::String : _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::TextureID]
+    public var shaderGraph: ShaderGraph::ShaderGraph {
+      get
+    }
+    public struct Update : Swift::Sendable {
+      public let id: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialID
+      public let assignedTextures: [Swift::String : _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::TextureID]?
+    }
+  }
+  public struct TextureLevelInfo : Swift::Sendable {
+    public let dataOffset: Swift::Int
+    public let byteCountPerRow: Swift::Int
+    public let byteCountPerImage: Swift::Int
+  }
+  public struct TextureData : Swift::Sendable {
+    public let id: _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::TextureID
+    public let assetPath: Swift::String
+    public let descriptor: RealityFoundation::LowLevelTexture.RealityFoundation::Descriptor
+    public let layout: [_USDKit_RealityKit::USDPlayer._USDKit_RealityKit::TextureLevelInfo]
+    public let data: Foundation::Data
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+public struct USDRenderError : Foundation::LocalizedError, Swift::Sendable {
+  public var errorDescription: Swift::String? {
+    get
+  }
+}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDStageComponent._USDKit_RealityKit::RenderResult._USDKit_RealityKit::Status : Swift::Equatable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDStageComponent._USDKit_RealityKit::RenderResult._USDKit_RealityKit::Status : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshID : Swift::CustomStringConvertible {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshID : Swift::Sendable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MeshID : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialID : Swift::CustomStringConvertible {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialID : Swift::Sendable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::MaterialID : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::TextureID : Swift::CustomStringConvertible {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::TextureID : Swift::Sendable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::TextureID : Swift::Hashable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationID : Swift::CustomStringConvertible {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationID : Swift::Sendable {}
+@available(macOS 27.0, macCatalyst 27.0, iOS 27.0, visionOS 27.0, tvOS 27.0, *)
+extension _USDKit_RealityKit::USDPlayer._USDKit_RealityKit::DeformationID : Swift::Hashable {}

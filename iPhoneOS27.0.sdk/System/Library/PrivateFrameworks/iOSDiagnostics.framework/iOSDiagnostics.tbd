@@ -1,0 +1,50 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/iOSDiagnostics.framework/iOSDiagnostics
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ DADiagnosticFlow, DADiagnosticResponder,
+                            DADiagnosticsLauncher,
+                            DADiagnosticsRemoteHostViewController,
+                            DADiagnosticsRemoteRunner,
+                            DADiagnosticsRemoteViewController,
+                            DADiagnosticsRemoteViewControllerHostToServiceAction,
+                            DADiagnosticsRemoteViewControllerSceneSpecification,
+                            DADiagnosticsRemoteViewControllerServiceToHostAction ]
+    objc-ivars:           [ DADiagnosticFlow._countryCode,
+                            DADiagnosticFlow._destination,
+                            DADiagnosticFlow._passcode,
+                            DADiagnosticFlow._serialNumber,
+                            DADiagnosticFlow._sessionID,
+                            DADiagnosticResponder._autoBrightnessEnabledUserSetting,
+                            DADiagnosticResponder._screenBrightnessUserSetting,
+                            DADiagnosticsLauncher._delegate,
+                            DADiagnosticsLauncher._diagnosticsCheckupServiceLock,
+                            DADiagnosticsLauncher._diagnosticsCheckupServiceProvider,
+                            DADiagnosticsLauncher._diagnosticsCheckupServiceStorage,
+                            DADiagnosticsLauncher._diagnosticsLauncherServer,
+                            DADiagnosticsLauncher._diagsProcess,
+                            DADiagnosticsLauncher._exitReason,
+                            DADiagnosticsLauncher._fbsOpenApplicationServiceProvider,
+                            DADiagnosticsLauncher._isDiagsRunning,
+                            DADiagnosticsLauncher._processMonitor,
+                            DADiagnosticsLauncher._useDaemonForInboxUpdaterFlow,
+                            DADiagnosticsLauncher._xpcConnection,
+                            DADiagnosticsRemoteHostViewController._finished,
+                            DADiagnosticsRemoteRunner._delegate,
+                            DADiagnosticsRemoteRunner._diagsAliveCheckQueue,
+                            DADiagnosticsRemoteRunner._remoteRunnerServer,
+                            DADiagnosticsRemoteRunner._xpcConnection,
+                            DADiagnosticsRemoteViewController._delegate,
+                            DADiagnosticsRemoteViewController._finished,
+                            DADiagnosticsRemoteViewController._hostingController,
+                            DADiagnosticsRemoteViewController._originalScreenBrightness,
+                            DADiagnosticsRemoteViewController._responder,
+                            DADiagnosticsRemoteViewController._startingFlow,
+                            DADiagnosticsRemoteViewControllerSceneSpecification._hostApplicationBundleIdentifier,
+                            DADiagnosticsRemoteViewControllerSceneSpecification._startingFlow ]
+...

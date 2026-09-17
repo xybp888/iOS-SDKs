@@ -1,0 +1,246 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature StrictConcurrency -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 360.75.1.2 -module-name MediaDevice
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import AVKit
+import ExtensionFoundation
+import Foundation
+@_exported import MediaDevice
+import Network
+import Swift
+import UniformTypeIdentifiers
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+@_hasMissingDesignatedInitializers @available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor final public class MediaDeviceRoutingManager : Swift::Sendable {
+  @_Concurrency::MainActor public static func routingManager(for extension: any MediaDevice::MediaDeviceExtension) -> MediaDevice::MediaDeviceRoutingManager
+  @_Concurrency::MainActor final public func foundDevice(_ device: MediaDevice::MediaOutputDevice)
+  @_Concurrency::MainActor final public func updateDevices(_ devices: [MediaDevice::MediaOutputDevice])
+  @_Concurrency::MainActor final public func lostDevice(_ device: MediaDevice::MediaOutputDevice)
+  @_Concurrency::MainActor final public func discoveryFailed(_ error: MediaDevice::MediaDeviceError)
+  @_Concurrency::MainActor final public func volumeChanged(for device: MediaDevice::MediaOutputDevice)
+  @_Concurrency::MainActor final public func requestPairingCode(for device: MediaDevice::MediaOutputDevice, session: MediaDevice::MediaOutputSession, reason: Foundation::LocalizedStringResource, authorizationMethod: MediaDevice::MediaOutputDevice.MediaDevice::AuthorizationMethod)
+  @_Concurrency::MainActor final public func activatedDevice(_ device: MediaDevice::MediaOutputDevice, session: MediaDevice::MediaOutputSession)
+  @_Concurrency::MainActor final public func failedToActivateDevice(_ device: MediaDevice::MediaOutputDevice, session: MediaDevice::MediaOutputSession, error: MediaDevice::MediaDeviceError)
+  @_Concurrency::MainActor final public func started<T>(application applicationIdentifier: Swift::String?, playbackControl: T, session: MediaDevice::MediaOutputSession) where T : AVKit::AVPlaybackUserInterfaceControllable
+  @_Concurrency::MainActor final public func receiveData(_ data: Foundation::Data, fromApplication applicationIdentifier: Swift::String, session: MediaDevice::MediaOutputSession)
+  @_Concurrency::MainActor final public func sessionFailed(_ session: MediaDevice::MediaOutputSession, error: MediaDevice::MediaDeviceError)
+  @_Concurrency::MainActor final public func reportQualityMetricsPassed(_ thresholdsMet: Swift::Bool, forSession session: MediaDevice::MediaOutputSession)
+  @objc deinit
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor public protocol RealtimeSampleHandling : MediaDevice::MediaDeviceExtension {
+  @_Concurrency::MainActor func startRealtimeSampleDelivery(session: MediaDevice::MediaOutputSession)
+  @_Concurrency::MainActor func stopRealtimeSampleDelivery(session: MediaDevice::MediaOutputSession)
+}
+@_hasMissingDesignatedInitializers @available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+final public class MediaOutputSession : Swift::Identifiable, Swift::Sendable {
+  final public let id: Swift::String
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable)
+  public typealias ID = Swift::String
+  @objc deinit
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+public struct MediaOutputDevice : Swift::CustomStringConvertible, Swift::Hashable, Swift::Identifiable, Swift::Sendable {
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable)
+  public struct AuthorizationMethod : Swift::Equatable, Swift::Sendable {
+    @available(iOS 27.0, *)
+    @available(macCatalyst, unavailable)
+    @available(visionOS, unavailable)
+    public struct CodeLength : Swift::Equatable, Swift::Sendable {
+      public static let fourCharacter: MediaDevice::MediaOutputDevice.MediaDevice::AuthorizationMethod.MediaDevice::CodeLength
+      public static let sixCharacter: MediaDevice::MediaOutputDevice.MediaDevice::AuthorizationMethod.MediaDevice::CodeLength
+      public static func == (a: MediaDevice::MediaOutputDevice.MediaDevice::AuthorizationMethod.MediaDevice::CodeLength, b: MediaDevice::MediaOutputDevice.MediaDevice::AuthorizationMethod.MediaDevice::CodeLength) -> Swift::Bool
+    }
+    public static var none: MediaDevice::MediaOutputDevice.MediaDevice::AuthorizationMethod {
+      get
+    }
+    public static func numericCode(length: MediaDevice::MediaOutputDevice.MediaDevice::AuthorizationMethod.MediaDevice::CodeLength) -> MediaDevice::MediaOutputDevice.MediaDevice::AuthorizationMethod
+    public static var password: MediaDevice::MediaOutputDevice.MediaDevice::AuthorizationMethod {
+      get
+    }
+    public static func == (a: MediaDevice::MediaOutputDevice.MediaDevice::AuthorizationMethod, b: MediaDevice::MediaOutputDevice.MediaDevice::AuthorizationMethod) -> Swift::Bool
+  }
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable)
+  public enum DeviceType : Swift::Sendable {
+    case hifiSpeaker
+    case tv
+    case mediaStick
+    case laptopComputer
+    case desktopComputer
+    case tvAndMediabox
+    case hifiSpeakerTwo
+    case tvAndHifiSpeaker
+    public static func == (a: MediaDevice::MediaOutputDevice.MediaDevice::DeviceType, b: MediaDevice::MediaOutputDevice.MediaDevice::DeviceType) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable)
+  public struct Capabilities : Swift::OptionSet, Swift::CustomStringConvertible, Swift::Sendable {
+    public let rawValue: Swift::Int
+    public init(rawValue: Swift::Int)
+    public static let realtimeAudioStreaming: MediaDevice::MediaOutputDevice.MediaDevice::Capabilities
+    public static let realtimeVideoStreaming: MediaDevice::MediaOutputDevice.MediaDevice::Capabilities
+    public static let urlPlayback: MediaDevice::MediaOutputDevice.MediaDevice::Capabilities
+    public static let appLaunch: MediaDevice::MediaOutputDevice.MediaDevice::Capabilities
+    public var description: Swift::String {
+      get
+    }
+    @available(iOS 27.0, *)
+    @available(macCatalyst, unavailable)
+    @available(visionOS, unavailable)
+    public typealias ArrayLiteralElement = MediaDevice::MediaOutputDevice.MediaDevice::Capabilities
+    @available(iOS 27.0, *)
+    @available(macCatalyst, unavailable)
+    @available(visionOS, unavailable)
+    public typealias Element = MediaDevice::MediaOutputDevice.MediaDevice::Capabilities
+    @available(iOS 27.0, *)
+    @available(macCatalyst, unavailable)
+    @available(visionOS, unavailable)
+    public typealias RawValue = Swift::Int
+  }
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable)
+  public enum VolumeControl : Swift::Sendable {
+    case none
+    case absolute
+    case relative
+    public static func == (a: MediaDevice::MediaOutputDevice.MediaDevice::VolumeControl, b: MediaDevice::MediaOutputDevice.MediaDevice::VolumeControl) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public let id: Foundation::UUID
+  public let displayName: Swift::String
+  public let capabilities: MediaDevice::MediaOutputDevice.MediaDevice::Capabilities
+  public let canGroupWithCurrentlyActivatedDevices: Swift::Bool
+  public let supportsSimultaneousSessions: Swift::Bool
+  public let deviceType: MediaDevice::MediaOutputDevice.MediaDevice::DeviceType
+  public let volumeControl: MediaDevice::MediaOutputDevice.MediaDevice::VolumeControl
+  public let canMute: Swift::Bool
+  public let txtRecords: [Network::NWTXTRecord]
+  public let networkEndpoints: [Network::NWEndpoint]
+  public init?(id: Foundation::UUID, displayName: Swift::String, capabilities: MediaDevice::MediaOutputDevice.MediaDevice::Capabilities, canGroupWithCurrentlyActivatedDevices: Swift::Bool = true, deviceType: MediaDevice::MediaOutputDevice.MediaDevice::DeviceType = .tv, volumeControl: MediaDevice::MediaOutputDevice.MediaDevice::VolumeControl = .relative, canMute: Swift::Bool = true, requiredNetworkEndpoints networkEndpoints: [Network::NWEndpoint], txtRecords: [Network::NWTXTRecord] = [], supportsSimultaneousSessions: Swift::Bool = false)
+  public static func == (lhs: MediaDevice::MediaOutputDevice, rhs: MediaDevice::MediaOutputDevice) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var description: Swift::String {
+    get
+  }
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable)
+  public typealias ID = Foundation::UUID
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor public protocol MediaDeviceExtension : ExtensionFoundation::AppExtension {
+  @_Concurrency::MainActor var protocolType: UniformTypeIdentifiers::UTType { get }
+  @_Concurrency::MainActor var supportsSimultaneousSessions: Swift::Bool { get }
+  @_Concurrency::MainActor func startDeviceDiscovery()
+  @_Concurrency::MainActor func stopDeviceDiscovery()
+  @_Concurrency::MainActor func activateDevice(_ device: MediaDevice::MediaOutputDevice, session: MediaDevice::MediaOutputSession, for deviceFeatures: MediaDevice::MediaOutputDevice.MediaDevice::Capabilities)
+  @_Concurrency::MainActor func connectUsingPairingCode(_ pairingCode: Swift::String?, to device: MediaDevice::MediaOutputDevice, session: MediaDevice::MediaOutputSession)
+  @_Concurrency::MainActor func deactivateDevice(_ device: MediaDevice::MediaOutputDevice, session: MediaDevice::MediaOutputSession)
+  @_Concurrency::MainActor func setVolume(_ volume: Swift::Float, for device: MediaDevice::MediaOutputDevice)
+  @_Concurrency::MainActor func volume(for device: MediaDevice::MediaOutputDevice) -> Swift::Float
+  @_Concurrency::MainActor func changeVolume(by increments: Swift::Int, for device: MediaDevice::MediaOutputDevice)
+  @_Concurrency::MainActor func muteDevice(_ device: MediaDevice::MediaOutputDevice)
+  @_Concurrency::MainActor func isDeviceMuted(_ device: MediaDevice::MediaOutputDevice) -> Swift::Bool
+  @_Concurrency::MainActor func startSession(_ session: MediaDevice::MediaOutputSession, identifier: Swift::String?, url: Foundation::URL)
+  @_Concurrency::MainActor func stopSession(_ session: MediaDevice::MediaOutputSession)
+  @_Concurrency::MainActor func sendData(_ data: Foundation::Data, toApplication applicationIdentifier: Swift::String, session: MediaDevice::MediaOutputSession)
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension MediaDevice::MediaDeviceExtension {
+  @_Concurrency::MainActor public var configuration: some MediaDevice::MediaDeviceExtensionConfiguration {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+public protocol MediaDeviceExtensionConfiguration : ExtensionFoundation::AppExtensionConfiguration {
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+public struct MediaDeviceError : Foundation::LocalizedError, Swift::Sendable {
+  public enum Code : Swift::Sendable {
+    case discoveryFailed
+    case connectionFailed
+    case deviceInUse
+    case authorizationFailed
+    case sessionFailed
+    public static func == (a: MediaDevice::MediaDeviceError.MediaDevice::Code, b: MediaDevice::MediaDeviceError.MediaDevice::Code) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public let code: MediaDevice::MediaDeviceError.MediaDevice::Code
+  public init(_ code: MediaDevice::MediaDeviceError.MediaDevice::Code)
+  public var errorDescription: Swift::String? {
+    get
+  }
+  public var failureReason: Swift::String? {
+    get
+  }
+  public var recoverySuggestion: Swift::String? {
+    get
+  }
+  public var helpAnchor: Swift::String? {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension MediaDevice::MediaOutputDevice.MediaDevice::DeviceType : Swift::Equatable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension MediaDevice::MediaOutputDevice.MediaDevice::DeviceType : Swift::Hashable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension MediaDevice::MediaOutputDevice.MediaDevice::VolumeControl : Swift::Equatable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension MediaDevice::MediaOutputDevice.MediaDevice::VolumeControl : Swift::Hashable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension MediaDevice::MediaDeviceError.MediaDevice::Code : Swift::Equatable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension MediaDevice::MediaDeviceError.MediaDevice::Code : Swift::Hashable {}

@@ -1,0 +1,59 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SCSharingReminders.framework/SCSharingReminders
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SCDaemonErrorDomain, _SCLogger, _SCSharingTypeGeneral,
+                            _SCSharingTypeWiFiSync, _SCUIBundle,
+                            _SCUILocStringForKey, _SCUserAcknowledgedShare,
+                            _configWithGlobalDefaults,
+                            _kSCSharingRemindersEntitlement,
+                            _kSCSharingRemindersEntitlementInternal,
+                            _kSharingRemindersMachServiceName,
+                            _localizedDateStringFromUTC,
+                            _sharingRemindersStatusToString, _storeKeyToString ]
+    objc-classes:         [ SCArchivingService, SCBackgroundSystemTask,
+                            SCDaemonError, SCLockdownService, SCSharingReminder,
+                            SCSharingReminderArchiver, SCSharingReminderCache,
+                            SCSharingReminderDeliveryTask,
+                            SCSharingReminderFeatureService,
+                            SCSharingReminderKVStoreValue,
+                            SCSharingReminderMaintenanceTask,
+                            SCSharingReminderManager,
+                            SCSharingReminderPeerService,
+                            SCSharingReminderServiceProvider,
+                            SCSharingReminderSignal, SCUNNotificationService,
+                            SCUtils ]
+    objc-ivars:           [ SCDaemonError._code, SCDaemonError._underlyingErrors,
+                            SCLockdownService._remotePairingStore,
+                            SCLockdownService._workQueue,
+                            SCSharingReminder._displayName,
+                            SCSharingReminder._identifier,
+                            SCSharingReminder._scheduledDate,
+                            SCSharingReminder._type,
+                            SCSharingReminderArchiver._fileManager,
+                            SCSharingReminderArchiver._lock,
+                            SCSharingReminderCache._consecutiveNotificationCount,
+                            SCSharingReminderCache._ignorableIdentifiersByType,
+                            SCSharingReminderCache._lastFiredDate,
+                            SCSharingReminderCache._scheduledSharingReminders,
+                            SCSharingReminderCache._sharingRemindersByType,
+                            SCSharingReminderFeatureService._xpcConnection,
+                            SCSharingReminderKVStoreValue._data,
+                            SCSharingReminderManager._archiverService,
+                            SCSharingReminderManager._notificationsToRequest,
+                            SCSharingReminderManager._sharingReminderCache,
+                            SCSharingReminderManager._userNotificationService,
+                            SCSharingReminderManager._wifiSyncService,
+                            SCSharingReminderManager._workQueue,
+                            SCSharingReminderPeerService._xpcConnection,
+                            SCSharingReminderServiceProvider._sharingReminderManager,
+                            SCSharingReminderSignal._sharingIdentifier,
+                            SCSharingReminderSignal._sharingType,
+                            SCSharingReminderSignal._signalType,
+                            SCUNNotificationService._userNotificationCenter ]
+...

@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DesignLibrary.framework/DesignLibrary
+current-version:       8.0.84
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _TestAppGetGlassVersion, _TestAppGetLowMemoryDevice,
+                            _TestAppSetGlassVersion, _TestAppSetLowMemoryDevice,
+                            _TestAppSetUseGlassRecipes, _TestAppUseGlassRecipes,
+                            __DLCreatePocketMaskImage, _deviceIsLowMemory,
+                            _glassVersion, _isInternalInstall, _lowMemoryDevice,
+                            _useGlassRecipes ]
+    objc-classes:         [ DLCAFilter, _DLPocketLayerDelegate,
+                            _TtC13DesignLibrary15MuranoXPCClient,
+                            _TtCC13DesignLibrary14MetalRendering13SiriWaveLayer,
+                            _TtCC13DesignLibrary14MetalRendering14SiriMetalLayer ]
+    objc-ivars:           [ DLCAFilter._temporarilySuppressKVO ]
+...

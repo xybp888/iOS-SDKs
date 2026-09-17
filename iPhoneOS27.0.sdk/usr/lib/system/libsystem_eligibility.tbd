@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/system/libsystem_eligibility.dylib
+current-version:       446.2.3
+compatibility-version: 1
+parent-umbrella:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    umbrella:               System
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _load_eligibility_answers,
+                            _os_eligibility_bring_up_daemon_4_migration,
+                            _os_eligibility_bring_up_daemon_4_secure_erase,
+                            _os_eligibility_diff_mobile_asset,
+                            _os_eligibility_domain_for_name,
+                            _os_eligibility_dump_sysdiagnose_data_to_dir,
+                            _os_eligibility_fetch_newest_policies,
+                            _os_eligibility_force_domain_answer,
+                            _os_eligibility_force_domain_set_answers,
+                            _os_eligibility_get_all_domain_answers,
+                            _os_eligibility_get_domain_answer,
+                            _os_eligibility_get_domain_notification_name,
+                            _os_eligibility_get_error_description,
+                            _os_eligibility_get_internal_state,
+                            _os_eligibility_get_state_dump,
+                            _os_eligibility_precise_locations,
+                            _os_eligibility_reset_all_domains,
+                            _os_eligibility_reset_domain,
+                            _os_eligibility_set_input,
+                            _os_eligibility_set_test_mode ]
+...

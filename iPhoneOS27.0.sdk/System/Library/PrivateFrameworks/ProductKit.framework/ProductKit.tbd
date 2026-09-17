@@ -1,0 +1,36 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ProductKit.framework/ProductKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PKAdjustmentFiltersForAssetTypeAndURL,
+                            _PKPlaybackTimeRangesFromFeaturesTimeURL,
+                            _framework_log ]
+    objc-classes:         [ PKAVAssetUtilities, PKAdjustedImageView,
+                            PKMediaPlayerItem, PKMediaPlayerView,
+                            PKScreenUtilities, ProductKitCatalog,
+                            ProductKitCatalogInternal,
+                            _TtC10ProductKit17AdjustedImageView,
+                            _TtC10ProductKit17AdjustedVideoView,
+                            _TtC10ProductKit19FrameInletImageView,
+                            _TtC10ProductKit21PersonalizedImageView,
+                            _TtC10ProductKit21PersonalizedVideoView ]
+    objc-ivars:           [ PKMediaPlayerItem._completedHandler,
+                            PKMediaPlayerItem._observerToken,
+                            PKMediaPlayerItem._playbackNotificationTimeRanges,
+                            PKMediaPlayerItem._playerItems,
+                            PKMediaPlayerItem._shouldLoop,
+                            PKMediaPlayerItem._startedHandler,
+                            PKMediaPlayerItem._timeRangeHandler,
+                            PKMediaPlayerItem._url, PKMediaPlayerView._avLooper,
+                            PKMediaPlayerView._avQueuePlayer,
+                            PKMediaPlayerView._isKVOObserver,
+                            PKMediaPlayerView._mediaItems,
+                            PKMediaPlayerView._pausesAfterEachItem,
+                            PKMediaPlayerView._speedUpTimer,
+                            ProductKitCatalog._underlyingObject ]
+...

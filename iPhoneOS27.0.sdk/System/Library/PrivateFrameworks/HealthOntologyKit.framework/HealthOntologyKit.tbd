@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HealthOntologyKit.framework/HealthOntologyKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _HKOntologyStoreServerIdentifier,
+                            _OntologyPluginIdentifier ]
+    objc-classes:         [ HKConceptQuery, HKConceptQueryConfiguration,
+                            HKOntologyStore,
+                            _TtC17HealthOntologyKit30SecurelyCodableOntologyRequest,
+                            _TtC17HealthOntologyKit31SecurelyCodableOntologyResponse ]
+    objc-ivars:           [ HKConceptQuery._handler, HKConceptQuery._selection,
+                            HKConceptQueryConfiguration._selection,
+                            HKOntologyStore._identifier,
+                            HKOntologyStore._observers,
+                            HKOntologyStore._proxyProvider,
+                            HKOntologyStore._unitTesting_didChangeObserverRegistration ]
+...

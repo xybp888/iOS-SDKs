@@ -1,0 +1,97 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 3929 -module-name ColorSync
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=swift-6 -interface-compiler-version 6.4
+@_exported public import ColorSync
+public import Foundation
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(anyAppleOS 27.0, *)
+extension ColorSync::ColorSyncProfile {
+  public struct HeadroomAdaptiveGainCurveOptions {
+    public init()
+  }
+}
+@available(anyAppleOS 27.0, *)
+extension ColorSync::ColorSyncProfile {
+  public struct HeadroomAdaptiveGainCurve {
+    public var applicationVersion: Swift::UInt8
+    public var colorVolumeTransform: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform?
+    public init(applicationVersion: Swift::UInt8 = 0, colorVolumeTransform: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform? = nil) throws
+    public struct ColorVolumeTransform {
+      public var customHDRReferenceWhite: Swift::Float?
+      public var adaptiveToneMapping: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform.ColorSync::ToneMapping?
+      public init(customHDRReferenceWhite: Swift::Float? = nil, adaptiveToneMapping: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform.ColorSync::ToneMapping? = nil) throws
+      public struct ToneMapping {
+        public var baselineHeadroomStops: Swift::Float
+        public var method: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform.ColorSync::ToneMapping.ColorSync::Method
+        public init(baselineHeadroomStops: Swift::Float, method: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform.ColorSync::ToneMapping.ColorSync::Method = .referenceWhiteBased) throws
+        public enum Method {
+          case referenceWhiteBased
+          case adaptiveGainCurveMapping(ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform.ColorSync::ToneMapping.ColorSync::Method.ColorSync::AdaptiveGainCurve)
+          public enum Chromaticities {
+            case bt709
+            case displayP3
+            case bt2020
+            case custom(red: [2 of Swift::Float], green: [2 of Swift::Float], blue: [2 of Swift::Float], white: [2 of Swift::Float])
+          }
+          public struct AdaptiveGainCurve {
+            public var chromaticities: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform.ColorSync::ToneMapping.ColorSync::Method.ColorSync::Chromaticities
+            public var alternateCurves: [ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform.ColorSync::ToneMapping.ColorSync::Method.ColorSync::AlternateCurve]
+            public init(chromaticities: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform.ColorSync::ToneMapping.ColorSync::Method.ColorSync::Chromaticities = .bt709, alternateCurves: [ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform.ColorSync::ToneMapping.ColorSync::Method.ColorSync::AlternateCurve]) throws
+          }
+          public struct AlternateCurve {
+            public var headroomStops: Swift::Float
+            public var componentMix: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform.ColorSync::ToneMapping.ColorSync::Method.ColorSync::AlternateCurve.ColorSync::ComponentMix
+            public init(headroomStops: Swift::Float = 0.0, componentMix: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform.ColorSync::ToneMapping.ColorSync::Method.ColorSync::AlternateCurve.ColorSync::ComponentMix, controlPoints: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform.ColorSync::ToneMapping.ColorSync::Method.ColorSync::AlternateCurve.ColorSync::ControlPoints) throws
+            public enum ComponentMix {
+              case maxRGB
+              case perComponent
+              case lumaA
+              case freeStyle(red: Swift::Float = 0.0, green: Swift::Float = 0.0, blue: Swift::Float = 0.0, maxRGB: Swift::Float = 0.0, minRGB: Swift::Float = 0.0, component: Swift::Float = 0.0)
+            }
+            public var controlPoints: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform.ColorSync::ToneMapping.ColorSync::Method.ColorSync::AlternateCurve.ColorSync::ControlPoints
+            public struct ControlPoints {
+              public var x: [Swift::Float]
+              public var y: [Swift::Float]
+              public var slopes: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform.ColorSync::ToneMapping.ColorSync::Method.ColorSync::AlternateCurve.ColorSync::ControlPoints.ColorSync::Slopes
+              public init(x: [Swift::Float], y: [Swift::Float], slopes: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve.ColorSync::ColorVolumeTransform.ColorSync::ToneMapping.ColorSync::Method.ColorSync::AlternateCurve.ColorSync::ControlPoints.ColorSync::Slopes = .interpolate) throws
+              public enum Slopes {
+                case interpolate
+                case tangent([Swift::Float])
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@available(anyAppleOS 27.0, *)
+extension ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve {
+  public enum Error : Swift::Error {
+    case unsupportedApplicationVersion(Swift::UInt8)
+    case invalidHDRReferenceWhite(Swift::Float)
+    case negativeBaselineHeadroom(Swift::Float)
+    case tooManyAlternateCurves(count: Swift::Int, limit: Swift::Int)
+    case invalidCustomChromaticities
+    case negativeHeadroomStops(Swift::Float)
+    case zeroFreeStyleWeights
+    case mismatchedControlPointArrays(x: Swift::Int, y: Swift::Int)
+    case tooManyControlPoints(count: Swift::Int, limit: Swift::Int)
+    case mismatchedTangentCount(got: Swift::Int, expected: Swift::Int)
+  }
+}
+@available(anyAppleOS 27.0, *)
+extension ColorSync::ColorSyncProfile {
+  public func adding(headroomAdaptiveGainCurveMetadata: Foundation::Data, options: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurveOptions = .init()) -> ColorSync::ColorSyncProfile?
+  public func adding(headroomAdaptiveGainCurve: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve) -> ColorSync::ColorSyncProfile?
+  public var headroomAdaptiveGainCurveMetadata: Foundation::Data? {
+    get
+  }
+  public var headroomAdaptiveGainCurve: ColorSync::ColorSyncProfile.ColorSync::HeadroomAdaptiveGainCurve? {
+    get
+  }
+}

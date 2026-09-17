@@ -1,0 +1,44 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-experimental-feature DebugDescriptionMacro -user-module-version 821.0.25 -module-name GameKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import Combine
+import Foundation
+@_exported import GameKit
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+@available(iOS 26.0, macOS 26.0, *)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+extension GameKit::GKAccessPoint {
+  @objc(triggerAccessPointWithGameActivityDefinitionID:handler:) dynamic public func trigger(gameActivityDefinitionID: Swift::String, handler: (@Sendable () -> Swift::Void)? = nil)
+  @objc(triggerAccessPointWithGameActivity:handler:) dynamic public func trigger(gameActivity: GameKit::GKGameActivity, handler: (@Sendable () -> Swift::Void)? = nil)
+}
+@available(iOS 26.0, macOS 26.0, tvOS 26.0, visionOS 26.0, *)
+@available(watchOS, unavailable)
+@objc extension GameKit::GKAccessPoint : @unchecked Swift::Sendable {
+}
+@available(iOS 26.0, macOS 26.0, tvOS 26.0, visionOS 26.0, *)
+@available(watchOS, unavailable)
+@objc extension GameKit::GKAchievement : @unchecked Swift::Sendable {
+}
+@available(iOS 26.0, macOS 26.0, tvOS 26.0, visionOS 26.0, *)
+@available(watchOS, unavailable)
+@objc extension GameKit::GKLeaderboardScore : @unchecked Swift::Sendable {
+}
+@available(iOS 26.0, macOS 26.0, tvOS 26.0, visionOS 26.0, *)
+extension GameKit::GKGameActivityDefinition {
+  final public var playerRange: (any Swift::RangeExpression)? {
+    get
+  }
+}
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
+extension GameKit::GKAchievementDescription {
+  public var rarityPercent: Swift::Double? {
+    get
+  }
+}

@@ -1,0 +1,325 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 720 -module-name AccessoryNotifications
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import AccessorySetupKit.ASAccessory
+import AccessorySetupKit
+import AccessoryTransportExtension
+import CoreGraphics
+import ExtensionFoundation
+import Foundation
+import ImageIO
+import OSLog
+import Swift
+import Synchronization
+import UniformTypeIdentifiers
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+@available(iOS 26.5, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+public enum AccessoryError : Swift::Codable, Swift::Error, Swift::Equatable {
+  case accessoryNotificationsUnavailable
+  case unsupportedPlatform
+  case unsupportedAccessory
+  case invalidNotificationResponse
+  case coordinationTimeout
+  case internalInconsistency
+  public static func == (a: AccessoryNotifications::AccessoryError, b: AccessoryNotifications::AccessoryError) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.5, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+public struct AccessoryNotification : Swift::Codable, Swift::Equatable {
+  public let identifier: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Identifier
+  public let sourceName: Swift::String
+  public let deliveryDate: Foundation::Date
+  public let displayDate: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::DisplayDate
+  public let title: Swift::String?
+  public let subtitle: Swift::String?
+  public let body: Foundation::NSAttributedString?
+  public let threadIdentifier: Swift::String?
+  public let attributes: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Attributes
+  public let summary: Foundation::NSAttributedString?
+  public let actions: [AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Action]
+  public let sourceIcon: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::File?
+  public let contextIcon: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::File?
+  public let attachments: [AccessoryNotifications::AccessoryNotification.AccessoryNotifications::File]
+  public init(identifier: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Identifier, sourceName: Swift::String, deliveryDate: Foundation::Date, displayDate: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::DisplayDate = .deliveryDate, title: Swift::String? = nil, subtitle: Swift::String? = nil, body: Foundation::NSAttributedString? = nil, threadIdentifier: Swift::String? = nil, attributes: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Attributes = [], summary: Foundation::NSAttributedString? = nil, actions: [AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Action] = [], sourceIcon: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::File? = nil, contextIcon: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::File? = nil, attachments: [AccessoryNotifications::AccessoryNotification.AccessoryNotifications::File] = [])
+  public struct Identifier : Swift::Codable, Swift::Equatable, Swift::Hashable, Swift::Sendable {
+    public let notificationIdentifier: Swift::String
+    public let sourceIdentifier: Swift::String
+    public init(notificationIdentifier: Swift::String, sourceIdentifier: Swift::String)
+    public static func == (a: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Identifier, b: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Identifier) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public enum DisplayDate : Swift::Codable, Swift::Equatable {
+    case deliveryDate
+    case contentDate(Foundation::Date)
+    case allDayDate(Foundation::Date)
+    case hideDate
+    public static func == (a: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::DisplayDate, b: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::DisplayDate) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct Attributes : Swift::OptionSet, Swift::Codable, Swift::Equatable {
+    public let rawValue: Swift::Int
+    public static let critical: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Attributes
+    public static let timeSensitive: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Attributes
+    public static let priority: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Attributes
+    public init(rawValue: Swift::Int)
+    @available(iOS 26.5, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(macCatalyst, unavailable)
+    @available(visionOS, unavailable)
+    public typealias ArrayLiteralElement = AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Attributes
+    @available(iOS 26.5, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(macCatalyst, unavailable)
+    @available(visionOS, unavailable)
+    public typealias Element = AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Attributes
+    @available(iOS 26.5, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(macCatalyst, unavailable)
+    @available(visionOS, unavailable)
+    public typealias RawValue = Swift::Int
+  }
+  public struct File : Swift::Codable, Swift::Equatable {
+    public var type: UniformTypeIdentifiers::UTType {
+      get
+    }
+    public var url: Foundation::URL {
+      get async throws
+    }
+    public static func == (a: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::File, b: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::File) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct Action : Swift::Codable, Swift::Equatable {
+    public enum ActionType : Swift::Codable, Swift::Equatable {
+      case background
+      case textInput(placeholder: Swift::String)
+      case dismiss
+      public static func == (a: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Action.AccessoryNotifications::ActionType, b: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Action.AccessoryNotifications::ActionType) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public let identifier: Swift::String
+    public let title: Swift::String?
+    public let type: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Action.AccessoryNotifications::ActionType
+    public init(identifier: Swift::String, title: Swift::String? = nil, type: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Action.AccessoryNotifications::ActionType)
+    public static func == (a: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Action, b: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Action) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+  public static func == (a: AccessoryNotifications::AccessoryNotification, b: AccessoryNotifications::AccessoryNotification) -> Swift::Bool
+}
+@available(iOS 26.5, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+public class AccessoryNotificationCenter {
+  public init()
+  @objc deinit
+  public func requestForwarding(for accessory: AccessorySetupKit::ASAccessory) async throws -> AccessoryNotifications::ForwardingDecision
+  public func forwardingStatus(for accessory: AccessorySetupKit::ASAccessory) async throws -> AccessoryNotifications::ForwardingDecision
+  public func presentSettings(for accessory: AccessorySetupKit::ASAccessory, scenePersistentIdentifier: Swift::String? = nil) async throws -> AccessoryNotifications::ForwardingDecision
+}
+@available(iOS 26.5, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+final public class NotificationsForwarding : AccessoryTransportExtension::AccessoryFeature, Swift::Sendable {
+  public static let featureID: Swift::String
+  public init(_ handlerFactory: @escaping @Sendable () -> any AccessoryNotifications::NotificationsForwarding.AccessoryNotifications::AccessoryNotificationsHandler)
+  public protocol AccessoryNotificationsSession : Swift::Sendable {
+    func sendResponse(_ response: AccessoryNotifications::NotificationResponse) async throws
+    func removeNotifications(identifiers: [AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Identifier]) async throws
+    func send(message: AccessoryTransportExtension::AccessoryMessage) async throws
+  }
+  public protocol AccessoryNotificationsHandler : Swift::Sendable {
+    @available(iOS 26.5, *)
+    func didActivate(for session: AccessoryNotifications::NotificationsForwarding.AccessoryNotifications::Session)
+    @available(iOS 26.5, *)
+    func didInvalidate()
+    func addNotification(_ notification: AccessoryNotifications::AccessoryNotification, alertingContext: AccessoryNotifications::AlertingContext) async throws -> Swift::Bool
+    func updateNotification(_ notification: AccessoryNotifications::AccessoryNotification)
+    func removeNotification(identifier: AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Identifier)
+    func removeAllNotifications()
+    func messageHandler(_ message: AccessoryTransportExtension::TransportMessage)
+  }
+  @_hasMissingDesignatedInitializers final public class Session : AccessoryNotifications::NotificationsForwarding.AccessoryNotifications::AccessoryNotificationsSession, AccessoryTransportExtension::AccessoryFeatureSession {
+    final public func sendResponse(_ response: AccessoryNotifications::NotificationResponse) async throws
+    final public func removeNotifications(identifiers: [AccessoryNotifications::AccessoryNotification.AccessoryNotifications::Identifier]) async throws
+    final public func send(message: AccessoryTransportExtension::AccessoryMessage) async throws
+    @objc deinit
+  }
+  @available(iOS 26.5, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable)
+  public typealias ID = Swift::String
+  @objc deinit
+}
+@available(iOS 26.5, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension AccessoryNotifications::NotificationsForwarding.AccessoryNotifications::AccessoryNotificationsSession {
+  public func removeNotifications(withIdentifiers identifiers: [Swift::String], sourceIdentifier: Swift::String) async throws
+}
+@available(iOS 26.5, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+public struct AlertingContext {
+  public var notificationCanAlert: Swift::Bool
+  public init(notificationCanAlert: Swift::Bool = false, suppressedByFocus: Swift::Bool = false, kind: AccessoryNotifications::AlertingContext.AccessoryNotifications::Kind = .notification, sound: AccessoryNotifications::AlertingContext.AccessoryNotifications::Sound? = nil)
+  public var isSuppressedByFocus: Swift::Bool {
+    get
+  }
+  public var kind: AccessoryNotifications::AlertingContext.AccessoryNotifications::Kind {
+    get
+  }
+  public var shouldAlert: Swift::Bool {
+    get
+  }
+  public var sound: AccessoryNotifications::AlertingContext.AccessoryNotifications::Sound? {
+    get
+  }
+  public enum Kind : Swift::Codable, Swift::Equatable, Swift::Sendable {
+    case notification
+    case incomingCall
+    case alarm
+    case timer
+    public static func == (a: AccessoryNotifications::AlertingContext.AccessoryNotifications::Kind, b: AccessoryNotifications::AlertingContext.AccessoryNotifications::Kind) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct Sound : Swift::Codable, Swift::Equatable {
+    public var shouldIgnoreSilentMode: Swift::Bool
+    public static func == (a: AccessoryNotifications::AlertingContext.AccessoryNotifications::Sound, b: AccessoryNotifications::AlertingContext.AccessoryNotifications::Sound) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+}
+@available(iOS 26.5, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension AccessoryNotifications::AlertingContext : Swift::Codable {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.5, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension AccessoryNotifications::AlertingContext : Swift::Equatable {
+  public static func == (a: AccessoryNotifications::AlertingContext, b: AccessoryNotifications::AlertingContext) -> Swift::Bool
+}
+@available(iOS 26.5, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+public enum ForwardingDecision : Swift::Codable, Swift::Equatable {
+  case allow
+  case limited
+  case deny
+  case undetermined
+  public var description: Swift::String {
+    get
+  }
+  public static func == (a: AccessoryNotifications::ForwardingDecision, b: AccessoryNotifications::ForwardingDecision) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.5, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+public struct NotificationResponse : Swift::Codable, Swift::Equatable {
+  public var sourceIdentifier: Swift::String
+  public var notificationIdentifier: Swift::String
+  public var actionIdentifier: Swift::String
+  public var userText: Swift::String?
+  public init(sourceIdentifier: Swift::String, notificationIdentifier: Swift::String, actionIdentifier: Swift::String, userText: Swift::String?)
+  public static func == (a: AccessoryNotifications::NotificationResponse, b: AccessoryNotifications::NotificationResponse) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 26.5, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension AccessoryNotifications::AccessoryError : Swift::Hashable {}
+@available(iOS 26.5, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension AccessoryNotifications::AlertingContext.AccessoryNotifications::Kind : Swift::Hashable {}
+@available(iOS 26.5, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(visionOS, unavailable)
+extension AccessoryNotifications::ForwardingDecision : Swift::Hashable {}

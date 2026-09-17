@@ -1,0 +1,361 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 1360.75.1.3 -module-name AVKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported public import AVKit
+public import Combine
+public import Swift
+public import TipKit
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+extension AVKit::AVExperienceController {
+  public enum Experience {
+    case embedded
+    case expanded
+    case multiview
+    public static func == (a: AVKit::AVExperienceController.AVKit::Experience, b: AVKit::AVExperienceController.AVKit::Experience) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+extension AVKit::AVExperienceController {
+  public struct Experiences : Swift::Collection {
+    public typealias Element = AVKit::AVExperienceController.AVKit::Experience
+    public typealias Index = Swift::Int
+    public var startIndex: AVKit::AVExperienceController.AVKit::Experiences.AVKit::Index {
+      get
+    }
+    public var endIndex: AVKit::AVExperienceController.AVKit::Experiences.AVKit::Index {
+      get
+    }
+    public subscript(position: AVKit::AVExperienceController.AVKit::Experiences.AVKit::Index) -> AVKit::AVExperienceController.AVKit::Experiences.AVKit::Element {
+      get
+    }
+    public func index(after index: AVKit::AVExperienceController.AVKit::Experiences.AVKit::Index) -> AVKit::AVExperienceController.AVKit::Experiences.AVKit::Index
+    public static func recommended<C>(excluding: C = [], including: C = []) -> AVKit::AVExperienceController.AVKit::Experiences where C : Swift::Collection, C.Element == AVKit::AVExperienceController.AVKit::Experience
+    public static func only<C>(_ experiences: C) -> AVKit::AVExperienceController.AVKit::Experiences where C : Swift::Collection, C.Element == AVKit::AVExperienceController.AVKit::Experience
+    @available(macOS, unavailable)
+    @available(iOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias Indices = Swift::DefaultIndices<AVKit::AVExperienceController.AVKit::Experiences>
+    @available(macOS, unavailable)
+    @available(iOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias Iterator = Swift::IndexingIterator<AVKit::AVExperienceController.AVKit::Experiences>
+    @available(macOS, unavailable)
+    @available(iOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias SubSequence = Swift::Slice<AVKit::AVExperienceController.AVKit::Experiences>
+  }
+}
+@available(iOS, unavailable)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public typealias AVLegibleMediaOptionsMenuControllerDelegate = AVKit::AVLegibleMediaOptionsMenuController.AVKit::Delegate
+extension AVKit::AVPlayerViewController {
+  @available(macOS, unavailable)
+  @available(visionOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(iOS, unavailable)
+  @_Concurrency::MainActor @preconcurrency public var experienceController: AVKit::AVExperienceController {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension AVKit::AVPlaybackUserInterfaceMediaSelectionOption {
+  public var language: Foundation::Locale.Foundation::Language? {
+    get
+  }
+  convenience public init(displayName: Swift::String, identifier: Swift::String, language: Foundation::Locale.Foundation::Language? = nil, mediaCharacteristics: [AVFoundation::AVMediaCharacteristic] = [])
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public struct AVPlaybackUserInterfaceContentMetadata : Swift::Sendable, Swift::Hashable {
+  public struct VideoProperties : Swift::Sendable, Swift::Hashable {
+    public var presentationSize: CoreFoundation::CGSize
+    public init(presentationSize: CoreFoundation::CGSize)
+    public static func == (a: AVKit::AVPlaybackUserInterfaceContentMetadata.AVKit::VideoProperties, b: AVKit::AVPlaybackUserInterfaceContentMetadata.AVKit::VideoProperties) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public var videoProperties: AVKit::AVPlaybackUserInterfaceContentMetadata.AVKit::VideoProperties?
+  public var title: Swift::String?
+  public var subtitle: Swift::String?
+  public var artworkRepresentations: [AVKit::AVPlaybackUserInterfaceContentArtwork]
+  public init(videoProperties: AVKit::AVPlaybackUserInterfaceContentMetadata.AVKit::VideoProperties? = nil, title: Swift::String? = nil, subtitle: Swift::String? = nil, artworkRepresentations: [AVKit::AVPlaybackUserInterfaceContentArtwork] = [])
+  public static func == (a: AVKit::AVPlaybackUserInterfaceContentMetadata, b: AVKit::AVPlaybackUserInterfaceContentMetadata) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor public protocol AVPlaybackUserInterfacePlaybackControllable : AnyObject, Observation::Observable {
+  @_Concurrency::MainActor var isReady: Swift::Bool { get }
+  @_Concurrency::MainActor var isPlaying: Swift::Bool { get set }
+  @_Concurrency::MainActor var isBuffering: Swift::Bool { get }
+  @_Concurrency::MainActor var playbackSpeed: Swift::Float { get set }
+  @_Concurrency::MainActor var scanSpeed: Swift::Float { get set }
+  @_Concurrency::MainActor var state: AVKit::AVPlaybackUserInterfacePlaybackState { get set }
+  @_Concurrency::MainActor var supportedSeekCapabilities: AVKit::AVPlaybackUserInterfaceSeekCapabilities { get }
+  @_Concurrency::MainActor var containsLiveStreamingContent: Swift::Bool { get }
+  @_Concurrency::MainActor var error: (any Swift::Error)? { get }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor public protocol AVPlaybackUserInterfaceTimeControllable : AnyObject, Observation::Observable {
+  @_Concurrency::MainActor var timeRange: CoreMedia::CMTimeRange { get }
+  @_Concurrency::MainActor var playbackPosition: AVKit::AVPlaybackUserInterfacePlaybackPosition { get }
+  @_Concurrency::MainActor func seek(to position: CoreMedia::CMTime, tolerance: CoreMedia::CMTime)
+  @_Concurrency::MainActor var segments: [AVKit::AVPlaybackUserInterfaceTimelineSegment] { get }
+  @_Concurrency::MainActor var currentSegment: AVKit::AVPlaybackUserInterfaceTimelineSegment { get }
+  @_Concurrency::MainActor var seekableTimeRanges: [CoreMedia::CMTimeRange]? { get }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor public protocol AVPlaybackUserInterfaceMediaSelectionControllable : AnyObject, Observation::Observable {
+  @_Concurrency::MainActor var currentAudioOption: AVKit::AVPlaybackUserInterfaceMediaSelectionOption? { get set }
+  @_Concurrency::MainActor var currentAudioDescriptionOption: AVKit::AVPlaybackUserInterfaceMediaSelectionOption? { get set }
+  @_Concurrency::MainActor var currentLegibleOption: AVKit::AVPlaybackUserInterfaceMediaSelectionOption? { get set }
+  @_Concurrency::MainActor var audioOptions: [AVKit::AVPlaybackUserInterfaceMediaSelectionOption] { get }
+  @_Concurrency::MainActor var audioDescriptionOptions: [AVKit::AVPlaybackUserInterfaceMediaSelectionOption] { get }
+  @_Concurrency::MainActor var legibleOptions: [AVKit::AVPlaybackUserInterfaceMediaSelectionOption] { get }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor public protocol AVPlaybackUserInterfaceVolumeControllable : AnyObject, Observation::Observable {
+  @_Concurrency::MainActor var hasAudio: Swift::Bool { get }
+  @_Concurrency::MainActor var isMuted: Swift::Bool { get set }
+  @_Concurrency::MainActor var volume: Swift::Float { get set }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor public protocol AVPlaybackUserInterfaceMetadataProviding : AnyObject, Observation::Observable {
+  @_Concurrency::MainActor var metadata: AVKit::AVPlaybackUserInterfaceContentMetadata { get }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor public protocol AVPlaybackUserInterfaceControllable : AVKit::AVPlaybackUserInterfaceMediaSelectionControllable, AVKit::AVPlaybackUserInterfaceMetadataProviding, AVKit::AVPlaybackUserInterfacePlaybackControllable, AVKit::AVPlaybackUserInterfaceTimeControllable, AVKit::AVPlaybackUserInterfaceVolumeControllable {
+}
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor public protocol AVPlaybackUserInterfaceVideoProviding : AnyObject, Observation::Observable {
+  @_Concurrency::MainActor var videoLayer: QuartzCore::CALayer? { get }
+  @_Concurrency::MainActor var videoSize: CoreFoundation::CGSize { get }
+  @_Concurrency::MainActor var captionLayer: QuartzCore::CALayer? { get }
+  @_Concurrency::MainActor var captionInsets: UIKit::UIEdgeInsets { get set }
+}
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@_Concurrency::MainActor public protocol AVPlaybackUserInterfaceThumbnailControllable : AnyObject, Observation::Observable {
+}
+@available(visionOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+extension AVKit::AVExperienceController {
+  public struct TransitionContext : Swift::Equatable {
+    public enum Status : Swift::Equatable {
+      case preparing
+      case transitioning
+      case finished(result: AVKit::AVExperienceController.AVKit::TransitionContext.AVKit::TransitionResult)
+      public static func == (a: AVKit::AVExperienceController.AVKit::TransitionContext.AVKit::Status, b: AVKit::AVExperienceController.AVKit::TransitionContext.AVKit::Status) -> Swift::Bool
+    }
+    public enum TransitionResult : Swift::Equatable {
+      case completed
+      case reversed(reason: AVKit::AVExperienceController.AVKit::TransitionContext.AVKit::ReversedReason)
+      public static func == (a: AVKit::AVExperienceController.AVKit::TransitionContext.AVKit::TransitionResult, b: AVKit::AVExperienceController.AVKit::TransitionContext.AVKit::TransitionResult) -> Swift::Bool
+    }
+    public enum ReversedReason : Swift::Equatable {
+      case transitionInProgress
+      case invalidExperience
+      case invalidConfiguration
+      case transitionCancelled
+      case transitionFailed
+      public static func == (a: AVKit::AVExperienceController.AVKit::TransitionContext.AVKit::ReversedReason, b: AVKit::AVExperienceController.AVKit::TransitionContext.AVKit::ReversedReason) -> Swift::Bool
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+    }
+    public let status: AVKit::AVExperienceController.AVKit::TransitionContext.AVKit::Status
+    public let fromExperience: AVKit::AVExperienceController.AVKit::Experience
+    public let toExperience: AVKit::AVExperienceController.AVKit::Experience
+    public static func == (a: AVKit::AVExperienceController.AVKit::TransitionContext, b: AVKit::AVExperienceController.AVKit::TransitionContext) -> Swift::Bool
+  }
+}
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+extension AVKit::AVExperienceController {
+  @_Concurrency::MainActor public protocol Delegate : AnyObject {
+    @_Concurrency::MainActor func experienceController(_ controller: AVKit::AVExperienceController, didChangeTransitionContext context: AVKit::AVExperienceController.AVKit::TransitionContext)
+    @_Concurrency::MainActor func experienceController(_ controller: AVKit::AVExperienceController, prepareForTransitionUsing context: AVKit::AVExperienceController.AVKit::TransitionContext) async
+    @_Concurrency::MainActor func experienceController(_ controller: AVKit::AVExperienceController, didChangeAvailableExperiences availableExperiences: AVKit::AVExperienceController.AVKit::Experiences)
+  }
+}
+@_hasMissingDesignatedInitializers @available(macOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+@_Concurrency::MainActor final public class AVExperienceController {
+  @discardableResult
+  @_Concurrency::MainActor final public func transition(to toExperience: AVKit::AVExperienceController.AVKit::Experience) async -> AVKit::AVExperienceController.AVKit::TransitionContext.AVKit::TransitionResult
+  @_Concurrency::MainActor final public var experience: AVKit::AVExperienceController.AVKit::Experience {
+    get
+  }
+  @_Concurrency::MainActor final public var allowedExperiences: AVKit::AVExperienceController.AVKit::Experiences {
+    get
+    set
+  }
+  @_Concurrency::MainActor final public var availableExperiences: AVKit::AVExperienceController.AVKit::Experiences {
+    get
+  }
+  @_Concurrency::MainActor weak final public var delegate: (any AVKit::AVExperienceController.AVKit::Delegate)? {
+    get
+    set
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @available(visionOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+@objc(AVContentSelectionViewController) @_Concurrency::MainActor @preconcurrency open class AVContentSelectionViewController : UIKit::UIViewController {
+  @_Concurrency::MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift::String?, bundle nibBundleOrNil: Foundation::Bundle?)
+  @_Concurrency::MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation::NSCoder)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(macOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+@_Concurrency::MainActor final public class AVMultiviewManager : Combine::ObservableObject {
+  @Combine::Published<AVKit::AVContentSelectionViewController?> @_projectedValueProperty($contentSelectionViewController) @_Concurrency::MainActor final public var contentSelectionViewController: AVKit::AVContentSelectionViewController? {
+    get
+    @available(macOS, unavailable, introduced: 10.15)
+    @available(iOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable, introduced: 6.0)
+    @available(visionOS, unavailable)
+    set
+    @available(macOS, unavailable, introduced: 10.15)
+    @available(iOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable, introduced: 6.0)
+    @available(visionOS, unavailable)
+    _modify
+  }
+  @_Concurrency::MainActor final public var $contentSelectionViewController: Combine::Published<AVKit::AVContentSelectionViewController?>.Combine::Publisher {
+    get
+    @available(macOS, unavailable, introduced: 11.0)
+    @available(iOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable, introduced: 7.0)
+    @available(visionOS, unavailable)
+    set
+  }
+  @_Concurrency::MainActor public static var `default`: AVKit::AVMultiviewManager {
+    get
+  }
+  @_Concurrency::MainActor final public func dismiss()
+  @available(macOS, unavailable)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias ObjectWillChangePublisher = Combine::ObservableObjectPublisher
+  @objc deinit
+}
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+extension AVKit::AVExperienceController : Swift::Sendable {}
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+extension AVKit::AVExperienceController.AVKit::Experience : Swift::Equatable {}
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+extension AVKit::AVExperienceController.AVKit::Experience : Swift::Hashable {}
+@available(visionOS, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+extension AVKit::AVExperienceController.AVKit::TransitionContext.AVKit::ReversedReason : Swift::Hashable {}
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(iOS, unavailable)
+extension AVKit::AVMultiviewManager : Swift::Sendable {}

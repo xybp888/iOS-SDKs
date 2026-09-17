@@ -1,0 +1,151 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 28 -module-name DeclaredAgeRange
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+public import Foundation
+public import Swift
+public import SwiftUI
+public import UIKit
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 26.0, macOS 26.0, *)
+@available(visionOS, unavailable)
+public struct AgeRangeService {
+  public static let shared: DeclaredAgeRange::AgeRangeService
+  public enum Error : Foundation::LocalizedError {
+    case notAvailable
+    case invalidRequest
+    case invalidAccount
+    case declinedOnboarding
+    case network
+    public static func == (a: DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::Error, b: DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::Error) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public enum AgeRangeDeclaration : Swift::Sendable {
+    case selfDeclared
+    case guardianDeclared
+    @available(iOS 26.2, macOS 26.2, *)
+    @available(*, deprecated, renamed: "confirmed")
+    case checkedByOtherMethod
+    @available(iOS 26.2, macOS 26.2, *)
+    @available(*, deprecated, renamed: "confirmed")
+    case guardianCheckedByOtherMethod
+    @available(iOS 26.2, macOS 26.2, *)
+    @available(*, deprecated, renamed: "confirmed")
+    case governmentIDChecked
+    @available(iOS 26.2, macOS 26.2, *)
+    @available(*, deprecated, renamed: "confirmed")
+    case guardianGovernmentIDChecked
+    @available(iOS 26.2, macOS 26.2, *)
+    @available(*, deprecated, renamed: "confirmed")
+    case paymentChecked
+    @available(iOS 26.2, macOS 26.2, *)
+    @available(*, deprecated, renamed: "confirmed")
+    case guardianPaymentChecked
+    @available(iOS 26.5, macOS 26.5, *)
+    case confirmed
+    public static func == (a: DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::AgeRangeDeclaration, b: DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::AgeRangeDeclaration) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public struct ParentalControls : Swift::OptionSet, Swift::Sendable {
+    public let rawValue: Swift::Int
+    public static let communicationLimits: DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::ParentalControls
+    @available(iOS 26.2, macOS 26.2, *)
+    @available(visionOS, unavailable)
+    @available(iOS, deprecated: 26.4, message: "Use requiredRegulatoryFeatures to check for significantAppChangeRequiresParentalConsent instead")
+    @available(macOS, deprecated: 26.4, message: "Use requiredRegulatoryFeatures to check for significantAppChangeRequiresParentalConsent instead")
+    public static let significantAppChangeApprovalRequired: DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::ParentalControls
+    public init(rawValue: Swift::Int)
+    public var description: Swift::String {
+      get
+    }
+    @available(macOS 26.0, iOS 26.0, *)
+    @available(visionOS, unavailable)
+    public typealias ArrayLiteralElement = DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::ParentalControls
+    @available(macOS 26.0, iOS 26.0, *)
+    @available(visionOS, unavailable)
+    public typealias Element = DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::ParentalControls
+    @available(macOS 26.0, iOS 26.0, *)
+    @available(visionOS, unavailable)
+    public typealias RawValue = Swift::Int
+  }
+  public struct AgeRange : Swift::Sendable {
+    public var lowerBound: Swift::Int?
+    public var upperBound: Swift::Int?
+    public var ageRangeDeclaration: DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::AgeRangeDeclaration?
+    public var activeParentalControls: DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::ParentalControls
+  }
+  public enum Response {
+    case declinedSharing
+    case sharing(range: DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::AgeRange)
+  }
+  @available(iOS 26.4, macOS 26.4, *)
+  public enum RegulatoryFeature : Swift::Hashable, Swift::Sendable {
+    case significantAppChangeRequiresAdultNotification
+    case significantAppChangeRequiresParentalConsent
+    case declaredAgeRangeRequired
+    public static func == (a: DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::RegulatoryFeature, b: DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::RegulatoryFeature) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public func requestAgeRange(ageGates threshold1: Swift::Int, _ threshold2: Swift::Int? = nil, _ threshold3: Swift::Int? = nil, in viewController: UIKit::UIViewController) async throws -> DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::Response
+  @available(iOS 26.2, macOS 26.2, *)
+  public var isEligibleForAgeFeatures: Swift::Bool {
+    get async throws
+  }
+  @available(iOS 26.4, macOS 26.4, *)
+  public var requiredRegulatoryFeatures: Swift::Set<DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::RegulatoryFeature> {
+    get async throws
+  }
+  @available(iOS 26.4, *)
+  @available(macOS, unavailable)
+  @available(visionOS, unavailable)
+  @_Concurrency::MainActor public func showSignificantUpdateAcknowledgment(in windowScene: UIKit::UIWindowScene, updateDescription: Swift::String) async throws
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(visionOS, unavailable)
+public struct DeclaredAgeRangeAction {
+  public func callAsFunction(ageGates threshold1: Swift::Int, _ threshold2: Swift::Int? = nil, _ threshold3: Swift::Int? = nil) async throws -> DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::Response
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(visionOS, unavailable)
+extension SwiftUICore::EnvironmentValues {
+  public var requestAgeRange: DeclaredAgeRange::DeclaredAgeRangeAction {
+    get
+  }
+}
+@available(iOS 26.4, *)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+public struct SignificantUpdateAction {
+  public func callAsFunction(updateDescription: Swift::String) async throws
+}
+@available(iOS 26.4, *)
+@available(macOS, unavailable)
+@available(visionOS, unavailable)
+extension SwiftUICore::EnvironmentValues {
+  public var showSignificantUpdateAcknowledgment: DeclaredAgeRange::SignificantUpdateAction {
+    get
+  }
+}
+@available(iOS 26.0, macOS 26.0, *)
+@available(visionOS, unavailable)
+extension DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::Error : Swift::Equatable {}
+@available(iOS 26.0, macOS 26.0, *)
+@available(visionOS, unavailable)
+extension DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::Error : Swift::Hashable {}
+@available(iOS 26.0, macOS 26.0, *)
+@available(visionOS, unavailable)
+extension DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::AgeRangeDeclaration : Swift::Equatable {}
+@available(iOS 26.0, macOS 26.0, *)
+@available(visionOS, unavailable)
+extension DeclaredAgeRange::AgeRangeService.DeclaredAgeRange::AgeRangeDeclaration : Swift::Hashable {}

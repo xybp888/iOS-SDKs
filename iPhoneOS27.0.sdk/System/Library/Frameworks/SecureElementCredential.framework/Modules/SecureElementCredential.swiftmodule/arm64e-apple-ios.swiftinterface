@@ -1,0 +1,268 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 70.39.1 -module-name SecureElementCredential
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+public import Foundation
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession {
+  public static var isEligible: Swift::Bool {
+    get async throws
+  }
+}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession {
+  public func enterWiredMode(using credential: SecureElementCredential::CredentialSession.SecureElementCredential::Credential) async throws
+  public func transceive(_ data: Foundation::Data) async throws -> Foundation::Data
+  public func endWiredMode() async throws
+}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession {
+  public struct CardEmulationOptions : Swift::Sendable {
+    public init()
+  }
+}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession {
+  public struct Credential : Swift::Sendable, Swift::Equatable {
+    public let identifier: Foundation::UUID
+    public let name: Swift::String
+    public let state: SecureElementCredential::CredentialSession.SecureElementCredential::Credential.SecureElementCredential::State
+    public enum State : Swift::Sendable, Swift::Equatable {
+      case installationPending
+      case installed(instances: [SecureElementCredential::CredentialSession.SecureElementCredential::Credential.SecureElementCredential::InstanceInfo])
+      case installationFailed
+      public static func == (a: SecureElementCredential::CredentialSession.SecureElementCredential::Credential.SecureElementCredential::State, b: SecureElementCredential::CredentialSession.SecureElementCredential::Credential.SecureElementCredential::State) -> Swift::Bool
+    }
+    public struct InstanceInfo : Swift::Sendable, Swift::Equatable {
+      public let instanceAID: Foundation::Data
+      public let packageAID: Foundation::Data
+      public let moduleAID: Foundation::Data
+      public let securityDomainAID: Foundation::Data
+      public let securityDomainKeyInfo: Foundation::Data
+      public let lifeCycleState: Foundation::Data
+      public var securityDomainCounter: Swift::Int {
+        get async throws
+      }
+      public enum InstanceType : Swift::Sendable, Swift::Equatable {
+        case standalone
+        case headApplication
+        case groupApplication
+        public static func == (a: SecureElementCredential::CredentialSession.SecureElementCredential::Credential.SecureElementCredential::InstanceInfo.SecureElementCredential::InstanceType, b: SecureElementCredential::CredentialSession.SecureElementCredential::Credential.SecureElementCredential::InstanceInfo.SecureElementCredential::InstanceType) -> Swift::Bool
+        public func hash(into hasher: inout Swift::Hasher)
+        public var hashValue: Swift::Int {
+          get
+        }
+      }
+      public let instanceType: SecureElementCredential::CredentialSession.SecureElementCredential::Credential.SecureElementCredential::InstanceInfo.SecureElementCredential::InstanceType
+      public static func == (a: SecureElementCredential::CredentialSession.SecureElementCredential::Credential.SecureElementCredential::InstanceInfo, b: SecureElementCredential::CredentialSession.SecureElementCredential::Credential.SecureElementCredential::InstanceInfo) -> Swift::Bool
+    }
+    public func hash(into hasher: inout Swift::Hasher)
+    public static func == (a: SecureElementCredential::CredentialSession.SecureElementCredential::Credential, b: SecureElementCredential::CredentialSession.SecureElementCredential::Credential) -> Swift::Bool
+  }
+}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession {
+  public func acquirePresentmentAssertion() async throws -> SecureElementCredential::CredentialSession.SecureElementCredential::PresentmentIntentAssertion
+  @_hasMissingDesignatedInitializers final public class PresentmentIntentAssertion {
+    final public func relinquish() async throws
+    public enum State {
+      case active
+      case invalid
+      public static func == (a: SecureElementCredential::CredentialSession.SecureElementCredential::PresentmentIntentAssertion.SecureElementCredential::State, b: SecureElementCredential::CredentialSession.SecureElementCredential::PresentmentIntentAssertion.SecureElementCredential::State) -> Swift::Bool
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+    }
+    final public var state: SecureElementCredential::CredentialSession.SecureElementCredential::PresentmentIntentAssertion.SecureElementCredential::State {
+      get async
+    }
+    @objc deinit
+  }
+}
+@available(iOS 18.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession {
+  public struct SecureElementInfo : Swift::Codable {
+    public let hardwareReleaseVersionInfo: Swift::String
+    public let secureElementPlatformSigningCertificate: Foundation::Data
+    @available(iOS 27.0, *)
+    public let platformIdentifier: Swift::String
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public var secureElementInfo: SecureElementCredential::CredentialSession.SecureElementCredential::SecureElementInfo {
+    get async throws
+  }
+}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public actor CredentialSession : Swift::Equatable {
+  public static func startSession() async throws -> SecureElementCredential::CredentialSession
+  public func invalidate() async throws
+  public var state: SecureElementCredential::CredentialSession.SecureElementCredential::State {
+    get async
+  }
+  public var eventStream: _Concurrency::AsyncStream<SecureElementCredential::CredentialSession.SecureElementCredential::Event> {
+    get async
+  }
+  public enum State : Swift::Equatable, Swift::Sendable {
+    case management
+    case cardEmulation(credential: SecureElementCredential::CredentialSession.SecureElementCredential::Credential)
+    case wired(credential: SecureElementCredential::CredentialSession.SecureElementCredential::Credential)
+    case invalid
+    public static func == (left: SecureElementCredential::CredentialSession.SecureElementCredential::State, right: SecureElementCredential::CredentialSession.SecureElementCredential::State) -> Swift::Bool
+  }
+  public enum Event : Swift::Sendable {
+    case sessionInvalidated(reason: SecureElementCredential::CredentialSession.SecureElementCredential::ErrorCode)
+    case credentialFinishedInstalling(credential: SecureElementCredential::CredentialSession.SecureElementCredential::Credential)
+    case fieldStateChanged(info: SecureElementCredential::CredentialSession.SecureElementCredential::NFCFieldInformation)
+    case connectivityEvent(SecureElementCredential::CredentialSession.SecureElementCredential::ConnectivityEvent)
+    case cardEmulationTimeout
+    case presentmentIntentAssertionTimeout
+  }
+  public enum NFCFieldInformation : Swift::Sendable {
+    case fieldPresent
+    case fieldAbsent
+    public static func == (a: SecureElementCredential::CredentialSession.SecureElementCredential::NFCFieldInformation, b: SecureElementCredential::CredentialSession.SecureElementCredential::NFCFieldInformation) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public struct ConnectivityEvent : Swift::Sendable {
+    public let instanceApplicationIdentifier: Foundation::Data
+    public let data: Foundation::Data
+  }
+  public enum ErrorCode : Foundation::LocalizedError {
+    @available(iOS, deprecated: 27.0, message: "This error is no longer thrown by the framework.")
+    case userNotAuthorized
+    case accessDenied
+    @available(iOS, deprecated: 27.0, message: "This error is no longer thrown by the framework.")
+    case clientNotInForeground
+    case invalidSessionState
+    case invalidCredentialState
+    case credentialDoesNotExist
+    case instanceDoesNotExist
+    case sessionInvalidated
+    case userCanceledAuthorization
+    @available(iOS, deprecated: 27.0, message: "This error is no longer thrown by the framework.")
+    case userAuthorizationTimedOut
+    case commandNotSupported
+    case network
+    case resourceUnavailable
+    case insufficientSpace
+    case presentmentIntentAssertionTimeout
+    case featureUnavailable
+    case ineligible
+    case invalidView
+    case acquiredResourceRelinquished
+    case conditionsNotSatisfied
+    case invalidInput
+    @available(iOS 27.0, *)
+    case invalidProductConfigID
+    case internalError
+    public var failureReason: Swift::String? {
+      get
+    }
+    public static func == (a: SecureElementCredential::CredentialSession.SecureElementCredential::ErrorCode, b: SecureElementCredential::CredentialSession.SecureElementCredential::ErrorCode) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public init()
+  public static func == (lhs: SecureElementCredential::CredentialSession, rhs: SecureElementCredential::CredentialSession) -> Swift::Bool
+  @objc deinit
+  @_semantics("defaultActor") nonisolated final public var unownedExecutor: _Concurrency::UnownedSerialExecutor {
+    get
+  }
+}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession {
+  public func listCredentials() async throws -> [SecureElementCredential::CredentialSession.SecureElementCredential::Credential]
+  public func provisionCredential(configurationUUID: Foundation::UUID, name: Swift::String) async throws -> SecureElementCredential::CredentialSession.SecureElementCredential::Credential
+  public func deleteCredential(_ credential: SecureElementCredential::CredentialSession.SecureElementCredential::Credential) async throws
+}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession : Swift::Sendable {}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession.SecureElementCredential::Credential.SecureElementCredential::InstanceInfo.SecureElementCredential::InstanceType : Swift::Hashable {}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession.SecureElementCredential::PresentmentIntentAssertion.SecureElementCredential::State : Swift::Equatable {}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession.SecureElementCredential::PresentmentIntentAssertion.SecureElementCredential::State : Swift::Hashable {}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession.SecureElementCredential::NFCFieldInformation : Swift::Equatable {}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession.SecureElementCredential::NFCFieldInformation : Swift::Hashable {}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession.SecureElementCredential::ErrorCode : Swift::Equatable {}
+@available(iOS 18.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension SecureElementCredential::CredentialSession.SecureElementCredential::ErrorCode : Swift::Hashable {}

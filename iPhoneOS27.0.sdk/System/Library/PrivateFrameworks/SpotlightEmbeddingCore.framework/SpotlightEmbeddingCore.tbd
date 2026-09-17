@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SpotlightEmbeddingCore.framework/SpotlightEmbeddingCore
+current-version:       2459.105
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SPEmbeddingProviderGetShared,
+                            _SPEmbeddingProviderGetVersion,
+                            _SPEmbeddingProviderRegister ]
+    objc-classes:         [ SPEmbeddingResult, SPTextInput ]
+    objc-ivars:           [ SPEmbeddingResult._bias,
+                            SPEmbeddingResult._elementType,
+                            SPEmbeddingResult._embeddingData,
+                            SPEmbeddingResult._scale, SPEmbeddingResult._version,
+                            SPTextInput._attributedString,
+                            SPTextInput._inputSource, SPTextInput._text,
+                            SPTextInput._tokenIDs, SPTextInput._type ]
+...

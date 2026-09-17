@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WorkoutKitServices.framework/WorkoutKitServices
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _WorkoutKitAppBundleId,
+                            _WorkoutKitPrivateEntitlementName,
+                            _WorkoutKitServicesVersionNumber,
+                            _WorkoutKitServicesVersionString,
+                            _WorkoutKitWorkingDirectoryPath,
+                            _WorkoutKitXPCServiceName,
+                            _WorkoutRemoteAlertConfigurationDataKey,
+                            _WorkoutRemoteAlertServiceName,
+                            _WorkoutRemoteAlertServiceViewControllerName ]
+    objc-classes:         [ WorkoutKitXPCServiceHelper ]
+...

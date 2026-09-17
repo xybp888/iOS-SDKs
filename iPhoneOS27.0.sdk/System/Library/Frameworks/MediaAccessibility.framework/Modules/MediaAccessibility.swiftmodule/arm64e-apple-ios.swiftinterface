@@ -1,0 +1,31 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 238 -module-name MediaAccessibility
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import Foundation
+@_exported import MediaAccessibility
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(macOS 15.0, iOS 18.0, tvOS 18.0, *)
+extension MediaAccessibility::MAMusicHaptics {
+  public static var enabledStatusDidChangeNotification: Foundation::Notification.Foundation::Name {
+    get
+  }
+}
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, watchOS 10.0, *)
+extension MediaAccessibility::MAFlashingLightsProcessor {
+  public struct Result {
+    public var surfaceProcessed: Swift::Bool {
+      get
+    }
+    public var mitigationLevel: Swift::Float {
+      get
+    }
+    public var intensityLevel: Swift::Float {
+      get
+    }
+  }
+  public func processSurface(_ inSurface: CoreGraphics::IOSurfaceRef, outSurface: inout CoreGraphics::IOSurfaceRef, timestamp: CoreFoundation::CFAbsoluteTime, options: [MediaAccessibility::MAFlashingLightsProcessor.MediaAccessibility::OptionKey : Any]? = nil) -> MediaAccessibility::MAFlashingLightsProcessor.MediaAccessibility::Result
+}

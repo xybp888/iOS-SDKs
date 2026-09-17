@@ -1,0 +1,1389 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 367 -module-name MetricKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import Foundation
+@_exported import MetricKit
+import StateReporting
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct AppLaunchDiagnostic : Swift::Sendable, Swift::Codable {
+  public let callStackTree: MetricKit::CallStackTree
+  public let launchDuration: Foundation::Measurement<Foundation::UnitDuration>
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::AppLaunchDiagnostic {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct CPUExceptionDiagnostic : Swift::Sendable, Swift::Codable {
+  public let callStackTree: MetricKit::CallStackTree
+  public let totalCPUTime: Foundation::Measurement<Foundation::UnitDuration>
+  public let totalSampledTime: Foundation::Measurement<Foundation::UnitDuration>
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MetricKit::CPUExceptionDiagnostic {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct CrashDiagnostic : Swift::Sendable, Swift::Codable {
+  public let callStackTree: MetricKit::CallStackTree
+  public let terminationReason: MetricKit::CrashDiagnostic.MetricKit::TerminationReason?
+  public let virtualMemoryRegionInfo: Swift::String?
+  public let exceptionType: Swift::Int?
+  public let exceptionCode: Swift::UInt64?
+  public let signal: Swift::Int?
+  public let exceptionReason: MetricKit::CrashDiagnostic.MetricKit::ObjectiveCExceptionReason?
+  public let terminationCategory: MetricKit::CrashDiagnostic.MetricKit::TerminationCategory?
+  public struct TerminationCategory : Swift::RawRepresentable, Swift::Hashable, Swift::Sendable, Swift::Codable, Swift::CustomStringConvertible {
+    public let rawValue: Swift::String
+    public init(rawValue: Swift::String)
+    public var description: Swift::String {
+      get
+    }
+    public static let badAccess: MetricKit::CrashDiagnostic.MetricKit::TerminationCategory
+    public static let abnormal: MetricKit::CrashDiagnostic.MetricKit::TerminationCategory
+    public static let illegalInstruction: MetricKit::CrashDiagnostic.MetricKit::TerminationCategory
+    public static let watchdog: MetricKit::CrashDiagnostic.MetricKit::TerminationCategory
+    public static let taskTimeout: MetricKit::CrashDiagnostic.MetricKit::TerminationCategory
+    public static let fileLock: MetricKit::CrashDiagnostic.MetricKit::TerminationCategory
+    @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    public typealias RawValue = Swift::String
+  }
+  public struct TerminationReason : Swift::RawRepresentable, Swift::Hashable, Swift::Sendable, Swift::Codable, Swift::CustomStringConvertible {
+    public let rawValue: Swift::String
+    public init(rawValue: Swift::String)
+    public var description: Swift::String {
+      get
+    }
+    @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    public typealias RawValue = Swift::String
+  }
+  public struct ObjectiveCExceptionReason : Swift::Sendable, Swift::Codable {
+    public let composedMessage: Swift::String
+    public let formatString: Swift::String
+    public let arguments: [Swift::String]
+    public let exceptionType: Swift::String
+    public let className: Swift::String
+    public let exceptionName: Swift::String
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct DiskWriteExceptionDiagnostic : Swift::Sendable, Swift::Codable {
+  public let callStackTree: MetricKit::CallStackTree
+  public let totalBytesWritten: Foundation::Measurement<Foundation::UnitInformationStorage>
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MetricKit::DiskWriteExceptionDiagnostic {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct HangDiagnostic : Swift::Sendable, Swift::Codable {
+  public let callStackTree: MetricKit::CallStackTree
+  public let hangDuration: Foundation::Measurement<Foundation::UnitDuration>
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MetricKit::HangDiagnostic {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(macCatalyst, unavailable)
+public struct MemoryExceptionDiagnostic : Swift::Sendable, Swift::Codable {
+  public let callStackTree: MetricKit::CallStackTree
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct CallStackTree : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let callStackThreads: Swift::ContiguousArray<MetricKit::CallStackThread>
+  public let callStackPerThread: Swift::Bool
+  public let binaryInfo: [Foundation::UUID : MetricKit::CallStackTree.MetricKit::BinaryInfo]
+  public struct BinaryInfo : Swift::Sendable, Swift::Codable, Swift::Hashable {
+    public let uuid: Foundation::UUID
+    public let name: Swift::String
+    public static func == (a: MetricKit::CallStackTree.MetricKit::BinaryInfo, b: MetricKit::CallStackTree.MetricKit::BinaryInfo) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public func forEachFrame(_ body: (MetricKit::CallStackFrame) throws -> Swift::Void) rethrows
+  public static func == (a: MetricKit::CallStackTree, b: MetricKit::CallStackTree) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MetricKit::CallStackTree {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct CallStackThread : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let rootFrames: Swift::ContiguousArray<MetricKit::CallStackFrame>
+  public let threadAttributed: Swift::Bool?
+  public static func == (a: MetricKit::CallStackThread, b: MetricKit::CallStackThread) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct CallStackFrame : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let binaryUUID: Foundation::UUID?
+  public let address: Swift::UInt64?
+  public let offsetIntoBinaryTextSegment: Swift::UInt64?
+  public let sampleCount: Swift::Int?
+  public let subFrames: Swift::ContiguousArray<MetricKit::CallStackFrame>
+  public func binaryName(from tree: MetricKit::CallStackTree) -> Swift::String?
+  public static func == (a: MetricKit::CallStackFrame, b: MetricKit::CallStackFrame) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct DiagnosticReport : Swift::Sendable, Swift::Codable {
+  public struct Environment : Swift::Sendable, Swift::Codable {
+    public let regionFormat: Swift::String
+    public let osVersion: MetricKit::OSVersion
+    public let deviceType: Swift::String
+    public let platformArchitecture: Swift::String
+    public let lowPowerModeEnabled: Swift::Bool
+    public let isTestFlightApp: Swift::Bool
+    public let applicationVersion: Swift::String
+    public let applicationBuildVersion: Swift::String
+    public let pid: _DarwinFoundation2::pid_t?
+    public let bundleIdentifier: Swift::String
+    @available(visionOS, unavailable)
+    public let signpostData: [MetricKit::SignpostRecord]
+    @available(visionOS, unavailable)
+    public let states: [MetricKit::MetricManager.MetricKit::ReportedState]
+  }
+  public let result: MetricKit::DiagnosticResult
+  public let timeRange: Foundation::DateInterval
+  public let environment: MetricKit::DiagnosticReport.MetricKit::Environment
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MetricKit::DiagnosticReport {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension MetricKit::DiagnosticReport.MetricKit::Environment {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public enum DiagnosticResult : Swift::Sendable, Swift::Codable {
+  case crash(MetricKit::CrashDiagnostic)
+  case hang(MetricKit::HangDiagnostic)
+  case cpuException(MetricKit::CPUExceptionDiagnostic)
+  case diskWriteException(MetricKit::DiskWriteExceptionDiagnostic)
+  @available(visionOS, unavailable)
+  case appLaunch(MetricKit::AppLaunchDiagnostic)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable)
+  case memoryException(MetricKit::MemoryExceptionDiagnostic)
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct SignpostRecord : Swift::Sendable, Swift::Codable {
+  public let subsystem: Swift::String
+  public let category: Swift::String
+  public let name: Swift::String
+  public let interval: Foundation::DateInterval
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::SignpostRecord {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 13.0, macOS 10.15, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+public func mxSignpost(_ type: os::OSSignpostType, dso: Swift::UnsafeRawPointer = #dsohandle, log: os::OSLog, name: Swift::StaticString, signpostID: os::OSSignpostID = .exclusive, _ format: Swift::StaticString = "%{public, signpost:metrics}@", _ arguments: [any Swift::CVarArg] = [Unmanaged<NSObject>.fromOpaque(_MXSignpostMetricsSnapshot()).takeUnretainedValue()])
+@available(iOS 15.0, macOS 12.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+public func mxSignpostAnimationIntervalBegin(dso: Swift::UnsafeRawPointer = #dsohandle, log: os::OSLog, name: Swift::StaticString, signpostID: os::OSSignpostID = .exclusive, _ format: Swift::StaticString = "isAnimation=YES \n%{public, signpost:metrics}@", _ arguments: [any Swift::CVarArg] = [Unmanaged<NSObject>.fromOpaque(_MXSignpostMetricsSnapshot()).takeUnretainedValue()])
+@objc @_inheritsConvenienceInitializers @available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+final public class AveragePixelLuminance : Foundation::Dimension, @unchecked Swift::Sendable {
+  @objc override public static func baseUnit() -> MetricKit::AveragePixelLuminance
+  @objc deinit
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct AverageStatistics<DimensionType> : Swift::Sendable, Swift::Codable, Swift::Hashable where DimensionType : Foundation::Dimension {
+  public let average: Foundation::Measurement<DimensionType>
+  public let count: Swift::Int
+  public let standardDeviation: Swift::Double?
+  public static func == (a: MetricKit::AverageStatistics<DimensionType>, b: MetricKit::AverageStatistics<DimensionType>) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::AverageStatistics {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct Histogram<DimensionType> : Swift::Sendable, Swift::Codable, Swift::Hashable where DimensionType : Foundation::Dimension {
+  public struct Bucket : Swift::Sendable, Swift::Codable, Swift::Hashable {
+    public let lowerBound: Foundation::Measurement<DimensionType>
+    public let upperBound: Foundation::Measurement<DimensionType>
+    public let count: Swift::Int
+    public static func == (a: MetricKit::Histogram<DimensionType>.MetricKit::Bucket, b: MetricKit::Histogram<DimensionType>.MetricKit::Bucket) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public let buckets: [MetricKit::Histogram<DimensionType>.MetricKit::Bucket]
+  public static func == (a: MetricKit::Histogram<DimensionType>, b: MetricKit::Histogram<DimensionType>) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::Histogram.MetricKit::Bucket {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+final public class HitchTimeRatio : Foundation::Dimension, @unchecked Swift::Sendable {
+  @objc override public static func baseUnit() -> MetricKit::HitchTimeRatio
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+final public class SignalBars : Foundation::Dimension, @unchecked Swift::Sendable {
+  @objc override public static func baseUnit() -> MetricKit::SignalBars
+  @objc deinit
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct HitchTimeMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let ratio: Foundation::Measurement<MetricKit::HitchTimeRatio>
+  public let totalHitchTime: Foundation::Measurement<Foundation::UnitDuration>
+  public let totalAnimationTime: Foundation::Measurement<Foundation::UnitDuration>
+  public static func == (a: MetricKit::HitchTimeMetric, b: MetricKit::HitchTimeMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::HitchTimeMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct CPUInstructionsCountMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let value: Swift::Int
+  public static func == (a: MetricKit::CPUInstructionsCountMetric, b: MetricKit::CPUInstructionsCountMetric) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct CPUTimeMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let value: Foundation::Measurement<Foundation::UnitDuration>
+  public static func == (a: MetricKit::CPUTimeMetric, b: MetricKit::CPUTimeMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::CPUTimeMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct TotalDiskSpaceCapacityMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let capacity: Foundation::Measurement<Foundation::UnitInformationStorage>
+  public let spaceUsed: Foundation::Measurement<Foundation::UnitInformationStorage>
+  public static func == (a: MetricKit::TotalDiskSpaceCapacityMetric, b: MetricKit::TotalDiskSpaceCapacityMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::TotalDiskSpaceCapacityMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct TotalFileCountMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let binaryFileCount: Swift::Int
+  public let dataFileCount: Swift::Int
+  public static func == (a: MetricKit::TotalFileCountMetric, b: MetricKit::TotalFileCountMetric) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct TotalFileSizeMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let binaryFileSize: Foundation::Measurement<Foundation::UnitInformationStorage>
+  public let cacheFolderSize: Foundation::Measurement<Foundation::UnitInformationStorage>
+  public let cloneSize: Foundation::Measurement<Foundation::UnitInformationStorage>
+  public let dataFileSize: Foundation::Measurement<Foundation::UnitInformationStorage>
+  public static func == (a: MetricKit::TotalFileSizeMetric, b: MetricKit::TotalFileSizeMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::TotalFileSizeMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct MetalFrameRateMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let framesPerSecond: Foundation::Measurement<Foundation::UnitFrequency>
+  public let frameCount: Swift::Int
+  public let activeDrawingDuration: Foundation::Measurement<Foundation::UnitDuration>
+  public let layerName: Swift::String
+  public static func == (a: MetricKit::MetalFrameRateMetric, b: MetricKit::MetalFrameRateMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetalFrameRateMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct ApplicationResumeTimeMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let histogram: MetricKit::Histogram<Foundation::UnitDuration>
+  public static func == (a: MetricKit::ApplicationResumeTimeMetric, b: MetricKit::ApplicationResumeTimeMetric) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct ExtendedLaunchMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let histogram: MetricKit::Histogram<Foundation::UnitDuration>
+  public static func == (a: MetricKit::ExtendedLaunchMetric, b: MetricKit::ExtendedLaunchMetric) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct OptimizedTimeToFirstDrawMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let histogram: MetricKit::Histogram<Foundation::UnitDuration>
+  public static func == (a: MetricKit::OptimizedTimeToFirstDrawMetric, b: MetricKit::OptimizedTimeToFirstDrawMetric) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct TimeToFirstDrawMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let histogram: MetricKit::Histogram<Foundation::UnitDuration>
+  public static func == (a: MetricKit::TimeToFirstDrawMetric, b: MetricKit::TimeToFirstDrawMetric) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct PeakMemoryMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let value: Foundation::Measurement<Foundation::UnitInformationStorage>
+  public static func == (a: MetricKit::PeakMemoryMetric, b: MetricKit::PeakMemoryMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::PeakMemoryMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct SuspendedMemoryMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let value: MetricKit::AverageStatistics<Foundation::UnitInformationStorage>
+  public static func == (a: MetricKit::SuspendedMemoryMetric, b: MetricKit::SuspendedMemoryMetric) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct TotalCellularDownloadMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let value: Foundation::Measurement<Foundation::UnitInformationStorage>
+  public static func == (a: MetricKit::TotalCellularDownloadMetric, b: MetricKit::TotalCellularDownloadMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::TotalCellularDownloadMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct TotalCellularUploadMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let value: Foundation::Measurement<Foundation::UnitInformationStorage>
+  public static func == (a: MetricKit::TotalCellularUploadMetric, b: MetricKit::TotalCellularUploadMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::TotalCellularUploadMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct TotalWiFiDownloadMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let value: Foundation::Measurement<Foundation::UnitInformationStorage>
+  public static func == (a: MetricKit::TotalWiFiDownloadMetric, b: MetricKit::TotalWiFiDownloadMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::TotalWiFiDownloadMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct TotalWiFiUploadMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let value: Foundation::Measurement<Foundation::UnitInformationStorage>
+  public static func == (a: MetricKit::TotalWiFiUploadMetric, b: MetricKit::TotalWiFiUploadMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::TotalWiFiUploadMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct TotalBackgroundAudioTimeMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let value: Foundation::Measurement<Foundation::UnitDuration>
+  public static func == (a: MetricKit::TotalBackgroundAudioTimeMetric, b: MetricKit::TotalBackgroundAudioTimeMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::TotalBackgroundAudioTimeMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct TotalBackgroundLocationTimeMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let value: Foundation::Measurement<Foundation::UnitDuration>
+  public static func == (a: MetricKit::TotalBackgroundLocationTimeMetric, b: MetricKit::TotalBackgroundLocationTimeMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::TotalBackgroundLocationTimeMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct TotalBackgroundTimeMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let value: Foundation::Measurement<Foundation::UnitDuration>
+  public static func == (a: MetricKit::TotalBackgroundTimeMetric, b: MetricKit::TotalBackgroundTimeMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::TotalBackgroundTimeMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct TotalForegroundTimeMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let value: Foundation::Measurement<Foundation::UnitDuration>
+  public static func == (a: MetricKit::TotalForegroundTimeMetric, b: MetricKit::TotalForegroundTimeMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::TotalForegroundTimeMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct BackgroundTerminationMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let normalTerminationCount: Swift::Int
+  public let memoryLimitTerminationCount: Swift::Int
+  public let highCPUTerminationCount: Swift::Int
+  public let systemPressureTerminationCount: Swift::Int
+  public let badAccessTerminationCount: Swift::Int
+  public let abnormalTerminationCount: Swift::Int
+  public let illegalInstructionTerminationCount: Swift::Int
+  public let watchdogTerminationCount: Swift::Int
+  public let fileLockTerminationCount: Swift::Int
+  public let taskTimeoutTerminationCount: Swift::Int
+  public static func == (a: MetricKit::BackgroundTerminationMetric, b: MetricKit::BackgroundTerminationMetric) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct ForegroundTerminationMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let normalTerminationCount: Swift::Int
+  public let memoryLimitTerminationCount: Swift::Int
+  public let badAccessTerminationCount: Swift::Int
+  public let abnormalTerminationCount: Swift::Int
+  public let illegalInstructionTerminationCount: Swift::Int
+  public let watchdogTerminationCount: Swift::Int
+  public static func == (a: MetricKit::ForegroundTerminationMetric, b: MetricKit::ForegroundTerminationMetric) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct CellularConditionTimeMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let histogram: MetricKit::Histogram<MetricKit::SignalBars>
+  public static func == (a: MetricKit::CellularConditionTimeMetric, b: MetricKit::CellularConditionTimeMetric) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct GPUTimeMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let value: Foundation::Measurement<Foundation::UnitDuration>
+  public static func == (a: MetricKit::GPUTimeMetric, b: MetricKit::GPUTimeMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::GPUTimeMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct HangTimeMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let histogram: MetricKit::Histogram<Foundation::UnitDuration>
+  public static func == (a: MetricKit::HangTimeMetric, b: MetricKit::HangTimeMetric) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct LocationActivityTimeMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let bestAccuracyForNavigation: Foundation::Measurement<Foundation::UnitDuration>
+  public let bestAccuracy: Foundation::Measurement<Foundation::UnitDuration>
+  public let tenMeters: Foundation::Measurement<Foundation::UnitDuration>
+  public let oneHundredMeter: Foundation::Measurement<Foundation::UnitDuration>
+  public let oneKilometer: Foundation::Measurement<Foundation::UnitDuration>
+  public let threeKilometers: Foundation::Measurement<Foundation::UnitDuration>
+  public let reducedAccuracy: Foundation::Measurement<Foundation::UnitDuration>
+  public static func == (a: MetricKit::LocationActivityTimeMetric, b: MetricKit::LocationActivityTimeMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::LocationActivityTimeMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct LogicalDiskWritesMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let value: Foundation::Measurement<Foundation::UnitInformationStorage>
+  public static func == (a: MetricKit::LogicalDiskWritesMetric, b: MetricKit::LogicalDiskWritesMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::LogicalDiskWritesMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(macCatalyst, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct PixelLuminanceMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let value: MetricKit::AverageStatistics<MetricKit::AveragePixelLuminance>
+  public static func == (a: MetricKit::PixelLuminanceMetric, b: MetricKit::PixelLuminanceMetric) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct SignpostIntervalMetric : Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let signpostName: Swift::String
+  public let signpostCategory: Swift::String
+  public let totalCount: Swift::Int
+  public let signpostDuration: MetricKit::Histogram<Foundation::UnitDuration>
+  public let averageMemory: MetricKit::AverageStatistics<Foundation::UnitInformationStorage>?
+  public let cpuTime: Foundation::Measurement<Foundation::UnitDuration>?
+  public let logicalWrites: Foundation::Measurement<Foundation::UnitInformationStorage>?
+  public let hitchTimeRatio: Foundation::Measurement<MetricKit::HitchTimeRatio>?
+  public let totalHitchTime: Foundation::Measurement<Foundation::UnitDuration>?
+  public let totalAnimationTime: Foundation::Measurement<Foundation::UnitDuration>?
+  public static func == (a: MetricKit::SignpostIntervalMetric, b: MetricKit::SignpostIntervalMetric) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::SignpostIntervalMetric {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct MetricGroup : Swift::RawRepresentable, Swift::Sendable, Swift::Codable, Swift::Hashable {
+  public let rawValue: Swift::String
+  public static let cpu: MetricKit::MetricGroup
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  public static let memory: MetricKit::MetricGroup
+  public static let diskIO: MetricKit::MetricGroup
+  public static let networkTransfer: MetricKit::MetricGroup
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  public static let display: MetricKit::MetricGroup
+  public static let animation: MetricKit::MetricGroup
+  public static let applicationResponsiveness: MetricKit::MetricGroup
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  public static let cellularCondition: MetricKit::MetricGroup
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  public static let locationActivity: MetricKit::MetricGroup
+  public static let gpu: MetricKit::MetricGroup
+  public static let signpost: MetricKit::MetricGroup
+  public static let appLaunch: MetricKit::MetricGroup
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  public static let appRuntime: MetricKit::MetricGroup
+  public static let appTermination: MetricKit::MetricGroup
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  public static let diskSpaceUsage: MetricKit::MetricGroup
+  public static let frameStatistics: MetricKit::MetricGroup
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias RawValue = Swift::String
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct MetricReport : Swift::Sendable, Swift::Codable {
+  public struct Environment : Swift::Sendable, Swift::Codable {
+    public let regionFormat: Swift::String
+    public let osVersion: MetricKit::OSVersion
+    public let deviceType: Swift::String
+    public let platformArchitecture: Swift::String
+    public let lowPowerModeEnabled: Swift::Bool
+    public let isTestFlightApp: Swift::Bool
+    public let bundleIdentifier: Swift::String
+    public let applicationBuildVersion: Swift::String
+    public let latestApplicationVersion: Swift::String
+    public let includesMultipleApplicationVersions: Swift::Bool
+    public let hasExceededStateLimit: Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct StateEntry : Swift::Sendable, Swift::Codable {
+    public let state: MetricKit::MetricManager.MetricKit::ReportedState
+    public let values: [MetricKit::MetricResult]
+    public func encode(to encoder: any Swift::Encoder) throws
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct IntervalEntry : Swift::Sendable, Swift::Codable {
+    public let states: [MetricKit::MetricManager.MetricKit::ReportedState]
+    public let duration: Foundation::Measurement<Foundation::UnitDuration>
+    public let values: [MetricKit::MetricResult]
+  }
+  public let stateEntries: [MetricKit::MetricReport.MetricKit::StateEntry]
+  public let intervalEntries: [MetricKit::MetricReport.MetricKit::IntervalEntry]
+  public let timeRange: Foundation::DateInterval
+  public let environment: MetricKit::MetricReport.MetricKit::Environment?
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetricReport {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetricReport.MetricKit::IntervalEntry {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension Swift::Array where Element == MetricKit::MetricReport.MetricKit::StateEntry {
+  public var byStateReportingDomain: [MetricKit::StateReportingDomain : [MetricKit::MetricReport.MetricKit::StateEntry]] {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension Swift::Array where Element == MetricKit::MetricReport.MetricKit::IntervalEntry {
+  public var fullDayEntry: MetricKit::MetricReport.MetricKit::IntervalEntry {
+    get
+  }
+  public var byStateReportingDomain: [MetricKit::StateReportingDomain : [MetricKit::MetricManager.MetricKit::ReportedState]] {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetricReport {
+  public enum EncodingFormat : Swift::Sendable {
+    case `default`
+    case byStateReportingDomain
+    public static func == (a: MetricKit::MetricReport.MetricKit::EncodingFormat, b: MetricKit::MetricReport.MetricKit::EncodingFormat) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public static let encodingFormatKey: Swift::CodingUserInfoKey
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public enum MetricResult : Swift::Sendable, Swift::Codable {
+  case hangTime(MetricKit::HangTimeMetric)
+  case hitchTime(MetricKit::HitchTimeMetric)
+  case foregroundTermination(MetricKit::ForegroundTerminationMetric)
+  case backgroundTermination(MetricKit::BackgroundTerminationMetric)
+  case signpostInterval(MetricKit::SignpostIntervalMetric)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  case locationActivityTime(MetricKit::LocationActivityTimeMetric)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  case totalForegroundTime(MetricKit::TotalForegroundTimeMetric)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  case totalBackgroundTime(MetricKit::TotalBackgroundTimeMetric)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  case totalBackgroundAudioTime(MetricKit::TotalBackgroundAudioTimeMetric)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  case totalBackgroundLocationTime(MetricKit::TotalBackgroundLocationTimeMetric)
+  case cpuTime(MetricKit::CPUTimeMetric)
+  case cpuInstructionsCount(MetricKit::CPUInstructionsCountMetric)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  case peakMemory(MetricKit::PeakMemoryMetric)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  case suspendedMemory(MetricKit::SuspendedMemoryMetric)
+  case totalWiFiUpload(MetricKit::TotalWiFiUploadMetric)
+  case totalWiFiDownload(MetricKit::TotalWiFiDownloadMetric)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  case totalCellularUpload(MetricKit::TotalCellularUploadMetric)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  case totalCellularDownload(MetricKit::TotalCellularDownloadMetric)
+  case logicalDiskWrites(MetricKit::LogicalDiskWritesMetric)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  case pixelLuminance(MetricKit::PixelLuminanceMetric)
+  case gpuTime(MetricKit::GPUTimeMetric)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  case cellularConditionTime(MetricKit::CellularConditionTimeMetric)
+  case timeToFirstDraw(MetricKit::TimeToFirstDrawMetric)
+  case applicationResumeTime(MetricKit::ApplicationResumeTimeMetric)
+  case optimizedTimeToFirstDraw(MetricKit::OptimizedTimeToFirstDrawMetric)
+  case extendedLaunch(MetricKit::ExtendedLaunchMetric)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  case totalFileCount(MetricKit::TotalFileCountMetric)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  case totalFileSize(MetricKit::TotalFileSizeMetric)
+  @available(macOS, unavailable)
+  @available(macCatalyst, unavailable)
+  case totalDiskSpaceCapacity(MetricKit::TotalDiskSpaceCapacityMetric)
+  case metalFrameRate(MetricKit::MetalFrameRateMetric)
+  public var metricGroup: MetricKit::MetricGroup {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetricResult {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+final public class MetricManager : @unchecked Swift::Sendable {
+  @available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  final public var metricReports: some _Concurrency::AsyncSequence<MetricKit::MetricReport, Swift::Never> {
+    get
+  }
+  final public var diagnosticReports: some _Concurrency::AsyncSequence<MetricKit::DiagnosticReport, Swift::Never> {
+    get
+  }
+  convenience public init()
+  @available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public init(enabledStateReportingDomains: Swift::Set<MetricKit::StateReportingDomain>)
+  @objc deinit
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetricManager {
+  public struct ReportedState : Swift::Sendable, Swift::Codable, Swift::Hashable {
+    public let domain: Swift::String
+    public let label: Swift::String
+    public let duration: Foundation::Measurement<Foundation::UnitDuration>
+    public let stableMetadata: [Swift::String : StateReporting::ReportableMetadataValue]
+    public static func == (a: MetricKit::MetricManager.MetricKit::ReportedState, b: MetricKit::MetricManager.MetricKit::ReportedState) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetricManager.MetricKit::ReportedState {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetricManager {
+  public static func logHandle(category: Swift::String) -> os::OSLog
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetricManager {
+  final public var enabledStateReportingDomains: Swift::Set<MetricKit::StateReportingDomain> {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetricManager {
+  @_Concurrency::MainActor final public func trackLaunchTask<Result, Failure>(id: MetricKit::LaunchTaskID, onTrackingError: ((MetricKit::MetricManager.MetricKit::LaunchTaskError) -> Swift::Void)? = nil, _ operation: () async throws(Failure) -> Result) async throws(Failure) -> Result where Failure : Swift::Error
+  @_Concurrency::MainActor final public func trackLaunchTask<Result, Failure>(id: MetricKit::LaunchTaskID, onTrackingError: ((MetricKit::MetricManager.MetricKit::LaunchTaskError) -> Swift::Void)? = nil, _ operation: () throws(Failure) -> Result) throws(Failure) -> Result where Failure : Swift::Error
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetricManager {
+  public struct LaunchTaskError : Swift::Error {
+    public let taskID: MetricKit::LaunchTaskID
+    public let reason: MetricKit::MetricManager.MetricKit::LaunchTaskError.MetricKit::Reason
+    public enum Reason : Swift::Int, Swift::Sendable {
+      case invalidID
+      case maxCountExceeded
+      case pastDeadline
+      case duplicateTask
+      case taskUnknown
+      case internalFailure
+      public init?(rawValue: Swift::Int)
+      @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, *)
+      @available(tvOS, unavailable)
+      @available(watchOS, unavailable)
+      @available(visionOS, unavailable)
+      public typealias RawValue = Swift::Int
+      public var rawValue: Swift::Int {
+        get
+      }
+    }
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct LaunchTaskID : Swift::RawRepresentable, Swift::Hashable, Swift::Sendable, Swift::CustomStringConvertible, Swift::ExpressibleByStringLiteral {
+  public let rawValue: Swift::String
+  public init(rawValue: Swift::String)
+  public init(stringLiteral value: Swift::String)
+  public var description: Swift::String {
+    get
+  }
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias ExtendedGraphemeClusterLiteralType = Swift::String
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias RawValue = Swift::String
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias StringLiteralType = Swift::String
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias UnicodeScalarLiteralType = Swift::String
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, visionOS 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct OSVersion : Swift::Sendable, Swift::Codable {
+  public let platform: Swift::String
+  public let number: Swift::String
+  public let buildNumber: Swift::String
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+public struct StateReportingDomain : Swift::RawRepresentable, Swift::Hashable, Swift::Sendable, Swift::Codable, Swift::CustomStringConvertible, Swift::ExpressibleByStringLiteral {
+  public let rawValue: Swift::String
+  public init(rawValue: Swift::String)
+  public init(stringLiteral value: Swift::String)
+  public var description: Swift::String {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias ExtendedGraphemeClusterLiteralType = Swift::String
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias RawValue = Swift::String
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias StringLiteralType = Swift::String
+  @available(macOS 27.0, iOS 27.0, macCatalyst 27.0, *)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias UnicodeScalarLiteralType = Swift::String
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::StateReportingDomain : Swift::CodingKeyRepresentable {
+  public init?<T>(codingKey: T) where T : Swift::CodingKey
+  public var codingKey: any Swift::CodingKey {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetricReport.MetricKit::EncodingFormat : Swift::Equatable {}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetricReport.MetricKit::EncodingFormat : Swift::Hashable {}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetricManager.MetricKit::LaunchTaskError.MetricKit::Reason : Swift::Equatable {}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetricManager.MetricKit::LaunchTaskError.MetricKit::Reason : Swift::Hashable {}
+@available(iOS 27.0, macOS 27.0, macCatalyst 27.0, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+extension MetricKit::MetricManager.MetricKit::LaunchTaskError.MetricKit::Reason : Swift::RawRepresentable {}

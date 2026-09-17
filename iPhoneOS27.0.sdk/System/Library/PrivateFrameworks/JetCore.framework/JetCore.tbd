@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/JetCore.framework/JetCore
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _JEGestaltDiskUsageForKey, _JetCoreVersionNumber,
+                            _JetCoreVersionString ]
+    objc-classes:         [ JEUnfairLock, JEWrappedMetricsPipeline,
+                            _JEAtomicCounter, _JEAtomicFlag,
+                            _TtC7JetCore12AMSKitAMSBag,
+                            _TtC7JetCore16OverriddenAMSBag,
+                            _TtC7JetCore8ProxyBag,
+                            _TtCC7JetCore16LocalPreferences20UserDefaultsObserver ]
+    objc-ivars:           [ JEUnfairLock._unfairLock, _JEAtomicCounter._value,
+                            _JEAtomicFlag._value ]
+...

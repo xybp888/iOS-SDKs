@@ -1,0 +1,274 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -user-module-version 847.1 -module-name DataDetection
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported import DataDetection
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 26.0, macOS 26.0, watchOS 26.0, tvOS 26.0, visionOS 26.0, *)
+public enum DataDetector {
+  public struct MatchType : Swift::OptionSet, Swift::Sendable {
+    public let rawValue: Swift::UInt64
+    public init(rawValue: Swift::UInt64)
+    public static let link: DataDetection::DataDetector.DataDetection::MatchType
+    public static let emailAddress: DataDetection::DataDetector.DataDetection::MatchType
+    public static let phoneNumber: DataDetection::DataDetector.DataDetection::MatchType
+    public static let postalAddress: DataDetection::DataDetector.DataDetection::MatchType
+    public static let calendarEvent: DataDetection::DataDetector.DataDetection::MatchType
+    public static let moneyAmount: DataDetection::DataDetector.DataDetection::MatchType
+    public static let measurement: DataDetection::DataDetector.DataDetection::MatchType
+    public static let flightNumber: DataDetection::DataDetector.DataDetection::MatchType
+    public static let shipmentTrackingNumber: DataDetection::DataDetector.DataDetection::MatchType
+    public static let paymentIdentifier: DataDetection::DataDetector.DataDetection::MatchType
+    public static let all: DataDetection::DataDetector.DataDetection::MatchType
+    @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+    public typealias ArrayLiteralElement = DataDetection::DataDetector.DataDetection::MatchType
+    @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+    public typealias Element = DataDetection::DataDetector.DataDetection::MatchType
+    @available(macOS 26.0, iOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+    public typealias RawValue = Swift::UInt64
+  }
+  public struct Options : Swift::Sendable {
+    public init()
+    public var documentDate: Foundation::Date?
+    public var documentTimeZone: Foundation::TimeZone?
+    public var documentLanguageCode: Foundation::Locale.Foundation::LanguageCode?
+    public var documentRegion: Foundation::Locale.Foundation::Region?
+  }
+  public struct Match : Swift::Sendable {
+    public enum HighlightStyle : Swift::Sendable {
+      case hidden
+      case url
+      case regular
+      public static func == (a: DataDetection::DataDetector.DataDetection::Match.DataDetection::HighlightStyle, b: DataDetection::DataDetector.DataDetection::Match.DataDetection::HighlightStyle) -> Swift::Bool
+    }
+    public enum SemanticDetails : Swift::Sendable {
+      public struct Link : Swift::Sendable {
+        public let url: Foundation::URL
+      }
+      case link(DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::Link)
+      public struct EmailAddress : Swift::Sendable {
+        public let emailAddress: Swift::String
+        public let label: Swift::String?
+      }
+      case emailAddress(DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::EmailAddress)
+      public struct PhoneNumber : Swift::Sendable {
+        public let phoneNumber: Swift::String
+        public let label: Swift::String?
+      }
+      case phoneNumber(DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PhoneNumber)
+      public struct PostalAddress : Swift::Sendable {
+        public let fullAddress: Swift::String
+        public let street: Swift::String?
+        public let city: Swift::String?
+        public let state: Swift::String?
+        public let postalCode: Swift::String?
+        public let region: Swift::String?
+        public let regionCode: Foundation::Locale.Foundation::Region?
+        public let label: Swift::String?
+      }
+      case postalAddress(DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PostalAddress)
+      public struct CalendarEvent : Swift::Sendable {
+        public let allDay: Swift::Bool
+        public let startDate: Foundation::Date?
+        public let startTimeZone: Foundation::TimeZone?
+        public let endDate: Foundation::Date?
+        public let endTimeZone: Foundation::TimeZone?
+      }
+      case calendarEvent(DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::CalendarEvent)
+      public struct MoneyAmount : Swift::Sendable {
+        public let currency: Foundation::Locale.Foundation::Currency
+        public let amount: Foundation::Decimal
+      }
+      case moneyAmount(DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::MoneyAmount)
+      public struct FlightNumber : Swift::Sendable {
+        public let airlineCode: Swift::String
+        public let flightNumber: Swift::Int
+      }
+      case flightNumber(DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::FlightNumber)
+      public struct ShipmentTrackingNumber : Swift::Sendable {
+        public let carrier: Swift::String
+        public let trackingNumber: Swift::String
+        public let trackingURL: Foundation::URL?
+      }
+      case shipmentTrackingNumber(DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::ShipmentTrackingNumber)
+      public struct Measurement : Swift::Sendable {
+        public let value: Swift::Double
+        public let possibleDimensions: [Foundation::Dimension]
+        public func measurement<D>(in dimension: D) -> Foundation::Measurement<D> where D : Foundation::Dimension
+      }
+      case measurement(DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::Measurement)
+      public struct PaymentIdentifier : Swift::Sendable {
+        public enum PaymentSystem : Swift::Sendable {
+          case unifiedPaymentsInterface
+          public static func == (a: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PaymentIdentifier.DataDetection::PaymentSystem, b: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PaymentIdentifier.DataDetection::PaymentSystem) -> Swift::Bool
+        }
+        public let identifier: Swift::String
+        public let type: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PaymentIdentifier.DataDetection::PaymentSystem
+      }
+      case paymentIdentifier(DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PaymentIdentifier)
+    }
+    public let range: Swift::Range<Swift::String.Swift::Index>?
+    public let preferredHighlightStyle: DataDetection::DataDetector.DataDetection::Match.DataDetection::HighlightStyle
+    public let details: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails
+  }
+}
+@available(iOS 26.0, macOS 26.0, watchOS 26.0, tvOS 26.0, visionOS 26.0, *)
+extension Swift::StringProtocol {
+  public func dataDetectorMatches(_ types: DataDetection::DataDetector.DataDetection::MatchType = .all, options: DataDetection::DataDetector.DataDetection::Options = DataDetector.Options()) -> some _Concurrency::AsyncSequence<DataDetection::DataDetector.DataDetection::Match, Swift::Never>
+  
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::Match.DataDetection::HighlightStyle : Swift::Codable, Swift::Hashable {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails : Swift::Codable, Swift::Hashable {
+  public static func == (a: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails, b: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::CalendarEvent : Swift::Codable, Swift::Hashable {
+  public static func == (a: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::CalendarEvent, b: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::CalendarEvent) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::EmailAddress : Swift::Codable, Swift::Hashable {
+  public static func == (a: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::EmailAddress, b: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::EmailAddress) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::FlightNumber : Swift::Codable, Swift::Hashable {
+  public static func == (a: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::FlightNumber, b: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::FlightNumber) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::Link : Swift::Codable, Swift::Hashable {
+  public static func == (a: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::Link, b: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::Link) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::MoneyAmount : Swift::Codable, Swift::Hashable {
+  public static func == (a: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::MoneyAmount, b: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::MoneyAmount) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PaymentIdentifier.DataDetection::PaymentSystem : Swift::Codable, Swift::Hashable {
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PaymentIdentifier : Swift::Codable, Swift::Hashable {
+  public static func == (a: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PaymentIdentifier, b: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PaymentIdentifier) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PhoneNumber : Swift::Codable, Swift::Hashable {
+  public static func == (a: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PhoneNumber, b: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PhoneNumber) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PostalAddress : Swift::Codable, Swift::Hashable {
+  public static func == (a: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PostalAddress, b: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::PostalAddress) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::ShipmentTrackingNumber : Swift::Codable, Swift::Hashable {
+  public static func == (a: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::ShipmentTrackingNumber, b: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::ShipmentTrackingNumber) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::Measurement : Swift::Codable, Swift::Hashable {
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+  public static func == (a: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::Measurement, b: DataDetection::DataDetector.DataDetection::Match.DataDetection::SemanticDetails.DataDetection::Measurement) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::Match : Swift::Codable, Swift::Hashable {
+  public func hash(into hasher: inout Swift::Hasher)
+  public static func == (lhs: DataDetection::DataDetector.DataDetection::Match, rhs: DataDetection::DataDetector.DataDetection::Match) -> Swift::Bool
+  public init(from decoder: any Swift::Decoder) throws
+  public func encode(to encoder: any Swift::Encoder) throws
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::MatchType : Swift::Codable, Swift::Hashable {
+}
+@available(iOS 27.0, macOS 27.0, watchOS 27.0, tvOS 27.0, visionOS 27.0, *)
+extension DataDetection::DataDetector.DataDetection::Options : Swift::Codable, Swift::Hashable {
+  public static func == (a: DataDetection::DataDetector.DataDetection::Options, b: DataDetection::DataDetector.DataDetection::Options) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+  public init(from decoder: any Swift::Decoder) throws
+}

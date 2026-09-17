@@ -1,0 +1,58 @@
+/*	NSExtensionContext.h
+        Copyright (c) 2013-2019, Apple Inc. All rights reserved.
+*/
+
+#import <Foundation/Foundation.h>
+
+#if __OBJC2__
+
+/// Class representing the extension request's context.
+NS_HEADER_AUDIT_BEGIN(nullability, sendability)
+
+/// The host app context from which an app extension is invoked.
+///
+/// When a host app sends a request to an app extension, it provides an extension context. For many app extensions, the most important part of the context is the data the user wants to work with, which is contained in the ``inputItems`` property.
+API_AVAILABLE(macos(10.10), ios(8.0), watchos(2.0), tvos(9.0))
+@interface NSExtensionContext : NSObject
+
+/// The list of input NSExtensionItems associated with the context.
+///
+/// If the context has no input items, this array will be empty.
+@property(readonly, copy, NS_NONATOMIC_IOSONLY) NSArray *inputItems;
+
+/// Signals the host to complete the app extension request with the supplied result items.
+///
+/// The completion handler optionally contains any work which the extension may need to perform after the request has been completed,
+/// as a background-priority task. The @c expired parameter will be @c YES if the system decides to prematurely terminate
+/// a previous non-expiration invocation of the completion handler. Calling this method will eventually dismiss the associated view controller.
+- (void)completeRequestReturningItems:(nullable NSArray *)items completionHandler:(void(NS_SWIFT_SENDABLE ^ _Nullable)(BOOL expired))completionHandler NS_SWIFT_DISABLE_ASYNC;
+
+/// Signals the host to cancel the app extension request, with the supplied error, which should be non-nil.
+///
+/// The @c userInfo of the @c NSError will contain a key @c NSExtensionItemsAndErrorsKey which will have as its value
+/// a dictionary of @c NSExtensionItems and associated @c NSError instances.
+- (void)cancelRequestWithError:(NSError *)error;
+
+/// Asks the host to open a URL on the extension's behalf.
+- (void)openURL:(NSURL *)URL completionHandler:(void (NS_SWIFT_SENDABLE ^ _Nullable)(BOOL success))completionHandler;
+
+@end
+
+/// Key in userInfo. Value is a dictionary of NSExtensionItems and associated NSError instances.
+FOUNDATION_EXTERN NSString * __null_unspecified const NSExtensionItemsAndErrorsKey API_AVAILABLE(macos(10.10), ios(8.0), watchos(2.0), tvos(9.0));
+
+/// Posted when the host process will enter the foreground.
+FOUNDATION_EXTERN NSString * __null_unspecified const NSExtensionHostWillEnterForegroundNotification API_AVAILABLE(ios(8.2), watchos(2.0), tvos(9.0)) API_UNAVAILABLE(macos);
+
+/// Posted when the host process did enter the background.
+FOUNDATION_EXTERN NSString * __null_unspecified const NSExtensionHostDidEnterBackgroundNotification API_AVAILABLE(ios(8.2), watchos(2.0), tvos(9.0)) API_UNAVAILABLE(macos);
+
+/// Posted when the host process will resign active status (stop receiving events); the extension may be suspended.
+FOUNDATION_EXTERN NSString * __null_unspecified const NSExtensionHostWillResignActiveNotification API_AVAILABLE(ios(8.2), watchos(2.0), tvos(9.0)) API_UNAVAILABLE(macos);
+
+/// Posted when the host process did become active (begin receiving events).
+FOUNDATION_EXTERN NSString * __null_unspecified const NSExtensionHostDidBecomeActiveNotification API_AVAILABLE(ios(8.2), watchos(2.0), tvos(9.0)) API_UNAVAILABLE(macos);
+
+NS_HEADER_AUDIT_END(nullability, sendability)
+
+#endif

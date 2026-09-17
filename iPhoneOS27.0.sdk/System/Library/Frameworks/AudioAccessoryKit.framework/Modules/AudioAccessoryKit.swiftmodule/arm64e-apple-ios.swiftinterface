@@ -1,0 +1,242 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 40.41.1.1.7 -module-name AudioAccessoryKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+import AccessorySetupKit.ASAccessory
+import AccessorySetupKit
+import AccessoryTransportExtension
+import AudioToolbox
+import ExtensionFoundation
+import Foundation
+import Swift
+import Synchronization
+import XPC
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+@_hasMissingDesignatedInitializers @available(iOS 26.4, *)
+@available(macCatalyst, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+final public class AccessoryControlDevice {
+  public enum Error : Swift::Error, Foundation::LocalizedError, Swift::Sendable {
+    case unknown
+    case invalidRequest
+    case accessoryNotCapable
+    case invalidated
+    public var errorDescription: Swift::String? {
+      get
+    }
+    public static func == (a: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Error, b: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Error) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public enum Placement : Swift::CaseIterable, Swift::Sendable {
+    case offHead
+    case onHead
+    case inEar
+    case overTheEar
+    public static func == (a: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Placement, b: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Placement) -> Swift::Bool
+    @available(iOS 26.4, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(macCatalyst, unavailable)
+    @available(visionOS, unavailable)
+    public typealias AllCases = [AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Placement]
+    nonisolated public static var allCases: [AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Placement] {
+      get
+    }
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public struct Capabilities : Swift::OptionSet, Swift::Sendable {
+    public let rawValue: Swift::Int
+    public init(rawValue: Swift::Int)
+    public static let placement: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Capabilities
+    public static let audioSwitching: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Capabilities
+    @available(iOS 27.0, *)
+    public static let audioSpatialization: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Capabilities
+    @available(iOS 27.0, *)
+    public static let headTracking: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Capabilities
+    @available(iOS 26.4, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(macCatalyst, unavailable)
+    @available(visionOS, unavailable)
+    public typealias ArrayLiteralElement = AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Capabilities
+    @available(iOS 26.4, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(macCatalyst, unavailable)
+    @available(visionOS, unavailable)
+    public typealias Element = AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Capabilities
+    @available(iOS 26.4, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(macCatalyst, unavailable)
+    @available(visionOS, unavailable)
+    public typealias RawValue = Swift::Int
+  }
+  final public let accessory: AccessorySetupKit::ASAccessory
+  final public var configuration: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Configuration {
+    get
+  }
+  public static func current(for accessory: AccessorySetupKit::ASAccessory) throws -> AudioAccessoryKit::AccessoryControlDevice
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) public static func register(_ accessory: AccessorySetupKit::ASAccessory, _ configuration: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Configuration) async throws
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  final nonisolated(nonsending) public func update(_ configuration: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Configuration) async throws
+  #endif
+  @objc deinit
+}
+@available(iOS 26.4, *)
+@available(macCatalyst, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension AudioAccessoryKit::AccessoryControlDevice {
+  public struct Configuration : Swift::Sendable {
+    public var devicePlacement: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Placement?
+    public var deviceCapabilities: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Capabilities
+    public var primaryAudioSourceDeviceIdentifier: Foundation::Data?
+    public var secondaryAudioSourceDeviceIdentifier: Foundation::Data?
+    public var spatialExtensionDescription: AudioToolbox::AudioComponentDescription?
+    public init(devicePlacement: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Placement? = nil, deviceCapabilities: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Capabilities, primaryAudioSourceDeviceIdentifier: Foundation::Data? = nil, secondaryAudioSourceDeviceIdentifier: Foundation::Data? = nil)
+    @available(iOS 27.0, *)
+    public init(devicePlacement: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Placement? = nil, deviceCapabilities: AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Capabilities, primaryAudioSourceDeviceIdentifier: Foundation::Data? = nil, secondaryAudioSourceDeviceIdentifier: Foundation::Data? = nil, spatialExtensionDescription: AudioToolbox::AudioComponentDescription?)
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+public enum AudioAccessoryError : Swift::Error, Foundation::LocalizedError, Swift::Sendable, Swift::Hashable {
+  case invalidDataSize
+  case notActivated
+  public static func == (a: AudioAccessoryKit::AudioAccessoryError, b: AudioAccessoryKit::AudioAccessoryError) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+@available(macCatalyst, unavailable)
+public struct AccessorySensorUpdates : _Concurrency::AsyncSequence, Swift::Sendable {
+  public typealias Element = Foundation::Data
+  public enum StreamError : Swift::Error, Foundation::LocalizedError, Swift::Sendable, Swift::Hashable {
+    case connectionLost
+    public var errorDescription: Swift::String? {
+      get
+    }
+    public static func == (a: AudioAccessoryKit::AccessorySensorUpdates.AudioAccessoryKit::StreamError, b: AudioAccessoryKit::AccessorySensorUpdates.AudioAccessoryKit::StreamError) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public static var isSupported: Swift::Bool {
+    get
+  }
+  public init(for accessoryIdentifier: Swift::String)
+  public func makeAsyncIterator() -> AudioAccessoryKit::AccessorySensorUpdates.AudioAccessoryKit::AsyncIterator
+  public struct AsyncIterator : _Concurrency::AsyncIteratorProtocol {
+    public typealias Element = Foundation::Data
+    #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+    nonisolated(nonsending) public mutating func next() async throws -> Foundation::Data?
+    #endif
+    @available(iOS 27.0, *)
+    @available(macOS, unavailable, introduced: 15.0)
+    @available(tvOS, unavailable, introduced: 18.0)
+    @available(watchOS, unavailable, introduced: 11.0)
+    @available(macCatalyst, unavailable)
+    @available(visionOS, unavailable, introduced: 2.0)
+    @_implements(_Concurrency::AsyncIteratorProtocol, Failure) public typealias __AsyncIteratorProtocol_Failure = any Swift::Error
+  }
+  @available(iOS 27.0, *)
+  @available(macOS, unavailable, introduced: 15.0)
+  @available(tvOS, unavailable, introduced: 18.0)
+  @available(watchOS, unavailable, introduced: 11.0)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable, introduced: 2.0)
+  @_implements(_Concurrency::AsyncSequence, Failure) public typealias __AsyncSequence_Failure = any Swift::Error
+}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+final public class AudioAccessoryHeadTracking : AccessoryTransportExtension::AccessoryFeature, Swift::Sendable {
+  public static let featureID: Swift::String
+  public init(_ handlerFactory: @escaping @Sendable () -> any AudioAccessoryKit::AudioAccessoryHeadTracking.AudioAccessoryKit::Handler)
+  public protocol Handler : Swift::Sendable {
+    @available(iOS 27.0, *)
+    func activate(for session: AudioAccessoryKit::AudioAccessoryHeadTracking.AudioAccessoryKit::Session)
+    @available(iOS 27.0, *)
+    func headTrackingStateDidChange(isActive: Swift::Bool)
+    @available(iOS 27.0, *)
+    func invalidate()
+    @available(iOS 27.0, *)
+    func handleAccessorySensorMessage(_ message: AccessoryTransportExtension::TransportMessage)
+  }
+  @_hasMissingDesignatedInitializers final public class Session : Swift::Sendable, AccessoryTransportExtension::AccessoryFeatureSession {
+    final public let restorationID: Swift::String?
+    final public func sendDataToAudioExtension(_ data: Foundation::Data) throws
+    final public var isHeadTrackingActive: Swift::Bool {
+      get
+    }
+    @objc deinit
+  }
+  @available(iOS 27.0, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(visionOS, unavailable)
+  public typealias ID = Swift::String
+  @objc deinit
+}
+@available(iOS 26.4, *)
+@available(macCatalyst, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Error : Swift::Equatable {}
+@available(iOS 26.4, *)
+@available(macCatalyst, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Error : Swift::Hashable {}
+@available(iOS 26.4, *)
+@available(macCatalyst, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Placement : Swift::Equatable {}
+@available(iOS 26.4, *)
+@available(macCatalyst, unavailable)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension AudioAccessoryKit::AccessoryControlDevice.AudioAccessoryKit::Placement : Swift::Hashable {}

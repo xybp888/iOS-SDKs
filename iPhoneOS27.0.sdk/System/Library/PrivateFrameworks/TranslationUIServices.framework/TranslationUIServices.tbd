@@ -1,0 +1,41 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/TranslationUIServices.framework/TranslationUIServices
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _LTUIErrorDomain, _kLTUICPLIntervalIDParameterKey,
+                            _kLTUIConsentDisplayOnlyParameterKey,
+                            _kLTUIIgnoredAttributesParameterKey,
+                            _kLTUIReplacementAvailableParameterKey,
+                            _kLTUISkipFirstUseParameterKey,
+                            _kLTUISourceLocaleParameterKey,
+                            _kLTUISourceMetaParameterKey,
+                            _kLTUITargetLocaleParameterKey,
+                            _kLTUIViewServiceProtocol ]
+    objc-classes:         [ LTUIErrorViewController, LTUIRemoteViewController,
+                            LTUISourceMeta, LTUITranslationViewController ]
+    objc-ivars:           [ LTUIRemoteViewController._delegate,
+                            LTUISourceMeta._context,
+                            LTUISourceMeta._languageHints,
+                            LTUISourceMeta._origin,
+                            LTUITranslationViewController._consentDisplayOnly,
+                            LTUITranslationViewController._currentExtension,
+                            LTUITranslationViewController._dismissCompletionHandler,
+                            LTUITranslationViewController._ignoredAttributes,
+                            LTUITranslationViewController._isSourceEditable,
+                            LTUITranslationViewController._matchingToken,
+                            LTUITranslationViewController._remoteViewController,
+                            LTUITranslationViewController._replacementHandler,
+                            LTUITranslationViewController._requestID,
+                            LTUITranslationViewController._sourceLocale,
+                            LTUITranslationViewController._sourceMeta,
+                            LTUITranslationViewController._targetLocale,
+                            LTUITranslationViewController._text,
+                            LTUITranslationViewController._userConsentConfirmed,
+                            LTUITranslationViewController.cplID,
+                            LTUITranslationViewController.extensionQueryID ]
+...

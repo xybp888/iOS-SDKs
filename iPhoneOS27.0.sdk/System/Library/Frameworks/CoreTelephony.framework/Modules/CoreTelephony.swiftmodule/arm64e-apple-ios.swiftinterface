@@ -1,0 +1,155 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4 (swiftlang-6.4.0.31.4 clang-2100.3.31.1)
+// swift-module-flags: -target arm64e-apple-ios27.0 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-experimental-feature DebugDescriptionMacro -user-module-version 13487.6 -module-name CoreTelephony
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+@_exported import CoreTelephony
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+@_hasMissingDesignatedInitializers @available(iOS 26.3, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+final public class CTSlicingManager : Swift::Sendable {
+  public struct Slice : Swift::Sendable, Swift::Equatable {
+    public let appCategory: CoreTelephony::CTSlicingManager.CoreTelephony::AppCategory
+    public let trafficClass: CoreTelephony::CTSlicingManager.CoreTelephony::TrafficClass?
+    public let networkInterfaceName: Swift::String
+    public static func == (a: CoreTelephony::CTSlicingManager.CoreTelephony::Slice, b: CoreTelephony::CTSlicingManager.CoreTelephony::Slice) -> Swift::Bool
+  }
+  public enum AppCategory : Swift::Int, Swift::CaseIterable, Swift::Sendable {
+    case gaming
+    case communication
+    case streaming
+    @available(iOS 27.0, *)
+    case missionCritical
+    public static var allCases: [CoreTelephony::CTSlicingManager.CoreTelephony::AppCategory] {
+      get
+    }
+    public var description: Swift::String {
+      get
+    }
+    public init?(rawValue: Swift::Int)
+    @available(iOS 26.3, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias AllCases = [CoreTelephony::CTSlicingManager.CoreTelephony::AppCategory]
+    @available(iOS 26.3, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias RawValue = Swift::Int
+    public var rawValue: Swift::Int {
+      get
+    }
+  }
+  public enum TrafficClass : Swift::CaseIterable, Swift::Sendable {
+    case any
+    case background
+    case responsiveData
+    case avStreaming
+    case responsiveAV
+    case video
+    case voice
+    case signaling
+    public var description: Swift::String {
+      get
+    }
+    public static func == (a: CoreTelephony::CTSlicingManager.CoreTelephony::TrafficClass, b: CoreTelephony::CTSlicingManager.CoreTelephony::TrafficClass) -> Swift::Bool
+    @available(iOS 26.3, *)
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    public typealias AllCases = [CoreTelephony::CTSlicingManager.CoreTelephony::TrafficClass]
+    nonisolated public static var allCases: [CoreTelephony::CTSlicingManager.CoreTelephony::TrafficClass] {
+      get
+    }
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public static let shared: CoreTelephony::CTSlicingManager
+  final public var availableSliceAppCategories: [CoreTelephony::CTSlicingManager.CoreTelephony::AppCategory] {
+    get async throws
+  }
+  final public func activatePreferredSliceForCategory(_ appCategory: CoreTelephony::CTSlicingManager.CoreTelephony::AppCategory) async throws
+  final public func disableSlicing() async throws
+  final public var activeSlices: [CoreTelephony::CTSlicingManager.CoreTelephony::Slice] {
+    get async throws
+  }
+  @objc deinit
+}
+@available(iOS 26.0, watchOS 26.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension CoreTelephony::CTCellularPlanProperties {
+  public var supportedRegionCodes: [Foundation::Locale.Foundation::Region] {
+    get
+    set
+  }
+}
+@available(iOS 27.0, watchOS 27.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension CoreTelephony::CTTelephonyNetworkInfo {
+  public struct RadioAccessTechnologyDidChangeMessage : Foundation::NotificationCenter.Foundation::AsyncMessage {
+    public typealias Subject = Swift::String
+    public static var name: Foundation::Notification.Foundation::Name {
+      get
+    }
+    public var serviceIdentifier: Swift::String
+    public static func makeMessage(_ notification: Foundation::Notification) -> CoreTelephony::CTTelephonyNetworkInfo.CoreTelephony::RadioAccessTechnologyDidChangeMessage?
+    public static func makeNotification(_ message: CoreTelephony::CTTelephonyNetworkInfo.CoreTelephony::RadioAccessTechnologyDidChangeMessage) -> Foundation::Notification
+  }
+}
+@available(iOS 27.0, watchOS 27.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension Foundation::NotificationCenter.Foundation::MessageIdentifier where Self == Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreTelephony::CTTelephonyNetworkInfo.CoreTelephony::RadioAccessTechnologyDidChangeMessage> {
+  public static var radioAccessTechnologyDidChange: Foundation::NotificationCenter.Foundation::BaseMessageIdentifier<CoreTelephony::CTTelephonyNetworkInfo.CoreTelephony::RadioAccessTechnologyDidChangeMessage> {
+    get
+  }
+}
+@available(iOS 26.3, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension CoreTelephony::CTSlicingManager.CoreTelephony::AppCategory : Swift::Equatable {}
+@available(iOS 26.3, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension CoreTelephony::CTSlicingManager.CoreTelephony::AppCategory : Swift::Hashable {}
+@available(iOS 26.3, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension CoreTelephony::CTSlicingManager.CoreTelephony::AppCategory : Swift::RawRepresentable {}
+@available(iOS 26.3, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension CoreTelephony::CTSlicingManager.CoreTelephony::TrafficClass : Swift::Equatable {}
+@available(iOS 26.3, *)
+@available(watchOS, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension CoreTelephony::CTSlicingManager.CoreTelephony::TrafficClass : Swift::Hashable {}

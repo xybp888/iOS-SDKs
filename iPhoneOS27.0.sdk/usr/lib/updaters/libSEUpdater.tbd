@@ -1,0 +1,37 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/updaters/libSEUpdater.dylib
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SEUpdaterCreate, _SEUpdaterExecCommand,
+                            _SEUpdaterIsDone, _kSECmdCopyIdentifier,
+                            _kSECmdPerformNextStage, _kSECmdQueryInfo,
+                            _kSECmdSendApduFile, _kSECmdVerifyPairing ]
+    objc-classes:         [ APDUUtil, AlohaPairingController, AlohaPairingVerifier,
+                            BAADelegateImpl, SETransceiveHelper ]
+    objc-ivars:           [ AlohaPairingController._alohaHostname,
+                            AlohaPairingController._alohaPlistRecord,
+                            AlohaPairingController._alohaServerIP,
+                            AlohaPairingController._alohaVersion,
+                            AlohaPairingController._apChipId,
+                            AlohaPairingController._debugRecordPath,
+                            AlohaPairingController._ecid,
+                            AlohaPairingController._fullServerSessionID,
+                            AlohaPairingController._restoreEnvironment,
+                            AlohaPairingController._reverseProxySettings,
+                            AlohaPairingController._seid,
+                            AlohaPairingController._serverSessionID,
+                            AlohaPairingController._state,
+                            AlohaPairingController._transceiver,
+                            AlohaPairingController._useReverseProxy,
+                            AlohaPairingVerifier._options,
+                            AlohaPairingVerifier._seid,
+                            AlohaPairingVerifier._transceiver,
+                            SETransceiveHelper._capduRecord,
+                            SETransceiveHelper._fSeController,
+                            SETransceiveHelper._rapduRecord ]
+...
