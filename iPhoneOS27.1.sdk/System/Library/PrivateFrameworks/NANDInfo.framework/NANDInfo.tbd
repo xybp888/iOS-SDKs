@@ -1,0 +1,59 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NANDInfo.framework/NANDInfo
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ASPFTLParseBufferToDict, _ASPMSPParseBufferToDict,
+                            _ASPMSPParseSMBufferToDict, _ASPParseBufferToCxt,
+                            _ASPParseSnapshotBuffer,
+                            _ASPParseSnapshotBufferWithInplaceParser,
+                            _ASPReleaseContext, _AnalyticsSendEventLazyWrapper,
+                            _CopyAppleCareNANDInfo, _CopyGeomErrorInfo,
+                            _CopyInternalLabNANDInfo, _CopyNANDFTLInfo,
+                            _CopyNANDInfo, _CopyNANDInfoWithOptions,
+                            _CopyOTANANDInfo, _CopyPowerLogNANDInfo,
+                            _CopySMagHistoryNANDFTLInfo, _CopySMagMSPInfo,
+                            _CopySMagNANDFTLCustomHistoryInfo,
+                            _CopySMagNANDFTLInfo, _CopyVMFreezerNANDInfo,
+                            _CopyVMNANDInfo, _CopyWhitelistedNANDFTLCountersInfo,
+                            _CopyWhitelistedNANDFTLInfo,
+                            _CopyWhitelistedNANDMSPInfo,
+                            _CopyWhitelistedStorageStats,
+                            _DumpStorageStructuredLog, _GetDiskInfo,
+                            _GetFTLStatsObjectTable, _GetGeomErrorPayloadCnt,
+                            _GetMSPStatsObjectTable, _LogStorageUIDatatoCA,
+                            _NandInfoExtractToCA_runAllSteps,
+                            _NandRecommendsContentDeletion, _ReleaseIOInterfaces,
+                            _SetGeomErrorPayloadCnt, _SetiCloudPlanSizeGB,
+                            _fetchTunnelBuffer, _fetchTunnelBufferSkipSizeWrap,
+                            _fetchTunnelBufferWithInVal,
+                            _fetchTunnelBufferWithInValFlagZero,
+                            _fetchTunnelBuffer_simple,
+                            _fetchTunnelBuffer_zeroflag, _findNandExporter,
+                            _findNandExporter_tunnel, _freeGlobalFTLStatDict,
+                            _getTunnelOutputThroughSizeOnlyHandling,
+                            _kNANDInfoCacheDeleteErrorKey,
+                            _kNANDInfoCacheDeleteErrorMessageKey,
+                            _kNANDInfoErrorKey, _kNANDInfoErrorMessageKey,
+                            _loadGlobalFTLStatDict, _populateTunnelBuffer,
+                            _populateTunnelOutputBufferWithoutSizeQuery,
+                            _sendTunnelBuffer ]
+    objc-classes:         [ NANDFTLStatInfo, NANDInfo_GeomErrorPayloadManager,
+                            NANDMSPStatInfo, NANDStatDictionary ]
+    objc-ivars:           [ NANDFTLStatInfo._eventBitmap, NANDFTLStatInfo._name,
+                            NANDFTLStatInfo._numElements,
+                            NANDInfo_GeomErrorPayloadManager._error_pages_array,
+                            NANDInfo_GeomErrorPayloadManager._error_payload_array,
+                            NANDInfo_GeomErrorPayloadManager._invalid_error_payload,
+                            NANDInfo_GeomErrorPayloadManager._num_errors_in_payload_cur,
+                            NANDInfo_GeomErrorPayloadManager._num_errors_in_payload_prev,
+                            NANDInfo_GeomErrorPayloadManager._other_stats_dict,
+                            NANDMSPStatInfo._bytesPerElement,
+                            NANDMSPStatInfo._name, NANDMSPStatInfo._numElements,
+                            NANDStatDictionary._arrayDictionary,
+                            NANDStatDictionary._statType ]
+...

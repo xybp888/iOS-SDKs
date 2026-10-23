@@ -1,0 +1,41 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/libsat.framework/libsat
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ __Z10do_commandRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERS5_b,
+                            __Z11SAT_DrainRxRKj,
+                            __Z14find_port_infoRNSt3__16vectorI8sat_infoNS_9allocatorIS1_EEEEjj,
+                            __Z14sat_list_portsv,
+                            __Z15SAT_GetPortInfoRKjR8sat_info,
+                            __Z15SAT_SetBootArgsRKjy,
+                            __Z15SAT_SetTxConfigRKjRK12sat_txconfig,
+                            __Z16SAT_GetKextForIDjjRj, __Z16make_human_bytesy,
+                            __Z17SAT_SendDirectiveRKjRK18sat_directive_data,
+                            __Z17SAT_SetPortConfigRKjRK15sat_port_config,
+                            __Z17_rx_explicit_readv, __Z18SAT_OpenUserClientjRj,
+                            __Z18_test_enqueue_dataPvj,
+                            __Z19SAT_ClearMsgsToUserRKj,
+                            __Z19SAT_CloseUserClientj, __Z19sat_clear_kext_msgsv,
+                            __Z20sat_get_msgs_to_userPj,
+                            __Z21SAT_EnumeratePortInfoPFvRK8sat_infoPvES2_,
+                            __Z22SAT_GetMsgsToUserCountRKjR21sat_msg_to_user_count,
+                            __Z22sat_get_version_stringv,
+                            __Z23SAT_GetMsgToUserByIndexRKjjR15sat_msg_to_user,
+                            __Z23sat_find_connected_portRjS_S_,
+                            __Z26SAT_RegisterRxDataCallbackRKjPFvPvmE,
+                            __Z27sat_get_loaded_kext_versionRjS_S_,
+                            __Z32sat_get_compiletime_kext_versionRjS_S_,
+                            __Z41parse_routerid_portid_from_traceport_pathPKcRjS1_,
+                            _g_total_callback_count, _g_total_dequeue_count,
+                            _g_total_notification_count, _sat_iterate_ports,
+                            _sat_port_is_connected, _sat_port_port_id,
+                            _sat_port_router_id ]
+    objc-classes:         [ SATTraceFileObjc, _TtC6libsat12SATTraceFile,
+                            _TtC6libsat7SATPipe ]
+    objc-ivars:           [ SATTraceFileObjc._underlyingObject ]
+...

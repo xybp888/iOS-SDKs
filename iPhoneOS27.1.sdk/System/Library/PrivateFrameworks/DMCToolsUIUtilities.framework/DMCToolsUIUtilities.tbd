@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DMCToolsUIUtilities.framework/DMCToolsUIUtilities
+current-version:       1
+compatibility-version: 1
+reexported-libraries:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:            [ /System/Library/PrivateFrameworks/DMCEnrollmentProvider.framework/DMCEnrollmentProvider ]
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _DMCToolsUIUtilitiesVersionNumber,
+                            _DMCToolsUIUtilitiesVersionString ]
+...

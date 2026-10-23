@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AdPlatformsInternal.framework/AdPlatformsInternal
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AdPlatformsInternalVersionNumber,
+                            _AdPlatformsInternalVersionString ]
+    objc-classes:         [ ADAttributionRequester, ADAttributionService ]
+    objc-ivars:           [ ADAttributionRequester._bundleID,
+                            ADAttributionRequester._connection,
+                            ADAttributionRequester._transactionToken,
+                            ADAttributionService._clients,
+                            ADAttributionService._listener,
+                            ADAttributionService._transactionID ]
+...

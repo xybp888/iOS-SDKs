@@ -1,0 +1,37 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/UserSafetyUI.framework/UserSafetyUI
+current-version:       1
+compatibility-version: 1
+reexported-libraries:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:            [ /System/Library/PrivateFrameworks/SensitiveContentAnalysisUI.framework/SensitiveContentAnalysisUI ]
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _UserSafetyUIVersionNumber,
+                            _UserSafetyUIVersionString ]
+    objc-classes:         [ USUIContactParentsHelper,
+                            USUIInterventionScreenAction,
+                            USUIInterventionScreenBullet,
+                            USUIInterventionScreenModel,
+                            USUIInterventionViewController,
+                            USUIMoreHelpMenuAction, USUIMoreHelpMenuModel ]
+    objc-ivars:           [ USUIInterventionScreenAction._actionID,
+                            USUIInterventionScreenAction._primary,
+                            USUIInterventionScreenAction._title,
+                            USUIInterventionScreenBullet._emoji,
+                            USUIInterventionScreenBullet._imageName,
+                            USUIInterventionScreenBullet._text,
+                            USUIInterventionScreenModel._actions,
+                            USUIInterventionScreenModel._bullets,
+                            USUIInterventionScreenModel._emoji,
+                            USUIInterventionScreenModel._imageName,
+                            USUIInterventionScreenModel._title,
+                            USUIMoreHelpMenuAction._actionID,
+                            USUIMoreHelpMenuAction._destructive,
+                            USUIMoreHelpMenuAction._title,
+                            USUIMoreHelpMenuModel._actions,
+                            USUIMoreHelpMenuModel._title ]
+...

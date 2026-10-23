@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriTasksEvaluation.framework/SiriTasksEvaluation
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ BiomeUtils, LighthouseShadowEvaluator, SiriIntentEvent,
+                            SiriTaskConfiguration, SiriTasksEvaluationResult,
+                            StitchableInteraction,
+                            _TtC19SiriTasksEvaluation17FeatureStoreUtils,
+                            _TtC19SiriTasksEvaluation26SimpleTaskSuccessEvaluator ]
+    objc-ivars:           [ LighthouseShadowEvaluator._evaluationResults,
+                            LighthouseShadowEvaluator._jsonSELFResults,
+                            SiriIntentEvent._createdAt,
+                            SiriIntentEvent._eventData,
+                            SiriIntentEvent._eventType,
+                            SiriIntentEvent._intentId,
+                            SiriTaskConfiguration._eventTime,
+                            SiriTaskConfiguration._minDurationInSeconds,
+                            SiriTaskConfiguration._taskName,
+                            SiriTaskConfiguration._taskType,
+                            SiriTasksEvaluationResult._isEffectiveTask,
+                            SiriTasksEvaluationResult._isSuccessfulTask,
+                            SiriTasksEvaluationResult._taskId,
+                            StitchableInteraction._duration,
+                            StitchableInteraction._identifier,
+                            StitchableInteraction._isDonatedBySiri,
+                            StitchableInteraction._startDate,
+                            StitchableInteraction._type ]
+...

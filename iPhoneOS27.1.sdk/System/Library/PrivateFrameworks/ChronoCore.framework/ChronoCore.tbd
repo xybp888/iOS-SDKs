@@ -1,0 +1,49 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ChronoCore.framework/ChronoCore
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CHDCreateATXInfoTimelineEntries, _CHDEnterSandbox,
+                            _CHDFaultInProactiveFrameworkIfAvailable,
+                            _CHDForwardEntriesToProactive,
+                            _CHDJetsamSetElevatedInactivePriority,
+                            _CHDRegisterForTemporaryFolder,
+                            _CHDSerializeNSUserActivity,
+                            _ChronoCoreVersionNumber, _ChronoCoreVersionString ]
+    objc-classes:         [ AuthorizationPromptIconPathGenerator,
+                            CHCBluetoothConnectionQueryingWrapper,
+                            CHCDistributedNotificationCenter, CHCWorkloop,
+                            CHDProactiveEntry,
+                            CHSReplicatedControlDescriptorsBox,
+                            CHSReplicatedDescriptorsBox,
+                            _TtC10ChronoCore13ExtensionTask,
+                            _TtC10ChronoCore14ControlsServer,
+                            _TtC10ChronoCore14ProcessMonitor,
+                            _TtC10ChronoCore17APSPushConnection,
+                            _TtC10ChronoCore17DescriptorService,
+                            _TtC10ChronoCore18ToolServicesServer,
+                            _TtC10ChronoCore18WidgetCenterServer,
+                            _TtC10ChronoCore19ControlCenterServer,
+                            _TtC10ChronoCore20ChronoServicesServer,
+                            _TtC10ChronoCore20TaskSessionQueuePool,
+                            _TtC10ChronoCore20WidgetRendererServer,
+                            _TtC10ChronoCore21TaskActivityScheduler,
+                            _TtC10ChronoCore22ActivityRendererServer,
+                            _TtC10ChronoCore26DefaultHearingAidInterface,
+                            _TtC10ChronoCore28AccessoryAppActivitiesServer,
+                            _TtC10ChronoCore28NowPlayingControllerDelegate,
+                            _TtC10ChronoCore29AccessoryAuthorizationManager,
+                            _TtC10ChronoCore31AccessoryDeviceActivitiesServer,
+                            _TtC10ChronoCore32AccessoryDataExtensionConnection,
+                            _TtC10ChronoCore33_LocationAuthorizationMonitorImpl,
+                            _TtC10ChronoCore37_LocationSignificantChangeMonitorImpl,
+                            _TtC10ChronoCore38ConcreteManagedConfigurationPrimitives ]
+    objc-ivars:           [ CHCBluetoothConnectionQueryingWrapper._querying,
+                            CHDProactiveEntry._date, CHDProactiveEntry._duration,
+                            CHDProactiveEntry._hasRelevance,
+                            CHDProactiveEntry._score ]
+...

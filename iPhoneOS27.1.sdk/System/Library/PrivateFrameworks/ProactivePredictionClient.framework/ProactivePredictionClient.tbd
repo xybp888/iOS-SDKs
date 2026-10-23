@@ -1,0 +1,28 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ProactivePredictionClient.framework/ProactivePredictionClient
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ATXProactivePredictionXPCInterface,
+                            _ProactivePredictionClientVersionNumber,
+                            _ProactivePredictionClientVersionString,
+                            _kATXProactivePredictionClientHelperXPCInterfaceMachServiceName ]
+    objc-classes:         [ ATXActionSuggestionMetadataClient,
+                            ATXEncodedActionSuggestionMetadata,
+                            ATXEncodedToolInvocationWithContext,
+                            ATXProactivePredictionClientHelper,
+                            ATXSpotlightClientEncodedToolAction,
+                            ATXToolKitActionStreamEvent,
+                            ATXToolKitActionStreamWrapper,
+                            _TtC25ProactivePredictionClient19SPParameterizedTool ]
+    objc-ivars:           [ ATXEncodedActionSuggestionMetadata._canonicalActionID,
+                            ATXEncodedActionSuggestionMetadata._encodedInvocation,
+                            ATXEncodedActionSuggestionMetadata._encodedSummary,
+                            ATXEncodedToolInvocationWithContext._context,
+                            ATXEncodedToolInvocationWithContext._encodedInvocation,
+                            ATXProactivePredictionClientHelper._xpcConnection ]
+...

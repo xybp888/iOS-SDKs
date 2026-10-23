@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SuggestedImage.framework/SuggestedImage
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SuggestedImageVersionNumber,
+                            _SuggestedImageVersionString, _TCErrorDomain,
+                            _TCFedstatsTrieDomain, _TCPhraseTrieBuilderDomain,
+                            _TCPhraseTrieDomain, _TCPhraseTrieSerializerDomain,
+                            __ZN8triecore26_createTrieSupportedStringEPK10__CFString,
+                            __ZN8triecore27_getTrieSupportedStringViewEPK10__CFStringRNSt3__112basic_stringItNS3_11char_traitsItEENS3_9allocatorItEEEE,
+                            __ZN8triecore29_createUTF8StringFromCFStringEPK10__CFString,
+                            __ZN8triecore30_createUTF16StringFromCFStringEPK10__CFString ]
+    objc-classes:         [ SIAssetRequest, SISuggestedImageProvider, SIUseCase,
+                            SIWallpaperUtilities, TCFedstatsTrie,
+                            TCFedstatsTrieMatchResult, TCMutablePhraseTrie,
+                            TCPhraseTrie, TCPhraseTrieBuilder,
+                            TCPhraseTrieSerializer, _PosterBoardServices ]
+    objc-ivars:           [ TCFedstatsTrie.__phraseTrie, TCFedstatsTrie._locale,
+                            TCFedstatsTrieMatchResult._matchingRange,
+                            TCFedstatsTrieMatchResult._sourceString,
+                            TCPhraseTrie._locale,
+                            TCPhraseTrie._memoryMappedTrieData,
+                            TCPhraseTrie._url, TCPhraseTrie.m_mutableTrie,
+                            TCPhraseTrie.m_trie, TCPhraseTrieBuilder._keys,
+                            TCPhraseTrieSerializer._destinationURL,
+                            TCPhraseTrieSerializer._fedstatsTrie,
+                            _PosterBoardServices._service ]
+...

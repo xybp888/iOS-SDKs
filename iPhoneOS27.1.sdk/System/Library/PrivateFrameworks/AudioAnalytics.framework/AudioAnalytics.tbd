@@ -1,0 +1,32 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AudioAnalytics.framework/AudioAnalytics
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AudioAnalyticsCopyConfiguration,
+                            _AudioAnalyticsCreateReporter,
+                            _AudioAnalyticsCreateReporterFromSessionID,
+                            _AudioAnalyticsCreateSharedClient,
+                            _AudioAnalyticsDestroyReporter,
+                            _AudioAnalyticsGetAudioServiceType,
+                            _AudioAnalyticsRequestMessage,
+                            _AudioAnalyticsSendMessage,
+                            _AudioAnalyticsSendSessionlessMessage,
+                            _AudioAnalyticsSetAudioServiceType,
+                            _AudioAnalyticsSetConfiguration,
+                            _AudioAnalyticsStartReporter,
+                            _AudioAnalyticsStopReporter,
+                            _AudioAnalyticsTraceWrapperPost,
+                            _AudioAnalyticsTraceWrapperPostEnd,
+                            _AudioAnalyticsTraceWrapperPostStart,
+                            _kAAPCMetricDirtyMemPeakDeltaID,
+                            _kAAPCMetricDirtyMemRecentPeakID ]
+    objc-classes:         [ AudioAnalyticsHWTraceHandleWrapper,
+                            AudioAnalyticsReporter,
+                            _TtC14AudioAnalytics26AudioAnalyticsTestReporter ]
+    objc-ivars:           [ AudioAnalyticsHWTraceHandleWrapper._handle ]
+...

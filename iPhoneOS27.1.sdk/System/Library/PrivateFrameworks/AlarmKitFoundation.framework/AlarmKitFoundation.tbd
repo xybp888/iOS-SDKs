@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AlarmKitFoundation.framework/AlarmKitFoundation
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AlarmKitFoundationVersionNumber,
+                            _AlarmKitFoundationVersionString ]
+    objc-classes:         [ AKCAlarm, AKCAlarmAlertNotification, AKCAlarmSchedule,
+                            AKCAlertNotification, AKCAuthorization,
+                            AKCTimerAlertNotification ]
+    objc-ivars:           [ AKCAlarm._attributes, AKCAlarm._data,
+                            AKCAlarm._identifier,
+                            AKCAlarmAlertNotification._allowsSnooze,
+                            AKCAlarmAlertNotification._scheduledFireDate,
+                            AKCAlarmSchedule._days, AKCAlarmSchedule._hour,
+                            AKCAlarmSchedule._minute,
+                            AKCAlarmSchedule._repeating,
+                            AKCAlertNotification._actionUrlScheme,
+                            AKCAlertNotification._bundleID,
+                            AKCAlertNotification._displayTitle,
+                            AKCAlertNotification._hasSecondaryAction,
+                            AKCAlertNotification._identifier,
+                            AKCAlertNotification._localizedAppName,
+                            AKCAlertNotification._secondaryButtonLabel,
+                            AKCAlertNotification._stopButtonLabel,
+                            AKCAlertNotification._tintColor,
+                            AKCAuthorization._bundleID, AKCAuthorization._status,
+                            AKCTimerAlertNotification._duration ]
+...

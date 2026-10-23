@@ -1,0 +1,63 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/FATCommon.framework/FATCommon
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _FATCommonVersionNumber, _FATCommonVersionString,
+                            _calculatedOffset, _gmtOffset ]
+    objc-classes:         [ Allocator, BlockmapRequest, DNCPoolEntry, DirBlock,
+                            DirEntryData, DirItem, DirNameCache, DirNameCachePool,
+                            EncodingConverter, FATBlock, FATItem, FATManager,
+                            FATVolume, FileItem, ItemCache, NameCacheBucket,
+                            SymLinkItem, Utilities ]
+    objc-ivars:           [ Allocator._fatManager, Allocator._fsInfo,
+                            BlockmapRequest._originalFileSize,
+                            DNCPoolEntry._cacheKey, DNCPoolEntry._dnc,
+                            DNCPoolEntry._timestamp, DirBlock._data, DirBlock._dir,
+                            DirBlock._offsetInVolume, DirBlock._size,
+                            DirEntryData._data,
+                            DirEntryData._firstEntryOffsetInDir,
+                            DirEntryData._numberOfDirEntries,
+                            DirItem._dirNameCache, DirItem._dirVersion,
+                            DirItem._isRoot, DirItem._maxRADirBlock,
+                            DirItem._offsetForNewEntry, DirItem._sem,
+                            DirItem._tableBusyCount, DirNameCache._converter,
+                            DirNameCache._dirEntrySize, DirNameCache._isInUse,
+                            DirNameCache._isIncomplete,
+                            DirNameCache._nameCacheBuckets,
+                            DirNameCache._numHashBuckets,
+                            DirNameCache._numHashValues,
+                            DirNameCachePool._capacity, DirNameCachePool._pool,
+                            DirNameCachePool._slotsUsed, FATBlock._data,
+                            FATBlock._startOffset, FATItem._entryData,
+                            FATItem._firstCluster,
+                            FATItem._firstClusterInLastAllocation,
+                            FATItem._firstClusterIndexInLastAllocation,
+                            FATItem._includedInVolumeOUFiles, FATItem._isDeleted,
+                            FATItem._lastCluster, FATItem._name,
+                            FATItem._numberOfClusters, FATItem._parentDir,
+                            FATItem._queue, FATItem._volume, FATManager._device,
+                            FATManager._fatQueue, FATManager._fatSize,
+                            FATManager._fsInfo, FATManager._fsOps,
+                            FATManager._rwSize, FATManager._useCache,
+                            FATVolume._allocator, FATVolume._converter,
+                            FATVolume._fileIDSyncObject,
+                            FATVolume._globalWorkQueue, FATVolume._gmtDiffOffset,
+                            FATVolume._itemCache,
+                            FATVolume._itemDeactivationPolicy,
+                            FATVolume._nameCachePool,
+                            FATVolume._nextAvailableFileID,
+                            FATVolume._openUnlinkedFiles,
+                            FATVolume._preAllocatedOpenFiles,
+                            FATVolume._resource, FATVolume._rootItem,
+                            FATVolume._systemInfo, FileItem._blockmapRequests,
+                            FileItem._isPreAllocated, FileItem._writeCounter,
+                            ItemCache._itemsHash, ItemCache._volume,
+                            NameCacheBucket._currCount,
+                            NameCacheBucket._currSize, NameCacheBucket.elements,
+                            SymLinkItem._symlinkLength, Utilities._useMetaRW ]
+...

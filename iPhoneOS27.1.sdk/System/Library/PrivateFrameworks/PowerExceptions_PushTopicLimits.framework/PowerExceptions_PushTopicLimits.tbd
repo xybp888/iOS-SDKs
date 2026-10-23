@@ -1,0 +1,53 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PowerExceptions_PushTopicLimits.framework/PowerExceptions_PushTopicLimits
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _PTLScreenLockContextToString,
+                            _PTLScreenLockStateDidChangeNotification,
+                            _PTLTargetLimitToString, _PTLTopicMatchToString,
+                            _getPTLPushLimits, _isInternalBuild ]
+    objc-classes:         [ LimitLoader, LimitTracker, PTLLogger, PTLMonotonicClock,
+                            PTLProtector, PushLimit, ScreenLockMonitor,
+                            TopicPenaltyInfo ]
+    objc-ivars:           [ LimitTracker._childTracker,
+                            LimitTracker._currentPenalty,
+                            LimitTracker._hasTriggeredWindow,
+                            LimitTracker._limit, LimitTracker._penaltyEndTime,
+                            LimitTracker._quiesceEndTime,
+                            LimitTracker._sliceDuration,
+                            LimitTracker._slicePushCount,
+                            LimitTracker._sliceStartTime,
+                            LimitTracker._slicesOverLimit, PTLProtector._clock,
+                            PTLProtector._delegate,
+                            PTLProtector._featureFlagEnabled,
+                            PTLProtector._limitTrackerMap,
+                            PTLProtector._penaltiesEnabled,
+                            PTLProtector._penaltyExpirationTimer,
+                            PTLProtector._prefixMatchLimits, PTLProtector._queue,
+                            PTLProtector._screenLockStateObserver,
+                            PTLProtector._suffixMatchLimits,
+                            PTLProtector._topicPenalties,
+                            PTLProtector._trialClient,
+                            PTLProtector._trialUpdateToken,
+                            PushLimit._childLimit,
+                            PushLimit._countsOnlyWakingPushes,
+                            PushLimit._enabled,
+                            PushLimit._iCloudLinkedCollection,
+                            PushLimit._limitID, PushLimit._penalty,
+                            PushLimit._penaltyDuration,
+                            PushLimit._quiesceDuration,
+                            PushLimit._screenLockContext,
+                            PushLimit._slicePushLimit, PushLimit._topic,
+                            PushLimit._topicMatchType, PushLimit._window,
+                            PushLimit._windowSlices,
+                            ScreenLockMonitor._isScreenLocked,
+                            ScreenLockMonitor._lockStateToken,
+                            ScreenLockMonitor._monitorQueue,
+                            TopicPenaltyInfo._penaltyStartTime,
+                            TopicPenaltyInfo._topic, TopicPenaltyInfo._tracker ]
+...

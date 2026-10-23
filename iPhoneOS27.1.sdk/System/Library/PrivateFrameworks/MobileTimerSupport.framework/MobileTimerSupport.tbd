@@ -1,0 +1,53 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MobileTimerSupport.framework/MobileTimerSupport
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _MobileTimerSupportVersionNumber,
+                            _MobileTimerSupportVersionString,
+                            _kMTAStopwatchIndexKey, _kMTAStopwatchLapsKey,
+                            _kMTAStopwatchLastTimeKey, _kMTAStopwatchOffsetKey,
+                            _kMTAStopwatchStartTimeKey,
+                            _kMTAStopwatchTimerRunningKey, _kMTStopwatches ]
+    objc-classes:         [ DefaultDateProvider, MTActivitiesManager,
+                            MTAlarmKitAdoptionManager, MTAppIntentsProvider,
+                            MTLegacyStopwatchMigrator, MTLiveActivityProvider,
+                            MTReportingUtilities, MTReportsManager,
+                            MTSessionUtilities, MTSleepObjCWrapper,
+                            MTStopwatchStorage, MTStopwatchUtilities,
+                            MTStopwatchViewModel, MockDateProvider,
+                            _TtC18MobileTimerSupport12AlarmContext,
+                            _TtC18MobileTimerSupport12TimerContext,
+                            _TtC18MobileTimerSupport15MTActivityError,
+                            _TtC18MobileTimerSupport15MTReporterProxy,
+                            _TtC18MobileTimerSupport17StoredReportValue,
+                            _TtC18MobileTimerSupport18StopwatchViewModel,
+                            _TtC18MobileTimerSupport19MTAppIntentsManager,
+                            _TtC18MobileTimerSupport20LocationDataProvider,
+                            _TtC18MobileTimerSupport22MTWatchActivityManager,
+                            _TtC18MobileTimerSupport23AlarmKitAdoptionManager,
+                            _TtC18MobileTimerSupport23MTStopwatchStorageProxy,
+                            _TtC18MobileTimerSupport25AKActivitiesProviderProxy,
+                            _TtC18MobileTimerSupport26AlarmActivityProviderProxy,
+                            _TtC18MobileTimerSupport26TimerActivityProviderProxy ]
+    objc-ivars:           [ MTActivitiesManager._alarmKitProxy,
+                            MTActivitiesManager._alarmProxy,
+                            MTActivitiesManager._timerProxy,
+                            MTAlarmKitAdoptionManager._manager,
+                            MTAppIntentsProvider._delegate,
+                            MTAppIntentsProvider._manager,
+                            MTLegacyStopwatchMigrator._currentInterval,
+                            MTLegacyStopwatchMigrator._defaults,
+                            MTLegacyStopwatchMigrator._isTimerRunning,
+                            MTLegacyStopwatchMigrator._manager,
+                            MTLiveActivityProvider._manager,
+                            MTReportsManager._persistenceDelegate,
+                            MTReportsManager._reporterProxy,
+                            MTStopwatchStorage._storageProxy,
+                            MTStopwatchViewModel._viewModel,
+                            MockDateProvider._overrideDate ]
+...

@@ -1,0 +1,41 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WiFiCloudSyncEngine.framework/WiFiCloudSyncEngine
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _WiFiCloudSyncEngineAddNetworkToCloud,
+                            _WiFiCloudSyncEngineAddNetworkToKnownNetworksList,
+                            _WiFiCloudSyncEngineAllowLegacyUpdates,
+                            _WiFiCloudSyncEngineCheckKeychainSyncState,
+                            _WiFiCloudSyncEngineCopyCompleteKVS,
+                            _WiFiCloudSyncEngineCreate,
+                            _WiFiCloudSyncEngineGetLogCallbackFunction,
+                            _WiFiCloudSyncEngineIsRunning,
+                            _WiFiCloudSyncEngineLoggerLog,
+                            _WiFiCloudSyncEngineMergeKnownNetworksToCloud,
+                            _WiFiCloudSyncEngineMergeKnownNetworksToCloudWithKVS,
+                            _WiFiCloudSyncEnginePruneNetworksInCloud,
+                            _WiFiCloudSyncEngineRegisterCallbacks,
+                            _WiFiCloudSyncEngineRegisterCallbacksWithQueue,
+                            _WiFiCloudSyncEngineRemoveNetworkFromCloud,
+                            _WiFiCloudSyncEngineRemoveNetworkFromKnownNetworksList,
+                            _WiFiCloudSyncEngineScheduleWithQueue,
+                            _WiFiCloudSyncEngineScheduleWithRunLoop,
+                            _WiFiCloudSyncEngineStartEngine,
+                            _WiFiCloudSyncEngineStopEngine,
+                            _WiFiCloudSyncEngineUnScheduleWithQueue,
+                            _WiFiCloudSyncEngineUnScheduleWithRunLoop,
+                            _kKeychainChangedNotificationName ]
+    objc-classes:         [ WiFiCloudSyncEngineCore, WiFiCloudSyncEngineLogger ]
+    objc-ivars:           [ WiFiCloudSyncEngineCore.callback,
+                            WiFiCloudSyncEngineCore.clientQueue,
+                            WiFiCloudSyncEngineCore.clientThread,
+                            WiFiCloudSyncEngineCore.context,
+                            WiFiCloudSyncEngineCore.iCloudSyncingEnabled,
+                            WiFiCloudSyncEngineCore.isKVSEncrypted,
+                            WiFiCloudSyncEngineCore.keyValueStore ]
+...

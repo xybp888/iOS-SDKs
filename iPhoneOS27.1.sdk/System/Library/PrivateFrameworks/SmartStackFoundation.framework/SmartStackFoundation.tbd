@@ -1,0 +1,15 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SmartStackFoundation.framework/SmartStackFoundation
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SSFIsInternalBuild, _SSFStateDataSizeNeeded,
+                            _SmartStackFoundationVersionNumber,
+                            _SmartStackFoundationVersionString ]
+    objc-classes:         [ SSFStateCapture,
+                            _TtC20SmartStackFoundation20UserDefaultsObserver ]
+...

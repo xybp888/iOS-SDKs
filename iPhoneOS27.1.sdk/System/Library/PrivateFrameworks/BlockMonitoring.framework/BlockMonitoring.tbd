@@ -1,0 +1,46 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/BlockMonitoring.framework/BlockMonitoring
+current-version:       439
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _BMEnrollIntoBlockMonitoring,
+                            _BMMonitorBlockExecutionWithExtraDiagnostics,
+                            _BMMonitorBlockExecutionWithSignature,
+                            _BMMonitorBlockExecutionWithSignatureAndOptions,
+                            _BlockMonitoringVersionNumber,
+                            _BlockMonitoringVersionString ]
+    objc-classes:         [ BMBlockMonitoring ]
+    objc-ivars:           [ BMBlockMonitoring._alreadyFaulted,
+                            BMBlockMonitoring._bootArgsBMFlags,
+                            BMBlockMonitoring._bootArgsDebugFlags,
+                            BMBlockMonitoring._coreDumpsDisabled,
+                            BMBlockMonitoring._deviceState,
+                            BMBlockMonitoring._enabled,
+                            BMBlockMonitoring._entitledToFlushOSLogs,
+                            BMBlockMonitoring._executionDuration,
+                            BMBlockMonitoring._logger,
+                            BMBlockMonitoring._osVersion,
+                            BMBlockMonitoring._panicPacing,
+                            BMBlockMonitoring._panicWithData,
+                            BMBlockMonitoring._persistencePath,
+                            BMBlockMonitoring._presentAlert,
+                            BMBlockMonitoring._queue,
+                            BMBlockMonitoring._sandboxHandle,
+                            BMBlockMonitoring._test_actionDoneCallback,
+                            BMBlockMonitoring._test_alertShown,
+                            BMBlockMonitoring._test_allowPanic,
+                            BMBlockMonitoring._test_bootArgs,
+                            BMBlockMonitoring._test_debuggerState,
+                            BMBlockMonitoring._test_logFlushSleep,
+                            BMBlockMonitoring._test_panicDeny,
+                            BMBlockMonitoring._test_panicReason,
+                            BMBlockMonitoring._test_panicSleep,
+                            BMBlockMonitoring._test_postPersistenceSleep,
+                            BMBlockMonitoring._test_resultType,
+                            BMBlockMonitoring._test_wasFirstFault,
+                            BMBlockMonitoring._testing ]
+...

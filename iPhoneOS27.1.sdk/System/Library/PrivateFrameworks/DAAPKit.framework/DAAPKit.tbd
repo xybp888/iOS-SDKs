@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DAAPKit.framework/DAAPKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _DKDAAPParserErrorDomain, _DKDAAPWriterErrorDomain,
+                            _DKParseUtilitiesCopyStringFromBytes,
+                            _NSStringFromDAAPCode, _NSStringFromDAAPValueType ]
+    objc-classes:         [ DKDAAPParser, DKDAAPParserContainer, DKDAAPWriter,
+                            DKDAAPWriterContainer ]
+    objc-ivars:           [ DKDAAPParser._canceled, DKDAAPParser._containerStack,
+                            DKDAAPParser._delegate, DKDAAPParser._inputStream,
+                            DKDAAPParser._state, DKDAAPParserContainer._code,
+                            DKDAAPParserContainer._length,
+                            DKDAAPParserContainer._remaining,
+                            DKDAAPWriter._containerStack, DKDAAPWriter._error,
+                            DKDAAPWriter._outputStream, DKDAAPWriter._state,
+                            DKDAAPWriterContainer._childData,
+                            DKDAAPWriterContainer._code ]
+...

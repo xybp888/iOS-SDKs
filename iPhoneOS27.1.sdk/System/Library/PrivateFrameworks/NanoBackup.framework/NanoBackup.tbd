@@ -1,0 +1,41 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NanoBackup.framework/NanoBackup
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _NBBackupDirectoryPath, _NBError,
+                            _NBLoggingDaemonObjectInit,
+                            _NBLoggingFrameworkObjectInit, _NanoBackupDomain,
+                            _iCloudBackupsEnabled, _nb_daemon_log,
+                            _nb_framework_log ]
+    objc-classes:         [ NBBackup, NBExclusionListManager, NBManager ]
+    objc-ivars:           [ NBBackup._activeWatchFaceFileURL,
+                            NBBackup._backingColor, NBBackup._backupType,
+                            NBBackup._bcmWindowMaterial,
+                            NBBackup._bottomEnclosureMaterial,
+                            NBBackup._coverGlassColor, NBBackup._deviceCSN,
+                            NBBackup._deviceColor,
+                            NBBackup._deviceEnclosureColor,
+                            NBBackup._diagnosticsOptInEnabled,
+                            NBBackup._fcmMaterial,
+                            NBBackup._hasResolvedActiveWatchFaceFilePath,
+                            NBBackup._housingColor,
+                            NBBackup._lastModificationDate,
+                            NBBackup._locationOptInEnabled,
+                            NBBackup._marketingVersion, NBBackup._name,
+                            NBBackup._productName, NBBackup._productType,
+                            NBBackup._sizeInBytes, NBBackup._systemBuildVersion,
+                            NBBackup._systemVersion,
+                            NBBackup._topEnclosureMaterial, NBBackup._uuid,
+                            NBBackup._watchFace, NBBackup._watchFaceColor,
+                            NBBackup._watchFaceData,
+                            NBExclusionListManager._excludedPerGizmoDomainSettings,
+                            NBExclusionListManager._excludedPerGizmoDomains,
+                            NBExclusionListManager._hasReadConfiguration,
+                            NBManager._externalQueue, NBManager._internalQueue,
+                            NBManager._xpcConnection ]
+...

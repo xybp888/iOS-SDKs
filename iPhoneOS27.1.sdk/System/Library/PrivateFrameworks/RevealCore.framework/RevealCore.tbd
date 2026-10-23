@@ -1,0 +1,42 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RevealCore.framework/RevealCore
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _RVContextTypeSceneThumbnailKey,
+                            _RVReportAnIssueMetadataPreviewImage,
+                            _RevealCoreVersionNumber, _RevealCoreVersionString ]
+    objc-classes:         [ RVDocumentContext, RVItem, RVQuery, RVSelection ]
+    objc-ivars:           [ RVDocumentContext.authorContactUUID,
+                            RVDocumentContext.authorEmailAddress,
+                            RVDocumentContext.authorName,
+                            RVDocumentContext.contentReferenceDate,
+                            RVDocumentContext.contentReferenceTimeZone,
+                            RVDocumentContext.contentSubject,
+                            RVDocumentContext.coreSpotlightUniqueIdentifier,
+                            RVDocumentContext.documentURL,
+                            RVDocumentContext.existingDDResultsList,
+                            RVDocumentContext.groupAllResults,
+                            RVDocumentContext.groupCategory,
+                            RVDocumentContext.groupTranscript,
+                            RVDocumentContext.selectedText, RVItem._clientHints,
+                            RVItem._clientIdentifier,
+                            RVItem._contactPropertyType,
+                            RVItem._contactPropertyValue, RVItem._ddResult,
+                            RVItem._highlightRange, RVItem._leadingText,
+                            RVItem._lookupContextFetchingBlock,
+                            RVItem._normalized, RVItem._normalizedType,
+                            RVItem._originalSelectedText, RVItem._query,
+                            RVItem._reportAnIssueBlock,
+                            RVItem._reportAnIssueExtendedBlock,
+                            RVItem._reportAnIssueMetadataFetchingBlock,
+                            RVItem._selectionType, RVItem._text,
+                            RVItem._textQueryProvider, RVItem._trailingText,
+                            RVItem._type, RVItem._url, RVQuery._identifier,
+                            RVQuery._queryID, RVQuery._queryProvider,
+                            RVQuery._title, RVQuery._userAgent ]
+...

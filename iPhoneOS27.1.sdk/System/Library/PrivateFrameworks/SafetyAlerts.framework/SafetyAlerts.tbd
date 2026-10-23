@@ -1,0 +1,66 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SafetyAlerts.framework/SafetyAlerts
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SALogObjectGeneral, _SALogObjectWarning,
+                            _SafetyAlertsVersionNumber,
+                            _SafetyAlertsVersionString, __Z9SALogInitv,
+                            __ZN14SAPlatformInfo18fetchIsTinkerWatchEv,
+                            __ZN14SAPlatformInfo8instanceEv,
+                            __ZN14SAPlatformInfoC1Ev, __ZN14SAPlatformInfoC2Ev,
+                            __ZNK14SAPlatformInfo20isAOPSupportedDeviceEv,
+                            _kSAAboutPrivacy, _kSAAboutPrivacyDescription,
+                            _kSAAlwaysPlaySound, _kSAAlwaysPlaySoundDescription,
+                            _kSAEarthquakeAlert, _kSAEarthquakeAlertsDescription,
+                            _kSAEarthquakeAlertsDescriptionForWatch,
+                            _kSAEmptyScreen, _kSAEmptyScreenDescription,
+                            _kSAEnabledByDefault, _kSAImprovedAlertDelivery,
+                            _kSAImprovedAlertDeliveryDescription,
+                            _kSAOtherAlerts, _kSAOtherAlertsDescription,
+                            _kSAOtherAlertsDescriptionForWatch,
+                            _kSASafetyAlertsMainSwitchDescription,
+                            _kSASafetyAlertsMainSwitchName,
+                            _kSASwitchDescription, _kSASwitchHeading,
+                            _kSASwitchHeadingLabel, _kSASwitchLink, _kSASwitchName,
+                            _kSASwitchSupported, _kSAUserConfigurable ]
+    objc-classes:         [ SACircularGeofence, SAEDFollowUpManager,
+                            SAGeoAlertData, SAGeofenceCoordinate,
+                            SAPolygonalGeofence, SafetyAlerts ]
+    objc-ivars:           [ SACircularGeofence._center,
+                            SACircularGeofence._identifier,
+                            SACircularGeofence._radius,
+                            SAEDFollowUpManager._SAIsImprovedDeliveryStateEnabled,
+                            SAEDFollowUpManager._SAIsImprovedDeliveryVisible,
+                            SAEDFollowUpManager._cfuPostInProgress,
+                            SAEDFollowUpManager._currentLocationInCoveredRegion,
+                            SAEDFollowUpManager._currentLocationInCoveredRegion_Valid,
+                            SAEDFollowUpManager._evaluationQueue,
+                            SAEDFollowUpManager._locationServicesEnabled,
+                            SAEDFollowUpManager._locationServicesEnabled_Valid,
+                            SAEDFollowUpManager._uptakeCoefficient,
+                            SAEDFollowUpManager._uptakeCoefficient_Valid,
+                            SAGeoAlertData._alertHash, SAGeoAlertData._alertType,
+                            SAGeoAlertData._circularGeofences,
+                            SAGeoAlertData._deliveryTime,
+                            SAGeoAlertData._displayTime,
+                            SAGeoAlertData._displayed,
+                            SAGeoAlertData._epicenterCoordinate,
+                            SAGeoAlertData._instructionMessage,
+                            SAGeoAlertData._language, SAGeoAlertData._message,
+                            SAGeoAlertData._polygonalGeofences,
+                            SAGeoAlertData._safetyCategory,
+                            SAGeoAlertData._safetyCategoryEnums,
+                            SAGeoAlertData._safetyEvent,
+                            SAGeoAlertData._safetyEventEnums,
+                            SAGeoAlertData._title,
+                            SAGeofenceCoordinate._latitude,
+                            SAGeofenceCoordinate._longitude,
+                            SAPolygonalGeofence._coordinates,
+                            SAPolygonalGeofence._identifier,
+                            SafetyAlerts._connection, SafetyAlerts._queue ]
+...

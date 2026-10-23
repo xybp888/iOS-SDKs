@@ -1,0 +1,52 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NanoHomeScreenServices.framework/NanoHomeScreenServices
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _NHSSLogDefault, _NHSSLoggingSubsystem,
+                            _NHSSPartialWidgetDescriptorContainerBundleIdentifierKey,
+                            _NHSSPartialWidgetDescriptorExtensionBundleIdentifierKey,
+                            _NHSSPartialWidgetDescriptorKindKey,
+                            _NanoHomeScreenServicesVersionNumber,
+                            _NanoHomeScreenServicesVersionString,
+                            __NHSSPrivacyDefaultsChangeHandler,
+                            __NHSSPrivacyDefaultsMicrophonePermissionFromNumber,
+                            __NHSSRelevantWidgetDefaultsChangeHandler,
+                            __NHSSSimulationDefaultsChangeHandler,
+                            __NHSSmartStackSuggestionsDefaultsChangeHandler ]
+    objc-classes:         [ NHSSPartialWidgetDescriptor, NHSSPrivacyDefaults,
+                            NHSSRelevantWidget, NHSSRelevantWidgetDefaults,
+                            NHSSSimulationDefaults,
+                            NHSSSmartStackSuggestionDefaults ]
+    objc-ivars:           [ NHSSPartialWidgetDescriptor._containerBundleIdentifier,
+                            NHSSPartialWidgetDescriptor._extensionBundleIdentifier,
+                            NHSSPartialWidgetDescriptor._kind,
+                            NHSSPrivacyDefaults._bundle,
+                            NHSSPrivacyDefaults._lock,
+                            NHSSPrivacyDefaults._lock_observers,
+                            NHSSPrivacyDefaults._queue,
+                            NHSSRelevantWidget._appBundleIdentifier,
+                            NHSSRelevantWidget._confidenceCategory,
+                            NHSSRelevantWidget._extensionBundleIdentifier,
+                            NHSSRelevantWidget._intentIndexingHash,
+                            NHSSRelevantWidget._widgetKind,
+                            NHSSRelevantWidgetDefaults._lock,
+                            NHSSRelevantWidgetDefaults._lock_observers,
+                            NHSSRelevantWidgetDefaults._queue,
+                            NHSSSimulationDefaults._lock,
+                            NHSSSimulationDefaults._lock_observers,
+                            NHSSSimulationDefaults._queue,
+                            NHSSSmartStackSuggestionDefaults._isClockFaceProcess,
+                            NHSSSmartStackSuggestionDefaults._isInternalBuild,
+                            NHSSSmartStackSuggestionDefaults._lock,
+                            NHSSSmartStackSuggestionDefaults._lock_hintObservers,
+                            NHSSSmartStackSuggestionDefaults._lock_observers,
+                            NHSSSmartStackSuggestionDefaults._lock_scheduledHintTimers,
+                            NHSSSmartStackSuggestionDefaults._lock_scheduledTimers,
+                            NHSSSmartStackSuggestionDefaults._lock_userDefaults,
+                            NHSSSmartStackSuggestionDefaults._queue ]
+...

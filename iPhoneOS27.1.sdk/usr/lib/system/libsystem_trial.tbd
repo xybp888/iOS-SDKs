@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /usr/lib/system/libsystem_trial.dylib
+current-version:       511
+compatibility-version: 1
+parent-umbrella:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    umbrella:               System
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ __os_trial_factor_get_bool_impl,
+                            __os_trial_factor_get_long_long_impl,
+                            __os_trial_factor_has_impl,
+                            _libsystem_trialVersionNumber,
+                            _libsystem_trialVersionString ]
+...

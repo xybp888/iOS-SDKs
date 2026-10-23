@@ -1,0 +1,41 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CertUI.framework/CertUI
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CertUILoggingInitialize, __CertUILogObjects,
+                            _kCertUIMessagingCenterActualName,
+                            _kCertUIMessagingCenterRelayName,
+                            _kCertUIPresentTrustInfoMessage,
+                            _kCertUIServiceTypeHTTPS, _kCertUIServiceTypeIMAP,
+                            _kCertUIServiceTypeLDAP, _kCertUIServiceTypeLDAPS,
+                            _kCertUIServiceTypePOP3, _kCertUIServiceTypeSMTP,
+                            _kCertUIServiceTypeSSH,
+                            _kCertUITrustAllowCertificateTrustKey,
+                            _kCertUITrustDigestKey, _kCertUITrustExpirationKey,
+                            _kCertUITrustHostnameKey,
+                            _kCertUITrustIsRootCertificateKey,
+                            _kCertUITrustIssuerKey,
+                            _kCertUITrustPromptOptionsAllowCertificateTrustKey,
+                            _kCertUITrustPromptOptionsShowCertificateDetailsKey,
+                            _kCertUITrustPromptOptionsShowContinueKey,
+                            _kCertUITrustPropertiesKey, _kCertUITrustPurposeKey,
+                            _kCertUITrustResponseKey,
+                            _kCertUITrustShowCertificateDetailsKey,
+                            _kCertUITrustShowContinueKey,
+                            _kCertUITrustSubtitleKey, _kCertUITrustTitleKey ]
+    objc-classes:         [ CertUIConnectionDelegate, CertUIPrompt,
+                            CertUITrustManager, CertUIUtilities ]
+    objc-ivars:           [ CertUIConnectionDelegate._connectionDisplayName,
+                            CertUIConnectionDelegate._delegateRespondsTo,
+                            CertUIConnectionDelegate._forwardingDelegate,
+                            CertUIConnectionDelegate._trustManager,
+                            CertUIPrompt._connectionDisplayName,
+                            CertUIPrompt._host, CertUIPrompt._responseBlock,
+                            CertUIPrompt._service, CertUIPrompt._trust,
+                            CertUITrustManager._access ]
+...

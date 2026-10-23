@@ -1,0 +1,39 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/GamePolicy.framework/GamePolicy
+current-version:       4.0.7
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ __gpBundle, __gpConvertStringToLocalizedString,
+                            _getGPLogger, _gp_isInternalBuild ]
+    objc-classes:         [ GPGameCenterMediator, GPGameLibrary, GPGameLibraryApp,
+                            GPGameMonitorEnvoy, GPUserExperienceProxy,
+                            GameMetadataHints, _TtC10GamePolicy15GameLibraryGame,
+                            _TtC10GamePolicy16GamePolicyAppXPC,
+                            _TtC10GamePolicy18GameModeCCUIStatus,
+                            _TtC10GamePolicy19GamePolicyCCUIProxy,
+                            _TtC10GamePolicy21GamePolicyAgentUpdate,
+                            _TtC10GamePolicy22GameModeCCUIStatusInfo,
+                            _TtC10GamePolicy24GameModeCCUIStatusBundle,
+                            _TtC10GamePolicy26GamePolicyPrivilegedAppXPC,
+                            _TtC10GamePolicy28GameModeCCUIStatusBundleInfo,
+                            _TtC10GamePolicy37GamePolicyDaemonPrivilegedProxyBridge,
+                            __GamePolicyAgentUpdateGameEvent ]
+    objc-ivars:           [ GPGameLibrary._creationDate,
+                            GPGameLibrary._daemonConnection,
+                            GPGameLibrary._gameLibrary,
+                            GPGameLibrary._gameLibraryChangedHandler,
+                            GPGameLibrary._libraryInitialized,
+                            GPGameLibrary._lock, GPGameLibrary._needsReconnect,
+                            GPGameLibrary._queue, GPGameLibrary._userIdentifier,
+                            GPGameLibraryApp._adamID, GPGameLibraryApp._bundleID,
+                            GPGameLibraryApp._gameMetadataHints,
+                            GPGameLibraryApp._isGame,
+                            GPGameLibraryApp._persistentIdentifier,
+                            GameMetadataHints._displayName,
+                            GameMetadataHints._executableURL,
+                            GameMetadataHints._isThirdPartyInstalled ]
+...

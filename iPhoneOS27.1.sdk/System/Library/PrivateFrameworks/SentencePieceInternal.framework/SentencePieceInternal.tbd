@@ -1,0 +1,37 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SentencePieceInternal.framework/SentencePieceInternal
+current-version:       70
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SPSentencePieceProcessorAddsDummyPrefix,
+                            _SPSentencePieceProcessorCreate,
+                            _SPSentencePieceProcessorCreateDecodedStringFromIDs,
+                            _SPSentencePieceProcessorCreateDecodedStringFromPieces,
+                            _SPSentencePieceProcessorCreateEncodedIDs,
+                            _SPSentencePieceProcessorCreateEncodedPieces,
+                            _SPSentencePieceProcessorCreateFromData,
+                            _SPSentencePieceProcessorCreateNormalizedString,
+                            _SPSentencePieceProcessorCreatePieceFromId,
+                            _SPSentencePieceProcessorCreatePieces,
+                            _SPSentencePieceProcessorEnumerateEncodedPieces,
+                            _SPSentencePieceProcessorEnumerateEntriesForPredictiveSearch,
+                            _SPSentencePieceProcessorEnumerateEntriesWithCommonPrefix,
+                            _SPSentencePieceProcessorGetIdFromPiece,
+                            _SPSentencePieceProcessorGetLongestPieceLength,
+                            _SPSentencePieceProcessorGetPieceSize,
+                            _SPSentencePieceProcessorGetTokenCountForString,
+                            _SPSentencePieceProcessorIsByte,
+                            _SPSentencePieceProcessorIsControl,
+                            _SPSentencePieceProcessorIsUnknown,
+                            _SPSentencePieceProcessorRemovesExtraWhitespaces,
+                            _SPSentencePieceProcessorSetDecodeExtraOptions,
+                            _SPSentencePieceProcessorSetEncodeExtraOptions ]
+    objc-classes:         [ SPEncodedPiece, SPSentencePieceModel ]
+    objc-ivars:           [ SPEncodedPiece._byteBegin, SPEncodedPiece._byteEnd,
+                            SPEncodedPiece._piece, SPEncodedPiece._vocabID,
+                            SPSentencePieceModel._processor ]
+...

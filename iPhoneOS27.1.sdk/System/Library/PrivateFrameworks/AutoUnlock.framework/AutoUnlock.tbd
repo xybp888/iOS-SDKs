@@ -1,0 +1,58 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AutoUnlock.framework/AutoUnlock
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SFAuthenticationEnabledDevicesChanged,
+                            _SFAuthenticationErrorCodeDomain,
+                            _SFAuthenticationErrorCodeToString,
+                            _SFAuthenticationTypeToString,
+                            _SFAutoUnlockDynamicStoreEnabledKey,
+                            _SFAutoUnlockDynamicStoreEnabledPath,
+                            _SFAutoUnlockDynamicStoreInProgressKey,
+                            _SFAutoUnlockDynamicStoreInProgressPath,
+                            _SFAutoUnlockDynamicStoreSharingDomainKey,
+                            _SFAutoUnlockManagerErrorBodyKey,
+                            _SFAutoUnlockManagerErrorTitleKey,
+                            _auto_unlock_auth_log ]
+    objc-classes:         [ SFAuthenticationApproveInfo, SFAuthenticationOptions,
+                            SFWatchAuthenticationEvent ]
+    objc-ivars:           [ SFAuthenticationApproveInfo._appName,
+                            SFAuthenticationApproveInfo._biometricOnly,
+                            SFAuthenticationApproveInfo._bundleID,
+                            SFAuthenticationApproveInfo._idsDeviceID,
+                            SFAuthenticationApproveInfo._type,
+                            SFAuthenticationOptions._acmContext,
+                            SFAuthenticationOptions._appName,
+                            SFAuthenticationOptions._authorizationToken,
+                            SFAuthenticationOptions._biometricOnly,
+                            SFAuthenticationOptions._bundleID,
+                            SFAuthenticationOptions._checkLocally,
+                            SFAuthenticationOptions._idsDeviceID,
+                            SFAuthenticationOptions._scanForever,
+                            SFAuthenticationOptions._scanTimeout,
+                            SFWatchAuthenticationEvent._approveClientBundleID,
+                            SFWatchAuthenticationEvent._arTrackingDistance,
+                            SFWatchAuthenticationEvent._authenticationType,
+                            SFWatchAuthenticationEvent._awdlBringUpDuration,
+                            SFWatchAuthenticationEvent._discoveryDuration,
+                            SFWatchAuthenticationEvent._failureReason,
+                            SFWatchAuthenticationEvent._keyExchangeDuration,
+                            SFWatchAuthenticationEvent._peerFoundDuration,
+                            SFWatchAuthenticationEvent._rangingDistance,
+                            SFWatchAuthenticationEvent._rangingDuration,
+                            SFWatchAuthenticationEvent._remoteHardwareModel,
+                            SFWatchAuthenticationEvent._remoteSoftwareVersion,
+                            SFWatchAuthenticationEvent._screenOn,
+                            SFWatchAuthenticationEvent._succeeded,
+                            SFWatchAuthenticationEvent._timeSinceBoot,
+                            SFWatchAuthenticationEvent._timeSinceRemoteUnlocked,
+                            SFWatchAuthenticationEvent._tokenExchangeDuration,
+                            SFWatchAuthenticationEvent._totalDuration,
+                            SFWatchAuthenticationEvent._watchHardwareModel,
+                            SFWatchAuthenticationEvent._watchSoftwareVersion ]
+...

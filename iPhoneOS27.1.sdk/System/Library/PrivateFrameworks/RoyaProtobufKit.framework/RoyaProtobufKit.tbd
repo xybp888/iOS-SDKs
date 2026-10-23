@@ -1,0 +1,55 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RoyaProtobufKit.framework/RoyaProtobufKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _RPBContainerMetadataReadFrom, _RPBHIDSampleReadFrom,
+                            _RPBIMUComboSampleReadFrom, _RPBIMUSampleReadFrom,
+                            _RPBSampleReadFrom, _RPBTrackMetadataReadFrom,
+                            _RPBTrackPropertyReadFrom,
+                            _RPBUserEventSampleReadFrom, _RPBWifiSampleReadFrom,
+                            _RoyaProtobufKitVersionNumber,
+                            _RoyaProtobufKitVersionString ]
+    objc-classes:         [ RPBContainerMetadata, RPBHIDSample, RPBIMUComboSample,
+                            RPBIMUSample, RPBSample, RPBTrackMetadata,
+                            RPBTrackProperty, RPBUserEventSample, RPBWifiSample ]
+    objc-ivars:           [ RPBContainerMetadata._buildversion,
+                            RPBContainerMetadata._devicename,
+                            RPBContainerMetadata._deviceserial,
+                            RPBContainerMetadata._has,
+                            RPBContainerMetadata._productconfig,
+                            RPBContainerMetadata._productversion,
+                            RPBContainerMetadata._timebase,
+                            RPBContainerMetadata._trackcount,
+                            RPBContainerMetadata._tracks, RPBHIDSample._data,
+                            RPBHIDSample._timestamp, RPBIMUComboSample._ax,
+                            RPBIMUComboSample._ay, RPBIMUComboSample._az,
+                            RPBIMUComboSample._frameId, RPBIMUComboSample._gx,
+                            RPBIMUComboSample._gy, RPBIMUComboSample._gz,
+                            RPBIMUComboSample._has,
+                            RPBIMUComboSample._temperature,
+                            RPBIMUComboSample._timestamp,
+                            RPBIMUComboSample._unfilteredAx,
+                            RPBIMUComboSample._unfilteredAy,
+                            RPBIMUComboSample._unfilteredAz,
+                            RPBIMUSample._frameId, RPBIMUSample._has,
+                            RPBIMUSample._temperature, RPBIMUSample._timestamp,
+                            RPBIMUSample._type, RPBIMUSample._x, RPBIMUSample._y,
+                            RPBIMUSample._z, RPBSample._has, RPBSample._hidSample,
+                            RPBSample._imuComboSample, RPBSample._imuSample,
+                            RPBSample._sampleData, RPBSample._trackID,
+                            RPBSample._userEventSample, RPBSample._wifiSample,
+                            RPBTrackMetadata._name, RPBTrackMetadata._propertys,
+                            RPBTrackMetadata._trackID,
+                            RPBTrackProperty._propertyKey,
+                            RPBTrackProperty._propertyValue,
+                            RPBUserEventSample._args, RPBUserEventSample._name,
+                            RPBUserEventSample._sender,
+                            RPBUserEventSample._timestamp, RPBWifiSample._bssid,
+                            RPBWifiSample._channel, RPBWifiSample._rssi,
+                            RPBWifiSample._timestamp ]
+...

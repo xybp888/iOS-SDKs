@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/EventKitSyncServices.framework/EventKitSyncServices
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _EKSSClientXPCInterface, _EKSSDiagnosticsDirectory,
+                            _EKSSMachServiceName, _EKSSServiceXPCInterface,
+                            _EventKitSyncServicesVersionNumber,
+                            _EventKitSyncServicesVersionString ]
+    objc-classes:         [ EKSSDiagnosticsService, EKSSLogger, EKSSyncRange ]
+    objc-ivars:           [ EKSSDiagnosticsService._connection,
+                            EKSSLogger._logText ]
+...

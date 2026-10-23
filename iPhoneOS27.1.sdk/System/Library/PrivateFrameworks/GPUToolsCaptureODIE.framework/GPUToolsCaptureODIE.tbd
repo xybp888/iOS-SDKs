@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/GPUToolsCaptureODIE.framework/GPUToolsCaptureODIE
+current-version:       0
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CreateDebugMLCapture, _GTCoreLogInit,
+                            _GTCoreLogTagEnabled, _GTCoreLogUseOsLog,
+                            _GTCoreLogUseStandardOutputStreams, _g_signpostLog,
+                            _gt_tagged_log ]
+    objc-classes:         [ GTCaptureOdieBridge, GTODIECaptureServiceImpl ]
+    objc-ivars:           [ GTCaptureOdieBridge._connection,
+                            GTCaptureOdieBridge._service,
+                            GTODIECaptureServiceImpl._connection,
+                            GTODIECaptureServiceImpl._didAcquireSecurityScope,
+                            GTODIECaptureServiceImpl._observers,
+                            GTODIECaptureServiceImpl._session,
+                            GTODIECaptureServiceImpl._stashService ]
+...

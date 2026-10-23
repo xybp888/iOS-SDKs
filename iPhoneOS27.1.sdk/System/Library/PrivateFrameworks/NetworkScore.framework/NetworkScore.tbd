@@ -1,0 +1,37 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NetworkScore.framework/NetworkScore
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _send_connection_report, _send_http_metrics ]
+    objc-classes:         [ NWSAlgosConnectionScore, NWSAlgosScoreCSVReader,
+                            NWSAlgosScoreCombiner, NWSAlgosScoreDataCSV,
+                            NWSAlgosScoreFaceTimeDataCSV,
+                            NWSAlgosScoreStreamDataCSV, NWSAlgosStreamScore,
+                            NWSClient, NWSClientConnection, NWSMetricReporter ]
+    objc-ivars:           [ NWSAlgosConnectionScore._debug,
+                            NWSAlgosConnectionScore._significantSize,
+                            NWSAlgosConnectionScore.connectionData,
+                            NWSAlgosScoreCSVReader._error,
+                            NWSAlgosScoreCSVReader._headings,
+                            NWSAlgosScoreCSVReader._rows,
+                            NWSAlgosScoreCombiner._debug,
+                            NWSAlgosScoreCombiner.combinerData,
+                            NWSAlgosScoreDataCSV._debug,
+                            NWSAlgosScoreDataCSV._rawStreamData,
+                            NWSAlgosScoreDataCSV._statsDict,
+                            NWSAlgosScoreDataCSV.csvData,
+                            NWSAlgosScoreFaceTimeDataCSV._methods,
+                            NWSAlgosScoreStreamDataCSV._isMusic,
+                            NWSAlgosScoreStreamDataCSV._methods,
+                            NWSAlgosStreamScore._debug,
+                            NWSAlgosStreamScore._enforceStreamEnd,
+                            NWSAlgosStreamScore._music,
+                            NWSAlgosStreamScore.logisticScale,
+                            NWSAlgosStreamScore.streamData,
+                            NWSClientConnection._connection ]
+...

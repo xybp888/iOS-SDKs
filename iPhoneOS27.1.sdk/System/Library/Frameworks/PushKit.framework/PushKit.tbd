@@ -1,0 +1,12 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-ios, arm64e.x1-ios ]
+install-name:    '/System/Library/Frameworks/PushKit.framework/PushKit'
+exports:
+  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+    symbols:         [ _PKNonMacTokenName, _PKPushIncomingCallReportedNotification, 
+                       _PKPushTypeComplication, _PKPushTypeFileProvider, _PKPushTypeUserNotifications, 
+                       _PKPushTypeVoIP ]
+    objc-classes:    [ PKPublicChannel, PKPushCredentials, PKPushPayload, PKPushRegistry, 
+                       PKUserNotificationsRemoteNotificationServiceConnection, PKVoIPPushMetadata ]
+...

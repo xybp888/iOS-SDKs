@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-ios, arm64e.x1-ios ]
+install-name:    '/usr/lib/swift/libswiftCoreML.dylib'
+current-version: 3600.25.2
+swift-abi-version: 7
+reexported-libraries:
+  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+    libraries:       [ '/System/Library/Frameworks/CoreML.framework/CoreML' ]
+exports:
+  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+    symbols:         [ '__swift_FORCE_LOAD_$_swiftCoreML' ]
+...

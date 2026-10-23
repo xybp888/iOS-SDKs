@@ -1,0 +1,14 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64e-ios, arm64e.x1-ios ]
+install-name:    '/usr/lib/swift/libswiftunistd.dylib'
+current-version: 428.0.10
+reexported-libraries:
+  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+    libraries:       [ '/usr/lib/swift/libswift_DarwinFoundation3.dylib' ]
+exports:
+  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+    symbols:         [ '$ld$previous$/usr/lib/swift/libswiftDarwin.dylib$$2$12.2$18.0$$', 
+                       '$ld$previous$@rpath/libswiftDarwin.dylib$$2$7.0$12.2$$', 
+                       '__swift_FORCE_LOAD_$_swiftunistd' ]
+...

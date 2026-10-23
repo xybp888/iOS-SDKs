@@ -1,0 +1,46 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/UnblockService.framework/UnblockService
+current-version:       18
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _TakeLiveStackshot ]
+    objc-classes:         [ UBDeadlockInfo, UBServiceContext,
+                            UBSystemWatchdogStackshotReport,
+                            UBThreadExhaustionInfo, UBUnblockReactiveRecovery,
+                            UBUnblockService ]
+    objc-ivars:           [ UBDeadlockInfo._node,
+                            UBDeadlockInfo._numThreadsBlocked,
+                            UBDeadlockInfo._numThreadsInvolved,
+                            UBDeadlockInfo._tasksBlocked,
+                            UBDeadlockInfo._tasksInvolved,
+                            UBDeadlockInfo._timeSpentDeadlocked,
+                            UBServiceContext._deadlocks,
+                            UBServiceContext._options,
+                            UBServiceContext._serviceNode,
+                            UBServiceContext._serviceResult,
+                            UBServiceContext._threadExhaustions,
+                            UBServiceContext._threadIDToDeadlockDict,
+                            UBServiceContext._threadIDToThreadExhaustionDict,
+                            UBSystemWatchdogStackshotReport._issueType,
+                            UBThreadExhaustionInfo._numThreadsBlocked,
+                            UBThreadExhaustionInfo._numThreadsInvolved,
+                            UBThreadExhaustionInfo._task,
+                            UBThreadExhaustionInfo._tasksBlocked,
+                            UBThreadExhaustionInfo._timeSpentBlocked,
+                            UBUnblockReactiveRecovery._clientName,
+                            UBUnblockReactiveRecovery._deadlocks,
+                            UBUnblockReactiveRecovery._dependencyGraph,
+                            UBUnblockReactiveRecovery._lock,
+                            UBUnblockReactiveRecovery._sampleStore,
+                            UBUnblockReactiveRecovery._stackshotData,
+                            UBUnblockReactiveRecovery._stuckServices,
+                            UBUnblockReactiveRecovery._taskIs3PAppDict,
+                            UBUnblockReactiveRecovery._threadIDToDeadlockDict,
+                            UBUnblockService._listenerConnection,
+                            UBUnblockService._lock, UBUnblockService._options,
+                            UBUnblockService._workloop ]
+...

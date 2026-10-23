@@ -1,0 +1,25 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/EmbeddingService.framework/EmbeddingService
+current-version:       3600.31.21
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _EmbeddingServiceVersionNumber,
+                            _EmbeddingServiceVersionString ]
+    objc-classes:         [ CDMClient$loadHelper_x8, QUEmbeddingOutput,
+                            QUEmbeddingService ]
+    objc-ivars:           [ QUEmbeddingOutput._embedding,
+                            QUEmbeddingOutput._subtokenLenForTokens,
+                            QUEmbeddingOutput._subtokens,
+                            QUEmbeddingOutput._tokenRanges,
+                            QUEmbeddingOutput._tokens,
+                            QUEmbeddingService._cdmClient,
+                            QUEmbeddingService._icuCollator,
+                            QUEmbeddingService._icuPatternBuffer,
+                            QUEmbeddingService._icuQueryBuffer,
+                            QUEmbeddingService._locale,
+                            QUEmbeddingService._version ]
+...

@@ -1,0 +1,68 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/SafariSafeBrowsing
+current-version:       0
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SSBLookupContextDatabasesDidUpdateNotification,
+                            _SSBLookupContextDatabasesDidUpdateNotificationUserInfoProviderKey,
+                            _SSBProviderApple, _SSBProviderGoogle,
+                            _SSBProviderTencent,
+                            _SSBSafeBrowsingEnabledDefaultsKey,
+                            _SSBSafeBrowsingEnabledStateDidChangeNotification,
+                            _SSBSafeBrowsingEnabledStateDidChangeNotificationUserInfoEnabledStateKey,
+                            __ZN12SafeBrowsing7Service4mainEv ]
+    objc-classes:         [ BatchTimingStats, BatchURLEvaluationResult,
+                            LLMConfiguration, LLMSafetyChecker,
+                            ProviderConfiguration, ProxyConfiguration,
+                            RemoteConfigurationController, SSBAvailability,
+                            SSBDatabaseUpdateSupport, SSBLookupContext,
+                            SSBLookupResult, SSBManagedConfigurationManager,
+                            SSBServiceLookupResult, URLEvaluationResult,
+                            _SSBDatabaseStatus,
+                            _SSBDatabaseUpdateFetchDataSessionHandler,
+                            _SSBDatabaseUpdateV5FetchDataSessionHandler,
+                            _TtC18SafariSafeBrowsing24InternalLLMSafetyChecker ]
+    objc-ivars:           [ ProviderConfiguration._configuration,
+                            ProviderConfiguration._isWebBrowserOnly,
+                            ProviderConfiguration._malwareThreatTypeOff,
+                            ProviderConfiguration._providerOff,
+                            ProviderConfiguration._proxyOff,
+                            ProviderConfiguration._safeCacheDurationOverride,
+                            ProviderConfiguration._socialEngineeringThreatTypeOff,
+                            ProviderConfiguration._unwantedSoftwareThreatTypeOff,
+                            ProviderConfiguration._useV5,
+                            ProviderConfiguration._useV5BatchGet,
+                            ProxyConfiguration._deviceIdentificationToken,
+                            ProxyConfiguration._proxy,
+                            RemoteConfigurationController._appleConfigurationDidChange,
+                            RemoteConfigurationController._appleProviderConfiguration,
+                            RemoteConfigurationController._currentConfiguration,
+                            RemoteConfigurationController._googleConfigurationDidChange,
+                            RemoteConfigurationController._googleProviderConfiguration,
+                            RemoteConfigurationController._internalQueue,
+                            RemoteConfigurationController._tencentConfigurationDidChange,
+                            RemoteConfigurationController._tencentProviderConfiguration,
+                            RemoteConfigurationController._updateTimer,
+                            SSBDatabaseUpdateSupport._carrierSpaceClient,
+                            SSBDatabaseUpdateSupport._onHighCellularDataPlan,
+                            SSBLookupContext._lookupContext,
+                            SSBLookupContext._observerToken,
+                            SSBLookupResult._URLContainsUserInfo,
+                            SSBLookupResult._serviceLookupResults,
+                            SSBServiceLookupResult._lookupResult,
+                            _SSBDatabaseStatus._databaseStatus,
+                            _SSBDatabaseUpdateFetchDataSessionHandler._byteProvider,
+                            _SSBDatabaseUpdateFetchDataSessionHandler._error,
+                            _SSBDatabaseUpdateFetchDataSessionHandler._parser,
+                            _SSBDatabaseUpdateFetchDataSessionHandler._provider,
+                            _SSBDatabaseUpdateFetchDataSessionHandler._receivedBytes,
+                            _SSBDatabaseUpdateV5FetchDataSessionHandler._byteProvider,
+                            _SSBDatabaseUpdateV5FetchDataSessionHandler._error,
+                            _SSBDatabaseUpdateV5FetchDataSessionHandler._parser,
+                            _SSBDatabaseUpdateV5FetchDataSessionHandler._provider,
+                            _SSBDatabaseUpdateV5FetchDataSessionHandler._receivedBytes ]
+...

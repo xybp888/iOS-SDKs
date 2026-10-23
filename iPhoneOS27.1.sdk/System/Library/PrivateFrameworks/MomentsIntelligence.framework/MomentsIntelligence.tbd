@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MomentsIntelligence.framework/MomentsIntelligence
+current-version:       417
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _MOErrorDomain ]
+    objc-classes:         [ MOConnection, MOConnectionManager,
+                            MOMomentsIntelligenceServiceManager ]
+    objc-ivars:           [ MOConnection._delegate,
+                            MOConnection._interruptActive, MOConnection._name,
+                            MOConnection._pendingRequestCounter,
+                            MOConnection._pendingRequests,
+                            MOConnectionManager._connectionName,
+                            MOConnectionManager._delegate,
+                            MOConnectionManager._mo_connection,
+                            MOConnectionManager._xpc_connection,
+                            MOMomentsIntelligenceServiceManager._queue,
+                            MOMomentsIntelligenceServiceManager.connectionManager ]
+...

@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SensorKitHelper.framework/SensorKitHelper
+current-version:       0
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ SRHDataCollectionController, SRHMediaEventsCollector,
+                            SRHMediaView, SRHMediaViewsStore ]
+    objc-ivars:           [ SRHMediaEventsCollector._mediaViewsStore,
+                            SRHMediaEventsCollector._scrollView,
+                            SRHMediaEventsCollector._scrollViewMonitor,
+                            SRHMediaView._position, SRHMediaView._uuid,
+                            SRHMediaViewsStore._connection,
+                            SRHMediaViewsStore._connectionDidInvalidate,
+                            SRHMediaViewsStore._offScreenMediaViews,
+                            SRHMediaViewsStore._onScreenMediaViews,
+                            SRHMediaViewsStore._q,
+                            SRHMediaViewsStore._scrollView ]
+...

@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/EDPSecurity.framework/EDPSecurity
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _EDPSecurityVersionNumber, _EDPSecurityVersionString,
+                            _createTrustPolicy, _mapDigestAlgorithm,
+                            _pickKeyAlgorithm ]
+    objc-classes:         [ EDPUtilities, SignatureResponse, ValidationResponse ]
+    objc-ivars:           [ SignatureResponse.error, SignatureResponse.signature,
+                            ValidationResponse.certificateChain,
+                            ValidationResponse.isTrusted,
+                            ValidationResponse.validatedData ]
+...

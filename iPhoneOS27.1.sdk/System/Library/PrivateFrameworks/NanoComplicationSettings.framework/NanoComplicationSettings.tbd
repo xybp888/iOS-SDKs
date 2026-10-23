@@ -1,0 +1,37 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NanoComplicationSettings.framework/NanoComplicationSettings
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _ApplicationsChanged, _ComplicationSettingsChanged,
+                            _NCSActiveKey, _NCSAppBundleIdentifierKey,
+                            _NCSComplicationBundleIdentifierKey,
+                            _NCSComplicationDefinitionsKey,
+                            _NCSComplicationNameKey, _NCSDomainKey,
+                            _NCSInstallStateKey,
+                            _NCSNanoComplicationSettingsVersionNumber,
+                            _NCSNanoComplicationSettingsVersionString,
+                            _NCSSelectedComplicationIdentifierKey,
+                            _NCSSettingsChangedNotification,
+                            _NCSSockPuppetAppIdentifierKey,
+                            _NCSSockPuppetBundleIdentifier, _PairedDeviceChanged,
+                            _SPApplicationsChanged ]
+    objc-classes:         [ NCSComplication, NCSInternalSettingsManager,
+                            NCSSettingsManager ]
+    objc-ivars:           [ NCSComplication._active,
+                            NCSComplication._appBundleIdentifier,
+                            NCSComplication._cannotBeDisabled,
+                            NCSComplication._complicationBundleIdentifier,
+                            NCSComplication._installState, NCSComplication._name,
+                            NCSComplication._sockPuppetIdentifier,
+                            NCSInternalSettingsManager._complicationDefinitions,
+                            NCSInternalSettingsManager._queue,
+                            NCSInternalSettingsManager._selectedComplicationIdentifier,
+                            NCSInternalSettingsManager._storedSettings,
+                            NCSInternalSettingsManager._syncManager,
+                            NCSSettingsManager._delegate ]
+...

@@ -1,0 +1,45 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AirPlaySenderKit.framework/AirPlaySenderKit
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _APSKSessionOptionsKey_TimeoutSeconds,
+                            _APSKVideoFrameUserDataAttachment ]
+    objc-classes:         [ APSKDestination, APSKPlaybackInfo, APSKSession,
+                            APSKStreamAudio, APSKStreamPlayback, APSKStreamVideo ]
+    objc-ivars:           [ APSKDestination._destinationType,
+                            APSKDestination._value, APSKPlaybackInfo._dictionary,
+                            APSKPlaybackInfo._urlString,
+                            APSKSession._audioStream, APSKSession._client,
+                            APSKSession._delegate, APSKSession._delegateQueue,
+                            APSKSession._objectID, APSKSession._passcode,
+                            APSKSession._playbackStream, APSKSession._queue,
+                            APSKSession._remote, APSKSession._sender,
+                            APSKSession._senderNotifObserver, APSKSession._state,
+                            APSKSession._videoStream, APSKStreamAudio._asbd,
+                            APSKStreamAudio._audioSender,
+                            APSKStreamAudio._delegate,
+                            APSKStreamAudio._delegateQueue,
+                            APSKStreamAudio._failurePosted,
+                            APSKStreamAudio._options, APSKStreamAudio._queue,
+                            APSKStreamAudio._rtQueue,
+                            APSKStreamAudio._rtRingBuffer,
+                            APSKStreamAudio._rtRingBufferEntries,
+                            APSKStreamAudio._rtSignal,
+                            APSKStreamAudio._useVideoLatency,
+                            APSKStreamPlayback._delegate,
+                            APSKStreamPlayback._delegateQueue,
+                            APSKStreamPlayback._options,
+                            APSKStreamPlayback._playbackControl,
+                            APSKStreamPlayback._queue, APSKStreamPlayback._url,
+                            APSKStreamVideo._delegate,
+                            APSKStreamVideo._delegateQueue,
+                            APSKStreamVideo._frameSender,
+                            APSKStreamVideo._height, APSKStreamVideo._options,
+                            APSKStreamVideo._queue, APSKStreamVideo._refreshRate,
+                            APSKStreamVideo._width ]
+...

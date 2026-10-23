@@ -1,0 +1,66 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/VoiceProcessor.framework/VoiceProcessor
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _GetVoiceProcessorSPI, _VPContextCreate,
+                            _VPSPICreateWithConfiguration,
+                            _VPSPICreateWithContext, _VPSPIDestroy,
+                            _VPSPIGetBaseFactory_Private,
+                            _VPSPIGetDownlinkParameterList,
+                            _VPSPIGetDownlinkPropertyList, _VPSPIGetParameter,
+                            _VPSPIGetParameter_Private, _VPSPIGetProperty,
+                            _VPSPIGetPropertyInfo, _VPSPIGetProperty_Private,
+                            _VPSPIGetRPBHostUUID, _VPSPIGetUplinkParameterList,
+                            _VPSPIGetUplinkPropertyList, _VPSPIGetVersion,
+                            _VPSPIInitializeDownlink, _VPSPIInitializeUplink,
+                            _VPSPIPreflightDownlink, _VPSPIPreflightUplink,
+                            _VPSPIProcessDownlink, _VPSPIProcessUplink,
+                            _VPSPISetBaseFactory_Private, _VPSPISetParameter,
+                            _VPSPISetParameter_Private, _VPSPISetProperty,
+                            _VPSPISetProperty_Private, _VPSPIVersion,
+                            _VoiceProcessorCreate,
+                            _VoiceProcessorCreateWithContext,
+                            _VoiceProcessorGetVersion,
+                            _VoiceProcessorGetVersionForContext,
+                            _kVPDeviceClass_AudioAccessory, _kVPDeviceClass_Mac,
+                            _kVPDeviceClass_Pad, _kVPDeviceClass_Phone,
+                            _kVPDeviceClass_Pod, _kVPDeviceClass_TV,
+                            _kVPDeviceClass_Unknown, _kVPDeviceClass_Watch,
+                            _kVPOperatingSystemReleaseType_Carrier,
+                            _kVPOperatingSystemReleaseType_Darwin,
+                            _kVPOperatingSystemReleaseType_DarwinInternal,
+                            _kVPOperatingSystemReleaseType_Desense,
+                            _kVPOperatingSystemReleaseType_Developer,
+                            _kVPOperatingSystemReleaseType_Internal,
+                            _kVPOperatingSystemReleaseType_LiteInternal,
+                            _kVPOperatingSystemReleaseType_NonUI,
+                            _kVPOperatingSystemReleaseType_Restore,
+                            _kVPOperatingSystemReleaseType_Vendor,
+                            _kVPOperatingSystemReleaseType_VendorNonUI ]
+    objc-classes:         [ RPBHost_Delegate, RPBItem_Delegate, RPBServer_Listener,
+                            VPContext, VPMutableContext, VoiceProcessor,
+                            vp_services_Model_Manager_Impl ]
+    objc-ivars:           [ RPBHost_Delegate.get_parameter_callback,
+                            RPBHost_Delegate.get_parameter_info_callback,
+                            RPBHost_Delegate.get_property_callback,
+                            RPBHost_Delegate.get_property_info_callback,
+                            RPBHost_Delegate.set_parameter_callback,
+                            RPBHost_Delegate.set_property_callback,
+                            RPBItem_Delegate.get_parameter_callback,
+                            RPBItem_Delegate.get_parameter_info_callback,
+                            RPBItem_Delegate.get_property_callback,
+                            RPBItem_Delegate.get_property_info_callback,
+                            RPBItem_Delegate.set_parameter_callback,
+                            RPBItem_Delegate.set_property_callback,
+                            RPBServer_Listener._server,
+                            RPBServer_Listener.did_start_running_callback,
+                            RPBServer_Listener.did_stop_running_callback,
+                            RPBServer_Listener.will_start_running_callback,
+                            RPBServer_Listener.will_stop_running_callback,
+                            VPContext._context ]
+...

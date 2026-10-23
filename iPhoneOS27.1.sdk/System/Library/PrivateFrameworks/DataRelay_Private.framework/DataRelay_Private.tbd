@@ -1,0 +1,58 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DataRelay_Private.framework/DataRelay_Private
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:         [ DRClient, DRClientManager, DRHIDClient, DRHIDClientDM6,
+                            DRHIDClientHRM, DRHIDClientHRMAnalytics,
+                            DRHIDUserDevice, DRPeer, DRSPDClient, DRSPDServer,
+                            DRServer, DRServerManager, DataRelayAnalytics,
+                            DataRelayDaemon ]
+    objc-ivars:           [ DRClient._eventSendTimer, DRClient._events,
+                            DRClient._hidClients, DRClient._rapportSemaphore,
+                            DRClient._wxRoute, DRClientManager._rapportClient,
+                            DRClientManager._serverDictionary,
+                            DRClientManager._serverFoundHandler,
+                            DRClientManager._serverLostHandler,
+                            DRHIDClient._HIDClient, DRHIDClient._HIDServices,
+                            DRHIDClient._clientType, DRHIDClient._dataHandler,
+                            DRHIDClient._isActivated, DRHIDClient._wxRoute,
+                            DRHIDUserDevice._dataType,
+                            DRHIDUserDevice._properties,
+                            DRHIDUserDevice._serviceID,
+                            DRHIDUserDevice._setReportHandler,
+                            DRHIDUserDevice._userDevice,
+                            DRPeer._availableDataTypes, DRPeer._dataRelayVersion,
+                            DRPeer._deviceFoundClient, DRPeer._deviceLostClient,
+                            DRPeer._disconnectHandler,
+                            DRPeer._discoveryStartTimestamp,
+                            DRPeer._discoveryTimer, DRPeer._dispatchQueue,
+                            DRPeer._dm6Started, DRPeer._hrmStarted,
+                            DRPeer._identifier, DRPeer._idsIdentifier,
+                            DRPeer._internalDisconnectHandler,
+                            DRPeer._isActivated, DRPeer._rapportClient,
+                            DRPeer._requestedDataTypes, DRSPDClient._isActivated,
+                            DRSPDClient._requestHandler,
+                            DRSPDServer._eventHandler,
+                            DRServer._availableDataTypesFromLocalDiscovery,
+                            DRServer._availableDataTypesFromServer,
+                            DRServer._hidDevices, DRServer._rapportSemaphore,
+                            DRServer._wxAddress, DRServerManager._cidDictionary,
+                            DRServerManager._clientDictionary,
+                            DRServerManager._clientDictionaryQueue,
+                            DRServerManager._dispatchQueue,
+                            DRServerManager._rapportClient,
+                            DRServerManager._wxRoute,
+                            DataRelayAnalytics._dataRelaySessionAnalyticDict,
+                            DataRelayAnalytics._dispatchQueue,
+                            DataRelayAnalytics._dm6ServiceStartedTimestamp,
+                            DataRelayAnalytics._entryPoint,
+                            DataRelayAnalytics._hrmServiceStartedTimestamp,
+                            DataRelayAnalytics._sessionStartTimestamp,
+                            DataRelayDaemon._serverManager,
+                            DataRelayDaemon.dispatchQueue ]
+...

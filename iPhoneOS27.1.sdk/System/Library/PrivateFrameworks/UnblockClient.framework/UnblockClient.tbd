@@ -1,0 +1,47 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/UnblockClient.framework/UnblockClient
+current-version:       18
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _UBIssueTypeCopyDescription,
+                            _UBRecoveryConfidenceCopyDescription,
+                            _UBRecoveryEffectivenessCopyDescription,
+                            _UBRecoveryStatusCopyDescription,
+                            _UBUnblockErrorDomain ]
+    objc-classes:         [ UBProcessInfo, UBProcessThreadInfo, UBStuckService,
+                            UBStuckServiceRecoveryResult, UBThreadInfo,
+                            UBUnblockClient ]
+    objc-ivars:           [ UBProcessInfo._is3P, UBProcessInfo._name,
+                            UBProcessInfo._pid, UBProcessThreadInfo._process,
+                            UBProcessThreadInfo._thread,
+                            UBStuckService._incidentUUID, UBStuckService._pid,
+                            UBStuckService._threadID,
+                            UBStuckService._timeElapsed,
+                            UBStuckServiceRecoveryResult._clientName,
+                            UBStuckServiceRecoveryResult._effectiveness,
+                            UBStuckServiceRecoveryResult._issueType,
+                            UBStuckServiceRecoveryResult._numOtherIssues,
+                            UBStuckServiceRecoveryResult._numThreadsBlockedByOtherIssues,
+                            UBStuckServiceRecoveryResult._numThreadsBlockedByThisIssue,
+                            UBStuckServiceRecoveryResult._processesAndThreadsInvolved,
+                            UBStuckServiceRecoveryResult._processesBlockedByOtherIssuesOnly,
+                            UBStuckServiceRecoveryResult._processesBlockedByThisAndOtherIssues,
+                            UBStuckServiceRecoveryResult._processesBlockedByThisIssueOnly,
+                            UBStuckServiceRecoveryResult._recoveryConfidence,
+                            UBStuckServiceRecoveryResult._recoveryStatus,
+                            UBStuckServiceRecoveryResult._selectedProcess,
+                            UBStuckServiceRecoveryResult._service,
+                            UBStuckServiceRecoveryResult._serviceDependencyChain,
+                            UBStuckServiceRecoveryResult._serviceProcessIs3P,
+                            UBStuckServiceRecoveryResult._serviceProcessName,
+                            UBStuckServiceRecoveryResult._timeSinceIssueBegan,
+                            UBThreadInfo._dqLabel, UBThreadInfo._dqid,
+                            UBThreadInfo._threadName, UBThreadInfo._tid,
+                            UBUnblockClient._clientName,
+                            UBUnblockClient._connection, UBUnblockClient._lock,
+                            UBUnblockClient._replyQueue ]
+...

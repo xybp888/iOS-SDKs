@@ -1,0 +1,20 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/NewsURLBucket.framework/NewsURLBucket
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _NewsURLBucketVersionNumber,
+                            _NewsURLBucketVersionString ]
+    objc-classes:         [ NBBloomFilterReader, NBHashBucketer,
+                            NBObjCBloomFilterReader, NBObjCHashBucketer,
+                            NBObjCURLCanonicalizer, NBObjCURLHasher,
+                            NBURLCanonicalizer, NBURLHasher ]
+    objc-ivars:           [ NBBloomFilterReader._bloomFilterReader,
+                            NBHashBucketer._bucketer,
+                            NBURLCanonicalizer._canonicalizer,
+                            NBURLHasher._hasher ]
+...

@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppleSplatRendering.framework/AppleSplatRendering
+current-version:       0
+compatibility-version: 0
+reexported-libraries:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:            [ /System/Library/PrivateFrameworks/CoreRE3DGSFoundation.framework/CoreRE3DGSFoundation,
+                            /System/Library/PrivateFrameworks/Vista.framework/Vista ]
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _AppleSplatRenderingVersionNumber,
+                            _AppleSplatRenderingVersionString,
+                            __Z21ASRVersionNumberMajorv,
+                            __Z21ASRVersionNumberMinorv,
+                            __Z21ASRVersionNumberPatchv ]
+...

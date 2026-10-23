@@ -1,0 +1,23 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/TouchAccommodations.framework/TouchAccommodations
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _TouchAccommodationsVersionNumber,
+                            _TouchAccommodationsVersionString ]
+    objc-classes:         [ AXTAConfiguration_AXSettings,
+                            AXTAInstructionsController_iOS, AXTASetupAssistant,
+                            AXTASetupController, AXTASetupResult, AXTASummaryItem ]
+    objc-ivars:           [ AXTASetupAssistant._configuration,
+                            AXTASetupAssistant._delegate,
+                            AXTASetupAssistant._floatingUIHideAssertion,
+                            AXTASetupAssistant._presentingViewController,
+                            AXTASetupAssistant._setupNavigationController,
+                            AXTASetupAssistant._setupTitle,
+                            AXTASummaryItem._descriptionText,
+                            AXTASummaryItem._symbolName, AXTASummaryItem._title ]
+...

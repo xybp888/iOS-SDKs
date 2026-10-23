@@ -1,0 +1,36 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/LighthouseCoreMLModelStore.framework/LighthouseCoreMLModelStore
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _LCFLogModelStore, _LCFLogModelStoreModelMetadata,
+                            _LCFModelStoreLoggingUtilsInit,
+                            _LRRLoggingCategoryModelStore,
+                            _LRRLoggingCategoryModelStoreModelMetadata,
+                            _LRRLoggingSubsystem,
+                            _LighthouseCoreMLModelStoreVersionNumber,
+                            _LighthouseCoreMLModelStoreVersionString,
+                            _kLastTrained, _kUserDefaultsModelStoreSuiteName ]
+    objc-classes:         [ LCFModelMetadata, LCFModelStore,
+                            LCFModelStoreModelMetadataProvider,
+                            LCFModelStoreUserDefaults, LCFModelStoreUtils ]
+    objc-ivars:           [ LCFModelMetadata._custom,
+                            LCFModelMetadata._dateCreated,
+                            LCFModelMetadata._dateTrained,
+                            LCFModelMetadata._isAvailable,
+                            LCFModelMetadata._isImported,
+                            LCFModelMetadata._isLocal,
+                            LCFModelMetadata._isOriginalEmptyModel,
+                            LCFModelMetadata._sha256,
+                            LCFModelStore._emptyModelURL, LCFModelStore._key,
+                            LCFModelStore._modelMetadataProvider,
+                            LCFModelStore._modelStoreRootURL,
+                            LCFModelStore._modelStoreRootWithKeyURL,
+                            LCFModelStore._originalEmptyModelURL,
+                            LCFModelStoreModelMetadataProvider._metadataPlistFileURL,
+                            LCFModelStoreModelMetadataProvider._modelStoreRootWithKeyURL ]
+...

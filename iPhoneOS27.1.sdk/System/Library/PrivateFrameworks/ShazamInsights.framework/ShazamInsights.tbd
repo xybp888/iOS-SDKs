@@ -1,0 +1,39 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ShazamInsights.framework/ShazamInsights
+current-version:       427.0.48
+compatibility-version: 0
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _SHInsightsErrorDomain ]
+    objc-classes:         [ SHAffinityGroup, SHAffinityGroupQuery,
+                            SHCDNDataFetcher, SHDataFetcherFileInfo,
+                            SHInsightsConfiguration, SHInsightsError,
+                            SHInsightsNetworkRequester, SHLocalDataFetcher,
+                            SHRegion, SHStubbedNetworkRequester,
+                            SHTimeAndPlaceAffinityGroup,
+                            SHTimeAndPlaceController,
+                            SHTimeAndPlaceServerResponseParser ]
+    objc-ivars:           [ SHAffinityGroup._cohesionLevel,
+                            SHAffinityGroup._groupType,
+                            SHAffinityGroup._mutableMediaItems,
+                            SHCDNDataFetcher._networkRequester,
+                            SHDataFetcherFileInfo._creationDate,
+                            SHDataFetcherFileInfo._data,
+                            SHDataFetcherFileInfo._dataFilePathURL,
+                            SHDataFetcherFileInfo._mimeType,
+                            SHDataFetcherFileInfo._storefront,
+                            SHDataFetcherFileInfo._suggestedFileName,
+                            SHDataFetcherFileInfo._uniqueHash,
+                            SHInsightsConfiguration._bagContract,
+                            SHRegion._geohash, SHRegion._location,
+                            SHStubbedNetworkRequester._downloadFileURL,
+                            SHStubbedNetworkRequester._httpResponse,
+                            SHStubbedNetworkRequester._requestData,
+                            SHTimeAndPlaceAffinityGroup._affinityGroup,
+                            SHTimeAndPlaceAffinityGroup._geohashKeyedRegions,
+                            SHTimeAndPlaceAffinityGroup._regions,
+                            SHTimeAndPlaceController._dataFetcher ]
+...

@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/iCloudWebUI.framework/iCloudWebUI
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _iCloudWebUIVersionNumber, _iCloudWebUIVersionString ]
+    objc-classes:         [ CDPStatusUpdateHook, CDPWebAccessStatusUpdateHook,
+                            SettingsHelper, _TtC11iCloudWebUI16ADPRemoteUIModel ]
+    objc-ivars:           [ CDPStatusUpdateHook._actionControllers,
+                            CDPStatusUpdateHook._delegate,
+                            CDPStatusUpdateHook._presentationType,
+                            CDPStatusUpdateHook._serverHookResponse ]
+...

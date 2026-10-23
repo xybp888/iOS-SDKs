@@ -1,0 +1,41 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MobileTimerUISupport.framework/MobileTimerUISupport
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:              [ _CFPUIRadiusForRectAtAngleWithInset,
+                            _CLKFormatTimeInterval,
+                            _CLKFormatTimeIntervalCacheInvalidateNotification,
+                            _CLKFormatTimeIntervalFull,
+                            _CLKFormatTimeIntervalSeconds,
+                            _CLKFormatTimeIntervalSecondsForLowFidelity,
+                            _MobileTimerUISupportVersionNumber,
+                            _MobileTimerUISupportVersionString,
+                            _NTSGetCurrentTimerSync, _NTSPauseCurrentTimerSync,
+                            _NTSResumeCurrentTimerSync,
+                            _NTSStartCurrentTimerWithDurationSync,
+                            _NTSStopCurrentTimerSync,
+                            __CLKFormatTimeIntervalSeconds, _getCurrentTimerSync ]
+    objc-classes:         [ NTSTimerTimer, _CLKTimeFormatData,
+                            _CLKTimeFormatSentinel ]
+    objc-ivars:           [ NTSTimerTimer._appInForeground,
+                            NTSTimerTimer._displayLink, NTSTimerTimer._handlers,
+                            NTSTimerTimer._isObserving, NTSTimerTimer._nextToken,
+                            NTSTimerTimer._requestInProgress,
+                            NTSTimerTimer._requestPending,
+                            NTSTimerTimer._timerLock,
+                            NTSTimerTimer._timerManager,
+                            NTSTimerTimer._updateErrorCount,
+                            _CLKTimeFormatData._doubleWidthNumberFormatter,
+                            _CLKTimeFormatData._formatHourMin,
+                            _CLKTimeFormatData._formatHourMinSec,
+                            _CLKTimeFormatData._formatHourMinSecSubsec,
+                            _CLKTimeFormatData._formatMin,
+                            _CLKTimeFormatData._formatMinSec,
+                            _CLKTimeFormatData._formatMinSecSubsec,
+                            _CLKTimeFormatData._singleWidthNumberFormatter ]
+...
