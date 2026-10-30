@@ -1,0 +1,22 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ChronoKit.framework/ChronoKit
+current-version:       7749.2.13
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
+    symbols:              [ _CHDMonotonicTimeEqual, _CHDMonotonicTimeForever,
+                            _CHDMonotonicTimeFromNow, _CHDMonotonicTimeLessThan,
+                            _CHDMonotonicTimePlusInterval,
+                            _ChronoKitVersionNumber, _ChronoKitVersionString ]
+    objc-classes:         [ CHDMonotonicTimer, CHKObjcUtilities,
+                            _SystemEXExtensionIdentityDiscoverer,
+                            _TtC9ChronoKit11WidgetEntry,
+                            _TtC9ChronoKit16ExtensionManager,
+                            _TtC9ChronoKit28ApplicationProtectionMonitor,
+                            _TtC9ChronoKit29ApplicationRestrictionMonitor,
+                            _TtC9ChronoKit30ApplicationAvailabilityMonitor ]
+    objc-ivars:           [ CHDMonotonicTimer._timer ]
+...

@@ -1,0 +1,87 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4.2 effective-5.10 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)
+// swift-module-flags: -target arm64e-apple-ios27.2 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-experimental-feature CustomAvailability -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 396.2 -module-name TranslationUIProvider
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4.2
+public import ExtensionKit
+public import Swift
+public import SwiftUI
+@_exported public import TranslationUIProvider
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 18.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(macCatalyst, unavailable)
+public protocol TranslationUIProviderExtensionScene : ExtensionKit::AppExtensionScene {
+}
+@available(iOS 18.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(macCatalyst, unavailable)
+@_Concurrency::MainActor @preconcurrency public struct TranslationUIProviderSelectedTextScene<Content> : TranslationUIProvider::TranslationUIProviderExtensionScene where Content : SwiftUICore::View {
+  @_Concurrency::MainActor @preconcurrency public init(content: @escaping (any TranslationUIProvider::TranslationUIProviderContext) -> Content)
+  @_Concurrency::MainActor @preconcurrency public var body: some ExtensionKit::AppExtensionScene {
+    get
+  }
+  @available(iOS 18.4, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(macCatalyst, unavailable)
+  @available(visionOS, unavailable)
+  public typealias Body = @_opaqueReturnTypeOf("$s21TranslationUIProvider0aB17SelectedTextSceneV4bodyQrvp", 0) __<Content>
+}
+@available(iOS 18.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(macCatalyst, unavailable)
+public protocol TranslationUIProviderContext : Observation::Observable {
+  var inputText: Foundation::AttributedString? { get }
+  var allowsReplacement: Swift::Bool { get }
+  func finish(translation: Foundation::AttributedString?)
+  func expandSheet()
+}
+@available(iOS 18.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(macCatalyst, unavailable)
+public protocol TranslationUIProviderExtension : ExtensionFoundation::AppExtension {
+  associatedtype Body : TranslationUIProvider::TranslationUIProviderExtensionScene
+  var body: Self.Body { get }
+}
+@available(iOS 18.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(macCatalyst, unavailable)
+extension TranslationUIProvider::TranslationUIProviderExtension {
+  public var configuration: ExtensionKit::AppExtensionSceneConfiguration {
+    get
+  }
+}
+@available(iOS 18.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(macCatalyst, unavailable)
+@_Concurrency::MainActor @preconcurrency public struct TranslationProviderUIExtensionConfiguration : ExtensionFoundation::AppExtensionConfiguration {
+  @_Concurrency::MainActor @preconcurrency public init(_ appExtension: any TranslationUIProvider::TranslationUIProviderExtension)
+}
+@available(iOS 18.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(visionOS, unavailable)
+@available(macCatalyst, unavailable)
+extension TranslationUIProvider::TranslationUIProviderSelectedTextScene : Swift::Sendable {}

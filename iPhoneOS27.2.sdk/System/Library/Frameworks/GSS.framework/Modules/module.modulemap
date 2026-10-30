@@ -1,0 +1,23 @@
+framework module GSS [system] {
+  umbrella header "GSS.h"
+  header "gssapi.h"
+  // The headers below are all included from gssapi.h
+  // and aren't standalone (depend on defs from gssapi.h).
+  // Include them textually.
+  textual header "gssapi_oid.h"
+  textual header "gssapi_protos.h"
+  textual header "gssapi_apple.h"
+  export *
+
+  module * { export * }
+
+  explicit module krb5 {
+    header "gssapi_krb5.h"
+    export *
+  }
+
+  module spnego {
+    header "gssapi_spnego.h"
+    export *
+  }
+}

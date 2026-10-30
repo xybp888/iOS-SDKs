@@ -1,0 +1,518 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4.2 effective-5.10 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)
+// swift-module-flags: -target arm64e-apple-ios27.2 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 5 -O -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 1269.2.5.1.5 -module-name HomeExtensions -package-name Home
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4.2
+public import Foundation
+@_exported public import HomeExtensions
+public import HomeKit
+public import Swift
+@_exported public import SwiftUI
+public import UIKit
+public import _Concurrency
+public import _HomeKit_SwiftUI
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@available(iOS 27.0, *)
+@_Concurrency::MainActor public struct HomeAccessoryConfiguration : HomeExtensions::HomeContent {
+  public typealias SupportsAccessory = @isolated(any) @Sendable (HomeKit::HMAccessory) -> Swift::Bool
+  @_Concurrency::MainActor public var _config: HomeExtensions::_HomeContentConfiguration<HomeExtensions::HomeAccessoryConfiguration>
+  @_Concurrency::MainActor public init(id: HomeExtensions::HomeContentID, @SwiftUICore::ContentBuilder content: @escaping () -> some View, filter: @escaping HomeExtensions::HomeAccessoryConfiguration.HomeExtensions::SupportsAccessory = { _ in true })
+  @_Concurrency::MainActor public func hidesNavigationTitleInLandscape(_ hides: Swift::Bool = true) -> HomeExtensions::HomeAccessoryConfiguration
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@_Concurrency::MainActor public struct HomeAccessoryHelpGuide : HomeExtensions::HomeContent {
+  public typealias SupportsAccessory = @isolated(any) @Sendable (HomeKit::HMAccessory) -> Swift::Bool
+  @_Concurrency::MainActor public var _config: HomeExtensions::_HomeContentConfiguration<HomeExtensions::HomeAccessoryHelpGuide>
+  @_Concurrency::MainActor public init(id: HomeExtensions::HomeContentID, @SwiftUICore::ContentBuilder content: @escaping () -> some View, filter: @escaping HomeExtensions::HomeAccessoryHelpGuide.HomeExtensions::SupportsAccessory = { _ in true })
+  @_Concurrency::MainActor public func contactAccessoryManufacturerLink() -> HomeExtensions::HomeAccessoryHelpGuide
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@_Concurrency::MainActor public struct HomeAccessorySettings : HomeExtensions::HomeContent {
+  @_Concurrency::MainActor public var _config: HomeExtensions::_HomeContentConfiguration<HomeExtensions::HomeAccessorySettings>
+  @_Concurrency::MainActor public init<Provider>(context: @escaping () -> Provider.Context, provider: @escaping () -> Provider, filter: @escaping HomeExtensions::HomeAccessoryConfiguration.HomeExtensions::SupportsAccessory = { _ in true }) where Provider : HomeExtensions::HomeAccessorySettingsProvider
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@_Concurrency::MainActor public struct HomeAccessoryTroubleshooting : HomeExtensions::HomeContent {
+  public typealias SupportsAccessory = @isolated(any) @Sendable (HomeKit::HMAccessory) -> Swift::Bool
+  @_Concurrency::MainActor public var _config: HomeExtensions::_HomeContentConfiguration<HomeExtensions::HomeAccessoryTroubleshooting>
+  @_Concurrency::MainActor public init(@SwiftUICore::ContentBuilder content: @escaping () -> some View, filter: @escaping HomeExtensions::HomeAccessoryTroubleshooting.HomeExtensions::SupportsAccessory = { _ in true })
+  @_Concurrency::MainActor public func contactAccessoryManufacturerLink() -> HomeExtensions::HomeAccessoryTroubleshooting
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+public protocol HomeContent {
+  var _config: HomeExtensions::_HomeContentConfiguration<Self> { get }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+public struct _HomeContentConfiguration<Content> : Swift::Sendable where Content : HomeExtensions::HomeContent {
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension Swift::Array : HomeExtensions::HomeContent where Element == any HomeExtensions::HomeContent {
+  public var _config: HomeExtensions::_HomeContentConfiguration<[any HomeExtensions::HomeContent]> {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension SwiftUICore::EmptyView : HomeExtensions::HomeContent {
+  nonisolated public var _config: HomeExtensions::_HomeContentConfiguration<SwiftUICore::EmptyContent> {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension SwiftUICore::TupleContent : HomeExtensions::HomeContent where repeat each Content : HomeExtensions::HomeContent {
+  public var _config: HomeExtensions::_HomeContentConfiguration<SwiftUICore::TupleContent<repeat each Content>> {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension Swift::Optional : HomeExtensions::HomeContent where Wrapped : HomeExtensions::HomeContent {
+  public var _config: HomeExtensions::_HomeContentConfiguration<Swift::Optional<Wrapped>> {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension SwiftUICore::_ConditionalContent : HomeExtensions::HomeContent where TrueContent : HomeExtensions::HomeContent, FalseContent : HomeExtensions::HomeContent {
+  public var _config: HomeExtensions::_HomeContentConfiguration<SwiftUICore::_ConditionalContent<TrueContent, FalseContent>> {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+public struct HomeContentID : Swift::Hashable, Swift::Sendable, Swift::RawRepresentable, Swift::ExpressibleByStringLiteral, Swift::CustomStringConvertible {
+  public let rawValue: Swift::String
+  public init(rawValue: Swift::String)
+  public init(_ rawValue: Swift::String)
+  public init(stringLiteral value: Swift::String)
+  public var description: Swift::String {
+    get
+  }
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  public typealias ExtendedGraphemeClusterLiteralType = Swift::String
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  public typealias RawValue = Swift::String
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  public typealias StringLiteralType = Swift::String
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  public typealias UnicodeScalarLiteralType = Swift::String
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+public protocol HomeAccessoryEnumSettingConstant : Swift::CaseIterable, Swift::Hashable, Swift::RawRepresentable where Self.RawValue : Swift::LosslessStringConvertible {
+  var value: HomeExtensions::HomeAccessorySettingLabel { get }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@propertyWrapper final public class HomeAccessoryEnumSetting<Value> : Swift::Identifiable, HomeExtensions::HomeAccessorySetting where Value : HomeExtensions::HomeAccessoryEnumSettingConstant {
+  public enum SelectionStyle : Swift::String, Swift::Equatable, Swift::Hashable, Swift::Codable, Swift::CustomStringConvertible {
+    case inline
+    case navigation
+    case expanded
+    public var description: Swift::String {
+      get
+    }
+    public init?(rawValue: Swift::String)
+    @available(iOS 27.0, *)
+    @available(macCatalyst, unavailable)
+    public typealias RawValue = Swift::String
+    public var rawValue: Swift::String {
+      get
+    }
+  }
+  final public var label: HomeExtensions::HomeAccessorySettingLabel
+  final public var isEnabled: Swift::Bool
+  final public var isHidden: Swift::Bool
+  final public let id: Swift::String
+  final public var wrappedValue: Value? {
+    get
+    set
+  }
+  final public var selectedValues: Swift::Set<Value>?
+  final public var projectedValue: HomeExtensions::HomeAccessoryEnumSetting<Value> {
+    get
+  }
+  public init(id: Swift::String, label: HomeExtensions::HomeAccessorySettingLabel, isEnabled: Swift::Bool = true, defaultValue: Value? = nil, currentValue: Value? = nil, style: HomeExtensions::HomeAccessoryEnumSetting<Value>.HomeExtensions::SelectionStyle = .inline)
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  public typealias ID = Swift::String
+  @objc deinit
+}
+@available(*, unavailable)
+extension HomeExtensions::HomeAccessoryEnumSetting : Swift::Sendable {
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@propertyWrapper final public class HomeAccessoryInformationSetting : Swift::Identifiable, HomeExtensions::HomeAccessorySetting {
+  final public var label: HomeExtensions::HomeAccessorySettingLabel
+  final public var isHidden: Swift::Bool
+  final public let id: Swift::String
+  final public var wrappedValue: Swift::String? {
+    get
+    set
+  }
+  final public var projectedValue: HomeExtensions::HomeAccessoryInformationSetting {
+    get
+  }
+  public init(id: Swift::String, label: HomeExtensions::HomeAccessorySettingLabel, value: Swift::String? = nil)
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  public typealias ID = Swift::String
+  @objc deinit
+}
+@available(*, unavailable)
+extension HomeExtensions::HomeAccessoryInformationSetting : Swift::Sendable {
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@propertyWrapper final public class HomeAccessoryRangeSetting<Value> : Swift::Identifiable, HomeExtensions::HomeAccessorySetting where Value : Swift::Comparable, Value : Swift::Numeric {
+  public enum ValueFormat : Swift::String, Swift::Equatable, Swift::Hashable, Swift::Codable, Swift::CustomStringConvertible {
+    case percentage
+    case temperature
+    case numeric
+    public var description: Swift::String {
+      get
+    }
+    public init?(rawValue: Swift::String)
+    @available(iOS 27.0, *)
+    @available(macCatalyst, unavailable)
+    public typealias RawValue = Swift::String
+    public var rawValue: Swift::String {
+      get
+    }
+  }
+  public enum SliderStyle : Swift::String, Swift::Equatable, Swift::Hashable, Swift::Codable, Swift::CustomStringConvertible {
+    case stepped
+    case continuous
+    public var description: Swift::String {
+      get
+    }
+    public init?(rawValue: Swift::String)
+    @available(iOS 27.0, *)
+    @available(macCatalyst, unavailable)
+    public typealias RawValue = Swift::String
+    public var rawValue: Swift::String {
+      get
+    }
+  }
+  public enum TickLabelStyle : Swift::Equatable {
+    case hidden
+    case automatic
+    case custom([Foundation::LocalizedStringResource])
+    public static func == (a: HomeExtensions::HomeAccessoryRangeSetting<Value>.HomeExtensions::TickLabelStyle, b: HomeExtensions::HomeAccessoryRangeSetting<Value>.HomeExtensions::TickLabelStyle) -> Swift::Bool
+  }
+  final public let id: Swift::String
+  final public var label: HomeExtensions::HomeAccessorySettingLabel
+  final public var isEnabled: Swift::Bool
+  final public var isHidden: Swift::Bool
+  final public var wrappedValue: Value? {
+    get
+    set
+  }
+  final public var projectedValue: HomeExtensions::HomeAccessoryRangeSetting<Value> {
+    get
+  }
+  public init(id: Swift::String, label: HomeExtensions::HomeAccessorySettingLabel, isEnabled: Swift::Bool = true, defaultValue: Value? = nil, currentValue: Value? = nil, lowerBound: Value? = nil, upperBound: Value? = nil, step: Value? = nil, unit: Foundation::LocalizedStringResource? = nil, valueFormat: HomeExtensions::HomeAccessoryRangeSetting<Value>.HomeExtensions::ValueFormat? = nil, minimumValueLabel: Foundation::LocalizedStringResource? = nil, maximumValueLabel: Foundation::LocalizedStringResource? = nil, valueSuffix: Foundation::LocalizedStringResource? = nil, decimalPrecision: Swift::Int? = nil, sliderStyle: HomeExtensions::HomeAccessoryRangeSetting<Value>.HomeExtensions::SliderStyle? = nil)
+  convenience public init<R>(id: Swift::String, label: HomeExtensions::HomeAccessorySettingLabel, range: R, isEnabled: Swift::Bool = true, defaultValue: Value? = nil, currentValue: Value? = nil, step: Value? = nil, unit: Foundation::LocalizedStringResource? = nil, valueFormat: HomeExtensions::HomeAccessoryRangeSetting<Value>.HomeExtensions::ValueFormat? = nil, minimumValueLabel: Foundation::LocalizedStringResource? = nil, maximumValueLabel: Foundation::LocalizedStringResource? = nil, valueSuffix: Foundation::LocalizedStringResource? = nil, decimalPrecision: Swift::Int? = nil, sliderStyle: HomeExtensions::HomeAccessoryRangeSetting<Value>.HomeExtensions::SliderStyle? = nil) where Value == R.Bound, R : HomeExtensions::HomeAccessoryRangeSettingDescriptor
+  convenience public init<R>(id: Swift::String, label: HomeExtensions::HomeAccessorySettingLabel, range: R, isEnabled: Swift::Bool = true, defaultValue: Value? = nil, currentValue: Value? = nil, step: Value? = nil, unit: Foundation::LocalizedStringResource? = nil, valueFormat: HomeExtensions::HomeAccessoryRangeSetting<Value>.HomeExtensions::ValueFormat? = nil, minimumValueLabel: Foundation::LocalizedStringResource? = nil, maximumValueLabel: Foundation::LocalizedStringResource? = nil, minimumValueSystemImage: Swift::String? = nil, maximumValueSystemImage: Swift::String? = nil, valueSuffix: Foundation::LocalizedStringResource? = nil, decimalPrecision: Swift::Int? = nil, sliderStyle: HomeExtensions::HomeAccessoryRangeSetting<Value>.HomeExtensions::SliderStyle? = nil) where Value == R.Bound, R : HomeExtensions::HomeAccessoryRangeSettingDescriptor
+  convenience public init<R>(id: Swift::String, label: HomeExtensions::HomeAccessorySettingLabel, range: R, isEnabled: Swift::Bool = true, defaultValue: Value? = nil, currentValue: Value? = nil, step: Value? = nil, unit: Foundation::LocalizedStringResource? = nil, valueFormat: HomeExtensions::HomeAccessoryRangeSetting<Value>.HomeExtensions::ValueFormat? = nil, minimumValueLabel: Foundation::LocalizedStringResource? = nil, maximumValueLabel: Foundation::LocalizedStringResource? = nil, minimumValueSystemImage: Swift::String? = nil, maximumValueSystemImage: Swift::String? = nil, valueSuffix: Foundation::LocalizedStringResource? = nil, decimalPrecision: Swift::Int? = nil, sliderStyle: HomeExtensions::HomeAccessoryRangeSetting<Value>.HomeExtensions::SliderStyle? = nil, tickLabelStyle: HomeExtensions::HomeAccessoryRangeSetting<Value>.HomeExtensions::TickLabelStyle) where Value == R.Bound, R : HomeExtensions::HomeAccessoryRangeSettingDescriptor
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  public typealias ID = Swift::String
+  @objc deinit
+}
+@available(iOS 27.0, *)
+public protocol HomeAccessoryRangeSettingDescriptor<Bound> {
+  associatedtype Bound : Swift::Comparable, Swift::Numeric
+  var rangeLowerBound: Self.Bound? { get }
+  var rangeUpperBound: Self.Bound? { get }
+  var _rangeDescriptorSeal: HomeExtensions::_RangeDescriptorSeal { get }
+}
+@available(iOS 27.0, *)
+public struct _RangeDescriptorSeal {
+}
+@available(iOS 27.0, *)
+extension Swift::ClosedRange : HomeExtensions::HomeAccessoryRangeSettingDescriptor where Bound : Swift::Numeric {
+  public var _rangeDescriptorSeal: HomeExtensions::_RangeDescriptorSeal {
+    get
+  }
+  public var rangeLowerBound: Bound? {
+    get
+  }
+  public var rangeUpperBound: Bound? {
+    get
+  }
+}
+@available(iOS 27.0, *)
+extension Swift::Range : HomeExtensions::HomeAccessoryRangeSettingDescriptor where Bound : Swift::Numeric {
+  public var rangeLowerBound: Bound? {
+    get
+  }
+  public var rangeUpperBound: Bound? {
+    get
+  }
+  public var _rangeDescriptorSeal: HomeExtensions::_RangeDescriptorSeal {
+    get
+  }
+}
+@available(iOS 27.0, *)
+extension Swift::PartialRangeFrom : HomeExtensions::HomeAccessoryRangeSettingDescriptor where Bound : Swift::Numeric {
+  public var rangeLowerBound: Bound? {
+    get
+  }
+  public var rangeUpperBound: Bound? {
+    get
+  }
+  public var _rangeDescriptorSeal: HomeExtensions::_RangeDescriptorSeal {
+    get
+  }
+}
+@available(iOS 27.0, *)
+extension Swift::PartialRangeThrough : HomeExtensions::HomeAccessoryRangeSettingDescriptor where Bound : Swift::Numeric {
+  public var rangeLowerBound: Bound? {
+    get
+  }
+  public var rangeUpperBound: Bound? {
+    get
+  }
+  public var _rangeDescriptorSeal: HomeExtensions::_RangeDescriptorSeal {
+    get
+  }
+}
+@available(iOS 27.0, *)
+extension Swift::PartialRangeUpTo : HomeExtensions::HomeAccessoryRangeSettingDescriptor where Bound : Swift::Numeric {
+  public var rangeLowerBound: Bound? {
+    get
+  }
+  public var rangeUpperBound: Bound? {
+    get
+  }
+  public var _rangeDescriptorSeal: HomeExtensions::_RangeDescriptorSeal {
+    get
+  }
+}
+@available(*, unavailable)
+extension HomeExtensions::HomeAccessoryRangeSetting : Swift::Sendable {
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+public struct HomeAccessorySettingLabel : Swift::Sendable, Swift::Equatable, Swift::Codable {
+  public let label: Foundation::LocalizedStringResource
+  public let detailedLabel: Foundation::LocalizedStringResource?
+  public init(_ label: Foundation::LocalizedStringResource, detailedLabel: Foundation::LocalizedStringResource? = nil, systemImage: Swift::String? = nil)
+  public static func == (a: HomeExtensions::HomeAccessorySettingLabel, b: HomeExtensions::HomeAccessorySettingLabel) -> Swift::Bool
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension HomeExtensions::HomeAccessorySettingLabel : Swift::ExpressibleByStringLiteral {
+  public init(stringLiteral value: Swift::String)
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  public typealias ExtendedGraphemeClusterLiteralType = Swift::String
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  public typealias StringLiteralType = Swift::String
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  public typealias UnicodeScalarLiteralType = Swift::String
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@propertyWrapper final public class HomeAccessoryTextFieldSetting : Swift::Identifiable, HomeExtensions::HomeAccessorySetting {
+  final public var label: HomeExtensions::HomeAccessorySettingLabel
+  final public var isEnabled: Swift::Bool
+  final public var isHidden: Swift::Bool
+  final public let id: Swift::String
+  final public var wrappedValue: Swift::String? {
+    get
+    set
+  }
+  final public var projectedValue: HomeExtensions::HomeAccessoryTextFieldSetting {
+    get
+  }
+  public init(id: Swift::String, label: HomeExtensions::HomeAccessorySettingLabel, isEnabled: Swift::Bool = true, defaultValue: Swift::String? = nil, currentValue: Swift::String? = nil, placeholder: Foundation::LocalizedStringResource? = nil)
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  public typealias ID = Swift::String
+  @objc deinit
+}
+@available(*, unavailable)
+extension HomeExtensions::HomeAccessoryTextFieldSetting : Swift::Sendable {
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@propertyWrapper final public class HomeAccessoryToggleSetting : Swift::Codable, Swift::Identifiable, HomeExtensions::HomeAccessorySetting {
+  final public var label: HomeExtensions::HomeAccessorySettingLabel
+  final public var isEnabled: Swift::Bool
+  final public var isHidden: Swift::Bool
+  final public let id: Swift::String
+  final public var wrappedValue: Swift::Bool? {
+    get
+    set
+  }
+  final public var projectedValue: HomeExtensions::HomeAccessoryToggleSetting {
+    get
+  }
+  public init(id: Swift::String, label: HomeExtensions::HomeAccessorySettingLabel, isEnabled: Swift::Bool = true, defaultValue: Swift::Bool? = nil, currentValue: Swift::Bool? = nil, onLabel: HomeExtensions::HomeAccessorySettingLabel? = nil, offLabel: HomeExtensions::HomeAccessorySettingLabel? = nil)
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  public typealias ID = Swift::String
+  @objc deinit
+  final public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+@available(*, unavailable)
+extension HomeExtensions::HomeAccessoryToggleSetting : Swift::Sendable {
+}
+@_hasMissingDesignatedInitializers @available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@_Concurrency::MainActor final public class HomeNavigator : Swift::Sendable {
+  @_Concurrency::MainActor final public func push(_ value: some Hashable, title: Swift::String? = nil)
+  @objc deinit
+}
+extension SwiftUICore::View {
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  @_Concurrency::MainActor @preconcurrency public func homeEmbeddedNavigationDestination<D, Content>(for data: D.Type, @SwiftUICore::ContentBuilder destination: @escaping (D) -> Content) -> some SwiftUICore::View where D : Swift::Hashable, Content : SwiftUICore::View
+  
+}
+@_hasMissingDesignatedInitializers @available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@_Concurrency::MainActor final public class HomeContext : Swift::Sendable, @_Concurrency::MainActor Swift::Equatable {
+  @_Concurrency::MainActor public static func == (lhs: HomeExtensions::HomeContext, rhs: HomeExtensions::HomeContext) -> Swift::Bool
+  @_Concurrency::MainActor final public let navigator: HomeExtensions::HomeNavigator
+  @_Concurrency::MainActor final public var home: HomeKit::HMHome? {
+    get
+    set
+    _modify
+  }
+  @_Concurrency::MainActor final public var accessory: HomeKit::HMAccessory? {
+    get
+    set
+    _modify
+  }
+  @_Concurrency::MainActor final public var metadata: [Swift::String : Swift::String] {
+    get
+  }
+  public enum MetadataKey {
+    public static let helpGuideContentId: Swift::String
+    public static let accessoryErrorCode: Swift::String
+    public static let accessoryErrorDetails: Swift::String
+  }
+  @_Concurrency::MainActor final public func reportConfigurationComplete() async
+  @_Concurrency::MainActor final public func dismiss() async
+  @_Concurrency::MainActor final public var description: Swift::String {
+    get
+  }
+  @objc deinit
+}
+extension SwiftUICore::EnvironmentValues {
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  public var homeContext: HomeExtensions::HomeContext? {
+    get
+    set
+    _modify
+  }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension HomeExtensions::HomeContext : nonisolated Observation::Observable {
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension HomeExtensions::HomeNavigator : nonisolated Observation::Observable {
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+public protocol HomeAccessorySetting : Swift::Identifiable where Self.ID == Swift::String {
+  var id: Swift::String { get }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@_Concurrency::MainActor @_typeEraser(AnyHomeAccessorySettingsContainer) public protocol HomeAccessorySettingsContainer {
+  @_Concurrency::MainActor var availableSettings: [any HomeExtensions::HomeAccessorySetting] { get }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension HomeExtensions::HomeAccessorySettingsContainer {
+  @_alwaysEmitIntoClient @_Concurrency::MainActor public var availableSettings: [any HomeExtensions::HomeAccessorySetting] {
+    get { [] }
+  }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@_Concurrency::MainActor public struct AnyHomeAccessorySettingsContainer : HomeExtensions::HomeAccessorySettingsContainer {
+  @_Concurrency::MainActor public init(erasing value: some HomeAccessorySettingsContainer)
+  @_Concurrency::MainActor public var availableSettings: [any HomeExtensions::HomeAccessorySetting] {
+    get
+  }
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+public protocol HomeAccessorySettingsContext {
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@_Concurrency::MainActor public protocol HomeAccessorySettingsProvider {
+  associatedtype Container : HomeExtensions::HomeAccessorySettingsContainer
+  associatedtype Context : HomeExtensions::HomeAccessorySettingsContext
+  @_Concurrency::MainActor func settings(context: Self.Context, for accessory: HomeKit::HMAccessory) async throws -> Self.Container
+  @_Concurrency::MainActor func settingsDidChange(changes: [Swift::String : Any], context: Self.Context, for accessory: HomeKit::HMAccessory) async throws
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+@_Concurrency::MainActor public protocol HomeExtension {
+  associatedtype Content : HomeExtensions::HomeContent
+  @_Concurrency::MainActor init()
+  @SwiftUICore::ContentBuilder @_Concurrency::MainActor var body: Self.Content { get }
+}
+extension HomeExtensions::HomeExtension {
+  @available(iOS 27.0, *)
+  @available(macCatalyst, unavailable)
+  @_Concurrency::MainActor public static func main() throws
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency::MainActor @preconcurrency open class GuideStepHostViewController : UIKit::UIViewController {
+  @_Concurrency::MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation::NSCoder)
+  @_Concurrency::MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency::MainActor @preconcurrency @objc override dynamic public func viewWillAppear(_ animated: Swift::Bool)
+  @_Concurrency::MainActor @preconcurrency @objc override dynamic public func viewDidAppear(_ animated: Swift::Bool)
+  @_Concurrency::MainActor @preconcurrency @objc override dynamic public func viewWillDisappear(_ animated: Swift::Bool)
+  @objc deinit
+}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension HomeExtensions::HomeAccessorySettings : Swift::Sendable {}
+@available(iOS 27.0, *)
+extension HomeExtensions::HomeAccessoryConfiguration : Swift::Sendable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension HomeExtensions::HomeAccessoryHelpGuide : Swift::Sendable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension HomeExtensions::HomeAccessoryTroubleshooting : Swift::Sendable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension HomeExtensions::HomeAccessoryEnumSetting.HomeExtensions::SelectionStyle : Swift::RawRepresentable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension HomeExtensions::HomeAccessoryRangeSetting.HomeExtensions::ValueFormat : Swift::RawRepresentable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension HomeExtensions::HomeAccessoryRangeSetting.HomeExtensions::SliderStyle : Swift::RawRepresentable {}
+@available(iOS 27.0, *)
+@available(macCatalyst, unavailable)
+extension HomeExtensions::AnyHomeAccessorySettingsContainer : Swift::Sendable {}

@@ -1,0 +1,26 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)
+// swift-module-flags: -target arm64e-apple-ios27.2 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-experimental-feature DebugDescriptionMacro -user-module-version 9127.1.13.1.110 -module-name FocusEngine
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4.2
+@_exported import FocusEngine
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 11.0, tvOS 11.0, visionOS 1.0, *)
+@available(watchOS, unavailable)
+extension FocusEngine::UIFocusEnvironment {
+  @_Concurrency::MainActor @preconcurrency public func contains(_ environment: any FocusEngine::UIFocusEnvironment) -> Swift::Bool
+}
+@available(iOS 15.0, tvOS 15.0, *)
+@available(watchOS, unavailable)
+extension FocusEngine::UIFocusSystem {
+  @_Concurrency::MainActor @preconcurrency public class func focusSystem(for environment: any FocusEngine::UIFocusEnvironment) -> FocusEngine::UIFocusSystem?
+}
+@available(iOS 11.0, tvOS 11.0, visionOS 1.0, *)
+@available(watchOS, unavailable)
+extension FocusEngine::UIFocusItem {
+  @_Concurrency::MainActor @preconcurrency public var isFocused: Swift::Bool {
+    get
+  }
+}

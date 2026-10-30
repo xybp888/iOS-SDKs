@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:           4
+targets:               [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CloudModuleArbitration.framework/CloudModuleArbitration
+current-version:       1
+compatibility-version: 1
+exports:
+  - targets:              [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
+    symbols:              [ _CLibcryptex_CRYPTEX_EVENT_ALREADY_INSTALLED,
+                            _CLibcryptex_CRYPTEX_EVENT_CANCELLING,
+                            _CLibcryptex_CRYPTEX_EVENT_NEWLY_INSTALLED,
+                            _CLibcryptex_CRYPTEX_EVENT_UNINSTALLED,
+                            _CLibcryptex_CRYPTEX_EVENT_UPGRADED,
+                            _CLibcryptex_event_info_get_mount_point,
+                            _CloudModuleArbitrationVersionNumber,
+                            _CloudModuleArbitrationVersionString ]
+    objc-classes:         [ _TtC22CloudModuleArbitration21CloudModuleCompletion ]
+...

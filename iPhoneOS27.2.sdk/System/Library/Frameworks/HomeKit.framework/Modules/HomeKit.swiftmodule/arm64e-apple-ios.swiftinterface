@@ -1,0 +1,250 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)
+// swift-module-flags: -target arm64e-apple-ios27.2 -enable-objc-interop -target-arch-variant arm64e.x1 -enable-library-evolution -language-mode 6 -O -library-level api -enable-upcoming-feature InternalImportsByDefault -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature ExistentialAny -enable-upcoming-feature InferIsolatedConformances -enable-experimental-feature DebugDescriptionMacro -user-module-version 1520.2.7.1.3 -module-name HomeKit
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4.2
+public import Foundation
+@_exported public import HomeKit
+public import Swift
+public import _Concurrency
+public import _StringProcessing
+public import _SwiftConcurrencyShims
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
+@available(macOS, unavailable)
+public class HMMediaSourceDisplayOrderProfile : HomeKit::HMAccessoryProfile, @unchecked Swift::Sendable {
+  @available(iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
+  @available(macOS, unavailable)
+  public protocol Delegate : AnyObject, Swift::Sendable {
+    func mediaSourceDisplayOrderProfileDidUpdateOrder(_ profile: HomeKit::HMMediaSourceDisplayOrderProfile)
+  }
+  final public let canModifyOrder: Swift::Bool
+  public var order: [Swift::Int] {
+    get
+  }
+  weak public var delegate: (any HomeKit::HMMediaSourceDisplayOrderProfile.HomeKit::Delegate)?
+  public func writeOrder(_ order: [Swift::Int]) async throws
+  @objc deinit
+}
+@available(iOS 26.4, visionOS 26.4, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension HomeKit::HMHomeManager {
+  public struct PairingIdentity : Swift::Sendable, Swift::Hashable, Swift::Codable {
+    public let pairingIdentifier: Swift::String
+    public let publicKey: Foundation::Data
+    public init(pairingIdentifier: Swift::String, publicKey: Foundation::Data)
+    public static func == (a: HomeKit::HMHomeManager.HomeKit::PairingIdentity, b: HomeKit::HMHomeManager.HomeKit::PairingIdentity) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct ProvisionalConfiguration : Swift::Sendable, Swift::Hashable, Swift::Codable {
+    public let threadNetworkIdentifier: Foundation::Data
+    public let hubPairingIdentity: HomeKit::HMHomeManager.HomeKit::PairingIdentity
+    public init(threadNetworkIdentifier: Foundation::Data, hubPairingIdentity: HomeKit::HMHomeManager.HomeKit::PairingIdentity)
+    public var dictionaryRepresentation: [Swift::String : any Swift::Sendable] {
+      get
+    }
+    public init?(dictionaryRepresentation: [Swift::String : any Swift::Sendable])
+    public static func == (a: HomeKit::HMHomeManager.HomeKit::ProvisionalConfiguration, b: HomeKit::HMHomeManager.HomeKit::ProvisionalConfiguration) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public func addProvisionalHome(named name: Swift::String, configuration: HomeKit::HMHomeManager.HomeKit::ProvisionalConfiguration) async throws -> HomeKit::HMHome
+}
+extension HomeKit::HMAccessory {
+  @available(iOS 26.1, watchOS 26.1, tvOS 26.1, *)
+  @available(macOS, unavailable)
+  public var hapInstanceID: Swift::UInt64? {
+    get
+  }
+}
+@available(iOS 26.4, visionOS 26.4, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension HomeKit::HMHome {
+  public enum ProvisionalHomeTransferError : Swift::Error, Swift::Sendable, Swift::Hashable, Swift::Codable {
+    case targetHomeRejected
+    case connectionFailed
+    case authenticationFailed
+    case serverError
+    public static func == (a: HomeKit::HMHome.HomeKit::ProvisionalHomeTransferError, b: HomeKit::HMHome.HomeKit::ProvisionalHomeTransferError) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct ProvisionalHomeConnectionDetails : Swift::Sendable, Swift::Hashable, Swift::Codable {
+    public var transferToken: Foundation::Data
+    public init(transferToken: Foundation::Data)
+    public static func == (a: HomeKit::HMHome.HomeKit::ProvisionalHomeConnectionDetails, b: HomeKit::HMHome.HomeKit::ProvisionalHomeConnectionDetails) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public struct ProvisionalHomeTransferResult : Swift::Sendable, Swift::Hashable, Swift::Codable {
+    public struct TransferredAccessory : Swift::Sendable, Swift::Hashable, Swift::Codable {
+      public var uuid: Foundation::UUID
+      public var name: Swift::String
+      public init(uuid: Foundation::UUID, name: Swift::String)
+      public static func == (a: HomeKit::HMHome.HomeKit::ProvisionalHomeTransferResult.HomeKit::TransferredAccessory, b: HomeKit::HMHome.HomeKit::ProvisionalHomeTransferResult.HomeKit::TransferredAccessory) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public struct FailedAccessory : Swift::Sendable, Swift::Hashable, Swift::Codable {
+      public enum Reason : Swift::String, Swift::Sendable, Swift::Hashable, Swift::Codable {
+        case unsupportedAccessoryType
+        case unknown
+        public init?(rawValue: Swift::String)
+        @available(iOS 26.4, visionOS 26.4, *)
+        @available(macOS, unavailable)
+        @available(tvOS, unavailable)
+        @available(watchOS, unavailable)
+        public typealias RawValue = Swift::String
+        public var rawValue: Swift::String {
+          get
+        }
+      }
+      public var uuid: Foundation::UUID
+      public var name: Swift::String
+      public var reason: HomeKit::HMHome.HomeKit::ProvisionalHomeTransferResult.HomeKit::FailedAccessory.HomeKit::Reason
+      public var localizedFailureDescription: Swift::String?
+      public init(uuid: Foundation::UUID, name: Swift::String, reason: HomeKit::HMHome.HomeKit::ProvisionalHomeTransferResult.HomeKit::FailedAccessory.HomeKit::Reason, localizedFailureDescription: Swift::String? = nil)
+      public static func == (a: HomeKit::HMHome.HomeKit::ProvisionalHomeTransferResult.HomeKit::FailedAccessory, b: HomeKit::HMHome.HomeKit::ProvisionalHomeTransferResult.HomeKit::FailedAccessory) -> Swift::Bool
+      public func encode(to encoder: any Swift::Encoder) throws
+      public func hash(into hasher: inout Swift::Hasher)
+      public var hashValue: Swift::Int {
+        get
+      }
+      public init(from decoder: any Swift::Decoder) throws
+    }
+    public var transferredAccessories: [HomeKit::HMHome.HomeKit::ProvisionalHomeTransferResult.HomeKit::TransferredAccessory]
+    public var failedAccessories: [HomeKit::HMHome.HomeKit::ProvisionalHomeTransferResult.HomeKit::FailedAccessory]
+    public init(transferredAccessories: [HomeKit::HMHome.HomeKit::ProvisionalHomeTransferResult.HomeKit::TransferredAccessory], failedAccessories: [HomeKit::HMHome.HomeKit::ProvisionalHomeTransferResult.HomeKit::FailedAccessory])
+    public static func == (a: HomeKit::HMHome.HomeKit::ProvisionalHomeTransferResult, b: HomeKit::HMHome.HomeKit::ProvisionalHomeTransferResult) -> Swift::Bool
+    public func encode(to encoder: any Swift::Encoder) throws
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+    public init(from decoder: any Swift::Decoder) throws
+  }
+  public var isProvisionalHome: Swift::Bool {
+    get
+  }
+  public func isProvisionalHome(forPairingIdentifier pairingIdentifier: Swift::String) async throws -> Swift::Bool
+  public func transferProvisionalHome(connectionDetails: HomeKit::HMHome.HomeKit::ProvisionalHomeConnectionDetails, targetHomeUniqueIdentifier: Foundation::UUID) async throws(HomeKit::HMHome.HomeKit::ProvisionalHomeTransferError) -> HomeKit::HMHome.HomeKit::ProvisionalHomeTransferResult
+}
+@available(iOS 8.0, watchOS 2.0, tvOS 10.0, *)
+@available(macOS, unavailable)
+public let HMCharacteristicPropertySupportsEventNotification: Swift::String
+extension HomeKit::HMAccessory {
+  @available(iOS 16.1, watchOS 9.1, tvOS 16.1, macCatalyst 16.1, *)
+  @available(macOS, unavailable)
+  public var matterNodeID: Swift::UInt64? {
+    get
+  }
+}
+extension HomeKit::HMAccessory {
+  @available(iOS 27.0, *)
+  @available(macOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(visionOS, unavailable)
+  public struct ManufacturerFeature : Swift::Sendable, Swift::Equatable, Swift::Hashable {
+    @available(iOS 27.0, *)
+    @available(macOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(visionOS, unavailable)
+    public enum Kind : Swift::UInt, Swift::Sendable {
+      case primitiveSetting
+      case interactiveSetting
+      case helpGuide
+      case troubleshooting
+      case productManual
+      public init?(rawValue: Swift::UInt)
+      @available(iOS 27.0, *)
+      @available(macOS, unavailable)
+      @available(tvOS, unavailable)
+      @available(watchOS, unavailable)
+      @available(visionOS, unavailable)
+      public typealias RawValue = Swift::UInt
+      public var rawValue: Swift::UInt {
+        get
+      }
+    }
+    public let name: Swift::String
+    public let id: Swift::String?
+    public let kind: HomeKit::HMAccessory.HomeKit::ManufacturerFeature.HomeKit::Kind
+    public init(name: Swift::String, id: Swift::String?, kind: HomeKit::HMAccessory.HomeKit::ManufacturerFeature.HomeKit::Kind)
+    public static func == (a: HomeKit::HMAccessory.HomeKit::ManufacturerFeature, b: HomeKit::HMAccessory.HomeKit::ManufacturerFeature) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+}
+extension HomeKit::HMAccessory {
+  @available(iOS 27.0, *)
+  @available(macOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(visionOS, unavailable)
+  public var manufacturerFeatures: [HomeKit::HMAccessory.HomeKit::ManufacturerFeature] {
+    get async throws
+  }
+  @available(iOS 27.0, *)
+  @available(macOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(visionOS, unavailable)
+  public func showManufacturerExtension(for kind: HomeKit::HMAccessory.HomeKit::ManufacturerFeature.HomeKit::Kind, featureID: Swift::String? = nil) async throws
+}
+extension HomeKit::HMService {
+  @available(iOS 18.0, watchOS 11.0, tvOS 18.0, macCatalyst 18.0, *)
+  @available(macOS, unavailable)
+  public var matterEndpointID: Swift::UInt16? {
+    get
+  }
+}
+@available(iOS 26.4, visionOS 26.4, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+extension HomeKit::HMHome.HomeKit::ProvisionalHomeTransferResult.HomeKit::FailedAccessory.HomeKit::Reason : Swift::RawRepresentable {}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension HomeKit::HMAccessory.HomeKit::ManufacturerFeature.HomeKit::Kind : Swift::Equatable {}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension HomeKit::HMAccessory.HomeKit::ManufacturerFeature.HomeKit::Kind : Swift::Hashable {}
+@available(iOS 27.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+@available(visionOS, unavailable)
+extension HomeKit::HMAccessory.HomeKit::ManufacturerFeature.HomeKit::Kind : Swift::RawRepresentable {}
