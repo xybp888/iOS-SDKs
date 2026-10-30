@@ -1,24 +1,24 @@
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/Frameworks/ARKit.framework/ARKit'
 reexported-libraries:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     libraries:       [ '/System/Library/SubFrameworks/ARKitCore.framework/ARKitCore', 
                        '/System/Library/SubFrameworks/ARKitFoundation.framework/ARKitFoundation', 
                        '/System/Library/SubFrameworks/ARKitUI.framework/ARKitUI' ]
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _ARKitBuildVersionString ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/SubFrameworks/ARKitCore.framework/ARKitCore'
 reexported-libraries:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     libraries:       [ '/System/Library/SubFrameworks/ARKitFoundation.framework/ARKitFoundation' ]
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _ARAbortWithError, _ARAddLiDARTechniquesToParent, _ARAddNonLiDARSemanticsToParent, 
                        _ARAdjustIntrincisForMirroring, _ARAdjustIntrincisForOrientation, 
                        _ARAdjustIntrinsicsForViewportSize, _ARAnchorToECEFTransform, 
@@ -599,10 +599,10 @@ exports:
                        ARODTManager._odtHandle, ARODTManager._odtHandleLock, ARODTManager._options ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/SubFrameworks/ARKitFoundation.framework/ARKitFoundation'
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _ARDepthCameraCalibrationCopy, _ARDepthCameraCalibrationCreate, 
                        _ARDepthCameraCalibrationGetDeviceTransform, _ARDepthCameraCalibrationGetExtrinsics, 
                        _ARDepthCameraCalibrationGetIntrinsics, _ARDepthCameraCalibrationGetSLAMReinitCount, 
@@ -615,13 +615,13 @@ exports:
     objc-classes:    [ ARDepthData, ARFormattedStringCache ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/SubFrameworks/ARKitUI.framework/ARKitUI'
 allowable-clients:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     clients:         [ ARKit ]
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _ARCoachingDeviceGlyphName, _ARCoachingDeviceGlyphNameForDisplayRegion, 
                        _ARCoachingLoadDeviceGlyph, _ARCoachingLoadDeviceGlyphWithName, 
                        _ARCoachingResetButtonLandscapeVerticalOffset, _ARCoachingResetButtonPortraitVerticalOffset, 

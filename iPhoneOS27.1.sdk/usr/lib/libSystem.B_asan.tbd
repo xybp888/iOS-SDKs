@@ -1,10 +1,10 @@
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/libSystem.B.dylib'
 current-version: 1359
 reexported-libraries:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     libraries:       [ '/usr/lib/system/libcache.dylib', '/usr/lib/system/libcommonCrypto.dylib', 
                        '/usr/lib/system/libcompiler_rt.dylib', '/usr/lib/system/libcopyfile.dylib', 
                        '/usr/lib/system/libcorecrypto.dylib', '/usr/lib/system/libdispatch.dylib', 
@@ -24,19 +24,19 @@ reexported-libraries:
                        '/usr/lib/system/libsystem_trace.dylib', '/usr/lib/system/libsystem_trial.dylib', 
                        '/usr/lib/system/libunwind.dylib', '/usr/lib/system/libxpc.dylib' ]
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ ___asan_default_options, ___crashreporter_info__, _dynamic_asan_opts, 
                        _libSystem_init_after_boot_tasks_4launchd, _mach_init_routine ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libcache.dylib'
 current-version: 95
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _cache_create, _cache_destroy, _cache_get, _cache_get_and_retain, 
                        _cache_get_cost_hint, _cache_get_count_hint, _cache_get_info, 
                        _cache_get_info_for_key, _cache_get_info_for_keys, _cache_get_minimum_values_hint, 
@@ -51,14 +51,14 @@ exports:
                        _cache_value_make_purgeable_cb ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libcommonCrypto.dylib'
 current-version: 65535
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _CCAESCmac, _CCAESCmacCreate, _CCAESCmacDestroy, _CCAESCmacFinal, 
                        _CCAESCmacOutputSizeFromContext, _CCAESCmacUpdate, _CCBigNumAdd, 
                        _CCBigNumAddI, _CCBigNumBitCount, _CCBigNumByteCount, _CCBigNumClear, 
@@ -135,14 +135,14 @@ exports:
                        _ccDevRandomGetRngState, _kCCRandomDefault, _kCCRandomDevRandom ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64-ios, arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libcompiler_rt.dylib'
 current-version: 103.4
 parent-umbrella:
-  - targets:         [ arm64-ios, arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ '$ld$hide$os10.0$___chkstk_darwin', '$ld$hide$os10.1$___chkstk_darwin', 
                        '$ld$hide$os10.2$___chkstk_darwin', '$ld$hide$os10.3$___chkstk_darwin', 
                        '$ld$hide$os11.0$___chkstk_darwin', '$ld$hide$os11.1$___chkstk_darwin', 
@@ -204,26 +204,26 @@ exports:
                        _atomic_signal_fence, _atomic_thread_fence ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libcopyfile.dylib'
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _copyfile, _copyfile_state_alloc, _copyfile_state_free, _copyfile_state_get, 
                        _copyfile_state_set, _fcopyfile, _xattr_flags_from_name, _xattr_intent_with_flags, 
                        _xattr_name_with_flags, _xattr_name_without_flags, _xattr_preserve_for_intent ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libcorecrypto.dylib'
 current-version: 2109.0.22
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _CCEC_FAULT_CANARY, _CCHYBRIDSIG_FAULT_CANARY, _CCMLDSA_FAULT_CANARY, 
                        _CCRSA_PKCS1_FAULT_CANARY, _CCRSA_PSS_FAULT_CANARY, _CCSS_PRIME_P192, 
                        _CCSS_PRIME_P224, _CCSS_PRIME_P256, _CCSS_PRIME_P384, _CCSS_PRIME_P521, 
@@ -618,14 +618,14 @@ exports:
                        _fipspost_trace_vtable, _map_to_curve_sswu ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libdispatch.dylib'
 current-version: 1605.0.2
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ '$ld$hide$os10.0$_dispatch_assert_queue', '$ld$hide$os10.0$_dispatch_assert_queue_not', 
                        '$ld$hide$os10.0$_dispatch_queue_create_with_target', __dispatch_begin_NSAutoReleasePool, 
                        __dispatch_bug, __dispatch_data_destructor_free, __dispatch_data_destructor_munmap, 
@@ -787,15 +787,15 @@ exports:
                        OS_os_workgroup_parallel, OS_voucher ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libdyld.dylib'
 current-version: 0
 compatibility-version: 0
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _NSVersionOfLinkTimeLibrary, _NSVersionOfRunTimeLibrary, _NXArgc, 
                        _NXArgv, __NSGetExecutablePath, ___progname, __dyld_atfork_parent, 
                        __dyld_atfork_prepare, __dyld_call_with_writable_tpro_memory, 
@@ -881,14 +881,14 @@ exports:
                        dyld_stub_binder ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libmacho.dylib'
 current-version: 1040
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _NXCombineCpuSubtypes, _NXFindBestFatArch, _NXFindBestFatArch_64, 
                        _NXFreeArchInfo, _NXGetAllArchInfos, _NXGetArchInfoFromCpuType, 
                        _NXGetArchInfoFromName, _NXGetLocalArchInfo, _get_edata, _get_end, 
@@ -920,14 +920,14 @@ exports:
                        _swap_x86_thread_state, _swap_x86_thread_state64 ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libremovefile.dylib'
 current-version: 96
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ ___removefile_init_random, ___removefile_random_char, ___removefile_randomize_buffer, 
                        ___removefile_rename_unlink, ___removefile_sunlink, ___removefile_tree_walker, 
                        ___removefile_tree_walker_slim, _removefile, _removefile_cancel, 
@@ -935,14 +935,14 @@ exports:
                        _removefile_state_set, _removefileat ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_asl.dylib'
 current-version: 409
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _ASL_LEVEL_TO_STRING, __asl_evaluate_send, __asl_fork_child, 
                        __asl_lib_log, __asl_log_args_to_xpc, __asl_msg_dump, __asl_server_cancel_direct_watch, 
                        __asl_server_control_query, __asl_server_create_aux_link, 
@@ -1012,14 +1012,14 @@ exports:
                        _setlogmask, _syslog, _vsyslog ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_blocks.dylib'
 current-version: 98
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _Block_size, __Block_copy, __Block_extended_layout, __Block_has_signature, 
                        __Block_isDeallocating, __Block_layout, __Block_object_assign, 
                        __Block_object_dispose, __Block_release, __Block_signature, 
@@ -1028,14 +1028,14 @@ exports:
                        __NSConcreteStackBlock, __NSConcreteWeakBlockVariable ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_c.dylib'
 current-version: 1786.0.3
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _OSMemoryNotificationCurrentLevel, _OSThermalNotificationCurrentLevel, 
                        __CurrentRuneLocale, __DefaultRuneLocale, __Exit, __NSGetArgc, 
                        __NSGetArgv, __NSGetEnviron, __NSGetMachExecuteHeader, __NSGetProgname, 
@@ -1297,21 +1297,21 @@ exports:
                        _wscanf, _wscanf_l, _wtmpxname, _xprintf, _xprintf_exec ]
     weak-symbols:    [ __os_debug_log_redirect_func ]
 reexports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _bcmp, _bzero, _index, _memccpy, _memchr, _memcmp, _memcpy, 
                        _memmove, _memset, _memset_pattern16, _memset_pattern4, _memset_pattern8, 
                        _strchr, _strcmp, _strcpy, _strlcat, _strlcpy, _strlen, _strncmp, 
                        _strncpy, _strnlen, _strstr ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_collections.dylib'
 current-version: 1786.0.3
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _os_map_128_clear, _os_map_128_count, _os_map_128_delete, 
                        _os_map_128_destroy, _os_map_128_find, _os_map_128_foreach, 
                        _os_map_128_init, _os_map_128_insert, _os_map_32_clear, _os_map_32_count, 
@@ -1334,14 +1334,14 @@ exports:
                        _os_set_str_ptr_init, _os_set_str_ptr_insert ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_configuration.dylib'
 current-version: 1446
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ __dns_configuration_ack, __libSC_info_fork_child, __libSC_info_fork_parent, 
                        __libSC_info_fork_prepare, __nwi_config_agent_copy_data, __nwi_state_ack, 
                        __nwi_state_force_refresh, _config_agent_copy_dns_information, 
@@ -1358,13 +1358,13 @@ exports:
                        _nwi_state_get_reachability_flags, _nwi_state_release ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_containermanager.dylib'
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _CMCONTAINERSEAM_DEFAULT, _CMDISPATCHSEAM_DEFAULT, _CMFSSEAM_DEFAULT, 
                        _CMKPERSONASEAM_DEFAULT, _CMNOTIFYSEAM_DEFAULT, _CMPWDSEAM_DEFAULT, 
                        _CMQUARANTINESEAM_DEFAULT, _CMSANDBOXSEAM_DEFAULT, _CONTAINER_CLASS_NAMES, 
@@ -1592,14 +1592,14 @@ exports:
                        _gCMPWDSeam, _gCMQuarantineSeam, _gCMSandboxSeam ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_coreservices.dylib'
 current-version: 129
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _NSGetNextSearchPathEnumeration, _NSStartSearchPathEnumeration, 
                        _NSStartSearchPathEnumerationPrivate, ___user_local_dirname, 
                        ___user_relative_dirname, __dirhelper, __dirhelper_relative, 
@@ -1608,13 +1608,13 @@ exports:
                        _sysdir_start_search_path_enumeration_private ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_darwin.dylib'
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ ___libdarwin_init, ___os_temporary_resource_shortage, _claimfd_np, 
                        _close_drop_np, _close_drop_optional_np, _crfprintf_np, _dirstat_np, 
                        _dirstatat_np, _dup_np, _err_np, _errc_np, _fcheck_np, _memdup2_np, 
@@ -1643,25 +1643,25 @@ exports:
                        _warn_np, _wfprintf_np, _xferfd_np, _zsnprintf_np ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_darwindirectory.dylib'
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _DarwinDirectoryGetGeneration, _DarwinDirectoryRecordStoreApply, 
                        _DarwinDirectoryRecordStoreApplyWithFilter ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_dnssd.dylib'
 current-version: 3111.0.5
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _DNSServiceAddRecord, _DNSServiceAttrCreate, _DNSServiceAttrFree, 
                        _DNSServiceAttrSetFailoverPolicy, _DNSServiceAttrSetValidationData, 
                        _DNSServiceAttrSetValidationPolicy, _DNSServiceAttributeCreate, 
@@ -1689,14 +1689,14 @@ exports:
                        _kDNSServiceAttributeAAAAFallback ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_eligibility.dylib'
 current-version: 446.2.3
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _os_eligibility_bring_up_daemon_4_migration, _os_eligibility_bring_up_daemon_4_secure_erase, 
                        _os_eligibility_diff_mobile_asset, _os_eligibility_domain_for_name, 
                        _os_eligibility_dump_sysdiagnose_data_to_dir, _os_eligibility_fetch_newest_policies, 
@@ -1708,24 +1708,24 @@ exports:
                        _os_eligibility_reset_domain, _os_eligibility_set_input, _os_eligibility_set_test_mode ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_featureflags.dylib'
 current-version: 108
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ __os_feature_enabled_impl, __os_feature_enabled_simple_impl ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_info.dylib'
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _LI_get_thread_item, _LI_get_thread_list, _LI_ils_create, 
                        _LI_set_thread_item, _LI_set_thread_list, ___dn_skipname, 
                        __authenticate, __gai_nat64_can_v4_address_be_synthesized, 
@@ -1839,14 +1839,14 @@ exports:
                        _yp_next, _yp_order, _yp_unbind, _yperr_string, _ypprot_err ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_kernel.dylib'
 current-version: 13432.2.10
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _NDR_record, _____sigwait_nocancel, ____kernelVersionNumber, 
                        ____kernelVersionString, ___abort_with_payload, ___accept, 
                        ___accept_nocancel, ___access_extended, ___aio_suspend_nocancel, 
@@ -2366,14 +2366,14 @@ exports:
                        _write, '_write$NOCANCEL', _writev, '_writev$NOCANCEL' ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_m.dylib'
 current-version: 3326.0.1
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ __FE_DFL_DISABLE_DENORMS_ENV, __FE_DFL_ENV, ___Libm_version, 
                        ___ceilf16, ___copysignf16, ___cos_d2, ___cos_f4, ___cospi, 
                        ___cospif, ___exp10, ___exp10f, ___fabsf16, ___fegetfltrounds, 
@@ -2459,14 +2459,14 @@ exports:
                        _tgammaf, _tgammal, _trunc, _truncf, _truncl, _y0, _y1, _yn ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64-ios, arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_malloc.dylib'
 current-version: 886.0.8
 parent-umbrella:
-  - targets:         [ arm64-ios, arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ ___mach_stack_logging_shared_memory_address, ___malloc_init, 
                        ___malloc_late_init, __malloc_fork_child, __malloc_fork_parent, 
                        __malloc_fork_prepare, __malloc_no_asl_log, __os_cpu_number_override, 
@@ -2511,13 +2511,13 @@ exports:
                        _zeroify_scalable_zone ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_networkextension.dylib'
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _NEHelperCacheAddRedirectedAddress, _NEHelperCacheClearRedirectedAddresses, 
                        _NEHelperCacheClearUUIDs, _NEHelperCacheClearUUIDsForBundleID, 
                        _NEHelperCacheCopyAppUUIDMapping, _NEHelperCacheCopyAppUUIDMappingExtended, 
@@ -2600,14 +2600,14 @@ exports:
                        _nelog_is_info_logging_enabled ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_notify.dylib'
 current-version: 368
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ __notify_fork_child, _notify_cancel, _notify_check, _notify_dump_status, 
                        _notify_get_event, _notify_get_state, _notify_is_valid_token, 
                        _notify_monitor_file, _notify_peek, _notify_post, _notify_register_check, 
@@ -2617,14 +2617,14 @@ exports:
                        _notify_simple_post, _notify_suspend, _notify_suspend_pid ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_platform.dylib'
 current-version: 402.0.1
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _OSAtomicAdd32, _OSAtomicAdd32Barrier, _OSAtomicAdd64, _OSAtomicAdd64Barrier, 
                        _OSAtomicAnd32, _OSAtomicAnd32Barrier, _OSAtomicAnd32Orig, 
                        _OSAtomicAnd32OrigBarrier, _OSAtomicCompareAndSwap32, _OSAtomicCompareAndSwap32Barrier, 
@@ -2687,14 +2687,14 @@ exports:
                        _sys_icache_invalidate, _timingsafe_enable_if_supported, _timingsafe_restore_if_supported ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_pthread.dylib'
 current-version: 553.0.1
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ ____chkstk_darwin, ___is_threaded, ___pthread_init, ___pthread_late_init, 
                        ___pthread_workqueue_setkill, ___unix_conforming, __pthread_atfork_child, 
                        __pthread_atfork_child_handlers, __pthread_atfork_parent, 
@@ -2778,14 +2778,14 @@ exports:
                        _start_wqthread, _thread_chkstk_darwin, _thread_start ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_sandbox.dylib'
 current-version: 3051.0.52
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _APP_SANDBOX_IOKIT_CLIENT, _APP_SANDBOX_MACH, _APP_SANDBOX_READ, 
                        _APP_SANDBOX_READ_WRITE, _IOS_SANDBOX_APPLICATION_GROUP, _IOS_SANDBOX_CONTAINER, 
                        _SANDBOX_CHECK_ALLOW_APPROVAL, _SANDBOX_CHECK_CANONICAL, _SANDBOX_CHECK_NOFOLLOW, 
@@ -2863,13 +2863,13 @@ exports:
                        _sandbox_unsuspend ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_sanitizers.dylib'
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ ___asan_abi_addr_is_in_fake_stack, ___asan_abi_address_is_poisoned, 
                        ___asan_abi_after_dynamic_init, ___asan_abi_alloca_poison, 
                        ___asan_abi_allocas_unpoison, ___asan_abi_before_dynamic_init, 
@@ -2898,13 +2898,13 @@ exports:
                        _sanitizers_testonly_mtasan_init_ringbuffer, _sanitizers_testonly_trace_init_data_structures ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_symptoms.dylib'
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ __symptoms_daemon_fallback_initial_disposition, __symptoms_daemon_fallback_subseq_disposition, 
                        __symptoms_is_daemon_fallback_blacklisted, _symptom_framework_init, 
                        _symptom_framework_set_version, _symptom_new, _symptom_send, 
@@ -2912,14 +2912,14 @@ exports:
                        _symptom_set_qualifier ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_trace.dylib'
 current-version: 1966.2.1
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _RTBinIndexForType, _RTLogBufferAddResource, _RTLogBufferAllocateResource, 
                        _RTLogBufferCheckStatus, _RTLogBufferGetHeader, _RTLogBufferGetResource, 
                        _RTLogBufferGetResourceSize, _RTLogBufferInitialize, _RTLogBufferIterate, 
@@ -2998,26 +2998,26 @@ exports:
     objc-classes:    [ OS_os_log ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libsystem_trial.dylib'
 current-version: 511
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ __os_trial_factor_get_bool_impl, __os_trial_factor_get_long_long_impl, 
                        __os_trial_factor_has_impl ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libunwind.dylib'
 current-version: 2200.5
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ __Unwind_Backtrace, __Unwind_DeleteException, __Unwind_FindEnclosingFunction, 
                        __Unwind_Find_FDE, __Unwind_ForcedUnwind, __Unwind_GetCFA, 
                        __Unwind_GetDataRelBase, __Unwind_GetGR, __Unwind_GetIP, __Unwind_GetIPInfo, 
@@ -3035,14 +3035,14 @@ exports:
                        _unw_set_fpreg, _unw_set_reg, _unw_step, _unw_strerror ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/usr/lib/system/libxpc.dylib'
 current-version: 3298.2.1
 parent-umbrella:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     umbrella:        System
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _XPC_ACTIVITY_ALLOW_BATTERY, _XPC_ACTIVITY_APP_REFRESH, _XPC_ACTIVITY_CHECK_IN, 
                        _XPC_ACTIVITY_COMMUNICATES_WITH_PAIRED_DEVICE, _XPC_ACTIVITY_CPU_INTENSIVE, 
                        _XPC_ACTIVITY_DELAY, _XPC_ACTIVITY_DESIRED_MOTION_STATE, _XPC_ACTIVITY_DISK_INTENSIVE, 

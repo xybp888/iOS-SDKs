@@ -1,14 +1,14 @@
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox'
 current-version: 1000
 swift-abi-version: 7
 reexported-libraries:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     libraries:       [ '/System/Library/PrivateFrameworks/AudioToolboxCore.framework/AudioToolboxCore' ]
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _AQMEGetDeviceStreamFormats, _AQMESetDeviceStreamFormat, _AQOfflineMixerConnectAudioQueue, 
                        _AQOfflineMixerDisconnectAudioQueue, _AQOfflineMixerDispose, 
                        _AQOfflineMixerGetProperty, _AQOfflineMixerGetPropertySize, 
@@ -218,10 +218,10 @@ exports:
                        ATSpatialStreamDescriptions, ATSpatialStreamParameters, STSController ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/PrivateFrameworks/AudioToolboxCore.framework/AudioToolboxCore'
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _AUEventListenerAddEventType, _AUEventListenerCreate, _AUEventListenerCreateWithDispatchQueue, 
                        _AUEventListenerNotify, _AUEventListenerRemoveEventType, _AUListenerAddParameter, 
                        _AUListenerCreate, _AUListenerCreateWithDispatchQueue, _AUListenerDispose, 

@@ -1,19 +1,19 @@
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Accelerate'
 current-version: 4
 reexported-libraries:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     libraries:       [ '/System/Library/Frameworks/Accelerate.framework/Frameworks/vImage.framework/vImage', 
                        '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/vecLib' ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vImage.framework/vImage'
 current-version: 650.0.1
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _Init_vImage, _SetvImageThreadCount, _SetvImageThreadState, 
                        _SetvImageVectorAvailable, __vImage_TempBuffer_Enable_Legacy, 
                        _kvImageConstDecodeArray0, _kvImageDecodeArray_16Q12Format, 
@@ -380,10 +380,10 @@ exports:
                        _vImage_SILBuffer_Free_RGBAFFFF, _vImage_SILBuffer_Init_RGBAFFFF ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libBLAS.dylib'
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _APL_dgemm, _APL_dgemm_LU, _APL_dgemm_QR, _APL_dsyrk, _APL_dtrsm, 
                        _APL_sgemm, _APL_sgemm_LU, _APL_sgemm_QR, _APL_ssyrk, _APL_strsm, 
                        _APPLE_NTHREADS, _ATLU_DestroyThreadMemory, _BLASGetThreading, 
@@ -681,13 +681,13 @@ exports:
                        _ztrsv_ ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libBNNS.dylib'
 allowable-clients:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     clients:         [ vecLib ]
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _BNNSAffineGridSample, _BNNSApplyMultiheadAttention, _BNNSApplyMultiheadAttentionBackward, 
                        _BNNSArithmeticFilterApplyBackwardBatch, _BNNSArithmeticFilterApplyBatch, 
                        _BNNSAsymmetricDistanceComputation, _BNNSBandPart, _BNNSBitTranspose, 
@@ -873,10 +873,10 @@ exports:
                        __bnns_hgemm_mem_requirement ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libLAPACK.dylib'
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ '_cbbcsd$NEWLAPACK', '_cbbcsd$NEWLAPACK$ILP64', '_cbdsqr$NEWLAPACK', 
                        '_cbdsqr$NEWLAPACK$ILP64', _cbdsqr_, '_cgbbrd$NEWLAPACK', 
                        '_cgbbrd$NEWLAPACK$ILP64', _cgbbrd_, '_cgbcon$NEWLAPACK', 
@@ -2727,13 +2727,13 @@ exports:
                        '_zupmtr$NEWLAPACK$ILP64', _zupmtr_ ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libLinearAlgebra.dylib'
 allowable-clients:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     clients:         [ vecLib ]
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _la_add_attributes, _la_diagonal_matrix_from_vector, _la_difference, 
                        _la_elementwise_product, _la_identity_matrix, _la_inner_product, 
                        _la_matrix_cols, _la_matrix_from_double_buffer, _la_matrix_from_double_buffer_nocopy, 
@@ -2750,23 +2750,23 @@ exports:
                        _la_vector_to_double_buffer, _la_vector_to_float_buffer ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libQuadrature.dylib'
 allowable-clients:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     clients:         [ vecLib ]
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _quadrature_integrate ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libSparse.dylib'
 allowable-clients:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     clients:         [ vecLib ]
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _SparseRankTwoInitialSparseFactor, _SparseRankTwoUpdateSparseCleanup, 
                        _SparseRankTwoUpdateSparseFactor, _SparseRankTwoUpdateSparseSolve, 
                        __SparseAMD, __SparseAMDWorkspaceSize, __SparseAMDWorkspaceSizeWithOverflowCheck, 
@@ -3120,13 +3120,13 @@ exports:
                        __Z42SparseReadBinaryAuxilaryData_Complex_FloatjPKcmjb, __Z43SparseReadBinaryAuxilaryData_Complex_DoublejPKcmjb ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libSparseBLAS.dylib'
 allowable-clients:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     clients:         [ Sparse, vecLib ]
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _sparse_commit, _sparse_csc_spmv_complex_double, _sparse_csc_spmv_complex_float, 
                        _sparse_csc_spmv_double, _sparse_csc_spmv_float, _sparse_elementwise_norm_double, 
                        _sparse_elementwise_norm_double_complex, _sparse_elementwise_norm_float, 
@@ -3194,10 +3194,10 @@ exports:
                        _sparse_vector_triangular_solve_dense_float_complex ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libvDSP.dylib'
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _vDSP_DCT_CreateSetup, _vDSP_DCT_Execute, _vDSP_DFT_CreateSetup, 
                        _vDSP_DFT_DestroySetup, _vDSP_DFT_DestroySetupD, _vDSP_DFT_Execute, 
                        _vDSP_DFT_ExecuteD, _vDSP_DFT_Interleaved_CreateSetup, _vDSP_DFT_Interleaved_CreateSetupD, 
@@ -3313,11 +3313,11 @@ exports:
                        _vDSP_zvsub, _vDSP_zvsubD, _vDSP_zvzsml, _vDSP_zvzsmlD ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libvMisc.dylib'
 current-version: 1155
 exports:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     symbols:         [ _VVACOS, _VVACOSF, _VVACOSF_, _VVACOSH, _VVACOSHF, _VVACOSHF_, 
                        _VVACOSH_, _VVACOS_, _VVASIN, _VVASINF, _VVASINF_, _VVASINH, 
                        _VVASINHF, _VVASINHF_, _VVASINH_, _VVASIN_, _VVATAN, _VVATAN2, 
@@ -3384,14 +3384,14 @@ exports:
                        _vvtanpif_ ]
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64e-ios, arm64e.x1-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/vecLib'
 current-version: 1155
 allowable-clients:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     clients:         [ Accelerate ]
 reexported-libraries:
-  - targets:         [ arm64e-ios, arm64e.x1-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios, arm64e.x1-ios ]
     libraries:       [ '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libBLAS.dylib', 
                        '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libBNNS.dylib', 
                        '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libLAPACK.dylib', 
